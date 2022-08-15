@@ -7,6 +7,8 @@
     "magazine.random.title": "Random Articles",
     "magazine.list.posted_in": "Posted In",
     "magazine.list.by_author": "by",
+    "magazine.single.readmore": "Read More",
+    "magazine.single.same_category": "from the same category",
 
     "theme.custom_meta.simple_title.label": "Simple Title",
     "theme.custom_meta.simple_title.comment": "A simple title which replaces the main title on each theme slider.",

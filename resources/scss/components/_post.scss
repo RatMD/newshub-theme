@@ -70,3 +70,66 @@
     }
 
 }
+
+
+// ----------------------------------------
+//  Post Button Stylings
+// ----------------------------------------
+
+.post-buttons {
+    display: block;
+    margin-bottom: $spacer;
+    padding: $spacer * 2;
+    background-color: $gray-100;
+
+    .post-buttons-title {
+        color: $gray-700;
+        font-size: 1.4rem;
+        text-align: left;
+        line-height: 1.4rem;
+        font-family: $font-family-special;
+        margin-bottom: $spacer;
+        
+        span {
+            color: $gray-600;
+            display: block;
+            font-size: 0.9rem;
+        }
+    }
+    .post-button {
+        margin-bottom: $spacer * 0.5;
+    }
+}
+.post-button {
+    display: flex;
+    text-decoration: none;
+
+    .post-thumbnail {
+        flex: 0 0 80px;
+        width: 80px;
+        height: 80px;
+        object-fit: cover;
+        object-position: top;
+    }
+
+    .post-content {
+        flex: 1 1 auto;
+        padding: $spacer * 0.25 $spacer;
+    }
+
+    .post-title {
+        color: var(--#{$prefix}body-color);
+        font-size: 1.2rem;
+        line-height: 1.7rem;
+        font-family: $font-family-special;
+        background-image: linear-gradient(currentColor, currentColor);
+        background-position: 0% 100%;
+        background-repeat: no-repeat;
+        background-size: 0% 2px;
+        transition: background-size .3s ease;
+    }
+
+    &:hover .post-title {
+        background-size: 100% 2px;
+    }
+}

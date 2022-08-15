@@ -1,4 +1,6 @@
-
+[bloghub]
+postPage = "blog/post"
+==
 <section class="section section-posts">
     <header class="py-6 bg-light dark:bg-dark">
         <div class="container">
@@ -24,7 +26,24 @@
                 {{ post.content_html | raw }}
             </div>
             <aside class="post-aside{% if post.featured_images %} post-has-thumbnail{% endif %}">
-                test
+                {% set prevPost = post.bloghub_prev_post_in_category %}
+                {% set nextPost = post.bloghub_next_post_in_category %}
+
+                {% if prevPost or nextPost %}
+                    <div class="post-buttons">
+                        <div class="post-buttons-title">
+                            {{ 'magazine.single.readmore' | trans }}
+                            <span>{{ 'magazine.single.same_category' | trans }}</span>
+                        </div>
+                        {% if prevPost %}
+                            {% partial 'blog/post-button' post=prevPost %}
+                        {% endif %}
+
+                        {% if nextPost %}
+                            {% partial 'blog/post-button' post=nextPost %}
+                        {% endif %}
+                    </div>
+                {% endif %}
             </aside>
         </div>
     </article>
@@ -32,7 +51,6 @@
     <footer class="bg-white pb-6">
         <div class="container">
             {% set similarPosts = post.bloghub_similar_posts() %}
-
             {% if similarPosts|length > 0 %}
                 <h2 class="mb-5">{{ 'magazine.similar.title' | trans }}</h2>
                 <div class="latest-posts">
@@ -42,7 +60,6 @@
                 </div>
             {% else %}
                 {% set randomPosts = post.bloghub_random_posts() %}
-
                 {% if randomPosts|length > 0 %}
                     <h2 class="mb-5">{{ 'magazine.random.title' | trans }}</h2>
                     <div class="latest-posts">
