@@ -1,0 +1,95 @@
+
+// ----------------------------------------
+//  Callout  Stylings
+// ----------------------------------------
+
+.callout {
+    --#{$prefix}callout-bg: transparent;
+    --#{$prefix}callout-padding-x: #{$callout-padding-x};
+    --#{$prefix}callout-padding-y: #{$callout-padding-y};
+    --#{$prefix}callout-margin-bottom: #{$callout-margin-bottom};
+    --#{$prefix}callout-color: inherit;
+    --#{$prefix}callout-border-color: transparent;
+    --#{$prefix}callout-border: #{$callout-border-width} solid var(--#{$prefix}callout-border-color);
+
+    color: var(--#{$prefix}callout-color);
+    margin-bottom: var(--#{$prefix}callout-margin-bottom);
+    padding: var(--#{$prefix}callout-padding-y) var(--#{$prefix}callout-padding-x);
+    position: relative;
+    background-color: var(--#{$prefix}callout-bg);
+    border-left: var(--#{$prefix}callout-border);
+
+    hr {
+        margin-top: 0.75rem;
+        margin-bottom: 0.75rem;
+    }
+
+    p {
+        margin-bottom: 0.75rem;
+    }
+
+    p:last-child {
+        margin-bottom: 0;
+    }
+
+    .alert-heading {
+        color: inherit;
+    }
+
+    .alert-link {
+        font-weight: $callout-link-font-weight;
+    }
+}
+
+
+// ----------------------------------------
+//  Callout Sizes
+// ----------------------------------------
+
+.callout-sm {
+    --#{$prefix}callout-padding-x: #{calc($callout-padding-x / 2)};
+    --#{$prefix}callout-padding-y: #{calc($callout-padding-y / 2)};
+    font-size: map-get($font-sizes, 7);
+}
+
+
+// ----------------------------------------
+//  Dismissable Callouts
+// ----------------------------------------
+
+.callout-dismissible {
+    padding-right: $callout-dismissible-padding-r;
+  
+    .btn-close {
+        position: absolute;
+        top: 0;
+        right: 0;
+        z-index: $stretched-link-z-index + 1;
+        padding: calc($callout-padding-y * 1.175) $callout-padding-x;
+    }
+  }
+
+
+// ----------------------------------------
+//  Callout Colors
+// ----------------------------------------
+
+@each $state, $value in $theme-colors {
+    $callout-background: shift-color($value, $callout-bg-scale);
+    $callout-border: shift-color($value, $callout-border-scale);
+    $callout-color: shift-color($value, $callout-color-scale);
+  
+    @if (contrast-ratio($callout-background, $callout-color) < $min-contrast-ratio) {
+        $callout-color: mix($value, color-contrast($callout-background), abs($callout-color-scale));
+    }
+
+    .callout-#{$state} {
+        --#{$prefix}callout-color: #{$callout-color};
+        --#{$prefix}callout-bg: #{$callout-background};
+        --#{$prefix}callout-border-color: #{$callout-border};
+        
+        .callout-link {
+            color: shade-color($callout-color, 20%);
+        }
+    }
+}

@@ -8,22 +8,22 @@ OctoberCMS v2 / v3 using the latest Bootstrap 5.2 CSS and JS framework.
 Features
 --------
 
-- Bootstrap 5.2 with Bootstrap Icons (as Partials)
-- Fully Responsive
+- Bootstrap 5.2 with Bootstrap Icons (as partials)
+- Fully Responsive (Mobile-First)
 - 4 Menu Positions (Social Links, Main Menu and 2 Footer Menus)
 - 2 Color Schemes (Light & Dark)
 - Color Switch & Language Switch Button Support
-- Additional Resposive Slider using Keen Slider
-- Additional Snippets for Pages:
-    - Double-Click Solution to embed external content
+- Resposive Slider using Keen Slider
+- Page Snippets:
+    - Double-Click Solution to embed external content GDPR friendly
     - Table of Contents Snippet (Lists all Content-Headers)
-- Additional Features provided by RatMD.BlogHub
-    - Show Similar or Random Blog Posts 
-    - Show Next | Previous Blog Post
-    - Blog Tags (Promotable and Colorizable)
-    - Custom Blog Meta / Blog Post
-    - 3 different Post Layouts (Default, Fullwidth, Hero-Image)
-
+- Additional Features provided by **RatMD.BlogHub**
+    - Custom Meta Fields to individualize posts
+    - Similar & Random Post widgets
+    - Next & Previous Blog Post buttons
+    - (Promoted) Blog Tags
+    - Different Post Layouts
+    - Additional Blog archives for Author, Dates & Tags
 
 Requirements
 ------------

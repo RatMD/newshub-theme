@@ -66,6 +66,113 @@ tabs:
             label: theme.options.dark_footer.label
             comment: theme.options.dark_footer.comment
             default: false
+
+        __color_palette_section:
+            tab: theme.options.tabs.appearance
+            type: section
+            label: theme.options.sections.color_palette
+        color_primary:
+            tab: theme.options.tabs.appearance
+            type: colorpicker
+            label: theme.options.color_primary.label
+            allowEmpty: false
+            default: '#0d6efd'
+            availableColors:
+                - '#0d6efd'
+                - '#6610f2'
+                - '#6f42c1'
+                - '#d63384'
+                - '#dc3545'
+                - '#fd7e14'
+                - '#ffc107'
+                - '#198754'
+                - '#20c997'
+                - '#0dcaf0'
+        color_secondary:
+            tab: theme.options.tabs.appearance
+            type: colorpicker
+            label: theme.options.color_secondary.label
+            allowEmpty: false
+            default: '#6c757d'
+            availableColors:
+                - '#0d6efd'
+                - '#6610f2'
+                - '#6f42c1'
+                - '#d63384'
+                - '#dc3545'
+                - '#fd7e14'
+                - '#ffc107'
+                - '#198754'
+                - '#20c997'
+                - '#0dcaf0'
+        color_success:
+            tab: theme.options.tabs.appearance
+            type: colorpicker
+            label: theme.options.color_success.label
+            allowEmpty: false
+            default: '#198754'
+            availableColors:
+                - '#0d6efd'
+                - '#6610f2'
+                - '#6f42c1'
+                - '#d63384'
+                - '#dc3545'
+                - '#fd7e14'
+                - '#ffc107'
+                - '#198754'
+                - '#20c997'
+                - '#0dcaf0'
+        color_info:
+            tab: theme.options.tabs.appearance
+            type: colorpicker
+            label: theme.options.color_info.label
+            allowEmpty: false
+            default: '#0dcaf0'
+            availableColors:
+                - '#0d6efd'
+                - '#6610f2'
+                - '#6f42c1'
+                - '#d63384'
+                - '#dc3545'
+                - '#fd7e14'
+                - '#ffc107'
+                - '#198754'
+                - '#20c997'
+                - '#0dcaf0'
+        color_warning:
+            tab: theme.options.tabs.appearance
+            type: colorpicker
+            label: theme.options.color_warning.label
+            allowEmpty: false
+            default: '#ffc107'
+            availableColors:
+                - '#0d6efd'
+                - '#6610f2'
+                - '#6f42c1'
+                - '#d63384'
+                - '#dc3545'
+                - '#fd7e14'
+                - '#ffc107'
+                - '#198754'
+                - '#20c997'
+                - '#0dcaf0'
+        color_danger:
+            tab: theme.options.tabs.appearance
+            type: colorpicker
+            label: theme.options.color_danger.label
+            allowEmpty: false
+            default: '#dc3545'
+            availableColors:
+                - '#0d6efd'
+                - '#6610f2'
+                - '#6f42c1'
+                - '#d63384'
+                - '#dc3545'
+                - '#fd7e14'
+                - '#ffc107'
+                - '#198754'
+                - '#20c997'
+                - '#0dcaf0'
         
         __main_header_section:
             tab: theme.options.tabs.header

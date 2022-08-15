@@ -1,9 +1,15 @@
-description = "Default HTML Layout"
+description = "Default Page Layout"
 
 [localePicker]
-forceUrl = 0
 
 [alternateHrefLangElements]
+
+[staticPage]
+
+[staticBreadcrumbs]
+
+[viewBag]
+staticBreadcrumbs_skipLast = true
 ==
 <!DOCTYPE html>
 <html lang="en" class="no-js">
@@ -19,18 +25,6 @@ forceUrl = 0
     {% component 'alternateHrefLangElements' %}
 
     <link rel="stylesheet" href="{{ 'assets/css/newshub.min.css' | theme }}" />
-    <style type="text/css">
-        :root {
-            --bs-primary: {{ this.theme.color_primary }};
-            --bs-secondary: {{ this.theme.color_secondary }};
-            --bs-success: {{ this.theme.color_success }};
-            --bs-info: {{ this.theme.color_info }};
-            --bs-warning: {{ this.theme.color_warning }};
-            --bs-danger: {{ this.theme.color_danger }};
-            --bs-light: {{ this.theme.color_light }};
-            --bs-dark: {{ this.theme.color_dark }};
-        }
-    </style>
     {% styles %}
 
     <script type="text/javascript">
@@ -59,7 +53,30 @@ forceUrl = 0
     </header>
 
     <div id="pageContent">
-        {% page %}
+        <div class="post-single page-single">
+            <section class="section section-page">
+                <header class="py-6 bg-light dark:bg-dark">
+                    <div class="container">
+                        <div class="post-header">
+                            {% component 'staticBreadcrumbs' skipLast=true %}
+                            <h1 class="post-title">{{ page.title }}</h1>
+                        </div>
+                    </div>
+                </header>
+
+                <article class="bg-white py-6">
+                    <div class="container">
+                        <div class="post-content">
+                            {% page %}
+                        </div>
+                        
+                        <aside class="post-aside">
+                            test
+                        </aside>
+                    </div>
+                </article>
+            </section>
+        </div>
     </div>
     
     <footer id="pageFooter" class="{% if this.theme.dark_footer %}bg-dark dark{% else %}bg-light dark:bg-dark{% endif %} py-5">

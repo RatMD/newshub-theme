@@ -1,35 +1,15 @@
-[viewBag]
-snippetCode = "double-click"
-snippetName = "Double Click Solution"
-snippetProperties[title][title] = "Privacy Title"
-snippetProperties[title][type] = "string"
-snippetProperties[title][default] = "Third-Party Service"
-snippetProperties[title][options] = ""
-snippetProperties[description][title] = "Privacy Description"
-snippetProperties[description][type] = "string"
-snippetProperties[description][default] = "This content is hosted on a different website, which may sets cookies. Click on the button below, when you're cool with that."
-snippetProperties[description][options] = ""
-snippetProperties[button_text][title] = "Privacy Button Text"
-snippetProperties[button_text][type] = "string"
-snippetProperties[button_text][default] = "Accept Cookies & Load Content"
-snippetProperties[button_text][options] = ""
-snippetProperties[external_content][title] = "External Content / IFrame"
-snippetProperties[external_content][type] = "string"
-snippetProperties[external_content][default] = ""
-snippetProperties[external_content][options] = ""
-==
 <div class="double-click" data-rat-toggle="double-click">
     <div class="double-click-title">
-        {{ viewBag.title }}
+        {{ privacy_title | default('Third-Party Service') | raw }}
     </div>
     <div class="double-click-description">
-        {{ viewBag.description }}
+        {{ privacy_description | default("This content is hosted on a different website, which may sets cookies. Click on the button below, when you're cool with that.") | raw }}
     </div>
     <button type="button" class="double-click-button">
-        {{ viewBag.button_text }}
+        {{ privacy_button_label | default('Accept Cookies & Load Content') | raw }}
     </button>
 
     <template class="double-click-content">
-        {{ viewBag.external_content | raw }}
+        {{ external_content | raw }}
     </template>
 </div>

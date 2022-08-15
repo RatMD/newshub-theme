@@ -43,6 +43,16 @@
     "theme.options.dark_footer.label": "Show Dark Footer",
     "theme.options.dark_footer.comment": "Show a dark footer section, regardless of the used color scheme.",
 
+    "theme.options.sections.color_palette": "Color Palette",
+    "theme.options.color_primary.label": "Primary Color",
+    "theme.options.color_secondary.label": "Secondary Color",
+    "theme.options.color_success.label": "Success Color",
+    "theme.options.color_info.label": "Info Color",
+    "theme.options.color_warning.label": "Warning Color",
+    "theme.options.color_danger.label": "Danger Color",
+    "theme.options.color_light.label": "Light Color",
+    "theme.options.color_dark.label": "Dark Color",
+
     "theme.options.sections.main_header": "General Header Settings",
     "theme.options.sticky_header.label": "Use Sticky Header",
     "theme.options.sticky_header.comment": "Shows the header always on top of the viewport, when the user scrolls down.",

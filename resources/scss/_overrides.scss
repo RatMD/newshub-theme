@@ -33,6 +33,21 @@ $font-sizes: (
 
 
 // ----------------------------------------
+//  Callout Variables
+// ----------------------------------------
+
+$callout-padding-y:                 $spacer;
+$callout-padding-x:                 $spacer;
+$callout-margin-bottom:             1rem;
+$callout-link-font-weight:          700;
+$callout-border-width:              3px;
+$callout-bg-scale:                  -90%;
+$callout-border-scale:              -45%;
+$callout-color-scale:               40%;
+$callout-dismissible-padding-r:     $callout-padding-x * 3;
+
+
+// ----------------------------------------
 //  Custom Navbar Toggler Icons
 // ----------------------------------------
 

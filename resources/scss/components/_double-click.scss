@@ -1,0 +1,32 @@
+
+// ----------------------------------------
+//  Double Click Stylings
+// ----------------------------------------
+
+.double-click {
+    color: var(--#{$prefix}light);
+    width: 100%;
+    height: 450px;
+    display: flex;
+    padding: $spacer * 3 $spacer * 4;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    background-color: var(--#{$prefix}dark);
+
+    .double-click-title {
+        font-size: 1.6rem;
+        margin-bottom: $spacer;
+    }
+    .double-click-description {
+        font-size: 1.1rem;
+        font-weight: 300;
+    }
+    .double-click-button {
+        @extend .btn;
+        @extend .btn-light;
+
+        margin-top: auto;
+        border-radius: 0;
+    }
+}
