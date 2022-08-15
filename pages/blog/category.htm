@@ -1,0 +1,44 @@
+url = "/magazine/category/:slug/:page?"
+layout = "default"
+title = "Magazine Category"
+
+[viewBag]
+localeUrl[de] = "/magazin/kategorie/:slug/:page?"
+localeTitle[de] = "Magazin Kategorie"
+
+[blogPosts]
+pageNumber = "{{ :page }}"
+postsPerPage = 10
+categoryFilter = "{{ :slug }}"
+sortOrder = "published_at desc"
+categoryPage = "blog/category"
+postPage = "blog/post"
+==
+function onEnd()
+{
+    if ($this->category) {
+        $this->page->title = $this->category->name;
+    }
+}
+==
+<section class="section section-posts py-6">
+    <div class="container">
+        {% if not category %}
+            Unknown Category
+        {% else %}
+            <h1 class="mb-5">{{ category.name }}</h1>
+
+            <div class="post-list">
+                {% if posts | length > 0 %}
+                    {% for post in posts %}
+                        {% for post in posts %}
+                            {% partial 'posts-list' post=post %}
+                        {% endfor %}
+                    {% endfor %}
+                {% else %}
+                    No Posts found
+                {% endif %}
+            </div>
+        {% endif %}
+    </div>
+</section>

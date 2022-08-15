@@ -1,0 +1,57 @@
+
+<section class="section section-posts">
+    <header class="py-6 bg-light dark:bg-dark">
+        <div class="container">
+            <div class="post-header{% if post.featured_images %} post-has-thumbnail{% endif %}">
+                <h1 class="post-title">{{ post.title }}</h1>
+
+                <time class="post-published" datetime="{{ post.published_at }}">
+                    {{ post.published_at | date(this.theme.datetime_format) }}
+                </time>
+            </div>
+
+            {% if post.featured_images %}
+                <div class="post-thumbnail">
+                    <img src="{{ post.featured_images.0.getPath() }}" alt="{{ post.title }}" />
+                </div>
+            {% endif %}
+        </div>
+    </header>
+
+    <article class="bg-white py-6">
+        <div class="container">
+            <div class="post-content">
+                {{ post.content_html | raw }}
+            </div>
+            <aside class="post-aside{% if post.featured_images %} post-has-thumbnail{% endif %}">
+                test
+            </aside>
+        </div>
+    </article>
+
+    <footer class="bg-white pb-6">
+        <div class="container">
+            {% set similarPosts = post.bhub_similar_posts() %}
+
+            {% if similarPosts|length > 0 %}
+                <h2 class="mb-5">{{ 'magazine.similar.title' | trans }}</h2>
+                <div class="latest-posts">
+                    {% for post in similarPosts %}
+                        {% partial 'posts-list' post=post hideSummary=true hideCategory=true prefix='similar' datetime='short' %}
+                    {% endfor %}
+                </div>
+            {% else %}
+                {% set randomPosts = post.bhub_random_posts() %}
+
+                {% if randomPosts|length > 0 %}
+                    <h2 class="mb-5">{{ 'magazine.random.title' | trans }}</h2>
+                    <div class="latest-posts">
+                        {% for post in randomPosts %}
+                            {% partial 'posts-list' post=post hideSummary=true hideCategory=true prefix='random' datetime='short' %}
+                        {% endfor %}
+                    </div>
+                {% endif %}
+            {% endif %}
+        </div>
+    </footer>
+</section>

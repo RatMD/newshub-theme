@@ -1,0 +1,27 @@
+{{ form_open() }}
+    <div class="localepicker dropup-center dropup">
+        <button type="button" data-rat-toggle="dropdown" aria-expanded="false" class="dropdown-toggle close-on-select">
+            {% for code, name in locales %}
+                {% if code == activeLocale %}
+                    {% if code == 'en' %}
+                        {% set code = 'gb_UKM' %}
+                    {% endif %}
+                    <img src="{{ ('assets/images/flags/' ~ code ~ '.svg') | theme }}" alt="{{ name }}" />
+                {% endif %}
+            {% endfor %}
+        </button>
+
+        <ul class="dropdown-menu">
+            {% for code, name in locales %}
+                <li><a href="#" class="dropdown-item{% if code == activeLocale %} active{% endif %}"  data-request="onSwitchLocale" data-request-data="locale: '{{ code }}'">
+                    {% if code == 'en' %}
+                        {% set code = 'gb_UKM' %}
+                    {% endif %}
+
+                    <img src="{{ ('assets/images/flags/' ~ code ~ '.svg') | theme }}" alt="{{ name }}" />
+                    {{ name }}
+                </a></li>
+            {% endfor %}
+        </ul>
+    </div>
+{{ form_close() }}

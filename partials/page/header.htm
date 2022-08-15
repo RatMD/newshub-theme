@@ -1,0 +1,114 @@
+[staticMenu mainMenu]
+code = "main-menu"
+
+[staticMenu socialMenu]
+code = "social-menu"
+==
+<nav class="navbar navbar-main navbar-expand-lg px-lg-5 py-lg-3">
+    <a href="{{ 'home' | page }}" class="navbar-brand{% if this.theme.site_logo %} navbar-brand-image{% endif %}" title="{{ this.theme.site_name }}">
+        {% if this.theme.site_logo %}
+            <img src="{{ this.theme.site_logo.getPath() }}" alt="{{ this.theme.site_name }}" class="hide-on-dark" />
+
+            {% if this.theme.site_logo_inverted %}
+                <img src="{{ this.theme.site_logo_inverted.getPath() }}" alt="{{ this.theme.site_name }}" class="show-on-dark" />
+            {% else %}
+                <img src="{{ this.theme.site_logo.getPath() }}" alt="{{ this.theme.site_name }}" class="show-on-dark" />
+            {% endif %}
+        {% else %}
+            {{ this.theme.site_name }}
+        {% endif %}
+    </a>
+
+    <button class="navbar-toggler collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#pageNavbar" aria-controls="pageNavbar" aria-expanded="false" aria-label="{{ 'header.navbar.toggle'|trans }}">
+        <div class="navbar-toggler-menu">
+            <div class="navbar-toggler-line"></div>
+            <div class="navbar-toggler-line"></div>
+            <div class="navbar-toggler-line"></div>
+        </div>
+    </button>
+
+    <div id="pageNavbar" class="collapse navbar-collapse navbar-menu">
+        {% if mainMenu and mainMenu.menuItems != null %}
+            <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+                {% for item in mainMenu.menuItems %}
+                    {% if not item.viewBag.isHidden %}
+                        {% set classNames = 'nav-item item-type-' ~ item.type %}
+                        {% if item.isActive %}
+                            {% set classNames = classNames ~ ' item-current' %}
+                        {% endif %}
+                        {% if item.isChildActive %}
+                            {% set classNames = classNames ~ ' item-current-parent' %}
+                        {% endif %}
+                        {% if item.items %}
+                            {% set classNames = classNames ~ ' item-has-children' %}
+                        {% endif %}
+                        {% if item.viewBag.cssClass %}
+                            {% set classNames = classNames ~ ' ' ~ item.viewBag.cssClass %}
+                        {% endif %}
+
+                        <li class="{{ classNames }}">
+                            <a href="{{ item.url }}" title="{{ item.title }}" class="nav-link{% if item.isActive %} active{% endif %}"{% if item.viewBag.isExternal %} target="_blank"{% endif %}{% if item.isActive %} aria-current="page"{% endif %}>
+                                {{ item.title }}
+                            </a>
+                            
+                            {% if item.items %}
+                                <ul class="navbar-nav navbar-subnav">
+                                    {% for child in item.items %}
+                                        {% set childClassNames = 'nav-item item-type-' ~ item.type %}
+                                        {% if child.isActive %}
+                                            {% set childClassNames = childClassNames ~ ' item-current' %}
+                                        {% endif %}
+                                        {% if child.isChildActive %}
+                                            {% set childClassNames = childClassNames ~ ' item-current-parent' %}
+                                        {% endif %}
+                                        {% if child.viewBag.cssClass %}
+                                            {% set childClassNames = childClassNames ~ ' ' ~ child.viewBag.cssClass %}
+                                        {% endif %}
+
+                                        <li class="{{ childClassNames }}">
+                                            <a href="{{ child.url }}" title="{{ child.title }}" class="nav-link{% if child.isActive %} active{% endif %}"{% if child.viewBag.isExternal %} target="_blank"{% endif %}{% if child.isActive %} aria-current="page"{% endif %}>
+                                                {{ child.title }}
+                                            </a>
+                                        </li>
+                                    {% endfor %}
+                                </ul>
+                            {% endif %}
+                        </li>
+                    {% endif %}
+                {% endfor %}
+            </ul>
+        {% else %}
+            {% if this.theme.show_demo %}
+                {% partial 'demo/main-nav-content' %}
+            {% endif %}
+        {% endif %}
+    </div>
+
+    <div class="navbar-socials ms-lg-auto">
+        {% if socialMenu and socialMenu.menuItems != null %}
+            <ul class="navbar-nav mb-2 mb-lg-0">
+                {% for item in socialMenu.menuItems %}
+                    {% if not item.viewBag.isHidden %}
+                        <li class="nav-item item-type-{{ item.type }}{% if item.viewBag.cssClass %} {{ item.viewBag.cssClass }}{% endif %}">
+                            <a href="{{ item.url }}" title="{{ item.title }}" class="nav-link"{% if item.viewBag.isExternal %} target="_blank"{% endif %}>
+                                {% if hasPartial('icons/bootstrap/' ~ item.code) %}
+                                    {% partial 'icons/bootstrap/' ~ item.code %}
+                                {% else %}
+                                    {% if hasPartial('icons/socials/' ~ item.code) %}
+                                        {% partial 'icons/socials/' ~ item.code %}
+                                    {% else %}
+                                        {{ item.title }}
+                                    {% endif %}
+                                {% endif %}
+                            </a>
+                        </li>
+                    {% endif %}
+                {% endfor %}
+            </ul>
+        {% else %}
+            {% if this.theme.show_demo %}
+                {% partial 'demo/social-nav-content' %}
+            {% endif %}
+        {% endif %}
+    </div>
+</nav>

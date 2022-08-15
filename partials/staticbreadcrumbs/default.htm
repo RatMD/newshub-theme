@@ -1,0 +1,19 @@
+{% if breadcrumbs %}
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item">
+                <a href="{{ 'home' | theme }}" title="Homepage">{{ this.theme.site_name }}</a>
+            </li>
+
+            {% if breadcrumbs|length > 1 %}
+                {% for breadcrumb in breadcrumbs %}
+                    {% if not loop.last and viewBag.staticBreadcrumbs_skipLast %}
+                        <li class="breadcrumb-item{{breadcrumb.isActive ? ' active' : ''}}"{{ breadcrumb.isActive ? ' aria-current="page"' : ''}}>
+                            <a href="{{ breadcrumb.url }}" title="{{ breadcrumb.title }}">{{ breadcrumb.title }}</a>
+                        </li>
+                    {% endif %}
+                {% endfor %}
+            {% endif %}
+        </ol>
+    </nav>
+{% endif %}

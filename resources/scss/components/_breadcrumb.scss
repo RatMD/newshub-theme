@@ -1,0 +1,23 @@
+
+// ----------------------------------------
+//  Breadcrumb Stylings
+// ----------------------------------------
+
+
+.breadcrumb {
+    margin: 0;
+
+    .breadcrumb-item {
+
+        a {
+            color: var(--#{$prefix}body-color);
+            font-weight: 600;
+            text-decoration: none;
+            transition: color 200ms ease;
+
+            &:hover {
+                color: var(--#{$prefix}primary);
+            }
+        }
+    }
+}

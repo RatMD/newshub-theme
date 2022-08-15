@@ -1,0 +1,297 @@
+
+// ----------------------------------------
+//  Navbar Stylings
+// ----------------------------------------
+
+.navbar {
+    --#{$prefix}navbar-menu-toggler-icon: #{escape-svg($navbar-menu-toggler-icon)};
+}
+.dark .navbar {
+    --#{$prefix}navbar-menu-toggler-icon: #{escape-svg($navbar-dark-menu-toggler-icon)};
+}
+
+
+// ----------------------------------------
+//  Navbar Social Colors
+// ----------------------------------------
+
+.navbar-nav {
+    @each $name, $hex in $social-networks {
+        .nav-item.item-social-#{$name} {
+            .nav-link:hover {
+                color: #{$hex} !important;
+            }
+        }
+    }
+}
+
+
+// ----------------------------------------
+//  Main Navbar Stylings
+// ----------------------------------------
+
+.navbar-main {
+    display: flex;
+    flex-wrap: wrap;
+
+    // Navbar Brand
+    .navbar-brand {
+        order: 2;
+        font-family: $font-family-special;
+        font-weight: 800;
+        text-transform: uppercase;
+        
+        &.navbar-brand-image {
+            padding-top: 0;
+            padding-bottom: 0;
+        }
+        img {
+            width: auto;
+            max-height: 40px;
+        }
+        @include media-breakpoint-up(lg) {
+            flex: 0 0 25%;
+            margin-right: 0;
+        }
+    }
+
+    // Navbar Toggler 
+    // @source https://www.geeksforgeeks.org/how-to-convert-the-hamburger-icon-of-navigation-menu-to-x-on-click/
+    .navbar-toggler {
+        order: 3;
+        border: 0;
+        box-shadow: none;
+
+        .navbar-toggler-menu {
+            padding-top: 2px;
+            position: relative;
+            transition: transform 0.375s ease-out;
+
+            .navbar-toggler-line {
+                width: 28px;
+                height: 3px;
+                margin: 0 0 5px 0;
+                background: $gray-700;
+                transition: transform 0.375s ease-out, opacity 0.375s ease-out;
+                border-radius: 3px;
+            }
+        }
+
+        &:not(.collapsed) .navbar-toggler-menu {
+            transform: rotate(180deg);
+
+            .navbar-toggler-line:nth-child(1) {
+                transform: rotate(45deg) translate(5px, 5px);
+            }
+            .navbar-toggler-line:nth-child(2) {
+                opacity: 0;
+            }
+            .navbar-toggler-line:nth-child(3) {
+                transform: rotate(-45deg) translate(7px, -6px);
+            }
+        }
+    }
+
+    // General Navbar Stylings
+    .navbar-nav {
+        @include media-breakpoint-up(md) {
+            padding-left: $spacer * 2.0;
+            padding-right: $spacer * 2.0;
+        }
+
+        .nav-item {
+            .nav-link {
+                font-weight: 600;
+            }
+        }
+    }
+
+    // Main Menu Navbar
+    .navbar-menu {
+        order: 4;
+        
+        @include media-breakpoint-up(lg) {
+            order: 3;
+            flex: 0 0 50%;
+        }
+        
+        @include media-breakpoint-up(lg) {
+            .navbar-nav {
+                .nav-item {
+                    position: relative;
+
+                    .nav-link {
+                        padding-left: $spacer;
+                        padding-right: $spacer;
+                    }
+                    &.item-has-children > .nav-link {
+                        &::after {
+                            width: 12px;
+                            height: 9px;
+                            margin: 0.5rem 0 0 0.2rem;
+                            content: "";
+                            display: inline-block;
+                            vertical-align: top;
+                            background-size: 12px 9px;
+                            background-image: var(--#{$prefix}navbar-menu-toggler-icon);
+                            background-repeat: no-repeat;
+                            background-position: center center;
+                        }
+                    }
+                }
+            }
+        }
+
+        .navbar-subnav {
+            padding-left: $spacer * 1.5;
+            border-left: 3px solid var(--#{$prefix}navbar-toggler-border-color);
+
+            @include media-breakpoint-up(lg) {
+                top: 100%;
+                left: 50%;
+                width: auto;
+                margin-top: 15px;
+                opacity: 0;
+                padding-left: 0;
+                padding-right: 0;
+                border-left: none;
+                position: absolute;
+                flex-direction: column;
+                background-color: $white;
+                transform: translateX(-50%);
+                box-shadow: $box-shadow;
+                pointer-events: none;
+                transition: margin 200ms ease, opacity 200ms ease;
+
+                .nav-item {
+                    flex: 0 0 100%;
+                    width: 100%;
+                    position: relative;
+
+                    &:first-child::before {
+                        top: -10px;
+                        left: 50%;
+                        width: 20px;
+                        margin-left: -10px;
+                        height: 0;
+                        content: "";
+                        position: absolute;
+                        border-style: solid;
+                        border-width: 0 10px 10px 10px;
+                        border-color: transparent transparent $white transparent;
+                        transition: border-color .15s ease-in-out;
+                    }
+                    .nav-link {
+                        color: $gray-900;
+                        padding: $spacer * 0.5 $spacer * 1.15;
+                        font-weight: normal;
+                    }
+
+                    &:hover {
+                        &:first-child::before {
+                            border-bottom-color: $gray-200;
+                        }
+                        .nav-link {
+                            background-color: $gray-200;
+                        }
+                    }
+                }
+            }
+        }
+        @include media-breakpoint-up(lg) {
+            .nav-item:hover > .navbar-subnav {
+                margin-top: 0;
+                opacity: 1;
+                pointer-events: fill;
+            }
+        }
+    }
+
+    // Social Menu Navbar
+    .navbar-socials {
+        order: 1;
+        flex: 0 0 100%;
+        overflow: hidden;
+        transition: height 200ms ease;
+        
+        @include media-breakpoint-up(lg) {
+            order: 4;
+            flex: 0 0 25%;
+        }
+
+        .navbar-nav {
+            flex-direction: row;
+            justify-content: center;
+    
+            @include media-breakpoint-up(md) {
+                padding-left: 0;
+                padding-right: 0;
+                justify-content: flex-end;
+            }
+            .nav-link {
+                width: 40px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+        }
+    }
+}
+
+@include media-breakpoint-down(lg) {
+    .sticky-top.sticky-header.sticky-scroll .navbar-main .navbar-socials {
+        height: 0 !important;
+    }
+}
+
+.dark .navbar-main {
+    @extend .navbar-dark;
+}
+
+
+// ----------------------------------------
+//  Footer Navbar Stylings
+// ----------------------------------------
+
+.navbar-footer {
+    flex: 0 0 calc(100% / 3 * 2);
+    display: flex;
+    padding: 0;
+    align-items: flex-start;
+    
+    .navbar-nav {
+        flex: 0 0 100%;
+        margin-bottom: $spacer * 1.5;
+        padding-left: $spacer;
+        padding-right: $spacer;
+        text-align: center;
+        
+        @include media-breakpoint-up(md) {
+            flex-basis: 50%;
+        }
+        @include media-breakpoint-up(lg) {
+            margin-bottom: 0;
+            padding-left: 0;
+            padding-right: 0;
+            text-align: left;
+        }
+    }
+
+    .nav-title {
+        margin-bottom: 0.75rem;
+        font-weight: 800;
+        font-family: $font-family-special;
+        text-transform: uppercase;
+    }
+
+    .nav-item {
+        padding-top: 0;
+        padding-bottom: 0;
+
+        .nav-link {
+            font-weight: 400;
+            padding-top: $spacer * 0.15;
+            padding-bottom: $spacer * 0.15;
+        }
+    }
+}

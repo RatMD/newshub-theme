@@ -1,0 +1,9 @@
+
+// ----------------------------------------
+//  Additional Global Custom Properties
+// ----------------------------------------
+
+:root {
+    --#{$prefix}font-serif: #{inspect($font-family-serif)};
+    --#{$prefix}font-special: #{inspect($font-family-special)};
+}

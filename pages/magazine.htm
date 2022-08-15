@@ -1,0 +1,32 @@
+url = "/magazine/:page?"
+layout = "default"
+title = "Articles"
+
+[viewBag]
+localeUrl[de] = "/magazin/:page?"
+localeTitle[de] = "Beiträge"
+
+[blogPosts]
+pageNumber = "{{ :page }}"
+categoryFilter = "{{ this.theme.hero_slider_category }}"
+postsPerPage = 10
+noPostsMessage = "No posts found"
+sortOrder = "published_at desc"
+categoryPage = "blog/category"
+postPage = "blog/post"
+==
+<section class="section section-posts py-6">
+    <div class="container">
+        <h1 class="mb-5">{{ 'magazine.recent.title' | trans }}</h1>
+
+        <div class="post-list">
+            {% if posts | length > 0 %}
+                {% for post in posts %}
+                    {% partial 'posts-list' post=post %}
+                {% endfor %}
+            {% else %}
+                No Posts found
+            {% endif %}
+        </div>
+    </div>
+</section>

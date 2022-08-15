@@ -1,0 +1,36 @@
+{
+    "name": "@rat.md/newshub",
+    "version": "1.0.0",
+    "description": "A blog and magazine template for OctoberCMS.",
+    "keywords": [
+        "template",
+        "theme",
+        "october",
+        "octobercms"
+    ],
+    "main": "resources/js/theme.js",
+    "scripts": {
+        "build:js": "rollup -c",
+        "watch:js": "rollup -c --watch",
+        "build:css": "sass resources/scss/theme.scss:assets/css/newshub.min.css --style=compressed --load-path=node_modules",
+        "watch:css": "sass resources/scss/theme.scss:assets/css/newshub.min.css --style=compressed --load-path=node_modules --watch",
+        "build:vendors": "rollup -c rollup.vendors.config.js"
+    },
+    "author": "rat.md <info@rat.md> (https://rat.md)",
+    "license": "proprietary",
+    "private": true,
+    "dependencies": {
+        "bootstrap": "^5.2.0",
+        "bootstrap-icons": "^1.9.1",
+        "keen-slider": "^6.7.0"
+    },
+    "devDependencies": {
+        "@rollup/plugin-node-resolve": "^13.3.0",
+        "rollup": "^2.77.3",
+        "rollup-plugin-copy": "^3.4.0",
+        "rollup-plugin-replace": "^2.2.0",
+        "rollup-plugin-terser": "^7.0.2",
+        "sass": "^1.54.4",
+        "sass-loader": "^13.0.2"
+    }
+}

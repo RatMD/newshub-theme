@@ -1,0 +1,37 @@
+name: Newshub
+description: 'A simple Bootstrap 5.2 blog and magazine template for OctoberCMS.'
+author: rat.md
+homepage: 'https://rat.md'
+authorCode: rat.md
+code: rat.newshub
+parent: ''
+database: '0'
+require:
+    - 'RainLab.Blog'
+    - 'RainLab.Pages'
+    - 'RainLab.Sitemap'
+    - 'RainLab.Translate'
+    - 'RatMD.BlogHub'
+form: config/options.yaml
+
+ratmd.bloghub:
+    post:
+        simple_subtitle:
+            type: text
+            label: theme.custom_meta.simple_subtitle.title
+            comment: theme.custom_meta.simple_subtitle.comment
+            span: left
+        simple_title:
+            type: text
+            label: theme.custom_meta.simple_title.label
+            comment: theme.custom_meta.simple_title.comment
+            span: right
+        layout:
+            type: dropdown
+            label: theme.custom_meta.post_layout.label
+            comment: theme.custom_meta.post_layout.comment
+            default: default
+            showSearch: false
+            options:
+                default: theme.custom_meta.post_layout.default
+                fullwidth: theme.custom_meta.post_layout.fullwidth

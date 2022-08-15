@@ -1,0 +1,5 @@
+static-pages:
+    about:
+        about-imprint: {  }
+        about-privacy-policy: {  }
+    contact: {  }

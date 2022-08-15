@@ -1,0 +1,27 @@
+url = "/magazine/post/:slug"
+layout = "default"
+title = "Magazine Post"
+
+[viewBag]
+localeUrl[de] = "/magazin/beitrag/:slug"
+localeTitle[de] = "Magazin Beitrag"
+
+[blogPost]
+slug = "{{ :slug }}"
+categoryPage = "magazine/category"
+==
+function onEnd()
+{
+    if (isset($this->post)) {
+        $this->page->title = $this->post->title;
+    }
+}
+==
+<div class="post-single">
+    {% if not post %}
+        {% partial 'post-not-found' %}
+    {% else %}
+        {% set layout = post.bhub_meta_data.layout | default('default') %}
+        {% partial ('post-layout-' ~ layout) post=post%}
+    {% endif %}
+</div>

@@ -1,0 +1,139 @@
+[staticMenu footerMenuLeft]
+code = "footer-menu-1"
+
+[staticMenu footerMenuRight]
+code = "footer-menu-2"
+
+[staticMenu socialMenu]
+code = "social-menu"
+
+[localePicker]
+==
+
+<section class="section section-footer d-flex justify-content-center">
+    <a href="{{ 'home' | page }}" class="font-special fw-extrabold fs-2 text-uppercase link-dark dark:link-light text-decoration-none" title="{{ this.theme.site_name }}">
+        {% if this.theme.site_logo %}
+            <img src="{{ this.theme.site_logo.getPath() }}" alt="{{ this.theme.site_name }}" class="hide-on-dark" />
+
+            {% if this.theme.site_logo_inverted %}
+                <img src="{{ this.theme.site_logo_inverted.getPath() }}" alt="{{ this.theme.site_name }}" class="show-on-dark" />
+            {% else %}
+                <img src="{{ this.theme.site_logo.getPath() }}" alt="{{ this.theme.site_name }}" class="show-on-dark" />
+            {% endif %}
+        {% else %}
+            {{ this.theme.site_name }}
+        {% endif %}
+    </a>
+</section>
+
+<section class="section section-footer-meta mt-4">
+    <nav class="navbar navbar-footer">
+        {% if footerMenuLeft and footerMenuLeft.menuItems != null %}
+            <ul class="navbar-nav">
+                <li class="nav-title">{{ footerMenuLeft.menuName }}</li>
+
+                {% for item in footerMenuLeft.menuItems %}
+                    {% if not item.viewBag.isHidden %}
+                        <li class="nav-item item-type-{{ item.type }} item-social-{{ item.code }}{% if item.viewBag.cssClass %} {{ item.viewBag.cssClass }}{% endif %}">
+                            <a href="{{ item.url }}" title="{{ item.title }}" class="nav-link"{% if item.viewBag.isExternal %} target="_blank"{% endif %}>
+                                {% if hasPartial('icons/bootstrap/' ~ item.code) %}
+                                    {% partial 'icons/bootstrap/' ~ item.code %}
+                                {% else %}
+                                    {% if hasPartial('icons/socials/' ~ item.code) %}
+                                        {% partial 'icons/socials/' ~ item.code %}
+                                    {% else %}
+                                        {{ item.title }}
+                                    {% endif %}
+                                {% endif %}
+                            </a>
+                        </li>
+                    {% endif %}
+                {% endfor %}
+            </ul>
+        {% else %}
+            {% if this.theme.show_demo %}
+                {% partial 'demo/footer-menu-1-content' %}
+            {% endif %}
+        {% endif %}
+
+        {% if footerMenuRight and footerMenuRight.menuItems != null %}
+            <ul class="navbar-nav">
+                <li class="nav-title">{{ footerMenuRight.menuName }}</li>
+
+                {% for item in footerMenuRight.menuItems %}
+                    {% if not item.viewBag.isHidden %}
+                        <li class="nav-item item-type-{{ item.type }} item-social-{{ item.code }}{% if item.viewBag.cssClass %} {{ item.viewBag.cssClass }}{% endif %}">
+                            <a href="{{ item.url }}" title="{{ item.title }}" class="nav-link"{% if item.viewBag.isExternal %} target="_blank"{% endif %}>
+                                {% if hasPartial('icons/bootstrap/' ~ item.code) %}
+                                    {% partial 'icons/bootstrap/' ~ item.code %}
+                                {% else %}
+                                    {% if hasPartial('icons/socials/' ~ item.code) %}
+                                        {% partial 'icons/socials/' ~ item.code %}
+                                    {% else %}
+                                        {{ item.title }}
+                                    {% endif %}
+                                {% endif %}
+                            </a>
+                        </li>
+                    {% endif %}
+                {% endfor %}
+            </ul>
+        {% else %}
+            {% if this.theme.show_demo %}
+                {% partial 'demo/footer-menu-2-content' %}
+            {% endif %}
+        {% endif %}
+    </nav>
+        
+    <div class="socials">
+        <div class="socials-title">{{ 'footer.socials.follow' | trans }}</div>
+        {% if socialMenu and socialMenu.menuItems != null %}
+            <ul class="navbar-nav navbar-socials">
+                {% for item in socialMenu.menuItems %}
+                    {% if not item.viewBag.isHidden %}
+                        <li class="nav-item item-type-{{ item.type }} item-social-{{ item.code }}{% if item.viewBag.cssClass %} {{ item.viewBag.cssClass }}{% endif %}">
+                            <a href="{{ item.url }}" title="{{ item.title }}" class="nav-link"{% if item.viewBag.isExternal %} target="_blank"{% endif %}>
+                                {% if hasPartial('icons/bootstrap/' ~ item.code) %}
+                                    {% partial 'icons/bootstrap/' ~ item.code %}
+                                {% else %}
+                                    {% if hasPartial('icons/socials/' ~ item.code) %}
+                                        {% partial 'icons/socials/' ~ item.code %}
+                                    {% else %}
+                                        {{ item.title }}
+                                    {% endif %}
+                                {% endif %}
+                            </a>
+                        </li>
+                    {% endif %}
+                {% endfor %}
+            </ul>
+        {% else %}
+            {% if this.theme.show_demo %}
+                {% partial 'demo/social-nav-content' %}
+            {% endif %}
+        {% endif %}
+    </div>
+</section>
+
+{% if this.theme.color_switch_bottom or this.theme.languages_menu_bottom %}
+    <section class="section section-footer-settings d-flex justify-content-center mt-4 gap-4">
+        {% if this.theme.languages_menu_bottom %}
+            {% component 'localePicker' %}
+        {% endif %}
+        
+        {% if this.theme.languages_menu_bottom %}
+            {% partial 'colorpicker/default' %}
+        {% endif %}
+    </section>
+{% endif %}
+
+{% set year = 'now' | date("Y") %}
+<section class="section section-separator section-copyright d-flex flex-column flex-lg-row justify-content-between">
+    <div class="fs-7 text-center text-lg-start">
+        {{ this.theme.copyright_text_left | replace({'{year}': year, '{site_name}': this.theme.site_name }) | raw | md | nl2br }}
+    </div>
+
+    <div class="fs-7 text-center text-lg-end">
+        {{ this.theme.copyright_text_right | replace({'{year}': year, '{site_name}': this.theme.site_name }) | raw | md | nl2br }}
+    </div>
+</section>

@@ -1,0 +1,55 @@
+[blogPosts heroSliderPosts]
+pageNumber = 0
+categoryFilter = "{{ this.theme.hero_slider_category }}"
+postsPerPage = 10
+noPostsMessage = "No posts found"
+sortOrder = "published_at desc"
+categoryPage = "blog/category"
+postPage = "blog/post"
+==
+{% if heroSliderPosts.posts.total > 0 %}
+    <div class="keen-slider-container keen-slider-hero">
+        <div class="keen-slider" data-keen-slider='{ "preset": "hero" }'>
+            {% for post in heroSliderPosts.posts %}
+                <div class="keen-slider-slide">
+                    <a href="{{ post.url }}" title="{{ post.title }}" class="hero-slide-item">
+                        <div class="slide-image">
+                            <img src="{{ post.featured_images.0.getPath() }}" alt="{{ post.title }}" />
+                        </div>
+                        <div class="slide-content">
+                            {% if post.bhub_meta_data.simple_title and post.bhub_meta_data.simple_subtitle %}
+                                <div class="content-subtitle">{{ post.bhub_meta_data.simple_subtitle }}</div>
+                                <div class="content-title">{{ post.bhub_meta_data.simple_title }}</div>
+                            {% else %}
+                                <div class="content-title">{{ post.title }}</div>
+                            {% endif %}
+
+                            <div class="content-badges">
+                                {% for tag in post.bhub_tags %}
+                                    {% if tag.promote %}
+                                        <span class="badge{% if not tag.color %} bg-primary{% endif %}" {% if tag.color %}style="background-color: {{ tag.color }}"{% endif %}>
+                                            {% if not tag.title %}
+                                                {{ tag.slug | title }}
+                                            {% else %}
+                                                {{ tag.title }}
+                                            {% endif %}
+                                        </span>
+                                    {% endif %}
+                                {% endfor %}
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            {% endfor %}
+        </div>
+
+        <div class="keen-slider-controls">
+            <button type="button" class="btn btn-link" data-keen-slider-control="prev">
+                {% partial "icons/bootstrap/chevron-left" %}
+            </button>
+            <button type="button" class="btn btn-link" data-keen-slider-control="next">
+                {% partial "icons/bootstrap/chevron-right" %}
+            </button>
+        </div>
+    </div>
+{% endif %}

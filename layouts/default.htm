@@ -1,0 +1,71 @@
+description = "Default HTML Layout"
+
+[localePicker]
+forceUrl = 0
+
+[alternateHrefLangElements]
+==
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    <title>{{ this.page.meta_title|default(this.page.title) }}</title>
+
+    <meta name="title" content="{{ this.page.meta_title|default(this.page.title) }}" />
+    <meta name="description" content="{{ this.page.meta_description }}" />
+    {% component 'alternateHrefLangElements' %}
+
+    <link rel="stylesheet" href="{{ 'assets/css/newshub.min.css' | theme }}" />
+    {% styles %}
+
+    <script type="text/javascript">
+        document.documentElement.classList.remove('no-js');
+        window.newshub = {
+            defaultScheme: '{% if this.theme.dark_scheme %}dark{% else %}light{% endif %}'
+        };
+    </script>
+</head>
+<body class="theme-{{ this.theme.id }} {{ 'page-' ~ this.page.id }} layout-{{ this.layout.id }}{% if this.theme.dark_scheme %} dark{% else %} light{% endif %}">
+    <script>
+        let scheme = sessionStorage.getItem('newshub-color-scheme');
+        if (scheme) {
+            document.body.classList.remove(scheme === 'light'? 'dark': 'light');
+            document.body.classList.add(scheme);
+        }
+        if (document.currentScript) {
+            document.currentScript.remove();
+        }
+    </script>
+    
+    <header id="pageHeader" class="{% if this.theme.dark_header %}bg-dark dark{% else %}bg-light dark:bg-dark{% endif %}{% if this.theme.sticky_header %} sticky-top sticky-header{% endif %}">
+        <div class="container-fluid">
+            {% partial 'page/header' %}
+        </div>
+    </header>
+
+    <div id="pageContent">
+        {% page %}
+    </div>
+    
+    <footer id="pageFooter" class="{% if this.theme.dark_footer %}bg-dark dark{% else %}bg-light dark:bg-dark{% endif %} py-5">
+        <div class="container">
+            {% partial 'page/footer' %}
+        </div>
+    </footer>
+
+    {% if this.theme.to_top_button %}
+        <a href="#top" class="scroll-to-top">
+            {% partial 'icons/bootstrap/arrow-up-short' %}
+        </a>
+    {% endif %}
+
+    <script src="{{ 'assets/js/vendors/bootstrap.min.js?ver=5.2.0' | theme }}"></script>
+    <script src="{{ 'assets/js/vendors/keen-slider.min.js?ver=6.7.0' | theme }}"></script>
+    <script src="{{ 'assets/js/newshub.min.js?ver=1.0.0' | theme }}"></script>
+    {% scripts %}
+    {% framework %}
+</body>
+</html>

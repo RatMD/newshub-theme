@@ -1,0 +1,46 @@
+
+// ----------------------------------------
+//  Scroll to top Stylings
+// ----------------------------------------
+
+.scroll-to-top {
+    color: $white;
+    right: -100px;
+    bottom: 15px;
+    display: flex;
+    padding: $spacer * 0.6;
+    opacity: 0.0;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    border-radius: 3px;
+    background-color: $dark;
+    transition-property: right, opacity, background-color, color;
+    transition-duration: 300ms;
+    transition-timing-function: ease;
+
+    @include media-breakpoint-up(lg) {
+        right: -150px;
+        bottom: 30px;
+    }
+
+    svg {
+        width: 32px;
+        height: 32px;
+    }
+
+    &.active {
+        right: 15px;
+        opacity: 0.5;
+        
+        @include media-breakpoint-up(lg) {
+            right: 30px;
+        }
+
+        &:hover {
+            color: $white;
+            opacity: 1;
+            background-color: var(--#{$prefix}primary);
+        }
+    }
+}

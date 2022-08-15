@@ -1,0 +1,176 @@
+tabs:
+    fields:
+        __brand_section:
+            tab: theme.options.tabs.general
+            type: section
+            label: theme.options.sections.brand
+        site_name:
+            tab: theme.options.tabs.general
+            type: text
+            label: theme.options.site_name.label
+            comment: theme.options.site_name.comment
+            default: NewsHub
+        site_logo:
+            tab: theme.options.tabs.general
+            type: fileupload
+            mode: image
+            label: theme.options.site_logo.label
+            comment: theme.options.site_logo.comment
+            imageHeight: 60
+            maxFiles: 1
+            useCaption: false
+            thumbOptions: false
+            span: left
+        site_logo_inverted:
+            tab: theme.options.tabs.general
+            type: fileupload
+            mode: image
+            label: theme.options.site_logo_inverted.label
+            comment: theme.options.site_logo_inverted.comment
+            imageHeight: 60
+            maxFiles: 1
+            useCaption: false
+            thumbOptions: false
+            span: right
+
+        __development_section:
+            tab: theme.options.tabs.general
+            type: section
+            label: theme.options.sections.development
+        show_demo:
+            tab: theme.options.tabs.general
+            type: switch
+            label: theme.options.show_demo.label
+            comment: theme.options.show_demo.comment
+            default: true
+            
+        __color_scheme_section:
+            tab: theme.options.tabs.appearance
+            type: section
+            label: theme.options.sections.color_scheme
+        dark_scheme:
+            tab: theme.options.tabs.appearance
+            type: switch
+            label: theme.options.dark_scheme.label
+            comment: theme.options.dark_scheme.comment
+            default: false
+        dark_header:
+            tab: theme.options.tabs.appearance
+            type: switch
+            label: theme.options.dark_header.label
+            comment: theme.options.dark_header.comment
+            default: false
+        dark_footer:
+            tab: theme.options.tabs.appearance
+            type: switch
+            label: theme.options.dark_footer.label
+            comment: theme.options.dark_footer.comment
+            default: false
+        
+        __main_header_section:
+            tab: theme.options.tabs.header
+            type: section
+            label: theme.options.sections.main_header
+        sticky_header:
+            tab: theme.options.tabs.header
+            type: switch
+            label: theme.options.sticky_header.label
+            comment: theme.options.sticky_header.comment
+            default: false
+        color_switch_top:
+            tab: theme.options.tabs.header
+            type: switch
+            label: theme.options.color_switch.label
+            comment: theme.options.color_switch.comment
+            default: false
+        languages_menu_top:
+            tab: theme.options.tabs.header
+            type: switch
+            label: theme.options.languages_menu.label
+            comment: theme.options.languages_menu.comment
+            default: false
+        
+        __hero_area_section:
+            tab: theme.options.tabs.header
+            type: section
+            label: theme.options.sections.hero_area
+        hero_slider:
+            tab: theme.options.tabs.header
+            type: switch
+            label: theme.options.hero_slider.label
+            comment: theme.options.hero_slider.comment
+            default: true
+            span: left
+        hero_slider_category:
+            tab: theme.options.tabs.header
+            type: recordfinder
+            label: theme.options.hero_slider_category.label
+            comment: theme.options.hero_slider_category.comment
+            list: ~/plugins/rainlab/blog/models/category/columns.yaml
+            modelClass: RainLab\Blog\Models\Category
+            useRelation: false
+            span: right
+            
+        __main_footer_section:
+            tab: theme.options.tabs.footer
+            type: section
+            label: theme.options.sections.main_footer
+        color_switch_bottom:
+            tab: theme.options.tabs.footer
+            type: switch
+            label: theme.options.color_switch.label
+            comment: theme.options.color_switch.comment
+            default: false
+        languages_menu_bottom:
+            tab: theme.options.tabs.footer
+            type: switch
+            label: theme.options.languages_menu.label
+            comment: theme.options.languages_menu.comment
+            default: false
+        to_top_button:
+            tab: theme.options.tabs.footer
+            type: switch
+            label: theme.options.to_top_button.label
+            comment: theme.options.to_top_button.comment
+            default: true
+        copyright_text_left:
+            tab: theme.options.tabs.footer
+            type: textarea
+            label: theme.options.copyright_text_left.label
+            comment: theme.options.copyright_text_left.comment
+            default: >
+                Copyright {year} &copy; {site_name}
+
+                All rights reserved
+            span: left
+        copyright_text_right:
+            tab: theme.options.tabs.footer
+            type: textarea
+            label: theme.options.copyright_text_right.label
+            comment: theme.options.copyright_text_right.comment
+            default: >
+                NewsHub Template by [rat.md](https://rat.md)
+
+                Designed with [Bootstrap 5.2](https:getbootstrap.com)
+            span: right
+
+        __localization_section:
+            tab: theme.options.tabs.localization
+            type: section
+            label: theme.options.sections.localization
+        datetime_format:
+            tab: theme.options.tabs.localization
+            type: text
+            label: theme.options.datetime_format.label
+            default: D., j. F Y - H:i
+            comment: theme.options.datetime_format.comment
+            commentHtml: true
+            span: left
+        short_datetime_format:
+            tab: theme.options.tabs.localization
+            type: text
+            label: theme.options.short_datetime_format.label
+            default: M. j, Y - H:i
+            comment: theme.options.datetime_format.comment
+            commentHtml: true
+            span: right

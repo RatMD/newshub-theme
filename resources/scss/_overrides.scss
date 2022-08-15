@@ -1,0 +1,41 @@
+
+// ----------------------------------------
+//  Extend Bootstrap Spacers
+// ----------------------------------------
+
+$spacers: (
+    0: 0,
+    1: $spacer * .25,
+    2: $spacer * .5,
+    3: $spacer,
+    4: $spacer * 1.5,
+    5: $spacer * 3,
+    6: $spacer * 5,
+    7: $spacer * 7.5,
+    8: $spacer * 10,
+);
+
+
+// ----------------------------------------
+//  Extend Font Sizes
+// ----------------------------------------
+
+$font-sizes: (
+    1: $h1-font-size,
+    2: $h2-font-size,
+    3: $h3-font-size,
+    4: $h4-font-size,
+    5: $h5-font-size,
+    6: $h6-font-size,
+    7: 0.9rem,
+    8: 0.7rem,
+);
+
+
+// ----------------------------------------
+//  Custom Navbar Toggler Icons
+// ----------------------------------------
+
+$navbar-menu-toggler-icon: url("data:image/svg+xml,<svg width='100%' height='100%' viewBox='0 0 4 3' version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' xml:space='preserve' fill='#{$navbar-light-color}'><path d='M1.94,1.42l-1.28,-1.28l-0.66,0.66l1.94,1.94l0.658,-0.66l0,0.001l1.242,-1.242l-0.66,-0.659l-1.24,1.24Z'/></svg>");
+$navbar-dark-menu-toggler-icon: url("data:image/svg+xml,<svg width='100%' height='100%' viewBox='0 0 4 3' version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' xml:space='preserve' fill='#{$navbar-dark-color}'><path d='M1.94,1.42l-1.28,-1.28l-0.66,0.66l1.94,1.94l0.658,-0.66l0,0.001l1.242,-1.242l-0.66,-0.659l-1.24,1.24Z'/></svg>");
+

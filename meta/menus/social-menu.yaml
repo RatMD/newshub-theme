@@ -1,0 +1,59 @@
+items:
+    -
+        title: Pinterest
+        type: url
+        url: 'https://www.pinterest.com'
+        code: pinterest
+        viewBag:
+            isHidden: '0'
+            cssClass: ''
+            isExternal: '1'
+    -
+        title: FaceBook
+        nesting: null
+        type: url
+        url: 'https://www.facebook.com'
+        code: facebook
+        reference: null
+        cmsPage: null
+        replace: null
+        viewBag:
+            isHidden: '0'
+            cssClass: ''
+            isExternal: '1'
+    -
+        title: Twitter
+        nesting: null
+        type: url
+        url: 'https://www.twitter.com'
+        code: twitter
+        reference: null
+        cmsPage: null
+        replace: null
+        viewBag:
+            isHidden: '0'
+            cssClass: ''
+            isExternal: '1'
+    -
+        title: YouTube
+        nesting: null
+        type: url
+        url: 'https://www.youtube.com'
+        code: youtube
+        reference: null
+        cmsPage: null
+        replace: null
+        viewBag:
+            isHidden: '0'
+            cssClass: ''
+            isExternal: '1'
+    -
+        title: 'RSS Feed'
+        type: url
+        url: /feed
+        code: rss-fill
+        viewBag:
+            isHidden: '0'
+            cssClass: ''
+            isExternal: '1'
+name: 'Social Menu'

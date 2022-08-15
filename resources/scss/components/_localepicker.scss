@@ -1,0 +1,40 @@
+
+// ----------------------------------------
+//  LocalePicker Stylings
+// ----------------------------------------
+
+.localepicker {
+    button {
+        padding: $spacer * 0.39 $spacer * 0.5;
+        border: 0;
+        opacity: 0.5;
+        background-color: transparent;
+        border-radius: 5px;
+        transition: opacity 200ms ease, background-color 200ms ease;
+        background-color: rgba(0, 0, 0, 0.15);
+
+        &:hover,
+        &.show {
+            opacity: 1;
+            background-color: rgba(0, 0, 0, 0.15);
+        }
+        img {
+            border-radius: 3px;
+            vertical-align: top;
+        }
+    }
+
+    .dropdown-menu {
+        border: 0;
+        background-color: white;
+        box-shadow: $box-shadow;
+        border-radius: 0;
+
+        img {
+            width: auto;
+            height: 20px;
+            margin: 2px 6px 0 0;
+            vertical-align: top;
+        }
+    }
+}
