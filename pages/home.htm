@@ -16,7 +16,7 @@ postPage = "blog/post"
 {% if this.theme.hero_slider %}
     <section class="section{% if this.theme.dark_header %} bg-dark{% else %} bg-light dark:bg-dark{% endif %}">
         <div class="container-fluid py-0 py-md-4 py-lg-6 px-0 px-md-3 px-xl-8">
-            {% partial 'hero-slider' %}
+            {% partial 'page/hero-slider' %}
         </div>
     </section>
 {% endif %}
@@ -28,7 +28,7 @@ postPage = "blog/post"
         {% if latest.posts|length > 0 %}
             <div class="latest-posts">
                 {% for post in latest.posts %}
-                    {% partial 'posts-list' post=post hideSummary=true hideCategory=true prefix='latest' datetime='short' %}
+                    {% partial 'blog/posts-list' post=post hideSummary=true hideCategory=true prefix='latest' datetime='short' %}
                 {% endfor %}
             </div>
         {% else %}

@@ -1,32 +1,32 @@
-url = "/magazine/category/:slug/:page?"
+url = "/magazine/author/:slug/:page?"
 layout = "default"
-title = "Magazine Category"
+title = "Magazine Author Archive"
 
 [viewBag]
-localeUrl[de] = "/magazin/kategorie/:slug/:page?"
-localeTitle[de] = "Magazin Kategorie"
+localeUrl[de] = "/magazin/author/:slug/:page?"
+localeTitle[de] = "Magazin Autor Archiv"
 
-[blogPosts]
+[bloghubAuthorArchive]
 pageNumber = "{{ :page }}"
 postsPerPage = 10
-categoryFilter = "{{ :slug }}"
+authorFilter = "{{ :slug }}"
 sortOrder = "published_at desc"
 categoryPage = "blog/category"
 postPage = "blog/post"
 ==
 function onEnd()
 {
-    if ($this->category) {
-        $this->page->title = $this->category->name;
+    if ($this->author) {
+        $this->page->title = $this->author->title;
     }
 }
 ==
 <section class="section section-posts py-6">
     <div class="container">
-        {% if not category %}
-            Unknown Category
+        {% if not author %}
+            Unknown Tag
         {% else %}
-            <h1 class="mb-5">{{ category.name }}</h1>
+            <h1 class="mb-5">{{ author.first_name ~ ' ' ~ author.last_name }}</h1>
 
             <div class="post-list">
                 {% if posts | length > 0 %}

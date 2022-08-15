@@ -1,32 +1,32 @@
-url = "/magazine/category/:slug/:page?"
+url = "/magazine/tag/:slug/:page?"
 layout = "default"
-title = "Magazine Category"
+title = "Magazine Tag Archive"
 
 [viewBag]
-localeUrl[de] = "/magazin/kategorie/:slug/:page?"
-localeTitle[de] = "Magazin Kategorie"
+localeUrl[de] = "/magazin/tag/:slug/:page?"
+localeTitle[de] = "Magazin Tag Archiv"
 
-[blogPosts]
+[bloghubTagArchive]
 pageNumber = "{{ :page }}"
 postsPerPage = 10
-categoryFilter = "{{ :slug }}"
+tagFilter = "{{ :slug }}"
 sortOrder = "published_at desc"
 categoryPage = "blog/category"
 postPage = "blog/post"
 ==
 function onEnd()
 {
-    if ($this->category) {
-        $this->page->title = $this->category->name;
+    if ($this->tag) {
+        $this->page->title = $this->tag->title;
     }
 }
 ==
 <section class="section section-posts py-6">
     <div class="container">
-        {% if not category %}
-            Unknown Category
+        {% if not tag %}
+            Unknown Tag
         {% else %}
-            <h1 class="mb-5">{{ category.name }}</h1>
+            <h1 class="mb-5">{{ tag.title }}</h1>
 
             <div class="post-list">
                 {% if posts | length > 0 %}

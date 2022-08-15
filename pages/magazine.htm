@@ -22,7 +22,7 @@ postPage = "blog/post"
         <div class="post-list">
             {% if posts | length > 0 %}
                 {% for post in posts %}
-                    {% partial 'posts-list' post=post %}
+                    {% partial 'blog/posts-list' post=post %}
                 {% endfor %}
             {% else %}
                 No Posts found

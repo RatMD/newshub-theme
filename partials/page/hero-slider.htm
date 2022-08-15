@@ -1,6 +1,6 @@
 [blogPosts heroSliderPosts]
 pageNumber = 0
-categoryFilter = "{{ this.theme.hero_slider_category }}"
+categoryFilter = "featured"
 postsPerPage = 10
 noPostsMessage = "No posts found"
 sortOrder = "published_at desc"
@@ -17,15 +17,15 @@ postPage = "blog/post"
                             <img src="{{ post.featured_images.0.getPath() }}" alt="{{ post.title }}" />
                         </div>
                         <div class="slide-content">
-                            {% if post.bhub_meta_data.simple_title and post.bhub_meta_data.simple_subtitle %}
-                                <div class="content-subtitle">{{ post.bhub_meta_data.simple_subtitle }}</div>
-                                <div class="content-title">{{ post.bhub_meta_data.simple_title }}</div>
+                            {% if post.bloghub_meta_data.simple_title and post.bloghub_meta_data.simple_subtitle %}
+                                <div class="content-subtitle">{{ post.bloghub_meta_data.simple_subtitle }}</div>
+                                <div class="content-title">{{ post.bloghub_meta_data.simple_title }}</div>
                             {% else %}
                                 <div class="content-title">{{ post.title }}</div>
                             {% endif %}
 
                             <div class="content-badges">
-                                {% for tag in post.bhub_tags %}
+                                {% for tag in post.bloghub_tags %}
                                     {% if tag.promote %}
                                         <span class="badge{% if not tag.color %} bg-primary{% endif %}" {% if tag.color %}style="background-color: {{ tag.color }}"{% endif %}>
                                             {% if not tag.title %}

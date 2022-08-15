@@ -21,7 +21,11 @@ function onEnd()
     {% if not post %}
         {% partial 'post-not-found' %}
     {% else %}
-        {% set layout = post.bhub_meta_data.layout | default('default') %}
-        {% partial ('post-layout-' ~ layout) post=post%}
+        {% set layout = post.bloghub_meta_data.layout | default('default') %}
+        {% if layout != '' and layout != 'default' and hasPartial('blog/post-single-' ~ layout) %}
+            {% partial ('blog/post-single-' ~ layout) post=post%}
+        {% else %}
+            {% partial ('blog/post-single') post=post%}
+        {% endif %}
     {% endif %}
 </div>

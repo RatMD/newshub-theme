@@ -31,23 +31,23 @@
 
     <footer class="bg-white pb-6">
         <div class="container">
-            {% set similarPosts = post.bhub_similar_posts() %}
+            {% set similarPosts = post.bloghub_similar_posts() %}
 
             {% if similarPosts|length > 0 %}
                 <h2 class="mb-5">{{ 'magazine.similar.title' | trans }}</h2>
                 <div class="latest-posts">
                     {% for post in similarPosts %}
-                        {% partial 'posts-list' post=post hideSummary=true hideCategory=true prefix='similar' datetime='short' %}
+                        {% partial 'blog/posts-list' post=post hideSummary=true hideCategory=true prefix='similar' datetime='short' %}
                     {% endfor %}
                 </div>
             {% else %}
-                {% set randomPosts = post.bhub_random_posts() %}
+                {% set randomPosts = post.bloghub_random_posts() %}
 
                 {% if randomPosts|length > 0 %}
                     <h2 class="mb-5">{{ 'magazine.random.title' | trans }}</h2>
                     <div class="latest-posts">
                         {% for post in randomPosts %}
-                            {% partial 'posts-list' post=post hideSummary=true hideCategory=true prefix='random' datetime='short' %}
+                            {% partial 'blog/posts-list' post=post hideSummary=true hideCategory=true prefix='random' datetime='short' %}
                         {% endfor %}
                     </div>
                 {% endif %}
