@@ -6,7 +6,7 @@
 .section {
     --#{$prefix}footer-text-color: #{$gray-600};
     --#{$prefix}footer-link-color: #{$gray-800};
-    --#{$prefix}footer-link-hover-color: #{$primary};
+    --#{$prefix}footer-link-hover-color: var(--#{$prefix}primary);
     --#{$prefix}section-separator-color: #{$gray-400};
 
     // Section Separator
@@ -109,6 +109,6 @@
 .dark .section {
     --#{$prefix}footer-text-color: #{$gray-600};
     --#{$prefix}footer-link-color: #{$gray-500};
-    --#{$prefix}footer-link-hover-color: #{$primary};
+    --#{$prefix}footer-link-hover-color: var(--#{$prefix}primary);
     --#{$prefix}section-separator-color: #{$gray-700};
 }

@@ -1,0 +1,36 @@
+url = "/error"
+layout = "default"
+title = "An error occured"
+
+[viewBag]
+localeUrl[de] = "/error"
+localeTitle[de] = "Ein Fehler ist aufgetreten"
+==
+
+<div id="errorContent">
+    <div class="post-single page-single">
+        <section class="section section-page">
+            <header class="py-6 bg-light dark:bg-dark">
+                <div class="container">
+                    <div class="post-header">
+                        <h1 class="post-title text-center">{{ 'error.error.error' | trans }}</h1>
+                    </div>
+                </div>
+            </header>
+
+            <article class="bg-white py-8">
+                <div class="container">
+                    <div class="post-content text-center">
+                        <h2 class="fs-1">{{ 'error.error.something_happened' | trans }}</h2>
+                        <p class="fs-5">
+                            {{ 'error.error.note' | trans }}
+                        </p>
+                        <a href="{{ 'home' | page }}" title="{{ 'error.404.go_home' | trans }}" class="btn btn-primary btn-lg">
+                            {{ 'error.404.go_home' | trans }}
+                        </a>
+                    </div>
+                </div>
+            </article>
+        </section>
+    </div>
+</div>

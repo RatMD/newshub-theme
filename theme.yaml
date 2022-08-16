@@ -35,3 +35,4 @@ ratmd.bloghub:
             options:
                 default: theme.custom_meta.post_layout.default
                 fullwidth: theme.custom_meta.post_layout.fullwidth
+                heroimage: theme.custom_meta.post_layout.heroimage

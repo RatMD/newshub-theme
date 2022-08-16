@@ -14,17 +14,21 @@ function onEnd()
     if (isset($this->post)) {
         $this->page->title = $this->post->title;
     }
+    if ($this->post->bloghub_meta->where('name', 'layout')->first()['value'] === 'heroimage') {
+        $this['bloghub_additionalBodyClasses'] = 'overlay-navbar';
+    }
 }
 ==
-<div class="post-single">
+{% set layout = post.bloghub_meta_data.layout | default('default') %}
+
+<div class="post-single post-layout-{{ layout }}">
     {% if not post %}
         {% partial 'post-not-found' %}
     {% else %}
-        {% set layout = post.bloghub_meta_data.layout | default('default') %}
         {% if layout != '' and layout != 'default' and hasPartial('blog/post-single-' ~ layout) %}
-            {% partial ('blog/post-single-' ~ layout) post=post%}
+            {% partial ('blog/post-single-' ~ layout) post=post %}
         {% else %}
-            {% partial ('blog/post-single') post=post%}
+            {% partial ('blog/post-single') post=post %}
         {% endif %}
     {% endif %}
 </div>

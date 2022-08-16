@@ -73,33 +73,50 @@
 
 
 // ----------------------------------------
+//  HeroImage Post Stylings
+// ----------------------------------------
+
+.post-single.post-layout-heroimage {
+    .section-posts > header {
+        height: 900px;
+        margin-top: -72px;
+        max-height: none;
+        display: flex;
+        align-items: flex-end;
+        justify-content: flex-end;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: top center;
+
+        .container {
+            display: flex;
+            justify-content: center;
+        }
+        .post-header {
+            width: auto;
+            flex: 0 0 auto;
+            padding: $spacer * 2;
+            text-align: center;
+            flex-direction: column;
+            background-color: rgba(0, 0, 0, 0.75);
+
+            .post-title,
+            .post-published {
+                width: auto;
+                color: $white;
+            }
+            .post-published {
+                opacity: 0.75;
+            }
+        }
+    }
+}
+
+
+// ----------------------------------------
 //  Post Button Stylings
 // ----------------------------------------
 
-.post-buttons {
-    display: block;
-    margin-bottom: $spacer;
-    padding: $spacer * 2;
-    background-color: $gray-100;
-
-    .post-buttons-title {
-        color: $gray-700;
-        font-size: 1.4rem;
-        text-align: left;
-        line-height: 1.4rem;
-        font-family: $font-family-special;
-        margin-bottom: $spacer;
-        
-        span {
-            color: $gray-600;
-            display: block;
-            font-size: 0.9rem;
-        }
-    }
-    .post-button {
-        margin-bottom: $spacer * 0.5;
-    }
-}
 .post-button {
     display: flex;
     text-decoration: none;

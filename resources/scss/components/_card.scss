@@ -1,0 +1,67 @@
+
+// ----------------------------------------
+//  Card Stylings
+// ----------------------------------------
+
+.card.card-simple {
+    border: 0;
+    padding: $spacer * 2;
+    margin-bottom: $spacer * 1.5;
+    background-color: $gray-100;
+
+    &:last-child {
+        margin-bottom: 0;
+    }
+
+    .card-header,
+    .card-body {
+        border: 0;
+        padding: 0;
+        background-color: transparent;
+    }
+
+    .card-header {
+        margin-bottom: $spacer;
+    }
+
+    .card-title,
+    .card-subtitle {
+        display: block;
+        text-align: left;
+        line-height: 1.4rem;
+        font-family: $font-family-special;
+    }
+    .card-title {
+        color: $gray-700;
+        font-size: 1.4rem;
+    }
+    .card-subtitle {
+        color: $gray-600;
+        font-size: 0.9rem;
+    }
+
+    .card-body .post-button:not(:last-child) {
+        margin-bottom: $spacer;
+    }
+
+    .card-body .list-group-flush {
+        .list-group-item { 
+            padding: 0;
+            background-color: transparent;
+        }
+
+        a {
+            color: var(--#{$prefix}dark);
+            padding: var(--bs-list-group-item-padding-y) var(--bs-list-group-item-padding-x);
+            display: block;
+            text-decoration: none;
+            transition: color 0.20s ease, background-color 0.20s ease;
+            background-color: $gray-300;
+
+            &:hover {
+                color: var(--#{$prefix}light);
+                background-color: var(--#{$prefix}dark);
+            }
+        }
+    }
+}

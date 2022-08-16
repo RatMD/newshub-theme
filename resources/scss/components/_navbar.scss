@@ -10,6 +10,10 @@
     --#{$prefix}navbar-menu-toggler-icon: #{escape-svg($navbar-dark-menu-toggler-icon)};
 }
 
+.overlay-navbar > #pageHeader {
+    --bs-bg-opacity: 0.5;
+}
+
 
 // ----------------------------------------
 //  Navbar Social Colors

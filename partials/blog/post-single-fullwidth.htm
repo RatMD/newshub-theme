@@ -1,0 +1,126 @@
+<section class="section section-posts">
+    <header class="py-6 bg-light dark:bg-dark">
+        <div class="container">
+            <div class="post-header{% if post.featured_images %} post-has-thumbnail{% endif %}">
+                <h1 class="post-title">{{ post.title }}</h1>
+
+                <time class="post-published" datetime="{{ post.published_at }}">
+                    {{ post.published_at | date(this.theme.datetime_format) }}
+                </time>
+            </div>
+
+            {% if post.featured_images %}
+                <div class="post-thumbnail">
+                    <img src="{{ post.featured_images.0.getPath() }}" alt="{{ post.title }}" />
+                </div>
+            {% endif %}
+        </div>
+    </header>
+
+    <article class="bg-white py-6">
+        <div class="container">
+            <div class="post-content">
+                {{ post.content_html | raw }}
+
+                {% if post.featured_images|length > 1 %}
+                    {% partial "blog/single-gallery" images=post.featured_images|slice(1) %}
+                {% endif %}
+            </div>
+        </div>
+
+        <div class="container mt-4">
+            <div class="row w-100">
+                {% if post.categories|length > 0 %}
+                    <div class="col-12 col-md-6 col-lg-4">
+                        <div class="card card-simple">
+                            <header class="card-header">
+                                <span class="card-title">{{ 'magazine.categories' | trans }}</span>
+                            </header>
+
+                            <article class="card-body">
+                                <ul class="list-group list-group-flush">
+                                    {% for category in post.categories %}
+                                        <li class="list-group-item">
+                                            <a href="{{ category.url }}" title="{{ 'magazine.category_archive' | trans }}: {{ category.name }}">
+                                                {{ category.name }}
+                                            </a>
+                                        </li>
+                                    {% endfor %}
+                                </ul>
+                            </article>
+                        </div>
+                    </div>
+                {% endif %}
+
+                {% if post.bloghub_tags|length > 0 %}
+                    <div class="col-12 col-md-6 col-lg-4">
+                        <div class="card card-simple">
+                            <header class="card-header">
+                                <span class="card-title">{{ 'magazine.tags' | trans }}</span>
+                            </header>
+
+                            <article class="card-body">
+                                <ul class="list-group list-group-flush">
+                                    {% for tag in post.bloghub_tags %}
+                                        <li class="list-group-item">
+                                            <a href="{{ tag.url }}" title="{{ 'magazine.tag_archive' | trans }}: {{ tag.title }}">
+                                                {{ tag.title | default(tag.slug | title) }}
+                                            </a>
+                                        </li>
+                                    {% endfor %}
+                                </ul>
+                            </article>
+                        </div>
+                    </div>
+                {% endif %}
+
+                {% set prevPost = post.bloghub_prev_post_in_category %}
+                {% set nextPost = post.bloghub_next_post_in_category %}
+                {% if prevPost or nextPost %}
+                    <div class="col-12 col-md-6 col-lg-4">
+                        <div class="card card-simple">
+                            <header class="card-header">
+                                <span class="card-title">{{ 'magazine.single.readmore' | trans }}</span>
+                                <span class="card-subtitle">{{ 'magazine.single.same_category' | trans }}</span>
+                            </header>
+
+                            <article class="card-body">
+                                {% if prevPost %}
+                                    {% partial 'blog/single-button' post=prevPost %}
+                                {% endif %}
+
+                                {% if nextPost %}
+                                    {% partial 'blog/single-button' post=nextPost %}
+                                {% endif %}
+                            </article>   
+                        </div>
+                    </div>
+                {% endif %}
+            </div>
+        </div>
+    </article>
+
+    <footer class="bg-white pb-6">
+        <div class="container">
+            {% set similarPosts = post.bloghub_similar_posts() %}
+            {% if similarPosts|length > 0 %}
+                <h2 class="mb-5">{{ 'magazine.similar.title' | trans }}</h2>
+                <div class="latest-posts">
+                    {% for post in similarPosts %}
+                        {% partial 'blog/posts-list' post=post hideSummary=true hideCategory=true prefix='similar' datetime='short' %}
+                    {% endfor %}
+                </div>
+            {% else %}
+                {% set randomPosts = post.bloghub_random_posts() %}
+                {% if randomPosts|length > 0 %}
+                    <h2 class="mb-5">{{ 'magazine.random.title' | trans }}</h2>
+                    <div class="latest-posts">
+                        {% for post in randomPosts %}
+                            {% partial 'blog/posts-list' post=post hideSummary=true hideCategory=true prefix='random' datetime='short' %}
+                        {% endfor %}
+                    </div>
+                {% endif %}
+            {% endif %}
+        </div>
+    </footer>
+</section>

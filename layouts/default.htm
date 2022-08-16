@@ -6,11 +6,13 @@ forceUrl = 0
 [alternateHrefLangElements]
 
 [blogPosts]
-authorPage = "blog/author"
 categoryPage = "blog/category"
-datePage = "blog/date"
 postPage = "blog/post"
-tagPage = "blog/tag"
+
+[viewBag]
+bloghubAuthorPage = "blog/author"
+bloghubDatePage = "blog/date"
+bloghubTagPage = "blog/tag"
 ==
 <!DOCTYPE html>
 <html lang="en" class="no-js">
@@ -47,7 +49,7 @@ tagPage = "blog/tag"
         };
     </script>
 </head>
-<body class="theme-{{ this.theme.id }} {{ 'page-' ~ this.page.id }} layout-{{ this.layout.id }}{% if this.theme.dark_scheme %} dark{% else %} light{% endif %}">
+<body class="theme-{{ this.theme.id }} {{ 'page-' ~ this.page.id }} layout-{{ this.layout.id }}{% if this.theme.dark_scheme %} dark{% else %} light{% endif %}{{ bloghub_additionalBodyClasses ? ' ' ~ bloghub_additionalBodyClasses: '' }}">
     <script>
         let scheme = sessionStorage.getItem('newshub-color-scheme');
         if (scheme) {
