@@ -1,0 +1,31 @@
+
+// ----------------------------------------
+//  Form Control Stylings
+// ----------------------------------------
+
+.form-control {
+    border-color: $gray-200;
+    background-color: $gray-200;
+
+    &:hover,
+    &:focus {
+        box-shadow: none;
+    }
+    &:focus {
+        border-color: var(--#{$prefix}primary);
+        background-color: $gray-200;
+    }
+}
+
+
+// ----------------------------------------
+//  Form Group Stylings
+// ----------------------------------------
+
+.form-group {
+    margin-bottom: $spacer;y
+
+    &:last-child {
+        margin-bottom: 0;
+    }
+}
