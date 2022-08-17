@@ -11,7 +11,7 @@
         </div>
     </header>
 
-    <article class="bg-white py-6">
+    <article class="py-6">
         <div class="container">
             <div class="post-content">
                 {{ post.content_html | raw }}
@@ -85,7 +85,7 @@
         </div>
     </article>
 
-    <footer class="bg-white pb-6">
+    <footer class="pb-6">
         <div class="container">
             {% set similarPosts = post.bloghub_similar_posts() %}
             {% if similarPosts|length > 0 %}

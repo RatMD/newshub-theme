@@ -10,8 +10,8 @@ export default  {
         entryFileNames: 'js/newshub.min.js',
         format: 'iife',
         globals: {
-            [path.resolve(__dirname, 'resources/js/vendors/bootstrap.js')]: 'Bootstrap',
-            [path.resolve(__dirname, 'resources/js/vendors/keen-slider.js')]: 'KeenSlider',
+            [path.resolve(__dirname, 'resources/js/vendors/bootstrap')]: 'Bootstrap',
+            [path.resolve(__dirname, 'resources/js/vendors/keen-slider')]: 'KeenSlider',
         },
         sourcemap: true,
         plugins: [

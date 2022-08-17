@@ -1,0 +1,71 @@
+[blogPosts popularPosts]
+pageNumber = 0
+sortOrder = bloghub_views desc
+postsPerPage = 5
+
+[blogCategories categories]
+displayEmpty = true
+
+[bloghubTags tags]
+==
+
+<div class="card card-simple">
+    <div class="card-header">
+        <h2 class="card-title">{{ 'magazine.popular.title' | trans }}</h2>
+    </div>
+    <div class="card-body">
+        {% partial 'blog/sections/posts-condensed'
+            posts=popularPosts.posts
+            prefix='popular'
+            datetime='short'
+        %}
+    </div>
+</div>
+
+{% if categories.categories|length > 0 %}
+    <div class="card card-simple">
+        <div class="card-header">
+            <h2 class="card-title">{{ 'magazine.categories.title' | trans }}</h2>
+        </div>
+        <div class="card-body">
+            <ul class="list-group list-group-flush">
+                {% for category in categories.categories %}
+                    {% set count = category.posts_count[0].count | default(0) %}
+                    <li class="list-group-item">
+                        <a href="{{ category.url }}" title="{{ 'magazine.category_archive' | trans }}: {{ category.name }}">
+                            {{ category.name | default(tag.slug | title) }}
+
+                            <span class="position-absolute top-50 start-100 translate-middle badge rounded-pill{{ count == 0? ' bg-secondary': ' bg-danger' }}">
+                                {{ count }}
+                            </span>
+                        </a>
+                    </li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+{% endif %}
+
+{% if tags.tags|length > 0 %}
+    <div class="card card-simple">
+        <div class="card-header">
+            <h2 class="card-title">{{ 'magazine.tags.title' | trans }}</h2>
+        </div>
+        <div class="card-body">
+            <ul class="list-group list-group-flush">
+                {% for tag in tags.tags %}
+                    {% set count = tag.posts_count[0].count | default(0) %}
+                    <li class="list-group-item">
+                        <a href="{{ tag.url }}" title="{{ 'magazine.tag_archive' | trans }}: {{ tag.title }}">
+                            {{ tag.title | default(tag.slug | title) }}
+
+                            <span class="position-absolute top-50 start-100 translate-middle badge rounded-pill{{ count == 0? ' bg-secondary': ' bg-danger' }}">
+                                {{ count }}
+                            </span>
+                        </a>
+                    </li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+{% endif %}

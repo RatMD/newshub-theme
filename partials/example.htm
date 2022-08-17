@@ -1,0 +1,9 @@
+
+<div class="card rounded mb-6">
+    <div class="card-body p-5">
+        {{ preview | default(content | raw) }}
+    </div>
+    <div class="card-body bg-light border-top rounded-bottom">
+        <pre class="mb-0 bg-transparent"><code class="language-html bg-transparent">{{ content | escape }}</code></pre>
+    </div>
+</div>

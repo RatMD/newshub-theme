@@ -217,6 +217,38 @@ tabs:
             modelClass: RainLab\Blog\Models\Category
             useRelation: false
             span: right
+
+        __posts_section:
+            tab: theme.options.tabs.content
+            type: section
+            label: theme.options.sections.posts
+        view_counter:
+            tab: theme.options.tabs.content
+            type: switch
+            label: theme.options.view_counter.label
+            comment: theme.options.view_counter.comment
+            default: true
+            span: left
+        __localization_section:
+            tab: theme.options.tabs.content
+            type: section
+            label: theme.options.sections.localization
+        datetime_format:
+            tab: theme.options.tabs.content
+            type: text
+            label: theme.options.datetime_format.label
+            default: D., j. F Y - H:i
+            comment: theme.options.datetime_format.comment
+            commentHtml: true
+            span: left
+        short_datetime_format:
+            tab: theme.options.tabs.content
+            type: text
+            label: theme.options.short_datetime_format.label
+            default: M. j, Y - H:i
+            comment: theme.options.datetime_format.comment
+            commentHtml: true
+            span: right
             
         __main_footer_section:
             tab: theme.options.tabs.footer
@@ -259,25 +291,4 @@ tabs:
                 NewsHub Template by [rat.md](https://rat.md)
 
                 Designed with [Bootstrap 5.2](https:getbootstrap.com)
-            span: right
-
-        __localization_section:
-            tab: theme.options.tabs.localization
-            type: section
-            label: theme.options.sections.localization
-        datetime_format:
-            tab: theme.options.tabs.localization
-            type: text
-            label: theme.options.datetime_format.label
-            default: D., j. F Y - H:i
-            comment: theme.options.datetime_format.comment
-            commentHtml: true
-            span: left
-        short_datetime_format:
-            tab: theme.options.tabs.localization
-            type: text
-            label: theme.options.short_datetime_format.label
-            default: M. j, Y - H:i
-            comment: theme.options.datetime_format.comment
-            commentHtml: true
             span: right

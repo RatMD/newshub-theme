@@ -1,0 +1,46 @@
+{% if datetime == 'short' %}
+    {% set dateTimeFormat = this.theme.short_datetime_format %}
+{% elseif datetime == 'time' %}
+    {% set dateTimeFormat = 'H:i' %}
+{% else %}
+    {% set dateTimeFormat = this.theme.datetime_format %}
+{% endif %}
+
+<div class="posts-list posts-columns">
+    {% for post in posts %}
+        <div id="{{ prefix | default('post') }}-{{ post.id }}" class="post">
+            {% if post.featured_images %}
+                <a href="{{ post.url }}" title="{{ post.title }}" class="post-thumbnail{{ this.theme.view_counter? ' with-view-counter': '' }}">
+                    <img src="{{ post.featured_images.0.getPath() }}" alt="{{ post.title }}" />
+                    
+                    {% if this.theme.view_counter %}
+                        <div class="post-views">
+                            {% partial 'icons/bootstrap/eye-fill' %}
+                            <span class="counter">{{ post.bloghub_views }}</span>
+                        </div>
+                    {% endif %}
+                </a>
+            {% endif %}
+
+            <div class="post-content">
+                <h2 class="post-title">
+                    <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
+                </h2>
+                
+                <div class="post-meta">
+                    <time class="post-published" datetime="{{ post.published_at }}">
+                        {{ post.published_at | date(dateTimeFormat) }}
+                    </time>
+                    <address class="post-author">
+                        <span>{{ 'magazine.list.by_author' | trans }}</span>
+                        <a href="{{ ('magazine/author/' ~ post.user.login) | app }}" rel="author">{{ post.user.first_name }} {{ post.user.last_name }}</a>
+                    </address>
+                </div>
+
+                <div class="post-summary">
+                    {{ post.summary | raw }}
+                </div>
+            </div>
+        </div>
+    {% endfor %}
+</div>

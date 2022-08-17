@@ -7,3 +7,15 @@
     --#{$prefix}font-serif: #{inspect($font-family-serif)};
     --#{$prefix}font-special: #{inspect($font-family-special)};
 }
+
+
+// ----------------------------------------
+//  Additional Global Custom Properties
+// ----------------------------------------
+
+body.dark {
+    --#{$prefix}body-bg: #{$body-dark-bg};
+    --#{$prefix}body-bg-rgb: #{to-rgb($body-dark-bg)};
+    --#{$prefix}body-color: #{$body-dark-color};
+    --#{$prefix}body-color-rgb: #{to-rgb($body-dark-color)};
+}

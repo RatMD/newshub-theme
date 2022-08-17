@@ -8,7 +8,7 @@ localeTitle[de] = "Startseite"
 
 [blogPosts latest]
 pageNumber = "{{ :page }}"
-postsPerPage = 3
+postsPerPage = 13
 sortOrder = "published_at desc"
 ==
 {% if this.theme.hero_slider %}
@@ -19,17 +19,33 @@ sortOrder = "published_at desc"
     </section>
 {% endif %}
 
-<section class="section section-posts py-6">
+<section class="section pt-6 pb-3">
     <div class="container">
         <h1 class="mb-5">{{ 'magazine.latest.title' | trans }}</h1>
-
+        
         {% if latest.posts|length > 0 %}
-            <div class="latest-posts">
-                {% for post in latest.posts %}
-                    {% partial 'blog/posts-list' post=post hideSummary=true hideCategory=true prefix='latest' datetime='short' %}
-                {% endfor %}
-            </div>
-        {% else %}
+            {% partial 'blog/sections/posts-columns' 
+                posts=latest.posts|slice(0, 3)
+                prefix='latest'
+                datetime='short'
+            %}
         {% endif %}
+    </div>
+</section>
+
+<section class="section section-with-sidebar pt-3 pb-6">
+    <div class="container">
+        <div class="main-area">
+            {% if latest.posts|length > 3 %}
+                {% partial 'blog/sections/posts-list' 
+                    posts=latest.posts|slice(3)
+                    prefix='latest'
+                %}
+            {% endif %}
+        </div>
+
+        <div class="sidebar-area">
+            {% partial 'page/home-sidebar' %}
+        </div>
     </div>
 </section>

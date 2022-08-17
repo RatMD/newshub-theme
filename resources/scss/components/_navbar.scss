@@ -41,6 +41,7 @@
     // Navbar Brand
     .navbar-brand {
         order: 2;
+        display: flex;
         font-family: $font-family-special;
         font-weight: 800;
         text-transform: uppercase;
@@ -56,6 +57,27 @@
         @include media-breakpoint-up(lg) {
             flex: 0 0 25%;
             margin-right: 0;
+        }
+
+        a {
+            order: 1;
+            color: var(--#{$prefix}navbar-brand-color);
+            padding-left: $spacer;
+            padding-right: $spacer;
+            display: block;
+            white-space: nowrap;
+            text-decoration: none;
+        }
+        .theme-settings {
+            order: 2;
+            display: flex;
+            margin-left: $spacer;
+            align-items: center;
+            justify-content: center;
+
+            & > * {
+                margin-left: $spacer * 0.5;
+            }
         }
     }
 
@@ -115,6 +137,10 @@
         order: 4;
         
         @include media-breakpoint-up(lg) {
+            order: 3;
+            flex: 0 0 75%;
+        }
+        @include media-breakpoint-up(xl) {
             order: 3;
             flex: 0 0 50%;
         }
@@ -189,6 +215,7 @@
                         color: $gray-900;
                         padding: $spacer * 0.5 $spacer * 1.15;
                         font-weight: normal;
+                        white-space: nowrap;
                     }
 
                     &:hover {
@@ -218,7 +245,7 @@
         overflow: hidden;
         transition: height 200ms ease;
         
-        @include media-breakpoint-up(lg) {
+        @include media-breakpoint-up(xl) {
             order: 4;
             flex: 0 0 25%;
         }

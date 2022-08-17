@@ -18,16 +18,19 @@ ratmd.bloghub:
     post:
         simple_subtitle:
             type: text
+            tab: theme.custom_meta.tab
             label: theme.custom_meta.simple_subtitle.title
             comment: theme.custom_meta.simple_subtitle.comment
             span: left
         simple_title:
             type: text
+            tab: theme.custom_meta.tab
             label: theme.custom_meta.simple_title.label
             comment: theme.custom_meta.simple_title.comment
             span: right
         layout:
             type: dropdown
+            tab: theme.custom_meta.tab
             label: theme.custom_meta.post_layout.label
             comment: theme.custom_meta.post_layout.comment
             default: default

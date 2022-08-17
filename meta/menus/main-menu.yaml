@@ -13,7 +13,7 @@ items:
             cssClass: ''
             isExternal: '0'
     -
-        title: Articles
+        title: Magazine
         nesting: null
         type: cms-page
         url: null
@@ -31,13 +31,13 @@ items:
             isExternal: '0'
         items:
             -
-                title: Subpage
+                title: 'Example Hero Image'
                 nesting: null
-                type: url
-                url: /subpage
+                type: blog-post
+                url: null
                 code: ''
-                reference: null
-                cmsPage: null
+                reference: '9'
+                cmsPage: blog/post
                 replace: null
                 viewBag:
                     locale:
@@ -48,14 +48,75 @@ items:
                     cssClass: ''
                     isExternal: '0'
             -
-                title: Subpage
+                title: 'Example Gallery'
                 nesting: null
-                type: url
-                url: /subpage
+                type: blog-post
+                url: null
                 code: ''
-                reference: null
-                cmsPage: null
+                reference: '7'
+                cmsPage: blog/post
                 replace: null
+                viewBag:
+                    locale:
+                        de:
+                            title: ''
+                            url: ''
+                    isHidden: '0'
+                    cssClass: ''
+                    isExternal: '0'
+            -
+                title: 'Example Fullwidth'
+                nesting: null
+                type: blog-post
+                url: null
+                code: ''
+                reference: '8'
+                cmsPage: blog/post
+                replace: null
+                viewBag:
+                    locale:
+                        de:
+                            title: ''
+                            url: ''
+                    isHidden: '0'
+                    cssClass: ''
+                    isExternal: '0'
+    -
+        title: Features
+        nesting: null
+        type: cms-page
+        url: null
+        code: ''
+        reference: features
+        cmsPage: null
+        replace: null
+        viewBag:
+            locale:
+                de:
+                    title: ''
+                    url: ''
+            isHidden: '0'
+            cssClass: ''
+            isExternal: '0'
+        items:
+            -
+                title: 'HTML Unit'
+                type: cms-page
+                code: ''
+                reference: bootstrap/unit
+                viewBag:
+                    locale:
+                        de:
+                            title: ''
+                            url: ''
+                    isHidden: '0'
+                    cssClass: ''
+                    isExternal: '0'
+            -
+                title: Components
+                type: cms-page
+                code: ''
+                reference: bootstrap/components
                 viewBag:
                     locale:
                         de:
@@ -81,8 +142,10 @@ items:
         title: About
         nesting: 0
         type: static-page
+        url: null
         code: ''
         reference: about
+        cmsPage: null
         replace: 0
         viewBag:
             locale:

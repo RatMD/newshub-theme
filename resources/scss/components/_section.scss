@@ -1,6 +1,6 @@
 
 // ----------------------------------------
-//  Section Stylings
+//  General Section Stylings
 // ----------------------------------------
 
 .section {
@@ -9,12 +9,70 @@
     --#{$prefix}footer-link-hover-color: var(--#{$prefix}primary);
     --#{$prefix}section-separator-color: #{$gray-400};
 
+    .dark & {
+        --#{$prefix}footer-text-color: #{$gray-600};
+        --#{$prefix}footer-link-color: #{$gray-500};
+        --#{$prefix}footer-link-hover-color: var(--#{$prefix}primary);
+        --#{$prefix}section-separator-color: #{$gray-700};
+    }
+
     // Section Separator
     &.section-separator {
         margin-top: $spacer * 2.5;
         padding-top: $spacer * 2.5;
         border-top: 1px solid var(--#{$prefix}section-separator-color);
     }
+
+    // Section With Sidebar
+    &.section-with-sidebar {
+        > .container {
+            display: flex;
+            flex-direction: column;
+        
+            @include media-breakpoint-up(xl) {
+                flex-direction: row;
+            }
+        }
+
+        .main-area {
+            flex: 0 0 100%;
+        
+            @include media-breakpoint-up(xl) {
+                flex: 1 1 calc(100% - 400px);
+            }
+        }
+
+        .sidebar-area {
+            flex: 0 0 100%;
+            margin-top: $spacer;
+        
+            @include media-breakpoint-up(md) {
+                display: flex;
+                flex-wrap: wrap;
+
+                & > * {
+                    flex: 0 0 50%;
+                }
+            }
+            @include media-breakpoint-up(xl) {
+                flex: 0 0 400px;
+                margin-top: 0;
+                padding-left: $spacer * 3;
+
+                & > * {
+                    flex: 0 0 100%;
+                }
+            }
+        }
+    }
+}
+
+
+// ----------------------------------------
+//  Footer Section Stylings
+// ----------------------------------------
+
+.section {
 
     // Section Footer Links
     &.section-footer-meta {
@@ -104,11 +162,4 @@
             }
         }
     }
-}
-
-.dark .section {
-    --#{$prefix}footer-text-color: #{$gray-600};
-    --#{$prefix}footer-link-color: #{$gray-500};
-    --#{$prefix}footer-link-hover-color: var(--#{$prefix}primary);
-    --#{$prefix}section-separator-color: #{$gray-700};
 }

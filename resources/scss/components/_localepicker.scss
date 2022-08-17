@@ -38,3 +38,57 @@
         }
     }
 }
+
+.navbar .localepicker {
+    width: 32px;
+    height: 32px;
+    
+    @include media-breakpoint-down(md) {
+        top: 7px;
+        left: -1.0rem;
+        position: absolute;
+        width: 32px;
+        
+        .sticky-header.sticky-scroll & {
+            display: none;
+        }
+    }
+
+    button {
+        width: 32px;
+        height: 32px;
+        padding: 0;
+        border-radius: 16px;
+        overflow: hidden;
+        border: 0 !important;
+        box-shadow: none !important;
+
+        @include media-breakpoint-down(md) {
+            border-top-left-radius: 0;
+            border-bottom-left-radius: 0;
+        }
+
+        &::after {
+            content: none;
+            display: none;
+        }
+
+        img {
+            width: 32px;
+            height: 32px;
+            object-fit: cover;
+            object-position: center;
+            pointer-events: none;
+        }
+    }
+    
+    .dropdown-menu {
+        li {
+            a {
+                font-weight: 400;
+                font-family: $font-family-sans-serif;
+            }
+        }
+    }
+}
+

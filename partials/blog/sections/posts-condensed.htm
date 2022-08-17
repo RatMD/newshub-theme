@@ -1,0 +1,20 @@
+{% if datetime == 'short' %}
+    {% set dateTimeFormat = this.theme.short_datetime_format %}
+{% elseif datetime == 'time' %}
+    {% set dateTimeFormat = 'H:i' %}
+{% else %}
+    {% set dateTimeFormat = this.theme.datetime_format %}
+{% endif %}
+
+<div class="posts-list posts-condensed">
+    {% for post in posts %}
+        <a href="{{ post.url }}" id="{{ prefix | default('post') }}-{{ post.id }}" class="post">
+            {% if post.featured_images|length > 0 %}
+                <img src="{{ post.featured_images.0.getPath() }}" alt="{{ post.title }}" class="post-thumbnail" />
+            {% endif %}
+            <div class="post-content">
+                <span class="post-title">{{ post.title }}</span>
+            </div>
+        </a>
+    {% endfor %}
+</div>

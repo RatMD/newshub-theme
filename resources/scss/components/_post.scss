@@ -47,16 +47,20 @@
                 flex: 1 1 auto;
                 padding-right: $spacer * 3;
                 font-size: 1.0rem;
+                max-width: 100%;
 
-                p {
+                & > p {
                     margin-bottom: $spacer * 3;
-
-                    &:first-child {
-                        font-size: 1.1rem;
-                        line-height: 2.1rem;
-                        font-weight: 400;
-                    }
                 }
+
+                & > p:first-child {
+                    font-size: 1.1rem;
+                    line-height: 2.1rem;
+                    font-weight: 400;
+                }
+            }
+            .post-content.with-sidebar {
+                max-width: calc(100% - 400px);
             }
 
             aside {

@@ -4,20 +4,34 @@ code = "main-menu"
 [staticMenu socialMenu]
 code = "social-menu"
 ==
-<nav class="navbar navbar-main navbar-expand-lg px-lg-5 py-lg-3">
-    <a href="{{ 'home' | page }}" class="navbar-brand{% if this.theme.site_logo %} navbar-brand-image{% endif %}" title="{{ this.theme.site_name }}">
-        {% if this.theme.site_logo %}
-            <img src="{{ this.theme.site_logo.getPath() }}" alt="{{ this.theme.site_name }}" class="hide-on-dark" />
+<nav class="navbar navbar-main navbar-expand-lg px-xl-5 py-lg-3">
+    <div class="navbar-brand{% if this.theme.site_logo %} navbar-brand-image{% endif %}">
+        <a href="{{ 'home' | page }}" class="navbar-brand-link" title="{{ this.theme.site_name }}">
+            {% if this.theme.site_logo %}
+                <img src="{{ this.theme.site_logo.getPath() }}" alt="{{ this.theme.site_name }}" class="hide-on-dark" />
 
-            {% if this.theme.site_logo_inverted %}
-                <img src="{{ this.theme.site_logo_inverted.getPath() }}" alt="{{ this.theme.site_name }}" class="show-on-dark" />
+                {% if this.theme.site_logo_inverted %}
+                    <img src="{{ this.theme.site_logo_inverted.getPath() }}" alt="{{ this.theme.site_name }}" class="show-on-dark" />
+                {% else %}
+                    <img src="{{ this.theme.site_logo.getPath() }}" alt="{{ this.theme.site_name }}" class="show-on-dark" />
+                {% endif %}
             {% else %}
-                <img src="{{ this.theme.site_logo.getPath() }}" alt="{{ this.theme.site_name }}" class="show-on-dark" />
+                {{ this.theme.site_name }}
             {% endif %}
-        {% else %}
-            {{ this.theme.site_name }}
+        </a>
+
+        {% if this.theme.color_switch_top or this.theme.languages_menu_top %}
+            <div class="theme-settings">
+                {% if this.theme.languages_menu_top %}
+                    {% partial 'localepicker/default' dropdown=true %}
+                {% endif %}
+                
+                {% if this.theme.color_switch_top %}
+                    {% partial 'colorpicker/default' %}
+                {% endif %}
+            </div>
         {% endif %}
-    </a>
+    </div>
 
     <button class="navbar-toggler collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#pageNavbar" aria-controls="pageNavbar" aria-expanded="false" aria-label="{{ 'header.navbar.toggle'|trans }}">
         <div class="navbar-toggler-menu">
@@ -29,7 +43,7 @@ code = "social-menu"
 
     <div id="pageNavbar" class="collapse navbar-collapse navbar-menu">
         {% if mainMenu and mainMenu.menuItems != null %}
-            <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+            <ul class="navbar-nav mx-auto mx-lg-0 ms-lg-auto mx-xl-auto mb-2 mb-lg-0">
                 {% for item in mainMenu.menuItems %}
                     {% if not item.viewBag.isHidden %}
                         {% set classNames = 'nav-item item-type-' ~ item.type %}

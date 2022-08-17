@@ -17,7 +17,7 @@
         </div>
     </header>
 
-    <article class="bg-white py-6">
+    <article class="py-6">
         <div class="container">
             <div class="post-content">
                 {{ post.content_html | raw }}
@@ -78,11 +78,11 @@
 
                         <article class="card-body">
                             {% if prevPost %}
-                                {% partial 'blog/single-button' post=prevPost %}
+                                {% partial 'blog/components/button' post=prevPost %}
                             {% endif %}
 
                             {% if nextPost %}
-                                {% partial 'blog/single-button' post=nextPost %}
+                                {% partial 'blog/components/button' post=nextPost %}
                             {% endif %}
                         </article>   
                     </div>
@@ -91,25 +91,29 @@
         </div>
     </article>
 
-    <footer class="bg-white pb-6">
+    <footer class="pb-6">
         <div class="container">
             {% set similarPosts = post.bloghub_similar_posts() %}
             {% if similarPosts|length > 0 %}
                 <h2 class="mb-5">{{ 'magazine.similar.title' | trans }}</h2>
                 <div class="latest-posts">
-                    {% for post in similarPosts %}
-                        {% partial 'blog/posts-list' post=post hideSummary=true hideCategory=true prefix='similar' datetime='short' %}
-                    {% endfor %}
+                    {% partial 'blog/sections/posts-columns' 
+                        posts=similarPosts
+                        prefix='similar'
+                        datetime='short'
+                        hideCategory=true
+                    %}
                 </div>
             {% else %}
                 {% set randomPosts = post.bloghub_random_posts() %}
                 {% if randomPosts|length > 0 %}
                     <h2 class="mb-5">{{ 'magazine.random.title' | trans }}</h2>
-                    <div class="latest-posts">
-                        {% for post in randomPosts %}
-                            {% partial 'blog/posts-list' post=post hideSummary=true hideCategory=true prefix='random' datetime='short' %}
-                        {% endfor %}
-                    </div>
+                    {% partial 'blog/sections/posts-columns' 
+                        posts=randomPosts
+                        prefix='random'
+                        datetime='short'
+                        hideCategory=true
+                    %}
                 {% endif %}
             {% endif %}
         </div>

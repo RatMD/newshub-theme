@@ -60,14 +60,14 @@ staticBreadcrumbs_skipLast = true
                     <div class="container">
                         <div class="post-header">
                             {% component 'staticBreadcrumbs' skipLast=true %}
-                            <h1 class="post-title">{{ page.title }}</h1>
+                            <h1 class="post-title">{{ page.title | default(this.page.title) }}</h1>
                         </div>
                     </div>
                 </header>
 
                 <article class="bg-white py-6">
                     <div class="container">
-                        <div class="post-content">
+                        <div class="post-content with-sidebar">
                             {% page %}
                         </div>
                         
