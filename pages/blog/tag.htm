@@ -24,17 +24,14 @@ function onEnd()
         {% if not tag %}
             Unknown Tag
         {% else %}
-            <h1 class="mb-5">{{ tag.title }}</h1>
-
-            <div class="post-list">
-                {% if posts | length > 0 %}
-                    {% for post in posts %}
-                        {% partial 'blog/posts-list' post=post %}
-                    {% endfor %}
-                {% else %}
-                    No Posts found
-                {% endif %}
-            </div>
+            {% if posts|length > 0 %}
+                <h1 class="mb-5">Tag {{ tag.title }}</h1>
+                {% partial 'blog/sections/posts-list' 
+                    posts=posts
+                    prefix='archiv'
+                    datetime='short'
+                %}
+            {% endif %}
         {% endif %}
     </div>
 </section>

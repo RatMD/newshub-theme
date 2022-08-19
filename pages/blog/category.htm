@@ -24,17 +24,14 @@ function onEnd()
         {% if not category %}
             Unknown Category
         {% else %}
-            <h1 class="mb-5">{{ category.name }}</h1>
-
-            <div class="post-list">
-                {% if posts | length > 0 %}
-                    {% for post in posts %}
-                        {% partial 'blog/posts-list' post=post %}
-                    {% endfor %}
-                {% else %}
-                    No Posts found
-                {% endif %}
-            </div>
+            {% if posts|length > 0 %}
+                <h1 class="mb-5">Category {{ category.name }}</h1>
+                {% partial 'blog/sections/posts-list' 
+                    posts=posts
+                    prefix='archiv'
+                    datetime='short'
+                %}
+            {% endif %}
         {% endif %}
     </div>
 </section>

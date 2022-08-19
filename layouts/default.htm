@@ -61,8 +61,8 @@ bloghubTagPage = "blog/tag"
         }
     </script>
     
-    <header id="pageHeader" class="{% if this.theme.dark_header %}bg-dark dark{% else %}bg-light dark:bg-dark{% endif %}{% if this.theme.sticky_header %} sticky-top sticky-header{% endif %}">
-        <div class="container-fluid">
+    <header id="pageHeader" class="{% if this.theme.sticky_header %} sticky-top sticky-header{% endif %}">
+        <div class="container-fluid {% if this.theme.dark_header %}bg-dark dark{% else %}bg-light dark:bg-dark{% endif %}">
             {% partial 'page/header' %}
         </div>
     </header>
@@ -84,6 +84,7 @@ bloghubTagPage = "blog/tag"
     {% endif %}
 
     <script src="{{ 'assets/js/vendors/bootstrap.min.js?ver=5.2.0' | theme }}"></script>
+    <script src="{{ 'assets/js/vendors/bootstrap-lightbox.min.js?ver=1.8.0' | theme }}"></script>
     <script src="{{ 'assets/js/vendors/keen-slider.min.js?ver=6.7.0' | theme }}"></script>
     <script src="{{ 'assets/js/newshub.min.js?ver=1.0.0' | theme }}"></script>
     {% scripts %}

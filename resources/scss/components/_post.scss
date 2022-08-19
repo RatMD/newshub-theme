@@ -4,36 +4,65 @@
 // ----------------------------------------
 
 .post-single {
-
     header {
-        max-height: 240px;
+        @include media-breakpoint-up(xl) {
+            max-height: 240px;
+        }
     
         .container {
             display: flex;
+            flex-direction: column;
+            
+            @include media-breakpoint-up(xl) {
+                flex-direction: row;
+            }
 
             .post-header {
+                order: 2;
                 flex: 0 0 100%;
+                padding: $spacer * 2 0;
 
+                @include media-breakpoint-up(xl) {
+                    order: 1;
+                    padding: 0;
+                }
                 &.post-has-thumbnail {
                     flex: 1 1 auto;
                 }
             }
+
             .post-published {
                 color: var(--#{$prefix}body-color);
                 opacity: 0.5;
                 font-weight: 600;
             }
+
             .post-thumbnail {
-                flex: 0 0 400px;
-                margin-top: -5rem;
-                width: 400px;
+                order: 1;
+                flex: 0 0 100%;
+                width: auto;
                 height: auto;
+
+                @include media-breakpoint-up(xl) {
+                    order: 2;
+                    flex: 0 0 400px;
+                    width: 400px;
+                    margin-top: -5rem;
+                }
 
                 img {
                     width: 100%;
                     max-height: 400px;
                     object-fit: cover;
                     object-position: top;
+
+                    @include media-breakpoint-up(md) {
+                        max-height: 600px;
+                    }
+                    
+                    @include media-breakpoint-up(xl) {
+                        max-height: 400px;
+                    }
                 }
             }
         }
@@ -45,7 +74,6 @@
 
             .post-content {
                 flex: 1 1 auto;
-                padding-right: $spacer * 3;
                 font-size: 1.0rem;
                 max-width: 100%;
 
@@ -59,15 +87,28 @@
                     font-weight: 400;
                 }
             }
-            .post-content.with-sidebar {
-                max-width: calc(100% - 400px);
+            
+            aside {
+                margin-bottom: $spacer * 3;
+                
+                @include media-breakpoint-up(xl) {
+                    margin-bottom: 0;
+
+                    &.post-has-thumbnail {
+                        padding-top: 160px;
+                    }
+                }
             }
 
-            aside {
-                flex: 0 0 400px;
-                
-                &.post-has-thumbnail {
-                    padding-top: 160px;
+        }
+
+        @include media-breakpoint-up(xl) {
+            &.section-with-sidebar .container {
+                .post-content {
+                    padding-right: $spacer * 3 !important;
+                }
+                aside {
+                    padding-left: 0;
                 }
             }
         }
@@ -82,8 +123,7 @@
 
 .post-single.post-layout-heroimage {
     .section-posts > header {
-        height: 900px;
-        margin-top: -72px;
+        height: 100vh;
         max-height: none;
         display: flex;
         align-items: flex-end;
@@ -94,13 +134,27 @@
 
         .container {
             display: flex;
-            justify-content: center;
+            position: relative;
+            justify-content: flex-start;
+
+            &::before {
+                top: 0;
+                left: -50vw;
+                right: calc(100% - (var(--bs-gutter-x)*.5));
+                bottom: 0;
+                content: "";
+                display: block;
+                position: absolute;
+                background-color: rgba(0, 0, 0, 0.75);
+            }
         }
+
         .post-header {
-            width: auto;
             flex: 0 0 auto;
+            width: auto;
             padding: $spacer * 2;
-            text-align: center;
+            padding-right: $spacer * 7.5;
+            text-align: left;
             flex-direction: column;
             background-color: rgba(0, 0, 0, 0.75);
 

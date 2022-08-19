@@ -11,7 +11,11 @@
 }
 
 .overlay-navbar > #pageHeader {
-    --bs-bg-opacity: 0.5;
+    height: 0;
+    
+    > * {
+        --bs-bg-opacity: 0.5;
+    }
 }
 
 

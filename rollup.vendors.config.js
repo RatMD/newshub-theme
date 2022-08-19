@@ -50,5 +50,20 @@ export default [
         plugins: [
             ...config.plugins
         ]
+    },
+    {
+        input: 'resources/js/vendors/bootstrap-lightbox.js',
+        output: {
+            ...config.output,
+            name: 'Lightbox',
+            format: 'iife',
+            globals: {
+                bootstrap: 'Bootstrap'
+            }
+        },
+        external: ['bootstrap'],
+        plugins: [
+            ...config.plugins
+        ]
     }
 ];

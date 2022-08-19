@@ -38,6 +38,11 @@
     "theme.custom_meta.post_layout.default": "Default Layout",
     "theme.custom_meta.post_layout.fullwidth": "Fullwidth Layout",
     "theme.custom_meta.post_layout.heroimage": "Hero-Image Layout",
+    "theme.custom_meta.images.label": "Featured Images View",
+    "theme.custom_meta.images.comment": "Change the way how the featured images (except the first one) are shown.",
+    "theme.custom_meta.images.carousel": "Show as Bootstrap Carousel",
+    "theme.custom_meta.images.gallery": "Show as Gallery (with Lightbox)",
+    "theme.custom_meta.images.hidden": "Don't show them on the Post Page",
 
     "theme.options.tabs.general": "General",
     "theme.options.tabs.appearance": "Appearance",

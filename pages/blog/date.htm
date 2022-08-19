@@ -22,19 +22,16 @@ function onEnd()
 <section class="section section-posts py-6">
     <div class="container">
         {% if not date %}
-            Unknown Tag
+            Unknown Archive
         {% else %}
-            <h1 class="mb-5">{{ date.year }}</h1>
-
-            <div class="post-list">
-                {% if posts | length > 0 %}
-                    {% for post in posts %}
-                        {% partial 'blog/posts-list' post=post %}
-                    {% endfor %}
-                {% else %}
-                    No Posts found
-                {% endif %}
-            </div>
+            {% if posts|length > 0 %}
+                <h1 class="mb-5">Date {{ date.year }}</h1>
+                {% partial 'blog/sections/posts-list' 
+                    posts=posts
+                    prefix='archiv'
+                    datetime='short'
+                %}
+            {% endif %}
         {% endif %}
     </div>
 </section>

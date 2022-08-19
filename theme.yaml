@@ -39,3 +39,14 @@ ratmd.bloghub:
                 default: theme.custom_meta.post_layout.default
                 fullwidth: theme.custom_meta.post_layout.fullwidth
                 heroimage: theme.custom_meta.post_layout.heroimage
+        images:
+            type: dropdown
+            tab: theme.custom_meta.tab
+            label: theme.custom_meta.images.label
+            comment: theme.custom_meta.images.comment
+            default: default
+            showSearch: false
+            options:
+                carousel: theme.custom_meta.images.carousel
+                gallery: theme.custom_meta.images.gallery
+                hidden: theme.custom_meta.images.hidden

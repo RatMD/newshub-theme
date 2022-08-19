@@ -1,36 +1,23 @@
+{% set uniqueId = 'single-post-gallery-' ~ post.id %}
 
+<div id="{{ uniqueId }}" class="gallery row">
+    {% for image in images %}
+        {% set caption = '' %}
 
-<div id="singlePostCarousel" class="carousel slide" data-bs-ride="true">
-    <div class="carousel-indicators">
-        {% for image in images %}
-            <button type="button" data-bs-target="#singlePostCarousel" data-bs-slide-to="{{ loop.index0 }}"{% if loop.first %} class="active" aria-current="true"{% endif %}></button>
-        {% endfor %}
-    </div>
+        {% if image.title %}
+            {% set caption = image.title %}
+        {% endif %}
 
-    <div class="carousel-inner">
-        {% for image in images %}
-            <div class="carousel-item{% if loop.first %} active{% endif %}">
-                <img src="{{ image.getPath() }}" class="d-block w-100" alt="{{ image.title }}" />
+        {% if image.description %}
+            {% if caption %}
+                {% set caption = caption ~ ': ' %}
+            {% endif %}
+            {% set caption = caption ~ image.description %}
+        {% endif %}
 
-                {% if image.title or image.description %}
-                    <div class="carousel-caption d-none d-md-block">
-                        {% if image.title %}
-                            <div class="fs-3 fw-600">{{ image.title }}</div>
-                        {% endif %}
-                        {% if image.description %}
-                            <p>{{ image.description }}</p>
-                        {% endif %}
-                    </div>
-                {% endif %}
-            </div>
-        {% endfor %}
-    </div>
-    <button class="carousel-control-prev" type="button" data-bs-target="#singlePostCarousel" data-bs-slide="prev">
-        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">{{ 'previous' | theme }}</span>
-    </button>
-    <button class="carousel-control-next" type="button" data-bs-target="#singlePostCarousel" data-bs-slide="next">
-        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">{{ 'next' | theme }}</span>
-    </button>
+        <a href="{{ image.getPath() }}" class="col-12 col-md-6 col-lg-4" data-rat-toggle="lightbox" data-gallery="{{ uniqueId }}" 
+            title="{{ image.title }}"{% if caption %} data-caption="{{ caption }}"{% endif %}>
+            <img src="{{ image.getPath() }}" class="img-fluid" alt="{{ image.title }}" />
+        </a>
+    {% endfor %}
 </div>

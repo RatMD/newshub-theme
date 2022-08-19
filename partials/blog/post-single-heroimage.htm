@@ -1,5 +1,5 @@
 <section class="section section-posts">
-    <header class="py-6 bg-light dark:bg-dark" style="background-image: url('{{post.featured_images.0.getPath()}}')">
+    <header class="py-1 py-lg-6 bg-light dark:bg-dark" style="background-image: url('{{post.featured_images.0.getPath()}}')">
         <div class="container">
             <div class="post-header">
                 <h1 class="post-title">{{ post.title }}</h1>
@@ -11,16 +11,20 @@
         </div>
     </header>
 
-    <article class="py-6">
+    <article class="py-2 py-lg-6 section section-with-sidebar">
         <div class="container">
-            <div class="post-content">
+            <div class="main-area post-content py-4 py-lg-0">
                 {{ post.content_html | raw }}
 
-                {% if post.featured_images|length > 1 %}
-                    {% partial "blog/single-gallery" images=post.featured_images|slice(1) %}
+                {% if post.bloghub_meta_data.images and post.featured_images|length > 1 %}
+                    {% if post.bloghub_meta_data.images == 'carousel' %}
+                        {% partial "blog/components/carousel" images=post.featured_images|slice(1) %}
+                    {% elseif post.bloghub_meta_data.images == 'gallery' %}
+                        {% partial "blog/components/gallery" images=post.featured_images|slice(1) %}
+                    {% endif %}
                 {% endif %}
             </div>
-            <aside class="post-aside">
+            <aside class="sidebar-area post-aside{% if post.featured_images %} post-has-thumbnail{% endif %}">
                 {% if post.categories|length > 0 %}
                     <div class="card card-simple">
                         <header class="card-header">
@@ -72,11 +76,11 @@
 
                         <article class="card-body">
                             {% if prevPost %}
-                                {% partial 'blog/single-button' post=prevPost %}
+                                {% partial 'blog/components/button' post=prevPost %}
                             {% endif %}
 
                             {% if nextPost %}
-                                {% partial 'blog/single-button' post=nextPost %}
+                                {% partial 'blog/components/button' post=nextPost %}
                             {% endif %}
                         </article>   
                     </div>
@@ -91,19 +95,21 @@
             {% if similarPosts|length > 0 %}
                 <h2 class="mb-5">{{ 'magazine.similar.title' | trans }}</h2>
                 <div class="latest-posts">
-                    {% for post in similarPosts %}
-                        {% partial 'blog/posts-list' post=post hideSummary=true hideCategory=true prefix='similar' datetime='short' %}
-                    {% endfor %}
+                    {% partial 'blog/sections/posts-columns' 
+                        posts=similarPosts
+                        prefix='similar'
+                        datetime='short'
+                    %}
                 </div>
             {% else %}
                 {% set randomPosts = post.bloghub_random_posts() %}
                 {% if randomPosts|length > 0 %}
                     <h2 class="mb-5">{{ 'magazine.random.title' | trans }}</h2>
-                    <div class="latest-posts">
-                        {% for post in randomPosts %}
-                            {% partial 'blog/posts-list' post=post hideSummary=true hideCategory=true prefix='random' datetime='short' %}
-                        {% endfor %}
-                    </div>
+                    {% partial 'blog/sections/posts-columns' 
+                        posts=randomPosts
+                        prefix='random'
+                        datetime='short'
+                    %}
                 {% endif %}
             {% endif %}
         </div>

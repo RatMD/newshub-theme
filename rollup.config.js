@@ -11,6 +11,7 @@ export default  {
         format: 'iife',
         globals: {
             [path.resolve(__dirname, 'resources/js/vendors/bootstrap')]: 'Bootstrap',
+            [path.resolve(__dirname, 'resources/js/vendors/bootstrap-lightbox')]: 'Lightbox',
             [path.resolve(__dirname, 'resources/js/vendors/keen-slider')]: 'KeenSlider',
         },
         sourcemap: true,
