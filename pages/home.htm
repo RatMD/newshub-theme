@@ -1,6 +1,9 @@
 url = "/"
 layout = "default"
 title = "Homepage"
+description = "Main Homepage"
+meta_title = "NewsHub - Homepage"
+meta_description = "NewsHub is a responsive Premium Blog / Magazine OctoberCMS template."
 
 [viewBag]
 localeUrl[de] = "/"
@@ -9,7 +12,10 @@ localeTitle[de] = "Startseite"
 [blogPosts latest]
 pageNumber = "{{ :page }}"
 postsPerPage = 13
+noPostsMessage = "No posts found"
 sortOrder = "published_at desc"
+categoryPage = "blog/category"
+postPage = "blog/post"
 ==
 {% if this.theme.hero_slider %}
     <section class="section{% if this.theme.dark_header %} bg-dark{% else %} bg-light dark:bg-dark{% endif %}">

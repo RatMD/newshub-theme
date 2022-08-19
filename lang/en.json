@@ -1,6 +1,8 @@
 {
     "previous": "Previous",
     "next": "Next",
+    "maintenance_mode.title": "Maintenance Mode",
+    "maintenance_mode.description": "Sorry, we are down for maintenance but will be back in no time!",
     "header.navbar.toggle": "Toggle Navigation",
     "footer.socials.follow": "Follow us on",
     "magazine.category": "Category",

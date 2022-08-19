@@ -1,0 +1,50 @@
+url = "/maintenance"
+title = "Maintenance Mode"
+description = "Maintenance Mode Page"
+is_hidden = 1
+
+[viewBag]
+localeUrl[de] = "/maintenance"
+localeTitle[de] = "Wartungsarbeiten"
+==
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    <title>{{ this.page.meta_title|default(this.page.title) }}</title>
+
+    <link rel="stylesheet" href="{{ 'assets/css/newshub.min.css' | theme }}" />
+    <style type="text/css">
+        :root {
+            --bs-primary: {{ this.theme.color_primary }};
+            --bs-secondary: {{ this.theme.color_secondary }};
+            --bs-success: {{ this.theme.color_success }};
+            --bs-info: {{ this.theme.color_info }};
+            --bs-warning: {{ this.theme.color_warning }};
+            --bs-danger: {{ this.theme.color_danger }};
+            --bs-light: {{ this.theme.color_light }};
+            --bs-dark: {{ this.theme.color_dark }};
+        }
+    </style>
+</head>
+<body class="vh-100">
+    <div class="vh-100 d-flex flex-column">
+        <div class="flex-auto">
+            <div class="container-fluid">
+                <div class="py-2 px-4">
+                    <div class="font-special fs-4">{{ this.theme.site_name }}</div>
+                </div>
+            </div>
+        </div>
+        <div class="flex-fill d-flex justify-content-center align-items-center flex-column">
+            <h1>{{ 'maintenance_mode.title' | trans }}</h1>
+            <p class="lead">
+                {{ 'maintenance_mode.description' | trans }}
+            </p>
+        </div>
+    </div>
+</body>
+</html>
