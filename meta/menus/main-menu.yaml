@@ -31,13 +31,13 @@ items:
             isExternal: '0'
         items:
             -
-                title: 'Example Hero Image'
+                title: 'Example Archives'
                 nesting: null
-                type: blog-post
+                type: header
                 url: null
                 code: ''
-                reference: '9'
-                cmsPage: blog/post
+                reference: null
+                cmsPage: null
                 replace: null
                 viewBag:
                     locale:
@@ -47,15 +47,79 @@ items:
                     isHidden: '0'
                     cssClass: ''
                     isExternal: '0'
+                items:
+                    -
+                        title: 'Author Archive'
+                        nesting: null
+                        type: url
+                        url: /magazine/author/sam
+                        code: ''
+                        reference: null
+                        cmsPage: null
+                        replace: null
+                        viewBag:
+                            locale:
+                                de:
+                                    title: ''
+                                    url: ''
+                            isHidden: '0'
+                            cssClass: ''
+                            isExternal: '0'
+                    -
+                        title: Articles
+                        nesting: 0
+                        type: blog-category
+                        url: null
+                        code: ''
+                        reference: '1'
+                        cmsPage: blog/category
+                        replace: 0
+                        viewBag:
+                            locale:
+                                de:
+                                    title: ''
+                                    url: ''
+                            isHidden: '0'
+                            cssClass: ''
+                            isExternal: '0'
+                    -
+                        title: 'Date Archive'
+                        nesting: null
+                        type: url
+                        url: /magazine/date/2022-08
+                        code: ''
+                        reference: null
+                        cmsPage: null
+                        replace: null
+                        viewBag:
+                            locale:
+                                de:
+                                    title: ''
+                                    url: ''
+                            isHidden: '0'
+                            cssClass: ''
+                            isExternal: '0'
+                    -
+                        title: 'Tag Archive'
+                        nesting: null
+                        type: url
+                        url: /magazine/tag/demonstration
+                        code: ''
+                        reference: null
+                        cmsPage: null
+                        replace: null
+                        viewBag:
+                            locale:
+                                de:
+                                    title: ''
+                                    url: ''
+                            isHidden: '0'
+                            cssClass: ''
+                            isExternal: '0'
             -
-                title: 'Example Gallery'
-                nesting: null
-                type: blog-post
-                url: null
+                title: 'Example Articles'
+                type: header
                 code: ''
-                reference: '7'
-                cmsPage: blog/post
-                replace: null
                 viewBag:
                     locale:
                         de:
@@ -64,23 +128,92 @@ items:
                     isHidden: '0'
                     cssClass: ''
                     isExternal: '0'
-            -
-                title: 'Example Fullwidth'
-                nesting: null
-                type: blog-post
-                url: null
-                code: ''
-                reference: '8'
-                cmsPage: blog/post
-                replace: null
-                viewBag:
-                    locale:
-                        de:
-                            title: ''
-                            url: ''
-                    isHidden: '0'
-                    cssClass: ''
-                    isExternal: '0'
+                items:
+                    -
+                        title: 'Default Article'
+                        nesting: null
+                        type: blog-post
+                        url: null
+                        code: ''
+                        reference: '3'
+                        cmsPage: blog/post
+                        replace: null
+                        viewBag:
+                            locale:
+                                de:
+                                    title: ''
+                                    url: ''
+                            isHidden: '0'
+                            cssClass: ''
+                            isExternal: '0'
+                    -
+                        title: 'Fullwidth Article'
+                        nesting: null
+                        type: blog-post
+                        url: null
+                        code: ''
+                        reference: '8'
+                        cmsPage: blog/post
+                        replace: null
+                        viewBag:
+                            locale:
+                                de:
+                                    title: ''
+                                    url: ''
+                            isHidden: '0'
+                            cssClass: ''
+                            isExternal: '0'
+                    -
+                        title: 'Gallery Article'
+                        nesting: null
+                        type: blog-post
+                        url: null
+                        code: ''
+                        reference: '7'
+                        cmsPage: blog/post
+                        replace: null
+                        viewBag:
+                            locale:
+                                de:
+                                    title: ''
+                                    url: ''
+                            isHidden: '0'
+                            cssClass: ''
+                            isExternal: '0'
+                    -
+                        title: 'Carousel Article'
+                        nesting: null
+                        type: blog-post
+                        url: null
+                        code: ''
+                        reference: '10'
+                        cmsPage: blog/post
+                        replace: null
+                        viewBag:
+                            locale:
+                                de:
+                                    title: ''
+                                    url: ''
+                            isHidden: '0'
+                            cssClass: ''
+                            isExternal: '0'
+                    -
+                        title: 'Hero Article'
+                        nesting: null
+                        type: blog-post
+                        url: null
+                        code: ''
+                        reference: '9'
+                        cmsPage: blog/post
+                        replace: null
+                        viewBag:
+                            locale:
+                                de:
+                                    title: ''
+                                    url: ''
+                            isHidden: '0'
+                            cssClass: ''
+                            isExternal: '0'
     -
         title: Features
         nesting: null
@@ -101,9 +234,13 @@ items:
         items:
             -
                 title: 'HTML Unit'
+                nesting: null
                 type: cms-page
+                url: null
                 code: ''
                 reference: bootstrap/unit
+                cmsPage: null
+                replace: null
                 viewBag:
                     locale:
                         de:
@@ -114,9 +251,13 @@ items:
                     isExternal: '0'
             -
                 title: Components
+                nesting: null
                 type: cms-page
+                url: null
                 code: ''
                 reference: bootstrap/components
+                cmsPage: null
+                replace: null
                 viewBag:
                     locale:
                         de:

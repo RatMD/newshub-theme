@@ -4,6 +4,54 @@ code = "main-menu"
 [staticMenu socialMenu]
 code = "social-menu"
 ==
+{% macro menu(items, depth = 1, max_depth = 3) %}
+    {% set ul_class = 'navbar-nav' %}
+    {% if depth == 1 %}
+        {% set ul_class = ul_class ~ ' mx-auto mx-lg-0 ms-lg-auto mx-xl-auto mb-2 mb-lg-0' %}
+    {% else %}
+        {% set ul_class = ul_class ~ ' navbar-subnav subnav-depth-' ~ depth %}
+    {% endif %}
+
+    <ul class="{{ ul_class }}">
+        {% for item in items %}
+            {% if not item.viewBag.isHidden %}
+                {% set li_class = 'nav-item item-type-' ~ item.type %}
+                {% if item.isActive %}
+                    {% set li_class = li_class ~ ' item-current' %}
+                {% endif %}
+                {% if item.isChildActive %}
+                    {% set li_class = li_class ~ ' item-current-parent' %}
+                {% endif %}
+                {% if item.items %}
+                    {% set li_class = li_class ~ ' item-has-children' %}
+                {% endif %}
+                {% if item.viewBag.cssClass %}
+                    {% set li_class = li_class ~ ' ' ~ item.viewBag.cssClass %}
+                {% endif %}
+                
+                {% set a_class = 'nav-link' %}
+                {% if item.isActive %}
+                    {% set a_class = a_class ~ ' active' %}
+                {% endif %}
+                
+                <li class="{{ li_class }}">
+                    {% if item.type == 'header' %}
+                        <span class="nav-title">{{ item.title }}</span>
+                    {% else %}
+                        <a href="{{ item.url }}" title="{{ item.title }}" class="{{ a_class }}"{% if item.viewBag.isExternal %} target="_blank"{% endif %}{% if item.isActive %} aria-current="page"{% endif %}>
+                            {{ item.title }}
+                        </a>
+                    {% endif %}
+
+                    {% if item.items and max_depth > depth %}
+                        {{ _self.menu(item.items, depth+1, max_depth) }}
+                    {% endif %}
+                </li>
+            {% endif %}
+        {% endfor %}
+    </ul>
+{% endmacro %}
+
 <nav class="navbar navbar-main navbar-expand-lg px-xl-5 py-lg-3">
     <div class="navbar-brand{% if this.theme.site_logo %} navbar-brand-image{% endif %}">
         <a href="{{ 'home' | page }}" class="navbar-brand-link" title="{{ this.theme.site_name }}">
@@ -43,54 +91,7 @@ code = "social-menu"
 
     <div id="pageNavbar" class="collapse navbar-collapse navbar-menu">
         {% if mainMenu and mainMenu.menuItems != null %}
-            <ul class="navbar-nav mx-auto mx-lg-0 ms-lg-auto mx-xl-auto mb-2 mb-lg-0">
-                {% for item in mainMenu.menuItems %}
-                    {% if not item.viewBag.isHidden %}
-                        {% set classNames = 'nav-item item-type-' ~ item.type %}
-                        {% if item.isActive %}
-                            {% set classNames = classNames ~ ' item-current' %}
-                        {% endif %}
-                        {% if item.isChildActive %}
-                            {% set classNames = classNames ~ ' item-current-parent' %}
-                        {% endif %}
-                        {% if item.items %}
-                            {% set classNames = classNames ~ ' item-has-children' %}
-                        {% endif %}
-                        {% if item.viewBag.cssClass %}
-                            {% set classNames = classNames ~ ' ' ~ item.viewBag.cssClass %}
-                        {% endif %}
-
-                        <li class="{{ classNames }}">
-                            <a href="{{ item.url }}" title="{{ item.title }}" class="nav-link{% if item.isActive %} active{% endif %}"{% if item.viewBag.isExternal %} target="_blank"{% endif %}{% if item.isActive %} aria-current="page"{% endif %}>
-                                {{ item.title }}
-                            </a>
-                            
-                            {% if item.items %}
-                                <ul class="navbar-nav navbar-subnav">
-                                    {% for child in item.items %}
-                                        {% set childClassNames = 'nav-item item-type-' ~ item.type %}
-                                        {% if child.isActive %}
-                                            {% set childClassNames = childClassNames ~ ' item-current' %}
-                                        {% endif %}
-                                        {% if child.isChildActive %}
-                                            {% set childClassNames = childClassNames ~ ' item-current-parent' %}
-                                        {% endif %}
-                                        {% if child.viewBag.cssClass %}
-                                            {% set childClassNames = childClassNames ~ ' ' ~ child.viewBag.cssClass %}
-                                        {% endif %}
-
-                                        <li class="{{ childClassNames }}">
-                                            <a href="{{ child.url }}" title="{{ child.title }}" class="nav-link{% if child.isActive %} active{% endif %}"{% if child.viewBag.isExternal %} target="_blank"{% endif %}{% if child.isActive %} aria-current="page"{% endif %}>
-                                                {{ child.title }}
-                                            </a>
-                                        </li>
-                                    {% endfor %}
-                                </ul>
-                            {% endif %}
-                        </li>
-                    {% endif %}
-                {% endfor %}
-            </ul>
+            {{ _self.menu(mainMenu.menuItems) }}
         {% else %}
             {% if this.theme.show_demo %}
                 {% partial 'demo/main-nav-content' %}

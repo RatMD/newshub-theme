@@ -19,9 +19,7 @@ sortOrder = "published_at desc"
 
         <div class="post-list">
             {% if posts | length > 0 %}
-                {% for post in posts %}
-                    {% partial 'blog/posts-list' post=post %}
-                {% endfor %}
+                {% partial 'blog/sections/posts-list' posts=posts %}
             {% else %}
                 No Posts found
             {% endif %}

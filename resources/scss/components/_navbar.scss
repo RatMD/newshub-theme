@@ -133,6 +133,10 @@
             .nav-link {
                 font-weight: 600;
             }
+            .nav-title {
+                @extend .nav-link;
+                font-weight: 600;
+            }
         }
     }
 
@@ -154,11 +158,13 @@
                 .nav-item {
                     position: relative;
 
-                    .nav-link {
+                    .nav-link,
+                    .nav-title {
                         padding-left: $spacer;
                         padding-right: $spacer;
                     }
-                    &.item-has-children > .nav-link {
+                    &.item-has-children > .nav-link,
+                    &.item-has-children > .nav-title {
                         &::after {
                             width: 12px;
                             height: 9px;
@@ -215,20 +221,46 @@
                         border-color: transparent transparent $white transparent;
                         transition: border-color .15s ease-in-out;
                     }
-                    .nav-link {
+                    .nav-link,
+                    .nav-title {
                         color: $gray-900;
                         padding: $spacer * 0.5 $spacer * 1.15;
+                        padding-right: calc($spacer * 0.5 + 24px);
+                        position: relative;
                         font-weight: normal;
                         white-space: nowrap;
+                    }
+
+                    &.item-has-children > .nav-link,
+                    &.item-has-children > .nav-title {
+                        &::after {
+                            right: 10px;
+                            position: absolute;
+                            transform: rotate(-90deg);
+                        }
                     }
 
                     &:hover {
                         &:first-child::before {
                             border-bottom-color: $gray-200;
                         }
-                        .nav-link {
+                        & > .nav-link,
+                        & > .nav-title {
                             background-color: $gray-200;
                         }
+                    }
+                }
+
+                .navbar-subnav {
+                    top: 0;
+                    left: 100%;
+                    margin-top: 0;
+                    margin-left: 15px;
+                    transform: translateX(0);
+                    
+                    .nav-item:first-child::before {
+                        display: none;
+                        content: none;
                     }
                 }
             }
@@ -238,6 +270,9 @@
                 margin-top: 0;
                 opacity: 1;
                 pointer-events: fill;
+            }
+            .navbar-subnav .nav-item:hover > .navbar-subnav {
+                margin-left: 0;
             }
         }
     }
