@@ -47,14 +47,14 @@ staticBreadcrumbs_skipLast = true
                     </div>
                 </header>
 
-                <article class="bg-white py-6">
+                <article class="section section-with-sidebar py-6">
                     <div class="container">
-                        <div class="post-content with-sidebar">
+                        <div class="post-content main-area">
                             {% page %}
                         </div>
                         
-                        <aside class="post-aside">
-                            test
+                        <aside class="post-aside sidebar-area">
+                            {% partial 'sidebars/page' %}
                         </aside>
                     </div>
                 </article>

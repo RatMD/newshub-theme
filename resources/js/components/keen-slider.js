@@ -73,7 +73,6 @@ function invokeKeenSlider(element, options = {})
                 } else {
                     container.querySelector('[data-keen-slider-control="prev"]').disabled = false;
                 }
-                console.log(slide + s.options.slides.perView, s.track.details.slides.length);
                 if (slide + s.options.slides.perView === s.track.details.slides.length) {
                     container.querySelector('[data-keen-slider-control="next"]').disabled = true;
                 } else {

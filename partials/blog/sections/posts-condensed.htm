@@ -11,7 +11,10 @@
         <a href="{{ post.url }}" id="{{ prefix | default('post') }}-{{ post.id }}" class="post">
             {% if post.featured_images|length > 0 %}
                 <img src="{{ post.featured_images.0.getPath() }}" alt="{{ post.title }}" class="post-thumbnail" />
+            {% else %}
+                <span class="post-no-thumbnail"></span>
             {% endif %}
+            
             <div class="post-content">
                 <span class="post-title">{{ post.title }}</span>
             </div>

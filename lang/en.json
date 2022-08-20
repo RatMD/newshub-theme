@@ -47,6 +47,7 @@
 
     "site.navbar.toggle": "Toggle Navigation",
     "site.footer.socials": "Follow us on",
+    "site.widget.toc": "Table of Contents",
 
     "theme.custom_meta.tab": "Appearance",
     "theme.custom_meta.simple_title.label": "Simple Title",

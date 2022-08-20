@@ -73,6 +73,14 @@ $utilities: (
             )
         )
     ),
+    "dark-border-color": (
+        property: border-color,
+        class: "dark .dark\\:border",
+        local-vars: (
+            "border-opacity": 1
+        ),
+        values: $utilities-border-colors
+    ),
 );
 
 

@@ -120,19 +120,7 @@
             width: 100%;
             height: auto;
         }
-
-        @include media-breakpoint-up(xl) {
-            &.section-with-sidebar .container {
-                .post-content {
-                    padding-right: $spacer * 3 !important;
-                }
-                aside {
-                    padding-left: 0;
-                }
-            }
-        }
     }
-
 }
 
 
@@ -204,11 +192,6 @@
         height: 80px;
         object-fit: cover;
         object-position: top;
-    }
-
-    .post-content {
-        flex: 1 1 auto;
-        padding: $spacer * 0.25 $spacer;
     }
 
     .post-title {

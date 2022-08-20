@@ -1,0 +1,38 @@
+
+// ----------------------------------------
+//  Table of Contents Stylings
+// ----------------------------------------
+
+.toc {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+
+    .toc-item {
+        display: flex;
+        font-size: 0.9rem;
+        align-items: center;
+
+        a {
+            color: var(--#{$prefix}body-color);
+            padding: $spacer * 0.15 0;
+            text-decoration: none;
+        }
+    }
+
+    &-depth-1 {
+        list-style: none;
+        
+        & > .toc-item {
+            font-weight: 600;
+
+            svg {
+                display: none;
+            }
+        }
+
+        .toc {
+            padding-left: $spacer;
+        }
+    }
+}
