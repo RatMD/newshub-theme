@@ -50,13 +50,9 @@ items:
                 items:
                     -
                         title: 'Author Archive'
-                        nesting: null
                         type: url
                         url: /magazine/author/sam
                         code: ''
-                        reference: null
-                        cmsPage: null
-                        replace: null
                         viewBag:
                             locale:
                                 de:
@@ -66,7 +62,7 @@ items:
                             cssClass: ''
                             isExternal: '0'
                     -
-                        title: Articles
+                        title: 'Category Archive'
                         nesting: 0
                         type: blog-category
                         url: null
@@ -118,8 +114,13 @@ items:
                             isExternal: '0'
             -
                 title: 'Example Articles'
+                nesting: null
                 type: header
+                url: null
                 code: ''
+                reference: null
+                cmsPage: null
+                replace: null
                 viewBag:
                     locale:
                         de:

@@ -14,25 +14,7 @@ staticBreadcrumbs_skipLast = true
 <!DOCTYPE html>
 <html lang="en" class="no-js">
 <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    
-    <title>{{ this.page.meta_title|default(this.page.title) }}</title>
-
-    <meta name="title" content="{{ this.page.meta_title|default(this.page.title) }}" />
-    <meta name="description" content="{{ this.page.meta_description }}" />
-    {% component 'alternateHrefLangElements' %}
-
-    <link rel="stylesheet" href="{{ 'assets/css/newshub.min.css' | theme }}" />
-    {% styles %}
-
-    <script type="text/javascript">
-        document.documentElement.classList.remove('no-js');
-        window.newshub = {
-            defaultScheme: '{% if this.theme.dark_scheme %}dark{% else %}light{% endif %}'
-        };
-    </script>
+    {% partial 'page/meta' %}
 </head>
 <body class="theme-{{ this.theme.id }} {{ 'page-' ~ this.page.id }} layout-{{ this.layout.id }}{% if this.theme.dark_scheme %} dark{% else %} light{% endif %}">
     <script>

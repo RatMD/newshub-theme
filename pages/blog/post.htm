@@ -1,36 +1,40 @@
 url = "/magazine/post/:slug"
 layout = "default"
-title = "Magazine Post"
+title = "Single Post"
+description = "Magazine - Single Post"
 
 [viewBag]
 localeUrl[de] = "/magazin/beitrag/:slug"
-localeTitle[de] = "Magazin Beitrag"
+localeTitle[de] = "Einzelner Beitrag"
 
 [blogPost]
 slug = "{{ :slug }}"
 ==
 function onEnd()
 {
-    if (isset($this->post)) {
+    if (!empty($this->post)) {
         $this->page->title = $this->post->title;
+        $this->page->meta_title = $this->post->title;
+        $this->page->meta_description = !empty($this->post->excerpt)? $this->post->excerpt: strip_tags($this->post->summary);
+        $this->page->meta_author = $this->post->user->bloghub_display();
+        $this->page->meta_keywords = implode(', ', $this->post->bloghub_tags->map(fn ($el) => $el['slug'])->all());
 
         $layout = $this->post->bloghub_meta->where('name', 'layout')->first()['value'] ?? 'default';
         if ($layout === 'heroimage') {
             $this['bloghub_additionalBodyClasses'] = 'overlay-navbar';
         }
+    } else {
+        $this->setStatusCode(404);
+        return $this->controller->run('404');
     }
 }
 ==
 {% set layout = post.bloghub_meta_data.layout | default('default') %}
 
 <div class="post-single post-layout-{{ layout }}">
-    {% if not post %}
-        {% partial 'post-not-found' %}
+    {% if layout != '' and layout != 'default' and hasPartial('blog/post-single-' ~ layout) %}
+        {% partial ('blog/post-single-' ~ layout) post=post %}
     {% else %}
-        {% if layout != '' and layout != 'default' and hasPartial('blog/post-single-' ~ layout) %}
-            {% partial ('blog/post-single-' ~ layout) post=post %}
-        {% else %}
-            {% partial ('blog/post-single') post=post %}
-        {% endif %}
+        {% partial ('blog/post-single') post=post %}
     {% endif %}
 </div>

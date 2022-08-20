@@ -38,7 +38,7 @@
                     </time>
                     <address class="post-author">
                         <span>{{ 'magazine.list.by_author' | trans }}</span>
-                        <a href="{{ ('magazine/author/' ~ post.user.login) | app }}" rel="author">{{ post.user.first_name }} {{ post.user.last_name }}</a>
+                        <a href="{{ ('magazine/author/' ~ post.user.bloghub_slug()) | app }}" rel="author">{{ post.user.bloghub_display() }}</a>
                     </address>
                 </div>
 

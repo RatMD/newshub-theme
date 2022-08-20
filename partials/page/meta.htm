@@ -1,0 +1,52 @@
+<meta charset="UTF-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+<title>{{ this.page.meta_title|default(this.page.title) }} | {{ this.theme.site_name }}</title>
+
+{# Meta Tags #}
+{% placeholder meta_tags default  %}
+    <meta name="title" content="{{ this.page.meta_title|default(this.page.title) }}" />
+
+    {% if this.page.meta_description %}
+        <meta name="description" content="{{ this.page.meta_description }}" />
+    {% endif %}
+
+    {% if this.page.meta_keywords %}
+        <meta name="keywords" content="{{ this.page.meta_keywords }}" />
+    {% endif %}
+
+    {% if this.page.meta_author %}
+        <meta name="author" content="{{ this.page.meta_author }}" />
+    {% endif %}
+
+    {% component 'alternateHrefLangElements' %}
+{% endplaceholder %}
+
+{# Core Stylesheets #}
+{% placeholder stylesheets default %}
+    <link rel="stylesheet" href="{{ 'assets/css/newshub.min.css' | theme }}" />
+    <style type="text/css">
+        :root {
+            --bs-primary: {{ this.theme.color_primary }};
+            --bs-secondary: {{ this.theme.color_secondary }};
+            --bs-success: {{ this.theme.color_success }};
+            --bs-info: {{ this.theme.color_info }};
+            --bs-warning: {{ this.theme.color_warning }};
+            --bs-danger: {{ this.theme.color_danger }};
+            --bs-light: {{ this.theme.color_light }};
+            --bs-dark: {{ this.theme.color_dark }};
+        }
+    </style>
+    {% styles %}
+{% endplaceholder %}
+
+{# Core JavaScripts #}
+{% placeholder javascripts default %}
+    <script type="text/javascript">
+        document.documentElement.classList.remove('no-js');
+        window.newshub = {
+            defaultScheme: '{% if this.theme.dark_scheme %}dark{% else %}light{% endif %}'
+        };
+    </script>
+{% endplaceholder %}

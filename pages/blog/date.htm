@@ -1,10 +1,15 @@
 url = "/magazine/date/:date|^[0-9]{4}(\-[0-9]{2}(\-[0-9]{2}))?/:page?"
 layout = "default"
-title = "Magazine Date Archive"
+title = "Date Archive"
+description = "Magazine - Date Archive"
+meta_title = "Date Archive"
+meta_description = "NewsHub provides an own date archive page for your Blog / Magazine posts."
 
 [viewBag]
-localeUrl[de] = "/magazin/datum/:slug/:page?"
-localeTitle[de] = "Magazin Datums Archiv"
+localeUrl[de] = "/magazin/datum/:date|^[0-9]{4}(\-[0-9]{2}(\-[0-9]{2}))?/:page?"
+localeTitle[de] = "Datums-Archiv"
+localeMeta_title[de] = "Datums-Archiv"
+localeMeta_description[de] = "NewsHub bietet eine eigene Datumsarchivseite für deine Blog / Magazin-Beiträge."
 
 [bloghubDateArchive]
 pageNumber = "{{ :page }}"
@@ -14,24 +19,25 @@ sortOrder = "published_at desc"
 ==
 function onEnd()
 {
-    if ($this->author) {
-        $this->page->title = $this->author->title;
+    if (!empty($this->dateType)) {
+        $this->page->title = trans('archive.' . $this->dateType . '_archive');
+        $this->page->title .= ': ' . $this->dateFormat;
+        
+        if ($this->page->meta_title) {
+            $this->page->meta_title = trans('archive.' . $this->dateType . '_archive');
+            $this->page->meta_title .= ': ' . $this->dateFormat;
+        }
     }
 }
 ==
 <section class="section section-posts py-6">
     <div class="container">
-        {% if not date %}
-            Unknown Archive
-        {% else %}
-            {% if posts|length > 0 %}
-                <h1 class="mb-5">Date {{ date.year }}</h1>
-                {% partial 'blog/sections/posts-list' 
-                    posts=posts
-                    prefix='archiv'
-                    datetime='short'
-                %}
-            {% endif %}
-        {% endif %}
+        <h1 class="mb-5">{{ ('archive.' ~ dateType ~ '_archive') | trans }}: {{ dateFormat }}</h1>
+
+        {% partial 'blog/sections/posts-list' 
+            posts=posts
+            prefix='date-archiv'
+            datetime='short'
+        %}
     </div>
 </section>

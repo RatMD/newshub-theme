@@ -1,10 +1,15 @@
 url = "/magazine/category/:slug/:page?"
 layout = "default"
-title = "Magazine Category"
+title = "Category Archive"
+description = "Magazine - Category Archive"
+meta_title = "Category Archive"
+meta_description = "NewsHub provides an own archive page for your Blog / Magazine categories."
 
 [viewBag]
 localeUrl[de] = "/magazin/kategorie/:slug/:page?"
-localeTitle[de] = "Magazin Kategorie"
+localeTitle[de] = "Kategorie Archiv"
+localeMeta_title[de] = "Kategorie Archiv"
+localeMeta_description[de] = "NewsHub bietet eine eigene Archivseite für deine Blog / Magazin Kategorien."
 
 [blogPosts]
 pageNumber = "{{ :page }}"
@@ -14,24 +19,29 @@ sortOrder = "published_at desc"
 ==
 function onEnd()
 {
-    if ($this->category) {
-        $this->page->title = $this->category->name;
+    if (!empty($this->category)) {
+        $this->page->title .= ': ' . $this->category->name;
+        
+        if ($this->page->meta_title) {
+            $this->page->meta_title .= ': ' . $this->category->name;
+        }
+    } else {
+        $this->setStatusCode(404);
+        return $this->controller->run('404');
     }
 }
 ==
 <section class="section section-posts py-6">
     <div class="container">
-        {% if not category %}
-            Unknown Category
+        <h1 class="mb-5">{{ 'archive.category_archive' | trans }}: {{ category.name }}</h1>
+
+        {% if posts|length > 0 %}
+            {% partial 'blog/sections/posts-list' 
+                posts=posts
+                prefix='archiv'
+                datetime='short'
+            %}
         {% else %}
-            {% if posts|length > 0 %}
-                <h1 class="mb-5">Category {{ category.name }}</h1>
-                {% partial 'blog/sections/posts-list' 
-                    posts=posts
-                    prefix='archiv'
-                    datetime='short'
-                %}
-            {% endif %}
         {% endif %}
     </div>
 </section>

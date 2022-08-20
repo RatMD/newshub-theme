@@ -1,10 +1,15 @@
 url = "/magazine/author/:slug/:page?"
 layout = "default"
-title = "Magazine Author Archive"
+title = "Author Archive"
+description = "Magazine - Author Archive"
+meta_title = "Author Archive"
+meta_description = "NewsHub provides an own archive page for your Blog / Magazine authors."
 
 [viewBag]
-localeUrl[de] = "/magazin/author/:slug/:page?"
-localeTitle[de] = "Magazin Autor Archiv"
+localeUrl[de] = "/magazin/autor/:slug/:page?"
+localeTitle[de] = "Autor Archiv"
+localeMeta_title[de] = "Autor Archiv"
+localeMeta_description[de] = "NewsHub bietet eine eigene Archivseite für deine Blog / Magazin Autoren."
 
 [bloghubAuthorArchive]
 pageNumber = "{{ :page }}"
@@ -14,24 +19,26 @@ sortOrder = "published_at desc"
 ==
 function onEnd()
 {
-    if ($this->author) {
-        $this->page->title = $this->author->title;
+    if (!empty($this->author)) {
+        $this->page->title .= ': ' . $this->author->bloghub_display();
+        
+        if ($this->page->meta_title) {
+            $this->page->meta_title .= ': ' . $this->author->bloghub_display();
+        }
     }
 }
 ==
 <section class="section section-posts py-6">
     <div class="container">
-        {% if not author %}
-            Unknown Archive
+        <h1 class="mb-5">{{ 'archive.author_archive' | trans }}: {{ author.bloghub_display() }}</h1>
+
+        {% if posts|length > 0 %}
+            {% partial 'blog/sections/posts-list' 
+                posts=posts
+                prefix='archiv'
+                datetime='short'
+            %}
         {% else %}
-            {% if posts|length > 0 %}
-                <h1 class="mb-5">Author: {{ author.first_name ~ ' ' ~ author.last_name }}</h1>
-                {% partial 'blog/sections/posts-list' 
-                    posts=posts
-                    prefix='archiv'
-                    datetime='short'
-                %}
-            {% endif %}
         {% endif %}
     </div>
 </section>

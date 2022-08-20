@@ -1,10 +1,15 @@
 url = "/magazine/tag/:slug/:page?"
 layout = "default"
-title = "Magazine Tag Archive"
+title = "Tag Archive"
+description = "Magazine - Tag Archive"
+meta_title = "Tag Archive"
+meta_description = "NewsHub provides an own archive page for your Blog / Magazine tags."
 
 [viewBag]
-localeUrl[de] = "/magazin/tag/:slug/:page?"
-localeTitle[de] = "Magazin Tag Archiv"
+localeUrl[de] = "/magazin/schlagwort/:slug/:page?"
+localeTitle[de] = "Schlagwort Archiv"
+localeMeta_title[de] = "Schlagwort Archiv"
+localeMeta_description[de] = "NewsHub bietet eine eigene Archivseite für deine Blog / Magazin Schlagwörter."
 
 [bloghubTagArchive]
 pageNumber = "{{ :page }}"
@@ -14,24 +19,26 @@ sortOrder = "published_at desc"
 ==
 function onEnd()
 {
-    if ($this->tag) {
-        $this->page->title = $this->tag->title;
+    if (!empty($this->tag)) {
+        $this->page->title .= ': ' . (!empty($this->tag->title)? $this->tag->title: $this->tag->slug);
+        
+        if ($this->page->meta_title) {
+            $this->page->meta_title .= ': ' . (!empty($this->tag->title)? $this->tag->title: $this->tag->slug);
+        }
     }
 }
 ==
 <section class="section section-posts py-6">
     <div class="container">
-        {% if not tag %}
-            Unknown Tag
+        <h1 class="mb-5">{{ 'archive.tag_archive' | trans }}: {{ tag.title }}</h1>
+
+        {% if posts|length > 0 %}
+            {% partial 'blog/sections/posts-list' 
+                posts=posts
+                prefix='tag-archiv'
+                datetime='short'
+            %}
         {% else %}
-            {% if posts|length > 0 %}
-                <h1 class="mb-5">Tag {{ tag.title }}</h1>
-                {% partial 'blog/sections/posts-list' 
-                    posts=posts
-                    prefix='archiv'
-                    datetime='short'
-                %}
-            {% endif %}
         {% endif %}
     </div>
 </section>
