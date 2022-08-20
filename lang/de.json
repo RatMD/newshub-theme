@@ -44,6 +44,9 @@
     "posts.widget.recent": "Letzten Beiträge",
     "posts.widget.similar": "Ähnliche Beiträge",
     "posts.widget.tags": "Beliebte Schlagwörter durchsuchen",
+    "posts.empty.title": "Es tut mir Leid",
+    "posts.empty.comment": "Dieses Archiv enthält noch keine Beiträge.",
+    "posts.empty.button": "Zurück zur Startseite",
 
     "site.navbar.toggle": "Navigation ein/ausblenden",
     "site.footer.socials": "Folge und auf",

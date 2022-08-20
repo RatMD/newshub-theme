@@ -22,7 +22,7 @@ sortOrder = "published_at desc"
                 {% partial 'blog/sections/posts-list' posts=posts %}
                 {% partial 'blog/components/pagination' posts=posts %}
             {% else %}
-                No Posts found
+                {% partial 'blog/components/empty' %}
             {% endif %}
         </div>
     </div>

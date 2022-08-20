@@ -32,7 +32,7 @@ function onEnd()
     <div class="container">
         <h1 class="mb-5">{{ 'archive.author_archive' | trans }}: {{ author.bloghub_display() }}</h1>
 
-        {% if posts|length > 0 %}
+        {% if posts|length == 0 %}
             {% partial 'blog/sections/posts-list' 
                 posts=posts
                 prefix='archiv'
@@ -40,6 +40,7 @@ function onEnd()
             %}
             {% partial 'blog/components/pagination' posts=posts %}
         {% else %}
+            {% partial 'blog/components/empty' %}
         {% endif %}
     </div>
 </section>

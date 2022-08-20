@@ -44,6 +44,9 @@
     "posts.widget.recent": "Recent Articles",
     "posts.widget.similar": "Similar Articles",
     "posts.widget.tags": "Browse Popular Tags",
+    "posts.empty.title": "I'm sorry",
+    "posts.empty.comment": "This archive does not contain any post yet.",
+    "posts.empty.button": "Go back to the Homepage",
 
     "site.navbar.toggle": "Toggle Navigation",
     "site.footer.socials": "Follow us on",
