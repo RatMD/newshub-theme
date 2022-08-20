@@ -1,5 +1,5 @@
 {
-    "name": "rat.md/rat.newshub-theme",
+    "name": "rat.md/newshub-theme",
     "type": "october-theme",
     "description": "A simple Bootstrap 5.2 blog and magazine template for OctoberCMS.",
     "require": {
