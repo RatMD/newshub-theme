@@ -16,8 +16,11 @@ function onEnd()
         $this->page->title = $this->post->title;
         $this->page->meta_title = $this->post->title;
         $this->page->meta_description = !empty($this->post->excerpt)? $this->post->excerpt: strip_tags($this->post->summary);
-        $this->page->meta_author = $this->post->user->bloghub_display();
-        $this->page->meta_keywords = implode(', ', $this->post->bloghub_tags->map(fn ($el) => $el['slug'])->all());
+
+        $this['newshub'] = [
+            "meta_author" => $this->post->user->bloghub_display(),
+            "meta_keywords" => implode(', ', $this->post->bloghub_tags->map(fn ($el) => $el['slug'])->all())
+        ];
 
         $layout = $this->post->bloghub_meta->where('name', 'layout')->first()['value'] ?? 'default';
         if ($layout === 'heroimage') {
