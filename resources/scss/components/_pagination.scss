@@ -1,0 +1,55 @@
+
+// ----------------------------------------
+//  Pagination Stylings
+// ----------------------------------------
+
+.nav-pagination {
+    margin-top: $spacer * 2;
+    margin-bottom: $spacer * 2;
+    display: flex;
+    align-items: center;
+    justify-content: center; 
+
+    .pagination-label {
+        color: var(--#{$prefix}gray-600);
+        margin-right: $spacer;
+        padding-right: $spacer;
+        border-right: 1px solid var(--#{$prefix}gray-600);
+    }
+
+    .pagination {
+        margin: 0;
+
+        .page-item {
+            .page-link {
+                color: var(--#{$prefix}primary);
+                border: 0;
+                position: relative;
+                box-shadow: none !important;
+                font-weight: 600;
+
+                &::after {
+                    left: 2px;
+                    right: 2px;
+                    bottom: -3px;
+                    width: auto;
+                    height: 2px;
+                    content: "";
+                    display: block;
+                    position: absolute;
+                    transition: background-color 200ms ease;
+                }
+            }
+
+            &.active > .page-link {
+                cursor: default;
+                color: var(--#{$prefix}secondary);
+                background-color: transparent;
+
+                &::after {
+                    background-color: var(--#{$prefix}secondary);
+                }
+            }
+        }
+    }
+}

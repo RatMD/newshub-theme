@@ -49,6 +49,7 @@ postPage = "blog/post"
                     posts=latest.posts|slice(3)
                     prefix='latest'
                 %}
+                {% partial 'blog/components/pagination' posts=posts target="magazine" %}
             {% endif %}
         </div>
 

@@ -1,0 +1,14 @@
+
+{% set target = target | default(this.page.baseFileName) %}
+{% if posts.lastPage > 1 %}
+    <nav class="nav-pagination">
+        <span class="pagination-label">{{ 'archive.pagination' | trans | replace({'%1': posts.currentPage, '%2': posts.lastPage}) }}</span>
+        <ul class="pagination">
+            {% for page in 1..posts.lastPage %}
+                <li class="page-item {{ posts.currentPage == page ? 'active' : null }}">
+                    <a href="{{ target | page({ page: page }) }}" class="page-link">{{ page }}</a>
+                </li>
+            {% endfor %}
+        </ul>
+    </nav>
+{% endif %}

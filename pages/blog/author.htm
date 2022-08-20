@@ -38,6 +38,7 @@ function onEnd()
                 prefix='archiv'
                 datetime='short'
             %}
+            {% partial 'blog/components/pagination' posts=posts %}
         {% else %}
         {% endif %}
     </div>
