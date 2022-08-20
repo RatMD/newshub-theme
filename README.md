@@ -1,7 +1,7 @@
 NewsHub - Premium OctoberCMS Template
 =====================================
 
-NewsHub is a simple minimalistic but powerful responsive blog / magazine template, designed for 
+**NewsHub** is a simple, minimalistic but powerful responsive blog / magazine template, designed for 
 OctoberCMS v2 / v3 using the latest Bootstrap 5.2 CSS and JS framework.
 
 [View the Demo-Website](https://themes.rat.md/newshub)
@@ -10,7 +10,7 @@ OctoberCMS v2 / v3 using the latest Bootstrap 5.2 CSS and JS framework.
 Features
 --------
 
-- Bootstrap 5.2 with Bootstrap Icons (as partials)
+- Bootstrap 5.2 with Bootstrap Icons (usable as partials)
 - Fully Responsive (Mobile-First)
 - Multi-Language Support (using RainLab.Translate)
 - 4 Menu Positions (Social Links, Main Menu and 2 Footer Menus)

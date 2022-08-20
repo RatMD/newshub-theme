@@ -186,12 +186,21 @@
     display: flex;
     text-decoration: none;
 
-    .post-thumbnail {
+    .post-thumbnail,
+    .post-no-thumbnail {
         flex: 0 0 80px;
         width: 80px;
         height: 80px;
         object-fit: cover;
         object-position: top;
+        border-radius: $border-radius;
+    }
+    .post-no-thumbnail {
+        background-color: $gray-300;
+
+        .dark & {
+            background-color: $gray-800;
+        }
     }
 
     .post-content {
