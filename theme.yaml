@@ -2,7 +2,7 @@ name: Newshub
 description: 'A simple Bootstrap 5.2 blog and magazine template for OctoberCMS.'
 author: rat.md
 homepage: 'https://rat.md'
-authorCode: rat.md
+authorCode: RatMD
 code: newshub
 parent: ''
 database: '0'
