@@ -8,7 +8,10 @@
     padding: $spacer * 2;
     margin-bottom: $spacer * 1.5;
     background-color: $gray-100;
-
+    
+    .dark & {
+        background-color: $gray-900;
+    }
     &:last-child {
         margin-bottom: 0;
     }
@@ -34,6 +37,10 @@
     .card-title {
         color: $gray-700;
         font-size: 1.4rem;
+        
+        .dark & {
+            color: $gray-400;
+        }
     }
     .card-subtitle {
         color: $gray-600;
@@ -57,6 +64,11 @@
             text-decoration: none;
             transition: color 0.20s ease, background-color 0.20s ease;
             background-color: $gray-300;
+
+            .dark & {
+                color: var(--#{$prefix}light);
+                background-color: $gray-800;
+            }
 
             &:hover {
                 color: var(--#{$prefix}light);

@@ -26,4 +26,9 @@ export default () => {
         return;
     }
     query('[data-rat-toggle="lightbox"]').map(el => invokeLightbox(el));
+    query('.post-lightbox').map(el => {
+        el.dataset.gallery = "post-gallery";
+        el.dataset.caption = el.querySelector('img').alt;
+        invokeLightbox(el)
+    });
 };

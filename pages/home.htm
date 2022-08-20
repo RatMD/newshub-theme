@@ -29,7 +29,7 @@ postPage = "blog/post"
 
 <section class="section pt-6 pb-3">
     <div class="container">
-        <h1 class="mb-5">{{ 'magazine.latest.title' | trans }}</h1>
+        <h1 class="mb-5">{{ 'posts.widget.latest' | trans }}</h1>
         
         {% if latest.posts|length > 0 %}
             {% partial 'blog/sections/posts-columns' 
@@ -53,7 +53,7 @@ postPage = "blog/post"
         </div>
 
         <div class="sidebar-area">
-            {% partial 'page/home-sidebar' %}
+            {% partial 'sidebars/home' %}
         </div>
     </div>
 </section>

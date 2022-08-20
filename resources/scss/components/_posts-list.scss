@@ -6,6 +6,7 @@
 .posts-list {
     .post {
         display: flex;
+        position: relative;
         margin-bottom: $spacer * 2.5;
         flex-direction: column;
 
@@ -17,6 +18,25 @@
             flex-direction: row;
         }
 
+        .post-preview,
+        .post-pending {
+            top: 15px;
+            left: 15px;
+            color: $white;
+            padding: $spacer * 0.25 $spacer;
+            opacity: 0.5;
+            display: inline-block;
+            z-index: 100;
+            position: absolute;
+            border-radius: $border-radius;
+        }
+        .post-preview {
+            background-color: var(--#{$prefix}info);
+        }
+        .post-pending {
+            background-color: var(--#{$prefix}danger);
+        }
+
         .post-thumbnail {
             flex: 0 0 auto;
             max-width: 100%;
@@ -25,13 +45,14 @@
             display: block;
             overflow: hidden;
             border-radius: $border-radius;
+            text-decoration: none;
 
             @include media-breakpoint-up(lg) {
                 flex: 0 0 300px;
                 max-width: none;
             }
 
-            &::before {
+            &.post-has-thumbnail::before {
                 top: 0;
                 left: 0;
                 right: 0;
@@ -61,6 +82,26 @@
                 }
                 @include media-breakpoint-up(lg) {
                     width: 300px;
+                    height: 300px;
+                }
+            }
+            .post-no-thumbnail {
+                color: $gray-500;
+                width: 100%;
+                height: 300px;
+                display: flex;
+                padding: $spacer;
+                font-size: 1.4rem;
+                text-align: center;
+                font-family: $font-family-special;
+                align-items: center;
+                justify-content: center;
+
+                @include media-breakpoint-up(md) {
+                    height: 400px;
+                }
+                @include media-breakpoint-up(lg) {
+                    width: 100%;
                     height: 300px;
                 }
             }

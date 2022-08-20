@@ -34,72 +34,7 @@
 
         <div class="container mt-4">
             <div class="row w-100">
-                {% if post.categories|length > 0 %}
-                    <div class="col-12 col-md-6 col-lg-4">
-                        <div class="card card-simple">
-                            <header class="card-header">
-                                <span class="card-title">{{ 'magazine.categories' | trans }}</span>
-                            </header>
-
-                            <article class="card-body">
-                                <ul class="list-group list-group-flush">
-                                    {% for category in post.categories %}
-                                        <li class="list-group-item">
-                                            <a href="{{ category.url }}" title="{{ 'magazine.category_archive' | trans }}: {{ category.name }}">
-                                                {{ category.name }}
-                                            </a>
-                                        </li>
-                                    {% endfor %}
-                                </ul>
-                            </article>
-                        </div>
-                    </div>
-                {% endif %}
-
-                {% if post.bloghub_tags|length > 0 %}
-                    <div class="col-12 col-md-6 col-lg-4">
-                        <div class="card card-simple">
-                            <header class="card-header">
-                                <span class="card-title">{{ 'magazine.tags' | trans }}</span>
-                            </header>
-
-                            <article class="card-body">
-                                <ul class="list-group list-group-flush">
-                                    {% for tag in post.bloghub_tags %}
-                                        <li class="list-group-item">
-                                            <a href="{{ tag.url }}" title="{{ 'magazine.tag_archive' | trans }}: {{ tag.title }}">
-                                                {{ tag.title | default(tag.slug | title) }}
-                                            </a>
-                                        </li>
-                                    {% endfor %}
-                                </ul>
-                            </article>
-                        </div>
-                    </div>
-                {% endif %}
-
-                {% set prevPost = post.bloghub_prev_post_in_category %}
-                {% set nextPost = post.bloghub_next_post_in_category %}
-                {% if prevPost or nextPost %}
-                    <div class="col-12 col-md-6 col-lg-4">
-                        <div class="card card-simple">
-                            <header class="card-header">
-                                <span class="card-title">{{ 'magazine.single.readmore' | trans }}</span>
-                                <span class="card-subtitle">{{ 'magazine.single.same_category' | trans }}</span>
-                            </header>
-
-                            <article class="card-body">
-                                {% if prevPost %}
-                                    {% partial 'blog/components/button' post=prevPost %}
-                                {% endif %}
-
-                                {% if nextPost %}
-                                    {% partial 'blog/components/button' post=nextPost %}
-                                {% endif %}
-                            </article>   
-                        </div>
-                    </div>
-                {% endif %}
+                {% partial 'sidebars/post' wrap="col-12 col-md-6 col-lg-4" %}
             </div>
         </div>
     </article>
@@ -108,7 +43,7 @@
         <div class="container">
             {% set similarPosts = post.bloghub_similar_posts() %}
             {% if similarPosts|length > 0 %}
-                <h2 class="mb-5">{{ 'magazine.similar.title' | trans }}</h2>
+                <h2 class="mb-5">{{ 'posts.widget.similar' | trans }}</h2>
                 <div class="latest-posts">
                     {% partial 'blog/sections/posts-columns' 
                         posts=similarPosts
@@ -119,7 +54,7 @@
             {% else %}
                 {% set randomPosts = post.bloghub_random_posts() %}
                 {% if randomPosts|length > 0 %}
-                    <h2 class="mb-5">{{ 'magazine.random.title' | trans }}</h2>
+                    <h2 class="mb-5">{{ 'posts.widget.random' | trans }}</h2>
                     {% partial 'blog/sections/posts-columns' 
                         posts=randomPosts
                         prefix='random'

@@ -9,18 +9,27 @@
 <div class="posts-list posts-columns">
     {% for post in posts %}
         <div id="{{ prefix | default('post') }}-{{ post.id }}" class="post">
-            {% if post.featured_images %}
-                <a href="{{ post.url }}" title="{{ post.title }}" class="post-thumbnail{{ this.theme.view_counter? ' with-view-counter': '' }}">
-                    <img src="{{ post.featured_images.0.getPath() }}" alt="{{ post.title }}" />
-                    
-                    {% if this.theme.view_counter %}
-                        <div class="post-views">
-                            {% partial 'icons/bootstrap/eye-fill' %}
-                            <span class="counter">{{ post.bloghub_views }}</span>
-                        </div>
-                    {% endif %}
-                </a>
+            {% if not post.published %}
+                <span class="post-preview">{{ 'posts.preview' | trans }}</span>
             {% endif %}
+            {% if post.published_at | date('Y-m-d H:i:s') > 'now' | date('Y-m-d H:i:s') %}
+                <span class="post-pending">{{ 'posts.pending' | trans }}</span>
+            {% endif %}
+
+            <a href="{{ post.url }}" title="{{ post.title }}" class="post-thumbnail{% if post.featured_images %} post-has-thumbnail{% endif %}{{ this.theme.view_counter? ' with-view-counter': '' }}">
+                {% if post.featured_images %}
+                    <img src="{{ post.featured_images.0.getPath() }}" alt="{{ post.title }}" />
+                {% else %}
+                    <span class="post-no-thumbnail bg-light dark:bg-dark">{{ 'posts.no_thumbnail' | trans }}</span>
+                {% endif %}
+                
+                {% if this.theme.view_counter %}
+                    <div class="post-views">
+                        {% partial 'icons/bootstrap/eye-fill' %}
+                        <span class="counter">{{ post.bloghub_views }}</span>
+                    </div>
+                {% endif %}
+            </a>
 
             <div class="post-content">
                 <h2 class="post-title">
@@ -32,7 +41,7 @@
                         {{ post.published_at | date(dateTimeFormat) }}
                     </time>
                     <address class="post-author">
-                        <span>{{ 'magazine.list.by_author' | trans }}</span>
+                        <span>{{ 'posts.by_author' | trans }}</span>
                         <a href="{{ ('magazine/author/' ~ post.user.bloghub_slug()) | app }}" rel="author">{{ post.user.bloghub_display() }}</a>
                     </address>
                 </div>

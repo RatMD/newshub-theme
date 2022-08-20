@@ -77,7 +77,22 @@
                 font-size: 1.0rem;
                 max-width: 100%;
 
-                & > p {
+                h1,
+                h2,
+                h3,
+                h4,
+                h5,
+                h6 {
+                    margin-top: $spacer;
+                    margin-bottom: $spacer * 0.75;
+                }
+
+                & > p,
+                & > ul,
+                & > ol ,
+                & > blockquote,
+                & > address,
+                & > table {
                     margin-bottom: $spacer * 3;
                 }
 
@@ -99,7 +114,11 @@
                     }
                 }
             }
+        }
 
+        img {
+            width: 100%;
+            height: auto;
         }
 
         @include media-breakpoint-up(xl) {
