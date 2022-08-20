@@ -66,6 +66,16 @@
                 }
             }
         }
+
+        @include media-breakpoint-up(xl) {
+            .main-area.post-content {
+                padding-right: $spacer * 3;
+
+                & + .sidebar-area {
+                    padding-left: 0;
+                }
+            }
+        }
     }
 }
 

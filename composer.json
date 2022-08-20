@@ -1,8 +1,37 @@
 {
     "name": "rat.md/newshub-theme",
     "type": "october-theme",
-    "description": "A simple Bootstrap 5.2 blog and magazine template for OctoberCMS.",
+    "version": "1.0.0",
+    "description": "A simple, minimalistic and responsive blog / magazine template, designed with Bootstrap 5.2.",
+    "keywords": [
+        "october", 
+        "octobercms", 
+        "theme",
+        "template",
+        "responsive",
+        "magazine",
+        "dark"
+    ],
+    "homepage": "https://octobercms.com/theme/ratmd-newshub",
+    "license": "proprietary",
+    "authors": [
+        {
+            "name": "Sam",
+            "email": "sam@rat.md",
+            "role": "Developer"
+        }
+    ],
+    "support": {
+        "email": "info@rat.md"
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true,
     "require": {
+        "php": ">= 7.4 || >= 8.0",
         "composer/installers": "~1.0"
+    },
+    "config": {
+        "optimize-autoloader": true,
+        "sort-packages": true
     }
 }

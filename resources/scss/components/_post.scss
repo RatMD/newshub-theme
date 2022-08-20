@@ -194,6 +194,11 @@
         object-position: top;
     }
 
+    .post-content {
+        flex: 1 1 auto;
+        padding: $spacer * 0.25 $spacer;
+    }
+
     .post-title {
         color: var(--#{$prefix}body-color);
         font-size: 1.2rem;
