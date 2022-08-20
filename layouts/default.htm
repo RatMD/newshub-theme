@@ -19,7 +19,7 @@ bloghubTagPage = "blog/tag"
 <head>
     {% partial 'page/meta' %}
 </head>
-<body class="theme-{{ this.theme.id }} {{ 'page-' ~ this.page.id }} layout-{{ this.layout.id }}{% if this.theme.dark_scheme %} dark{% else %} light{% endif %}{{ bloghub_additionalBodyClasses ? ' ' ~ bloghub_additionalBodyClasses: '' }}">
+<body class="theme-{{ this.theme.id }} {{ 'page-' ~ this.page.id }} layout-{{ this.layout.id }}{% if this.theme.dark_scheme %} dark{% else %} light{% endif %}{{ bodyClasses ? ' ' ~ bodyClasses: '' }}">
     <script>
         let scheme = sessionStorage.getItem('newshub-color-scheme');
         if (scheme) {

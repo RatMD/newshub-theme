@@ -24,7 +24,7 @@ function onEnd()
 
         $layout = $this->post->bloghub_meta->where('name', 'layout')->first()['value'] ?? 'default';
         if ($layout === 'heroimage') {
-            $this['bloghub_additionalBodyClasses'] = 'overlay-navbar';
+            $this['bodyClasses'] = 'overlay-navbar';
         }
     } else {
         $this->setStatusCode(404);

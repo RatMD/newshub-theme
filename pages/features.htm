@@ -8,6 +8,16 @@ title = "NewsHub Features"
 localeUrl[de] = "/featured"
 localeTitle[de] = "NewsHub Features"
 ==
+{% put stylesheets %}
+{% default %}
+<style>
+    @media (min-width: 1024px) {
+        #page-features .card-header {
+            height: 128px;
+        }
+    }
+</style>
+{% endput %}
 <section class="section section-page">
     <header class="py-6 bg-light dark:bg-dark">
         <div class="container">
@@ -30,12 +40,12 @@ localeTitle[de] = "NewsHub Features"
     <div class="container py-6">
         <h2>Prominent Features</h2>
         <div class="row mt-5">
-            <div class="col-12 col-lg-6">
+            <div class="col-12 col-lg-6 mb-5 mb-lg-0">
                 <div class="card card-simple">
-                    <div class="card-header d-flex" style="height: 128px">
+                    <div class="card-header d-flex flex-wrap justify-content-center flex-lg-nowrap">
                         <img src="{{ 'assets/images/example/bootstrap-logo.png' | theme }}" alt="Bootstrap Logo" class="flex-shrink-0 flex-grow-0" width="155" height="100%" />
 
-                        <h3 class="px-5 py-4 h2">Bootstrap v5.2<br />w\ Bootstrap Icons</h3>
+                        <h3 class="px-1 px-xl-5 py-4 h2">Bootstrap v5.2<br />w\ Bootstrap Icons</h3>
                     </div>
 
                     <div class="card-body">
@@ -48,8 +58,8 @@ localeTitle[de] = "NewsHub Features"
                         <p><code>{% verbatim %}{% partial 'icons/bootstrap/&lt;iconname&gt;' %}{% endverbatim %}</code></p>
                     </div>
 
-                    <div class="card-footer text-end">
-                        <a href="https://icons.getbootstrap.com/" target="_blank" class="btn btn-secondary me-2">Visit Bootstrap Icons</a>
+                    <div class="card-footer d-flex flex-column flex-lg-row justify-content-center justify-lg-content-end">
+                        <a href="https://icons.getbootstrap.com/" target="_blank" class="btn btn-secondary me-lg-2 mb-2 mb-lg-0">Visit Bootstrap Icons</a>
                         <a href="https://getbootstrap.com" target="_blank" class="btn btn-primary">Visit Bootstrap 5.2</a>
                     </div>
                 </div>
@@ -71,15 +81,15 @@ localeTitle[de] = "NewsHub Features"
                         <p><code>&ltdiv class="keen-slider" data-keen-slider='{ ... }'></code></p>
                     </div>
 
-                    <div class="card-footer text-end">
+                    <div class="card-footer d-flex flex-column flex-lg-row justify-content-center justify-lg-content-end">
                         <a href="https://keen-slider.io/" target="_blank" class="btn btn-primary">Visit Keen Slider</a>
                     </div>
                 </div>
             </div>
 
             <div class="col-12 my-5">
-                <div class="card card-simple d-flex flex-row p-0 bg-transparent border">
-                    <div class="card-body p-5 col-6">
+                <div class="card card-simple d-flex flex-column flex-lg-row p-0 bg-transparent border dark:border-dark">
+                    <div class="card-body p-2 p-lg-5 col-12 col-lg-6">
                         <ul class="list-group list-group-flush">
                             <li class="list-group-item p-3 fs-5 border-0">Responsive Design (Mobile First)</li>
                             <li class="list-group-item p-3 fs-5 border-0">4 Menu Locations (Main, Socials, 2x Footer)</li>
@@ -88,7 +98,8 @@ localeTitle[de] = "NewsHub Features"
                             <li class="list-group-item p-3 fs-5 border-0">Additional SEO-related Meta Fields</li>
                         </ul>
                     </div>
-                    <div class="card-body p-5 col-6">
+
+                    <div class="card-body p-2 p-lg-5 col-12 col-lg-6">
                         <ul class="list-group list-group-flush">
                             <li class="list-group-item p-3 fs-5 border-0">Promotable Tags (with Tag Archive)</li>
                             <li class="list-group-item p-3 fs-5 border-0">Author & Date -related Archives</li>
@@ -101,8 +112,8 @@ localeTitle[de] = "NewsHub Features"
             </div>
 
             <div class="col-12">
-                <div class="card card-simple d-flex flex-row p-0">
-                    <div class="card-body col-6 p-5">
+                <div class="card card-simple d-flex flex-column flex-lg-row p-0">
+                    <div class="card-body col-12 col-lg-6 p-3 p-lg-5 bg-light text-dark">
                         <h3 class="text-center">Light Mode</h3>
                         <p class="lead mt-4 mb-0">
                             The <b>NewsHub</b> OctoberCMS Template is available in two color schemes: 
@@ -111,7 +122,7 @@ localeTitle[de] = "NewsHub Features"
                             your visitors decide!
                         </p>
                     </div>
-                    <div class="card-body col-6 p-5 bg-dark text-light">
+                    <div class="card-body col-12 col-lg-6 p-3 p-lg-5 bg-dark text-light">
                         <h3 class="text-center">Dark Mode</h3>
                         <p class="lead mt-4 mb-0">
                             The <b>NewsHub</b> OctoberCMS Template is available in two color schemes: 
@@ -126,7 +137,7 @@ localeTitle[de] = "NewsHub Features"
     </div>
 </section>
 
-<section class="bg-light">
+<section class="bg-light dark:bg-dark">
     <div class="container py-6">
         <div class="col-12 mt-4">
             <h2>Bootstrap Demonstration</h2>

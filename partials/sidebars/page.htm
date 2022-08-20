@@ -98,13 +98,14 @@ function onEnd()
     </ul>
 {% endmacro %}
 
+{% if toc %}
+    <div class="card card-simple">
+        <header class="card-header">
+            <span class="card-title">{{ 'site.widget.toc' | trans }}</span>
+        </header>
 
-<div class="card card-simple">
-    <header class="card-header">
-        <span class="card-title">{{ 'site.widget.toc' | trans }}</span>
-    </header>
-
-    <article class="card-body">
-        {{ _self.recursive_toc(toc) }}
-    </article>
-</div>
+        <article class="card-body">
+            {{ _self.recursive_toc(toc) }}
+        </article>
+    </div>
+{% endif %}
