@@ -1,0 +1,102 @@
+
+fields:
+    widget_type:
+        type: dropdown
+        label: theme.newshub::lang.option.sidebars.widget_type.label
+        comment: theme.newshub::lang.option.sidebars.widget_type.comment
+        showSearch: false
+        options:
+            articles: theme.newshub::lang.option.sidebars.widget_type.articles
+            authors: theme.newshub::lang.option.sidebars.widget_type.author
+            categories: theme.newshub::lang.option.sidebars.widget_type.category
+            tags: theme.newshub::lang.option.sidebars.widget_type.tags
+            static_menu: theme.newshub::lang.option.sidebars.widget_type.static_menu
+            toc: Table of Contents
+        span: left
+    
+    widget_title:
+        type: text
+        label: theme.newshub::lang.option.sidebars.widget_title.label
+        comment: theme.newshub::lang.option.sidebars.widget_title.comment
+        span: right
+    
+    widget_subtitle:
+        type: text
+        label: theme.newshub::lang.option.sidebars.widget_subtitle.label
+        comment: theme.newshub::lang.option.sidebars.widget_subtitle.comment
+        span: right
+    
+    __widget_options_ruler:
+        type: ruler
+    
+    #############################
+    ### WIDGET: LIST ARTICLES ###
+    #############################
+    widget_articles:
+        type: nestedform
+        showPanel: false
+        form: ~/themes/newshub/config/widgets/list-articles.yaml
+        trigger:
+            action: show
+            condition: value[articles]
+            field: widget_type
+
+    ############################
+    ### WIDGET: LIST AUTHORS ###
+    ############################
+    widget_authors:
+        type: nestedform
+        showPanel: false
+        form: ~/themes/newshub/config/widgets/list-authors.yaml
+        trigger:
+            action: show
+            condition: value[authors]
+            field: widget_type
+
+    ###############################
+    ### WIDGET: LIST CATEGORIES ###
+    ###############################
+    widget_categories:
+        type: nestedform
+        showPanel: false
+        form: ~/themes/newshub/config/widgets/list-categories.yaml
+        trigger:
+            action: show
+            condition: value[categories]
+            field: widget_type
+
+    #########################
+    ### WIDGET: LIST TAGS ###
+    #########################
+    widget_tags:
+        type: nestedform
+        showPanel: false
+        form: ~/themes/newshub/config/widgets/list-tags.yaml
+        trigger:
+            action: show
+            condition: value[tags]
+            field: widget_type
+
+    ###########################
+    ### WIDGET: STATIC MENU ###
+    ###########################
+    widget_static_menu:
+        type: nestedform
+        showPanel: false
+        form: ~/themes/newshub/config/widgets/static-menu.yaml
+        trigger:
+            action: show
+            condition: value[static_menu]
+            field: widget_type
+
+    ################################
+    ### WIDGET: TABLE OF CONTENT ###
+    ################################
+    widget_toc:
+        type: nestedform
+        showPanel: false
+        form: ~/themes/newshub/config/widgets/toc.yaml
+        trigger:
+            action: show
+            condition: value[toc]
+            field: widget_type

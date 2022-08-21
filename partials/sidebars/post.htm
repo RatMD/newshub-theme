@@ -1,67 +1,11 @@
 
-{% if post.categories %}
-    {% if wrap %}<div class="{{ wrap }}">{% endif %}
-    <div class="card card-simple">
-        <header class="card-header">
-            <span class="card-title">{{ 'posts.widget.categories' | _ }}</span>
-        </header>
-
-        <article class="card-body">
-            <ul class="list-group list-group-flush">
-                {% for category in post.categories %}
-                    <li class="list-group-item">
-                        <a href="{{ category.url }}" title="{{ 'archive.category_archive' | _ }}: {{ category.name }}">
-                            {{ category.name }}
-                        </a>
-                    </li>
-                {% endfor %}
-            </ul>
-        </article>
-    </div>
-    {% if wrap %}</div>{% endif %}
-{% endif %}
-
-{% if post.bloghub_tags|length > 0 %}
-    {% if wrap %}<div class="{{ wrap }}">{% endif %}
-    <div class="card card-simple">
-        <header class="card-header">
-            <span class="card-title">{{ 'posts.widget.tags' | _ }}</span>
-        </header>
-
-        <article class="card-body">
-            <ul class="list-group list-group-flush">
-                {% for tag in post.bloghub_tags %}
-                    <li class="list-group-item">
-                        <a href="{{ tag.url }}" title="{{ 'archive.tag_archive' | _ }}: {{ tag.title }}">
-                            {{ tag.title | default(tag.slug | title) }}
-                        </a>
-                    </li>
-                {% endfor %}
-            </ul>
-        </article>
-    </div>
-    {% if wrap %}</div>{% endif %}
-{% endif %}
-
-{% set prevPost = post.bloghub_prev_post_in_category %}
-{% set nextPost = post.bloghub_next_post_in_category %}
-{% if prevPost or nextPost %}
-    {% if wrap %}<div class="{{ wrap }}">{% endif %}
-    <div class="card card-simple">
-        <header class="card-header">
-            <span class="card-title">{{ 'posts.readmore' | _ }}</span>
-            <span class="card-subtitle">{{ 'posts.same_category' | _ }}</span>
-        </header>
-
-        <article class="card-body">
-            {% if prevPost %}
-                {% partial 'blog/components/button' post=prevPost %}
-            {% endif %}
-
-            {% if nextPost %}
-                {% partial 'blog/components/button' post=nextPost %}
-            {% endif %}
-        </article>   
-    </div>
-    {% if wrap %}</div>{% endif %}
-{% endif %}
+{% for widget in this.theme.sidebar_post %}
+    {% if hasPartial('sidebars/widgets/' ~ widget.widget_type) %}
+        {% set options = widget['widget_' ~ widget.widget_type] %}
+        {% partial ('sidebars/widgets/' ~ widget.widget_type) widget=widget options=options %}
+    {% else %}
+        Widget {{ widget.widget_type }} not found.
+    {% endif %}
+{% else %}
+    No widget
+{% endfor %}

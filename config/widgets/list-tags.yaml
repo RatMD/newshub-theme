@@ -1,0 +1,24 @@
+fields:
+    widget_tag_count:
+        type: number
+        label: theme.newshub::lang.option.widget.tags.count.label
+        comment: theme.newshub::lang.option.widget.tags.count.comment
+        min: 1
+        max: 30
+        step: 1
+        default: 5
+        span: auto
+    
+    widget_tag_posts_count:
+        type: switch
+        label: theme.newshub::lang.option.widget.tags.posts_count.label
+        comment: theme.newshub::lang.option.widget.tags.posts_count.comment
+        default: true
+        span: left
+    
+    widget_tag_promoted:
+        type: switch
+        label: theme.newshub::lang.option.widget.tags.promoted.label
+        comment: theme.newshub::lang.option.widget.tags.promoted.comment
+        default: false
+        span: right

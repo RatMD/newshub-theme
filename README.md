@@ -16,6 +16,8 @@ these are feasible within the template or one of our extensions, we will be happ
 - Fully Responsive (Mobile-First)
 - Multi-Language Support (using RainLab.Translate)
 - 4 Menu Positions (Social Links, Main Menu and 2 Footer Menus)
+- 3 Sidebar Positions (Homepage, Post and Page)
+    - with up to 10 different widgets
 - 2 Color Schemes (Light & Dark)
 - Color Switch & Language Switch Button Support
 - Resposive Slider using Keen Slider

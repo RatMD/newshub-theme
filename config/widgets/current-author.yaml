@@ -1,0 +1,28 @@
+fields:
+    widget_avatar:
+        type: switch
+        label: theme.newshub::lang.option.widget.current_author.avatar.label
+        comment: theme.newshub::lang.option.widget.current_author.avatar.comment
+        default: true
+        span: left
+
+    widget_description:
+        type: switch
+        label: theme.newshub::lang.option.widget.current_author.description.label
+        comment: theme.newshub::lang.option.widget.current_author.description.comment
+        default: true
+        span: right
+
+    widget_posts_count:
+        type: switch
+        label: theme.newshub::lang.option.widget.current_author.posts_count.label
+        comment: theme.newshub::lang.option.widget.current_author.posts_count.comment
+        default: true
+        span: left
+
+    widget_favourite_category:
+        type: switch
+        label: theme.newshub::lang.option.widget.current_author.favourite_category.label
+        comment: theme.newshub::lang.option.widget.current_author.favourite_category.comment
+        default: true
+        span: right

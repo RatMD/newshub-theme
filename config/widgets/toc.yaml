@@ -1,0 +1,14 @@
+fields:
+    widget_title_as_first:
+        type: switch
+        label: theme.newshub::lang.option.widget.toc.title_as_first.label
+        comment: theme.newshub::lang.option.widget.toc.title_as_first.comment
+        default: true
+        span: left
+
+    widget_js_anchors:
+        type: switch
+        label: theme.newshub::lang.option.widget.toc.js_anchors.label
+        comment: theme.newshub::lang.option.widget.toc.js_anchors.comment
+        default: false
+        span: right

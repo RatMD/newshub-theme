@@ -1,0 +1,83 @@
+==
+function onEnd()
+{
+    $config = $this['options'];
+    $limit = is_numeric($config['widget_articles_count'])? intval($config['widget_articles_count']): 5;
+
+    // Main Posts Query
+    $prefix = 'widget-posts-';
+    $posts = \RainLab\Blog\Models\Post::with(['categories', 'featured_images', 'bloghub_tags'])
+        ->where('published', '1')
+        ->limit($limit);
+
+    // Modify Query
+    switch($config['widget_articles_type']) {
+        case "latest":
+            $posts->orderBy('published_at', 'DESC');
+            $prefix = 'widget-latest-';
+            break;
+        case "random":
+            $posts->inRandomOrder();
+            $prefix = 'widget-random-';
+            break;
+        case "by_author":
+            $posts->where('user_id', $config['widget_articles_by_author']);
+            $prefix = 'widget-byauthor-';
+            break;
+        case "by_category":
+            $category = $config['widget_articles_by_category'];
+            $posts->whereHas('categories', function($query) use ($category) {
+                return $query->where('rainlab_blog_categories.id', $category);
+            });
+            $prefix = 'widget-bycategory-';
+            break;
+        case "by_tag":
+            $tag = $config['widget_articles_by_tag'];
+            $posts->whereHas('bloghub_tags', function($query) use ($tag) {
+                return $query->where('ratmd_bloghub_tags.id', $tag);
+            });
+            $prefix = 'widget-bytag-';
+            break;
+        case "by_views":
+            $posts->orderBy('bloghub_views', 'DESC');
+            $prefix = 'widget-byviews-';
+            break;
+        case "by_unique_views":
+            $posts->orderBy('bloghub_unique_views', 'DESC');
+            $prefix = 'widget-byuniqueviews-';
+            break;
+    }
+
+    // Apply Query
+    $ctrl = Cms\Classes\Controller::getController();
+    $component = $ctrl->getLayout()->getComponentProperties('blogPosts');
+
+    $this['widget_posts'] = $posts->get()->each(function ($model) use ($component, $ctrl) {
+        $model->setUrl($component['postPage'], $ctrl);
+    })->all();
+    $this['widget_posts_prefix'] = $prefix;
+}
+==
+
+{% if widget_posts|length > 0 %}
+    <div class="card card-simple">
+        {% if widget.widget_title or widget.widget_subtitle %}
+            <div class="card-header">
+                {% if widget.widget_title or widget.widget_subtitle %}
+                    <h2 class="card-title">{{ widget.widget_title }}</h2>
+                {% endif %}
+                {% if widget.widget_title or widget.widget_subtitle %}
+                    <span class="card-subtitle">{{ widget.widget_subtitle }}</span>
+                {% endif %}
+            </div>
+        {% endif %}
+
+        <div class="card-body">
+            {% partial 'blog/sections/posts-condensed'
+                posts=widget_posts
+                prefix=widget_posts_prefix
+                datetime='short'
+            %}
+        </div>
+    </div>
+{% endif %}

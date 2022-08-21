@@ -1,71 +1,11 @@
-[blogPosts popularPosts]
-pageNumber = 0
-sortOrder = bloghub_views desc
-postsPerPage = 5
 
-[blogCategories categories]
-displayEmpty = true
-
-[bloghubTags tags]
-==
-
-<div class="card card-simple">
-    <div class="card-header">
-        <h2 class="card-title">{{ 'posts.widget.popular' | _ }}</h2>
-    </div>
-    <div class="card-body">
-        {% partial 'blog/sections/posts-condensed'
-            posts=popularPosts.posts
-            prefix='popular'
-            datetime='short'
-        %}
-    </div>
-</div>
-
-{% if categories.categories|length > 0 %}
-    <div class="card card-simple">
-        <div class="card-header">
-            <h2 class="card-title">{{ 'posts.widget.categories' | _ }}</h2>
-        </div>
-        <div class="card-body">
-            <ul class="list-group list-group-flush">
-                {% for category in categories.categories %}
-                    {% set count = category.posts_count[0].count | default(0) %}
-                    <li class="list-group-item">
-                        <a href="{{ category.url }}" title="{{ 'archive.category_archive' | _ }}: {{ category.name }}">
-                            {{ category.name | default(tag.slug | title) }}
-
-                            <span class="position-absolute top-50 start-100 translate-middle badge rounded-pill{{ count == 0? ' bg-secondary': ' bg-danger' }}">
-                                {{ count }}
-                            </span>
-                        </a>
-                    </li>
-                {% endfor %}
-            </ul>
-        </div>
-    </div>
-{% endif %}
-
-{% if tags.tags|length > 0 %}
-    <div class="card card-simple">
-        <div class="card-header">
-            <h2 class="card-title">{{ 'posts.widget.tags' | _ }}</h2>
-        </div>
-        <div class="card-body">
-            <ul class="list-group list-group-flush">
-                {% for tag in tags.tags %}
-                    {% set count = tag.posts_count[0].count | default(0) %}
-                    <li class="list-group-item">
-                        <a href="{{ tag.url }}" title="{{ 'archive.tag_archive' | _ }}: {{ tag.title }}">
-                            {{ tag.title | default(tag.slug | title) }}
-
-                            <span class="position-absolute top-50 start-100 translate-middle badge rounded-pill{{ count == 0? ' bg-secondary': ' bg-danger' }}">
-                                {{ count }}
-                            </span>
-                        </a>
-                    </li>
-                {% endfor %}
-            </ul>
-        </div>
-    </div>
-{% endif %}
+{% for widget in this.theme.sidebar_home %}
+    {% if hasPartial('sidebars/widgets/' ~ widget.widget_type) %}
+        {% set options = widget['widget_' ~ widget.widget_type] %}
+        {% partial ('sidebars/widgets/' ~ widget.widget_type) widget=widget options=options %}
+    {% else %}
+        Widget {{ widget.widget_type }} not found.
+    {% endif %}
+{% else %}
+    No widget
+{% endfor %}
