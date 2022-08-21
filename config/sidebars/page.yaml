@@ -11,7 +11,7 @@ fields:
             categories: theme.newshub::lang.option.sidebars.widget_type.category
             tags: theme.newshub::lang.option.sidebars.widget_type.tags
             static_menu: theme.newshub::lang.option.sidebars.widget_type.static_menu
-            toc: Table of Contents
+            toc: theme.newshub::lang.option.sidebars.widget_type.toc
         span: left
     
     widget_title:

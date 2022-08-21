@@ -6,10 +6,10 @@ fields:
         comment: theme.newshub::lang.option.sidebars.widget_type.comment
         showSearch: false
         options:
-            current_author: Current Author
-            current_categories: Current Categories
-            current_tags: Current Tags
-            current_buttons: Next | Previous Buttons
+            current_author: theme.newshub::lang.option.sidebars.widget_type.current_author
+            current_categories: theme.newshub::lang.option.sidebars.widget_type.current_categories
+            current_tags: theme.newshub::lang.option.sidebars.widget_type.current_tags
+            current_buttons: theme.newshub::lang.option.sidebars.widget_type.current_buttons
             articles: theme.newshub::lang.option.sidebars.widget_type.articles
             authors: theme.newshub::lang.option.sidebars.widget_type.author
             categories: theme.newshub::lang.option.sidebars.widget_type.category

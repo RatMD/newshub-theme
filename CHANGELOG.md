@@ -13,6 +13,7 @@ Version 1.2.0 - In Progress
 - Update: Change dropdown design / stylings on all header actions (same styling as main-menu).
 - Update: Move Color & Language menu to the actions section on the extended header style.
 - Update: Header stylings and template.
+- Update: Move both macros to the new `page/macro.htm` partial.
 
 
 Version 1.1.0 - Stable
@@ -28,7 +29,6 @@ Version 1.1.0 - Stable
 - Add: Current Tags widget for post sidebar.
 - Add: Next | Previous posts widget for post sidebar.
 - Add: Table of Contents widget for page sidebar.
-- Update: Move both macros to the new `page/macro.htm` partial.
 - Fix: Table of Contents generator skipped the last header element.
 - Fix: Missing dark header settings on static page layouts.
 

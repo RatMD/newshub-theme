@@ -27,8 +27,27 @@ The **NewsHub** OctoberCMS template currently supports 4 custom meta values:
 - `Post Layout` - Allows to change the used Post Layout
 - `Featured Images View` - Allows to change how the featured images are shown on the post
 
+### Sidebar Positions & Widgets
+The **NewsHub** OctoberCMS template currently provides 3 menu positions:
+
+- `Homepage Sidebar` - Shown on the Homepage
+- `Page Sidebar` - Shown on the static pages
+- `Post Sidebar` - Shown on the post pages
+
+and the following widgets:
+
+- `Article List` - List articles by published date, random author, category, tag, views or unique views.
+- `Category List` - Lists all available (or non-empty) categories.
+- `Tag List` - Lists all available (or promoted-only) tags.
+- `Author List` - Lists all authors.
+- `Static Menu` - Embeds a static menu.
+- `Table of Contents` - Embeds a table of contents area (for static page sidebar only).
+- `Current Author` - Shows details about the current author (for post page sidebar only).
+- `Current Categories` - Lists current post categories (for post page sidebar only).
+- `Current Tags` - Lists current post tags (for post page sidebar only).
+- `Next | Previous Buttons` - Shows next / previous post buttons (for post page sidebar only).
+
 ### Theme Settings
-The **NewsHub** OctoberCMS template currently supports the following settings:
 
 - **Site Name** - The website name as it should appear on the front-end.
 - **Site Logo** - Use your logo instead of the the site name (height should not exceed 40 pixels).
