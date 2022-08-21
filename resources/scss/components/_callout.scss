@@ -92,4 +92,21 @@
             color: shade-color($callout-color, 20%);
         }
     }
+
+    $callout-dark-background: shift-color($value, -$callout-bg-scale);
+    $callout-dark-border: shift-color($value, -$callout-border-scale);
+    $callout-dark-color: shift-color($value, -$callout-color-scale);
+
+    @if (contrast-ratio($callout-dark-background, $callout-dark-color) < $min-contrast-ratio) {
+        $callout-dark-color: mix($value, color-contrast($callout-dark-background), abs($callout-color-scale));
+    }
+    .dark .callout-#{$state} {
+        --#{$prefix}callout-color: #{$callout-dark-color};
+        --#{$prefix}callout-bg: #{$callout-dark-background};
+        --#{$prefix}callout-border-color: #{$callout-dark-border};
+        
+        .callout-link {
+            color: shade-color($callout-dark-color, 10%);
+        }
+    }
 }

@@ -3,6 +3,10 @@
 //  Navbar Stylings
 // ----------------------------------------
 
+#pageHeader {
+    position: relative;
+    z-index: 1000;
+}
 .navbar {
     --#{$prefix}navbar-menu-toggler-icon: #{escape-svg($navbar-menu-toggler-icon)};
 }

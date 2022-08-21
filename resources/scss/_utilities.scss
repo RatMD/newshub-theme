@@ -91,7 +91,9 @@ $utilities: (
         local-vars: (
             "border-opacity": 1
         ),
-        values: $utilities-border-colors
+        values: map-merge($utilities-border-colors, (
+            gray: $gray-700
+        ))
     ),
 );
 
