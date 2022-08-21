@@ -1,4 +1,6 @@
+##
 ==
+<?
 function onEnd()
 {
     $config = $this['options'];
@@ -27,6 +29,7 @@ function onEnd()
         $this['widget_author_category'] = $category->first();
     }
 }
+?>
 ==
 {% if post.bloghub_tags|length > 0 %}
     {% if wrap %}<div class="{{ wrap }}">{% endif %}

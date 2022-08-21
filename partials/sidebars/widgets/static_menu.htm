@@ -1,4 +1,6 @@
+##
 ==
+<?
 function onEnd()
 {
     $config = $this['options'];
@@ -6,8 +8,8 @@ function onEnd()
         'code' => $config['widget_static_menu_position']
     ], false);
 }
+?>
 ==
-
 {% if widget_static_menu.menuItems|length > 0 %}
     <div class="card card-simple">
         {% if widget.widget_title or widget.widget_subtitle %}

@@ -1,4 +1,6 @@
+##
 ==
+<?
 function onEnd()
 {
     $config = $this['options'];
@@ -84,6 +86,7 @@ function onEnd()
     $this['toc'] = $result;
     $this['toc_js'] = $useJavaScript;
 }
+?>
 ==
 {% from "page/macros.htm" import toc_builder %}
 

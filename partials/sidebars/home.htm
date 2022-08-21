@@ -1,4 +1,3 @@
-
 {% for widget in this.theme.sidebar_home %}
     {% if hasPartial('sidebars/widgets/' ~ widget.widget_type) %}
         {% set options = widget['widget_' ~ widget.widget_type] %}

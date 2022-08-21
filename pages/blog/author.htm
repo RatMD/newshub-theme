@@ -1,3 +1,4 @@
+##
 url = "/magazine/author/:slug/:page?"
 layout = "default"
 title = "Author Archive"
@@ -17,6 +18,7 @@ postsPerPage = 10
 authorFilter = "{{ :slug }}"
 sortOrder = "published_at desc"
 ==
+<?
 function onEnd()
 {
     if (!empty($this->author)) {
@@ -27,6 +29,7 @@ function onEnd()
         }
     }
 }
+?>
 ==
 <section class="section section-posts py-6">
     <div class="container">

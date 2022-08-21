@@ -1,3 +1,4 @@
+##
 url = "/magazine/tag/:slug/:page?"
 layout = "default"
 title = "Tag Archive"
@@ -17,6 +18,7 @@ postsPerPage = 10
 tagFilter = "{{ :slug }}"
 sortOrder = "published_at desc"
 ==
+<?
 function onEnd()
 {
     if (!empty($this->tag)) {
@@ -27,6 +29,7 @@ function onEnd()
         }
     }
 }
+?>
 ==
 <section class="section section-posts py-6">
     <div class="container">

@@ -1,3 +1,4 @@
+##
 url = "/magazine/date/:date|^[0-9]{4}(\-[0-9]{2}(\-[0-9]{2}))?/:page?"
 layout = "default"
 title = "Date Archive"
@@ -17,6 +18,7 @@ postsPerPage = 10
 dateFilter = "{{ :date }}"
 sortOrder = "published_at desc"
 ==
+<?
 function onEnd()
 {
     if (!empty($this->dateType)) {
@@ -29,6 +31,7 @@ function onEnd()
         }
     }
 }
+?>
 ==
 <section class="section section-posts py-6">
     <div class="container">

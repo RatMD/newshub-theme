@@ -1,4 +1,6 @@
+##
 ==
+<?
 function onEnd()
 {
     $config = $this['options'];
@@ -57,6 +59,7 @@ function onEnd()
     })->all();
     $this['widget_posts_prefix'] = $prefix;
 }
+?>
 ==
 
 {% if widget_posts|length > 0 %}

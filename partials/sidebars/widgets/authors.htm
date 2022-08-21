@@ -1,4 +1,6 @@
+##
 ==
+<?
 function onEnd()
 {
     $config = $this['options'];
@@ -24,6 +26,7 @@ function onEnd()
     $this['widget_authors_show_avatar'] = $showAvatar;
     $this['widget_authors_show_count'] = $showCount;
 }
+?>
 ==
 
 {% if widget_authors|length > 0 %}

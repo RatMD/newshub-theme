@@ -3,6 +3,7 @@ NewsHub - Changelog
 
 Version 1.2.0 - In Progress
 ---------------------------
+- Update: Use OctoberCMS VScode Syntax.
 
 ### ToDo
 - Add: Additional navigation header style (with additional action buttons).

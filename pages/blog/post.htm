@@ -1,3 +1,4 @@
+##
 url = "/magazine/post/:slug"
 layout = "default"
 title = "Single Post"
@@ -10,6 +11,7 @@ localeTitle[de] = "Einzelner Beitrag"
 [blogPost]
 slug = "{{ :slug }}"
 ==
+<?
 function onEnd()
 {
     if (!empty($this->post)) {
@@ -31,6 +33,7 @@ function onEnd()
         return $this->controller->run('404');
     }
 }
+?>
 ==
 {% set layout = post.bloghub_meta_data.layout | default('default') %}
 

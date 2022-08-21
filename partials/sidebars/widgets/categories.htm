@@ -1,4 +1,6 @@
+##
 ==
+<?
 function onEnd()
 {
     $config = $this['options'];
@@ -23,6 +25,7 @@ function onEnd()
     })->all();
     $this['widget_categories_show_count'] = $showCount;
 }
+?>
 ==
 
 {% if widget_categories|length > 0 %}
