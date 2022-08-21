@@ -7,4 +7,16 @@ v1.0.1:
     - "Fix: Example component styling + dark border color."
     - "Fix: Navbar below Hero-Slider (when Header is not set to 'sticky')."
 v1.1.0:
-    - Pending
+    - "Add: Configurable sidebar widgets for home, page and post CMS pages."
+    - "Add: Article List widget for all sidebars."
+    - "Add: Category List widget for all sidebars."
+    - "Add: Tag List widget for all sidebars."
+    - "Add: Author List widget for all sidebars."
+    - "Add: Static Menu widget for all sidebars."
+    - "Add: Current Author widget for post sidebar."
+    - "Add: Current Categories widget for post sidebar."
+    - "Add: Current Tags widget for post sidebar."
+    - "Add: Next | Previous posts widget for post sidebar."
+    - "Add: Table of Contents widget for page sidebar."
+    - "Fix: Table of Contents generator skipped the last header element."
+    - "Fix: Missing dark header settings on static page layouts."

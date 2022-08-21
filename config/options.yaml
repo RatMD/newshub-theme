@@ -178,17 +178,17 @@ tabs:
             tab: theme.newshub::lang.option.tabs.header
             type: section
             label: theme.newshub::lang.option.sections.main_header
-        navbar_style:
-            tab: theme.newshub::lang.option.tabs.header
-            type: dropdown
-            label: theme.newshub::lang.option.navbar_style.label
-            comment: theme.newshub::lang.option.navbar_style.comment
-            default: condensed
-            showSearch: false
-            span: auto
-            options:
-                condensed: theme.newshub::lang.option.navbar_style.condensed
-                extended: theme.newshub::lang.option.navbar_style.extended
+#        navbar_style:
+#            tab: theme.newshub::lang.option.tabs.header
+#            type: dropdown
+#            label: theme.newshub::lang.option.navbar_style.label
+#            comment: theme.newshub::lang.option.navbar_style.comment
+#            default: condensed
+#            showSearch: false
+#            span: auto
+#            options:
+#                condensed: theme.newshub::lang.option.navbar_style.condensed
+#                extended: theme.newshub::lang.option.navbar_style.extended
         sticky_header:
             tab: theme.newshub::lang.option.tabs.header
             type: switch
@@ -207,16 +207,16 @@ tabs:
             label: theme.newshub::lang.option.languages_menu.label
             comment: theme.newshub::lang.option.languages_menu.comment
             default: false
-        search_button:
-            tab: theme.newshub::lang.option.tabs.header
-            type: switch
-            label: theme.newshub::lang.option.search_button.label
-            comment: theme.newshub::lang.option.search_button.comment
-            default: false
-            trigger:
-                action: show
-                condition: value[extended]
-                field: navbar_style
+#        search_button:
+#            tab: theme.newshub::lang.option.tabs.header
+#            type: switch
+#            label: theme.newshub::lang.option.search_button.label
+#            comment: theme.newshub::lang.option.search_button.comment
+#            default: false
+#            trigger:
+#                action: show
+#                condition: value[extended]
+#                field: navbar_style
 #        user_button:
 #            tab: theme.newshub::lang.option.tabs.header
 #            type: switch
