@@ -1,4 +1,33 @@
+==
+function onEnd()
+{
+    $config = $this['options'];
 
+    if ($config['widget_posts_count'] === '1') {
+        $count = RainLab\Blog\Models\Post::where('user_id', $this->post->user->id)
+            ->where('published', 1)
+            ->count();
+        $this['widget_author_count'] = $count;
+    }
+
+    if ($config['widget_favourite_category'] === '1') {
+        $category = RainLab\Blog\Models\Category::with('posts')
+            ->from('rainlab_blog_categories', 'category')
+            ->selectRaw('*, (
+                SELECT count(*) FROM "rainlab_blog_posts"
+            INNER JOIN "rainlab_blog_posts_categories"
+                    ON "rainlab_blog_posts_categories"."post_id" = "rainlab_blog_posts"."id"
+            INNER JOIN "rainlab_blog_categories"
+                    ON "rainlab_blog_posts_categories"."category_id" = "rainlab_blog_categories"."id"
+                WHERE "rainlab_blog_posts"."user_id" = ?
+                  AND "rainlab_blog_posts"."published" IS NOT NULL
+				  AND "rainlab_blog_posts_categories".category_id = "category"."id"
+            ) as count', [$this->post->user->id])
+            ->orderBy('count', 'DESC')->limit(1);
+        $this['widget_author_category'] = $category->first();
+    }
+}
+==
 {% if post.bloghub_tags|length > 0 %}
     {% if wrap %}<div class="{{ wrap }}">{% endif %}
     <div class="card card-simple">
@@ -14,7 +43,35 @@
         {% endif %}
 
         <div class="card-body">
-            
+            <div class="row flex-wrap">
+                {% if options.widget_avatar %}
+                    {% set avatar = post.user.getAvatarThumb(64) %}
+                    <div class="col-12 col-lg-3 d-flex justify-content-center align-self-start">
+                        <img src="{{ avatar }}" class="rounded" width="64" height="64" alt="{{ post.user.bloghub_display() }}" />
+                    </div>
+                {% endif %}
+                
+                <div class="col-12 col-lg-9">
+                    <b class="fs-5 font-special">{{ post.user.bloghub_display() }}</b>
+                    {% if options.widget_description and post.user.about_me %}
+                        <p class="fs-7">{{ post.user.about_me }}</p>
+                    {% endif %}
+                </div>
+                
+                {% if options.widget_posts_count %}
+                    <div class="col-12 mt-3">
+                        <span class="fs-8 text-uppercase d-block">{{ 'posts.number_of_posts' | _ }} </span>
+                        <b>{{ widget_author_count }}</b> {{ 'posts.posts_in' | _ }} {{ post.user.created_at | date('F, Y') }}
+                    </div>
+                {% endif %}
+                
+                {% if options.widget_favourite_category and widget_author_category %}
+                    <div class="col-12 mt-3">
+                        <span class="fs-8 text-uppercase d-block">{{ 'posts.favourite_category' | _ }} y</span>
+                        <b>{{ widget_author_category.count }}</b> {{ 'posts.posts_since' | _ }} {{ widget_author_category.name }}
+                    </div>
+                {% endif %}
+            </div>
         </div>
     </div>
     {% if wrap %}</div>{% endif %}

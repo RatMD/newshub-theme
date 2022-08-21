@@ -6,3 +6,5 @@ v1.0.1:
     - "Fix: Callout Color variables on dark scheme."
     - "Fix: Example component styling + dark border color."
     - "Fix: Navbar below Hero-Slider (when Header is not set to 'sticky')."
+v1.1.0:
+    - Pending

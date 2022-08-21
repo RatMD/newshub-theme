@@ -47,6 +47,10 @@ en:
     posts.empty.title: "I'm sorry"
     posts.empty.comment: "This archive does not contain any post yet."
     posts.empty.button: "Go back to the Homepage"
+    posts.number_of_posts: "Number of Posts"
+    posts.posts_in: "Posts since"
+    posts.favourite_category: "Favourite Category"
+    posts.posts_since: "Posts in"
 
     site.navbar.toggle: "Toggle Navigation"
     site.footer.socials: "Follow us on"
@@ -102,6 +106,10 @@ de:
     posts.empty.title: "Es tut mir Leid"
     posts.empty.comment: "Dieses Archiv enthält noch keine Beiträge."
     posts.empty.button: "Zurück zur Startseite"
+    posts.number_of_posts: "Anzahl der Beiträge"
+    posts.posts_in: "Beiträte seit"
+    posts.favourite_category: "Beliebte Kategorie"
+    posts.posts_since: "Beiträge in"
 
     site.navbar.toggle: "Navigation ein/ausblenden"
     site.footer.socials: "Folge und auf"
