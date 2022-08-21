@@ -63,7 +63,7 @@ return [
 
     "option.sections.hero_area" => "Hero Area Settings",
     "option.hero_slider.label" => "Show Hero Slider",
-    "option.hero_slider.comment" => "Shows a Hero Slider",
+    "option.hero_slider.comment" => "Shows a Hero Slider on the homepage.",
     "option.hero_slider_category.label" => "Hero Slider Category",
     "option.hero_slider_category.comment" => "Select the desired Hero Slider Category, from which the posts should be listed.",
 

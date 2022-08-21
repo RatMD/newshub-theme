@@ -9,6 +9,8 @@ OctoberCMS v2 / v3 using the latest Bootstrap 5.2 CSS and JS framework.
 
 Features
 --------
+**Every buyer is welcome to contact us with additional feature or general improvement requests. If 
+these are feasible within the template or one of our extensions, we will be happy to implement them.**
 
 - Bootstrap 5.2 with Bootstrap Icons (usable as partials)
 - Fully Responsive (Mobile-First)

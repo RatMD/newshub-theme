@@ -63,7 +63,7 @@ return [
 
     "option.sections.hero_area" => "Hero-Bereichseinstellungen",
     "option.hero_slider.label" => "Hero-Slider anzeigen",
-    "option.hero_slider.comment" => "Zeigt einen Hero-Slider im Kopfbereich an",
+    "option.hero_slider.comment" => "Zeigt einen Hero-Slider im Kopfbereich an.",
     "option.hero_slider_category.label" => "Hero-Slider Kategorie",
     "option.hero_slider_category.comment" => "Wähle die Kateogrie dessen Beiträge im Hero-Slider angezeigt werden sollen.",
 
