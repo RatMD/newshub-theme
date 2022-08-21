@@ -16,9 +16,13 @@ these are feasible within the template or one of our extensions, we will be happ
 - Fully Responsive (Mobile-First)
 - Multi-Language Support (using RainLab.Translate)
 - 4 Menu Positions (Social Links, Main Menu and 2 Footer Menus)
+- 3 Sidebar Positions (Homepage, Post and Page)
+    - with up to 10 different widgets
 - 2 Color Schemes (Light & Dark)
+- 2 different Header styles (Minimal & Extended)
 - Color Switch & Language Switch Button Support
 - Resposive Slider using Keen Slider
+- Available in English & German
 - CMS Page Snippets:
     - Double-Click Solution to embed external content GDPR friendly
     - Table of Contents Snippet (Lists all Content-Headers)

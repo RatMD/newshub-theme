@@ -47,6 +47,10 @@
     "posts.empty.title": "Es tut mir Leid",
     "posts.empty.comment": "Dieses Archiv enthält noch keine Beiträge.",
     "posts.empty.button": "Zurück zur Startseite",
+    "posts.number_of_posts": "Anzahl der Beiträge",
+    "posts.posts_in": "Beiträte seit",
+    "posts.favourite_category": "Beliebte Kategorie",
+    "posts.posts_since": "Beiträge in",
 
     "site.navbar.toggle": "Navigation ein/ausblenden",
     "site.footer.socials": "Folge und auf",

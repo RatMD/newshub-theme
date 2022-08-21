@@ -11,7 +11,7 @@
             {% endfor %}
         </button>
 
-        <ul class="dropdown-menu">
+        <ul class="dropdown-menu{% if dropdownPosition %} {{ dropdownPosition }}{% endif %}">
             {% for code, name in locales %}
                 <li><a href="#" class="dropdown-item{% if code == activeLocale %} active{% endif %}"  data-request="onSwitchLocale" data-request-data="locale: '{{ code }}'">
                     {% if code == 'en' %}

@@ -1,0 +1,36 @@
+==
+function onEnd()
+{
+    $config = $this['options'];
+    $this->controller->addComponent('staticMenu', 'widget_static_menu', [
+        'code' => $config['widget_static_menu_position']
+    ], false);
+}
+==
+
+{% if widget_static_menu.menuItems|length > 0 %}
+    <div class="card card-simple">
+        {% if widget.widget_title or widget.widget_subtitle %}
+            <div class="card-header">
+                {% if widget.widget_title or widget.widget_subtitle %}
+                    <h2 class="card-title">{{ widget.widget_title }}</h2>
+                {% endif %}
+                {% if widget.widget_title or widget.widget_subtitle %}
+                    <span class="card-subtitle">{{ widget.widget_subtitle }}</span>
+                {% endif %}
+            </div>
+        {% endif %}
+
+        <div class="card-body">
+            <ul class="list-group list-group-flush">
+                {% for item in widget_static_menu.menuItems %}
+                    <li class="list-group-item">
+                        <a href="{{ item.url }}" title="x{{ item.title }}">
+                            {{ item.title }}
+                        </a>
+                    </li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+{% endif %}

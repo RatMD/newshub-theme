@@ -29,11 +29,7 @@ staticBreadcrumbs_skipLast = true
         }
     </script>
     
-    <header id="pageHeader" class="{% if this.theme.dark_header %}bg-dark dark{% else %}bg-light dark:bg-dark{% endif %}{% if this.theme.sticky_header %} sticky-top sticky-header{% endif %}">
-        <div class="container-fluid">
-            {% partial 'page/header' %}
-        </div>
-    </header>
+    {% partial 'page/header' %}
 
     <div id="pageContent">
         <div class="post-single page-single">

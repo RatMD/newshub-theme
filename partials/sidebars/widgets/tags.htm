@@ -1,0 +1,60 @@
+==
+function onEnd()
+{
+    $config = $this['options'];
+    $limit = is_numeric($config['widget_tag_count'])? intval($config['widget_tag_count']): 5;
+    $showCount = $config['widget_tag_posts_count'] === '1';
+    $showPromoted = $config['widget_tag_promoted'] === '1';
+
+    // Main Tags Query
+    $tags = RatMD\BlogHub\Models\Tag::withCount('posts')
+        ->orderBy('posts_count', 'DESC')
+        ->limit($limit);
+    if ($showPromoted) {
+        $tags->where('ratmd_bloghub_tags.promote', 1);
+    }
+
+    // Apply Query
+    $ctrl = Cms\Classes\Controller::getController();
+    $viewBag = $ctrl->getLayout()->getViewBag()->getProperties();
+
+    $this['widget_tags'] = $tags->get()->each(function ($model) use ($viewBag, $ctrl) {
+        $model->setUrl($viewBag['bloghubTagPage'], $ctrl);
+    })->all();
+    $this['widget_tags_show_count'] = $showCount;
+}
+==
+
+{% if widget_tags|length > 0 %}
+    <div class="card card-simple">
+        {% if widget.widget_title or widget.widget_subtitle %}
+            <div class="card-header">
+                {% if widget.widget_title or widget.widget_subtitle %}
+                    <h2 class="card-title">{{ widget.widget_title }}</h2>
+                {% endif %}
+                {% if widget.widget_title or widget.widget_subtitle %}
+                    <span class="card-subtitle">{{ widget.widget_subtitle }}</span>
+                {% endif %}
+            </div>
+        {% endif %}
+
+        <div class="card-body">
+            <ul class="list-group list-group-flush">
+                {% for tag in widget_tags %}
+                    <li class="list-group-item">
+                        <a href="{{ tag.url }}" title="{{ 'archive.tag_archive' | _ }}: {{ tag.title | default(tag.slug | title) }}">
+                            {{ tag.title | default(tag.slug | title) }}
+
+                            {% if widget_tags_show_count %}
+                                {% set count = tag.posts_count | default(0) %}
+                                <span class="position-absolute top-50 start-100 translate-middle badge rounded-pill{{ count == 0? ' bg-secondary': ' bg-danger' }}">
+                                    {{ count }}
+                                </span>
+                            {% endif %}
+                        </a>
+                    </li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+{% endif %}

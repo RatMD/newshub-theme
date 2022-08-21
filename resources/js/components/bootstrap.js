@@ -61,7 +61,7 @@ function invokeBootstrapPopover(element)
  */
 function invokeBootstrapNavbar()
 {
-    const navbar = document.querySelector('#pageNavbar');
+    const navbar = document.querySelector('#pageHeaderMenu');
 
     navbar.addEventListener('show.bs.collapse', (event) => {
         document.body.style.overflow = 'hidden';

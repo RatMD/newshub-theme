@@ -178,6 +178,17 @@ tabs:
             tab: theme.newshub::lang.option.tabs.header
             type: section
             label: theme.newshub::lang.option.sections.main_header
+        navbar_style:
+            tab: theme.newshub::lang.option.tabs.header
+            type: dropdown
+            label: theme.newshub::lang.option.navbar_style.label
+            comment: theme.newshub::lang.option.navbar_style.comment
+            default: condensed
+            showSearch: false
+            span: auto
+            options:
+                condensed: theme.newshub::lang.option.navbar_style.condensed
+                extended: theme.newshub::lang.option.navbar_style.extended
         sticky_header:
             tab: theme.newshub::lang.option.tabs.header
             type: switch
@@ -196,6 +207,26 @@ tabs:
             label: theme.newshub::lang.option.languages_menu.label
             comment: theme.newshub::lang.option.languages_menu.comment
             default: false
+        search_button:
+            tab: theme.newshub::lang.option.tabs.header
+            type: switch
+            label: theme.newshub::lang.option.search_button.label
+            comment: theme.newshub::lang.option.search_button.comment
+            default: false
+            trigger:
+                action: show
+                condition: value[extended]
+                field: navbar_style
+#        user_button:
+#            tab: theme.newshub::lang.option.tabs.header
+#            type: switch
+#            label: theme.newshub::lang.option.user_button.label
+#            comment: theme.newshub::lang.option.user_button.comment
+#            default: false
+#            trigger:
+#                action: show
+#                condition: value[extended]
+#                field: navbar_style
         
         __hero_area_section:
             tab: theme.newshub::lang.option.tabs.header
@@ -249,6 +280,68 @@ tabs:
             comment: theme.newshub::lang.option.datetime_format.comment
             commentHtml: true
             span: right
+        
+        sidebar:
+            tab: theme.newshub::lang.option.tabs.sidebars
+            type: dropdown
+            label: theme.newshub::lang.option.sidebars.label
+            comment: theme.newshub::lang.option.sidebars.comment
+            showSearch: false
+            emptyOption: theme.newshub::lang.option.sidebars.emptyOption
+            options:
+                home: theme.newshub::lang.option.sidebars.home
+                page: theme.newshub::lang.option.sidebars.page
+                post: theme.newshub::lang.option.sidebars.post
+        __sidebar_config_section:
+            tab: theme.newshub::lang.option.tabs.sidebars
+            type: section
+            label: theme.newshub::lang.option.sections.sidebar
+        __sidebar_hint:
+            tab: theme.newshub::lang.option.tabs.sidebars
+            type: hint
+            mode: tip
+            label: theme.newshub::lang.option.sidebars.hint.label
+            comment: theme.newshub::lang.option.sidebars.hint.comment
+            trigger:
+                action: hide
+                condition: value[home][page][post]
+                field: sidebar
+        sidebar_home:
+            tab: theme.newshub::lang.option.tabs.sidebars
+            type: repeater
+            label: theme.newshub::lang.option.sidebars.home
+            titleFrom: widget_title
+            displayMode: builder
+            prompt: theme.newshub::lang.option.sidebars.prompt
+            form: ~/themes/newshub/config/sidebars/homepage.yaml
+            trigger:
+                action: show
+                condition: value[home]
+                field: sidebar
+        sidebar_page:
+            tab: theme.newshub::lang.option.tabs.sidebars
+            type: repeater
+            label: theme.newshub::lang.option.sidebars.page
+            titleFrom: widget_title
+            displayMode: builder
+            prompt: theme.newshub::lang.option.sidebars.prompt
+            form: ~/themes/newshub/config/sidebars/page.yaml
+            trigger:
+                action: show
+                condition: value[page]
+                field: sidebar
+        sidebar_post:
+            tab: theme.newshub::lang.option.tabs.sidebars
+            type: repeater
+            label: theme.newshub::lang.option.sidebars.post
+            titleFrom: widget_title
+            displayMode: builder
+            prompt: theme.newshub::lang.option.sidebars.prompt
+            form: ~/themes/newshub/config/sidebars/post.yaml
+            trigger:
+                action: show
+                condition: value[post]
+                field: sidebar
             
         __main_footer_section:
             tab: theme.newshub::lang.option.tabs.footer

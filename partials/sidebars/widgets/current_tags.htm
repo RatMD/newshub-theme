@@ -1,0 +1,36 @@
+
+{% if post.bloghub_tags|length > 0 %}
+    {% if wrap %}<div class="{{ wrap }}">{% endif %}
+    <div class="card card-simple">
+        {% if widget.widget_title or widget.widget_subtitle %}
+            <div class="card-header">
+                {% if widget.widget_title or widget.widget_subtitle %}
+                    <h2 class="card-title">{{ widget.widget_title }}</h2>
+                {% endif %}
+                {% if widget.widget_title or widget.widget_subtitle %}
+                    <span class="card-subtitle">{{ widget.widget_subtitle }}</span>
+                {% endif %}
+            </div>
+        {% endif %}
+
+        <div class="card-body">
+            <ul class="list-group list-group-flush">
+                {% for tag in post.bloghub_tags %}
+                    <li class="list-group-item">
+                        <a href="{{ tag.url }}" title="{{ 'archive.tag_archive' | _ }}: {{ tag.title }}">
+                            {{ tag.title | default(tag.slug | title) }}
+
+                            {% if options.widget_posts_count == '1' %}
+                                {% set count = tag.posts_count.0.count | default(0) %}
+                                <span class="position-absolute top-50 start-100 translate-middle badge rounded-pill{{ count == 0? ' bg-secondary': ' bg-danger' }}">
+                                    {{ count }}
+                                </span>
+                            {% endif %}
+                        </a>
+                    </li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+    {% if wrap %}</div>{% endif %}
+{% endif %}

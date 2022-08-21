@@ -4,126 +4,117 @@ code = "main-menu"
 [staticMenu socialMenu]
 code = "social-menu"
 ==
-{% macro menu(items, depth = 1, max_depth = 3) %}
-    {% set ul_class = 'navbar-nav' %}
-    {% if depth == 1 %}
-        {% set ul_class = ul_class ~ ' mx-auto mx-lg-0 ms-lg-auto mx-xl-auto mb-2 mb-lg-0' %}
-    {% else %}
-        {% set ul_class = ul_class ~ ' navbar-subnav subnav-depth-' ~ depth %}
-    {% endif %}
+{% from "page/macros.htm" import menu_builder, social_builder %}
 
-    <ul class="{{ ul_class }}">
-        {% for item in items %}
-            {% if not item.viewBag.isHidden %}
-                {% set li_class = 'nav-item item-type-' ~ item.type %}
-                {% if item.isActive %}
-                    {% set li_class = li_class ~ ' item-current' %}
-                {% endif %}
-                {% if item.isChildActive %}
-                    {% set li_class = li_class ~ ' item-current-parent' %}
-                {% endif %}
-                {% if item.items %}
-                    {% set li_class = li_class ~ ' item-has-children' %}
-                {% endif %}
-                {% if item.viewBag.cssClass %}
-                    {% set li_class = li_class ~ ' ' ~ item.viewBag.cssClass %}
-                {% endif %}
-                
-                {% set a_class = 'nav-link' %}
-                {% if item.isActive %}
-                    {% set a_class = a_class ~ ' active' %}
-                {% endif %}
-                
-                <li class="{{ li_class }}">
-                    {% if item.type == 'header' %}
-                        <span class="nav-title">{{ item.title }}</span>
+{# Top Header (Extended Header Style) #}
+{% if this.theme.navbar_style == 'extended' %}
+    <header id="pageHeaderTop" class="page-header-top">
+        <div class="container-fluid{% if this.theme.dark_header %} bg-dark dark{% else %} bg-light dark:bg-dark{% endif %}">
+            <nav class="navbar-socials">
+                {{ social_builder(socialMenu.menuItems) }}
+            </nav>
+        </div>
+    </header>
+{% endif %}
+
+{# Main Header #}
+<header id="pageHeader" class="page-header{% if this.theme.sticky_header %} sticky-top sticky-header{% endif %}">
+    <div class="container-fluid{% if this.theme.dark_header %} bg-dark dark{% else %} bg-light dark:bg-dark{% endif %}">
+        <nav class="navbar navbar-main navbar-expand-lg">
+            <div class="navbar-brand{% if this.theme.site_logo %} navbar-brand-image{% endif %}">
+                <a href="{{ 'home' | page }}" class="navbar-brand-link" title="{{ this.theme.site_name }}">
+                    {% if this.theme.site_logo %}
+                        <img src="{{ this.theme.site_logo.getPath() }}" alt="{{ this.theme.site_name }}" class="hide-on-dark" />
+
+                        {% if this.theme.site_logo_inverted %}
+                            <img src="{{ this.theme.site_logo_inverted.getPath() }}" alt="{{ this.theme.site_name }}" class="show-on-dark" />
+                        {% else %}
+                            <img src="{{ this.theme.site_logo.getPath() }}" alt="{{ this.theme.site_name }}" class="show-on-dark" />
+                        {% endif %}
                     {% else %}
-                        <a href="{{ item.url }}" title="{{ item.title }}" class="{{ a_class }}"{% if item.viewBag.isExternal %} target="_blank"{% endif %}{% if item.isActive %} aria-current="page"{% endif %}>
-                            {{ item.title }}
-                        </a>
+                        {{ this.theme.site_name }}
                     {% endif %}
+                </a>
 
-                    {% if item.items and max_depth > depth %}
-                        {{ _self.menu(item.items, depth+1, max_depth) }}
+                {% if this.theme.navbar_style != 'extended' %}
+                    {% if this.theme.color_switch_top or this.theme.languages_menu_top %}
+                        <div class="theme-settings">
+                            {% if this.theme.languages_menu_top %}
+                                {% partial 'localepicker/default' dropdown=true %}
+                            {% endif %}
+                            
+                            {% if this.theme.color_switch_top %}
+                                {% partial 'colorpicker/default' %}
+                            {% endif %}
+                        </div>
                     {% endif %}
-                </li>
-            {% endif %}
-        {% endfor %}
-    </ul>
-{% endmacro %}
-
-<nav class="navbar navbar-main navbar-expand-lg px-xl-5 py-lg-3">
-    <div class="navbar-brand{% if this.theme.site_logo %} navbar-brand-image{% endif %}">
-        <a href="{{ 'home' | page }}" class="navbar-brand-link" title="{{ this.theme.site_name }}">
-            {% if this.theme.site_logo %}
-                <img src="{{ this.theme.site_logo.getPath() }}" alt="{{ this.theme.site_name }}" class="hide-on-dark" />
-
-                {% if this.theme.site_logo_inverted %}
-                    <img src="{{ this.theme.site_logo_inverted.getPath() }}" alt="{{ this.theme.site_name }}" class="show-on-dark" />
-                {% else %}
-                    <img src="{{ this.theme.site_logo.getPath() }}" alt="{{ this.theme.site_name }}" class="show-on-dark" />
-                {% endif %}
-            {% else %}
-                {{ this.theme.site_name }}
-            {% endif %}
-        </a>
-
-        {% if this.theme.color_switch_top or this.theme.languages_menu_top %}
-            <div class="theme-settings">
-                {% if this.theme.languages_menu_top %}
-                    {% partial 'localepicker/default' dropdown=true %}
-                {% endif %}
-                
-                {% if this.theme.color_switch_top %}
-                    {% partial 'colorpicker/default' %}
                 {% endif %}
             </div>
-        {% endif %}
-    </div>
+                
+            <div id="pageHeaderMenu" class="collapse navbar-collapse navbar-menu">
+                {{ menu_builder(mainMenu.menuItems) }}
+            </div>
 
-    <button class="navbar-toggler collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#pageNavbar" aria-controls="pageNavbar" aria-expanded="false" aria-label="{{ 'site.navbar.toggle' | _ }}">
-        <div class="navbar-toggler-menu">
-            <div class="navbar-toggler-line"></div>
-            <div class="navbar-toggler-line"></div>
-            <div class="navbar-toggler-line"></div>
-        </div>
-    </button>
+            {% if this.theme.navbar_style != 'extended' %}
+                <div class="navbar-socials">
+                    {{ social_builder(socialMenu.menuItems) }}
+                </div>
+            {% else %}
+                <div id="pageActions" class="navbar-actions">
+                    {% if this.theme.color_switch_top or this.theme.languages_menu_top or this.theme.search_button or this.theme.user_button %}
+                        <ul class="navbar-nav">
+                            {% if this.theme.search_button %}
+                                <li class="nav-item">
+                                    <span class="nav-btn">{% partial 'icons/bootstrap/search' %}</span>
 
-    <div id="pageNavbar" class="collapse navbar-collapse navbar-menu">
-        {% if mainMenu and mainMenu.menuItems != null %}
-            {{ _self.menu(mainMenu.menuItems) }}
-        {% else %}
-            {% if this.theme.show_demo %}
-                {% partial 'demo/main-nav-content' %}
-            {% endif %}
-        {% endif %}
-    </div>
+                                    <div class="dropdown-menu dropdown-menu-end">
+                                        <input type="text" />
+                                    </div>
+                                </li>
+                            {% endif %}
 
-    <div class="navbar-socials ms-lg-auto">
-        {% if socialMenu and socialMenu.menuItems != null %}
-            <ul class="navbar-nav mb-2 mb-lg-0">
-                {% for item in socialMenu.menuItems %}
-                    {% if not item.viewBag.isHidden %}
-                        <li class="nav-item item-type-{{ item.type }}{% if item.viewBag.cssClass %} {{ item.viewBag.cssClass }}{% endif %}">
-                            <a href="{{ item.url }}" title="{{ item.title }}" class="nav-link"{% if item.viewBag.isExternal %} target="_blank"{% endif %}>
-                                {% if hasPartial('icons/bootstrap/' ~ item.code) %}
-                                    {% partial 'icons/bootstrap/' ~ item.code %}
-                                {% else %}
-                                    {% if hasPartial('icons/socials/' ~ item.code) %}
-                                        {% partial 'icons/socials/' ~ item.code %}
-                                    {% else %}
-                                        {{ item.title }}
-                                    {% endif %}
-                                {% endif %}
-                            </a>
-                        </li>
+                            {% if this.theme.user_button and false %}
+                                <li class="nav-item">
+                                    <span class="nav-btn">{% partial 'icons/bootstrap/person' %}</span>
+
+                                    <div class="dropdown-menu dropdown-menu-end">
+                                        <form>
+                                            <div class="mb-3">
+                                                <label>Username</label>
+                                                <input type="text" class="form-control form-control-sm" />
+                                            </div>
+                                            <div class="mb-3">
+                                                <label>Password</label>
+                                                <input type="password" class="form-control form-control-sm" />
+                                            </div>
+                                        </form>
+                                    </div>
+                                </li>
+                            {% endif %}
+
+                            {% if this.theme.languages_menu_top %}
+                                <li class="nav-item">
+                                    {% partial 'colorpicker/default' %}
+                                </li>
+                            {% endif %}
+
+                            {% if this.theme.color_switch_top %}
+                                <li class="nav-item">
+                                    {% partial 'localepicker/default' dropdown=true dropdownPosition="dropdown-menu-end" %}
+                                </li>
+                            {% endif %}
+                        </ul>
                     {% endif %}
-                {% endfor %}
-            </ul>
-        {% else %}
-            {% if this.theme.show_demo %}
-                {% partial 'demo/social-nav-content' %}
+                </div>
             {% endif %}
-        {% endif %}
+                
+            <button class="navbar-toggler collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#pageHeaderMenu" aria-controls="pageHeaderMenu" aria-expanded="false" aria-label="{{ 'site.navbar.toggle' | _ }}">
+                <div class="navbar-toggler-menu">
+                    <div class="navbar-toggler-line"></div>
+                    <div class="navbar-toggler-line"></div>
+                    <div class="navbar-toggler-line"></div>
+                </div>
+            </button>
+        </nav>
     </div>
-</nav>
+</header>

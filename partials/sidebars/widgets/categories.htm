@@ -1,0 +1,60 @@
+==
+function onEnd()
+{
+    $config = $this['options'];
+    $limit = is_numeric($config['widget_category_count'])? intval($config['widget_category_count']): 5;
+    $showCount = $config['widget_category_posts_count'] === '1';
+    $showEmpty = $config['widget_category_empty'] === '1';
+
+    // Main Category Query
+    $categories = RainLab\Blog\Models\Category::withCount('posts')
+        ->orderBy('posts_count', 'DESC')
+        ->limit($limit);
+    if (!$showEmpty) {
+        $categories->where('posts_count', '>', 0);
+    }
+
+    // Apply Query
+    $ctrl = Cms\Classes\Controller::getController();
+    $component = $ctrl->getLayout()->getComponentProperties('blogPosts');
+
+    $this['widget_categories'] = $categories->get()->each(function ($model) use ($component, $ctrl) {
+        $model->setUrl($component['categoryPage'], $ctrl);
+    })->all();
+    $this['widget_categories_show_count'] = $showCount;
+}
+==
+
+{% if widget_categories|length > 0 %}
+    <div class="card card-simple">
+        {% if widget.widget_title or widget.widget_subtitle %}
+            <div class="card-header">
+                {% if widget.widget_title or widget.widget_subtitle %}
+                    <h2 class="card-title">{{ widget.widget_title }}</h2>
+                {% endif %}
+                {% if widget.widget_title or widget.widget_subtitle %}
+                    <span class="card-subtitle">{{ widget.widget_subtitle }}</span>
+                {% endif %}
+            </div>
+        {% endif %}
+
+        <div class="card-body">
+            <ul class="list-group list-group-flush">
+                {% for category in widget_categories %}
+                    <li class="list-group-item">
+                        <a href="{{ category.url }}" title="{{ 'archive.category_archive' | _ }}: {{ category.name }}">
+                            {{ category.name | default(tag.slug | title) }}
+
+                            {% if widget_categories_show_count %}
+                                {% set count = category.posts_count | default(0) %}
+                                <span class="position-absolute top-50 start-100 translate-middle badge rounded-pill{{ count == 0? ' bg-secondary': ' bg-danger' }}">
+                                    {{ count }}
+                                </span>
+                            {% endif %}
+                        </a>
+                    </li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+{% endif %}
