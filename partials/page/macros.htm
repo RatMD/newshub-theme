@@ -1,0 +1,103 @@
+{#
+ #  MULTI-LEVEL MENU BUILDER
+ #
+ #  @param array items The items to be used for the menu.
+ #  @param integer max_depth The maximum allowed depth
+ #  @param integer depth The current depth
+ #}
+{% macro menu_builder(items, max_depth = 3, depth = 1) %}
+    {% set ul_class = 'navbar-nav' %}
+    {% if depth == 1 %}
+        {% set ul_class = ul_class ~ ' mx-auto mx-lg-0 ms-lg-auto mx-xl-auto mb-2 mb-lg-0' %}
+    {% else %}
+        {% set ul_class = ul_class ~ ' navbar-subnav subnav-depth-' ~ depth %}
+    {% endif %}
+
+    <ul class="{{ ul_class }}">
+        {% for item in items %}
+            {% if not item.viewBag.isHidden %}
+                {% set li_class = 'nav-item item-type-' ~ item.type %}
+                {% if item.isActive %}
+                    {% set li_class = li_class ~ ' item-current' %}
+                {% endif %}
+                {% if item.isChildActive %}
+                    {% set li_class = li_class ~ ' item-current-parent' %}
+                {% endif %}
+                {% if item.items %}
+                    {% set li_class = li_class ~ ' item-has-children' %}
+                {% endif %}
+                {% if item.viewBag.cssClass %}
+                    {% set li_class = li_class ~ ' ' ~ item.viewBag.cssClass %}
+                {% endif %}
+                
+                {% set a_class = 'nav-link' %}
+                {% if item.isActive %}
+                    {% set a_class = a_class ~ ' active' %}
+                {% endif %}
+                
+                <li class="{{ li_class }}">
+                    {% if item.type == 'header' %}
+                        <span class="nav-title">{{ item.title }}</span>
+                    {% else %}
+                        <a href="{{ item.url }}" title="{{ item.title }}" class="{{ a_class }}"{% if item.viewBag.isExternal %} target="_blank"{% endif %}{% if item.isActive %} aria-current="page"{% endif %}>
+                            {{ item.title }}
+                        </a>
+                    {% endif %}
+
+                    {% if item.items and max_depth > depth %}
+                        {{ _self.menu_builder(item.items, max_depth, depth+1) }}
+                    {% endif %}
+                </li>
+            {% endif %}
+        {% endfor %}
+    </ul>
+{% endmacro %}
+
+
+{#
+ #  SINGLE-DEPTH SOCIAL MENU BUILDER
+ #
+ #  @param array items The items to be used for the menu.
+ #}
+{% macro social_builder(items) %}
+    <ul class="navbar-nav mb-2 mb-lg-0">
+        {% for item in items %}
+            {% if not item.viewBag.isHidden %}
+                <li class="nav-item item-social-{{ item.code }} item-type-{{ item.type }}{% if item.viewBag.cssClass %} {{ item.viewBag.cssClass }}{% endif %}">
+                    <a href="{{ item.url }}" title="{{ item.title }}" class="nav-link"{% if item.viewBag.isExternal %} target="_blank"{% endif %}>
+                        {% if hasPartial('icons/bootstrap/' ~ item.code) %}
+                            {% partial 'icons/bootstrap/' ~ item.code %}
+                        {% else %}
+                            {% if hasPartial('icons/socials/' ~ item.code) %}
+                                {% partial 'icons/socials/' ~ item.code %}
+                            {% else %}
+                                {{ item.title }}
+                            {% endif %}
+                        {% endif %}
+                    </a>
+                </li>
+            {% endif %}
+        {% endfor %}
+    </ul>
+{% endmacro %}
+
+
+{#
+ #  MULTI-DEPTH TABLE OF CONTENTS BUILDER
+ #
+ #  @param array items The items to be used for the menu.
+ #  @param integer depth The current depth
+ #}
+{% macro toc_builder(items, depth=1) %}
+    <ul class="toc toc-depth-{{depth}}"{% if toc_js %}data-rat-handle="toc-anchors"{% endif %}>
+        {% for item in items %}
+            <li class="toc-item">
+                <a href="#{{ item.id }}" title="{{ 'site.widget.toc.goto' | _ }}: {{ item.label }}">{{ item.label }}</a>
+            </li>
+
+            {% if item.children %}
+                {{ _self.toc_builder(item.children, depth+1) }}
+            {% endif %}
+        {% endfor %}
+    </ul>
+{% endmacro %}

@@ -30,12 +30,8 @@ bloghubTagPage = "blog/tag"
             document.currentScript.remove();
         }
     </script>
-    
-    <header id="pageHeader" class="{% if this.theme.sticky_header %} sticky-top sticky-header{% endif %}">
-        <div class="container-fluid {% if this.theme.dark_header %}bg-dark dark{% else %}bg-light dark:bg-dark{% endif %}">
-            {% partial 'page/header' %}
-        </div>
-    </header>
+
+    {% partial 'page/header' %}
 
     <div id="pageContent">
         {% page %}

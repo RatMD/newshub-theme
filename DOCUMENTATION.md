@@ -28,6 +28,7 @@ The **NewsHub** OctoberCMS template currently supports 4 custom meta values:
 - `Featured Images View` - Allows to change how the featured images are shown on the post
 
 ### Theme Settings
+The **NewsHub** OctoberCMS template currently supports the following settings:
 
 - **Site Name** - The website name as it should appear on the front-end.
 - **Site Logo** - Use your logo instead of the the site name (height should not exceed 40 pixels).

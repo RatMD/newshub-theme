@@ -217,16 +217,16 @@ tabs:
                 action: show
                 condition: value[extended]
                 field: navbar_style
-        user_button:
-            tab: theme.newshub::lang.option.tabs.header
-            type: switch
-            label: theme.newshub::lang.option.user_button.label
-            comment: theme.newshub::lang.option.user_button.comment
-            default: false
-            trigger:
-                action: show
-                condition: value[extended]
-                field: navbar_style
+#        user_button:
+#            tab: theme.newshub::lang.option.tabs.header
+#            type: switch
+#            label: theme.newshub::lang.option.user_button.label
+#            comment: theme.newshub::lang.option.user_button.comment
+#            default: false
+#            trigger:
+#                action: show
+#                condition: value[extended]
+#                field: navbar_style
         
         __hero_area_section:
             tab: theme.newshub::lang.option.tabs.header
