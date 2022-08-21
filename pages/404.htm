@@ -13,7 +13,7 @@ localeTitle[de] = "Fehler 404"
             <header class="py-6 bg-light dark:bg-dark">
                 <div class="container">
                     <div class="post-header">
-                        <h1 class="post-title text-center">{{ 'page.404.title' | trans }}</h1>
+                        <h1 class="post-title text-center">{{ 'page.404.title' | _ }}</h1>
                     </div>
                 </div>
             </header>
@@ -21,12 +21,12 @@ localeTitle[de] = "Fehler 404"
             <article class="bg-white dark:bg-body py-8">
                 <div class="container">
                     <div class="post-content text-center">
-                        <h2 class="fs-1">{{ 'page.404.subtitle' | trans }}</h2>
+                        <h2 class="fs-1">{{ 'page.404.subtitle' | _ }}</h2>
                         <p class="fs-5">
-                            {{ 'page.404.comment' | trans }}
+                            {{ 'page.404.comment' | _ }}
                         </p>
-                        <a href="{{ 'home' | page }}" title="{{ 'page.404.button' | trans }}" class="btn btn-primary btn-lg">
-                            {{ 'page.404.button' | trans }}
+                        <a href="{{ 'home' | page }}" title="{{ 'page.404.button' | _ }}" class="btn btn-primary btn-lg">
+                            {{ 'page.404.button' | _ }}
                         </a>
                     </div>
                 </div>

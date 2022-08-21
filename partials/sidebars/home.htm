@@ -11,7 +11,7 @@ displayEmpty = true
 
 <div class="card card-simple">
     <div class="card-header">
-        <h2 class="card-title">{{ 'posts.widget.popular' | trans }}</h2>
+        <h2 class="card-title">{{ 'posts.widget.popular' | _ }}</h2>
     </div>
     <div class="card-body">
         {% partial 'blog/sections/posts-condensed'
@@ -25,14 +25,14 @@ displayEmpty = true
 {% if categories.categories|length > 0 %}
     <div class="card card-simple">
         <div class="card-header">
-            <h2 class="card-title">{{ 'posts.widget.categories' | trans }}</h2>
+            <h2 class="card-title">{{ 'posts.widget.categories' | _ }}</h2>
         </div>
         <div class="card-body">
             <ul class="list-group list-group-flush">
                 {% for category in categories.categories %}
                     {% set count = category.posts_count[0].count | default(0) %}
                     <li class="list-group-item">
-                        <a href="{{ category.url }}" title="{{ 'magazine.category_archive' | trans }}: {{ category.name }}">
+                        <a href="{{ category.url }}" title="{{ 'archive.category_archive' | _ }}: {{ category.name }}">
                             {{ category.name | default(tag.slug | title) }}
 
                             <span class="position-absolute top-50 start-100 translate-middle badge rounded-pill{{ count == 0? ' bg-secondary': ' bg-danger' }}">
@@ -49,14 +49,14 @@ displayEmpty = true
 {% if tags.tags|length > 0 %}
     <div class="card card-simple">
         <div class="card-header">
-            <h2 class="card-title">{{ 'posts.widget.tags' | trans }}</h2>
+            <h2 class="card-title">{{ 'posts.widget.tags' | _ }}</h2>
         </div>
         <div class="card-body">
             <ul class="list-group list-group-flush">
                 {% for tag in tags.tags %}
                     {% set count = tag.posts_count[0].count | default(0) %}
                     <li class="list-group-item">
-                        <a href="{{ tag.url }}" title="{{ 'magazine.tag_archive' | trans }}: {{ tag.title }}">
+                        <a href="{{ tag.url }}" title="{{ 'archive.tag_archive' | _ }}: {{ tag.title }}">
                             {{ tag.title | default(tag.slug | title) }}
 
                             <span class="position-absolute top-50 start-100 translate-middle badge rounded-pill{{ count == 0? ' bg-secondary': ' bg-danger' }}">

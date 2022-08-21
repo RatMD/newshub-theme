@@ -13,40 +13,43 @@ require:
     - 'RainLab.Translate'
     - 'RatMD.BlogHub'
 form: config/options.yaml
+translate:
+    en: lang/en.json
+    de: lang/de.json
 
 ratmd.bloghub:
     post:
         simple_subtitle:
             type: text
-            tab: theme.custom_meta.tab
-            label: theme.custom_meta.simple_subtitle.title
-            comment: theme.custom_meta.simple_subtitle.comment
+            tab: theme.newshub::lang.custom_meta.tab
+            label: theme.newshub::lang.custom_meta.simple_subtitle.title
+            comment: theme.newshub::lang.custom_meta.simple_subtitle.comment
             span: left
         simple_title:
             type: text
-            tab: theme.custom_meta.tab
-            label: theme.custom_meta.simple_title.label
-            comment: theme.custom_meta.simple_title.comment
+            tab: theme.newshub::lang.custom_meta.tab
+            label: theme.newshub::lang.custom_meta.simple_title.label
+            comment: theme.newshub::lang.custom_meta.simple_title.comment
             span: right
         layout:
             type: dropdown
-            tab: theme.custom_meta.tab
-            label: theme.custom_meta.post_layout.label
-            comment: theme.custom_meta.post_layout.comment
+            tab: theme.newshub::lang.custom_meta.tab
+            label: theme.newshub::lang.custom_meta.post_layout.label
+            comment: theme.newshub::lang.custom_meta.post_layout.comment
             default: default
             showSearch: false
             options:
-                default: theme.custom_meta.post_layout.default
-                fullwidth: theme.custom_meta.post_layout.fullwidth
-                heroimage: theme.custom_meta.post_layout.heroimage
+                default: theme.newshub::lang.custom_meta.post_layout.default
+                fullwidth: theme.newshub::lang.custom_meta.post_layout.fullwidth
+                heroimage: theme.newshub::lang.custom_meta.post_layout.heroimage
         images:
             type: dropdown
-            tab: theme.custom_meta.tab
-            label: theme.custom_meta.images.label
-            comment: theme.custom_meta.images.comment
+            tab: theme.newshub::lang.custom_meta.tab
+            label: theme.newshub::lang.custom_meta.images.label
+            comment: theme.newshub::lang.custom_meta.images.comment
             default: default
             showSearch: false
             options:
-                carousel: theme.custom_meta.images.carousel
-                gallery: theme.custom_meta.images.gallery
-                hidden: theme.custom_meta.images.hidden
+                carousel: theme.newshub::lang.custom_meta.images.carousel
+                gallery: theme.newshub::lang.custom_meta.images.gallery
+                hidden: theme.newshub::lang.custom_meta.images.hidden

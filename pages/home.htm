@@ -29,7 +29,7 @@ postPage = "blog/post"
 
 <section class="section pt-6 pb-3">
     <div class="container">
-        <h1 class="mb-5">{{ 'posts.widget.latest' | trans }}</h1>
+        <h1 class="mb-5">{{ 'posts.widget.latest' | _ }}</h1>
         
         {% if latest.posts|length > 0 %}
             {% partial 'blog/sections/posts-columns' 

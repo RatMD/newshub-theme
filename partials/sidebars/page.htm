@@ -88,7 +88,7 @@ function onEnd()
     <ul class="toc toc-depth-{{depth}}">
         {% for item in items %}
             <li class="toc-item">
-                <a href="#{{ item.id }}" title="{{ 'site.widget.toc.goto' | trans }}: {{ item.label }}">{{ item.label }}</a>
+                <a href="#{{ item.id }}" title="{{ 'site.widget.toc.goto' | _ }}: {{ item.label }}">{{ item.label }}</a>
             </li>
 
             {% if item.children %}
@@ -101,7 +101,7 @@ function onEnd()
 {% if toc %}
     <div class="card card-simple">
         <header class="card-header">
-            <span class="card-title">{{ 'site.widget.toc' | trans }}</span>
+            <span class="card-title">{{ 'site.widget.toc' | _ }}</span>
         </header>
 
         <article class="card-body">

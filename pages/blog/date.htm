@@ -32,7 +32,7 @@ function onEnd()
 ==
 <section class="section section-posts py-6">
     <div class="container">
-        <h1 class="mb-5">{{ ('archive.' ~ dateType ~ '_archive') | trans }}: {{ dateFormat }}</h1>
+        <h1 class="mb-5">{{ ('archive.' ~ dateType ~ '_archive') | _ }}: {{ dateFormat }}</h1>
 
         {% partial 'blog/sections/posts-list' 
             posts=posts

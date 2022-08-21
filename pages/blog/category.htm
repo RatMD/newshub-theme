@@ -33,7 +33,7 @@ function onEnd()
 ==
 <section class="section section-posts py-6">
     <div class="container">
-        <h1 class="mb-5">{{ 'archive.category_archive' | trans }}: {{ category.name }}</h1>
+        <h1 class="mb-5">{{ 'archive.category_archive' | _ }}: {{ category.name }}</h1>
 
         {% if posts|length > 0 %}
             {% partial 'blog/sections/posts-list' 

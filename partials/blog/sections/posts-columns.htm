@@ -10,17 +10,17 @@
     {% for post in posts %}
         <div id="{{ prefix | default('post') }}-{{ post.id }}" class="post">
             {% if not post.published %}
-                <span class="post-preview">{{ 'posts.preview' | trans }}</span>
+                <span class="post-preview">{{ 'posts.preview' | _ }}</span>
             {% endif %}
             {% if post.published_at | date('Y-m-d H:i:s') > 'now' | date('Y-m-d H:i:s') %}
-                <span class="post-pending">{{ 'posts.pending' | trans }}</span>
+                <span class="post-pending">{{ 'posts.pending' | _ }}</span>
             {% endif %}
 
             <a href="{{ post.url }}" title="{{ post.title }}" class="post-thumbnail{% if post.featured_images %} post-has-thumbnail{% endif %}{{ this.theme.view_counter? ' with-view-counter': '' }}">
                 {% if post.featured_images %}
                     <img src="{{ post.featured_images.0.getPath() }}" alt="{{ post.title }}" />
                 {% else %}
-                    <span class="post-no-thumbnail bg-light dark:bg-dark">{{ 'posts.no_thumbnail' | trans }}</span>
+                    <span class="post-no-thumbnail bg-light dark:bg-dark">{{ 'posts.no_thumbnail' | _ }}</span>
                 {% endif %}
                 
                 {% if this.theme.view_counter %}
@@ -41,7 +41,7 @@
                         {{ post.published_at | date(dateTimeFormat) }}
                     </time>
                     <address class="post-author">
-                        <span>{{ 'posts.by_author' | trans }}</span>
+                        <span>{{ 'posts.by_author' | _ }}</span>
                         <a href="{{ ('magazine/author/' ~ post.user.bloghub_slug()) | app }}" rel="author">{{ post.user.bloghub_display() }}</a>
                     </address>
                 </div>

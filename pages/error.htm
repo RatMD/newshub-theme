@@ -13,7 +13,7 @@ localeTitle[de] = "Ein Fehler ist aufgetreten"
             <header class="py-6 bg-light dark:bg-dark">
                 <div class="container">
                     <div class="post-header">
-                        <h1 class="post-title text-center">{{ 'page.error.title' | trans }}</h1>
+                        <h1 class="post-title text-center">{{ 'page.error.title' | _ }}</h1>
                     </div>
                 </div>
             </header>
@@ -21,12 +21,12 @@ localeTitle[de] = "Ein Fehler ist aufgetreten"
             <article class="bg-white py-8">
                 <div class="container">
                     <div class="post-content text-center">
-                        <h2 class="fs-1">{{ 'page.error.subtitle' | trans }}</h2>
+                        <h2 class="fs-1">{{ 'page.error.subtitle' | _ }}</h2>
                         <p class="fs-5">
-                            {{ 'page.error.comment' | trans }}
+                            {{ 'page.error.comment' | _ }}
                         </p>
-                        <a href="{{ 'home' | page }}" title="{{ 'page.error.button' | trans }}" class="btn btn-primary btn-lg">
-                            {{ 'page.error.button' | trans }}
+                        <a href="{{ 'home' | page }}" title="{{ 'page.error.button' | _ }}" class="btn btn-primary btn-lg">
+                            {{ 'page.error.button' | _ }}
                         </a>
                     </div>
                 </div>
