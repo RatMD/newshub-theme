@@ -3,7 +3,6 @@ NewsHub - Changelog
 
 Version 1.2.0 - In Progress
 ---------------------------
-- Update: Use OctoberCMS VScode Syntax.
 
 ### ToDo
 - Add: Additional navigation header style (with additional action buttons).
@@ -16,6 +15,11 @@ Version 1.2.0 - In Progress
 - Update: Header stylings and template.
 - Update: Move both macros to the new `page/macro.htm` partial.
 
+Version 1.1.1 - Stable
+----------------------
+- Update: Use OctoberCMS VScode Syntax.
+- Fix: Use Socials folder before Bootstrap icons.
+- Fix: Wrong condition on author archive page.
 
 Version 1.1.0 - Stable
 ----------------------

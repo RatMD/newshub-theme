@@ -41,11 +41,11 @@ function onEnd()
             $prefix = 'widget-bytag-';
             break;
         case "by_views":
-            $posts->orderBy('bloghub_views', 'DESC');
+            $posts->orderBy('ratmd_bloghub_views', 'DESC');
             $prefix = 'widget-byviews-';
             break;
         case "by_unique_views":
-            $posts->orderBy('bloghub_unique_views', 'DESC');
+            $posts->orderBy('ratmd_bloghub_unique_views', 'DESC');
             $prefix = 'widget-byuniqueviews-';
             break;
     }

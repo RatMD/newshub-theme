@@ -56,8 +56,8 @@ function onEnd()
                 
                 <div class="col-12 col-lg-9">
                     <b class="fs-5 font-special">{{ post.user.bloghub_display() }}</b>
-                    {% if options.widget_description and post.user.about_me %}
-                        <p class="fs-7">{{ post.user.about_me }}</p>
+                    {% if options.widget_description and post.user.ratmd_bloghub_about_me %}
+                        <p class="fs-7">{{ post.user.ratmd_bloghub_about_me }}</p>
                     {% endif %}
                 </div>
                 
