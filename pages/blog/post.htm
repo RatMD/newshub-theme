@@ -21,10 +21,10 @@ function onEnd()
 
         $this['newshub'] = [
             "meta_author" => $this->post->user->bloghub_display(),
-            "meta_keywords" => implode(', ', $this->post->bloghub_tags->map(fn ($el) => $el['slug'])->all())
+            "meta_keywords" => implode(', ', $this->post->ratmd_bloghub_tags->map(fn ($el) => $el['slug'])->all())
         ];
 
-        $layout = $this->post->bloghub_meta->where('name', 'layout')->first()['value'] ?? 'default';
+        $layout = $this->post->ratmd_bloghub_meta->where('name', 'layout')->first()['value'] ?? 'default';
         if ($layout === 'heroimage') {
             $this['bodyClasses'] = 'overlay-navbar';
         }
@@ -35,7 +35,7 @@ function onEnd()
 }
 ?>
 ==
-{% set layout = post.bloghub_meta_data.layout | default('default') %}
+{% set layout = post.ratmd_bloghub_meta_data.layout | default('default') %}
 
 <div class="post-single post-layout-{{ layout }}">
     {% if layout != '' and layout != 'default' and hasPartial('blog/post-single-' ~ layout) %}

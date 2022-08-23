@@ -1,4 +1,4 @@
-{% if post.bloghub_tags|length > 0 %}
+{% if post.ratmd_bloghub_tags|length > 0 %}
     {% if wrap %}<div class="{{ wrap }}">{% endif %}
     <div class="card card-simple">
         {% if widget.widget_title or widget.widget_subtitle %}
@@ -14,7 +14,7 @@
 
         <div class="card-body">
             <ul class="list-group list-group-flush">
-                {% for tag in post.bloghub_tags %}
+                {% for tag in post.ratmd_bloghub_tags %}
                     <li class="list-group-item">
                         <a href="{{ tag.url }}" title="{{ 'archive.tag_archive' | _ }}: {{ tag.title }}">
                             {{ tag.title | default(tag.slug | title) }}

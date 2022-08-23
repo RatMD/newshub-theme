@@ -16,10 +16,10 @@
             <div class="main-area post-content py-4 py-lg-0">
                 {{ post.content_html | raw }}
 
-                {% if post.bloghub_meta_data.images and post.featured_images|length > 1 %}
-                    {% if post.bloghub_meta_data.images == 'carousel' %}
+                {% if post.ratmd_bloghub_meta_meta_data.images and post.featured_images|length > 1 %}
+                    {% if post.ratmd_bloghub_meta_meta_data.images == 'carousel' %}
                         {% partial "blog/components/carousel" images=post.featured_images|slice(1) %}
-                    {% elseif post.bloghub_meta_data.images == 'gallery' %}
+                    {% elseif post.ratmd_bloghub_meta_meta_data.images == 'gallery' %}
                         {% partial "blog/components/gallery" images=post.featured_images|slice(1) %}
                     {% endif %}
                 {% endif %}

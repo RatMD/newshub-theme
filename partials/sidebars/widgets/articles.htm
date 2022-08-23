@@ -8,7 +8,7 @@ function onEnd()
 
     // Main Posts Query
     $prefix = 'widget-posts-';
-    $posts = \RainLab\Blog\Models\Post::with(['categories', 'featured_images', 'bloghub_tags'])
+    $posts = \RainLab\Blog\Models\Post::with(['categories', 'featured_images', 'ratmd_bloghub_tags'])
         ->where('published', '1')
         ->limit($limit);
 
@@ -35,7 +35,7 @@ function onEnd()
             break;
         case "by_tag":
             $tag = $config['widget_articles_by_tag'];
-            $posts->whereHas('bloghub_tags', function($query) use ($tag) {
+            $posts->whereHas('ratmd_bloghub_tags', function($query) use ($tag) {
                 return $query->where('ratmd_bloghub_tags.id', $tag);
             });
             $prefix = 'widget-bytag-';

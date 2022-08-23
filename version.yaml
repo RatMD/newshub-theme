@@ -20,3 +20,7 @@ v1.1.0:
     - "Add: Table of Contents widget for page sidebar."
     - "Fix: Table of Contents generator skipped the last header element."
     - "Fix: Missing dark header settings on static page layouts."
+v1.1.1:
+    - "Update: Use OctoberCMS VScode Syntax."
+    - "Fix: Use Socials folder before Bootstrap icons."
+    - "Fix: Wrong condition on author archive page."
