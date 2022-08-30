@@ -80,7 +80,8 @@ function onInit()
     {% scripts %}
     {% if legacy %}
         <script src="{{ ['@jquery', '@framework'] | theme }}"></script>
+    {% else %}
+        {% framework %}
     {% endif %}
-    {% framework %}
 </body>
 </html>
