@@ -1,4 +1,5 @@
-v1.0.0: First official Version
+v1.0.0: 
+    - "Initial Release"
 v1.0.1:
     - "Update: Add dark hightlight.js stylings for pre, code elements."
     - "Fix: Form stylings on dark color scheme."
@@ -24,3 +25,8 @@ v1.1.1:
     - "Update: Use OctoberCMS VScode Syntax."
     - "Fix: Use Socials folder before Bootstrap icons."
     - "Fix: Wrong condition on author archive page."
+v1.1.2:
+    - "Add: Weekly Archive page (provided by RatMD.BlogHub v1.3.0)."
+    - "Update: RatMD.BlogHub v1.3.0 compatibiliy."
+    - "Bugfix: Prevent Meta details when no user is available on the post."
+    - "Bugfix: Add jQuery dependency for October CMS v2."

@@ -19,6 +19,7 @@ Version 1.1.2 - Stable
 - Add: Weekly Archive page (provided by RatMD.BlogHub v1.3.0).
 - Update: RatMD.BlogHub v1.3.0 compatibiliy.
 - Bugfix: Prevent Meta details when no user is available on the post.
+- Bugfix: Add jQuery dependency for October CMS v2.
 
 Version 1.1.1 - Stable
 ----------------------
