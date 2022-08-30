@@ -29,6 +29,8 @@
                         {% partial "blog/components/gallery" images=post.featured_images|slice(1) %}
                     {% endif %}
                 {% endif %}
+
+                {% component 'bloghubCommentSection' %}
             </div>
             <aside class="sidebar-area post-aside{% if post.featured_images %} post-has-thumbnail{% endif %}">
                 {% partial 'sidebars/post' %}

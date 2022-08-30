@@ -1,4 +1,3 @@
-##
 description = "Default HTML Layout"
 
 [localePicker]
@@ -7,6 +6,10 @@ forceUrl = 0
 [alternateHrefLangElements]
 
 [blogPosts]
+pageNumber = "{{ :page }}"
+postsPerPage = 10
+noPostsMessage = "No posts found"
+sortOrder = "published_at desc"
 categoryPage = "blog/category"
 postPage = "blog/post"
 
@@ -14,6 +17,15 @@ postPage = "blog/post"
 bloghubAuthorPage = "blog/author"
 bloghubDatePage = "blog/date"
 bloghubTagPage = "blog/tag"
+
+[bloghubBase]
+archiveAuthor = "blog/author"
+archiveDate = "blog/date"
+archiveTag = "blog/tag"
+authorUseSlugOnly = 0
+date404OnInvalid = 0
+date404OnEmpty = 0
+tagAllowMultiple = 1
 ==
 <!DOCTYPE html>
 <html lang="en" class="no-js">

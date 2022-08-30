@@ -1,4 +1,3 @@
-##
 url = "/magazine/post/:slug"
 layout = "default"
 title = "Single Post"
@@ -10,8 +9,19 @@ localeTitle[de] = "Einzelner Beitrag"
 
 [blogPost]
 slug = "{{ :slug }}"
+categoryPage = "blog/category"
+
+[bloghubCommentSection]
+commentsPerPage = 10
+sortOrder = "likes DESC"
+commentHierarchy = 1
+commentsAnchor = "comments"
+pinFavorites = 0
+hideOnDislikes = 0
+formPosition = "above"
+disableForm = 0
 ==
-<?
+<?php
 function onEnd()
 {
     if (!empty($this->post)) {
@@ -19,10 +29,12 @@ function onEnd()
         $this->page->meta_title = $this->post->title;
         $this->page->meta_description = !empty($this->post->excerpt)? $this->post->excerpt: strip_tags($this->post->summary);
 
-        $this['newshub'] = [
-            "meta_author" => $this->post->user->bloghub_display(),
-            "meta_keywords" => implode(', ', $this->post->ratmd_bloghub_tags->map(fn ($el) => $el['slug'])->all())
-        ];
+        if ($this->post->user) {
+            $this['newshub'] = [
+                "meta_author" => $this->post->user->bloghub_display(),
+                "meta_keywords" => implode(', ', $this->post->ratmd_bloghub_tags->map(fn ($el) => $el['slug'])->all())
+            ];
+        }
 
         $layout = $this->post->ratmd_bloghub_meta->where('name', 'layout')->first()['value'] ?? 'default';
         if ($layout === 'heroimage') {
