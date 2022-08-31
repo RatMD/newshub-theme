@@ -6,6 +6,10 @@ JS Framework and includes **Bootstrap Icons** and the responsive **Keen Slider**
 
 [View the Demo-Website](https://themes.rat.md/newshub)
 
+[Check out the Documentation](https://octobercms.com/theme/ratmd-newshub#documentation)
+
+[Contact Us](mailto:info@rat.md)
+
 
 Whats new in v1.2.0
 -------------------
@@ -72,8 +76,8 @@ is still available.
 The following plugins are not required but supported by the **NewsHub** template:
 
 - Plugin: [JanVince.SmallContactForm](https://octobercms.com/plugin/janvince-smallcontactform)
-- Plugin: [RainLab.User](https://octobercms.com/plugin/rainlab-user) 
 - Plugin: [RainLab.BlogVideoExtension](https://octobercms.com/plugin/rainlab-blogvideoextension)
+- Plugin: [RainLab.User](https://octobercms.com/plugin/rainlab-user) 
 
 
 Dependencies
@@ -86,14 +90,15 @@ The following dependencies are already bundled with this template, of course.
 - bs5-lightbox v1.8.0
 - jQuery *\** (only in OctoberCMS v2, see below)
 
-**Attention**: By default, jQuery is only included on OctoberCMS v2 installation, using jQuery for 
-OctoberCMS v3 and above requires to set the "Embed jQuery" option on the theme configuration page.
+**Attention**: By default, jQuery is only included on OctoberCMS v2 installations using October's 
+provided jQuery version, using jQuery for OctoberCMS v3 and above requires to set the "Embed jQuery" 
+option on the template configuration page.
 
 ### Development Dependencies
 The development of the **NewsHub** OctoberCMS template is done using node.js (v16+) with an included 
-and configured Rollup stack. view the package.json in the root template directory for more details.
+and configured Rollup stack. View the package.json in the root template directory for more details.
 
-Commands:
+Available Commands:
 
 - `npm run build:js` - Build the JavaScript source files
 - `npm run watch:js` - Watch and build the JavaScript source files
