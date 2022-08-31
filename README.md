@@ -1,43 +1,63 @@
-NewsHub - Premium OctoberCMS Template
-=====================================
-
-**NewsHub** is a simple, minimalistic but powerful responsive blog / magazine template, designed for 
-OctoberCMS v2 / v3 using the latest Bootstrap 5.2 CSS and JS framework.
+NewsHub - Premium Magazine Template
+===================================
+**NewsHub** is a simple and responsive magazine and blog template, exclusively designed for 
+OctoberCMS v2 / v3. It provides a minimalistic design using **Bootstrap v5.2** as powerful CSS and 
+JS Framework and includes **Bootstrap Icons** and the responsive **Keen Slider**.
 
 [View the Demo-Website](https://themes.rat.md/newshub)
 
 
-Features
---------
-**Every buyer is welcome to contact us with additional feature or general improvement requests. If 
-these are feasible within the template or one of our extensions, we will be happy to implement them.**
+Whats new in v1.2.0
+-------------------
+Version 1.2.0 comes up with
 
-- Bootstrap 5.2 with Bootstrap Icons (usable as partials)
-- Fully Responsive (Mobile-First)
-- Multi-Language Support (using RainLab.Translate)
-- 4 Menu Positions (Social Links, Main Menu and 2 Footer Menus)
-- 3 Sidebar Positions (Homepage, Post and Page)
-    - with up to 10 different widgets
-- 2 Color Schemes (Light & Dark)
-- 2 different Header styles (Minimal & Extended)
-- Color Switch & Language Switch Button Support
-- Resposive Slider using Keen Slider
+- a new **Page Builder** for static pages
+- a **comment section** and widget
+- a **week-based** date **archive**
+- support for **RainLab.User** and **RainLab.BlogVideoExtension**
+- an additional header layout with a **search** and **user** integration
+- a **new** way to create the **footer menu** (the old way is still supported)
+- many improvements, especially for the dark Bootstrap v5.2 style
+
+
+All Features
+------------
+**Every buyer is welcome to [contact us](mailto:info@rat.md) with additional feature or general 
+improvement requests. If these are feasible within the template or one of our extensions, we will 
+be happy to implement them.**
+
+- **Bootstrap** v5.2 with **Bootstrap Icons** v1.9.1 (usable as partials)
+- Fully **Responsive**, mobile-first
+- **Multi-Language Support** (using RainLab.Translate)
+- **Page Builder**, with many Bootstrap and custom components
+- **4 Menu Positions**: Main Menu, Social Links, Meta Menu & Footer Menu
+- **3 Sidebar Positions**: Homepage, Post and Static Page - with many widgets
+- **2 Color Schemes**: Light and Dark mode
+- **Color** and **Language** Switch for the header and/or footer
+- **Responsive Slider** with touch-support using Keen-Slider
+- Many Configurations and Settings
 - Available in English & German
-- CMS Page Snippets:
+- Additional CMS Page Snippets
     - Double-Click Solution to embed external content GDPR friendly
     - Table of Contents Snippet (Lists all Content-Headers)
 - Additional Features provided by **RatMD.BlogHub**
-    - Author | Date | Tag Archives
-    - (Unique) Views Post Counter
-    - Similar & Random Post Widgets
-    - Next & Previous Blog Post buttons
-    - (Promoted) Blog Tags
-    - Different Post Layouts
-    - & MORE...
+    - Author / Date / Tag Archives
+    - Comment Section and Widgets
+    - View / Visitor Counter and Widgets
+    - Related / Random Post Section
+    - Next / Previous Post Buttons
+    - Promoted Blog Tags
+    - Custom Meta Details
+        - Customizable Slider (Sub-) Title and Excerpt
+        - Different Post Layouts (Default, Fullwidth, Featured)
+    - Dashboard Report Widgets (for the backend)
+    - ... and way more
 
 
 Requirements
 ------------
+We recommend using this template with the latest OctoberCMS **v3** version, however support for v2 
+is still available.
 
 - Modern Browser (IE and Edge Legacy are NOT supported!)
 - PHP 7.4+ / 8.0+
@@ -48,7 +68,40 @@ Requirements
 - Plugin: [RainLab.Translate](https://octobercms.com/plugin/rainlab-translate)
 - Plugin: [RatMD.BlogHub](https://octobercms.com/plugin/ratmd-bloghub)
 
-
 ### Supports
+The following plugins are not required but supported by the **NewsHub** template:
 
 - Plugin: [JanVince.SmallContactForm](https://octobercms.com/plugin/janvince-smallcontactform)
+- Plugin: [RainLab.User](https://octobercms.com/plugin/rainlab-user) 
+- Plugin: [RainLab.BlogVideoExtension](https://octobercms.com/plugin/rainlab-blogvideoextension)
+
+
+Dependencies
+------------
+The following dependencies are already bundled with this template, of course.
+
+- Bootstrap v5.2
+- Bootstrap Icons v1.9.1
+- Keen Slider v6.7.0
+- bs5-lightbox v1.8.0
+- jQuery *\** (only in OctoberCMS v2, see below)
+
+**Attention**: By default, jQuery is only included on OctoberCMS v2 installation, using jQuery for 
+OctoberCMS v3 and above requires to set the "Embed jQuery" option on the theme configuration page.
+
+### Development Dependencies
+The development of the **NewsHub** OctoberCMS template is done using node.js (v16+) with an included 
+and configured Rollup stack. view the package.json in the root template directory for more details.
+
+Commands:
+
+- `npm run build:js` - Build the JavaScript source files
+- `npm run watch:js` - Watch and build the JavaScript source files
+- `npm run build:css` - Build the SCSS source files
+- `npm run watch:css` - Watch and build the SCSS source files
+- `npm run build:vendors` - Build the required dependencies (as listed above)
+
+
+Need Support?
+-------------
+Contact us via mail at [info@rat.md](mailto:info@rat.md) or visit our website at [rat.md](https://rat.md).
