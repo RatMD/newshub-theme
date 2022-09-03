@@ -1,0 +1,161 @@
+<?php
+    if (!is_array($value) || empty($value)) {
+        $value = [
+            'manual' => '0',
+            'columns' => '2',
+            'primary' => '0',
+            "column_1" => "col-12 col-md-6 col-lg-6",
+            "column_2" => "col-12 col-md-6 col-lg-6"
+        ];
+    } else {
+        $value['manual'] = $value['manual'] ?? '0';
+        $value['columns'] = $value['columns'] ?? '2';
+        $value['primary'] = $value['primary'] ?? '0';
+    }
+
+    $primary = intval($value['primary'] ?? '0');
+    switch(intval($value['columns'])) {
+        case 1:
+            $classes = [
+                '1' => 'col-12'
+            ];
+            break;
+        case 2:
+            $classes = [
+                '1' => $primary === 0 ? 'col-6' : ($primary === 1 ? 'col-8' : 'col-4'),
+                '2' => $primary === 0 ? 'col-6' : ($primary === 2 ? 'col-8' : 'col-4')
+            ];
+            break;
+        case 3:
+            $classes = [
+                '1' => $primary === 0 ? 'col-4' : ($primary === 1 ? 'col-6' : 'col-3'),
+                '2' => $primary === 0 ? 'col-4' : ($primary === 2 ? 'col-6' : 'col-3'),
+                '3' => $primary === 0 ? 'col-4' : ($primary === 2 ? 'col-6' : 'col-3')
+            ];
+            break;
+        case 4:
+            $classes = [
+                '1' => $primary === 0 ? 'col-3' : ($primary === 1 ? 'col-6' : 'col-2'),
+                '2' => $primary === 0 ? 'col-3' : ($primary === 2 ? 'col-6' : 'col-2'),
+                '3' => $primary === 0 ? 'col-3' : ($primary === 1 ? 'col-6' : 'col-2'),
+                '4' => $primary === 0 ? 'col-3' : ($primary === 2 ? 'col-6' : 'col-2')
+            ];
+            break;
+    }
+?>
+
+<div class="newshub-flexbox-layout <?= $value['manual'] == '1' ? 'manual-configuration' : '' ?>" 
+    data-flexbox-string-set="<?= Lang::get('theme.newshub::lang.builder.flexbox.layout.set_primary') ?>"
+    data-flexbox-string-unset="<?= Lang::get('theme.newshub::lang.builder.flexbox.layout.unset_primary') ?>">
+    <div class="newshub-flexbox-config">
+        <input type="hidden" name="<?= $field->getName() ?>[columns]" value="<?= $value['columns'] ?>" data-flexbox-columns />
+        <input type="hidden" name="<?= $field->getName() ?>[primary]" value="<?= $value['primary'] ?>" data-flexbox-primary />
+
+        <div class="form-check form-switch">
+            <input type="hidden" name="<?= $field->getName() ?>[manual]" value="0" />
+            <input 
+                id="<?= $field->getId('manual') ?>"
+                class="form-check-input" 
+                type="checkbox" 
+                name="<?= $field->getName() ?>[manual]" 
+                value="1"
+                <?= $value['manual'] == '1' ? 'checked="checked"' : '' ?>
+                data-flexbox-manual
+            />
+
+            <label for="<?= $field->getId('manual') ?>" class="form-check-label">
+                <?= Lang::get('theme.newshub::lang.builder.flexbox.layout.manual') ?>
+            </label>
+            <p class="form-text">
+                <?= Lang::get('theme.newshub::lang.builder.flexbox.layout.manual_comment') ?>
+            </p>
+        </div>
+    </div>
+
+    <div class="newshub-flexbox-configurator <?= $value['primary'] == '0' ? '' : ('primary-' . $value['primary']) ?>">
+        <div class="<?= $classes['1'] ?>" data-flexbox-column="1">
+            <span><?= Lang::get('theme.newshub::lang.builder.flexbox.layout.column_1') ?></span>
+            <span><?= Lang::get('theme.newshub::lang.builder.flexbox.layout.set_primary') ?></span>
+        </div>
+
+        <div class="<?= $classes['2'] ?? '' ?><?= (intval($value['columns']) >= 2) ? ' ': ' hidden' ?>" data-flexbox-column="2">
+            <span><?= Lang::get('theme.newshub::lang.builder.flexbox.layout.column_2') ?></span>
+            <span><?= Lang::get('theme.newshub::lang.builder.flexbox.layout.set_primary') ?></span>
+        </div>
+
+        <div class="<?= $classes['3'] ?? '' ?><?= (intval($value['columns']) >= 3) ? ' ': ' hidden' ?>" data-flexbox-column="3">
+            <span><?= Lang::get('theme.newshub::lang.builder.flexbox.layout.column_3') ?></span>
+            <span><?= Lang::get('theme.newshub::lang.builder.flexbox.layout.set_primary') ?></span>
+        </div>
+
+        <div class="<?= $classes['4'] ?? '' ?><?= (intval($value['columns']) >= 4) ? ' ': ' hidden' ?>" data-flexbox-column="4">
+            <span><?= Lang::get('theme.newshub::lang.builder.flexbox.layout.column_4') ?></span>
+            <span><?= Lang::get('theme.newshub::lang.builder.flexbox.layout.set_primary') ?></span>
+        </div>
+    </div>
+
+    <div class="newshub-flexbox-inputs">
+        <div id="<?= $field->getId('column-1-group') ?>" class="form-group text-field span-left" data-field-name="column_1">
+            <label for="<?= $field->getId('column-1') ?>" class="form-label"><?= Lang::get('theme.newshub::lang.builder.flexbox.layout.column_1') ?></label>
+            <input 
+                id="<?= $field->getId('column-1') ?>" 
+                type="text" 
+                name="<?= $field->getName() ?>[column_1]"
+                value="<?= $value['column_1'] ?>"
+                class="form-control" 
+                placeholder=""
+                autocomplete="off" 
+                maxlength="255"
+            />
+            <p class="form-text"><?= Lang::get('theme.newshub::lang.builder.flexbox.layout.class_names') ?></p>
+        </div>
+
+        <div id="<?= $field->getId('column-2-group') ?>" class="form-group text-field span-right" data-field-name="column_2">
+            <label for="<?= $field->getId('column-2') ?>" class="form-label"><?= Lang::get('theme.newshub::lang.builder.flexbox.layout.column_2') ?></label>
+            <input 
+                id="<?= $field->getId('column-2') ?>" 
+                type="text" 
+                name="<?= $field->getName() ?>[column_2]"
+                value="<?= $value['column_2'] ?? '' ?>"
+                class="form-control" 
+                placeholder=""
+                autocomplete="off" 
+                maxlength="255"
+                <?= (intval($value['columns']) < 2)? 'disabled="disabled"' : '' ?>
+            />
+            <p class="form-text"><?= Lang::get('theme.newshub::lang.builder.flexbox.layout.class_names') ?></p>
+        </div>
+
+        <div id="<?= $field->getId('column-3-group') ?>" class="form-group text-field span-left" data-field-name="column_3">
+            <label for="<?= $field->getId('column-3') ?>" class="form-label"><?= Lang::get('theme.newshub::lang.builder.flexbox.layout.column_3') ?></label>
+            <input 
+                id="<?= $field->getId('column-3') ?>" 
+                type="text" 
+                name="<?= $field->getName() ?>[column_3]"
+                value="<?= $value['column_3'] ?? '' ?>"
+                class="form-control" 
+                placeholder=""
+                autocomplete="off" 
+                maxlength="255"
+                <?= (intval($value['columns']) < 3)? 'disabled="disabled"' : '' ?>
+            />
+            <p class="form-text"><?= Lang::get('theme.newshub::lang.builder.flexbox.layout.class_names') ?></p>
+        </div>
+
+        <div id="<?= $field->getId('column-4-group') ?>" class="form-group text-field span-right" data-field-name="column_4">
+            <label for="<?= $field->getId('column-4') ?>" class="form-label"><?= Lang::get('theme.newshub::lang.builder.flexbox.layout.column_4') ?></label>
+            <input 
+                id="<?= $field->getId('column-4') ?>" 
+                type="text" 
+                name="<?= $field->getName() ?>[column_4]"
+                value="<?= $value['column_4'] ?? '' ?>"
+                class="form-control" 
+                placeholder=""
+                autocomplete="off" 
+                maxlength="255"
+                <?= (intval($value['columns']) < 4)? 'disabled="disabled"' : '' ?>
+            />
+            <p class="form-text"><?= Lang::get('theme.newshub::lang.builder.flexbox.layout.class_names') ?></p>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,72 @@
+{% set classNames = 'carousel slide' %}
+{% if config.animation == 'fade' %}
+    {% set classNames = classNames ~ ' carousel-fade' %}
+{% endif %}
+{% if config.class_names and config.class_names|length > 0 %}
+    {% set classNames = classNames ~ ' ' ~ config.class_names %}
+{% endif %}
+
+{% set id = this.page.id ~ '_' ~ random() %}
+{% if config.id and config.id | length > 0 %}
+    {% set id = config.id %}
+{% endif %}
+
+<div id="{{ id }}" class="{{ classNames }}" 
+    {% if config.keyboard == '0' %}data-bs-keyboard="false"{% endif %}
+    {% if config.touch == '0' %}data-bs-touch="false"{% endif %}
+    {% if config.autoplay == '0' %}data-bs-ride="false"{% endif %}
+    {% if config.autoplay == '1' and config.interval > 0 %}data-bs-ride="{{ config.ride == '1' ? 'true' : 'carousel' }}" data-bs-interval="{{ config.interval }}"{% endif %}>
+    {% if config.indicators == '1' %}
+        <div class="carousel-indicators">
+            {% for slide in config.children %}
+                <button 
+                    type="button" 
+                    data-bs-target="#{{ id }}" 
+                    data-bs-slide-to="{{ loop.index0 }}" 
+                    class="{{ loop.index0 == 0 ? 'active' : '' }}"
+                    {% if index0 == 0 %}aria-current="true"{% endif %} 
+                    aria-label="{{ slide.title }}"></button>
+            {% endfor %}
+        </div>
+    {% endif %}
+
+    <div class="carousel-inner">
+        {% for slide in config.children %}
+            {% if slide.link|length > 0 %}
+                <a href="{{ slide.link }}" title="{{ slide.title }}" class="carousel-item{{ loop.index0 == 0 ? ' active' : '' }}">
+            {% else %}
+                <div class="carousel-item{{ loop.index0 == 0 ? ' active' : '' }}">
+            {% endif %}
+
+                <img src="{{ slide.image | media }}" class="d-block w-100" alt="{{ slide.title }}" />
+                <div class="carousel-caption d-none d-md-block">
+                    {% if slide.title and slide.title|length > 0 %}
+                        <div class="carousel-title h5">
+                            {{ slide.title }}
+                        </div>
+                    {% endif %}
+
+                    {% if slide.content and slide.content|length > 0 %}
+                        <p>{{ slide.content }}</p>
+                    {% endif %} 
+                </div>
+
+            {% if slide.link|length > 0 %}
+                </a>
+            {% else %}
+                </div>
+            {% endif %}
+        {% endfor %}
+    </div>
+
+    {% if config.controls == '1' %}
+        <button class="carousel-control-prev" type="button" data-bs-target="#{{ id }}" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#{{ id }}" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+    {% endif %}
+</div>

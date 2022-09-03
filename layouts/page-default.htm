@@ -78,15 +78,6 @@ function onInit()
         </a>
     {% endif %}
 
-    <script src="{{ 'assets/js/vendors/bootstrap.min.js?ver=5.2.0' | theme }}"></script>
-    <script src="{{ 'assets/js/vendors/bootstrap-lightbox.min.js?ver=1.8.0' | theme }}"></script>
-    <script src="{{ 'assets/js/vendors/keen-slider.min.js?ver=6.7.0' | theme }}"></script>
-    <script src="{{ 'assets/js/newshub.min.js?ver=1.0.0' | theme }}"></script>
-    {% scripts %}
-    {% if legacy %}
-        <script src="{{ ['@jquery', '@framework'] | theme }}"></script>
-    {% else %}
-        {% framework %}
-    {% endif %}
+    {% partial 'page/scripts' %}
 </body>
 </html>

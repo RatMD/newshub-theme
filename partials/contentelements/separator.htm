@@ -1,0 +1,17 @@
+{% set classNames = config.class_names %}
+
+{% if config.spacing_above != 'default' %}
+    {% set classNames = classNames ~ ' ' ~ config.spacing_above %}
+{% endif %}
+
+{% if config.spacing_below != 'default' %}
+    {% set classNames = classNames ~ ' ' ~ config.spacing_below %}
+{% endif %}
+
+{% if config.hr == 'hidden' %}
+    {% set classNames = classNames ~ ' border-transparent' %}
+{% elseif config.hr != 'default' %}
+    {% set classNames = classNames ~ ' border-' ~ config.hr %}
+{% endif %}
+
+<hr{% if config.id and config.id | length > 0 %} id="{{ config.id }}"{% endif %} class="section {{ classNames | trim }}" />

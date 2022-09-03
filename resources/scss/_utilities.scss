@@ -99,6 +99,19 @@ $utilities: (
 
 
 // ----------------------------------------
+//  Border Utility
+// ----------------------------------------
+
+$utilities-border-colors: map-merge(
+    $utilities-border-colors,
+    (
+        'transparent': transparent
+    )
+);
+
+
+
+// ----------------------------------------
 //  Custom Colored Link Classes
 // ----------------------------------------
 

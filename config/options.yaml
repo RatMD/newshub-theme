@@ -10,6 +10,14 @@ tabs:
             label: theme.newshub::lang.option.site_name.label
             comment: theme.newshub::lang.option.site_name.comment
             default: NewsHub
+            span: left
+        site_slogan:
+            tab: theme.newshub::lang.option.tabs.general
+            type: text
+            label: theme.newshub::lang.option.site_slogan.label
+            comment: theme.newshub::lang.option.site_slogan.comment
+            default: NewsHub is a premium Blog & Magazine template for OctoberCMS.
+            span: right
         site_logo:
             tab: theme.newshub::lang.option.tabs.general
             type: fileupload
@@ -32,6 +40,23 @@ tabs:
             useCaption: false
             thumbOptions: false
             span: right
+
+        __library_section:
+            tab: theme.newshub::lang.option.tabs.general
+            type: section
+            label: theme.newshub::lang.option.sections.libraries
+        embed_jquery:
+            tab: theme.newshub::lang.option.tabs.general
+            type: switch
+            label: theme.newshub::lang.option.embed_jquery.label
+            comment: theme.newshub::lang.option.embed_jquery.comment
+            default: false
+        embed_extras:
+            tab: theme.newshub::lang.option.tabs.general
+            type: switch
+            label: theme.newshub::lang.option.embed_extras.label
+            comment: theme.newshub::lang.option.embed_extras.comment
+            default: false
 
         __development_section:
             tab: theme.newshub::lang.option.tabs.general
@@ -178,17 +203,17 @@ tabs:
             tab: theme.newshub::lang.option.tabs.header
             type: section
             label: theme.newshub::lang.option.sections.main_header
-#        navbar_style:
-#            tab: theme.newshub::lang.option.tabs.header
-#            type: dropdown
-#            label: theme.newshub::lang.option.navbar_style.label
-#            comment: theme.newshub::lang.option.navbar_style.comment
-#            default: condensed
-#            showSearch: false
-#            span: auto
-#            options:
-#                condensed: theme.newshub::lang.option.navbar_style.condensed
-#                extended: theme.newshub::lang.option.navbar_style.extended
+        navbar_style:
+            tab: theme.newshub::lang.option.tabs.header
+            type: dropdown
+            label: theme.newshub::lang.option.navbar_style.label
+            comment: theme.newshub::lang.option.navbar_style.comment
+            default: condensed
+            showSearch: false
+            span: auto
+            options:
+                condensed: theme.newshub::lang.option.navbar_style.condensed
+                extended: theme.newshub::lang.option.navbar_style.extended
         sticky_header:
             tab: theme.newshub::lang.option.tabs.header
             type: switch
@@ -207,26 +232,26 @@ tabs:
             label: theme.newshub::lang.option.languages_menu.label
             comment: theme.newshub::lang.option.languages_menu.comment
             default: false
-#        search_button:
-#            tab: theme.newshub::lang.option.tabs.header
-#            type: switch
-#            label: theme.newshub::lang.option.search_button.label
-#            comment: theme.newshub::lang.option.search_button.comment
-#            default: false
-#            trigger:
-#                action: show
-#                condition: value[extended]
-#                field: navbar_style
-#        user_button:
-#            tab: theme.newshub::lang.option.tabs.header
-#            type: switch
-#            label: theme.newshub::lang.option.user_button.label
-#            comment: theme.newshub::lang.option.user_button.comment
-#            default: false
-#            trigger:
-#                action: show
-#                condition: value[extended]
-#                field: navbar_style
+        search_button:
+            tab: theme.newshub::lang.option.tabs.header
+            type: switch
+            label: theme.newshub::lang.option.search_button.label
+            comment: theme.newshub::lang.option.search_button.comment
+            default: false
+            trigger:
+                action: show
+                condition: value[extended]
+                field: navbar_style
+        user_button:
+            tab: theme.newshub::lang.option.tabs.header
+            type: switch
+            label: theme.newshub::lang.option.user_button.label
+            comment: theme.newshub::lang.option.user_button.comment
+            default: false
+            trigger:
+                action: show
+                condition: value[extended]
+                field: navbar_style
         
         __hero_area_section:
             tab: theme.newshub::lang.option.tabs.header
@@ -259,6 +284,13 @@ tabs:
             label: theme.newshub::lang.option.view_counter.label
             comment: theme.newshub::lang.option.view_counter.comment
             default: true
+            span: left
+        comment_counter:
+            tab: theme.newshub::lang.option.tabs.content
+            type: switch
+            label: theme.newshub::lang.option.comment_counter.label
+            comment: theme.newshub::lang.option.comment_counter.comment
+            default: false
             span: left
         __localization_section:
             tab: theme.newshub::lang.option.tabs.content

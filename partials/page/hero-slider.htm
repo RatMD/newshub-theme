@@ -9,8 +9,8 @@ categoryPage = "blog/category"
 postPage = "blog/post"
 ==
 {% if heroSliderPosts.posts.total > 0 %}
-    <div class="keen-slider-container keen-slider-hero">
-        <div class="keen-slider" data-keen-slider='{ "preset": "hero" }'>
+    <div id="heroSlider-{{ this.page.id }}" class="keen-slider-container keen-slider-hero">
+        <div class="keen-slider" data-keen-slider="{ preset: 'hero' }" data-keen-controls="#heroSlider-{{ this.page.id }} [data-keen-slider-control]">
             {% for post in heroSliderPosts.posts %}
                 <div class="keen-slider-slide">
                     <a href="{{ post.url }}" title="{{ post.title }}" class="hero-slide-item">

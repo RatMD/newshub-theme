@@ -1,0 +1,66 @@
+{% set classNames = 'row ' ~ config.class_names %}
+
+{% if config.margin_top != 'default' %} 
+    {% set classNames = classNames ~ ' ' ~ config.margin_top %}
+{% endif %}
+{% if config.margin_bottom != 'default' %} 
+    {% set classNames = classNames ~ ' ' ~ config.margin_bottom %}
+{% endif %}
+{% if config.padding_top != 'default' %} 
+    {% set classNames = classNames ~ ' ' ~ config.padding_top %}
+{% endif %}
+{% if config.padding_bottom != 'default' %} 
+    {% set classNames = classNames ~ ' ' ~ config.margin_top %}
+{% endif %}
+
+{% if config.wrap_container == '1' %}<div class="container">{% endif %}
+<div{% if config.id and config.id | length > 0 %} id="{{ config.id }}"{% endif %} class="{{ classNames }}">
+    {% if config.columns >= 1 %}
+        <div class="{{ config.layout.column_1 }}">
+            {% for element in config.children_1 %}
+                {% if hasPartial('contentelements/' ~ element._group) %}
+                    {% partial ('contentelements/' ~ element._group) config=element group=element._group %}
+                {% else %}
+                    Content Element "{{ element._group }}" not found
+                {% endif %}
+            {% endfor %}
+        </div>
+    {% endif %}
+    
+    {% if config.columns >= 2 %}
+        <div class="{{ config.layout.column_2 }}">
+            {% for element in config.children_2 %}
+                {% if hasPartial('contentelements/' ~ element._group) %}
+                    {% partial ('contentelements/' ~ element._group) config=element group=element._group %}
+                {% else %}
+                    Content Element "{{ element._group }}" not found
+                {% endif %}
+            {% endfor %}
+        </div>
+    {% endif %}
+    
+    {% if config.columns >= 3 %}
+        <div class="{{ config.layout.column_3 }}">
+            {% for element in config.children_3 %}
+                {% if hasPartial('contentelements/' ~ element._group) %}
+                    {% partial ('contentelements/' ~ element._group) config=element group=element._group %}
+                {% else %}
+                    Content Element "{{ element._group }}" not found
+                {% endif %}
+            {% endfor %}
+        </div>
+    {% endif %}
+    
+    {% if config.columns >= 4 %}
+        <div class="{{ config.layout.column_4 }}">
+            {% for element in config.children_4 %}
+                {% if hasPartial('contentelements/' ~ element._group) %}
+                    {% partial ('contentelements/' ~ element._group) config=element group=element._group %}
+                {% else %}
+                    Content Element "{{ element._group }}" not found
+                {% endif %}
+            {% endfor %}
+        </div>
+    {% endif %}
+</div>
+{% if config.wrap_container == '1' %}</div>{% endif %}

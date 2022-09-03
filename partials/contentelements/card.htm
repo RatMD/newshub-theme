@@ -1,0 +1,48 @@
+{% set muteSubtitle = true %}
+
+{% set classNames = 'card' %}
+
+{% if config.size and config.size != 'none' %}
+    {% set classNames = classNames ~ ' card-' ~ config.size %}
+{% endif %}
+
+{% if config.simple_style %}
+    {% set classNames = classNames ~ ' card-simple' %}
+{% else %}
+    {% if config.color != 'default' %}
+        {% set muteSubtitle = false %}
+        {% set classNames = classNames ~ ' text-bg-' ~ config.color %}
+    {% endif %}
+{% endif %}
+
+{% if config.class_names and config.class_names | length > 0 %}
+    {% set classNames = classNames ~ ' ' ~ config.class_names %}
+{% endif %}
+
+<div{% if config.id and config.id | length > 0 %} id="{{ config.id }}"{% endif %} class="{{ classNames }}">
+    {% if config.image and config.image | length > 0 %}
+        <img src="{{ config.image | media }}" class="card-img-top" alt="{{ config.title }}" />
+    {% endif %}
+
+    <div class="card-body">
+        {% if config.title and config.title|length > 0 %}
+            {% if config.layout == 'default' %}
+                <div class="card-title mt-0 font-sans-serif h5{% if config.subtitle and config.subtitle|length > 0 %} mb-1{% else %} mb-3{% endif %}">{{ config.title}}</div>
+            {% elseif config.layout != 'hidden' %}
+                <{{ config.layout }} class="card-title">{{ config.title}}</{{ config.layout }}>
+            {% endif %}
+        {% endif %}
+        
+        {% if config.subtitle and config.subtitle|length > 0 %}
+            {% if config.sublayout == 'default' %}
+                <div class="card-subtitle mt-0 font-sans-serif h6 mb-3{% if muteSubtitle %} text-muted{% endif %}">{{ config.subtitle}}</div>
+            {% elseif config.sublayout != 'hidden' %}
+                <{{ config.sublayout }} class="card-subtitle">{{ config.subtitle}}</{{ config.sublayout }}>
+            {% endif %}
+        {% endif %}
+
+        <div class="card-text">
+            {{ config.content | md }}
+        </div>
+    </div>
+</div>

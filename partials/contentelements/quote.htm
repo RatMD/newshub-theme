@@ -1,0 +1,19 @@
+{% set classNames = config.class_names %}
+
+{% if config.title | length > 0 and config.layout != 'hidden' %}
+    <{{ config.layout }}>{{ config.title }}</{{ config.layout }}>
+{% endif %}
+
+<figure class="text-{{ config.alignment }}">
+    <blockquote class="blockquote content">
+        {{ config.content | md }}
+    </blockquote>
+    
+    {% if config.source %}
+        <figcaption class="blockquote-footer">
+            {% if config.link|length > 0 %}<a href="{{ config.link }}">{% endif %}
+                <cite title="Source Title">{{ config.source }}</cite>
+            {% if config.link|length > 0 %}</a>{% endif %}
+        </figcaption>
+    {% endif %}
+</figure>

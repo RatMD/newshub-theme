@@ -24,10 +24,21 @@
                     <span class="post-no-thumbnail bg-light dark:bg-dark">{{ 'posts.no_thumbnail' | _ }}</span>
                 {% endif %}
                 
-                {% if this.theme.view_counter %}
-                    <div class="post-views">
-                        {% partial 'icons/bootstrap/eye-fill' %}
-                        <span class="counter">{{ post.ratmd_bloghub_views }}</span>
+                {% if this.theme.view_counter or this.theme.comment_counter %}
+                    <div class="post-badges">
+                        {% if this.theme.view_counter %}
+                            <div class="post-badge post-badge-views">
+                                {% partial 'icons/bootstrap/eye-fill' %}
+                                <span class="counter">{{ post.bloghub.views }}</span>
+                            </div>
+                        {% endif %}
+
+                        {% if this.theme.comment_counter %}
+                            <div class="post-badge post-badge-comments">
+                                {% partial 'icons/bootstrap/chat-fill' %}
+                                <span class="counter">{{ post.bloghub.comments_count }}</span>
+                            </div>
+                        {% endif %}
                     </div>
                 {% endif %}
             </a>

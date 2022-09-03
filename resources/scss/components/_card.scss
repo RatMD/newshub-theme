@@ -1,6 +1,33 @@
 
 // ----------------------------------------
-//  Card Stylings
+//  Bootstrap Card Stylings
+// ----------------------------------------
+
+.card {
+    .card-body,
+    .card-text {
+        & > *:last-child {
+            margin-bottom: 0;
+        }
+    }
+
+    &.card-small {
+        width: 16rem;
+    }
+    &.card-medium {
+        width: 24rem;
+    }
+    &.card-large {
+        width: 32rem;
+    }
+    &.card-fullwidth {
+        width: 100%;
+    }
+}
+
+
+// ----------------------------------------
+//  Simple Card Stylings
 // ----------------------------------------
 
 .card.card-simple {
@@ -14,6 +41,14 @@
     }
     &:last-child {
         margin-bottom: 0;
+    }
+
+    .card-img-top {
+        width: auto;
+        margin-top: -($spacer * 2);
+        margin-left: -($spacer * 2);
+        margin-right: -($spacer * 2);
+        margin-bottom: $spacer * 2;
     }
 
     .card-header,
@@ -82,4 +117,7 @@
         padding: $spacer * 2 0 0 0;
         background-color: transparent;
     }
+}
+.card-group > .card.card-simple {
+    margin-bottom: 0;
 }

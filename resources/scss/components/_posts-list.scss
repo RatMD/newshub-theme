@@ -106,29 +106,36 @@
                 }
             }
 
-            &.with-view-counter {
-                position: relative;
+            .post-badges {
+                top: 15px;
+                right: 15px;
+                display: flex;
+                position: absolute;
+                flex-direction: row;
+                justify-content: flex-end;
+            }
 
-                .post-views {
-                    top: 15px;
-                    right: 15px;
-                    color: $gray-800;
-                    padding: $spacer * 0.01 $spacer * 0.5; 
-                    display: flex;
-                    z-index: 20;
-                    opacity: 0.75;
-                    position: absolute;
-                    background-color: $white;
-                    align-items: center;
-                    justify-content: center;
-                    border-radius: 50rem;
+            .post-badge {
+                color: $gray-800;
+                margin: 0 $spacer * 0.2;
+                padding: $spacer * 0.1 $spacer * 0.5; 
+                display: flex;
+                align-items: center;
+                flex-direction: row;
+                justify-content: center;
+                z-index: 20;
+                opacity: 0.75;
+                background-color: $white;
+                border-radius: 50rem;
 
-                    span {
-                        margin-left: $spacer * 0.375;
-                        margin-right: $spacer * 0.2;
-                        font-size: 0.8rem;
-                        font-weight: 600;
-                    }
+                span {
+                    margin-left: $spacer * 0.375;
+                    margin-right: $spacer * 0.2;
+                    font-size: 0.8rem;
+                    font-weight: 600;
+                }
+
+                &.post-views {
                 }
             }
         }

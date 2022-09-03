@@ -86,6 +86,13 @@
 
 .section {
 
+    // Section Footer Top
+    &.section-footer {
+        .site-slogan {
+            max-width: 500px;
+        }
+    }
+
     // Section Footer Links
     &.section-footer-meta {
         display: flex;

@@ -1,0 +1,19 @@
+{% set classNames = config.class_names %}
+
+<div{% if config.id and config.id | length > 0 %} id="{{ config.id }}"{% endif %} class="{{ classNames }}">
+    <div class="row row-cols-{{ config.columns }} g-2">
+        {% for item in config.children %}
+            <div class="col">
+                <figure class="figure">
+                    {% if config.lightbox %}<a href="{{ item.image | media }}" data-toggle="lightbox" data-caption="{{ item.caption }}" data-gallery="gallery">{% endif %}
+                        <img src="{{ item.image | media }}" class="figure-img img-fluid rounded" alt="{{ item.title }}" />
+                    {% if config.lightbox %}</a>{% endif %}
+
+                    {% if item.caption|length > 0 %}
+                        <figcaption class="figure-caption">{{ item.caption }}</figcaption>
+                    {% endif %}
+                </figure>
+            </div>            
+        {% endfor %}
+    </div>
+</div>

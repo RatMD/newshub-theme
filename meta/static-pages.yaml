@@ -3,3 +3,18 @@ static-pages:
         about-imprint: {  }
         about-privacy-policy: {  }
     contact: {  }
+    page-builder:
+        page-builder-accordion: {  }
+        page-builder-alerts: {  }
+        page-builder-card: {  }
+        page-builder-card-group: {  }
+        page-builder-carousel: {  }
+        page-builder-double-click: {  }
+        page-builder-flexbox-container: {  }
+        page-builder-gallery: {  }
+        page-builder-headings: {  }
+        page-builder-images: {  }
+        page-builder-lists: {  }
+        page-builder-quotes: {  }
+        page-builder-separators: {  }
+        page-builder-slider: {  }

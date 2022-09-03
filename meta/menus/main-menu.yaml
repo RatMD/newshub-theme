@@ -50,9 +50,13 @@ items:
                 items:
                     -
                         title: 'Author Archive'
+                        nesting: null
                         type: url
                         url: /magazine/author/sam
                         code: ''
+                        reference: null
+                        cmsPage: null
+                        replace: null
                         viewBag:
                             locale:
                                 de:
@@ -268,6 +272,21 @@ items:
                     cssClass: ''
                     isExternal: '0'
     -
+        title: 'Page Builder'
+        nesting: 1
+        type: static-page
+        code: ''
+        reference: page-builder
+        replace: 0
+        viewBag:
+            locale:
+                de:
+                    title: ''
+                    url: ''
+            isHidden: '0'
+            cssClass: ''
+            isExternal: '0'
+    -
         title: Contact
         nesting: null
         type: url
@@ -277,23 +296,6 @@ items:
         cmsPage: null
         replace: null
         viewBag:
-            isHidden: '0'
-            cssClass: ''
-            isExternal: '0'
-    -
-        title: About
-        nesting: 0
-        type: static-page
-        url: null
-        code: ''
-        reference: about
-        cmsPage: null
-        replace: 0
-        viewBag:
-            locale:
-                de:
-                    title: ''
-                    url: ''
             isHidden: '0'
             cssClass: ''
             isExternal: '0'

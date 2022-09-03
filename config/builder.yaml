@@ -1,0 +1,1406 @@
+accordion:
+    name: theme.newshub::lang.builder.accordion.label
+    description: theme.newshub::lang.builder.accordion.comment
+    icon: newshub-bi newshub-bi-accordion
+    fields:
+        title:
+            type: text
+            label: theme.newshub::lang.builder.globals.name.label
+            comment: theme.newshub::lang.builder.globals.name.comment
+            span: left
+        id:
+            type: text
+            label: theme.newshub::lang.builder.globals.id.label
+            comment: theme.newshub::lang.builder.globals.id.comment
+            span: left
+        class_names:
+            type: text
+            label: theme.newshub::lang.builder.globals.class_names.label
+            comment: theme.newshub::lang.builder.globals.class_names.comment
+            span: right
+        style:
+            type: dropdown
+            label: theme.newshub::lang.builder.accordion.style.label
+            comment: theme.newshub::lang.builder.accordion.style.comment
+            showSearch: false
+            default: default
+            options:
+                default: theme.newshub::lang.builder.accordion.style.default
+                flush: theme.newshub::lang.builder.accordion.style.flush
+                clean: theme.newshub::lang.builder.accordion.style.clean
+            span: left
+        iconset:
+            type: dropdown
+            label: theme.newshub::lang.builder.accordion.iconset.label
+            comment: theme.newshub::lang.builder.accordion.iconset.comment
+            showSearch: false
+            default: chevron
+            options:
+                chevron: theme.newshub::lang.builder.accordion.iconset.chevron
+                plusminus: theme.newshub::lang.builder.accordion.iconset.plusminus
+                noicon: theme.newshub::lang.builder.accordion.iconset.noicon
+            span: right
+        always_open:
+            type: switch
+            label: theme.newshub::lang.builder.accordion.always_open.label
+            comment: theme.newshub::lang.builder.accordion.always_open.comment
+            default: false
+            span: left
+        iconleft:
+            type: switch
+            label: theme.newshub::lang.builder.accordion.iconleft.label
+            comment: theme.newshub::lang.builder.accordion.iconleft.comment
+            default: false
+            span: right
+            trigger:
+                action: hide
+                field: iconset
+                condition: value[noicon]
+        children:
+            type: repeater
+            label: theme.newshub::lang.builder.accordion.items.label
+            prompt: theme.newshub::lang.builder.accordion.items.prompt
+            displayMode: accordion
+            titleFrom: title
+            itemsExpanded: false
+            form:
+                fields:
+                    start_open:
+                        type: switch
+                        label: theme.newshub::lang.builder.accordion.items.start_open.label
+                        comment: theme.newshub::lang.builder.accordion.items.start_open.comment
+                        default: false
+                    title:
+                        type: text
+                        label: theme.newshub::lang.builder.accordion.items.title.label
+                        comment: theme.newshub::lang.builder.accordion.items.title.comment
+                        span: left
+                    type:
+                        type: dropdown
+                        label: theme.newshub::lang.builder.globals.content_type.label
+                        comment: theme.newshub::lang.builder.globals.content_type.comment
+                        default: richtext
+                        showSearch: false
+                        options:
+                            plaintext: theme.newshub::lang.builder.globals.content_type.plaintext
+                            markdown: theme.newshub::lang.builder.globals.content_type.markdown
+                            richtext: theme.newshub::lang.builder.globals.content_type.richtext
+                            html: theme.newshub::lang.builder.globals.content_type.html
+                        span: right
+                    content_plaintext:
+                        type: textarea
+                        label: theme.newshub::lang.builder.globals.content_type.plaintext_label
+                        trigger:
+                            action: show
+                            field: type
+                            condition: value[plaintext]
+                    content_markdown:
+                        type: markdown
+                        label: theme.newshub::lang.builder.globals.content_type.markdown_label
+                        trigger:
+                            action: show
+                            field: type
+                            condition: value[markdown]
+                    content_richtext:
+                        type: richeditor
+                        label: theme.newshub::lang.builder.globals.content_type.richtext_label
+                        trigger:
+                            action: show
+                            field: type
+                            condition: value[richtext]
+                    content_html:
+                        type: codeeditor
+                        label: theme.newshub::lang.builder.globals.content_type.html_label
+                        language: html
+                        trigger:
+                            action: show
+                            field: type
+                            condition: value[html]
+
+alert:
+    name: theme.newshub::lang.builder.alert.label
+    description: theme.newshub::lang.builder.alert.comment
+    icon: newshub-bi newshub-bi-alert
+    fields:
+        title:
+            type: text
+            label: theme.newshub::lang.builder.globals.title.label
+            comment: theme.newshub::lang.builder.globals.title.comment
+            span: left
+        layout:
+            type: dropdown
+            label: theme.newshub::lang.builder.alert.layout.label
+            comment: theme.newshub::lang.builder.alert.layout.comment
+            showSearch: false
+            default: hidden
+            options:
+                default: theme.newshub::lang.builder.globals.default
+                h1: theme.newshub::lang.builder.header.layout.h1
+                h2: theme.newshub::lang.builder.header.layout.h2
+                h3: theme.newshub::lang.builder.header.layout.h3
+                h4: theme.newshub::lang.builder.header.layout.h4
+                h5: theme.newshub::lang.builder.header.layout.h5
+                h6: theme.newshub::lang.builder.header.layout.h6
+                hidden: theme.newshub::lang.builder.globals.hidden
+            span: right
+        id:
+            type: text
+            label: theme.newshub::lang.builder.globals.id.label
+            comment: theme.newshub::lang.builder.globals.id.comment
+            span: left
+        class_names:
+            type: text
+            label: theme.newshub::lang.builder.globals.class_names.label
+            comment: theme.newshub::lang.builder.globals.class_names.comment
+            span: right
+        color:
+            type: dropdown
+            label: theme.newshub::lang.builder.alert.color.label
+            comment: theme.newshub::lang.builder.alert.color.comment
+            default: 'default'
+            showSearch: false
+            options:
+                default: theme.newshub::lang.builder.globals.default
+                primary: theme.newshub::lang.builder.globals.color.primary 
+                secondary: theme.newshub::lang.builder.globals.color.secondary
+                success: theme.newshub::lang.builder.globals.color.success
+                danger: theme.newshub::lang.builder.globals.color.danger
+                warning: theme.newshub::lang.builder.globals.color.warning
+                info: theme.newshub::lang.builder.globals.color.info
+                light: theme.newshub::lang.builder.globals.color.light
+                dark: theme.newshub::lang.builder.globals.color.dark
+            span: left
+        callout:
+            type: switch
+            label: theme.newshub::lang.builder.alert.callout.label
+            comment: theme.newshub::lang.builder.alert.callout.comment
+            default: false
+        content:
+            type: markdown
+            label: theme.newshub::lang.builder.alert.content.label
+            comment: theme.newshub::lang.builder.alert.content.comment
+
+card:
+    name: theme.newshub::lang.builder.card.label
+    description: theme.newshub::lang.builder.card.comment
+    icon: newshub-bi newshub-bi-card
+    fields:
+        title:
+            type: text
+            label: theme.newshub::lang.builder.globals.title.label
+            comment: theme.newshub::lang.builder.globals.title.comment
+            span: left
+        layout:
+            type: dropdown
+            label: theme.newshub::lang.builder.card.layout.label
+            comment: theme.newshub::lang.builder.card.layout.comment
+            showSearch: false
+            default: default
+            options:
+                default: theme.newshub::lang.builder.globals.default
+                h1: theme.newshub::lang.builder.header.layout.h1
+                h2: theme.newshub::lang.builder.header.layout.h2
+                h3: theme.newshub::lang.builder.header.layout.h3
+                h4: theme.newshub::lang.builder.header.layout.h4
+                h5: theme.newshub::lang.builder.header.layout.h5
+                h6: theme.newshub::lang.builder.header.layout.h6
+                hidden: theme.newshub::lang.builder.globals.hidden
+            span: right
+        subtitle:
+            type: text
+            label: theme.newshub::lang.builder.globals.subtitle.label
+            comment: theme.newshub::lang.builder.globals.subtitle.comment
+            span: left
+        sublayout:
+            type: dropdown
+            label: theme.newshub::lang.builder.card.sublayout.label
+            comment: theme.newshub::lang.builder.card.sublayout.comment
+            showSearch: false
+            default: default
+            options:
+                default: theme.newshub::lang.builder.globals.default
+                h2: theme.newshub::lang.builder.header.layout.h2
+                h3: theme.newshub::lang.builder.header.layout.h3
+                h4: theme.newshub::lang.builder.header.layout.h4
+                h5: theme.newshub::lang.builder.header.layout.h5
+                h6: theme.newshub::lang.builder.header.layout.h6
+                hidden: theme.newshub::lang.builder.globals.hidden
+            span: right
+        id:
+            type: text
+            label: theme.newshub::lang.builder.globals.id.label
+            comment: theme.newshub::lang.builder.globals.id.comment
+            span: left
+        class_names:
+            type: text
+            label: theme.newshub::lang.builder.globals.class_names.label
+            comment: theme.newshub::lang.builder.globals.class_names.comment
+            span: right
+        simple_style:
+            type: switch
+            label: theme.newshub::lang.builder.card.style.label
+            comment: theme.newshub::lang.builder.card.style.comment
+            default: false
+            span: left
+        size:
+            type: balloon-selector
+            label: theme.newshub::lang.builder.card.size.label
+            comment: theme.newshub::lang.builder.card.size.comment
+            default: medium
+            options:
+                none: none
+                small: sm
+                medium: md
+                large: lg
+                fullwidth: 100%
+            span: left
+        color:
+            type: dropdown
+            label: theme.newshub::lang.builder.card.color.label
+            comment: theme.newshub::lang.builder.card.color.comment
+            default: default
+            showSearch: false
+            options:
+                default: theme.newshub::lang.builder.globals.default
+                primary: theme.newshub::lang.builder.globals.color.primary 
+                secondary: theme.newshub::lang.builder.globals.color.secondary
+                success: theme.newshub::lang.builder.globals.color.success
+                danger: theme.newshub::lang.builder.globals.color.danger
+                warning: theme.newshub::lang.builder.globals.color.warning
+                info: theme.newshub::lang.builder.globals.color.info
+                light: theme.newshub::lang.builder.globals.color.light
+                dark: theme.newshub::lang.builder.globals.color.dark
+            span: right
+            trigger:
+                action: hide
+                field: simple_style
+                condition: checked
+        content:
+            type: markdown
+            label: theme.newshub::lang.builder.card.content.label
+            comment: theme.newshub::lang.builder.card.content.comment
+        image:
+            type: mediafinder
+            label: theme.newshub::lang.builder.card.image.label
+            comment: theme.newshub::lang.builder.card.image.comment
+            mode: image
+            required: true
+            maxItems: 1
+            span: left
+
+cardgroup:
+    name: theme.newshub::lang.builder.cardgroup.label
+    description: theme.newshub::lang.builder.cardgroup.comment
+    icon: newshub-bi newshub-bi-cardgroup
+    fields:
+        title:
+            type: text
+            label: theme.newshub::lang.builder.globals.name.label
+            comment: theme.newshub::lang.builder.globals.name.comment
+            span: left
+        id:
+            type: text
+            label: theme.newshub::lang.builder.globals.id.label
+            comment: theme.newshub::lang.builder.globals.id.comment
+            span: left
+        class_names:
+            type: text
+            label: theme.newshub::lang.builder.globals.class_names.label
+            comment: theme.newshub::lang.builder.globals.class_names.comment
+            span: right
+        children:
+            type: repeater
+            label: theme.newshub::lang.builder.cardgroup.items.label
+            prompt: theme.newshub::lang.builder.cardgroup.items.prompt
+            displayMode: accordion
+            titleFrom: title
+            itemsExpanded: false
+            form:
+                fields:
+                    title:
+                        type: text
+                        label: theme.newshub::lang.builder.globals.title.label
+                        comment: theme.newshub::lang.builder.globals.title.comment
+                        span: left
+                    layout:
+                        type: dropdown
+                        label: theme.newshub::lang.builder.card.layout.label
+                        comment: theme.newshub::lang.builder.card.layout.comment
+                        showSearch: false
+                        default: default
+                        options:
+                            default: theme.newshub::lang.builder.globals.default
+                            h1: theme.newshub::lang.builder.header.layout.h1
+                            h2: theme.newshub::lang.builder.header.layout.h2
+                            h3: theme.newshub::lang.builder.header.layout.h3
+                            h4: theme.newshub::lang.builder.header.layout.h4
+                            h5: theme.newshub::lang.builder.header.layout.h5
+                            h6: theme.newshub::lang.builder.header.layout.h6
+                            hidden: theme.newshub::lang.builder.globals.hidden
+                        span: right
+                    subtitle:
+                        type: text
+                        label: theme.newshub::lang.builder.globals.subtitle.label
+                        comment: theme.newshub::lang.builder.globals.subtitle.comment
+                        span: left
+                    sublayout:
+                        type: dropdown
+                        label: theme.newshub::lang.builder.card.sublayout.label
+                        comment: theme.newshub::lang.builder.card.sublayout.comment
+                        showSearch: false
+                        default: default
+                        options:
+                            default: theme.newshub::lang.builder.globals.default
+                            h2: theme.newshub::lang.builder.header.layout.h2
+                            h3: theme.newshub::lang.builder.header.layout.h3
+                            h4: theme.newshub::lang.builder.header.layout.h4
+                            h5: theme.newshub::lang.builder.header.layout.h5
+                            h6: theme.newshub::lang.builder.header.layout.h6
+                            hidden: theme.newshub::lang.builder.globals.hidden
+                        span: right
+                    id:
+                        type: text
+                        label: theme.newshub::lang.builder.globals.id.label
+                        comment: theme.newshub::lang.builder.globals.id.comment
+                        span: left
+                    class_names:
+                        type: text
+                        label: theme.newshub::lang.builder.globals.class_names.label
+                        comment: theme.newshub::lang.builder.globals.class_names.comment
+                        span: right
+                    simple_style:
+                        type: switch
+                        label: theme.newshub::lang.builder.card.style.label
+                        comment: theme.newshub::lang.builder.card.style.comment
+                        default: false
+                        span: left
+                    content:
+                        type: markdown
+                        label: theme.newshub::lang.builder.card.content.label
+                        comment: theme.newshub::lang.builder.card.content.comment
+                    image:
+                        type: mediafinder
+                        label: theme.newshub::lang.builder.card.image.label
+                        comment: theme.newshub::lang.builder.card.image.comment
+                        mode: image
+                        maxItems: 1
+                        span: left
+
+carousel:
+    name: theme.newshub::lang.builder.carousel.label
+    description: theme.newshub::lang.builder.carousel.comment
+    icon: newshub-bi newshub-bi-carousel
+    fields:
+        title:
+            type: text
+            label: theme.newshub::lang.builder.globals.name.label
+            comment: theme.newshub::lang.builder.globals.name.comment
+            span: left
+        id:
+            type: text
+            label: theme.newshub::lang.builder.globals.id.label
+            comment: theme.newshub::lang.builder.globals.id.comment
+            span: left
+        class_names:
+            type: text
+            label: theme.newshub::lang.builder.globals.class_names.label
+            comment: theme.newshub::lang.builder.globals.class_names.comment
+            span: right
+        autoplay:
+            type: switch
+            label: theme.newshub::lang.builder.carousel.autoplay.label
+            comment: theme.newshub::lang.builder.carousel.autoplay.comment
+            default: true
+            span: left
+        ride:
+            type: switch
+            label: theme.newshub::lang.builder.carousel.ride.label
+            comment: theme.newshub::lang.builder.carousel.ride.comment
+            default: false
+            span: right
+            trigger:
+                action: show
+                field: autoplay
+                condition: checked
+        animation:
+            type: balloon-selector
+            label: theme.newshub::lang.builder.carousel.animation.label
+            comment: theme.newshub::lang.builder.carousel.animation.comment
+            default: slide
+            options:
+                slide: theme.newshub::lang.builder.carousel.animation.slide
+                fade: theme.newshub::lang.builder.carousel.animation.fade
+            span: left
+        interval:
+            type: number
+            label: theme.newshub::lang.builder.carousel.interval.label
+            comment: theme.newshub::lang.builder.carousel.interval.comment
+            min: 0
+            default: 5000
+            span: right
+            trigger:
+                action: show
+                field: autoplay
+                condition: checked
+        controls:
+            type: switch
+            label: theme.newshub::lang.builder.carousel.controls.label
+            comment: theme.newshub::lang.builder.carousel.controls.comment
+            default: true
+            span: left
+        indicators:
+            type: switch
+            label: theme.newshub::lang.builder.carousel.indicators.label
+            comment: theme.newshub::lang.builder.carousel.indicators.comment
+            default: true
+            span: right
+        touch:
+            type: switch
+            label: theme.newshub::lang.builder.carousel.touch.label
+            comment: theme.newshub::lang.builder.carousel.touch.comment
+            default: true
+            span: left
+        keyboard:
+            type: switch
+            label: theme.newshub::lang.builder.carousel.keyboard.label
+            comment: theme.newshub::lang.builder.carousel.keyboard.comment
+            default: true
+            span: right
+        children:
+            type: repeater
+            label: theme.newshub::lang.builder.carousel.items.label
+            prompt: theme.newshub::lang.builder.carousel.items.prompt
+            displayMode: accordion
+            titleFrom: title
+            itemsExpanded: false
+            form:
+                fields:
+                    image:
+                        type: mediafinder
+                        label: theme.newshub::lang.builder.carousel.items.image.label
+                        comment: theme.newshub::lang.builder.carousel.items.image.comment
+                        required: true
+                    title:
+                        type: text
+                        label: theme.newshub::lang.builder.carousel.items.title.label
+                        comment: theme.newshub::lang.builder.carousel.items.title.comment
+                        span: left
+                    link:
+                        type: text
+                        label: theme.newshub::lang.builder.carousel.items.link.label
+                        comment: theme.newshub::lang.builder.carousel.items.link.comment
+                        span: right
+                    content:
+                        type: textarea
+                        label: theme.newshub::lang.builder.carousel.items.content.label
+                        comment: theme.newshub::lang.builder.carousel.items.content.comment
+
+doubleclick:
+    name: theme.newshub::lang.builder.doubleclick.label
+    description: theme.newshub::lang.builder.doubleclick.comment
+    icon: newshub-bi newshub-bi-doubleclick
+    fields:
+        id:
+            type: text
+            label: theme.newshub::lang.builder.globals.id.label
+            comment: theme.newshub::lang.builder.globals.id.comment
+            span: left
+        class_names:
+            type: text
+            label: theme.newshub::lang.builder.globals.class_names.label
+            comment: theme.newshub::lang.builder.globals.class_names.comment
+            span: right
+        title:
+            type: text
+            label: theme.newshub::lang.builder.doubleclick.title.label
+            comment: theme.newshub::lang.builder.doubleclick.title.comment
+            default: theme.newshub::lang.builder.doubleclick.title.default
+            required: true
+            span: left
+        button_text:
+            type: text
+            label: theme.newshub::lang.builder.doubleclick.button_text.label
+            comment: theme.newshub::lang.builder.doubleclick.button_text.comment
+            default: theme.newshub::lang.builder.doubleclick.button_text.default
+            required: true
+            span: right
+        description:
+            type: textarea
+            label: theme.newshub::lang.builder.doubleclick.description.label
+            comment: theme.newshub::lang.builder.doubleclick.description.comment
+            default: theme.newshub::lang.builder.doubleclick.description.default
+            required: true
+        content:
+            type: codeeditor
+            label: theme.newshub::lang.builder.doubleclick.content.label
+            comment: theme.newshub::lang.builder.doubleclick.content.comment
+            required: true
+            language: html
+
+flexbox:
+    name: theme.newshub::lang.builder.flexbox.label
+    description: theme.newshub::lang.builder.flexbox.comment
+    icon: newshub-bi newshub-bi-flexbox
+    fields:
+        title:
+            type: text
+            label: theme.newshub::lang.builder.globals.name.label
+            comment: theme.newshub::lang.builder.globals.name.comment
+            span: left
+        id:
+            type: text
+            label: theme.newshub::lang.builder.globals.id.label
+            comment: theme.newshub::lang.builder.globals.id.comment
+            span: left
+        class_names:
+            type: text
+            label: theme.newshub::lang.builder.globals.class_names.label
+            comment: theme.newshub::lang.builder.globals.class_names.comment
+            span: right
+        wrap_container:
+            type: switch
+            label: theme.newshub::lang.builder.globals.wrap_container.label
+            comment: theme.newshub::lang.builder.globals.wrap_container.comment
+            default: false
+            span: left
+        margin_top:
+            type: balloon-selector
+            label: theme.newshub::lang.builder.globals.spacing.label_margin_top
+            default: default
+            showSearch: false
+            options:
+                default: default
+                mt-0: none
+                mt-1: xxs
+                mt-2: xs
+                mt-3: sm
+                mt-4: md
+                mt-5: lg
+                mt-6: xl
+                mt-7: xxl
+                mt-8: xxxl
+            span: left
+        padding_top:
+            type: balloon-selector
+            label: theme.newshub::lang.builder.globals.spacing.label_padding_top
+            default: default
+            showSearch: false
+            options:
+                default: default
+                pt-0: none
+                pt-1: xxs
+                pt-2: xs
+                pt-3: sm
+                pt-4: md
+                pt-5: lg
+                pt-6: xl
+                pt-7: xxl
+                pt-8: xxxl
+            span: right
+        margin_bottom:
+            type: balloon-selector
+            label: theme.newshub::lang.builder.globals.spacing.label_margin_bottom
+            default: default
+            showSearch: false
+            options:
+                default: default
+                mb-0: none
+                mb-1: xxs
+                mb-2: xs
+                mb-3: sm
+                mb-4: md
+                mb-5: lg
+                mb-6: xl
+                mb-7: xxl
+                mb-8: xxxl
+            span: left
+        padding_bottom:
+            type: balloon-selector
+            label: theme.newshub::lang.builder.globals.spacing.label_padding_bottom
+            default: default
+            showSearch: false
+            options:
+                default: default
+                pb-0: none
+                pb-1: xxs
+                pb-2: xs
+                pb-3: sm
+                pb-4: md
+                pb-5: lg
+                pb-6: xl
+                pb-7: xxl
+                pb-8: xxxl
+            span: right
+        columns:
+            type: balloon-selector
+            label: theme.newshub::lang.builder.flexbox.columns.label
+            commentAbove: theme.newshub::lang.builder.flexbox.columns.comment
+            default: 2
+            options:
+                1: 1
+                2: 2
+                3: 3
+                4: 4
+        layout:
+            type: partial
+            label: theme.newshub::lang.builder.flexbox.layout.label
+            commentAbove: theme.newshub::lang.builder.flexbox.layout.comment
+            path: ~/themes/newshub/config/partials/flexbox_layout.htm
+        children_1:
+            type: repeater
+            label: theme.newshub::lang.builder.flexbox.children1.label
+            prompt: theme.newshub::lang.builder.flexbox.children.prompt
+            titleFrom: title
+            displayMode: accordion
+            groups: ~/themes/newshub/config/builder.yaml
+            itemsExpanded: false
+        children_2:
+            type: repeater
+            label: theme.newshub::lang.builder.flexbox.children2.label
+            prompt: theme.newshub::lang.builder.flexbox.children.prompt
+            titleFrom: title
+            displayMode: accordion
+            groups: ~/themes/newshub/config/builder.yaml
+            itemsExpanded: false
+            trigger:
+                action: hide
+                field: columns
+                condition: value[1]
+        children_3:
+            type: repeater
+            label: theme.newshub::lang.builder.flexbox.children3.label
+            prompt: theme.newshub::lang.builder.flexbox.children.prompt
+            titleFrom: title
+            displayMode: accordion
+            groups: ~/themes/newshub/config/builder.yaml
+            itemsExpanded: false
+            trigger:
+                action: hide
+                field: columns
+                condition: value[1][2]
+        children_4:
+            type: repeater
+            label: theme.newshub::lang.builder.flexbox.children4.label
+            prompt: theme.newshub::lang.builder.flexbox.children.prompt
+            titleFrom: title
+            displayMode: accordion
+            groups: ~/themes/newshub/config/builder.yaml
+            itemsExpanded: false
+            trigger:
+                action: hide
+                field: columns
+                condition: value[1][2][3]
+
+gallery:
+    name: theme.newshub::lang.builder.gallery.label
+    description: theme.newshub::lang.builder.gallery.comment
+    icon: newshub-bi newshub-bi-gallery
+    fields:
+        title:
+            type: text
+            label: theme.newshub::lang.builder.globals.name.label
+            comment: theme.newshub::lang.builder.globals.name.comment
+            span: left
+        id:
+            type: text
+            label: theme.newshub::lang.builder.globals.id.label
+            comment: theme.newshub::lang.builder.globals.id.comment
+            span: left
+        class_names:
+            type: text
+            label: theme.newshub::lang.builder.globals.class_names.label
+            comment: theme.newshub::lang.builder.globals.class_names.comment
+            span: right
+        columns:
+            type: balloon-selector
+            label: theme.newshub::lang.builder.gallery.columns.label
+            comment: theme.newshub::lang.builder.gallery.columns.comment
+            default: 3
+            span: left
+            options:
+                1: 1
+                2: 2
+                3: 3
+                4: 4
+                5: 5
+                6: 6
+        lightbox:
+            type: switch
+            label: theme.newshub::lang.builder.gallery.lightbox.label
+            comment: theme.newshub::lang.builder.gallery.lightbox.comment
+            default: true
+            span: left
+        children:
+            type: repeater
+            label: theme.newshub::lang.builder.gallery.images.label
+            commentAbove: theme.newshub::lang.builder.gallery.images.comment
+            prompt: theme.newshub::lang.builder.gallery.images.prompt
+            displayMode: accordion
+            titleFrom: title
+            itemsExpanded: false
+            form:
+                fields:
+                    image:
+                        type: mediafinder
+                        label: theme.newshub::lang.builder.gallery.image.label
+                        comment: theme.newshub::lang.builder.gallery.image.comment
+                        mode: image
+                        maxItems: 1
+                        span: left
+                    title:
+                        type: text
+                        label: theme.newshub::lang.builder.gallery.title.label
+                        comment: theme.newshub::lang.builder.gallery.title.comment
+                        span: right
+                    caption:
+                        type: text
+                        label: theme.newshub::lang.builder.gallery.caption.label
+                        comment: theme.newshub::lang.builder.gallery.caption.comment
+
+header:
+    name: theme.newshub::lang.builder.header.label
+    description: theme.newshub::lang.builder.header.comment
+    icon: newshub-bi newshub-bi-header
+    fields:
+        title:
+            type: text
+            label: theme.newshub::lang.builder.globals.title.label
+            comment: theme.newshub::lang.builder.globals.title.comment
+            required: true
+            span: left
+        link:
+            type: text
+            label: theme.newshub::lang.builder.header.link.label
+            comment: theme.newshub::lang.builder.header.link.comment
+            span: right
+        id:
+            type: text
+            label: theme.newshub::lang.builder.globals.id.label
+            comment: theme.newshub::lang.builder.globals.id.comment
+            span: left
+        class_names:
+            type: text
+            label: theme.newshub::lang.builder.globals.class_names.label
+            comment: theme.newshub::lang.builder.globals.class_names.comment
+            span: right
+        layout:
+            type: dropdown
+            label: theme.newshub::lang.builder.header.layout.label
+            comment: theme.newshub::lang.builder.header.layout.comment
+            default: h2
+            showSearch: false
+            options:
+                h1: theme.newshub::lang.builder.header.layout.h1
+                h2: theme.newshub::lang.builder.header.layout.h2
+                h3: theme.newshub::lang.builder.header.layout.h3
+                h4: theme.newshub::lang.builder.header.layout.h4
+                h5: theme.newshub::lang.builder.header.layout.h5
+                h6: theme.newshub::lang.builder.header.layout.h6
+            span: left
+        style:
+            type: dropdown
+            label: theme.newshub::lang.builder.header.style.label
+            comment: theme.newshub::lang.builder.header.style.comment
+            default: default
+            showSearch: false
+            options:
+                default: theme.newshub::lang.builder.header.style.default
+                separator: theme.newshub::lang.builder.header.style.separator
+                display-1: theme.newshub::lang.builder.header.style.display1
+                display-2: theme.newshub::lang.builder.header.style.display2
+                display-3: theme.newshub::lang.builder.header.style.display3
+                display-4: theme.newshub::lang.builder.header.style.display4
+                display-5: theme.newshub::lang.builder.header.style.display5
+                display-6: theme.newshub::lang.builder.header.style.display6
+            span: right
+        p_tag:
+            type: switch
+            label: theme.newshub::lang.builder.header.p_tag.label
+            comment: theme.newshub::lang.builder.header.p_tag.comment
+            default: false
+
+image:
+    name: theme.newshub::lang.builder.image.label
+    description: theme.newshub::lang.builder.image.comment
+    icon: newshub-bi newshub-bi-image
+    fields:
+        title:
+            type: text
+            label: theme.newshub::lang.builder.globals.title.label
+            comment: theme.newshub::lang.builder.globals.title.comment
+            span: left
+        layout:
+            type: dropdown
+            label: theme.newshub::lang.builder.header.layout.label
+            comment: theme.newshub::lang.builder.header.layout.comment
+            default: hidden
+            showSearch: false
+            options:
+                h1: theme.newshub::lang.builder.header.layout.h1
+                h2: theme.newshub::lang.builder.header.layout.h2
+                h3: theme.newshub::lang.builder.header.layout.h3
+                h4: theme.newshub::lang.builder.header.layout.h4
+                h5: theme.newshub::lang.builder.header.layout.h5
+                h6: theme.newshub::lang.builder.header.layout.h6
+                hidden: theme.newshub::lang.builder.globals.hidden
+            span: right
+        id:
+            type: text
+            label: theme.newshub::lang.builder.globals.id.label
+            comment: theme.newshub::lang.builder.globals.id.comment
+            span: left
+        class_names:
+            type: text
+            label: theme.newshub::lang.builder.globals.class_names.label
+            comment: theme.newshub::lang.builder.globals.class_names.comment
+            span: right
+        image:
+            type: mediafinder
+            label: theme.newshub::lang.builder.image.image.label
+            comment: theme.newshub::lang.builder.image.image.comment
+            mode: image
+            maxItems: 1
+            span: left
+        alt:
+            type: text
+            label: theme.newshub::lang.builder.image.alt.label
+            comment: theme.newshub::lang.builder.image.alt.comment
+            span: right
+        show_text:
+            type: switch
+            label: theme.newshub::lang.builder.image.text.label
+            comment: theme.newshub::lang.builder.image.text.comment
+            default: true
+        position:
+            type: balloon-selector
+            label: theme.newshub::lang.builder.image.position.label
+            comment: theme.newshub::lang.builder.image.position.comment
+            default: left
+            options:
+                top: theme.newshub::lang.builder.globals.top
+                left: theme.newshub::lang.builder.globals.left
+                right: theme.newshub::lang.builder.globals.right
+                bottom: theme.newshub::lang.builder.globals.bottom
+            span: left
+            trigger:
+                action: show
+                field: show_text
+                condition: checked
+        placement:
+            type: balloon-selector
+            label: theme.newshub::lang.builder.image.placement.label
+            comment: theme.newshub::lang.builder.image.placement.comment
+            default: start
+            options:
+                start: theme.newshub::lang.builder.globals.start
+                center: theme.newshub::lang.builder.globals.center
+                end: theme.newshub::lang.builder.globals.end
+            span: right
+            trigger:
+                action: show
+                field: show_text
+                condition: checked
+        text:
+            type: markdown
+            label: theme.newshub::lang.builder.image.text.label
+            comment: theme.newshub::lang.builder.image.text.comment
+            trigger:
+                action: show
+                field: show_text
+                condition: checked
+
+list:
+    name: theme.newshub::lang.builder.list.label
+    description: theme.newshub::lang.builder.list.comment
+    icon: newshub-bi newshub-bi-list
+    fields:
+        title:
+            type: text
+            label: theme.newshub::lang.builder.globals.title.label
+            comment: theme.newshub::lang.builder.globals.title.comment
+            span: left
+        layout:
+            type: dropdown
+            label: theme.newshub::lang.builder.header.layout.label
+            comment: theme.newshub::lang.builder.header.layout.comment
+            default: hidden
+            showSearch: false
+            options:
+                h1: theme.newshub::lang.builder.header.layout.h1
+                h2: theme.newshub::lang.builder.header.layout.h2
+                h3: theme.newshub::lang.builder.header.layout.h3
+                h4: theme.newshub::lang.builder.header.layout.h4
+                h5: theme.newshub::lang.builder.header.layout.h5
+                h6: theme.newshub::lang.builder.header.layout.h6
+                hidden: theme.newshub::lang.builder.globals.hidden
+            span: right
+        id:
+            type: text
+            label: theme.newshub::lang.builder.globals.id.label
+            comment: theme.newshub::lang.builder.globals.id.comment
+            span: left
+        class_names:
+            type: text
+            label: theme.newshub::lang.builder.globals.class_names.label
+            comment: theme.newshub::lang.builder.globals.class_names.comment
+            span: right
+        style:
+            type: dropdown
+            label: theme.newshub::lang.builder.list.style.label
+            comment: theme.newshub::lang.builder.list.style.comment
+            default: unordered
+            showSearch: false
+            options:
+                unstyled: theme.newshub::lang.builder.list.style.unstyled
+                unordered: theme.newshub::lang.builder.list.style.unordered
+                ordered: theme.newshub::lang.builder.list.style.ordered
+                description: theme.newshub::lang.builder.list.style.description
+                description_aside: theme.newshub::lang.builder.list.style.description_aside
+        content:
+            type: textarea
+            label: theme.newshub::lang.builder.content.label
+            comment: theme.newshub::lang.builder.content.comment
+
+quote:
+    name: theme.newshub::lang.builder.quote.label
+    description: theme.newshub::lang.builder.quote.comment
+    icon: newshub-bi newshub-bi-quote
+    fields:
+        title:
+            type: text
+            label: theme.newshub::lang.builder.globals.title.label
+            comment: theme.newshub::lang.builder.globals.title.comment
+            span: left
+        layout:
+            type: dropdown
+            label: theme.newshub::lang.builder.header.layout.label
+            comment: theme.newshub::lang.builder.header.layout.comment
+            default: hidden
+            showSearch: false
+            options:
+                h1: theme.newshub::lang.builder.header.layout.h1
+                h2: theme.newshub::lang.builder.header.layout.h2
+                h3: theme.newshub::lang.builder.header.layout.h3
+                h4: theme.newshub::lang.builder.header.layout.h4
+                h5: theme.newshub::lang.builder.header.layout.h5
+                h6: theme.newshub::lang.builder.header.layout.h6
+                hidden: theme.newshub::lang.builder.globals.hidden
+            span: right
+        id:
+            type: text
+            label: theme.newshub::lang.builder.globals.id.label
+            comment: theme.newshub::lang.builder.globals.id.comment
+            span: left
+        class_names:
+            type: text
+            label: theme.newshub::lang.builder.globals.class_names.label
+            comment: theme.newshub::lang.builder.globals.class_names.comment
+            span: right
+        alignment:
+            type: balloon-selector
+            label: theme.newshub::lang.builder.globals.textalignment
+            default: start
+            options:
+                start: theme.newshub::lang.builder.globals.left
+                center: theme.newshub::lang.builder.globals.center
+                end: theme.newshub::lang.builder.globals.right
+        content:
+            type: textarea
+            label: theme.newshub::lang.builder.quote.content.label
+            comment: theme.newshub::lang.builder.quote.content.comment
+        source:
+            type: text
+            label: theme.newshub::lang.builder.quote.text.label
+            comment: theme.newshub::lang.builder.quote.text.comment
+        link:
+            type: text
+            label: theme.newshub::lang.builder.quote.link.label
+            comment: theme.newshub::lang.builder.quote.link.comment
+
+section: 
+    name: theme.newshub::lang.builder.section.label
+    description: theme.newshub::lang.builder.section.comment
+    icon: newshub-bi newshub-bi-section
+    fields:
+        title:
+            type: text
+            label: theme.newshub::lang.builder.globals.name.label
+            comment: theme.newshub::lang.builder.globals.name.comment
+            span: left
+        id:
+            type: text
+            label: theme.newshub::lang.builder.globals.id.label
+            comment: theme.newshub::lang.builder.globals.id.comment
+            span: left
+        class_names:
+            type: text
+            label: theme.newshub::lang.builder.globals.class_names.label
+            comment: theme.newshub::lang.builder.globals.class_names.comment
+            span: right
+        wrap_container:
+            type: switch
+            label: theme.newshub::lang.builder.globals.wrap_container.label
+            comment: theme.newshub::lang.builder.globals.wrap_container.comment
+            default: false
+            span: left
+        margin_top:
+            type: balloon-selector
+            label: theme.newshub::lang.builder.globals.spacing.label_margin_top
+            default: default
+            showSearch: false
+            options:
+                default: default
+                mt-0: none
+                mt-1: xxs
+                mt-2: xs
+                mt-3: sm
+                mt-4: md
+                mt-5: lg
+                mt-6: xl
+                mt-7: xxl
+                mt-8: xxxl
+            span: left
+        padding_top:
+            type: balloon-selector
+            label: theme.newshub::lang.builder.globals.spacing.label_padding_top
+            default: default
+            showSearch: false
+            options:
+                default: default
+                pt-0: none
+                pt-1: xxs
+                pt-2: xs
+                pt-3: sm
+                pt-4: md
+                pt-5: lg
+                pt-6: xl
+                pt-7: xxl
+                pt-8: xxxl
+            span: right
+        margin_bottom:
+            type: balloon-selector
+            label: theme.newshub::lang.builder.globals.spacing.label_margin_bottom
+            default: default
+            showSearch: false
+            options:
+                default: default
+                mb-0: none
+                mb-1: xxs
+                mb-2: xs
+                mb-3: sm
+                mb-4: md
+                mb-5: lg
+                mb-6: xl
+                mb-7: xxl
+                mb-8: xxxl
+            span: left
+        padding_bottom:
+            type: balloon-selector
+            label: theme.newshub::lang.builder.globals.spacing.label_padding_bottom
+            default: default
+            showSearch: false
+            options:
+                default: default
+                pb-0: none
+                pb-1: xxs
+                pb-2: xs
+                pb-3: sm
+                pb-4: md
+                pb-5: lg
+                pb-6: xl
+                pb-7: xxl
+                pb-8: xxxl
+            span: right
+        background:
+            type: dropdown
+            label: theme.newshub::lang.builder.section.background.label
+            prompt: theme.newshub::lang.builder.section.background.prompt
+            default: default
+            showSearch: false
+            span: left
+            options:
+                default: theme.newshub::lang.builder.globals.default
+                primary: theme.newshub::lang.builder.globals.color.primary
+                secondary: theme.newshub::lang.builder.globals.color.secondary
+                success: theme.newshub::lang.builder.globals.color.success
+                danger: theme.newshub::lang.builder.globals.color.danger
+                warning: theme.newshub::lang.builder.globals.color.warning
+                info: theme.newshub::lang.builder.globals.color.info
+                light: theme.newshub::lang.builder.globals.color.light
+                dark: theme.newshub::lang.builder.globals.color.dark
+        children:
+            type: repeater
+            label: theme.newshub::lang.builder.section.children.label
+            prompt: theme.newshub::lang.builder.section.children.prompt
+            titleFrom: title
+            displayMode: accordion
+            groups: ~/themes/newshub/config/builder.yaml
+
+separator:
+    name: theme.newshub::lang.builder.separator.label
+    description: theme.newshub::lang.builder.separator.comment
+    icon: newshub-bi newshub-bi-separator
+    fields:
+        title:
+            type: text
+            label: theme.newshub::lang.builder.globals.name.label
+            comment: theme.newshub::lang.builder.globals.name.comment
+            span: left
+        id:
+            type: text
+            label: theme.newshub::lang.builder.globals.id.label
+            comment: theme.newshub::lang.builder.globals.id.comment
+            span: left
+        class_names:
+            type: text
+            label: theme.newshub::lang.builder.globals.class_names.label
+            comment: theme.newshub::lang.builder.globals.class_names.comment
+            span: right
+        spacing_above:
+            type: balloon-selector
+            label: theme.newshub::lang.builder.separator.spacing_above.label
+            default: default
+            showSearch: false
+            options:
+                default: default
+                mt-0: none
+                mt-1: xxs
+                mt-2: xs
+                mt-3: sm
+                mt-4: md
+                mt-5: lg
+                mt-6: xl
+                mt-7: xxl
+                mt-8: xxxl
+            span: left
+        spacing_below:
+            type: balloon-selector
+            label: theme.newshub::lang.builder.separator.spacing_below.label
+            default: default
+            showSearch: false
+            options:
+                default: default
+                mb-0: none
+                mb-1: xxs
+                mb-2: xs
+                mb-3: sm
+                mb-4: md
+                mb-5: lg
+                mb-6: xl
+                mb-7: xxl
+                mb-8: xxxl
+            span: right
+        hr:
+            type: dropdown
+            label: theme.newshub::lang.builder.separator.hr.label
+            comment: theme.newshub::lang.builder.separator.hr.comment
+            default: hidden
+            showSearch: false
+            options:
+                hidden: theme.newshub::lang.builder.globals.hidden
+                default: theme.newshub::lang.builder.globals.default
+                primary: theme.newshub::lang.builder.globals.color.primary 
+                secondary: theme.newshub::lang.builder.globals.color.secondary
+                success: theme.newshub::lang.builder.globals.color.success
+                danger: theme.newshub::lang.builder.globals.color.danger
+                warning: theme.newshub::lang.builder.globals.color.warning
+                info: theme.newshub::lang.builder.globals.color.info
+                light: theme.newshub::lang.builder.globals.color.light
+                dark: theme.newshub::lang.builder.globals.color.dark
+
+slider:
+    name: theme.newshub::lang.builder.slider.label
+    description: theme.newshub::lang.builder.slider.comment
+    icon: newshub-bi newshub-bi-slider
+    fields:
+        title:
+            type: text
+            label: theme.newshub::lang.builder.globals.name.label
+            comment: theme.newshub::lang.builder.globals.name.comment
+            span: left
+        id:
+            type: text
+            label: theme.newshub::lang.builder.globals.id.label
+            comment: theme.newshub::lang.builder.globals.id.comment
+            span: left
+        class_names:
+            type: text
+            label: theme.newshub::lang.builder.globals.class_names.label
+            comment: theme.newshub::lang.builder.globals.class_names.comment
+            span: right
+        controls:
+            type: switch
+            label: theme.newshub::lang.builder.carousel.controls.label
+            comment: theme.newshub::lang.builder.carousel.controls.comment
+            default: true
+            span: left
+        indicators:
+            type: switch
+            label: theme.newshub::lang.builder.carousel.indicators.label
+            comment: theme.newshub::lang.builder.carousel.indicators.comment
+            default: true
+            span: right
+        loop:
+            type: switch
+            label: theme.newshub::lang.builder.carousel.loop.label
+            comment: theme.newshub::lang.builder.carousel.loop.comment
+            default: false
+            span: left
+        animation:
+            type: balloon-selector
+            label: theme.newshub::lang.builder.slider.animation.label
+            comment: theme.newshub::lang.builder.carousel.animation.comment
+            default: slide
+            options:
+                slide: theme.newshub::lang.builder.carousel.animation.slide
+                fade: theme.newshub::lang.builder.carousel.animation.fade
+                zoom: theme.newshub::lang.builder.carousel.animation.zoom
+            span: left
+        slides:
+            type: number
+            label: theme.newshub::lang.builder.slider.slides.label
+            comment: theme.newshub::lang.builder.slider.slides.comment
+            default: 1
+            span: left
+        spacing:
+            type: number
+            label: theme.newshub::lang.builder.slider.spacing.label
+            comment: theme.newshub::lang.builder.slider.spacing.comment
+            default: 0
+            span: right
+        interval:
+            type: number
+            label: theme.newshub::lang.builder.slider.interval.label
+            comment: theme.newshub::lang.builder.slider.interval.comment
+            min: 0
+            default: 5000
+            span: left
+        touch:
+            type: switch
+            label: theme.newshub::lang.builder.carousel.touch.label
+            comment: theme.newshub::lang.builder.carousel.touch.comment
+            default: true
+            span: left
+        keyboard:
+            type: switch
+            label: theme.newshub::lang.builder.carousel.keyboard.label
+            comment: theme.newshub::lang.builder.carousel.keyboard.comment
+            default: true
+            span: right
+        children:
+            type: repeater
+            label: theme.newshub::lang.builder.slider.items.label
+            prompt: theme.newshub::lang.builder.slider.items.prompt
+            displayMode: accordion
+            titleFrom: title
+            itemsExpanded: false
+            form:
+                fields:
+                    image:
+                        type: mediafinder
+                        label: theme.newshub::lang.builder.carousel.items.image.label
+                        comment: theme.newshub::lang.builder.carousel.items.image.comment
+                        required: true
+                    title:
+                        type: text
+                        label: theme.newshub::lang.builder.carousel.items.title.label
+                        comment: theme.newshub::lang.builder.carousel.items.title.comment
+                        span: left
+                    link:
+                        type: text
+                        label: theme.newshub::lang.builder.carousel.items.link.label
+                        comment: theme.newshub::lang.builder.carousel.items.link.comment
+                        span: right
+                    content:
+                        type: textarea
+                        label: theme.newshub::lang.builder.carousel.items.content.label
+                        comment: theme.newshub::lang.builder.carousel.items.content.comment
+
+tabs:
+    name: theme.newshub::lang.builder.tabs.label
+    description: theme.newshub::lang.builder.tabs.comment
+    icon: newshub-bi newshub-bi-tabs
+    fields:
+
+text:
+    name: theme.newshub::lang.builder.text.label
+    description: theme.newshub::lang.builder.text.comment
+    icon: newshub-bi newshub-bi-text
+    fields:
+        title:
+            type: text
+            label: theme.newshub::lang.builder.globals.title.label
+            comment: theme.newshub::lang.builder.globals.title.comment
+            span: left
+        layout:
+            type: dropdown
+            label: theme.newshub::lang.builder.header.layout.label
+            comment: theme.newshub::lang.builder.header.layout.comment
+            default: h2
+            showSearch: false
+            options:
+                h1: theme.newshub::lang.builder.header.layout.h1
+                h2: theme.newshub::lang.builder.header.layout.h2
+                h3: theme.newshub::lang.builder.header.layout.h3
+                h4: theme.newshub::lang.builder.header.layout.h4
+                h5: theme.newshub::lang.builder.header.layout.h5
+                h6: theme.newshub::lang.builder.header.layout.h6
+                hidden: theme.newshub::lang.builder.globals.hidden
+            span: right
+        id:
+            type: text
+            label: theme.newshub::lang.builder.globals.id.label
+            comment: theme.newshub::lang.builder.globals.id.comment
+            span: left
+        class_names:
+            type: text
+            label: theme.newshub::lang.builder.globals.class_names.label
+            comment: theme.newshub::lang.builder.globals.class_names.comment
+            span: right
+        type:
+            type: dropdown
+            label: theme.newshub::lang.builder.globals.content_type.label
+            comment: theme.newshub::lang.builder.globals.content_type.comment
+            default: richtext
+            showSearch: false
+            options:
+                plaintext: theme.newshub::lang.builder.globals.content_type.plaintext
+                markdown: theme.newshub::lang.builder.globals.content_type.markdown
+                richtext: theme.newshub::lang.builder.globals.content_type.richtext
+                html: theme.newshub::lang.builder.globals.content_type.html
+            span: right
+        content_plaintext:
+            type: textarea
+            label: theme.newshub::lang.builder.globals.content_type.plaintext_label
+            trigger:
+                action: show
+                field: type
+                condition: value[plaintext]
+        content_markdown:
+            type: markdown
+            label: theme.newshub::lang.builder.globals.content_type.markdown_label
+            trigger:
+                action: show
+                field: type
+                condition: value[markdown]
+        content_richtext:
+            type: richeditor
+            label: theme.newshub::lang.builder.globals.content_type.richtext_label
+            trigger:
+                action: show
+                field: type
+                condition: value[richtext]
+        content_html:
+            type: codeeditor
+            label: theme.newshub::lang.builder.globals.content_type.html_label
+            language: html
+            trigger:
+                action: show
+                field: type
+                condition: value[html]
+
+teaser:
+    name: theme.newshub::lang.builder.teaser.label
+    description: theme.newshub::lang.builder.teaser.comment
+    icon: newshub-bi newshub-bi-teaser
+    fields:

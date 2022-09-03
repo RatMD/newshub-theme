@@ -6,6 +6,14 @@
 @font-face {
     font-family: 'Alegreya Sans';
     font-style: normal;
+    font-weight: 500;
+    src: url('../fonts/alegreya-sans-v21-latin-500.woff2') format('woff2'),
+         url('../fonts/alegreya-sans-v21-latin-500.woff') format('woff');
+}
+
+@font-face {
+    font-family: 'Alegreya Sans';
+    font-style: normal;
     font-weight: 700;
     src: url('../fonts/alegreya-sans-v21-latin-700.woff2') format('woff2'),
          url('../fonts/alegreya-sans-v21-latin-700.woff') format('woff');

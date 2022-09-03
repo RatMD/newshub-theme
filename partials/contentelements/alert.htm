@@ -1,0 +1,20 @@
+
+{% set type = config.callout ? 'callout' : 'alert' %}
+{% set classNames = type %}
+{% if config.color != 'default' %}
+    {% set classNames = classNames ~ ' ' ~ type ~ '-' ~ config.color %}
+{% endif %}
+{% if config.class_names and config.class_names | length > 0 %}
+    {% set classNames = classNames ~ ' ' ~ config.class_names %}
+{% endif %}
+
+<div{% if config.id and config.id | length > 0 %} id="{{ config.id }}"{% endif %} class="{{ classNames }}" role="alert">
+    {% if config.layout != 'hidden' %}
+        {% if config.layout == 'default' %}
+            <div class="alert-heading h4 mt-0 font-sans-serif mb-3">{{ config.title }}</div>
+        {% else %}
+            <{{ config.layout }} class="alert-heading">{{ config.title }}</{{ config.layout }}>
+        {% endif %}
+    {% endif %}
+    {{ config.content | md }}
+</div>

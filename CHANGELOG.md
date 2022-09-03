@@ -1,18 +1,40 @@
 NewsHub - Changelog
-=======================
+===================
 
 Version 1.2.0 - In Progress
 ---------------------------
+- Add: Alegreya Sans Medium font (weight 500).
+- Add: New theme option to embed the jQuery framework for OctoberCMS v3+.
+- Add: New theme option to embed the OctoberCMS "Framework Extras" dependencies.
+- Add: New theme option to show a comment counter badge above the thumbnail.
+- Add: New theme option to add a site slogan, shown in the footer.
+- Add: New accordion stylings, with alternative and no icon, left-aligned icon and an additional clean design.
+- Update: Development dependencies.
+- Update: Change Stylesheet and JavaScript loading order.
+- Update: Fix alert stylings, re-add border radius.
+- Update: Move both macros to the new `page/macro.htm` partial.
+- Update: Keen Slider invoke script.
+- Update: Use ocJSON (OctoberCMS v2) or oc.parseJSON (OctoberCMS v3) when available.
+
 ### ToDo
 - Add: Additional navigation header style (with additional action buttons).
 - Add: Search and User button on the extended header style.
 - Add: Support for RainLab.BlogVideoExtension plugin.
 - Add: Support for RainLab.Forum plugin.
 - Add: Support for RainLab.User plugin.
+- Add: New `meta-menu` menu position for the advanced header style.
+- Add: New `footer-menu` menu position with up to 3 header - menu-link items.
+- Add: New Sidebar widget `Related Posts`, to display a list of related posts.
+- Add: New Sidebar widget `Comment`, to display a list of comments.
+- Add: New Sidebar widget `Image`, to display custom image wiht text.
+- Add: New Sidebar widget `Text`, to display custom text.
+- Add: New Sidebar widget `HTML`, to display custom HTML code.
+- Add: New theme option to set the number of posts shown in the hero slider.
 - Update: Change dropdown design / stylings on all header actions (same styling as main-menu).
 - Update: Move Color & Language menu to the actions section on the extended header style.
 - Update: Header stylings and template.
-- Update: Move both macros to the new `page/macro.htm` partial.
+- Update: `footer-menu-1` and `footer-menu-2` are deprecated and used as fallback when `footer-menu` does not exist or is empty.
+- Bugfix: The theme option to configure the hero slider category works now.
 
 Version 1.1.2 - Stable
 ----------------------

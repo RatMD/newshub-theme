@@ -1,0 +1,63 @@
+
+// ----------------------------------------
+//  Accordion Stylings
+// ----------------------------------------
+
+.accordion-body {
+    & > *:last-child {
+        margin-bottom: 0;
+    }
+}
+
+.accordion-icons-hide {
+    .accordion-button::after {
+        content: none;
+        display: none;
+    }
+}
+
+.accordion-icons-alt {
+    --#{$prefix}accordion-btn-icon: #{escape-svg($accordion-button-icon-alt)};
+    --#{$prefix}accordion-btn-active-icon: #{escape-svg($accordion-button-active-icon-alt)};
+}
+
+.accordion-icons-left {
+    .accordion-button {
+        justify-content: flex-end;
+        flex-direction: row-reverse;
+
+        &::after {
+            margin-left: 0;
+            margin-right: $spacer* 0.5;
+        }
+    }
+}
+
+.accordion-clean {
+    @extend .accordion-flush;
+
+    .accordion-item {
+        border: 0;
+        background-color: transparent;
+    }
+
+    .accordion-button {
+        padding: $spacer * 0.25 0;
+        
+        &:focus {
+            border-color: transparent;;
+            box-shadow: none;
+        }
+        &:not(.collapsed) {
+            background-color: transparent;
+            border-color: transparent;
+            box-shadow: none;
+        }
+    }
+    
+    .accordion-body {
+        padding-top: $spacer * 0.75;
+        padding-left: $spacer * 1.75;
+        padding-bottom: $spacer * 2.0;
+    }
+}

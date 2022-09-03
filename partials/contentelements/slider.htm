@@ -1,0 +1,66 @@
+{% set classNames = 'keen-slider' %}
+{% if config.class_names|length > 0 %}
+    {% set classNames = config.class_names ~ ' keen-slider' %}
+{% endif %}
+
+{% if config.animation|length > 0 %}
+    {% set classNames = classNames ~ ' keen-slider-' ~ config.animation %}
+{% endif %}
+
+{% set id = this.page.id ~ '_' ~ random() %}
+{% if config.id and config.id | length > 0 %}
+    {% set id = config.id %}
+{% endif %}
+
+<div id="{{ id }}" class="{{ classNames }}" data-keen-slider="{
+        animation: '{{ config.animation }}',
+        defaultAnimation: {
+            duration: {{ config.interval * 1000 }}
+        },
+        drag: {{ config.touch == '0' ? 'false' : 'true' }},
+        loop: {{ config.loop == '0'? 'false': 'true' }},
+        keyboard: {{ config.keyboard == '0' ? 'false' : 'true' }},
+        slides: {
+            perView: {{ config.slides }},
+            spacing: {{ config.spacing }}
+        },
+    }">
+
+    {% for slide in config.children %}
+        <div class="keen-slider-slide">
+            {% if slide.link|length > 0 %}<a href="{{ slide.link }}"{% if slide.title|length > 0 %} alt="{{ slide.title }}"{% endif %}>{% endif %}
+                <div class="slide-image">
+                    <img src="{{ slide.image | media }}" alt="{{ slide.title }}" />
+                </div>
+                
+                {% if slide.title|length > 0 or slide.content|length > 0 %}
+                    <div class="slide-content">
+                        {% if slide.title|length > 0 %}
+                            {{ slide.title }}
+                        {% endif %}
+                        {% if slide.content|length > 0 %}
+                            {{ slide.content | md }}
+                        {% endif %}
+                    </div>
+                {% endif %}
+            {% if slide.link|length > 0 %}</a>{% endif %}
+        </div>
+    {% endfor %}
+
+    {% if config.controls == '1' and config.children|length > 0 %}
+        <div class="keen-slider-controls">
+            <button type="button" class="btn btn-link" data-keen-slider-control="prev">
+                {% partial "icons/bootstrap/chevron-left" %}
+            </button>
+            <button type="button" class="btn btn-link" data-keen-slider-control="next">
+                {% partial "icons/bootstrap/chevron-right" %}
+            </button>
+        </div>
+    {% endif %}
+
+    {% if config.indicators == '1' and config.children|length > 0 %}
+        <div class="keen-slider-indicators">
+            indicators
+        </div>
+    {% endif %}
+</div>

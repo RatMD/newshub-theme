@@ -10,7 +10,7 @@ code = "social-menu"
 
 [localePicker]
 ==
-<section class="section section-footer d-flex justify-content-center">
+<section class="section section-footer d-flex align-items-center flex-column">
     <a href="{{ 'home' | page }}" class="font-special fw-extrabold fs-2 text-uppercase link-dark dark:link-light text-decoration-none" title="{{ this.theme.site_name }}">
         {% if this.theme.site_logo %}
             <img src="{{ this.theme.site_logo.getPath() }}" alt="{{ this.theme.site_name }}" class="hide-on-dark" />
@@ -24,6 +24,12 @@ code = "social-menu"
             {{ this.theme.site_name }}
         {% endif %}
     </a>
+
+    {% if this.theme.site_slogan and this.theme.site_slogan|length > 0 %}
+        <p class="site-slogan fs-7 text-center mt-2 text-muted font-special fw-medium">
+            {{ this.theme.site_slogan }}
+        </p>
+    {% endif %}
 </section>
 
 <section class="section section-footer-meta mt-4">

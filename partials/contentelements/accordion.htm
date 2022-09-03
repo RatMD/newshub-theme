@@ -1,0 +1,65 @@
+
+{% set id = this.page.id ~ '_' ~ random() %}
+{% set stayOpen = config.always_open == '1' %}
+{% set firstIsOpen = false %}
+{% set classNames = config.class_names %}
+
+{% if config.id and config.id | length > 0 %}
+    {% set id = config.id %}
+{% endif %}
+
+{% if config.iconset == 'plusminus' %}
+    {% set classNames = classNames ~ ' accordion-icons-alt' %}
+{% elseif config.iconset == 'noicon' %}
+    {% set classNames = classNames ~ ' accordion-icons-hide' %}
+{% endif %}
+
+{% if config.iconleft == '1' %}
+    {% set classNames = classNames ~ ' accordion-icons-left' %}
+{% endif %}
+
+{% if config.style != 'default' %}
+    {% set classNames = classNames ~ ' accordion-' ~ config.style %}
+{% endif %}
+
+{% if config.children | length > 0 %}
+    <div id="{{ id }}" class="accordion {{ classNames | trim }}">
+        {% for item in config.children %}
+            <div class="accordion-item">
+                <div class="accordion-header">
+                    <button 
+                        type="button" 
+                        class="accordion-button{% if item.start_open == '0' or firstIsOpen %} collapsed{% endif %}" 
+                        data-bs-toggle="collapse" 
+                        data-bs-target="#{{ id }}_item_{{ loop.index0 }}" 
+                        aria-expanded="true" 
+                        aria-controls="{{ id }}_item_{{ loop.index0 }}">
+                        {{ item.title }}
+                    </button>
+                </div>
+                
+                <div 
+                    id="{{ id }}_item_{{ loop.index0 }}" 
+                    class="accordion-collapse collapse{% if item.start_open == '1' and not firstIsOpen %} show{% endif %}" 
+                    aria-labelledby="{{ id }}_header_{{ loop.index0 }}" 
+                    {% if not stayOpen %}data-bs-parent="#{{ id }}"{% endif %}>
+                    <div class="accordion-body">
+                        {% if item.type == 'markdown' %}
+                            {{ item.content_markdown | md }}
+                        {% elseif item.type == 'richtext' %}
+                            {{ item.content_richtext | raw }}
+                        {% elseif item.type == 'html' %}
+                            {{ item.content_html | raw }}
+                        {% else %}
+                            <p>{{ item.content_plaintext }}</p>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+
+            {% if not stayOpen and item.start_open %}
+                {% set firstIsOpen = true %}
+            {% endif %}
+        {% endfor %}
+    </div>
+{% endif %}

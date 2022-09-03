@@ -1,0 +1,12 @@
+
+{% set classNames = 'card-group' %}
+
+{% if config.class_names and config.class_names | length > 0 %}
+    {% set classNames = classNames ~ ' ' ~ config.class_names %}
+{% endif %}
+
+<div{% if config.id and config.id | length > 0 %} id="{{ config.id }}"{% endif %} class="{{ classNames }}">
+    {% for card in config.children %}
+        {% partial ('contentelements/card') config=card group='card' %}
+    {% endfor %}
+</div>

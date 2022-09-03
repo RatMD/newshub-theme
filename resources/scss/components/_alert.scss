@@ -1,0 +1,12 @@
+
+// ----------------------------------------
+//  Alert Stylings
+// ----------------------------------------
+
+.alert {
+    border-radius: var(--#{$prefix}alert-border-radius);
+    
+    & > *:last-child {
+        margin-bottom: 0;
+    }
+}

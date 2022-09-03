@@ -19,3 +19,12 @@ body.dark {
     --#{$prefix}body-color: #{$body-dark-color};
     --#{$prefix}body-color-rgb: #{to-rgb($body-dark-color)};
 }
+
+
+// ----------------------------------------
+//  Remove Last-Child Margin
+// ----------------------------------------
+
+.content > *:last-child {
+    margin-bottom: 0;
+}

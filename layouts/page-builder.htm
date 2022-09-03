@@ -1,0 +1,93 @@
+##
+description = "Page Builder Layout"
+
+[localePicker]
+forceUrl = 0
+
+[alternateHrefLangElements]
+
+[staticPage]
+
+[staticBreadcrumbs]
+
+[viewBag]
+staticBreadcrumbs_skipLast = true
+==
+<?php
+function onInit()
+{
+    $this['legacy'] = version_compare(\System\Classes\UpdateManager::instance()->getCurrentVersion(), '3.0.0', '<');
+}
+?>
+==
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+<head>
+    {% partial 'page/meta' %}
+</head>
+<body class="theme-{{ this.theme.id }} {{ 'page-' ~ this.page.id }} layout-{{ this.layout.id }}{% if this.theme.dark_scheme %} dark{% else %} light{% endif %}">
+    <script>
+        let scheme = sessionStorage.getItem('newshub-color-scheme');
+        if (scheme) {
+            document.body.classList.remove(scheme === 'light'? 'dark': 'light');
+            document.body.classList.add(scheme);
+        }
+        if (document.currentScript) {
+            document.currentScript.remove();
+        }
+    </script>
+    
+    {% partial 'page/header' %}
+
+    <div id="pageContent">
+        <div class="post-single page-single">
+            <section class="section section-page">
+                <header class="py-6 bg-light dark:bg-dark">
+                    <div class="container">
+                        <div class="post-header">
+                            {% component 'staticBreadcrumbs' skipLast=true %}
+                            <h1 class="post-title">{{ page.title | default(this.page.title) }}</h1>
+                        </div>
+                    </div>
+                </header>
+
+                <article class="section section-with-sidebar py-6">
+                    <div class="container">
+                        <div class="post-content main-area">
+                            {variable name="flexbox_backend_js" type="partial" path="~/themes/newshub/config/partials/flexbox_assets.htm" tab="Content Elements"}{/variable}
+                            {variable name="content_elements" type="repeater" displayMode="builder" prompt="Add a content element" tab="Content Elements"
+                                groups="#/newshub/config/builder.yaml" titleFrom="title"}{/variable}
+    
+                            {% for element in content_elements %}
+                                {% if hasPartial('contentelements/' ~ element._group) %}
+                                    {% partial ('contentelements/' ~ element._group) config=element group=element._group %}
+                                {% else %}
+                                    Content Element "{{ element._group }}" not found
+                                {% endif %}
+                            {% endfor %}
+                        </div>
+                        
+                        <aside class="post-aside sidebar-area">
+                            {% partial 'sidebars/page' %}
+                        </aside>
+                    </div>
+                </article>
+            </section>
+        </div>
+    </div>
+    
+    <footer id="pageFooter" class="{% if this.theme.dark_footer %}bg-dark dark{% else %}bg-light dark:bg-dark{% endif %} py-5">
+        <div class="container">
+            {% partial 'page/footer' %}
+        </div>
+    </footer>
+
+    {% if this.theme.to_top_button %}
+        <a href="#top" class="scroll-to-top">
+            {% partial 'icons/bootstrap/arrow-up-short' %}
+        </a>
+    {% endif %}
+
+    {% partial 'page/scripts' %}
+</body>
+</html>

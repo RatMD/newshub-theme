@@ -1,0 +1,56 @@
+{% set classNames = config.class_names %}
+
+{% if config.title | length > 0 and config.layout != 'hidden' %}
+    <{{ config.layout }}>{{ config.title }}</{{ config.layout }}>
+{% endif %}
+{% if config.style == 'ordered' %}
+<ol{% if config.id and config.id | length > 0 %} id="{{ config.id }}"{% endif %} class="{{ classNames }} list-{{ config.style }} mb-0">
+    {% set items = config.content|split('\n') %}
+    {% for item in items %}
+        {% set text = item | split('|')  %}
+            {% if text | length > 1 %}
+                <li><strong>{{ text.0 | trim }}</strong> - {{ text | join('|') | trim }}</li>
+            {% else %}
+                <li>{{ item | trim }}</li>
+            {% endif %}
+    {% endfor %}
+</ol>
+{% elseif config.style == 'unstyled' or config.style == 'unordered' %}
+<ul{% if config.id and config.id | length > 0 %} id="{{ config.id }}"{% endif %} class="{{ classNames }} list-{{ config.style }} mb-0">
+    {% set items = config.content|split('\n') %}
+    {% for item in items %}
+        {% set text = item | split('|')  %}
+            {% if text | length > 1 %}
+                <li><strong>{{ text.0 | trim }}</strong> - {{ text | slice(1) | join('|') | trim }}</li>
+            {% else %}
+                <li>{{ item | trim }}</li>
+            {% endif %}
+    {% endfor %}
+</ul>
+{% elseif config.style == 'description' %}
+<dl{% if config.id and config.id | length > 0 %} id="{{ config.id }}"{% endif %} class="{{ classNames }} mb-0">
+    {% set items = config.content|split('\n') %}
+    {% for item in items %}
+        {% set text = item | split('|')  %}
+            {% if text | length > 1 %}
+                <dt>{{ text.0 | trim }}</dt>
+                <dd>{{ text | slice(1) | join('|') | trim }}</dd>
+            {% else %}
+                <dd>{{ item | trim }}</dd>
+            {% endif %}
+    {% endfor %}
+</dl>
+{% elseif config.style == 'description_aside' %}
+<dl{% if config.id and config.id | length > 0 %} id="{{ config.id }}"{% endif %} class="{{ classNames }} row mb-0">
+    {% set items = config.content|split('\n') %}
+    {% for item in items %}
+        {% set text = item | split('|')  %}
+            {% if text | length > 1 %}
+                <dt class="col-12 col-md-4 col-lg-3 text-truncate">{{ text.0 | trim }}</dt>
+                <dd class="col-12 col-md-8 col-lg-9">{{ text | slice(1) | join('|') | trim }}</dd>
+            {% else %}
+                <dd class="col-12 col-md-8 col-lg-9">{{ item | trim }}</dd>
+            {% endif %}
+    {% endfor %}
+</dl>
+{% endif %}

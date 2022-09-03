@@ -25,6 +25,9 @@
 
 {# Core Stylesheets #}
 {% placeholder stylesheets default %}
+    {% if this.theme.embed_extras %}
+        <link rel="stylesheet" href="{{ ['@framework.extras'] | theme }}" />
+    {% endif %}
     <link rel="stylesheet" href="{{ 'assets/css/newshub.min.css' | theme }}" />
     <style type="text/css">
         :root {

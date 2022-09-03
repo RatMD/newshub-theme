@@ -1,0 +1,41 @@
+{% set classNames = config.class_names %}
+
+{% if config.show_text == '0' %}
+    {% if config.title | length > 0 and config.layout != 'hidden' %}
+        <{{ config.layout }}>{{ config.title }}</{{ config.layout }}>
+    {% endif %}
+
+    <figure {% if config.id and config.id | length > 0 %} id="{{ config.id }}"{% endif %} class="figure {{ classNames }}">
+        <img src="{{ config.image | media }}" class="figure-img img-fluid rounded" alt="{{ config.alt }}" />
+    </figure>
+{% else %}
+    <div{% if config.id and config.id | length > 0 %} id="{{ config.id }}"{% endif %} class="{{ classNames }}">
+        {% if config.position == 'top' or config.position == 'bottom' %}
+            <div class="row">
+                <figure class="figure m-0 col-12 align-self-{{ config.placement }}{{ config.position == 'top' ? ' order-1' : ' order-2'}}">
+                    <img src="{{ config.image | media }}" class="figure-img img-fluid rounded" alt="{{ config.alt }}" />
+                </figure>
+
+                <div class="content col-12 {{ config.position == 'top' ? ' order-2 mt-4' : ' order-1 mb-4'}}">
+                    {% if config.title | length > 0 and config.layout != 'hidden' %}
+                        <{{ config.layout }}>{{ config.title }}</{{ config.layout }}>
+                    {% endif %}
+                    {{ config.text | md }}
+                </div>
+            </div>
+        {% elseif config.position == 'left' or config.position == 'right' %}
+            <div class="row">
+                <figure class="figure m-0 col-12 col-lg-4 align-self-{{ config.placement }}{{ config.position == 'left' ? ' order-1' : ' order-2'}}">
+                    <img src="{{ config.image | media }}" class="figure-img img-fluid rounded" alt="{{ config.alt }}" />
+                </figure>
+
+                <div class="content col-12 col-lg-8{{ config.position == 'left' ? ' order-2' : ' order-1'}}">
+                    {% if config.title | length > 0 and config.layout != 'hidden' %}
+                        <{{ config.layout }}>{{ config.title }}</{{ config.layout }}>
+                    {% endif %}
+                    {{ config.text | md }}
+                </div>
+            </div>
+        {% endif %}
+    </div>
+{% endif %}

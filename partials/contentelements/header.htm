@@ -1,0 +1,25 @@
+{% set classNames = config.class_names %}
+
+{% if config.style | slice(0, 7) == 'display' %}
+    {% set classNames = classNames ~ ' ' ~ config.style %}
+{% else %}
+    {% set classNames = classNames ~ ' ' ~ config.layout %}
+{% endif %}
+
+{% if config.style == 'separator' %}
+    {% set classNames = classNames ~ ' border-bottom pb-3 mb-3' %}
+{% endif %}
+
+{% if config.p_tag == '0' %}
+    <{{ config.layout }}{% if config.id and config.id | length > 0 %} id="{{ config.id }}"{% endif %} class="{{ classNames }}">
+        {% if config.link|length > 0 %}<a href="{{ config.link }}" title="{{ config.title }}">{% endif %}
+            {{ config.title }}
+        {% if config.link|length > 0 %}</a>{% endif %}
+    </{{ config.layout }}>
+{% else %}
+    <p{% if config.id and config.id | length > 0 %} id="{{ config.id }}"{% endif %} class="{{ classNames }}">
+        {% if config.link|length > 0 %}<a href="{{ config.link }}" title="{{ config.title }}">{% endif %}
+            {{ config.title }}
+        {% if config.link|length > 0 %}</a>{% endif %}
+    </p>
+{% endif %}

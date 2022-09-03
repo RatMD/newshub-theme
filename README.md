@@ -13,15 +13,16 @@ JS Framework and includes **Bootstrap Icons** and the responsive **Keen Slider**
 
 Whats new in v1.2.0
 -------------------
-Version 1.2.0 comes up with
+The primary focus of version 1.2.0 is the new **Page Builder**, which allows to easily 
+create new static pages with over **20 different** Bootstrap and custom **content elements**. 
 
-- a new **Page Builder** for static pages
-- a **comment section** and widget
-- a **week-based** date **archive**
-- support for **RainLab.User** and **RainLab.BlogVideoExtension**
-- an additional header layout with a **search** and **user** integration
-- a **new** way to create the **footer menu** (the old way is still supported)
-- many improvements, especially for the dark Bootstrap v5.2 style
+- A new **Page Builder** for static pages with over **20 Components**.
+- A **comment section** and widget and a **week-based** date **archive**.
+- Support for **RainLab.User** and **RainLab.BlogVideoExtension**.
+- A new header style with a **search** / **user** action and **meta-menu**.
+- A new way to create the **footer menu** (the old way is still supported).
+- 5 new sidebar widgets: Image, Text, HTML, Comment List and Related Posts.
+- Many improvements, especially for the dark Bootstrap v5.2 style
 
 
 All Features
@@ -33,7 +34,21 @@ be happy to implement them.**
 - **Bootstrap** v5.2 with **Bootstrap Icons** v1.9.1 (usable as partials)
 - Fully **Responsive**, mobile-first
 - **Multi-Language Support** (using RainLab.Translate)
-- **Page Builder**, with many Bootstrap and custom components
+- **Page Builder**, with 13 Bootstrap and custom components
+    - **Accordion** - A vertically collapsing accordion.
+    - **Alert** - A contextual feedback alert and callout message.
+    - **Card** - A flexible and extensible content container.
+    - **Carousel** - A slideshow component to cycle through elements.
+    - **Container** - A container element used for other content elements.
+    - **Double-Click** - A double-click solution to embed external content and iframes.
+    - **Header** - A simple header content element.
+    - **Image** - A simple image content element.
+    - **Image with Text** - A simple image with text content element.
+    - **List** - A simple list content element.
+    - **Quote** - A simple quotation content element.
+    - **Slider** - A slider component using Keen Slider.
+    - **Tabs** - A tabbed-content container.
+    - **Text** - A simple text, markdown or HTML content element.
 - **4 Menu Positions**: Main Menu, Social Links, Meta Menu & Footer Menu
 - **3 Sidebar Positions**: Homepage, Post and Static Page - with many widgets
 - **2 Color Schemes**: Light and Dark mode
