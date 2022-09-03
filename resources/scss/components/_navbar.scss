@@ -311,6 +311,33 @@
         .navbar-subnav .nav-item:hover > .navbar-subnav {
             margin-left: 0;
         }
+        .nav-item.item-has-children.columns-2 > .navbar-subnav {
+            display: grid;
+            grid-template-columns: 50% 50%;
+
+            .nav-item:nth-child(2n+0) {
+                border-left: 1px solid rgba(0, 0, 0, 0.1);
+            }
+            .nav-item:first-child::before {
+                left: 100%;
+                margin-left: -10px;
+                border-color: transparent transparent $white transparent;
+                transition: none;
+            }
+            .nav-item:first-child::after {
+                top: 0;
+                left: 100%;
+                width: 20px;
+                margin-left: -10px;
+                height: 0;
+                content: "";
+                z-index: 50;
+                position: absolute;
+                border-style: solid;
+                border-width: 10px 10px 0 10px;
+                border-color: $white transparent transparent transparent;
+            }
+        }
     }
 }
 

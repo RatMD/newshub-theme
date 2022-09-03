@@ -1256,6 +1256,13 @@ slider:
                 fade: theme.newshub::lang.builder.carousel.animation.fade
                 zoom: theme.newshub::lang.builder.carousel.animation.zoom
             span: left
+        interval:
+            type: number
+            label: theme.newshub::lang.builder.slider.interval.label
+            comment: theme.newshub::lang.builder.slider.interval.comment
+            min: 0
+            default: 1000
+            span: right
         slides:
             type: number
             label: theme.newshub::lang.builder.slider.slides.label
@@ -1268,13 +1275,33 @@ slider:
             comment: theme.newshub::lang.builder.slider.spacing.comment
             default: 0
             span: right
-        interval:
+        autoplay:
+            type: switch
+            label: theme.newshub::lang.builder.slider.autoplay.label
+            comment: theme.newshub::lang.builder.slider.autoplay.comment
+            default: true
+            span: left
+        marquee:
+            type: switch
+            label: theme.newshub::lang.builder.slider.marquee.label
+            comment: theme.newshub::lang.builder.slider.marquee.comment
+            default: false
+            span: right
+            trigger:
+                action: show
+                field: autoplay
+                condition: checked
+        autoplay_interval:
             type: number
-            label: theme.newshub::lang.builder.slider.interval.label
-            comment: theme.newshub::lang.builder.slider.interval.comment
+            label: theme.newshub::lang.builder.slider.autoplay_interval.label
+            comment: theme.newshub::lang.builder.slider.autoplay_interval.comment
             min: 0
             default: 5000
             span: left
+            trigger:
+                action: show
+                field: autoplay
+                condition: checked
         touch:
             type: switch
             label: theme.newshub::lang.builder.carousel.touch.label

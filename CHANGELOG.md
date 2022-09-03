@@ -9,11 +9,12 @@ Version 1.2.0 - In Progress
 - Add: New theme option to show a comment counter badge above the thumbnail.
 - Add: New theme option to add a site slogan, shown in the footer.
 - Add: New accordion stylings, with alternative and no icon, left-aligned icon and an additional clean design.
+- Add: New `columns-2` styling for main nav items on main menu (See Page Builder menu on demo website).
 - Update: Development dependencies.
 - Update: Change Stylesheet and JavaScript loading order.
 - Update: Fix alert stylings, re-add border radius.
 - Update: Move both macros to the new `page/macro.htm` partial.
-- Update: Keen Slider invoke script.
+- Update: Keen Slider invoke script and stylings.
 - Update: Use ocJSON (OctoberCMS v2) or oc.parseJSON (OctoberCMS v3) when available.
 
 ### ToDo
@@ -35,6 +36,7 @@ Version 1.2.0 - In Progress
 - Update: Header stylings and template.
 - Update: `footer-menu-1` and `footer-menu-2` are deprecated and used as fallback when `footer-menu` does not exist or is empty.
 - Bugfix: The theme option to configure the hero slider category works now.
+- Bugfix: Framework Extras and Bootstrap JS functionalities.
 
 Version 1.1.2 - Stable
 ----------------------

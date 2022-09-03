@@ -7,7 +7,251 @@
 
 
 // ----------------------------------------
-//  Hero Slider
+//  General Stylings
+// ----------------------------------------
+
+.keen-slider {
+    position: relative;
+
+    .keen-slider-slide {
+        z-index: 50;
+        position: relative;
+    }
+    .keen-slider-controls {
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 100%;
+        overflow: visible;
+        z-index: 100;
+        position: absolute;
+        pointer-events: none;
+
+        & > button {
+            top: 0;
+            bottom: 0;
+            color: $white;
+            height: 100%;
+            display: flex;
+            padding: 0 $spacer * 2;
+            position: absolute;
+            align-items: center;
+            justify-content: center;
+            pointer-events: fill;
+            outline: none !important;
+            box-shadow: none !important;
+
+            svg {
+                width: 32px;
+                height: 32px;
+            }
+
+            &[data-keen-slider-control="prev"],
+            &[data-keen-slider-control="previous"] {
+                left: 0;
+            }
+            &[data-keen-slider-control="next"] {
+                right: 0;
+            }
+        }
+    }
+    .keen-slider-indicators {
+        left: 0;
+        right: 0;
+        bottom: 0;
+        overflow: visible;
+        z-index: 100;
+        display: flex;
+        justify-content: center;
+        position: absolute;
+        pointer-events: none;
+
+        & > [data-keen-slider-indicator] {
+            width: 32px;
+            height: 4px;
+            padding: 0;
+            margin-left: $spacer * 0.15;
+            margin-right: $spacer * 0.15;
+            margin-bottom: $spacer * 1;
+            pointer-events: fill;
+            outline: none !important;
+            border: 0;
+            border-radius: 3px;
+            opacity: 0.5;
+            box-shadow: none !important;
+            background-color: white;
+            transition: background-color 200ms ease, opacity 200ms ease;
+
+            &.active {
+                opacity: 0.9;
+            }
+        }
+    }
+
+    .slide-image {
+        z-index: 50;
+        position: relative;
+    }
+    a {
+        text-decoration: none;
+    }
+    .slide-content {
+        color: $white;
+        left: 0;
+        right: 0;
+        bottom: $spacer * 2;
+        z-index: 100;
+        padding: $spacer * 2 $spacer * 3;
+        text-align: center;
+        position: absolute;
+        background-color: rgba(0, 0, 0, 0.5);
+
+        div.h4 {
+            margin: 0 !important;
+        }
+        p {
+            margin: 0;
+        }
+    }
+}
+
+// ----------------------------------------
+//  Multiple Stylings
+// ----------------------------------------
+
+.keen-slider.keen-slider-multiple {
+    &[data-keen-controls],
+    &[data-keen-indicators] {
+        padding-bottom: 34px;
+    }
+
+    .keen-slider-controls,
+    .keen-slider-indicators {
+        top: auto;
+        height: 34px;
+        display: flex;
+        bottom: 0;
+    }
+
+    .keen-slider-controls {
+        justify-content: space-between;
+
+        & > button {
+            position: relative;
+
+            svg {
+                fill: var(--#{$prefix}body-color);
+            }
+        }
+    }
+
+    .keen-slider-indicators {
+        align-items: center;
+
+        & > [data-keen-slider-indicator] {
+            margin-bottom: 0;
+            background-color: var(--#{$prefix}body-color);
+        }
+    }
+    
+    .slide-content {
+        color: var(--#{$prefix}body-color);
+        left: auto;
+        right: auto;
+        bottom: auto;
+        padding-top: $spacer;
+        position: relative;
+        background-color: transparent;
+        text-decoration: none;
+
+        .h4 {
+            @extend .h6;
+        }
+        p {
+            @extend .fs-7;
+        }
+    }
+}
+
+
+// ----------------------------------------
+//  Fade Animation Stylings
+// ----------------------------------------
+
+.keen-slider.keen-slider-fade {
+    width: 100%;
+    height: 600px;
+    max-height: 50vh;
+    position: relative;
+    overflow: hidden;
+
+    .keen-slider-slide {
+        top: 0;
+        opacity: 0;
+        width: 100%;
+        height: 100%;
+        position: absolute;
+
+        .slide-image {
+            top: 50%;
+            left: 50%;
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            transform: translateY(-50%) translateX(-50%);
+
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                object-position: center;
+            }
+        }
+    }
+}
+
+
+// ----------------------------------------
+//  Zoom Animation Stylings
+// ----------------------------------------
+
+.keen-slider.keen-slider-zoom {
+    width: 100%;
+    height: 600px;
+    max-height: 50vh;
+    overflow: hidden;
+    position: relative;
+    perspective: 1000px;
+
+    .keen-slider-slide {
+        width: 100%;
+        height: 100%;
+        position: relative;
+
+        .slide-image {
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            position: absolute;
+
+            img {
+                top: 50%;
+                left: 50%;
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                object-position: center;
+                position: absolute;
+                background-color: transparent;
+                transform: translateY(-50%) translateX(-50%);
+            }
+        }
+    }
+}
+
+
+// ----------------------------------------
+//  Hero Slider Stylings
 // ----------------------------------------
 
 .keen-slider-hero {

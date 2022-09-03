@@ -1,10 +1,12 @@
 {% set classNames = 'keen-slider' %}
-{% if config.class_names|length > 0 %}
-    {% set classNames = config.class_names ~ ' keen-slider' %}
-{% endif %}
-
 {% if config.animation|length > 0 %}
     {% set classNames = classNames ~ ' keen-slider-' ~ config.animation %}
+{% endif %}
+{% if config.slides > 1 %}
+    {% set classNames = classNames ~ ' keen-slider-multiple' %}
+{% endif %}
+{% if config.class_names|length > 0 %}
+    {% set classNames = config.class_names ~ ' keen-slider' %}
 {% endif %}
 
 {% set id = this.page.id ~ '_' ~ random() %}
@@ -13,9 +15,14 @@
 {% endif %}
 
 <div id="{{ id }}" class="{{ classNames }}" data-keen-slider="{
-        animation: '{{ config.animation }}',
+        _newshub: {
+            animation: '{{ config.animation }}',
+            autoplay: {{ config.autoplay == '0' ? 'false' : 'true' }},
+            autoplayStyle: '{{ config.marquee == '0' ? 'stops' : 'marquee' }}',
+            autoplayInterval: {{ config.autoplay_interval }}
+        },
         defaultAnimation: {
-            duration: {{ config.interval * 1000 }}
+            duration: {{ config.interval }}
         },
         drag: {{ config.touch == '0' ? 'false' : 'true' }},
         loop: {{ config.loop == '0'? 'false': 'true' }},
@@ -24,7 +31,7 @@
             perView: {{ config.slides }},
             spacing: {{ config.spacing }}
         },
-    }">
+    }"{{ config.controls == '1' ? ' data-keen-controls' : '' }} {{ config.indicators == '1' ? ' data-keen-indicators' : '' }}>
 
     {% for slide in config.children %}
         <div class="keen-slider-slide">
@@ -34,9 +41,9 @@
                 </div>
                 
                 {% if slide.title|length > 0 or slide.content|length > 0 %}
-                    <div class="slide-content">
+                    <div class="slide-content font-semibold fs-6">
                         {% if slide.title|length > 0 %}
-                            {{ slide.title }}
+                            <div class="h4 font-bold">{{ slide.title }}</div>
                         {% endif %}
                         {% if slide.content|length > 0 %}
                             {{ slide.content | md }}
@@ -60,7 +67,9 @@
 
     {% if config.indicators == '1' and config.children|length > 0 %}
         <div class="keen-slider-indicators">
-            indicators
+            {% for slide in config.children %}
+                <button type="button" class="btn btn-link" data-keen-slider-indicator="{{ loop.index0 }}"></button>
+            {% endfor %}
         </div>
     {% endif %}
 </div>
