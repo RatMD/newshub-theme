@@ -495,6 +495,83 @@ carousel:
                         label: theme.newshub::lang.builder.carousel.items.content.label
                         comment: theme.newshub::lang.builder.carousel.items.content.comment
 
+content:
+    name: theme.newshub::lang.builder.content.label
+    description: theme.newshub::lang.builder.content.comment
+    icon: newshub-bi newshub-bi-content
+    fields:
+        title:
+            type: text
+            label: theme.newshub::lang.builder.globals.title.label
+            comment: theme.newshub::lang.builder.globals.title.comment
+            span: left
+        layout:
+            type: dropdown
+            label: theme.newshub::lang.builder.header.layout.label
+            comment: theme.newshub::lang.builder.header.layout.comment
+            default: h2
+            showSearch: false
+            options:
+                h1: theme.newshub::lang.builder.header.layout.h1
+                h2: theme.newshub::lang.builder.header.layout.h2
+                h3: theme.newshub::lang.builder.header.layout.h3
+                h4: theme.newshub::lang.builder.header.layout.h4
+                h5: theme.newshub::lang.builder.header.layout.h5
+                h6: theme.newshub::lang.builder.header.layout.h6
+                hidden: theme.newshub::lang.builder.globals.hidden
+            span: right
+        id:
+            type: text
+            label: theme.newshub::lang.builder.globals.id.label
+            comment: theme.newshub::lang.builder.globals.id.comment
+            span: left
+        class_names:
+            type: text
+            label: theme.newshub::lang.builder.globals.class_names.label
+            comment: theme.newshub::lang.builder.globals.class_names.comment
+            span: right
+        type:
+            type: dropdown
+            label: theme.newshub::lang.builder.globals.content_type.label
+            comment: theme.newshub::lang.builder.globals.content_type.comment
+            default: richtext
+            showSearch: false
+            options:
+                plaintext: theme.newshub::lang.builder.globals.content_type.plaintext
+                markdown: theme.newshub::lang.builder.globals.content_type.markdown
+                richtext: theme.newshub::lang.builder.globals.content_type.richtext
+                html: theme.newshub::lang.builder.globals.content_type.html
+            span: right
+        content_plaintext:
+            type: textarea
+            label: theme.newshub::lang.builder.globals.content_type.plaintext_label
+            trigger:
+                action: show
+                field: type
+                condition: value[plaintext]
+        content_markdown:
+            type: markdown
+            label: theme.newshub::lang.builder.globals.content_type.markdown_label
+            trigger:
+                action: show
+                field: type
+                condition: value[markdown]
+        content_richtext:
+            type: richeditor
+            label: theme.newshub::lang.builder.globals.content_type.richtext_label
+            trigger:
+                action: show
+                field: type
+                condition: value[richtext]
+        content_html:
+            type: codeeditor
+            label: theme.newshub::lang.builder.globals.content_type.html_label
+            language: html
+            trigger:
+                action: show
+                field: type
+                condition: value[html]
+
 doubleclick:
     name: theme.newshub::lang.builder.doubleclick.label
     description: theme.newshub::lang.builder.doubleclick.comment
@@ -1348,32 +1425,11 @@ tabs:
     description: theme.newshub::lang.builder.tabs.comment
     icon: newshub-bi newshub-bi-tabs
     fields:
-
-text:
-    name: theme.newshub::lang.builder.text.label
-    description: theme.newshub::lang.builder.text.comment
-    icon: newshub-bi newshub-bi-text
-    fields:
         title:
             type: text
-            label: theme.newshub::lang.builder.globals.title.label
-            comment: theme.newshub::lang.builder.globals.title.comment
+            label: theme.newshub::lang.builder.globals.name.label
+            comment: theme.newshub::lang.builder.globals.name.comment
             span: left
-        layout:
-            type: dropdown
-            label: theme.newshub::lang.builder.header.layout.label
-            comment: theme.newshub::lang.builder.header.layout.comment
-            default: h2
-            showSearch: false
-            options:
-                h1: theme.newshub::lang.builder.header.layout.h1
-                h2: theme.newshub::lang.builder.header.layout.h2
-                h3: theme.newshub::lang.builder.header.layout.h3
-                h4: theme.newshub::lang.builder.header.layout.h4
-                h5: theme.newshub::lang.builder.header.layout.h5
-                h6: theme.newshub::lang.builder.header.layout.h6
-                hidden: theme.newshub::lang.builder.globals.hidden
-            span: right
         id:
             type: text
             label: theme.newshub::lang.builder.globals.id.label
@@ -1384,47 +1440,100 @@ text:
             label: theme.newshub::lang.builder.globals.class_names.label
             comment: theme.newshub::lang.builder.globals.class_names.comment
             span: right
-        type:
-            type: dropdown
-            label: theme.newshub::lang.builder.globals.content_type.label
-            comment: theme.newshub::lang.builder.globals.content_type.comment
-            default: richtext
-            showSearch: false
+        position:
+            type: balloon-selector
+            label: theme.newshub::lang.builder.tabs.position.label
+            comment: theme.newshub::lang.builder.tabs.position.comment
+            default: horizontal
             options:
-                plaintext: theme.newshub::lang.builder.globals.content_type.plaintext
-                markdown: theme.newshub::lang.builder.globals.content_type.markdown
-                richtext: theme.newshub::lang.builder.globals.content_type.richtext
-                html: theme.newshub::lang.builder.globals.content_type.html
+                horizontal: theme.newshub::lang.builder.tabs.position.horizontal
+                vertical: theme.newshub::lang.builder.tabs.position.vertical
+            span: left
+        alignment:
+            type: balloon-selector
+            label: theme.newshub::lang.builder.tabs.alignment.label
+            comment: theme.newshub::lang.builder.tabs.alignment.comment
+            default: start
+            options:
+                start: theme.newshub::lang.builder.globals.left
+                center: theme.newshub::lang.builder.globals.center
+                end: theme.newshub::lang.builder.globals.right
             span: right
-        content_plaintext:
-            type: textarea
-            label: theme.newshub::lang.builder.globals.content_type.plaintext_label
             trigger:
                 action: show
-                field: type
-                condition: value[plaintext]
-        content_markdown:
-            type: markdown
-            label: theme.newshub::lang.builder.globals.content_type.markdown_label
-            trigger:
-                action: show
-                field: type
-                condition: value[markdown]
-        content_richtext:
-            type: richeditor
-            label: theme.newshub::lang.builder.globals.content_type.richtext_label
-            trigger:
-                action: show
-                field: type
-                condition: value[richtext]
-        content_html:
-            type: codeeditor
-            label: theme.newshub::lang.builder.globals.content_type.html_label
-            language: html
-            trigger:
-                action: show
-                field: type
-                condition: value[html]
+                field: position
+                condition: value[horizontal]
+        children:
+            type: repeater
+            label: theme.newshub::lang.builder.children.items.label
+            prompt: theme.newshub::lang.builder.children.items.prompt
+            displayMode: accordion
+            titleFrom: title
+            itemsExpanded: false
+            form:
+                fields:
+                    title:
+                        type: text
+                        label: theme.newshub::lang.builder.children.items.title.label
+                        comment: theme.newshub::lang.builder.children.items.title.comment
+                        span: left
+                    disabled:
+                        type: switch
+                        label: theme.newshub::lang.builder.children.items.disabled.label
+                        comment: theme.newshub::lang.builder.children.items.disabled.comment
+                        default: false
+                        span: right
+                    id:
+                        type: text
+                        label: theme.newshub::lang.builder.globals.id.label
+                        comment: theme.newshub::lang.builder.globals.id.comment
+                        span: left
+                    class_names:
+                        type: text
+                        label: theme.newshub::lang.builder.globals.class_names.label
+                        comment: theme.newshub::lang.builder.globals.class_names.comment
+                        span: right
+                    type:
+                        type: dropdown
+                        label: theme.newshub::lang.builder.globals.content_type.label
+                        comment: theme.newshub::lang.builder.globals.content_type.comment
+                        default: richtext
+                        showSearch: false
+                        options:
+                            plaintext: theme.newshub::lang.builder.globals.content_type.plaintext
+                            markdown: theme.newshub::lang.builder.globals.content_type.markdown
+                            richtext: theme.newshub::lang.builder.globals.content_type.richtext
+                            html: theme.newshub::lang.builder.globals.content_type.html
+                        span: right
+                    content_plaintext:
+                        type: textarea
+                        label: theme.newshub::lang.builder.globals.content_type.plaintext_label
+                        trigger:
+                            action: show
+                            field: type
+                            condition: value[plaintext]
+                    content_markdown:
+                        type: markdown
+                        label: theme.newshub::lang.builder.globals.content_type.markdown_label
+                        trigger:
+                            action: show
+                            field: type
+                            condition: value[markdown]
+                    content_richtext:
+                        type: richeditor
+                        label: theme.newshub::lang.builder.globals.content_type.richtext_label
+                        trigger:
+                            action: show
+                            field: type
+                            condition: value[richtext]
+                    content_html:
+                        type: codeeditor
+                        label: theme.newshub::lang.builder.globals.content_type.html_label
+                        language: html
+                        trigger:
+                            action: show
+                            field: type
+                            condition: value[html]
 
 teaser:
     name: theme.newshub::lang.builder.teaser.label

@@ -18,3 +18,4 @@ static-pages:
         page-builder-quotes: {  }
         page-builder-separators: {  }
         page-builder-slider: {  }
+        page-builder-tabs: {  }

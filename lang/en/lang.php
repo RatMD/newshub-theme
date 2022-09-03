@@ -321,6 +321,9 @@ return [
     "builder.carousel.items.content.label" => "Item Content",
     "builder.carousel.items.content.comment" => "A small text shown below carousel item title.",
 
+    "builder.content.label" => "Content",
+    "builder.content.comment" => "A simple text, markdown or HTML content element.",
+
     "builder.doubleclick.label" => "Double-Click",
     "builder.doubleclick.comment" => "A double-click solution to embed external content and iframes.",
     "builder.doubleclick.title.label" => "Privacy Title",
@@ -467,9 +470,18 @@ return [
 
     "builder.tabs.label" => "Tabs",
     "builder.tabs.comment" => "A tabbed-content container.",
-
-    "builder.text.label" => "Text",
-    "builder.text.comment" => "A simple text, markdown or HTML content element.",
+    "builder.tabs.alignment.label" => "Tab Alignment",
+    "builder.tabs.alignment.comment" => "Change the alignment of the tab navigation items.",
+    "builder.tabs.position.label" => "Tab Position",
+    "builder.tabs.position.comment" => "Change the position of the tab navigation items.",
+    "builder.tabs.position.horizontal" => "Horizontal",
+    "builder.tabs.position.vertical" => "Vertical",
+    "builder.children.items.label" => "Tab Items",
+    "builder.children.items.prompt" => "Add a new Tab Item",
+    "builder.children.items.title.label" => "Item Title",
+    "builder.children.items.title.comment" => "The item title is shown in the tab navigation.",
+    "builder.children.items.disabled.label" => "Disabled",
+    "builder.children.items.disabled.comment" => "Show this item as disabled in the navigation.",
 
     "builder.teaser.label" => "Text w/ Teaser",
     "builder.teaser.comment" => "A simple text with teaser element.",

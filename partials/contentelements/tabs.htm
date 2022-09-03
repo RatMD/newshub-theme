@@ -1,0 +1,102 @@
+
+{% set id = this.page.id ~ '_' ~ random() %}
+{% if config.id and config.id|length > 0 %}
+    {% set id = config.id %}
+{% endif %}
+
+{% set classNames = 'tabs' %}
+{% if config.position == 'vertical' %}
+    {% set classNames = classNames ~ ' tabs-vertical' %}
+{% endif %}
+{% if config.class_names and config.class_names|length > 0 %}
+    {% set classNames = classNames ~ ' ' ~ config.class_names %}
+{% endif %}
+
+{% set isActive = false %}
+{% if config.children | length > 0 %}
+    <div id="{{ id }}" class="{{ classNames }}">
+        <nav>
+            <div class="nav nav-tabs {{ config.position == 'vertical' ? 'flex-column' : 'justify-content-' ~ config.alignment }}" role="tablist">
+                {% for tab in config.children %}
+                    {% set tabId = id ~ '_tab_' ~ loop.index0 %}
+                    {% set paneId = id ~ '_pane_' ~ loop.index0 %}
+
+                    {% if tab.id and tab.id|length > 0 %}
+                        {% set tabId = tab.id ~ '_tab' %}
+                        {% set paneId = tab.id ~ '_pane' %}
+                    {% endif %}
+
+                    {% if tab.disabled == '1' %}
+                        <button 
+                            id="{{ tabId }}"
+                            type="button" 
+                            class="nav-link disabled" 
+                            data-bs-toggle="tab" 
+                            data-bs-target="#{{ paneId }}" 
+                            role="tab" 
+                            aria-controls="{{ paneId }}" 
+                            aria-selected="false"
+                            disabled>{{ tab.title }}</button>
+                    {% else %}
+                        <button 
+                            id="{{ tabId }}"
+                            type="button" 
+                            class="nav-link{{ isActive == false ? ' active' : '' }}" 
+                            data-bs-toggle="tab" 
+                            data-bs-target="#{{ paneId }}" 
+                            role="tab" 
+                            aria-controls="{{ paneId }}" 
+                            aria-selected="{{ isActive ? 'false' : 'true' }}">{{ tab.title }}</button>
+                        {% if isActive == false %}
+                            {% set isActive = loop.index %}
+                        {% endif %}
+                    {% endif %}
+                {% endfor %}
+            </div>
+        </nav>
+
+        <div class="tab-content">
+            {% for tab in config.children %}
+                {% set tabId = id ~ '_tab_' ~ loop.index0 %}
+                {% set paneId = id ~ '_pane_' ~ loop.index0 %}
+                {% set tabClassNames = 'tab-pane content fade' %}
+
+                {% if config.position == 'vertical' %}
+                    {% set tabClassNames = tabClassNames ~ ' px-3' %}
+                {% else %}
+                    {% set tabClassNames = tabClassNames ~ ' py-3' %}
+                {% endif %}
+                {% if loop.index == isActive %}
+                    {% set tabClassNames = tabClassNames ~ ' show active' %}
+                {% endif %}
+                {% if tab.class_names and tab.class_names|length > 0 %}
+                    {% set tabClassNames = tabClassNames ~ ' ' ~ tab.class_names %}
+                {% endif %}
+
+                {% if tab.id and tab.id|length > 0 %}
+                    {% set tabId = tab.id ~ '_tab' %}
+                    {% set paneId = tab.id ~ '_pane' %}
+                {% endif %}
+
+                {% if tab.disabled == '0' %}
+                    <div 
+                        id="{{ paneId }}" 
+                        class="{{ tabClassNames }}" 
+                        role="tabpanel" 
+                        aria-labelledby="{{ tabId }}" 
+                        tabindex="0">
+                            {% if tab.type == 'markdown' %}
+                                {{ tab.content_markdown | md }}
+                            {% elseif tab.type == 'richtext' %}
+                                {{ tab.content_richtext | raw }}
+                            {% elseif tab.type == 'html' %}
+                                {{ tab.content_html | raw }}
+                            {% else %}
+                                <p>{{ tab.content_plaintext }}</p>
+                            {% endif %}
+                    </div>
+                {% endif %}
+            {% endfor %}
+        </div>
+    </div>
+{% endif %}
