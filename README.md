@@ -18,11 +18,9 @@ create new static pages with over **18 different** Bootstrap and custom **conten
 
 - A new **Page Builder** for static pages with over **18 Components**.
 - A **comment section** and widget and a **week-based** date **archive**.
-- Support for **RainLab.User** and **RainLab.BlogVideoExtension**.
 - A new header style with a **search** / **user** action and **meta-menu**.
 - A new way to create the **footer menu** (the old way is still supported).
-- 5 new sidebar widgets: Image, Text, HTML, Comment List and Related Posts.
-- Many improvements, especially for the dark Bootstrap v5.2 style
+- Many improvements, especially for the dark Bootstrap v5.2 style.
 
 
 All Features

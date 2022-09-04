@@ -13,6 +13,7 @@ Version 1.3.0 - in Progress
 - Add: New Sidebar widget `Related Posts`, to display a list of related posts.
 - Add: New Sidebar widget `Comment`, to display a list of comments.
 - Add: New Sidebar widget `Image`, to display custom image with text.
+- Update: Change dropdown design / stylings on all header actions (same styling as main-menu).
 - Update: Use the grouped repeater widget for sidebar widgets.
 - Update: Sidebar to Widget environment for Homepage, Page and Post.
 
@@ -44,7 +45,6 @@ Version 1.2.0 - Stable
 - Update: Use ocJSON (OctoberCMS v2) or oc.parseJSON (OctoberCMS v3) when available.
 - Update: `footer-menu-1` and `footer-menu-2` are deprecated and used as fallback when `footer-menu` does not exist or is empty.
 - Update: Move Color & Language menu to the actions section on the extended header style.
-- Update: Change dropdown design / stylings on all header actions (same styling as main-menu).
 - Update: Header stylings and template.
 - Update: Too many minor changes on the whole source code and stylings to list it here.
 - Remove: Demonstration content.

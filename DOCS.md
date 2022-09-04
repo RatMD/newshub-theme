@@ -9,10 +9,8 @@ The primary focus of version 1.2.0 is the new **Page Builder**, which allows to 
   
 - A new **Page Builder** for static pages with over **18 Components**.
 - A **comment section** and widget and a **week-based** date **archive**.
-- Support for **RainLab.User** and **RainLab.BlogVideoExtension**.
 - A new header style with a **search** / **user** action and **meta-menu**.
 - A new way to create the **footer menu** (the old way is still supported).
-- 5 new sidebar widgets: Image, Text, HTML, Comment List and Related Posts.
 - Many improvements, especially for the dark Bootstrap v5.2 style.
 
 ## Table of Contents
@@ -738,3 +736,4 @@ Available Commands:
 - `npm run build:css` - Build the SCSS source files
 - `npm run watch:css` - Watch and build the SCSS source files
 - `npm run build:vendors` - Build the required dependencies (as listed above)
+  
