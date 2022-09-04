@@ -28,3 +28,16 @@ body.dark {
 .content > *:last-child {
     margin-bottom: 0;
 }
+
+
+// ----------------------------------------
+//  Responsive Video Tag
+// ----------------------------------------
+
+video {
+    @include media-breakpoint-down(md) {
+        Width: 100% !important;
+        height: auto !important;
+    }
+    margin-bottom: $spacer * 2;
+}

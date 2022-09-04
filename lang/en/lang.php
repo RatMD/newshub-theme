@@ -100,6 +100,7 @@ return [
     "option.search_button.comment" => "Shows a search button with an overlay input field on click (requires RatMD.BlogHub 1.3.0).",
     "option.user_button.label" => "Show User Button",
     "option.user_button.comment" => "Shows an user sign-in / register button with respective overlays (requires RainLab.User).",
+    "option.user_button.comment_tba" => "<b>The RainLab.User integration will be released in a future update.</b>",
 
     "option.sections.hero_area" => "Hero Area Settings",
     "option.hero_slider.label" => "Show Hero Slider",

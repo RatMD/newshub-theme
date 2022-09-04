@@ -10,6 +10,10 @@ import Bootstrap from '../vendors/bootstrap';
  */
 function invokeBootstrapDropdown(element)
 {
+    if (element.hasAttribute('data-rat-init')) {
+        return;
+    }
+
     element.addEventListener('click', (event) => {
         event.preventDefault();
 
@@ -35,6 +39,8 @@ function invokeBootstrapDropdown(element)
             }
         });
     });
+
+    element.dataset.ratInit = '1';
 }
 
 /**
@@ -43,7 +49,11 @@ function invokeBootstrapDropdown(element)
  */
 function invokeBootstrapTooltip(element)
 {
+    if (element.hasAttribute('data-rat-init')) {
+        return;
+    }
     new Bootstrap.Tooltip(element);
+    element.dataset.ratInit = '1';
 }
 
 /**
@@ -52,7 +62,11 @@ function invokeBootstrapTooltip(element)
  */
 function invokeBootstrapPopover(element)
 {
+    if (element.hasAttribute('data-rat-init')) {
+        return;
+    }
     new Bootstrap.Popover(element);
+    element.dataset.ratInit = '1';
 }
 
 /**

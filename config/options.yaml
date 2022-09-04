@@ -336,8 +336,10 @@ tabs:
             tab: theme.newshub::lang.option.tabs.header
             type: switch
             label: theme.newshub::lang.option.user_button.label
-            comment: theme.newshub::lang.option.user_button.comment
+            comment: theme.newshub::lang.option.user_button.comment_tba
+            commentHtml: true
             default: false
+            disabled: true
             trigger:
                 action: show
                 condition: value[extended]

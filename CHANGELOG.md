@@ -5,6 +5,7 @@ Version 1.3.0 - in Progress
 ---------------------------
 
 ### ToDo
+- Add: Support for RainLab.User plugin.
 - Add: Support for RainLab.Forum plugin.
 - Update: Use the grouped repeater widget for sidebar widgets.
 - Update: Sidebar to Widget environment for Homepage, Page and Post.
@@ -13,6 +14,7 @@ Version 1.3.0 - in Progress
 Version 1.2.0 - In Progress
 ---------------------------
 - Add: Alegreya Sans Medium font (weight 500).
+- Add: Support for RainLab.BlogVideoExtension plugin.
 - Add: Additional navigation header style (with additional action buttons).
 - Add: Search and User button on the extended header style.
 - Add: New search archive / blog page - based on `[blogPosts]`.
@@ -44,14 +46,13 @@ Version 1.2.0 - In Progress
 - Fix: The theme option to configure the hero slider category works now.
 - Fix: Last menu item was not shown / in viewport on mobile devices.
 - Fix: Responsive design of double-click solution on mobile / small devices.
+- Fix: Responsive design of navbars on mobile / small devices.
+- Fix: Framework Extras and Bootstrap JS functionalities.
 
 ### ToDo
-- Add: Support for RainLab.BlogVideoExtension plugin.
-- Add: Support for RainLab.User plugin.
 - Add: New Sidebar widget `Related Posts`, to display a list of related posts.
 - Add: New Sidebar widget `Comment`, to display a list of comments.
-- Add: New Sidebar widget `Image`, to display custom image wiht text.
-- Fix: Framework Extras and Bootstrap JS functionalities.
+- Add: New Sidebar widget `Image`, to display custom image with text.
 
 Version 1.1.2 - Stable
 ----------------------
