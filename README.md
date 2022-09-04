@@ -32,7 +32,7 @@ be happy to implement them.**
 - **Bootstrap** v5.2 with **Bootstrap Icons** v1.9.1 (usable as partials)
 - Fully **Responsive**, mobile-first
 - **Multi-Language Support** (using RainLab.Translate)
-- **Page Builder**, with 13 Bootstrap and custom components
+- **Page Builder**, with 18 Bootstrap and custom components
 	- **Accordion** - A vertically collapsing accordion.
 	- **Alert** - A contextual feedback alert and callout message.
 	- **Card** - A flexible and extensible content container.
