@@ -19,26 +19,25 @@ The primary focus of version 1.2.0 is the new **Page Builder**, which allows to 
 3. Template Menus
 4. Template Sidebars & Widgets
 5. Template Page Builder & Content Elements
-	1. Accordion
-	2. Alert
-	3. Card
-	4. Card Group
-	5. Double-Click
-	6. Flexbox Container
-	7. Gallery
-	8. Header
-	9. Image
-	10. Image with Text
-	11. List
-	12. Media Files
-	13. Quote
-	14. Section
-	15. Separator
-	16. Slider
-	17. Tabs
-	19. Text with Teaser
+	- Accordion
+	- Alert
+	- Card
+	- Card Group
+	- Carousel
+	- Content
+	- Double-Click
+	- Flexbox Container
+	- Gallery
+	- Header
+	- Image
+	- List
+	- Quote
+	- Section
+	- Separator
+	- Slider
+	- Tabs
+	- Text with Teaser 
 6. Template Resources
-
 
 ## Requirements
 We recommend using this template with the latest OctoberCMS **v3** version, however support for v2 is still available.

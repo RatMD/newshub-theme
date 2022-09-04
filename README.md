@@ -33,20 +33,24 @@ be happy to implement them.**
 - Fully **Responsive**, mobile-first
 - **Multi-Language Support** (using RainLab.Translate)
 - **Page Builder**, with 13 Bootstrap and custom components
-    - **Accordion** - A vertically collapsing accordion.
-    - **Alert** - A contextual feedback alert and callout message.
-    - **Card** - A flexible and extensible content container.
-    - **Carousel** - A slideshow component to cycle through elements.
-    - **Container** - A container element used for other content elements.
-    - **Double-Click** - A double-click solution to embed external content and iframes.
-    - **Header** - A simple header content element.
-    - **Image** - A simple image content element.
-    - **Image with Text** - A simple image with text content element.
-    - **List** - A simple list content element.
-    - **Quote** - A simple quotation content element.
-    - **Slider** - A slider component using Keen Slider.
-    - **Tabs** - A tabbed-content container.
-    - **Text** - A simple text, markdown or HTML content element.
+	- **Accordion** - A vertically collapsing accordion.
+	- **Alert** - A contextual feedback alert and callout message.
+	- **Card** - A flexible and extensible content container.
+	- **Card Group** - A container element to show multiple cards.
+	- **Carousel** - A slideshow component to cycle through elements.
+    - **Content** - A simple text, markdown or HTML content element.
+	- **Double-Click** - A double-click solution to embed external content and iframes.
+	- **Flexbox Container** - A flexbox container for other content elements.
+	- **Gallery** - A simple image Gallery with lightbox.
+	- **Header** - A simple header content element.
+	- **Image** - A simple image content element.
+	- **List** - A simple list content element.
+	- **Quote** - A simple quotation content element.
+	- **Section** - A section container for other content elements.
+	- **Separator** - A simple content separator.
+	- **Slider** - A slider component using Keen Slider.
+	- **Tabs** - A tabbed-content container.
+	- **Text with Teaser** - A simple text with teaser element.
 - **4 Menu Positions**: Main Menu, Social Links, Meta Menu & Footer Menu
 - **3 Sidebar Positions**: Homepage, Post and Static Page - with many widgets
 - **2 Color Schemes**: Light and Dark mode
