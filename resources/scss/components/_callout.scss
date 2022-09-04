@@ -67,7 +67,7 @@
         z-index: $stretched-link-z-index + 1;
         padding: calc($callout-padding-y * 1.175) $callout-padding-x;
     }
-  }
+}
 
 
 // ----------------------------------------
@@ -109,4 +109,7 @@
             color: shade-color($callout-dark-color, 10%);
         }
     }
+}
+.dark .callout-dark {
+    border-color: $gray-900;
 }

@@ -10,3 +10,30 @@
         margin-bottom: 0;
     }
 }
+
+
+// ----------------------------------------
+//  Alert Colors
+// ----------------------------------------
+
+@each $state, $value in $theme-colors {
+    $alert-dark-background: shift-color($value, -$alert-bg-scale);
+    $alert-dark-border: shift-color($value, -$alert-border-scale);
+    $alert-dark-color: shift-color($value, -$alert-color-scale);
+
+    @if (contrast-ratio($alert-dark-background, $alert-dark-color) < $min-contrast-ratio) {
+        $alert-dark-color: mix($value, color-contrast($alert-dark-background), abs($alert-color-scale));
+    }
+    .dark .alert-#{$state} {
+        --#{$prefix}alert-color: #{$alert-dark-color};
+        --#{$prefix}alert-bg: #{$alert-dark-background};
+        --#{$prefix}alert-border-color: #{$alert-dark-border};
+        
+        .alert-link {
+            color: shade-color($alert-dark-color, 10%);
+        }
+    }
+}
+.dark .alert-dark {
+    border-color: $gray-900;
+}

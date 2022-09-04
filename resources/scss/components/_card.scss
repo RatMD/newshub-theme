@@ -25,6 +25,12 @@
     }
 }
 
+.dark .card:not(.card-simple) {
+    --#{$prefix}card-border-color: #{$gray-700};
+    --#{$prefix}card-color: #{$card-color};
+    --#{$prefix}card-bg: #{$gray-900};
+}
+
 
 // ----------------------------------------
 //  Simple Card Stylings
