@@ -8,11 +8,15 @@
     width: 100%;
     height: 450px;
     display: flex;
-    padding: $spacer * 3 $spacer * 4;
+    padding: $spacer * 1.5 $spacer;
     align-items: center;
     flex-direction: column;
     justify-content: center;
     background-color: var(--#{$prefix}dark);
+
+    @include media-breakpoint-up(md) {
+        padding: $spacer * 2 $spacer * 3;
+    }
 
     .double-click-title {
         font-size: 1.6rem;

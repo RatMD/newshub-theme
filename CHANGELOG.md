@@ -43,6 +43,7 @@ Version 1.2.0 - In Progress
 - Remove: Demonstration content.
 - Fix: The theme option to configure the hero slider category works now.
 - Fix: Last menu item was not shown / in viewport on mobile devices.
+- Fix: Responsive design of double-click solution on mobile / small devices.
 
 ### ToDo
 - Add: Support for RainLab.BlogVideoExtension plugin.

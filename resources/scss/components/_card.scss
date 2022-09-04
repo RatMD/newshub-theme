@@ -4,6 +4,8 @@
 // ----------------------------------------
 
 .card {
+    width: 100%;
+    
     .card-body,
     .card-text {
         & > *:last-child {
@@ -11,17 +13,19 @@
         }
     }
 
-    &.card-small {
-        width: 16rem;
-    }
-    &.card-medium {
-        width: 24rem;
-    }
-    &.card-large {
-        width: 32rem;
-    }
-    &.card-fullwidth {
-        width: 100%;
+    @include media-breakpoint-up(md) {
+        &.card-small {
+            width: 16rem;
+        }
+        &.card-medium {
+            width: 24rem;
+        }
+        &.card-large {
+            width: 32rem;
+        }
+        &.card-fullwidth {
+            width: 100%;
+        }
     }
 }
 

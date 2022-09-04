@@ -1,7 +1,7 @@
 {% set classNames = config.class_names %}
 
 <div{% if config.id and config.id | length > 0 %} id="{{ config.id }}"{% endif %} class="{{ classNames }}">
-    <div class="row row-cols-{{ config.columns }} g-2">
+    <div class="row row-cols-1 row-cols-md-2 row-cols-lg-{{ config.columns }} g-2">
         {% for item in config.children %}
             <div class="col">
                 <figure class="figure">

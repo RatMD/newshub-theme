@@ -16,7 +16,7 @@
 {% if config.children | length > 0 %}
     <div id="{{ id }}" class="{{ classNames }}">
         <nav>
-            <div class="nav nav-tabs {{ config.position == 'vertical' ? 'flex-column' : 'justify-content-' ~ config.alignment }}" role="tablist">
+            <div class="nav nav-tabs {{ config.position == 'vertical' ? 'flex-md-column' : 'justify-content-' ~ config.alignment }}" role="tablist">
                 {% for tab in config.children %}
                     {% set tabId = id ~ '_tab_' ~ loop.index0 %}
                     {% set paneId = id ~ '_pane_' ~ loop.index0 %}
@@ -62,7 +62,7 @@
                 {% set tabClassNames = 'tab-pane content fade' %}
 
                 {% if config.position == 'vertical' %}
-                    {% set tabClassNames = tabClassNames ~ ' px-3' %}
+                    {% set tabClassNames = tabClassNames ~ ' py-3 px-md-3 py-md-0' %}
                 {% else %}
                     {% set tabClassNames = tabClassNames ~ ' py-3' %}
                 {% endif %}

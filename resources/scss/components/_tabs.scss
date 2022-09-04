@@ -22,35 +22,37 @@
 // ----------------------------------------
 
 .tabs.tabs-vertical {
-    display: flex;
+    @include media-breakpoint-up(md) {
+        display: flex;
 
-    nav {
-        flex: 0 0 200px;
-    }
-    .nav-tabs {
-        --#{$prefix}nav-tabs-link-hover-border-color: #{$gray-200} #{$nav-tabs-link-active-bg} #{$gray-200} #{$gray-200};
-        --#{$prefix}nav-tabs-link-active-border-color: #{$gray-300} #{$nav-tabs-link-active-bg} #{$gray-300} #{$gray-300};
-        border-right: var(--#{$prefix}nav-tabs-border-width) solid var(--#{$prefix}nav-tabs-border-color);
-        border-bottom: 0;
+        nav {
+            flex: 0 0 200px;
+        }
+        .nav-tabs {
+            --#{$prefix}nav-tabs-link-hover-border-color: #{$gray-200} #{$nav-tabs-link-active-bg} #{$gray-200} #{$gray-200};
+            --#{$prefix}nav-tabs-link-active-border-color: #{$gray-300} #{$nav-tabs-link-active-bg} #{$gray-300} #{$gray-300};
+            border-right: var(--#{$prefix}nav-tabs-border-width) solid var(--#{$prefix}nav-tabs-border-color);
+            border-bottom: 0;
 
-        .nav-link {
-            text-align: left;
-            margin-right: calc(var(--#{$prefix}nav-tabs-border-width)*-1);
-            z-index: 50;
+            .nav-link {
+                text-align: left;
+                margin-right: calc(var(--#{$prefix}nav-tabs-border-width)*-1);
+                z-index: 50;
 
-            &.active {
-                z-index: 60;
+                &.active {
+                    z-index: 60;
+                }
             }
         }
-    }
-    .dark & .nav-tabs {
-        --#{$prefix}nav-tabs-link-hover-border-color: #{$gray-700} var(--#{$prefix}body-bg) #{$gray-700} #{$gray-700};
-        --#{$prefix}nav-tabs-link-active-border-color: #{$gray-700} var(--#{$prefix}body-bg) #{$gray-700} #{$gray-700};
-        border-right: var(--#{$prefix}nav-tabs-border-width) solid var(--#{$prefix}nav-tabs-border-color);
-        border-bottom: 0;
-    }
-    .tabs-content {
-        flex: 1 1 auto;
+        .dark & .nav-tabs {
+            --#{$prefix}nav-tabs-link-hover-border-color: #{$gray-700} var(--#{$prefix}body-bg) #{$gray-700} #{$gray-700};
+            --#{$prefix}nav-tabs-link-active-border-color: #{$gray-700} var(--#{$prefix}body-bg) #{$gray-700} #{$gray-700};
+            border-right: var(--#{$prefix}nav-tabs-border-width) solid var(--#{$prefix}nav-tabs-border-color);
+            border-bottom: 0;
+        }
+        .tabs-content {
+            flex: 1 1 auto;
+        }
     }
 }
 
