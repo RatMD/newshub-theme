@@ -1,0 +1,187 @@
+items:
+    -
+        title: General
+        type: header
+        code: ''
+        viewBag:
+            locale:
+                de:
+                    title: ''
+                    url: ''
+            isHidden: '0'
+            cssClass: ''
+            isExternal: '0'
+        items:
+            -
+                title: Homepage
+                type: cms-page
+                code: ''
+                reference: home
+                viewBag:
+                    locale:
+                        de:
+                            title: ''
+                            url: ''
+                    isHidden: '0'
+                    cssClass: ''
+                    isExternal: '0'
+            -
+                title: Imprint
+                nesting: 0
+                type: static-page
+                code: ''
+                reference: about-imprint
+                replace: 0
+                viewBag:
+                    locale:
+                        de:
+                            title: ''
+                            url: ''
+                    isHidden: '0'
+                    cssClass: ''
+                    isExternal: '0'
+            -
+                title: Privacy
+                nesting: 0
+                type: static-page
+                code: ''
+                reference: about-privacy-policy
+                replace: 0
+                viewBag:
+                    locale:
+                        de:
+                            title: ''
+                            url: ''
+                    isHidden: '0'
+                    cssClass: ''
+                    isExternal: '0'
+            -
+                title: Contact
+                nesting: 0
+                type: static-page
+                code: ''
+                reference: contact
+                replace: 0
+                viewBag:
+                    locale:
+                        de:
+                            title: ''
+                            url: ''
+                    isHidden: '0'
+                    cssClass: ''
+                    isExternal: '0'
+            -
+                title: About
+                nesting: 0
+                type: static-page
+                code: ''
+                reference: about
+                replace: 0
+                viewBag:
+                    locale:
+                        de:
+                            title: ''
+                            url: ''
+                    isHidden: '0'
+                    cssClass: ''
+                    isExternal: '0'
+            -
+                title: Sitemap
+                type: url
+                url: /sitemap.xml
+                code: ''
+                viewBag:
+                    locale:
+                        de:
+                            title: ''
+                            url: ''
+                    isHidden: '0'
+                    cssClass: ''
+                    isExternal: '0'
+    -
+        title: Magazine
+        type: header
+        code: ''
+        viewBag:
+            locale:
+                de:
+                    title: ''
+                    url: ''
+            isHidden: '0'
+            cssClass: ''
+            isExternal: '0'
+        items:
+            -
+                title: 'Blog Categories'
+                type: all-blog-categories
+                code: ''
+                cmsPage: blog/category
+                replace: 1
+                viewBag:
+                    locale:
+                        de:
+                            title: ''
+                            url: ''
+                    isHidden: '0'
+                    cssClass: ''
+                    isExternal: '0'
+    -
+        title: Examples
+        type: header
+        code: ''
+        viewBag:
+            locale:
+                de:
+                    title: ''
+                    url: ''
+            isHidden: '0'
+            cssClass: ''
+            isExternal: '0'
+        items:
+            -
+                title: 'Archive Page'
+                nesting: 0
+                type: blog-category
+                code: ''
+                reference: '1'
+                cmsPage: blog/category
+                replace: 0
+                viewBag:
+                    locale:
+                        de:
+                            title: ''
+                            url: ''
+                    isHidden: '0'
+                    cssClass: ''
+                    isExternal: '0'
+            -
+                title: Pages
+                type: category-blog-posts
+                code: ''
+                reference: '1'
+                cmsPage: blog/post
+                replace: 1
+                viewBag:
+                    locale:
+                        de:
+                            title: ''
+                            url: ''
+                    isHidden: '0'
+                    cssClass: ''
+                    isExternal: '0'
+            -
+                title: 'Page Builder'
+                nesting: 0
+                type: static-page
+                code: ''
+                reference: page-builder
+                replace: 0
+                viewBag:
+                    locale:
+                        de:
+                            title: ''
+                            url: ''
+                    isHidden: '0'
+                    cssClass: ''
+                    isExternal: '0'
+name: 'Footer Menu'

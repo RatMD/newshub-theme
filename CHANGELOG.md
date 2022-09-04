@@ -1,49 +1,59 @@
 NewsHub - Changelog
 ===================
 
+Version 1.3.0 - in Progress
+---------------------------
+
+### ToDo
+- Add: Support for RainLab.Forum plugin.
+- Update: Use the grouped repeater widget for sidebar widgets.
+- Update: Sidebar to Widget environment for Homepage, Page and Post.
+
+
 Version 1.2.0 - In Progress
 ---------------------------
 - Add: Alegreya Sans Medium font (weight 500).
+- Add: Additional navigation header style (with additional action buttons).
+- Add: Search and User button on the extended header style.
+- Add: New search archive / blog page - based on `[blogPosts]`.
 - Add: New theme option to embed the jQuery framework for OctoberCMS v3+.
 - Add: New theme option to embed the OctoberCMS "Framework Extras" dependencies.
+- Add: New theme option to configure the number of posts shown in the hero slider.
 - Add: New theme option to show a comment counter badge above the thumbnail.
 - Add: New theme option to add a site slogan, shown in the footer.
 - Add: New accordion stylings, with alternative and no icon, left-aligned icon and an additional clean design.
 - Add: New `columns-2` styling for main nav items on main menu (See Page Builder menu on demo website).
+- Add: New `footer-menu` menu position with up to 3 header - menu-link items.
+- Add: New `meta-menu` menu position for the advanced header style.
+- Add: New Sidebar widget `Text`, to display custom text.
+- Add: New Sidebar widget `HTML`, to display custom HTML code.
 - Update: Development dependencies.
 - Update: Change Stylesheet and JavaScript loading order.
 - Update: Fix alert stylings, re-add border radius.
 - Update: Move both macros to the new `page/macro.htm` partial.
 - Update: Keen Slider invoke script and stylings.
 - Update: Use ocJSON (OctoberCMS v2) or oc.parseJSON (OctoberCMS v3) when available.
+- Update: `footer-menu-1` and `footer-menu-2` are deprecated and used as fallback when `footer-menu` does not exist or is empty.
+- Update: Move Color & Language menu to the actions section on the extended header style.
+- Update: Change dropdown design / stylings on all header actions (same styling as main-menu).
+- Update: Header stylings and template.
+- Fix: The theme option to configure the hero slider category works now.
+- Fix: Last menu item was not shown / in viewport on mobile devices.
 
 ### ToDo
-- Add: Additional navigation header style (with additional action buttons).
-- Add: Search and User button on the extended header style.
 - Add: Support for RainLab.BlogVideoExtension plugin.
-- Add: Support for RainLab.Forum plugin.
 - Add: Support for RainLab.User plugin.
-- Add: New `meta-menu` menu position for the advanced header style.
-- Add: New `footer-menu` menu position with up to 3 header - menu-link items.
 - Add: New Sidebar widget `Related Posts`, to display a list of related posts.
 - Add: New Sidebar widget `Comment`, to display a list of comments.
 - Add: New Sidebar widget `Image`, to display custom image wiht text.
-- Add: New Sidebar widget `Text`, to display custom text.
-- Add: New Sidebar widget `HTML`, to display custom HTML code.
-- Add: New theme option to set the number of posts shown in the hero slider.
-- Update: Change dropdown design / stylings on all header actions (same styling as main-menu).
-- Update: Move Color & Language menu to the actions section on the extended header style.
-- Update: Header stylings and template.
-- Update: `footer-menu-1` and `footer-menu-2` are deprecated and used as fallback when `footer-menu` does not exist or is empty.
-- Bugfix: The theme option to configure the hero slider category works now.
-- Bugfix: Framework Extras and Bootstrap JS functionalities.
+- Fix: Framework Extras and Bootstrap JS functionalities.
 
 Version 1.1.2 - Stable
 ----------------------
 - Add: Weekly Archive page (provided by RatMD.BlogHub v1.3.0).
 - Update: RatMD.BlogHub v1.3.0 compatibiliy.
-- Bugfix: Prevent Meta details when no user is available on the post.
-- Bugfix: Add jQuery dependency for October CMS v2.
+- Fix: Prevent Meta details when no user is available on the post.
+- Fix: Add jQuery dependency for October CMS v2.
 
 Version 1.1.1 - Stable
 ----------------------

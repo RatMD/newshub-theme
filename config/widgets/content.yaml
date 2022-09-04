@@ -1,0 +1,6 @@
+fields:
+    widget_content_content:
+        type: richeditor
+        label: theme.newshub::lang.option.widget.content.content.label
+        comment: theme.newshub::lang.option.widget.content.content.comment
+        required: true

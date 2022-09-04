@@ -11,6 +11,8 @@ fields:
             categories: theme.newshub::lang.option.sidebars.widget_type.category
             tags: theme.newshub::lang.option.sidebars.widget_type.tags
             static_menu: theme.newshub::lang.option.sidebars.widget_type.static_menu
+            content: theme.newshub::lang.option.sidebars.widget_type.content
+            html: theme.newshub::lang.option.sidebars.widget_type.html
             toc: theme.newshub::lang.option.sidebars.widget_type.toc
         span: left
     
@@ -87,6 +89,30 @@ fields:
         trigger:
             action: show
             condition: value[static_menu]
+            field: widget_type
+
+    #######################
+    ### WIDGET: CONTENT ###
+    #######################
+    widget_content:
+        type: nestedform
+        showPanel: false
+        form: ~/themes/newshub/config/widgets/content.yaml
+        trigger:
+            action: show
+            condition: value[content]
+            field: widget_type
+
+    #########################
+    ### WIDGET: HTML CODE ###
+    #########################
+    widget_html:
+        type: nestedform
+        showPanel: false
+        form: ~/themes/newshub/config/widgets/html.yaml
+        trigger:
+            action: show
+            condition: value[html]
             field: widget_type
 
     ################################

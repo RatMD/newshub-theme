@@ -81,6 +81,8 @@ return [
     "option.sections.hero_area" => "Hero Area Settings",
     "option.hero_slider.label" => "Show Hero Slider",
     "option.hero_slider.comment" => "Shows a Hero Slider on the homepage.",
+    "option.hero_slider_number.label" => "Hero Slider Number of Posts",
+    "option.hero_slider_number.comment" => "The number of posts to show in the Hero Slider.",
     "option.hero_slider_category.label" => "Hero Slider Category",
     "option.hero_slider_category.comment" => "Select the desired Hero Slider Category, from which the posts should be listed.",
 
@@ -111,6 +113,8 @@ return [
     "option.sidebars.widget_type.tags" => "Tag List",
     "option.sidebars.widget_type.author" => "Author List",
     "option.sidebars.widget_type.static_menu" => "Static Menu",
+    "option.sidebars.widget_type.content" => "Content",
+    "option.sidebars.widget_type.html" => "HTML Code",
     "option.sidebars.widget_type.toc" => "Table of Contents",
     "option.sidebars.widget_type.current_author" => "Current Author",
     "option.sidebars.widget_type.current_categories" => "Current Categories",
@@ -158,6 +162,10 @@ return [
     "option.widget.tags.promoted.comment" => "Show only promoted tags in the list.",
     "option.widget.static_menu.position.label" => "Static Menu Code",
     "option.widget.static_menu.position.comment" => "The static menu code to be used on the frontend.",
+    "option.widget.content.content.label" => "Widget Content",
+    "option.widget.content.content.comment" => "The desired widget content to show.",
+    "option.widget.html.content.label" => "Widget HTML Code",
+    "option.widget.html.content.comment" => "The desired widget HTML code to show.",
     "option.widget.toc.title_as_first.label" => "Page Title as First Item",
     "option.widget.toc.title_as_first.comment" => "Use the page title as first item in the table of contents list.",
     "option.widget.toc.js_anchors.label" => "Add JavaScript Anchors",
@@ -424,8 +432,8 @@ return [
     "builder.list.style.ordered" => "Ordered List",
     "builder.list.style.description" => "Description List",
     "builder.list.style.description_aside" => "Description List - Side-By-Side",
-    "builder.content.label" => "List Content",
-    "builder.content.comment" => "One list item per line, separate the title from the content using the pipe |-symbol.",
+    "builder.list.content.label" => "List Content",
+    "builder.list.content.comment" => "One list item per line, separate the title from the content using the pipe |-symbol.",
 
     "builder.quote.label" => "Quote",
     "builder.quote.comment" => "A simple quotation content element.",
@@ -485,5 +493,9 @@ return [
 
     "builder.teaser.label" => "Text w/ Teaser",
     "builder.teaser.comment" => "A simple text with teaser element.",
+    "builder.teaser.position.label" => "Teaser Position",
+    "builder.teaser.position.comment" => "Change the position where the teaser should be shown.",
+    "builder.teaser.teaser.label" => "Teaser Text",
+    "builder.teaser.teaser.comment" => "The main Teaser Text",
 
 ];

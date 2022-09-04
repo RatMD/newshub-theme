@@ -1,0 +1,47 @@
+items:
+    -
+        title: About
+        nesting: 0
+        type: static-page
+        code: ''
+        reference: about
+        replace: 0
+        viewBag:
+            locale:
+                de:
+                    title: ''
+                    url: ''
+            isHidden: '0'
+            cssClass: ''
+            isExternal: '0'
+    -
+        title: Contact
+        nesting: 0
+        type: static-page
+        code: ''
+        reference: contact
+        replace: 0
+        viewBag:
+            locale:
+                de:
+                    title: ''
+                    url: ''
+            isHidden: '0'
+            cssClass: ''
+            isExternal: '0'
+    -
+        title: Imprint
+        nesting: 0
+        type: static-page
+        code: ''
+        reference: about-imprint
+        replace: 0
+        viewBag:
+            locale:
+                de:
+                    title: ''
+                    url: ''
+            isHidden: '0'
+            cssClass: ''
+            isExternal: '0'
+name: 'Meta Menu'

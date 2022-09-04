@@ -1,17 +1,37 @@
 ##
-[blogPosts heroSliderPosts]
-pageNumber = 0
-categoryFilter = "featured"
-postsPerPage = 10
-noPostsMessage = "No posts found"
-sortOrder = "published_at desc"
-categoryPage = "blog/category"
-postPage = "blog/post"
 ==
-{% if heroSliderPosts.posts.total > 0 %}
+<?php
+function onStart() {
+    if ($this->layout->hasComponent('blogPosts')) {
+        $postPage = $this->layout->getComponent('blogPosts')->property('postPage');
+        $categoryPage = $this->layout->getComponent('blogPosts')->property('postPage');
+    }
+    if (!isset($postPage) || empty($postPage)) {
+        $postPage = 'blog/post';
+    }
+    if (!isset($categoryPage) || empty($categoryPage)) {
+        $categoryPage = 'blog/category';
+    }
+
+    $posts = \RainLab\Blog\Models\Post::with(['categories', 'featured_images'])->listFrontEnd([
+        'page'             => 1,
+        'sort'             => 'published_at desc',
+        'perPage'          => $this->theme->hero_slider_number ?? 6,
+        'category'         => $this->theme->hero_slider_category,
+        'published'        => true,
+    ]);
+
+    $this['heroSliderPosts'] = $posts->each(function($post) use ($postPage, $categoryPage) {
+        $post->setUrl($postPage, $this->controller);
+        $post->categories->each(fn($cat) => $cat->setUrl($categoryPage, $this->controller));
+    });
+}
+?>
+==
+{% if heroSliderPosts.count > 0 %}
     <div id="heroSlider-{{ this.page.id }}" class="keen-slider-container keen-slider-hero">
         <div class="keen-slider" data-keen-slider="{ preset: 'hero' }" data-keen-controls="#heroSlider-{{ this.page.id }} [data-keen-slider-control]">
-            {% for post in heroSliderPosts.posts %}
+            {% for post in heroSliderPosts %}
                 <div class="keen-slider-slide">
                     <a href="{{ post.url }}" title="{{ post.title }}" class="hero-slide-item">
                         <div class="slide-image">

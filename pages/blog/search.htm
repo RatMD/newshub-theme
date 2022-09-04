@@ -1,0 +1,52 @@
+url = "/magazine/search/:page?"
+layout = "default"
+title = "Search"
+description = "Magazine - Search"
+meta_title = "Search"
+meta_description = "NewsHub provides an own page to search you Blog / Magazine posts."
+
+[viewBag]
+localeUrl[de] = "/magazin/suche/:search/:page?"
+localeTitle[de] = "Suche"
+localeMeta_title[de] = "Suche"
+localeMeta_description[de] = "NewsHub bietet eine eigene Sichseite für deine Blog / Magazin Beiträge."
+
+[blogPosts]
+pageNumber = "{{ :page }}"
+postsPerPage = 10
+noPostsMessage = "No posts found"
+sortOrder = "published_at desc"
+categoryPage = "blog/category"
+postPage = "blog/post"
+==
+<?php
+function onEnd()
+{
+    $search = input('search');
+    if (!empty($search)) {
+        $this->page->title .= ': ' . $search;
+        
+        if ($this->page->meta_title) {
+            $this->page->meta_title .= ': ' . $search;
+        }
+    }
+    $this['searchTerm'] = htmlspecialchars($search);
+}
+?>
+==
+<section class="section section-posts py-6">
+    <div class="container">
+        <h1 class="mb-5">{{ 'archive.search' | _ }}: {{ searchTerm }}</h1>
+
+        {% if posts|length > 0 %}
+            {% partial 'blog/sections/posts-list' 
+                posts=posts
+                prefix='search'
+                datetime='short'
+            %}
+            {% partial 'blog/components/pagination' posts=posts %}
+        {% else %}
+            {% partial 'blog/components/empty' %}
+        {% endif %}
+    </div>
+</section>

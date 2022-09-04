@@ -4,13 +4,17 @@
 // ----------------------------------------
 
 .page-header-top {
+    transition: height 200ms ease;
+
     nav {
         padding-top: $spacer * 0.2;
         padding-bottom: $spacer * 0.2;
     }
 }
 .page-header {
-    position: relative;
+    &:not(.sticky-top) {
+        position: relative;
+    }
     z-index: 1000;
 
     .overlay-navbar > & {
@@ -39,8 +43,6 @@
 //  General Navbar Stylings
 // ----------------------------------------
 
-
-// General Navbar Stylings
 .navbar-nav {
     @include media-breakpoint-up(md) {
         padding-left: $spacer * 2.0;
@@ -128,7 +130,7 @@
 
 
 // ----------------------------------------
-//  Main / Navbar Brand Stylings
+//  Navbar Brand Stylings
 // ----------------------------------------
 
 .navbar-brand {
@@ -175,7 +177,7 @@
 
 
 // ----------------------------------------
-//  Main / Main Navbar Stylings
+//  Main Menu Navbar Stylings
 // ----------------------------------------
 
 .navbar-menu {
@@ -348,7 +350,7 @@
 
 
 // ----------------------------------------
-//  Main / Social Navbar Stylings
+//  Social Navbar Stylings
 // ----------------------------------------
 
 .navbar-socials {
@@ -383,6 +385,57 @@
     @include media-breakpoint-down(lg) {
         .sticky-top.sticky-header.sticky-scroll & {
             height: 0 !important;
+        }
+    }
+}
+
+
+// ----------------------------------------
+//  Meta / Top Navbar Stylings
+// ----------------------------------------
+
+.navbar-top {
+    width: auto;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-between;
+    
+    @include media-breakpoint-up(lg) {
+        padding-left: $spacer;
+        padding-right: $spacer;
+        flex-direction: row;
+    }
+
+    & > span {
+        display: none;
+        opacity: 0.5;
+
+        @include media-breakpoint-up(lg) {
+            display: inline-block;
+        }
+    }
+    .navbar-nav {
+        flex: 0 0 auto;
+        width: auto;
+        margin: 0 !important;
+        padding: 0 !important;
+        display: inline-flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: flex-end;
+
+        .nav-item {
+            display: flex;
+            align-items: center;
+
+            a {
+                @extend .fs-7;
+                display: flex;
+                align-items: center;
+                padding: $spacer * 0.5;
+                font-weight: 400;
+            }
         }
     }
 }
@@ -451,6 +504,158 @@
 }
 
 
+// ----------------------------------------
+//  Extended Header Navbar Stylings
+// ----------------------------------------
+
+.header-extended {
+    .navbar-toggler.action-toggler {
+        order: 2;
+        border: 0;
+        padding-top: 0;
+        padding-left: $spacer;
+        padding-right: $spacer;
+        margin-left: auto;
+        position: relative;
+        box-shadow: none;
+        border-right: 1px solid $gray-300;
+        background-color: rgba(var(--bs-light-rgb), var(--bs-bg-opacity));
+
+        svg {
+            width: 24px;
+            height: 24px;
+            fill: $gray-700;
+        }
+        
+        &:not(.collapsed) {
+            right: 0;
+            z-index: 200;
+            padding-top: 3px;
+            position: absolute;
+        }
+
+        @include media-breakpoint-up(md) {
+            display: none;
+        }
+    }
+
+    .navbar-main {
+        position: static;
+
+        
+        @include media-breakpoint-up(lg) {
+            .navbar-menu {
+                margin-left: auto;
+                margin-right: auto;
+            }
+        }
+    }
+
+    .navbar-actions {
+        top: 0;
+        left: 102vw;
+        right: 0;
+        bottom: 0;
+        z-index: 150;
+        position: absolute;
+        background-color: rgba(var(--bs-light-rgb), var(--bs-bg-opacity));
+        transition: left 200ms ease;
+
+        @include media-breakpoint-up(md) {
+            top: auto;
+            left: auto;
+            right: auto;
+            bottom: auto;
+            flex: 0 0 auto;
+            width: auto;
+            order: 2;
+            margin-top: -3px;
+            margin-left: auto;
+            overflow: visible;
+            position: static;
+            background-color: transparent;
+        }
+        @include media-breakpoint-up(lg) {
+            flex: 0 0 25%;
+            margin-left: unset;
+            order: 3;
+        }
+
+        &.show {
+            left: 0;
+        }
+        .navbar-nav {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            
+            @include media-breakpoint-up(md) {
+                margin-right: $spacer;
+            }
+            @include media-breakpoint-up(lg) {
+                justify-content: flex-end;;
+            }
+        }
+
+        .colorpicker,
+        .localepicker {
+            top: auto;
+            left: auto;
+            position: static;
+            border-radius: 50%;
+        }
+        .localepicker button {
+            border-radius: 50%;
+        }
+    }
+
+}
+
+.navbar-search {
+    top: 0;
+    left: -102vw;
+    bottom: 0;
+    width: 100%;
+    display: flex;
+    z-index: 2000;
+    position: fixed;
+    background-color: var(--#{$prefix}dark);
+    transition: left 200ms ease;
+
+    &.show {
+        left: 0;
+    }
+
+    .container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .search-toggler {
+        top: 15px;
+        right: 15px;
+        border: 0;
+        position: absolute;
+        background: transparent;
+        box-shadow: none;
+
+        svg {
+            fill: $white;
+            width: 32px;
+            height: 32px;
+        }
+    }
+
+    input[type="search"] {
+        width: 600px;
+        max-width: 80vw;
+        border: 0;
+    }
+}
+
 
 // ----------------------------------------
 //  Footer Navbar Stylings
@@ -461,6 +666,12 @@
     display: flex;
     padding: 0;
     align-items: flex-start;
+    
+    @include media-breakpoint-up(lg) {
+        display: grid;
+        grid-auto-flow: column;
+        grid-auto-columns: 1fr;
+    }
     
     .navbar-nav {
         flex: 0 0 100%;

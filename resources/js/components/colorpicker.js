@@ -28,7 +28,7 @@ function invokeColorPicker(element)
 
         // Set Styling for a smooth change
         let styling = document.createElement('style');
-        styling.innerText = '*, *::before, *::after { transition: all .25s ease !important; }';
+        styling.innerText = '*,*::before,*::after{ transition: all 0.25s ease 0ms !important; }';
         document.head.appendChild(styling);
 
         // Change Class Names

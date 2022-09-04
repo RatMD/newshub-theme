@@ -4,6 +4,9 @@ code = "main-menu"
 
 [staticMenu socialMenu]
 code = "social-menu"
+
+[staticMenu metaMenu]
+code = "meta-menu"
 ==
 {% from "page/macros.htm" import menu_builder, social_builder %}
 
@@ -11,15 +14,23 @@ code = "social-menu"
 {% if this.theme.navbar_style == 'extended' %}
     <header id="pageHeaderTop" class="page-header-top">
         <div class="container-fluid{% if this.theme.dark_header %} bg-dark dark{% else %} bg-light dark:bg-dark{% endif %}">
-            <nav class="navbar-socials">
-                {{ social_builder(socialMenu.menuItems) }}
+            <nav class="navbar-top">
+                {% if metaMenu and metaMenu.menuItems != null and metaMenu.menuItems|length > 0 %}
+                    {{ menu_builder(metaMenu.menuItems, 1) }}
+                {% endif %}
+
+                <span>&nbsp;&bullet;&nbsp;</span>
+
+                {% if socialMenu and socialMenu.menuItems != null and socialMenu.menuItems|length > 0 %}
+                    {{ social_builder(socialMenu.menuItems) }}
+                {% endif %}
             </nav>
         </div>
     </header>
 {% endif %}
 
 {# Main Header #}
-<header id="pageHeader" class="page-header{% if this.theme.sticky_header %} sticky-top sticky-header{% endif %}">
+<header id="pageHeader" class="page-header header-{{ this.theme.navbar_style }}{% if this.theme.sticky_header %} sticky-top sticky-header{% endif %}">
     <div class="container-fluid{% if this.theme.dark_header %} bg-dark dark{% else %} bg-light dark:bg-dark{% endif %}">
         <nav class="navbar navbar-main navbar-expand-lg">
             <div class="navbar-brand{% if this.theme.site_logo %} navbar-brand-image{% endif %}">
@@ -53,28 +64,28 @@ code = "social-menu"
             </div>
                 
             <div id="pageHeaderMenu" class="collapse navbar-collapse navbar-menu">
-                {{ menu_builder(mainMenu.menuItems) }}
+                {% if mainMenu and mainMenu.menuItems != null and mainMenu.menuItems|length > 0 %}
+                    {{ menu_builder(mainMenu.menuItems) }}
+                {% endif %}
             </div>
 
             {% if this.theme.navbar_style != 'extended' %}
-                <div class="navbar-socials">
-                    {{ social_builder(socialMenu.menuItems) }}
-                </div>
+                {% if socialMenu and socialMenu.menuItems != null and socialMenu.menuItems|length > 0 %}
+                    <div class="navbar-socials">
+                        {{ social_builder(socialMenu.menuItems) }}
+                    </div>
+                {% endif %}
             {% else %}
                 <div id="pageActions" class="navbar-actions">
                     {% if this.theme.color_switch_top or this.theme.languages_menu_top or this.theme.search_button or this.theme.user_button %}
                         <ul class="navbar-nav">
                             {% if this.theme.search_button %}
                                 <li class="nav-item">
-                                    <span class="nav-btn">{% partial 'icons/bootstrap/search' %}</span>
-
-                                    <div class="dropdown-menu dropdown-menu-end">
-                                        <input type="text" />
-                                    </div>
+                                    <span class="nav-btn collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#pageSearch">{% partial 'icons/bootstrap/search' %}</span>
                                 </li>
                             {% endif %}
 
-                            {% if this.theme.user_button and false %}
+                            {% if this.theme.user_button %}
                                 <li class="nav-item">
                                     <span class="nav-btn">{% partial 'icons/bootstrap/person' %}</span>
 
@@ -108,7 +119,13 @@ code = "social-menu"
                     {% endif %}
                 </div>
             {% endif %}
-                
+            
+            {% if this.theme.navbar_style == 'extended' %}
+                <button class="navbar-toggler action-toggler collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#pageActions" aria-controls="pageActions" aria-expanded="false" aria-label="{{ 'site.navbar.toggle' | _ }}">
+                    {% partial "icons/bootstrap/wrench-adjustable-circle" %}
+                </button>
+            {% endif %}
+
             <button class="navbar-toggler collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#pageHeaderMenu" aria-controls="pageHeaderMenu" aria-expanded="false" aria-label="{{ 'site.navbar.toggle' | _ }}">
                 <div class="navbar-toggler-menu">
                     <div class="navbar-toggler-line"></div>
@@ -119,3 +136,19 @@ code = "social-menu"
         </nav>
     </div>
 </header>
+
+{# Main Header #}
+{% if this.theme.navbar_style == 'extended' and this.theme.search_button %}
+    <div id="pageSearch" class="navbar-search">
+        <div class="container position-relative">
+            <button class="search-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#pageSearch">
+                {% partial "icons/bootstrap/x-lg" %}
+            </button>
+            <form method="POST" action="{{ 'blog/search' | page({}) }}">
+                <div class="form-group">
+                    <input type="search" name="search" value="" class="form-control form-control-lg" placeholder="Search for..." />
+                </div>
+            </form>
+        </div>
+    </div>
+{% endif %}

@@ -1,4 +1,7 @@
 ##
+[staticMenu footerMenu]
+code = "footer-menu"
+
 [staticMenu footerMenuLeft]
 code = "footer-menu-1"
 
@@ -34,59 +37,57 @@ code = "social-menu"
 
 <section class="section section-footer-meta mt-4">
     <nav class="navbar navbar-footer">
-        {% if footerMenuLeft and footerMenuLeft.menuItems != null %}
-            <ul class="navbar-nav">
-                <li class="nav-title">{{ footerMenuLeft.menuName }}</li>
+        {% if footerMenu and footerMenu.menuItems != null and footerMenu.menuItems|length > 0 %}
+            {% for menu in footerMenu.menuItems %}
+                {% if not menu.viewBag.isHidden %}
+                    <ul class="navbar-nav">
+                        {% if menu.type == 'header' %}
+                            <li class="nav-title">{{ menu.title }}</li>
 
-                {% for item in footerMenuLeft.menuItems %}
-                    {% if not item.viewBag.isHidden %}
-                        <li class="nav-item item-type-{{ item.type }} item-social-{{ item.code }}{% if item.viewBag.cssClass %} {{ item.viewBag.cssClass }}{% endif %}">
-                            <a href="{{ item.url }}" title="{{ item.title }}" class="nav-link"{% if item.viewBag.isExternal %} target="_blank"{% endif %}>
-                                {% if hasPartial('icons/bootstrap/' ~ item.code) %}
-                                    {% partial 'icons/bootstrap/' ~ item.code %}
-                                {% else %}
-                                    {% if hasPartial('icons/socials/' ~ item.code) %}
-                                        {% partial 'icons/socials/' ~ item.code %}
-                                    {% else %}
-                                        {{ item.title }}
-                                    {% endif %}
+                            {% for item in menu.items %}
+                                {% if not item.viewBag.isHidden %}
+                                    <li class="nav-item item-type-{{ item.type }} item-social-{{ item.code }}{% if item.viewBag.cssClass %} {{ item.viewBag.cssClass }}{% endif %}">
+                                        <a href="{{ item.url }}" title="{{ item.title }}" class="nav-link"{% if item.viewBag.isExternal %} target="_blank"{% endif %}>
+                                            {{ item.title }}
+                                        </a>
+                                    </li>
                                 {% endif %}
-                            </a>
-                        </li>
-                    {% endif %}
-                {% endfor %}
-            </ul>
+                            {% endfor %}
+                        {% endif %}
+                    </ul>
+                {% endif %}
+            {% endfor %}
         {% else %}
-            {% if this.theme.show_demo %}
-                {% partial 'demo/footer-menu-1-content' %}
+            {% if footerMenuLeft and footerMenuLeft.menuItems != null %}
+                <ul class="navbar-nav">
+                    <li class="nav-title">{{ footerMenuLeft.menuName }}</li>
+
+                    {% for item in footerMenuLeft.menuItems %}
+                        {% if not item.viewBag.isHidden %}
+                            <li class="nav-item item-type-{{ item.type }} item-social-{{ item.code }}{% if item.viewBag.cssClass %} {{ item.viewBag.cssClass }}{% endif %}">
+                                <a href="{{ item.url }}" title="{{ item.title }}" class="nav-link"{% if item.viewBag.isExternal %} target="_blank"{% endif %}>
+                                    {{ item.title }}
+                                </a>
+                            </li>
+                        {% endif %}
+                    {% endfor %}
+                </ul>
             {% endif %}
-        {% endif %}
 
-        {% if footerMenuRight and footerMenuRight.menuItems != null %}
-            <ul class="navbar-nav">
-                <li class="nav-title">{{ footerMenuRight.menuName }}</li>
+            {% if footerMenuRight and footerMenuRight.menuItems != null %}
+                <ul class="navbar-nav">
+                    <li class="nav-title">{{ footerMenuRight.menuName }}</li>
 
-                {% for item in footerMenuRight.menuItems %}
-                    {% if not item.viewBag.isHidden %}
-                        <li class="nav-item item-type-{{ item.type }} item-social-{{ item.code }}{% if item.viewBag.cssClass %} {{ item.viewBag.cssClass }}{% endif %}">
-                            <a href="{{ item.url }}" title="{{ item.title }}" class="nav-link"{% if item.viewBag.isExternal %} target="_blank"{% endif %}>
-                                {% if hasPartial('icons/bootstrap/' ~ item.code) %}
-                                    {% partial 'icons/bootstrap/' ~ item.code %}
-                                {% else %}
-                                    {% if hasPartial('icons/socials/' ~ item.code) %}
-                                        {% partial 'icons/socials/' ~ item.code %}
-                                    {% else %}
-                                        {{ item.title }}
-                                    {% endif %}
-                                {% endif %}
-                            </a>
-                        </li>
-                    {% endif %}
-                {% endfor %}
-            </ul>
-        {% else %}
-            {% if this.theme.show_demo %}
-                {% partial 'demo/footer-menu-2-content' %}
+                    {% for item in footerMenuRight.menuItems %}
+                        {% if not item.viewBag.isHidden %}
+                            <li class="nav-item item-type-{{ item.type }} item-social-{{ item.code }}{% if item.viewBag.cssClass %} {{ item.viewBag.cssClass }}{% endif %}">
+                                <a href="{{ item.url }}" title="{{ item.title }}" class="nav-link"{% if item.viewBag.isExternal %} target="_blank"{% endif %}>
+                                    {{ item.title }}
+                                </a>
+                            </li>
+                        {% endif %}
+                    {% endfor %}
+                </ul>
             {% endif %}
         {% endif %}
     </nav>

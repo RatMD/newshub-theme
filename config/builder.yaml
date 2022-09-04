@@ -1035,8 +1035,8 @@ list:
                 description_aside: theme.newshub::lang.builder.list.style.description_aside
         content:
             type: textarea
-            label: theme.newshub::lang.builder.content.label
-            comment: theme.newshub::lang.builder.content.comment
+            label: theme.newshub::lang.builder.list.content.label
+            comment: theme.newshub::lang.builder.list.content.comment
 
 quote:
     name: theme.newshub::lang.builder.quote.label
@@ -1540,3 +1540,50 @@ teaser:
     description: theme.newshub::lang.builder.teaser.comment
     icon: newshub-bi newshub-bi-teaser
     fields:
+        title:
+            type: text
+            label: theme.newshub::lang.builder.globals.title.label
+            comment: theme.newshub::lang.builder.globals.title.comment
+            span: left
+        layout:
+            type: dropdown
+            label: theme.newshub::lang.builder.header.layout.label
+            comment: theme.newshub::lang.builder.header.layout.comment
+            default: h2
+            showSearch: false
+            options:
+                h1: theme.newshub::lang.builder.header.layout.h1
+                h2: theme.newshub::lang.builder.header.layout.h2
+                h3: theme.newshub::lang.builder.header.layout.h3
+                h4: theme.newshub::lang.builder.header.layout.h4
+                h5: theme.newshub::lang.builder.header.layout.h5
+                h6: theme.newshub::lang.builder.header.layout.h6
+                hidden: theme.newshub::lang.builder.globals.hidden
+            span: right
+        id:
+            type: text
+            label: theme.newshub::lang.builder.globals.id.label
+            comment: theme.newshub::lang.builder.globals.id.comment
+            span: left
+        class_names:
+            type: text
+            label: theme.newshub::lang.builder.globals.class_names.label
+            comment: theme.newshub::lang.builder.globals.class_names.comment
+            span: right
+        position:
+            type: balloon-selector
+            label: theme.newshub::lang.builder.teaser.position.label
+            comment: theme.newshub::lang.builder.teaser.position.comment
+            default: left
+            options:
+                top: theme.newshub::lang.builder.globals.top
+                left: theme.newshub::lang.builder.globals.left
+            span: left
+        teaser:
+            type: textarea
+            label: theme.newshub::lang.builder.teaser.teaser.label
+            comment: theme.newshub::lang.builder.teaser.teaser.comment
+            span: right
+        content:
+            type: richeditor
+            label: theme.newshub::lang.builder.globals.content_type.richtext_label

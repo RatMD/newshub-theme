@@ -8,8 +8,26 @@ function onEnd()
     $useJavaScript = $config['widget_js_anchors'] === '1';
 
     // Fetch Header
-    preg_match_all('/<h([1-6])(?:[^\>]+)?>(.*?)<\/h\1>/', $this->page->content, $matches);
+    if (!isset($this->content_elements)) {
+        $content = $this->page->content;
+    preg_match_all('/<h([1-6])(?:[^\>]+)?>(.*?)<\/h\1>/', $content, $matches);
     $count = count($matches[0]);
+    } else {
+        $count = 0;
+        $matches = [[], [], []];
+
+        foreach ($this->content_elements AS $ce) {
+            if (empty($ce['layout'])) {
+                continue;
+            }
+            if (!is_string($ce['layout']) || $ce['layout'] === 'hidden') {
+                continue;
+            }
+            $matches[1][] = substr($ce['layout'], 1);
+            $matches[2][] = $ce['title'];
+            $count++;
+        }
+    }
 
     $result = [];
 

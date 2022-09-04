@@ -264,6 +264,13 @@ tabs:
             comment: theme.newshub::lang.option.hero_slider.comment
             default: true
             span: left
+        hero_slider_number:
+            tab: theme.newshub::lang.option.tabs.header
+            type: number
+            label: theme.newshub::lang.option.hero_slider_number.label
+            comment: theme.newshub::lang.option.hero_slider_number.comment
+            default: 6
+            span: left
         hero_slider_category:
             tab: theme.newshub::lang.option.tabs.header
             type: recordfinder

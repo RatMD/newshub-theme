@@ -1,0 +1,30 @@
+{% if config.teaser|length > 0 and config.content|length > 0 %}
+    {% set classNames = 'content ' ~ config.class_names %}
+
+    {% if config.position == 'top' %}
+        {% set classNames = classNames ~ ' row' %}
+    {% else %}
+        {% set classNames = classNames ~ ' row' %}
+    {% endif %}
+
+    <div{% if config.id and config.id | length > 0 %} id="{{ config.id }}"{% endif %} class="{{ classNames }}">
+        <p class="lead {% if config.position == 'top' %}col-12{% else %}col-12 col-lg-5{% endif %}">
+            {{ config.teaser }}
+        </p>
+        <div class="content {% if config.position == 'top' %}col-12{% else %}col-12 col-lg-7{% endif %}">
+            {{ config.content | raw }}
+        </div>
+    </div>
+{% else %}
+    {% set classNames = 'content ' ~ config.class_names %}
+
+    <div{% if config.id and config.id | length > 0 %} id="{{ config.id }}"{% endif %} class="content">
+        {% if config.teaser|length > 0 %}
+            <p class="lead">
+                {{ config.teaser }}
+            </p>
+        {% else %}
+            {{ config.content | raw }}
+        {% endif %}
+    </div>
+{% endif %}

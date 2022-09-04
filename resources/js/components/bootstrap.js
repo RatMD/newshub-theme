@@ -62,14 +62,23 @@ function invokeBootstrapPopover(element)
 function invokeBootstrapNavbar()
 {
     const navbar = document.querySelector('#pageHeaderMenu');
+    const headerTop = document.getElementById('pageHeaderTop');
+    if (headerTop) {
+        headerTop.style.height = headerTop.offsetHeight + 'px';
+        headerTop.dataset.height = headerTop.offsetHeight;
+    }
 
     navbar.addEventListener('show.bs.collapse', (event) => {
         document.body.style.overflow = 'hidden';
+        
+        if (headerTop) {
+            headerTop.style.height = '0px';
+        }
     });
     
     navbar.addEventListener('shown.bs.collapse', (event) => {
         navbar.style.overflow = 'auto';
-        navbar.style.height = 'calc(100vh - 50px)';
+        navbar.style.height = `calc(100vh - ${headerTop? 50: 100}px)`;
     });
 
     navbar.addEventListener('hide.bs.collapse', (event) => {
@@ -79,6 +88,10 @@ function invokeBootstrapNavbar()
 
     navbar.addEventListener('hidden.bs.collapse', (event) => {
         document.body.style.removeProperty('overflow');
+
+        if (headerTop) {
+            headerTop.style.height = headerTop.dataset.height + 'px';
+        }
     });
 }
 
