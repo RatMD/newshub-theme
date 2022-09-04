@@ -58,17 +58,6 @@ tabs:
             comment: theme.newshub::lang.option.embed_extras.comment
             default: false
 
-        __development_section:
-            tab: theme.newshub::lang.option.tabs.general
-            type: section
-            label: theme.newshub::lang.option.sections.development
-        show_demo:
-            tab: theme.newshub::lang.option.tabs.general
-            type: switch
-            label: theme.newshub::lang.option.show_demo.label
-            comment: theme.newshub::lang.option.show_demo.comment
-            default: true
-            
         __color_scheme_section:
             tab: theme.newshub::lang.option.tabs.appearance
             type: section
@@ -198,6 +187,107 @@ tabs:
                 - '#198754'
                 - '#20c997'
                 - '#0dcaf0'
+
+        __favicon_config:
+            tab: theme.newshub::lang.option.tabs.meta
+            type: section
+            label: theme.newshub::lang.option.sections.favicons
+        __favicon_hint:
+            tab: theme.newshub::lang.option.tabs.meta
+            type: hint
+            label: theme.newshub::lang.option.favicon.hint.label
+            comment: theme.newshub::lang.option.favicon.hint.comment
+            commentHtml: true
+        embed_favicon:
+            tab: theme.newshub::lang.option.tabs.meta
+            type: switch
+            label: theme.newshub::lang.option.embed_favicon.label
+            comment: theme.newshub::lang.option.embed_favicon.comment
+            default: true
+            span: left
+        embed_vector:
+            tab: theme.newshub::lang.option.tabs.meta
+            type: switch
+            label: theme.newshub::lang.option.embed_vector.label
+            comment: theme.newshub::lang.option.embed_vector.comment
+            default: false
+            span: right
+        embed_apple_touch:
+            tab: theme.newshub::lang.option.tabs.meta
+            type: switch
+            label: theme.newshub::lang.option.embed_apple_touch.label
+            comment: theme.newshub::lang.option.embed_apple_touch.comment
+            default: false
+            span: left
+        embed_webmanifest:
+            tab: theme.newshub::lang.option.tabs.meta
+            type: switch
+            label: theme.newshub::lang.option.embed_webmanifest.label
+            comment: theme.newshub::lang.option.embed_webmanifest.comment
+            default: false
+            span: right
+        embed_favicon_path:
+            tab: theme.newshub::lang.option.tabs.meta
+            type: text
+            label: theme.newshub::lang.option.embed_favicon_path.label
+            comment: theme.newshub::lang.option.embed_favicon_path.comment
+            default: '/favicon.ico'
+            span: left
+            trigger:
+                action: enable
+                field: embed_favicon
+                condition: checked
+        embed_vector_path:
+            tab: theme.newshub::lang.option.tabs.meta
+            type: text
+            label: theme.newshub::lang.option.embed_vector_path.label
+            comment: theme.newshub::lang.option.embed_vector_path.comment
+            default: '/icon.svg'
+            span: right
+            trigger:
+                action: enable
+                field: embed_vector
+                condition: checked
+        embed_apple_touch_path:
+            tab: theme.newshub::lang.option.tabs.meta
+            type: text
+            label: theme.newshub::lang.option.embed_apple_touch_path.label
+            comment: theme.newshub::lang.option.embed_apple_touch_path.comment
+            default: '/apple-touch-icon.png'
+            span: left
+            trigger:
+                action: enable
+                field: embed_apple_touch
+                condition: checked
+        embed_webmanifest_path:
+            tab: theme.newshub::lang.option.tabs.meta
+            type: text
+            label: theme.newshub::lang.option.embed_webmanifest_path.label
+            comment: theme.newshub::lang.option.embed_webmanifest_path.comment
+            default: '/manifest.webmanifest'
+            span: right
+            trigger:
+                action: enable
+                field: embed_webmanifest
+                condition: checked
+        __generator_section:
+            tab: theme.newshub::lang.option.tabs.meta
+            type: section
+            label: theme.newshub::lang.option.sections.generator
+        embed_generator:
+            tab: theme.newshub::lang.option.tabs.meta
+            type: switch
+            label: theme.newshub::lang.option.embed_generator.label
+            comment: theme.newshub::lang.option.embed_generator.comment
+            default: true
+            span: left
+        show_october_version:
+            tab: theme.newshub::lang.option.tabs.meta
+            type: switch
+            label: theme.newshub::lang.option.show_october_version.label
+            comment: theme.newshub::lang.option.show_october_version.comment
+            default: false
+            span: right
         
         __main_header_section:
             tab: theme.newshub::lang.option.tabs.header

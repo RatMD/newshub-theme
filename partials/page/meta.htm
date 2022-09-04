@@ -4,6 +4,25 @@
 
 <title>{{ this.page.meta_title|default(this.page.title) }} | {{ this.theme.site_name }}</title>
 
+{# Favicons #}
+{% if this.theme.embed_favicon %}
+<link rel="icon" href="{{ this.theme.embed_favicon_path }}" sizes="any" />
+{% endif %}
+{% if this.theme.embed_vector %}
+<link rel="icon" href="{{ this.theme.embed_vector_path }}" type="image/svg+xml" />
+{% endif %}
+{% if this.theme.embed_apple_touch %}
+<link rel="apple-touch-icon" href="{{ this.theme.embed_apple_touch_path }}" />
+{% endif %}
+{% if this.theme.embed_webmanifest %}
+<link rel="manifest" href="{{ this.theme.embed_webmanifest_path }}" />
+{% endif %}
+
+{# Favicons #}
+{% if this.theme.embed_generator %}
+<meta name="generator" value="October CMS{% if this.theme.show_october_version %} v{{ octoberVersion }}{% endif %}" />
+{% endif %}
+
 {# Meta Tags #}
 {% placeholder meta_tags default  %}
     <meta name="title" content="{{ this.page.meta_title|default(this.page.title) }}" />

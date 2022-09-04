@@ -21,6 +21,8 @@ Version 1.2.0 - In Progress
 - Add: New theme option to configure the number of posts shown in the hero slider.
 - Add: New theme option to show a comment counter badge above the thumbnail.
 - Add: New theme option to add a site slogan, shown in the footer.
+- Add: New theme options for favicon, vector icon, apple touch icon and webmanifest meta tags.
+- Add: New theme options for the meta generator tag.
 - Add: New accordion stylings, with alternative and no icon, left-aligned icon and an additional clean design.
 - Add: New `columns-2` styling for main nav items on main menu (See Page Builder menu on demo website).
 - Add: New `footer-menu` menu position with up to 3 header - menu-link items.
@@ -37,6 +39,8 @@ Version 1.2.0 - In Progress
 - Update: Move Color & Language menu to the actions section on the extended header style.
 - Update: Change dropdown design / stylings on all header actions (same styling as main-menu).
 - Update: Header stylings and template.
+- Update: Too many minor changes on the whole source code and stylings to list it here.
+- Remove: Demonstration content.
 - Fix: The theme option to configure the hero slider category works now.
 - Fix: Last menu item was not shown / in viewport on mobile devices.
 

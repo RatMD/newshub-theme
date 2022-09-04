@@ -16,6 +16,7 @@ staticBreadcrumbs_skipLast = true
 function onInit()
 {
     $this['legacy'] = version_compare(\System\Classes\UpdateManager::instance()->getCurrentVersion(), '3.0.0', '<');
+    $this['octoberVersion'] = \System\Classes\UpdateManager::instance()->getCurrentVersion();
 }
 ?>
 ==
