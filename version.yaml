@@ -42,7 +42,7 @@ v1.2.0:
     - "Add: Search and User button on the extended header style."
     - "Add: New search archive / blog page - based on [blogPosts]."
     - "Add: New theme option to embed the jQuery framework for OctoberCMS v3+."
-    - "Add: New theme option to embed the OctoberCMS "Framework Extras" dependencies."
+    - "Add: New theme option to embed the OctoberCMS Framework Extras dependencies."
     - "Add: New theme option to configure the number of posts shown in the hero slider."
     - "Add: New theme option to show a comment counter badge above the thumbnail."
     - "Add: New theme option to add a site slogan, shown in the footer."
