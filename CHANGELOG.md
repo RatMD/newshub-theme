@@ -7,15 +7,17 @@ Version 1.3.0 - in Progress
 ### ToDo
 - Add: Support for RainLab.User plugin.
 - Add: Support for RainLab.Forum plugin.
+- Add: New Blog Posts Content Element (show posts by author, category, date or tag).
+- Add: New Blog Lists Content Element (show list of authors, categories or tags).
+- Add: New File List Content Element (show download file list with icon and stuff).
 - Add: New Sidebar widget `Related Posts`, to display a list of related posts.
 - Add: New Sidebar widget `Comment`, to display a list of comments.
 - Add: New Sidebar widget `Image`, to display custom image with text.
 - Update: Use the grouped repeater widget for sidebar widgets.
 - Update: Sidebar to Widget environment for Homepage, Page and Post.
 
-
-Version 1.2.0 - In Progress
----------------------------
+Version 1.2.0 - Stable
+----------------------
 - Add: Alegreya Sans Medium font (weight 500).
 - Add: Support for RainLab.BlogVideoExtension plugin.
 - Add: Additional navigation header style (with additional action buttons).

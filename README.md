@@ -14,9 +14,9 @@ JS Framework and includes **Bootstrap Icons** and the responsive **Keen Slider**
 Whats new in v1.2.0
 -------------------
 The primary focus of version 1.2.0 is the new **Page Builder**, which allows to easily 
-create new static pages with over **20 different** Bootstrap and custom **content elements**. 
+create new static pages with over **18 different** Bootstrap and custom **content elements**. 
 
-- A new **Page Builder** for static pages with over **20 Components**.
+- A new **Page Builder** for static pages with over **18 Components**.
 - A **comment section** and widget and a **week-based** date **archive**.
 - Support for **RainLab.User** and **RainLab.BlogVideoExtension**.
 - A new header style with a **search** / **user** action and **meta-menu**.
