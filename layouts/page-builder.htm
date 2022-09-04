@@ -40,6 +40,35 @@ function onInit()
     
     {% partial 'page/header' %}
 
+    {variable 
+        name="flexbox_backend_js" 
+        type="partial" 
+        path="~/themes/newshub/config/partials/flexbox_assets.htm" 
+        tab="theme.newshub::lang.builder.tab.content_elements" }{/variable}
+    {variable 
+        name="content_elements" 
+        type="repeater" 
+        displayMode="builder" 
+        label="theme.newshub::lang.builder.content_elements.label" 
+        prompt="theme.newshub::lang.builder.content_elements.prompt" 
+        tab="theme.newshub::lang.builder.tab.content_elements"
+        groups="#/newshub/config/builder.yaml" 
+        titleFrom="title"}{/variable}
+    {variable 
+        name="use_container" 
+        type="switch" 
+        label="theme.newshub::lang.builder.use_container.label" 
+        comment="theme.newshub::lang.builder.use_container.comment" 
+        tab="theme.newshub::lang.builder.tab.page_configuration" 
+        span="left"}1{/variable}
+    {variable 
+        name="show_sidebar" 
+        type="switch" 
+        label="theme.newshub::lang.builder.show_sidebar.label" 
+        comment="theme.newshub::lang.builder.show_sidebar.comment" 
+        tab="theme.newshub::lang.builder.tab.page_configuration" 
+        span="right"}1{/variable}
+    
     <div id="pageContent">
         <div class="post-single page-single">
             <section class="section section-page">
@@ -52,13 +81,9 @@ function onInit()
                     </div>
                 </header>
 
-                <article class="section section-with-sidebar py-6">
-                    <div class="container">
+                <article class="section py-6{{ use_container == '1' and show_sidebar == '1' ? ' section-with-sidebar' : '' }}">
+                    {% if use_container == '1' %}<div class="container">{% endif %}
                         <div class="post-content main-area">
-                            {variable name="flexbox_backend_js" type="partial" path="~/themes/newshub/config/partials/flexbox_assets.htm" tab="Content Elements"}{/variable}
-                            {variable name="content_elements" type="repeater" displayMode="builder" prompt="Add a content element" tab="Content Elements"
-                                groups="#/newshub/config/builder.yaml" titleFrom="title"}{/variable}
-    
                             {% for element in content_elements %}
                                 {% if hasPartial('contentelements/' ~ element._group) %}
                                     {% partial ('contentelements/' ~ element._group) config=element group=element._group %}
@@ -68,10 +93,12 @@ function onInit()
                             {% endfor %}
                         </div>
                         
-                        <aside class="post-aside sidebar-area">
-                            {% partial 'sidebars/page' %}
-                        </aside>
-                    </div>
+                        {% if use_container == '1' and show_sidebar == '1' %}
+                            <aside class="post-aside sidebar-area">
+                                {% partial 'sidebars/page' %}
+                            </aside>
+                        {% endif %}
+                    {% if use_container == '1' %}</div>{% endif %}
                 </article>
             </section>
         </div>

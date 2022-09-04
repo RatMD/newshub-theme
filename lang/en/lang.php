@@ -217,6 +217,15 @@ return [
     "option.copyright_text_right.label" => "Right Copyright Text",
     "option.copyright_text_right.comment" => "Change the text of the right-aligned Copyright Footer. (Supports Markdown)",
 
+    "builder.tab.content_elements" => "Content Elements",
+    "builder.tab.page_configuration" => "Page Configuration",
+    "builder.use_container.label" => "Use Main Container",
+    "builder.use_container.comment" => "Wrap the content elements in the main container structure.",
+    "builder.show_sidebar.label" => "Show Sidebar",
+    "builder.show_sidebar.comment" => "Show the configured theme sidebar.",
+    "builder.content_elements.label" => "Content Elements",
+    "builder.content_elements.prompt" => "Add a new Element",
+
     "builder.globals.default" => "Default",
     "builder.globals.hidden" => "Hidden",
     "builder.globals.top" => "Top",

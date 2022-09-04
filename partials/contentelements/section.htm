@@ -18,7 +18,7 @@
 {% endif %}
 
 <section{% if config.id and config.id | length > 0 %} id="{{ config.id }}"{% endif %} class="section {{ classNames | trim }}">
-    {% if config.wrap_container == '1' %}<div class="container">{% endif %}
+    {% if config.wrap_container == '1' %}<div class="container flex-column">{% endif %}
         {% for element in config.children %}
             {% if hasPartial('contentelements/' ~ element._group) %}
                 {% partial ('contentelements/' ~ element._group) config=element group=element._group %}
