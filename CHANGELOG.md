@@ -7,6 +7,9 @@ Version 1.3.0 - in Progress
 ### ToDo
 - Add: Support for RainLab.User plugin.
 - Add: Support for RainLab.Forum plugin.
+- Add: New Sidebar widget `Related Posts`, to display a list of related posts.
+- Add: New Sidebar widget `Comment`, to display a list of comments.
+- Add: New Sidebar widget `Image`, to display custom image with text.
 - Update: Use the grouped repeater widget for sidebar widgets.
 - Update: Sidebar to Widget environment for Homepage, Page and Post.
 
@@ -48,11 +51,6 @@ Version 1.2.0 - In Progress
 - Fix: Responsive design of double-click solution on mobile / small devices.
 - Fix: Responsive design of navbars on mobile / small devices.
 - Fix: Framework Extras and Bootstrap JS functionalities.
-
-### ToDo
-- Add: New Sidebar widget `Related Posts`, to display a list of related posts.
-- Add: New Sidebar widget `Comment`, to display a list of comments.
-- Add: New Sidebar widget `Image`, to display custom image with text.
 
 Version 1.1.2 - Stable
 ----------------------
