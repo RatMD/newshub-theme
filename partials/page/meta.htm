@@ -1,72 +1,49 @@
+{# Base Tag #}
+{% if this.theme.base_tag %}<base href="{{ '' | app }}" />{% endif %}
+
+{# Default Tags #}
 <meta charset="UTF-8" />
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-<title>{{ this.page.meta_title|default(this.page.title) }} | {{ this.theme.site_name }}</title>
-
-{# Favicons #}
-{% if this.theme.embed_favicon %}
-<link rel="icon" href="{{ this.theme.embed_favicon_path }}" sizes="any" />
-{% endif %}
-{% if this.theme.embed_vector %}
-<link rel="icon" href="{{ this.theme.embed_vector_path }}" type="image/svg+xml" />
-{% endif %}
-{% if this.theme.embed_apple_touch %}
-<link rel="apple-touch-icon" href="{{ this.theme.embed_apple_touch_path }}" />
-{% endif %}
-{% if this.theme.embed_webmanifest %}
-<link rel="manifest" href="{{ this.theme.embed_webmanifest_path }}" />
-{% endif %}
+{% if this.theme.embed_generator %}<meta name="generator" value="October CMS{% if this.theme.show_october_version %} v{{ octoberVersion }}{% endif %}" />{% endif %}
+<title>{{ this.page.title }} | {{ this.theme.site_name }}</title>
 
 {# Favicons #}
-{% if this.theme.embed_generator %}
-<meta name="generator" value="October CMS{% if this.theme.show_october_version %} v{{ octoberVersion }}{% endif %}" />
-{% endif %}
+{% if this.theme.embed_favicon %}<link rel="icon" href="{{ this.theme.embed_favicon_path }}" sizes="any" />{% endif %}
+{% if this.theme.embed_vector %}<link rel="icon" href="{{ this.theme.embed_vector_path }}" type="image/svg+xml" />{% endif %}
+{% if this.theme.embed_apple_touch %}<link rel="apple-touch-icon" href="{{ this.theme.embed_apple_touch_path }}" />{% endif %}
+{% if this.theme.embed_webmanifest %}<link rel="manifest" href="{{ this.theme.embed_webmanifest_path }}" />{% endif %}
 
-{# Meta Tags #}
-{% placeholder meta_tags default  %}
-    <meta name="title" content="{{ this.page.meta_title|default(this.page.title) }}" />
+{# SEO Meta Tags #}
+<meta name="title" content="{{ this.page.meta_title|default(this.page.title) }}" />
+{% if this.page.meta_description %}<meta name="description" content="{{ this.page.meta_description }}" />{% endif %}
+{% if this.page.meta_keywords or leaf.meta_keywords %}<meta name="keywords" content="{{ this.page.meta_keywords | default(leaf.meta_keywords) }}" />{% endif %}
+{% if this.page.meta_author or leaf.meta_author %}<meta name="author" content="{{ this.page.meta_author | default(leaf.meta_author | default('OctoberCMS Leaf')) }}" />{% endif %}
+{% if this.page.meta_robots %}<meta name="robots" value="{{ this.page.meta_robots }}" />{% endif %}
+{% component 'alternateHrefLangElements' %}
+{% placeholder meta_tags %}
 
-    {% if this.page.meta_description %}
-        <meta name="description" content="{{ this.page.meta_description }}" />
-    {% endif %}
-
-    {% if newshub.meta_keywords %}
-        <meta name="keywords" content="{{ newshub.meta_keywords }}" />
-    {% endif %}
-
-    {% if newshub.meta_author %}
-        <meta name="author" content="{{ newshub.meta_author }}" />
-    {% endif %}
-
-    {% component 'alternateHrefLangElements' %}
-{% endplaceholder %}
-
-{# Core Stylesheets #}
-{% placeholder stylesheets default %}
-    {% if this.theme.embed_extras %}
-        <link rel="stylesheet" href="{{ ['@framework.extras'] | theme }}" />
-    {% endif %}
-    <link rel="stylesheet" href="{{ 'assets/css/newshub.min.css' | theme }}" />
-    <style type="text/css">
-        :root {
-            --bs-primary: {{ this.theme.color_primary }};
-            --bs-secondary: {{ this.theme.color_secondary }};
-            --bs-success: {{ this.theme.color_success }};
-            --bs-info: {{ this.theme.color_info }};
-            --bs-warning: {{ this.theme.color_warning }};
-            --bs-danger: {{ this.theme.color_danger }};
-        }
-    </style>
-    {% styles %}
-{% endplaceholder %}
+{# Stylesheets #}
+{% if this.theme.embed_extras %}<link rel="stylesheet" href="{{ ['@framework.extras'] | theme }}" />{% endif %}
+<link rel="stylesheet" href="{{ 'assets/css/newshub.min.css?ver=1.2.1' | theme }}" />
+<style type="text/css">
+    :root {
+        --bs-primary: {{ this.theme.color_primary }};
+        --bs-secondary: {{ this.theme.color_secondary }};
+        --bs-success: {{ this.theme.color_success }};
+        --bs-info: {{ this.theme.color_info }};
+        --bs-warning: {{ this.theme.color_warning }};
+        --bs-danger: {{ this.theme.color_danger }};
+    }
+</style>
+{% styles %}
+{% placeholder stylesheets %}
 
 {# Core JavaScripts #}
-{% placeholder javascripts default %}
-    <script type="text/javascript">
-        document.documentElement.classList.remove('no-js');
-        window.newshub = {
-            defaultScheme: '{% if this.theme.dark_scheme %}dark{% else %}light{% endif %}'
-        };
-    </script>
-{% endplaceholder %}
+<script type="text/javascript">
+    document.documentElement.classList.remove('no-js');
+    window.newshub = {
+        defaultScheme: '{% if this.theme.dark_scheme %}dark{% else %}light{% endif %}'
+    };
+</script>
+{% placeholder javascripts %}

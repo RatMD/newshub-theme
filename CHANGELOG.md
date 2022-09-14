@@ -17,6 +17,14 @@ Version 1.3.0 - in Progress
 - Update: Use the grouped repeater widget for sidebar widgets.
 - Update: Sidebar to Widget environment for Homepage, Page and Post.
 
+Version 1.2.1 - Stable
+----------------------
+- Update: Meta Tags.
+- Update: Bootstrap package to v5.2.1.
+- Update: Keen Slider package to v6.8.0.
+- Update: @rollup/plugin-bode-resolve dev-pacakge to v14.1.0.
+- Update: sass dev-pacakge to v1.54.9.
+
 Version 1.2.0 - Stable
 ----------------------
 - Add: Alegreya Sans Medium font (weight 500).
