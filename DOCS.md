@@ -1,4 +1,4 @@
-# NewsHub v1.2.1 - Documentation
+# NewsHub v1.2.2 - Documentation
 Welcome on the NewsHub documentation page.
 
 ## Need Support?

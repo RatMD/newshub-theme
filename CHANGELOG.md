@@ -17,6 +17,10 @@ Version 1.3.0 - in Progress
 - Update: Use the grouped repeater widget for sidebar widgets.
 - Update: Sidebar to Widget environment for Homepage, Page and Post.
 
+Version 1.2.2 - Stable
+----------------------
+- Bugfix: Fix errors on production context (Page object).
+
 Version 1.2.1 - Stable
 ----------------------
 - Update: Meta Tags.

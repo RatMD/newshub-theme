@@ -17,15 +17,15 @@
 {# SEO Meta Tags #}
 <meta name="title" content="{{ this.page.meta_title|default(this.page.title) }}" />
 {% if this.page.meta_description %}<meta name="description" content="{{ this.page.meta_description }}" />{% endif %}
-{% if this.page.meta_keywords or leaf.meta_keywords %}<meta name="keywords" content="{{ this.page.meta_keywords | default(leaf.meta_keywords) }}" />{% endif %}
-{% if this.page.meta_author or leaf.meta_author %}<meta name="author" content="{{ this.page.meta_author | default(leaf.meta_author | default('OctoberCMS Leaf')) }}" />{% endif %}
-{% if this.page.meta_robots %}<meta name="robots" value="{{ this.page.meta_robots }}" />{% endif %}
+{% if this.page['meta_keywords'] or newshub.meta_keywords %}<meta name="keywords" content="{{ this.page['meta_keywords'] | default(newshub.meta_keywords) }}" />{% endif %}
+{% if this.page['meta_author'] or newshub.meta_author %}<meta name="author" content="{{ this.page['meta_author'] | default(newshub.meta_author | default('OctoberCMS Leaf')) }}" />{% endif %}
+{% if this.page['meta_robots'] %}<meta name="robots" value="{{ this.page['meta_robots'] }}" />{% endif %}
 {% component 'alternateHrefLangElements' %}
 {% placeholder meta_tags %}
 
 {# Stylesheets #}
 {% if this.theme.embed_extras %}<link rel="stylesheet" href="{{ ['@framework.extras'] | theme }}" />{% endif %}
-<link rel="stylesheet" href="{{ 'assets/css/newshub.min.css?ver=1.2.1' | theme }}" />
+<link rel="stylesheet" href="{{ 'assets/css/newshub.min.css?ver=1.2.2' | theme }}" />
 <style type="text/css">
     :root {
         --bs-primary: {{ this.theme.color_primary }};

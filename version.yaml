@@ -77,3 +77,6 @@ v1.2.1:
     - "Update: Keen Slider package to v6.8.0."
     - "Update: @rollup/plugin-bode-resolve dev-pacakge to v14.1.0."
     - "Update: sass dev-pacakge to v1.54.9."
+v1.2.2:
+    - "Minor Bugfix on Production version"
+    - "Bugfix: Fix errors on production context (Page object)."
