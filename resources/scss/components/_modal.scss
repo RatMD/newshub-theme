@@ -2,7 +2,6 @@
 // ----------------------------------------
 //  Modal Component
 // ----------------------------------------
-
 .modal {
     .modal-content {
         box-shadow: $box-shadow-lg;
@@ -14,25 +13,73 @@
     }
     
     .modal-body {
-        padding-top: $spacer * 2;
+        padding-top: 0;
         padding-bottom: 0;
+    }
+
+    .modal-header + .modal-body {
+        padding-top: $spacer * 2;
     }
 
     .modal-footer {
         border-top: 0;
     }
+
+    .dark & {
+        .modal-header {
+            background-color: var(--bs-gray-900);
+        }
+        
+        .modal-body {
+            background-color: var(--bs-gray-800);
+        }
+    
+        .modal-footer {
+            background-color: var(--bs-gray-800);
+        }
+    }
 }
 
-.dark .modal {
-    .modal-header {
-        background-color: var(--bs-gray-900);
-    }
-    
-    .modal-body {
-        background-color: var(--bs-gray-800);
+
+// ----------------------------------------
+//  Special Search Modal Component
+// ----------------------------------------
+.modal-search {
+    .modal-content {
+        .modal-body {
+            padding: $spacer * 1.5;
+            position: relative;
+        }
+
+        input {
+            border-radius: 0;
+        }
+
+        .btn-close {
+            top: 100%;
+            left: 50%;
+            opacity: 1;
+            padding: $spacer * 0.75;
+            position: absolute;
+            transform: translateX(-50%);
+            background-color: var(--bs-gray-200);
+            border-radius: 0;
+            transition: background-color .15s ease;
+            box-shadow: none;
+
+            &:hover {
+                background-color: var(--bs-white);
+            }
+        }
     }
 
-    .modal-footer {
-        background-color: var(--bs-gray-800);
+    .dark & .modal-content .modal-body {
+        .btn-close {
+            background-color: var(--bs-gray-900);
+
+            &:hover {
+                background-color: var(--bs-gray-800);
+            }
+        }
     }
 }

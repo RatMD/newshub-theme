@@ -2,7 +2,6 @@
 // ----------------------------------------
 //  Form Control Stylings
 // ----------------------------------------
-
 .form-control {
     border-color: $gray-200;
     background-color: $gray-200;
@@ -32,11 +31,97 @@
 // ----------------------------------------
 //  Form Group Stylings
 // ----------------------------------------
-
 .form-group {
     margin-bottom: $spacer;y
 
     &:last-child {
         margin-bottom: 0;
+    }
+}
+
+
+// ----------------------------------------
+//  Form Control Icon
+// ----------------------------------------
+.form-control-icon-group {
+    position: relative;
+    
+    .form-control-icon {
+        display: none;
+    }
+
+    @include media-breakpoint-up(md) {
+        .form-control {
+            padding-left: 42px;
+
+            &.form-control-sm {
+                padding-left: 31px;
+            }
+
+            &.form-control-lg {
+                padding-left: 50px;
+            }
+        }
+
+        .form-control-icon {
+            top: 0;
+            left: 0;
+            right: 0;
+            color: var(--bs-gray-500);
+            width: 42px;
+            height: 42px;
+            display: inline-flex;
+            position: absolute;
+            align-items: center;
+            justify-content: center;
+            transition: color .15s ease;
+
+            svg,
+            path {
+                transition: fill .15s ease;
+            }
+        }
+
+        &:hover .form-control-icon {
+            color: var(--bs-gray-800);
+        }
+
+        &:focus-within .form-control-icon {
+            color: var(--bs-primary);
+        }
+
+        .form-control.form-control-sm + .form-control-icon {
+            width: 31px;
+            height: 31px;
+        }
+
+        .form-control.form-control-lg + .form-control-icon {
+            width: 48px;
+            height: 48px;
+        }
+
+        &.form-floating label,
+        &.form-floating .form-control {
+            padding-left: 58px;
+        }
+
+        &.form-floating .form-control-icon {
+            width: 58px;
+            height: 58px;
+        }
+
+        .dark & {
+            .form-control-icon {
+                color: var(--bs-gray-700);
+            }
+
+            &:hover .form-control-icon {
+                color: var(--bs-gray-500);
+            }
+
+            &:focus-within .form-control-icon {
+                color: var(--bs-primary);
+            }
+        }
     }
 }

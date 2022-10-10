@@ -971,5 +971,50 @@
 //  Navbar / Footer Stylings
 // ----------------------------------------
 .navbar.navbar-footer {
+    flex: 0 0 calc(100% / 3 * 2);
+    display: flex;
+    padding: 0;
+    align-items: flex-start;
+    
+    @include media-breakpoint-up(lg) {
+        display: grid;
+        grid-auto-flow: column;
+        grid-auto-columns: 1fr;
+    }
+    
+    .navbar-nav {
+        flex: 0 0 100%;
+        margin-bottom: $spacer * 1.5;
+        padding-left: $spacer;
+        padding-right: $spacer;
+        text-align: center;
+        
+        @include media-breakpoint-up(md) {
+            flex-basis: 50%;
+        }
+        @include media-breakpoint-up(lg) {
+            margin-bottom: 0;
+            padding-left: 0;
+            padding-right: 0;
+            text-align: left;
+        }
+    }
 
+    .nav-title {
+        margin-bottom: 0.75rem;
+        font-weight: 800;
+        font-family: $font-family-special;
+        text-transform: uppercase;
+    }
+
+    .nav-item {
+        padding-top: 0;
+        padding-bottom: 0;
+
+        .nav-link {
+            font-weight: 400;
+            padding-top: $spacer * 0.15;
+            padding-bottom: $spacer * 0.15;
+        }
+    }
 }

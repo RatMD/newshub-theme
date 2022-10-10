@@ -7775,6 +7775,71 @@ fieldset:disabled .double-click .double-click-button,
 y .form-group:last-child {
   margin-bottom: 0;
 }
+.form-control-icon-group {
+  position: relative;
+}
+.form-control-icon-group .form-control-icon {
+  display: none;
+}
+@media (min-width: 768px) {
+  .form-control-icon-group .form-control {
+    padding-left: 42px;
+  }
+  .form-control-icon-group .form-control.form-control-sm {
+    padding-left: 31px;
+  }
+  .form-control-icon-group .form-control.form-control-lg {
+    padding-left: 50px;
+  }
+  .form-control-icon-group .form-control-icon {
+    top: 0;
+    left: 0;
+    right: 0;
+    color: var(--bs-gray-500);
+    width: 42px;
+    height: 42px;
+    display: inline-flex;
+    position: absolute;
+    align-items: center;
+    justify-content: center;
+    transition: color 0.15s ease;
+  }
+  .form-control-icon-group .form-control-icon svg,
+  .form-control-icon-group .form-control-icon path {
+    transition: fill 0.15s ease;
+  }
+  .form-control-icon-group:hover .form-control-icon {
+    color: var(--bs-gray-800);
+  }
+  .form-control-icon-group:focus-within .form-control-icon {
+    color: var(--bs-primary);
+  }
+  .form-control-icon-group .form-control.form-control-sm + .form-control-icon {
+    width: 31px;
+    height: 31px;
+  }
+  .form-control-icon-group .form-control.form-control-lg + .form-control-icon {
+    width: 48px;
+    height: 48px;
+  }
+  .form-control-icon-group.form-floating label,
+  .form-control-icon-group.form-floating .form-control {
+    padding-left: 58px;
+  }
+  .form-control-icon-group.form-floating .form-control-icon {
+    width: 58px;
+    height: 58px;
+  }
+  .dark .form-control-icon-group .form-control-icon {
+    color: var(--bs-gray-700);
+  }
+  .dark .form-control-icon-group:hover .form-control-icon {
+    color: var(--bs-gray-500);
+  }
+  .dark .form-control-icon-group:focus-within .form-control-icon {
+    color: var(--bs-primary);
+  }
+}
 .dark .list-group {
   --bs-list-group-color: var(--bs-body-color);
 }
@@ -7786,8 +7851,11 @@ y .form-group:last-child {
   background-color: var(--bs-gray-100);
 }
 .modal .modal-body {
-  padding-top: 2rem;
+  padding-top: 0;
   padding-bottom: 0;
+}
+.modal .modal-header + .modal-body {
+  padding-top: 2rem;
 }
 .modal .modal-footer {
   border-top: 0;
@@ -7799,6 +7867,34 @@ y .form-group:last-child {
   background-color: var(--bs-gray-800);
 }
 .dark .modal .modal-footer {
+  background-color: var(--bs-gray-800);
+}
+.modal-search .modal-content .modal-body {
+  padding: 1.5rem;
+  position: relative;
+}
+.modal-search .modal-content input {
+  border-radius: 0;
+}
+.modal-search .modal-content .btn-close {
+  top: 100%;
+  left: 50%;
+  opacity: 1;
+  padding: 0.75rem;
+  position: absolute;
+  transform: translateX(-50%);
+  background-color: var(--bs-gray-200);
+  border-radius: 0;
+  transition: background-color 0.15s ease;
+  box-shadow: none;
+}
+.modal-search .modal-content .btn-close:hover {
+  background-color: var(--bs-white);
+}
+.dark .modal-search .modal-content .modal-body .btn-close {
+  background-color: var(--bs-gray-900);
+}
+.dark .modal-search .modal-content .modal-body .btn-close:hover {
   background-color: var(--bs-gray-800);
 }
 .header {
@@ -8735,6 +8831,54 @@ y .form-group:last-child {
 }
 .navbar .navbar-actions.show.actions-toggle .navbar-action-toggler svg {
   transform: rotate(180deg);
+}
+.navbar.navbar-footer {
+  flex: 0 0 66.6666666667%;
+  display: flex;
+  padding: 0;
+  align-items: flex-start;
+}
+@media (min-width: 992px) {
+  .navbar.navbar-footer {
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: 1fr;
+  }
+}
+.navbar.navbar-footer .navbar-nav {
+  flex: 0 0 100%;
+  margin-bottom: 1.5rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  text-align: center;
+}
+@media (min-width: 768px) {
+  .navbar.navbar-footer .navbar-nav {
+    flex-basis: 50%;
+  }
+}
+@media (min-width: 992px) {
+  .navbar.navbar-footer .navbar-nav {
+    margin-bottom: 0;
+    padding-left: 0;
+    padding-right: 0;
+    text-align: left;
+  }
+}
+.navbar.navbar-footer .nav-title {
+  margin-bottom: 0.75rem;
+  font-weight: 800;
+  font-family: "Alegreya Sans", sans-serif;
+  text-transform: uppercase;
+}
+.navbar.navbar-footer .nav-item {
+  padding-top: 0;
+  padding-bottom: 0;
+}
+.navbar.navbar-footer .nav-item .nav-link {
+  font-weight: 400;
+  padding-top: 0.15rem;
+  padding-bottom: 0.15rem;
 }
 .nav-pagination {
   margin-top: 2rem;
