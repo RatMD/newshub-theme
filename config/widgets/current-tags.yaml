@@ -1,8 +1,0 @@
-fields:
-    widget_posts_count:
-        type: switch
-        label: theme.newshub::lang.option.widget.current_tags.posts_count.label
-        comment: theme.newshub::lang.option.widget.current_tags.posts_count.comment
-        default: true
-        span: left
-    

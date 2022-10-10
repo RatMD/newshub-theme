@@ -5,15 +5,13 @@
  #  @param integer max_depth The maximum allowed depth
  #  @param integer depth The current depth
  #}
-{% macro menu_builder(items, max_depth = 3, depth = 1) %}
-    {% set ul_class = 'navbar-nav' %}
-    {% if depth == 1 %}
-        {% set ul_class = ul_class ~ ' mx-auto mx-lg-0 ms-lg-auto mx-xl-auto mb-2 mb-lg-0' %}
-    {% else %}
-        {% set ul_class = ul_class ~ ' navbar-subnav subnav-depth-' ~ depth %}
+{% macro menu_builder(items, max_depth = 3, options = {}, depth = 1) %}
+    {% set ul_class = 'navbar-nav' ~ (depth > 1 ? ' navbar-subnav' : '') ~ (max_depth > 1 ? ' navbar-depth-' ~ depth : '') %}
+    {% if depth == 1 and options.ul_class is defined %}
+        {% set ul_class = ul_class ~ ' ' ~ options.ul_class %}
     {% endif %}
 
-    <ul class="{{ ul_class }}">
+    <ul{% if depth == 1 and options.ul_id and options.ul_id|length > 0 %} id="{{ options.ul_id }}"{% endif %} class="{{ ul_class }}">
         {% for item in items %}
             {% if not item.viewBag.isHidden %}
                 {% set li_class = 'nav-item item-type-' ~ item.type %}
@@ -23,8 +21,11 @@
                 {% if item.isChildActive %}
                     {% set li_class = li_class ~ ' item-current-parent' %}
                 {% endif %}
-                {% if item.items %}
+                {% if item.items and item.items|length > 0 %}
                     {% set li_class = li_class ~ ' item-has-children' %}
+                {% endif %}
+                {% if depth == 1 and options.li_class is defined %}
+                    {% set li_class = li_class ~ ' ' ~ options.li_class %}
                 {% endif %}
                 {% if item.viewBag.cssClass %}
                     {% set li_class = li_class ~ ' ' ~ item.viewBag.cssClass %}
@@ -34,7 +35,13 @@
                 {% if item.isActive %}
                     {% set a_class = a_class ~ ' active' %}
                 {% endif %}
-                
+                {% if depth == 1 and options.a_class is defined %}
+                    {% set a_class = a_class ~ ' ' ~ options.a_class %}
+                {% endif %}
+                {% if item.viewBag.isExternal %}
+                    {% set a_class = a_class ~ ' link-external' %}
+                {% endif %}
+
                 <li class="{{ li_class }}">
                     {% if item.type == 'header' %}
                         <span class="nav-title">{{ item.title }}</span>
@@ -45,7 +52,16 @@
                     {% endif %}
 
                     {% if item.items and max_depth > depth %}
-                        {{ _self.menu_builder(item.items, max_depth, depth+1) }}
+                        <button class="navbar-subnav-toggler collapsed" type="button" aria-expanded="false" aria-label="{{ 'site.navbar.toggle' | _ }}">
+                            {% partial 'icons/bootstrap/chevron-right' %}
+                            <svg width='10px' height='8px' viewBox='0 0 4 3' version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' xml:space='preserve' fill='currentColor'><path d='M1.94,1.42l-1.28,-1.28l-0.66,0.66l1.94,1.94l0.658,-0.66l0,0.001l1.242,-1.242l-0.66,-0.659l-1.24,1.24Z'/></svg>
+                        </button>
+
+                        {% if 'master-menu' in li_class %}
+                            {{ _self.master_menu(item.items) }}
+                        {% else %}
+                            {{ _self.menu_builder(item.items, max_depth, options, depth+1) }}
+                        {% endif %}
                     {% endif %}
                 </li>
             {% endif %}
@@ -55,16 +71,80 @@
 
 
 {#
+ #  MASTER MENU BUILDER
+ #
+ #  @param array items The items to be used for the menu.
+ #}
+{% macro master_menu(items) %}
+    <div class="navbar-subnav-master">
+        <div class="container d-flex flex-column flex-lg-row p-0">
+            {% for item in items %}
+                <ul class="navbar-nav">
+                    <li class="nav-item item-type-header">
+                        <span class="nav-title">{{ item.title }}</span>
+                    </li>
+
+                    {% for child in item.items %}
+                        {% if not child.viewBag.isHidden and child.type != 'header' %}
+                            {% set li_class = 'nav-item item-type-' ~ child.type %}
+                            {% if child.isActive %}
+                                {% set li_class = li_class ~ ' item-current' %}
+                            {% endif %}
+                            {% if child.viewBag.cssClass %}
+                                {% set li_class = li_class ~ ' ' ~ child.viewBag.cssClass %}
+                            {% endif %}
+                            
+                            {% set a_class = 'nav-link' %}
+                            {% if child.isActive %}
+                                {% set a_class = a_class ~ ' active' %}
+                            {% endif %}
+                            {% if child.viewBag.isExternal %}
+                                {% set a_class = a_class ~ ' link-external' %}
+                            {% endif %}
+
+                            <li class="{{ li_class }}">
+                                <a href="{{ child.url }}" title="{{ child.title }}" class="{{ a_class }}"{% if child.viewBag.isExternal %} target="_blank"{% endif %}{% if child.isActive %} aria-current="page"{% endif %}>
+                                    {{ child.title }}
+                                </a>
+                            </li>
+                        {% endif %}
+                    {% endfor %}
+                </ul>
+            {% endfor %}
+        </div>
+    </div>
+{% endmacro %}
+
+
+{#
  #  SINGLE-DEPTH SOCIAL MENU BUILDER
  #
  #  @param array items The items to be used for the menu.
  #}
-{% macro social_builder(items) %}
-    <ul class="navbar-nav mb-2 mb-lg-0">
+{% macro social_builder(items, options) %}
+    {% set ul_class = 'navbar-nav' %}
+    {% if options.ul_class is defined %}
+        {% set ul_class = ul_class ~ ' ' ~ options.ul_class %}
+    {% endif %}
+
+    <ul class="{{ ul_class }}">
         {% for item in items %}
+            {% set li_class = 'nav-item item-social-' ~ item.code ~ ' item-type-' ~ item.type %}
+            {% if options.li_class is defined %}
+                {% set li_class = li_class ~ ' ' ~ options.li_class %}
+            {% endif %}
+            {% if item.viewBag.cssClass %}
+                {% set li_class = li_class ~ ' ' ~ item.viewBag.cssClass %}
+            {% endif %}
+            
+            {% set a_class = 'nav-link' %}
+            {% if options.a_class is defined %}
+                {% set a_class = a_class ~ ' ' ~ options.a_class %}
+            {% endif %}
+            
             {% if not item.viewBag.isHidden %}
-                <li class="nav-item item-social-{{ item.code }} item-type-{{ item.type }}{% if item.viewBag.cssClass %} {{ item.viewBag.cssClass }}{% endif %}">
-                    <a href="{{ item.url }}" title="{{ item.title }}" class="nav-link"{% if item.viewBag.isExternal %} target="_blank"{% endif %}>
+                <li class="{{ li_class }}">
+                    <a href="{{ item.url }}" title="{{ item.title }}" class="{{ a_class }}"{% if item.viewBag.isExternal %} target="_blank"{% endif %}>
                         {% if hasPartial('icons/socials/' ~ item.code) %}
                             {% partial 'icons/socials/' ~ item.code %}
                         {% else %}

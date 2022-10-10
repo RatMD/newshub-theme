@@ -1,0 +1,12 @@
+{
+    "editor.insertSpaces": true,
+    "editor.tabSize": 4,
+    "files.eol": "\n",
+    "files.insertFinalNewline": true,
+    "files.associations": {
+        "*.manifest": "json"
+    },
+    "[yaml]": {
+        "editor.tabSize": 4
+    }
+}

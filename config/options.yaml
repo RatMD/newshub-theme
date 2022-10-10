@@ -58,33 +58,196 @@ tabs:
             comment: theme.newshub::lang.option.embed_extras.comment
             default: false
 
+        __section_general_tags:
+            tab: theme.newshub::lang.option.tabs.meta
+            type: section
+            label: theme.newshub::lang.option.section.general_tags
+        base_tag:
+            tab: theme.newshub::lang.option.tabs.meta
+            type: switch
+            label: theme.newshub::lang.option.meta_tags.base_tag.label
+            comment: theme.newshub::lang.option.meta_tags.base_tag.comment
+            default: false
+            span: left
+        robots_tag:
+            tab: theme.newshub::lang.option.tabs.meta
+            type: switch
+            label: theme.newshub::lang.option.meta_tags.robots_tag.label
+            comment: theme.newshub::lang.option.meta_tags.robots_tag.comment
+            default: true
+            span: right
+        color_scheme_tag:
+            tab: theme.newshub::lang.option.tabs.meta
+            type: switch
+            label: theme.newshub::lang.option.meta_tags.color_scheme_tag.label
+            comment: theme.newshub::lang.option.meta_tags.color_scheme_tag.comment
+            default: true
+            span: left
+        theme_color_tag:
+            tab: theme.newshub::lang.option.tabs.meta
+            type: switch
+            label: theme.newshub::lang.option.meta_tags.theme_color_tag.label
+            comment: theme.newshub::lang.option.meta_tags.theme_color_tag.comment
+            default: true
+            span: right
+
+        __section_favicon_tags:
+            tab: theme.newshub::lang.option.tabs.meta
+            type: section
+            label: theme.newshub::lang.option.section.favicon_tags
+        favicon_tag:
+            tab: theme.newshub::lang.option.tabs.meta
+            type: switch
+            label: theme.newshub::lang.option.meta_tags.favicon_tag.label
+            comment: theme.newshub::lang.option.meta_tags.favicon_tag.comment
+            default: true
+            span: left
+        favicon_path:
+            tab: theme.newshub::lang.option.tabs.meta
+            type: text
+            default: '/favicon.ico'
+            placeholder: '/favicon.ico'
+            span: right
+            trigger:
+                field: favicon_tag
+                action: enable
+                condition: checked
+        vector_icon_tag:
+            tab: theme.newshub::lang.option.tabs.meta
+            type: switch
+            label: theme.newshub::lang.option.meta_tags.vector_icon_tag.label
+            comment: theme.newshub::lang.option.meta_tags.vector_icon_tag.comment
+            default: false
+            span: left
+        vector_icon_path:
+            tab: theme.newshub::lang.option.tabs.meta
+            type: text
+            default: '/icon.svg'
+            placeholder: '/icon.svg'
+            span: right
+            trigger:
+                field: vector_icon_tag
+                action: enable
+                condition: checked
+        apple_touch_tag:
+            tab: theme.newshub::lang.option.tabs.meta
+            type: switch
+            label: theme.newshub::lang.option.meta_tags.apple_touch_tag.label
+            comment: theme.newshub::lang.option.meta_tags.apple_touch_tag.comment
+            default: false
+            span: left
+        apple_touch_path:
+            tab: theme.newshub::lang.option.tabs.meta
+            type: text
+            default: '/apple-touch-icon.png'
+            placeholder: '/apple-touch-icon.png'
+            span: right
+            trigger:
+                field: apple_touch_tag
+                action: enable
+                condition: checked
+        manifest_tag:
+            tab: theme.newshub::lang.option.tabs.meta
+            type: switch
+            label: theme.newshub::lang.option.meta_tags.manifest_tag.label
+            comment: theme.newshub::lang.option.meta_tags.manifest_tag.comment
+            default: false
+            span: left
+        manifest_path:
+            tab: theme.newshub::lang.option.tabs.meta
+            type: text
+            default: '/webmanifest.manifest'
+            placeholder: '/webmanifest.manifest'
+            span: right
+            trigger:
+                field: manifest_tag
+                action: enable
+                condition: checked
+        __hint_favicon:
+            tab: theme.newshub::lang.option.tabs.meta
+            type: hint
+            mode: tip
+            label: theme.newshub::lang.option.tip.favicon.label
+            comment: theme.newshub::lang.option.tip.favicon.comment
+            commentHtml: true
+        
+        __section_generator_tag:
+            tab: theme.newshub::lang.option.tabs.meta
+            type: section
+            label: theme.newshub::lang.option.section.generator_tag
+        generator_tag:
+            tab: theme.newshub::lang.option.tabs.meta
+            type: switch
+            label: theme.newshub::lang.option.meta_tags.generator_tag.label
+            comment: theme.newshub::lang.option.meta_tags.generator_tag.comment
+            default: true
+            span: left
+        generator_tag_version:
+            tab: theme.newshub::lang.option.tabs.meta
+            type: switch
+            label: theme.newshub::lang.option.meta_tags.generator_tag_version.label
+            comment: theme.newshub::lang.option.meta_tags.generator_tag_version.comment
+            default: false
+            span: right
+            trigger:
+                field: generator_tag
+                action: enable
+                condition: checked
+        
         __color_scheme_section:
             tab: theme.newshub::lang.option.tabs.appearance
             type: section
             label: theme.newshub::lang.option.sections.color_scheme
+        enable_dark_scheme:
+            tab: theme.newshub::lang.option.tabs.appearance
+            type: switch
+            label: theme.newshub::lang.option.enable_dark_scheme.label
+            comment: theme.newshub::lang.option.enable_dark_scheme.comment
+            default: true
+            span: left
         dark_scheme:
             tab: theme.newshub::lang.option.tabs.appearance
             type: switch
             label: theme.newshub::lang.option.dark_scheme.label
             comment: theme.newshub::lang.option.dark_scheme.comment
             default: false
+            span: right
+            trigger:
+                action: enable
+                field: enable_dark_scheme
+                condition: checked
         dark_header:
             tab: theme.newshub::lang.option.tabs.appearance
             type: switch
             label: theme.newshub::lang.option.dark_header.label
             comment: theme.newshub::lang.option.dark_header.comment
             default: false
+            span: left
         dark_footer:
             tab: theme.newshub::lang.option.tabs.appearance
             type: switch
             label: theme.newshub::lang.option.dark_footer.label
             comment: theme.newshub::lang.option.dark_footer.comment
             default: false
+            span: right
 
         __color_palette_section:
             tab: theme.newshub::lang.option.tabs.appearance
             type: section
             label: theme.newshub::lang.option.sections.color_palette
+        __hint_color_palette:
+            tab: theme.newshub::lang.option.tabs.appearance
+            type: hint
+            mode: tip
+            label: theme.newshub::lang.option.tip.color_palette.label
+            comment: theme.newshub::lang.option.tip.color_palette.comment
+            commentHtml: true
+        enable_color_palette:
+            tab: theme.newshub::lang.option.tabs.appearance
+            type: switch
+            label: theme.newshub::lang.option.enable_color_palette.label
+            comment: theme.newshub::lang.option.enable_color_palette.comment
+            default: false
         color_primary:
             tab: theme.newshub::lang.option.tabs.appearance
             type: colorpicker
@@ -102,6 +265,11 @@ tabs:
                 - '#198754'
                 - '#20c997'
                 - '#0dcaf0'
+            span: left
+            trigger:
+                action: show
+                field: enable_color_palette
+                condition: checked
         color_secondary:
             tab: theme.newshub::lang.option.tabs.appearance
             type: colorpicker
@@ -119,6 +287,11 @@ tabs:
                 - '#198754'
                 - '#20c997'
                 - '#0dcaf0'
+            span: right
+            trigger:
+                action: show
+                field: enable_color_palette
+                condition: checked
         color_success:
             tab: theme.newshub::lang.option.tabs.appearance
             type: colorpicker
@@ -136,6 +309,11 @@ tabs:
                 - '#198754'
                 - '#20c997'
                 - '#0dcaf0'
+            span: left
+            trigger:
+                action: show
+                field: enable_color_palette
+                condition: checked
         color_info:
             tab: theme.newshub::lang.option.tabs.appearance
             type: colorpicker
@@ -153,6 +331,11 @@ tabs:
                 - '#198754'
                 - '#20c997'
                 - '#0dcaf0'
+            span: right
+            trigger:
+                action: show
+                field: enable_color_palette
+                condition: checked
         color_warning:
             tab: theme.newshub::lang.option.tabs.appearance
             type: colorpicker
@@ -170,6 +353,11 @@ tabs:
                 - '#198754'
                 - '#20c997'
                 - '#0dcaf0'
+            span: left
+            trigger:
+                action: show
+                field: enable_color_palette
+                condition: checked
         color_danger:
             tab: theme.newshub::lang.option.tabs.appearance
             type: colorpicker
@@ -187,184 +375,149 @@ tabs:
                 - '#198754'
                 - '#20c997'
                 - '#0dcaf0'
-
-        __favicon_config:
-            tab: theme.newshub::lang.option.tabs.meta
-            type: section
-            label: theme.newshub::lang.option.sections.favicons
-        __favicon_hint:
-            tab: theme.newshub::lang.option.tabs.meta
-            type: hint
-            label: theme.newshub::lang.option.favicon.hint.label
-            comment: theme.newshub::lang.option.favicon.hint.comment
-            commentHtml: true
-        embed_favicon:
-            tab: theme.newshub::lang.option.tabs.meta
-            type: switch
-            label: theme.newshub::lang.option.embed_favicon.label
-            comment: theme.newshub::lang.option.embed_favicon.comment
-            default: true
-            span: left
-        embed_vector:
-            tab: theme.newshub::lang.option.tabs.meta
-            type: switch
-            label: theme.newshub::lang.option.embed_vector.label
-            comment: theme.newshub::lang.option.embed_vector.comment
-            default: false
-            span: right
-        embed_apple_touch:
-            tab: theme.newshub::lang.option.tabs.meta
-            type: switch
-            label: theme.newshub::lang.option.embed_apple_touch.label
-            comment: theme.newshub::lang.option.embed_apple_touch.comment
-            default: false
-            span: left
-        embed_webmanifest:
-            tab: theme.newshub::lang.option.tabs.meta
-            type: switch
-            label: theme.newshub::lang.option.embed_webmanifest.label
-            comment: theme.newshub::lang.option.embed_webmanifest.comment
-            default: false
-            span: right
-        embed_favicon_path:
-            tab: theme.newshub::lang.option.tabs.meta
-            type: text
-            label: theme.newshub::lang.option.embed_favicon_path.label
-            comment: theme.newshub::lang.option.embed_favicon_path.comment
-            default: '/favicon.ico'
-            span: left
-            trigger:
-                action: enable
-                field: embed_favicon
-                condition: checked
-        embed_vector_path:
-            tab: theme.newshub::lang.option.tabs.meta
-            type: text
-            label: theme.newshub::lang.option.embed_vector_path.label
-            comment: theme.newshub::lang.option.embed_vector_path.comment
-            default: '/icon.svg'
             span: right
             trigger:
-                action: enable
-                field: embed_vector
+                action: show
+                field: enable_color_palette
                 condition: checked
-        embed_apple_touch_path:
-            tab: theme.newshub::lang.option.tabs.meta
-            type: text
-            label: theme.newshub::lang.option.embed_apple_touch_path.label
-            comment: theme.newshub::lang.option.embed_apple_touch_path.comment
-            default: '/apple-touch-icon.png'
+        gray_scheme:
+            tab: theme.newshub::lang.option.tabs.appearance
+            type: dropdown
+            label: theme.newshub::lang.option.gray_scheme.label
+            comment: theme.newshub::lang.option.gray_scheme.comment
+            default: default
+            showSearch: false
+            options:
+                default: theme.newshub::lang.option.gray_scheme.default
+                gray: theme.newshub::lang.option.gray_scheme.gray
+                neutral: theme.newshub::lang.option.gray_scheme.neutral
+                slate: theme.newshub::lang.option.gray_scheme.slate
+                stone: theme.newshub::lang.option.gray_scheme.stone
+                zinc: theme.newshub::lang.option.gray_scheme.zinc
             span: left
             trigger:
-                action: enable
-                field: embed_apple_touch
+                action: show
+                field: enable_color_palette
                 condition: checked
-        embed_webmanifest_path:
-            tab: theme.newshub::lang.option.tabs.meta
-            type: text
-            label: theme.newshub::lang.option.embed_webmanifest_path.label
-            comment: theme.newshub::lang.option.embed_webmanifest_path.comment
-            default: '/manifest.webmanifest'
-            span: right
-            trigger:
-                action: enable
-                field: embed_webmanifest
-                condition: checked
-        __generator_section:
-            tab: theme.newshub::lang.option.tabs.meta
-            type: section
-            label: theme.newshub::lang.option.sections.generator
-        embed_generator:
-            tab: theme.newshub::lang.option.tabs.meta
-            type: switch
-            label: theme.newshub::lang.option.embed_generator.label
-            comment: theme.newshub::lang.option.embed_generator.comment
-            default: true
-            span: left
-        show_october_version:
-            tab: theme.newshub::lang.option.tabs.meta
-            type: switch
-            label: theme.newshub::lang.option.show_october_version.label
-            comment: theme.newshub::lang.option.show_october_version.comment
-            default: false
-            span: right
         
         __main_header_section:
             tab: theme.newshub::lang.option.tabs.header
             type: section
             label: theme.newshub::lang.option.sections.main_header
-        navbar_style:
+        header_style:
             tab: theme.newshub::lang.option.tabs.header
-            type: dropdown
-            label: theme.newshub::lang.option.navbar_style.label
-            comment: theme.newshub::lang.option.navbar_style.comment
+            type: balloon-selector
+            label: theme.newshub::lang.option.header_style.label
+            comment: theme.newshub::lang.option.header_style.comment
+            commentAbove: theme.newshub::lang.option.header_style.commentAbove
             default: condensed
             showSearch: false
-            span: auto
             options:
-                condensed: theme.newshub::lang.option.navbar_style.condensed
-                extended: theme.newshub::lang.option.navbar_style.extended
-        sticky_header:
+                condensed: theme.newshub::lang.option.header_style.condensed
+                extended: theme.newshub::lang.option.header_style.extended
+            span: left
+        header_position:
             tab: theme.newshub::lang.option.tabs.header
-            type: switch
-            label: theme.newshub::lang.option.sticky_header.label
-            comment: theme.newshub::lang.option.sticky_header.comment
-            default: false
+            type: balloon-selector
+            label: theme.newshub::lang.option.header_position.label
+            commentAbove: theme.newshub::lang.option.header_position.commentAbove
+            comment: theme.newshub::lang.option.header_position.comment
+            default: static
+            showSearch: false
+            options:
+                static: theme.newshub::lang.option.header_position.static
+                sticky: theme.newshub::lang.option.header_position.sticky
+                slide: theme.newshub::lang.option.header_position.slide
+            span: right
         color_switch_top:
             tab: theme.newshub::lang.option.tabs.header
             type: switch
             label: theme.newshub::lang.option.color_switch.label
             comment: theme.newshub::lang.option.color_switch.comment
             default: false
+            trigger:
+                action: enable
+                field: enable_dark_scheme
+                condition: checked
+            span: left
         languages_menu_top:
             tab: theme.newshub::lang.option.tabs.header
             type: switch
             label: theme.newshub::lang.option.languages_menu.label
             comment: theme.newshub::lang.option.languages_menu.comment
             default: false
+            span: right
+        site_picker_top:
+            tab: theme.newshub::lang.option.tabs.header
+            type: switch
+            label: theme.newshub::lang.option.site_picker.label
+            comment: theme.newshub::lang.option.site_picker.comment
+            commentHtml: true
+            default: false
+            trigger:
+                action: show
+                condition: value[extended]
+                field: header_style
+            span: left
         search_button:
             tab: theme.newshub::lang.option.tabs.header
             type: switch
             label: theme.newshub::lang.option.search_button.label
             comment: theme.newshub::lang.option.search_button.comment
+            commentHtml: true
             default: false
             trigger:
                 action: show
                 condition: value[extended]
-                field: navbar_style
+                field: header_style
+            span: left
         user_button:
             tab: theme.newshub::lang.option.tabs.header
             type: switch
             label: theme.newshub::lang.option.user_button.label
-            comment: theme.newshub::lang.option.user_button.comment_tba
+            comment: theme.newshub::lang.option.user_button.comment
             commentHtml: true
             default: false
-            disabled: true
             trigger:
                 action: show
                 condition: value[extended]
-                field: navbar_style
+                field: header_style
+            span: right
         
         __hero_area_section:
-            tab: theme.newshub::lang.option.tabs.header
+            tab: theme.newshub::lang.option.tabs.homepage
             type: section
             label: theme.newshub::lang.option.sections.hero_area
         hero_slider:
-            tab: theme.newshub::lang.option.tabs.header
+            tab: theme.newshub::lang.option.tabs.homepage
             type: switch
             label: theme.newshub::lang.option.hero_slider.label
             comment: theme.newshub::lang.option.hero_slider.comment
             default: true
             span: left
+        hero_slider_controls:
+            tab: theme.newshub::lang.option.tabs.homepage
+            type: switch
+            label: theme.newshub::lang.option.hero_slider_controls.label
+            comment: theme.newshub::lang.option.hero_slider_controls.comment
+            default: true
+            span: left
+        hero_slider_indicators:
+            tab: theme.newshub::lang.option.tabs.homepage
+            type: switch
+            label: theme.newshub::lang.option.hero_slider_indicators.label
+            comment: theme.newshub::lang.option.hero_slider_indicators.comment
+            default: false
+            span: right
         hero_slider_number:
-            tab: theme.newshub::lang.option.tabs.header
+            tab: theme.newshub::lang.option.tabs.homepage
             type: number
             label: theme.newshub::lang.option.hero_slider_number.label
             comment: theme.newshub::lang.option.hero_slider_number.comment
             default: 6
             span: left
         hero_slider_category:
-            tab: theme.newshub::lang.option.tabs.header
+            tab: theme.newshub::lang.option.tabs.homepage
             type: recordfinder
             label: theme.newshub::lang.option.hero_slider_category.label
             comment: theme.newshub::lang.option.hero_slider_category.comment
@@ -372,7 +525,52 @@ tabs:
             modelClass: RainLab\Blog\Models\Category
             useRelation: false
             span: right
-
+        
+        __notice_section:
+            tab: theme.newshub::lang.option.tabs.homepage
+            type: section
+            label: theme.newshub::lang.option.sections.notice
+        notice_enable:
+            tab: theme.newshub::lang.option.tabs.homepage
+            type: switch
+            label: theme.newshub::lang.option.notice_enable.label
+            comment: theme.newshub::lang.option.notice_enable.comment
+            default: false
+        notice_color:
+            tab: theme.newshub::lang.option.tabs.homepage
+            type: dropdown
+            label: theme.newshub::lang.option.notice_color.label
+            comment: theme.newshub::lang.option.notice_color.comment
+            default: primary
+            showSearch: false
+            options:
+                primary: theme.newshub::lang.option.color_primary.label
+                secondary: theme.newshub::lang.option.color_secondary.label
+                success: theme.newshub::lang.option.color_success.label
+                info: theme.newshub::lang.option.color_info.label
+                warning: theme.newshub::lang.option.color_warning.label
+                danger: theme.newshub::lang.option.color_danger.label
+            span: left
+        notice_title:
+            tab: theme.newshub::lang.option.tabs.homepage
+            type: text
+            label: theme.newshub::lang.option.notice_title.label
+            comment: theme.newshub::lang.option.notice_title.comment
+            placeholder: Info
+            span: left
+        notice_link:
+            tab: theme.newshub::lang.option.tabs.homepage
+            type: text
+            label: theme.newshub::lang.option.notice_link.label
+            comment: theme.newshub::lang.option.notice_link.comment
+            span: right
+        notice_content:
+            tab: theme.newshub::lang.option.tabs.homepage
+            type: text
+            label: theme.newshub::lang.option.notice_content.label
+            comment: theme.newshub::lang.option.notice_content.comment
+            placeholder: A info message.
+        
         __posts_section:
             tab: theme.newshub::lang.option.tabs.content
             type: section
@@ -390,7 +588,41 @@ tabs:
             label: theme.newshub::lang.option.comment_counter.label
             comment: theme.newshub::lang.option.comment_counter.comment
             default: false
+            span: right
+        category_list:
+            tab: theme.newshub::lang.option.tabs.content
+            type: switch
+            label: theme.newshub::lang.option.category_list.label
+            comment: theme.newshub::lang.option.category_list.comment
+            default: true
             span: left
+        featured_tag_list:
+            tab: theme.newshub::lang.option.tabs.content
+            type: switch
+            label: theme.newshub::lang.option.featured_tag_list.label
+            comment: theme.newshub::lang.option.featured_tag_list.comment
+            default: false
+            span: right
+        
+        __post_section:
+            tab: theme.newshub::lang.option.tabs.content
+            type: section
+            label: theme.newshub::lang.option.sections.post
+        share_post:
+            tab: theme.newshub::lang.option.tabs.content
+            type: switch
+            label: theme.newshub::lang.option.share_post.label
+            comment: theme.newshub::lang.option.share_post.comment
+            default: false
+            span: left
+        similar_articles:
+            tab: theme.newshub::lang.option.tabs.content
+            type: switch
+            label: theme.newshub::lang.option.similar_articles.label
+            comment: theme.newshub::lang.option.similar_articles.comment
+            default: true
+            span: left
+
         __localization_section:
             tab: theme.newshub::lang.option.tabs.content
             type: section
@@ -412,90 +644,108 @@ tabs:
             commentHtml: true
             span: right
         
-        sidebar:
-            tab: theme.newshub::lang.option.tabs.sidebars
-            type: dropdown
-            label: theme.newshub::lang.option.sidebars.label
-            comment: theme.newshub::lang.option.sidebars.comment
-            showSearch: false
-            emptyOption: theme.newshub::lang.option.sidebars.emptyOption
-            options:
-                home: theme.newshub::lang.option.sidebars.home
-                page: theme.newshub::lang.option.sidebars.page
-                post: theme.newshub::lang.option.sidebars.post
-        __sidebar_config_section:
+        __section_sidebar:
             tab: theme.newshub::lang.option.tabs.sidebars
             type: section
             label: theme.newshub::lang.option.sections.sidebar
-        __sidebar_hint:
+        _sidebar:
             tab: theme.newshub::lang.option.tabs.sidebars
-            type: hint
-            mode: tip
-            label: theme.newshub::lang.option.sidebars.hint.label
-            comment: theme.newshub::lang.option.sidebars.hint.comment
-            trigger:
-                action: hide
-                condition: value[home][page][post]
-                field: sidebar
+            type: dropdown
+            label: theme.newshub::lang.option._sidebar.label
+            comment: theme.newshub::lang.option._sidebar.comment
+            emptyOption: theme.newshub::lang.option._sidebar.empty
+            showSearch: false
+            options:
+                home: theme.newshub::lang.option._sidebar.home.label
+                archive: theme.newshub::lang.option._sidebar.archive.label
+                page: theme.newshub::lang.option._sidebar.page.label
+                post: theme.newshub::lang.option._sidebar.post.label
+            span: left
         sidebar_home:
             tab: theme.newshub::lang.option.tabs.sidebars
             type: repeater
-            label: theme.newshub::lang.option.sidebars.home
-            titleFrom: widget_title
+            label: theme.newshub::lang.option._sidebar.home.label
+            commentAbove: theme.newshub::lang.option._sidebar.home.description
+            prompt: theme.newshub::lang.option._sidebar.prompt
             displayMode: builder
-            prompt: theme.newshub::lang.option.sidebars.prompt
-            form: ~/themes/newshub/config/sidebars/homepage.yaml
-            trigger:
+            groups: '#/newshub/config/sidebars/homepage.yaml'
+            trigger: 
                 action: show
+                field: _sidebar
                 condition: value[home]
-                field: sidebar
+        sidebar_archive:
+            tab: theme.newshub::lang.option.tabs.sidebars
+            type: repeater
+            label: theme.newshub::lang.option._sidebar.archive.label
+            commentAbove: theme.newshub::lang.option._sidebar.archive.description
+            prompt: theme.newshub::lang.option._sidebar.prompt
+            displayMode: builder
+            groups: '#/newshub/config/sidebars/archive.yaml'
+            trigger: 
+                action: show
+                field: _sidebar
+                condition: value[archive]
         sidebar_page:
             tab: theme.newshub::lang.option.tabs.sidebars
             type: repeater
-            label: theme.newshub::lang.option.sidebars.page
-            titleFrom: widget_title
+            label: theme.newshub::lang.option._sidebar.page.label
+            commentAbove: theme.newshub::lang.option._sidebar.page.description
+            prompt: theme.newshub::lang.option._sidebar.prompt
             displayMode: builder
-            prompt: theme.newshub::lang.option.sidebars.prompt
-            form: ~/themes/newshub/config/sidebars/page.yaml
-            trigger:
+            groups: '#/newshub/config/sidebars/page.yaml'
+            trigger: 
                 action: show
+                field: _sidebar
                 condition: value[page]
-                field: sidebar
         sidebar_post:
             tab: theme.newshub::lang.option.tabs.sidebars
             type: repeater
-            label: theme.newshub::lang.option.sidebars.post
-            titleFrom: widget_title
+            label: theme.newshub::lang.option._sidebar.post.label
+            commentAbove: theme.newshub::lang.option._sidebar.post.description
+            prompt: theme.newshub::lang.option._sidebar.prompt
             displayMode: builder
-            prompt: theme.newshub::lang.option.sidebars.prompt
-            form: ~/themes/newshub/config/sidebars/post.yaml
-            trigger:
+            groups: '#/newshub/config/sidebars/post.yaml'
+            trigger: 
                 action: show
+                field: _sidebar
                 condition: value[post]
-                field: sidebar
             
-        __main_footer_section:
+        __footer_section:
             tab: theme.newshub::lang.option.tabs.footer
             type: section
             label: theme.newshub::lang.option.sections.main_footer
-        color_switch_bottom:
-            tab: theme.newshub::lang.option.tabs.footer
-            type: switch
-            label: theme.newshub::lang.option.color_switch.label
-            comment: theme.newshub::lang.option.color_switch.comment
-            default: false
-        languages_menu_bottom:
-            tab: theme.newshub::lang.option.tabs.footer
-            type: switch
-            label: theme.newshub::lang.option.languages_menu.label
-            comment: theme.newshub::lang.option.languages_menu.comment
-            default: false
         to_top_button:
             tab: theme.newshub::lang.option.tabs.footer
             type: switch
             label: theme.newshub::lang.option.to_top_button.label
             comment: theme.newshub::lang.option.to_top_button.comment
             default: true
+        color_switch_bottom:
+            tab: theme.newshub::lang.option.tabs.footer
+            type: switch
+            label: theme.newshub::lang.option.color_switch.label
+            comment: theme.newshub::lang.option.color_switch_bottom.comment
+            default: false
+            trigger:
+                action: enable
+                field: enable_dark_scheme
+                condition: checked
+            span: left
+        languages_menu_bottom:
+            tab: theme.newshub::lang.option.tabs.footer
+            type: switch
+            label: theme.newshub::lang.option.languages_menu.label
+            comment: theme.newshub::lang.option.languages_menu_bottom.comment
+            default: false
+            span: right
+        site_picker_bottom:
+            tab: theme.newshub::lang.option.tabs.footer
+            type: switch
+            label: theme.newshub::lang.option.site_picker.label
+            comment: theme.newshub::lang.option.site_picker_bottom.comment
+            commentHtml: true
+            default: false
+            span: left
         copyright_text_left:
             tab: theme.newshub::lang.option.tabs.footer
             type: textarea

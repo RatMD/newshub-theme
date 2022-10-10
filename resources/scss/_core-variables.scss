@@ -1,0 +1,218 @@
+@use "sass:map";
+
+// ----------------------------------------
+//  Bootstrap Configuration
+// ----------------------------------------
+$enable-caret:                              true;
+$enable-rounded:                            true;
+$enable-shadows:                            false;
+$enable-gradients:                          false;
+$enable-transitions:                        true;
+$enable-reduced-motion:                     true;
+$enable-smooth-scroll:                      true;
+$enable-grid-classes:                       true;
+$enable-container-classes:                  true;
+$enable-cssgrid:                            true;
+$enable-button-pointers:                    true;
+$enable-rfs:                                true;
+$enable-validation-icons:                   true;
+$enable-negative-margins:                   true;
+$enable-deprecation-messages:               true;
+$enable-important-utilities:                true;
+
+
+// ----------------------------------------
+//  Modify Gray Color Scheme
+// ----------------------------------------
+$gray-scheme:                               'default';
+$gray-100:                                  gray-scheme(100, $gray-scheme);
+$gray-200:                                  gray-scheme(200, $gray-scheme);
+$gray-300:                                  gray-scheme(300, $gray-scheme);
+$gray-400:                                  gray-scheme(400, $gray-scheme);
+$gray-500:                                  gray-scheme(500, $gray-scheme);
+$gray-600:                                  gray-scheme(600, $gray-scheme);
+$gray-700:                                  gray-scheme(700, $gray-scheme);
+$gray-800:                                  gray-scheme(800, $gray-scheme);
+$gray-900:                                  gray-scheme(900, $gray-scheme);
+$grays: (
+    "100": $gray-100,
+    "200": $gray-200,
+    "300": $gray-300,
+    "400": $gray-400,
+    "500": $gray-500,
+    "600": $gray-600,
+    "700": $gray-700,
+    "800": $gray-800,
+    "900": $gray-900
+);
+
+
+//----------------------------------------
+//  Theme Colors
+//  The theme colors are overwritten by 
+//  the theme options (--css-properties).
+//----------------------------------------
+$primary:                                   #0d6efd;
+$secondary:                                 #6c757d;
+$success:                                   #198754;
+$info:                                      #0dcaf0;
+$warning:                                   #ffc107;
+$danger:                                    #dc3545;
+$light:                                     map.get($grays, '100');
+$dark:                                      map.get($grays, '900');
+
+
+// ----------------------------------------
+//  Dark Body Variables
+// ----------------------------------------
+$body-dark-color:                           $gray-100;
+$body-dark-bg:                              #18181b;
+
+
+//----------------------------------------
+//  Spacings
+//----------------------------------------
+$spacer:                                    1.0rem;
+$spacers: (
+    0: 0,
+    1: $spacer * .25,
+    2: $spacer * .5,
+    3: $spacer,
+    4: $spacer * 1.5,
+    5: $spacer * 3,
+    6: $spacer * 5,
+    7: $spacer * 7.5,
+    8: $spacer * 10
+);
+
+
+//----------------------------------------
+//  Border Radius
+//----------------------------------------
+$border-radius:                             3px;
+$border-radius-sm:                          2px;
+$border-radius-lg:                          5px;
+$border-radius-xl:                          8px;
+$border-radius-2xl:                         15px;
+$border-radius-pill:                        50rem;
+
+
+//----------------------------------------
+//  GRID responsive breakpoints
+//----------------------------------------
+$grid-breakpoints: (
+    xs: 0,
+    sm: 576px,
+    md: 768px,
+    lg: 992px,
+    xl: 1200px,
+    xxl: 1400px
+);
+
+
+//----------------------------------------
+//  Container Widths
+//----------------------------------------
+$container-max-widths: (
+    sm: 540px,
+    md: 720px,
+    lg: 960px,
+    xl: 1140px,
+    xxl: 1320px
+);
+
+
+//----------------------------------------
+//  Default Aspect Ratios
+//----------------------------------------
+$aspect-ratios: (
+    "1x1": 100%,
+    "4x3": calc(3 / 4 * 100%),
+    "16x9": calc(9 / 16 * 100%),
+    "21x9": calc(9 / 21 * 100%)
+);
+
+
+// ----------------------------------------
+//  Font Variables
+// ----------------------------------------
+$font-family-serif:                         Georgia, "Times New Roman", Times, serif;
+$font-family-special:                       'Alegreya Sans', sans-serif;
+$headings-font-family:                      $font-family-special;
+
+
+//----------------------------------------
+//  Font Sizings
+//----------------------------------------
+$font-size-root:                            null;
+$font-size-base:                            1rem;
+$font-size-sm:                              $font-size-base * .875;
+$font-size-lg:                              $font-size-base * 1.25;
+$font-weight-base:                          400;
+
+$h1-font-size:                              $font-size-base * 2.5;
+$h2-font-size:                              $font-size-base * 2;
+$h3-font-size:                              $font-size-base * 1.75;
+$h4-font-size:                              $font-size-base * 1.5;
+$h5-font-size:                              $font-size-base * 1.25;
+$h6-font-size:                              $font-size-base;
+
+$font-sizes: (
+    1: $h1-font-size,
+    2: $h2-font-size,
+    3: $h3-font-size,
+    4: $h4-font-size,
+    5: $h5-font-size,
+    6: $h6-font-size,
+    7: 0.9rem,
+    8: 0.8rem,
+);
+
+
+// ----------------------------------------
+//  Badge Variables
+// ----------------------------------------
+$badge-border-radius:                       0;
+
+
+// ----------------------------------------
+//  Input | Button Variables
+// ----------------------------------------
+$input-btn-padding-y:                       0.5rem;
+$input-btn-padding-x:                       1.0rem;
+
+
+// ----------------------------------------
+//  Custom Social Network Colors
+// ----------------------------------------
+$social-networks: (
+    500px:                          #0099e5,
+    amazon:                         #ff9900,
+    deviantart:                     #05cc47,
+    discord:                        #5865f2,
+    dribbble:                       #ea4c89,
+    facebook:                       #1877f2,
+    flickr:                         #f40083,
+    foursquare:                     #f94877,
+    instagram:                      #c32aa3,
+    linkedin:                       #0a66c2,
+    mastodon:                       #2b90d9,
+    medium:                         #02b875,
+    pinterest:                      #bd081c,
+    quora:                          #aa2200,
+    reddit:                         #ff4500,
+    rss:                            #f26522,
+    rss-fill:                       #f26522,
+    slack:                          #4a154b,
+    soundcloud:                     #ff5500,
+    spotify:                        #1ed760,
+    steam:                          #171A21,
+    telegram:                       #0088cc,
+    tumblr:                         #35465d,
+    twitch:                         #9146ff,
+    twitter:                        #1da1f2,
+    vimeo:                          #1ab7ea,
+    vk:                             #4a76a8,
+    whatsapp:                       #25d366,
+    youtube:                        #ff0000,
+);

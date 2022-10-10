@@ -1,6 +1,0 @@
-fields:
-    widget_static_menu_position:
-        type: text
-        label: theme.newshub::lang.option.widget.static_menu.position.label
-        comment: theme.newshub::lang.option.widget.static_menu.position.comment
-        required: true

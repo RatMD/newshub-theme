@@ -1,0 +1,53 @@
+// ----------------------------------------
+//  Accordion Variables
+// ----------------------------------------
+$accordion-button-icon-alt:                 url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' fill='#{$accordion-icon-color}' viewBox='0 0 16 16'><path fill-rule='evenodd' d='M8 2a.5.5 0 0 1 .5.5v5h5a.5.5 0 0 1 0 1h-5v5a.5.5 0 0 1-1 0v-5h-5a.5.5 0 0 1 0-1h5v-5A.5.5 0 0 1 8 2Z'/></svg>");
+$accordion-button-active-icon-alt:          url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' fill='#{$accordion-icon-active-color}' viewBox='0 0 16 16'><path fill-rule='evenodd' d='M2 8a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11A.5.5 0 0 1 2 8Z'/></svg>");
+$accordion-dark-button-icon:                url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='white'><path fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/></svg>") !default;
+$accordion-dark-button-active-icon:         url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='white'><path fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/></svg>") !default;
+$accordion-dark-button-icon-alt:            url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' fill='white' viewBox='0 0 16 16'><path fill-rule='evenodd' d='M8 2a.5.5 0 0 1 .5.5v5h5a.5.5 0 0 1 0 1h-5v5a.5.5 0 0 1-1 0v-5h-5a.5.5 0 0 1 0-1h5v-5A.5.5 0 0 1 8 2Z'/></svg>");
+$accordion-dark-button-active-icon-alt:     url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' fill='white' viewBox='0 0 16 16'><path fill-rule='evenodd' d='M2 8a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11A.5.5 0 0 1 2 8Z'/></svg>");
+
+
+// ----------------------------------------
+//  Alert Variables
+// ----------------------------------------
+$alert-border-radius:                       .375rem;
+
+
+// ----------------------------------------
+//  Callout Variables
+// ----------------------------------------
+$callout-padding-y:                         $spacer;
+$callout-padding-x:                         $spacer;
+$callout-margin-bottom:                     1rem;
+$callout-link-font-weight:                  700;
+$callout-border-width:                      3px;
+$callout-bg-scale:                          -90%;
+$callout-border-scale:                      -45%;
+$callout-color-scale:                       40%;
+$callout-dismissible-padding-r:             $callout-padding-x * 3;
+
+
+// ----------------------------------------
+//  Close Button Variables
+// ----------------------------------------
+$btn-close-dark-bg:                         url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='#{$white}'><path d='M.293.293a1 1 0 0 1 1.414 0L8 6.586 14.293.293a1 1 0 1 1 1.414 1.414L9.414 8l6.293 6.293a1 1 0 0 1-1.414 1.414L8 9.414l-6.293 6.293a1 1 0 0 1-1.414-1.414L6.586 8 .293 1.707a1 1 0 0 1 0-1.414z'/></svg>") !default;
+
+
+// ----------------------------------------
+//  Dropdown Variables
+// ----------------------------------------
+$dropdown-border-width: 0;
+$dropdown-border-color: transparent;
+$dropdown-border-radius: 0;
+$dropdown-inner-border-radius: 0;
+
+
+// ----------------------------------------
+//  Modal Variables
+// ----------------------------------------
+$modal-content-border-color: transparent;
+$modal-content-border-width: 0;
+$modal-content-border-radius: 0;
+$modal-content-inner-border-radius: 0;

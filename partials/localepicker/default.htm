@@ -1,6 +1,6 @@
 {{ form_open() }}
-    <div class="localepicker {% if dropdown %}dropdown dropdown-end{% else %}dropup dropup-center{% endif %}">
-        <button type="button" data-rat-toggle="dropdown" aria-expanded="false" class="dropdown-toggle close-on-select">
+    <div class="locale-picker {{ dropdown ? 'dropdown-center' : 'dropup dropup-center' }} position-relative">
+        <button type="button" aria-expanded="false" class="dropdown-toggle" data-newshub-toggle="dropdown" data-bs-display="dynamic" data-bs-auto-close="true">
             {% for code, name in locales %}
                 {% if code == activeLocale %}
                     {% if code == 'en' %}
@@ -11,17 +11,19 @@
             {% endfor %}
         </button>
 
-        <ul class="dropdown-menu{% if dropdownPosition %} {{ dropdownPosition }}{% endif %}">
-            {% for code, name in locales %}
-                <li><a href="#" class="dropdown-item{% if code == activeLocale %} active{% endif %}"  data-request="onSwitchLocale" data-request-data="locale: '{{ code }}'">
-                    {% if code == 'en' %}
-                        {% set code = 'gb_UKM' %}
-                    {% endif %}
+        <div class="dropdown-menu{{ dropdown_classes ? ' ' ~ dropdown_classes : '' }}">
+            <ul>
+                {% for code, name in locales %}
+                    <li><a href="#" class="dropdown-item{% if code == activeLocale %} active{% endif %}"  data-request="onSwitchLocale" data-request-data="locale: '{{ code }}'">
+                        {% if code == 'en' %}
+                            {% set code = 'gb_UKM' %}
+                        {% endif %}
 
-                    <img src="{{ ('assets/images/flags/' ~ code ~ '.svg') | theme }}" alt="{{ name }}" />
-                    {{ name }}
-                </a></li>
-            {% endfor %}
-        </ul>
+                        <img src="{{ ('assets/images/flags/' ~ code ~ '.svg') | theme }}" alt="{{ name }}" />
+                        <span>{{ name }}</span>
+                    </a></li>
+                {% endfor %}
+            </ul>
+        </div>
     </div>
 {{ form_close() }}

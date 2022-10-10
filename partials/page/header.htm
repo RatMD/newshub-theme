@@ -10,145 +10,143 @@ code = "meta-menu"
 ==
 {% from "page/macros.htm" import menu_builder, social_builder %}
 
-{# Top Header (Extended Header Style) #}
-{% if this.theme.navbar_style == 'extended' %}
-    <header id="pageHeaderTop" class="page-header-top">
-        <div class="container-fluid{% if this.theme.dark_header %} bg-dark dark{% else %} bg-light dark:bg-dark{% endif %}">
-            <nav class="navbar-top">
-                {% if metaMenu and metaMenu.menuItems != null and metaMenu.menuItems|length > 0 %}
-                    {{ menu_builder(metaMenu.menuItems, 1) }}
-                {% endif %}
-
-                <span>&nbsp;&bullet;&nbsp;</span>
-
-                {% if socialMenu and socialMenu.menuItems != null and socialMenu.menuItems|length > 0 %}
-                    {{ social_builder(socialMenu.menuItems) }}
-                {% endif %}
-            </nav>
-        </div>
-    </header>
-{% endif %}
-
-{# Main Header #}
-<header id="pageHeader" class="page-header header-{{ this.theme.navbar_style }}{% if this.theme.sticky_header %} sticky-top sticky-header{% endif %}">
-    <div class="container-fluid{% if this.theme.dark_header %} bg-dark dark{% else %} bg-light dark:bg-dark{% endif %}">
-        <nav class="navbar navbar-main navbar-expand-lg">
-            <div class="navbar-brand{% if this.theme.site_logo %} navbar-brand-image{% endif %}">
-                <a href="{{ 'home' | page }}" class="navbar-brand-link" title="{{ this.theme.site_name }}">
-                    {% if this.theme.site_logo %}
-                        <img src="{{ this.theme.site_logo.getPath() }}" alt="{{ this.theme.site_name }}" class="hide-on-dark" />
-
-                        {% if this.theme.site_logo_inverted %}
-                            <img src="{{ this.theme.site_logo_inverted.getPath() }}" alt="{{ this.theme.site_name }}" class="show-on-dark" />
-                        {% else %}
-                            <img src="{{ this.theme.site_logo.getPath() }}" alt="{{ this.theme.site_name }}" class="show-on-dark" />
-                        {% endif %}
-                    {% else %}
-                        {{ this.theme.site_name }}
-                    {% endif %}
-                </a>
-
-                {% if this.theme.navbar_style != 'extended' %}
-                    {% if this.theme.color_switch_top or this.theme.languages_menu_top %}
-                        <div class="theme-settings">
-                            {% if this.theme.languages_menu_top %}
-                                {% partial 'localepicker/default' dropdown=true %}
-                            {% endif %}
-                            
-                            {% if this.theme.color_switch_top %}
-                                {% partial 'colorpicker/default' %}
-                            {% endif %}
-                        </div>
-                    {% endif %}
-                {% endif %}
-            </div>
-                
-            <div id="pageHeaderMenu" class="collapse navbar-collapse navbar-menu">
-                {% if mainMenu and mainMenu.menuItems != null and mainMenu.menuItems|length > 0 %}
-                    {{ menu_builder(mainMenu.menuItems) }}
-                {% endif %}
-            </div>
-
-            {% if this.theme.navbar_style != 'extended' %}
-                {% if socialMenu and socialMenu.menuItems != null and socialMenu.menuItems|length > 0 %}
-                    <div class="navbar-socials">
-                        {{ social_builder(socialMenu.menuItems) }}
-                    </div>
-                {% endif %}
-            {% else %}
-                <div id="pageActions" class="navbar-actions">
-                    {% if this.theme.color_switch_top or this.theme.languages_menu_top or this.theme.search_button or this.theme.user_button %}
-                        <ul class="navbar-nav">
-                            {% if this.theme.search_button %}
-                                <li class="nav-item">
-                                    <span class="nav-btn collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#pageSearch">{% partial 'icons/bootstrap/search' %}</span>
-                                </li>
-                            {% endif %}
-
-                            {% if this.theme.user_button %}
-                                <li class="nav-item">
-                                    <span class="nav-btn">{% partial 'icons/bootstrap/person' %}</span>
-
-                                    <div class="dropdown-menu dropdown-menu-end">
-                                        <form>
-                                            <div class="mb-3">
-                                                <label>Username</label>
-                                                <input type="text" class="form-control form-control-sm" />
-                                            </div>
-                                            <div class="mb-3">
-                                                <label>Password</label>
-                                                <input type="password" class="form-control form-control-sm" />
-                                            </div>
-                                        </form>
-                                    </div>
-                                </li>
-                            {% endif %}
-
-                            {% if this.theme.languages_menu_top %}
-                                <li class="nav-item">
-                                    {% partial 'colorpicker/default' %}
-                                </li>
-                            {% endif %}
-
-                            {% if this.theme.color_switch_top %}
-                                <li class="nav-item">
-                                    {% partial 'localepicker/default' dropdown=true dropdownPosition="dropdown-menu-end" %}
-                                </li>
-                            {% endif %}
-                        </ul>
-                    {% endif %}
-                </div>
+{# TopBar (used on Extended Header Style) #}
+{% set withMetaMenu = this.theme.header_style == 'extended' and metaMenu and metaMenu.menuItems and metaMenu.menuItems|length > 0 %}
+{% set withSocialMenu = socialMenu and socialMenu.menuItems and socialMenu.menuItems|length > 0 %}
+{% if this.theme.header_style == 'extended' and (withMetaMenu or withSocialMenu) %}
+    <nav class="navbar navbar-topbar">
+        <div class="container-fluid">
+            {% if withMetaMenu %}
+                {{ menu_builder(metaMenu.menuItems, 1, { 
+                    ul_class: 'navbar-nav-meta' 
+                }) }}
             {% endif %}
             
-            {% if this.theme.navbar_style == 'extended' %}
-                <button class="navbar-toggler action-toggler collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#pageActions" aria-controls="pageActions" aria-expanded="false" aria-label="{{ 'site.navbar.toggle' | _ }}">
-                    {% partial "icons/bootstrap/wrench-adjustable-circle" %}
-                </button>
+            {% if withMetaMenu and withSocialMenu %}
+                <span class="navbar-separator">&nbsp;&bullet;&nbsp;</span>
             {% endif %}
 
-            <button class="navbar-toggler collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#pageHeaderMenu" aria-controls="pageHeaderMenu" aria-expanded="false" aria-label="{{ 'site.navbar.toggle' | _ }}">
-                <div class="navbar-toggler-menu">
-                    <div class="navbar-toggler-line"></div>
-                    <div class="navbar-toggler-line"></div>
-                    <div class="navbar-toggler-line"></div>
-                </div>
-            </button>
-        </nav>
-    </div>
-</header>
-
-{# Main Header #}
-{% if this.theme.navbar_style == 'extended' and this.theme.search_button %}
-    <div id="pageSearch" class="navbar-search">
-        <div class="container position-relative">
-            <button class="search-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#pageSearch">
-                {% partial "icons/bootstrap/x-lg" %}
-            </button>
-            <form method="POST" action="{{ 'blog/search' | page({}) }}">
-                <div class="form-group">
-                    <input type="search" name="search" value="" class="form-control form-control-lg" placeholder="Search for..." />
-                </div>
-            </form>
+            {% if withSocialMenu %}
+                {{ social_builder(socialMenu.menuItems, { 
+                    ul_class: 'navbar-nav-socials' 
+                }) }}
+            {% endif %}
         </div>
-    </div>
+    </nav>
 {% endif %}
+
+{# Main Navbar #}
+<nav class="navbar navbar-main navbar-expand-lg{{ withMetaMenu ? ' with-meta-menu': '' }}{{ withSocialMenu ? ' with-social-menu': '' }}">
+        {% set innerClass = '' %}
+        {% if this.theme.header_style == 'condensed' %}
+            {% if this.theme.languages_menu_top or this.theme.color_switch_top %}
+                {% set innerClass = 'has-actions' %}
+            {% endif %}
+        {% endif %}
+    <div class="container-fluid navbar-main-inner{{ innerClass ? ' ' ~ innerClass : '' }}">
+
+        {# Brand (Condensed & Extended) #}
+        <a href="{{ 'home' | page }}" class="navbar-brand" title="{{ this.theme.site_name }}">
+            {% if this.theme.site_logo %}
+                <img src="{{ this.theme.site_logo.getPath() }}" alt="{{ this.theme.site_name }}" class="hide-on-dark" />
+
+                {% if this.theme.site_logo_inverted %}
+                    <img src="{{ this.theme.site_logo_inverted.getPath() }}" alt="{{ this.theme.site_name }}" class="show-on-dark" />
+                {% else %}
+                    <img src="{{ this.theme.site_logo.getPath() }}" alt="{{ this.theme.site_name }}" class="show-on-dark" />
+                {% endif %}
+            {% else %}
+                {{ this.theme.site_name }}
+            {% endif %}
+        </a>
+
+        {# Main Navigation (Condensed & Extended) #}
+        {% if mainMenu and mainMenu.menuItems != null and mainMenu.menuItems|length > 0 %}
+            {{ menu_builder(mainMenu.menuItems, 3, {
+                ul_id: 'pageHeaderMainMenu',
+                ul_class: 'navbar-nav-main'
+            }) }}
+        {% endif %}
+
+        {# Language Picker | Color Picker (Condensed) #}
+        {% if this.theme.header_style == 'condensed' %}
+            {% if this.theme.languages_menu_top or this.theme.color_switch_top %}
+                <div class="navbar-picker">
+                    {% if this.theme.languages_menu_top %}
+                        {% partial 'localepicker/default' dropdown=true dropdown_classes='dropdown-menu-center' %}
+                    {% endif %}
+                    
+                    {% if this.theme.color_switch_top %}
+                        {% partial 'colorpicker/default' %}
+                    {% endif %}
+                </div>
+            {% endif %}
+        {% endif %}
+
+        {# Social Navigation (Condensed) #}
+        {% if this.theme.header_style == 'condensed' %}
+            {% if socialMenu and socialMenu.menuItems and socialMenu.menuItems | length > 0 %}
+                {{ social_builder(socialMenu.menuItems, { 
+                    ul_class: 'navbar-nav-socials' 
+                }) }}
+            {% endif %}
+        {% endif %}
+
+        {# Action Toolbar (Extended) #}
+        {% if this.theme.header_style == 'extended' %}
+            {% set actions = 0 %}
+            {% if this.theme.color_switch_top %}
+                {% set actions = actions + 1 %}
+            {% endif %}
+            {% if this.theme.languages_menu_top %}
+                {% set actions = actions + 1 %}
+            {% endif %}
+            {% if this.theme.site_picker_top %}
+                {% set actions = actions + 1 %}
+            {% endif %}
+            {% if this.theme.search_button %}
+                {% set actions = actions + 1 %}
+            {% endif %}
+            {% if this.theme.user_button %}
+                {% set actions = actions + 1 %}
+            {% endif %}
+
+            <div class="navbar-actions{{ actions >= 2 ? ' actions-toggle': '' }}">
+                {% if this.theme.languages_menu_top %}
+                    {% partial 'localepicker/default' dropdown=true %}
+                {% endif %}
+
+                {% if this.theme.site_picker_top %}
+                    {% partial 'sitepicker/default' %}
+                {% endif %}
+
+                {% if this.theme.color_switch_top %}
+                    {% partial 'colorpicker/default' %}
+                {% endif %}
+
+                {% if this.theme.search_button %}
+                    {% partial 'searchbutton/default' %}
+                {% endif %}
+
+                {% if this.theme.user_button %}
+                    {% partial 'userbutton/default' %}
+                {% endif %}
+
+                {% if actions >= 2 %}
+                    <button class="navbar-action-toggler collapsed" type="button">
+                        {% partial 'icons/bootstrap/wrench-adjustable-circle' %}
+                    </button>
+                {% endif %}
+            </div>
+        {% endif %}
+
+        {# Navbar Toggler (Condensed & Extended) #}
+        <button class="navbar-toggler collapsed" type="button" aria-expanded="false" aria-label="{{ 'site.navbar.toggle' | _ }}">
+            <svg class="close-button" viewBox="0 0 100 100" width="40" onclick="this.classList.toggle('active')">
+                <path d="m 70,33 h -40 c 0,0 -8.5,-0.149796 -8.5,8.5 0,8.649796 8.5,8.5 8.5,8.5 h 20 v -20" />
+                <path d="m 70,50 h -40" />
+                <path d="m 30,67 h 40 c 0,0 8.5,0.149796 8.5,-8.5 0,-8.649796 -8.5,-8.5 -8.5,-8.5 h -20 v 20" />
+            </svg>
+        </button>
+    </div>
+</nav>

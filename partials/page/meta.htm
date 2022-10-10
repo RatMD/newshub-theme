@@ -1,49 +1,161 @@
 {# Base Tag #}
-{% if this.theme.base_tag %}<base href="{{ '' | app }}" />{% endif %}
+{% if this.theme.base_tag %}<base href="{{ '/' | app }}" />{% endif %}
 
 {# Default Tags #}
 <meta charset="UTF-8" />
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-{% if this.theme.embed_generator %}<meta name="generator" value="October CMS{% if this.theme.show_october_version %} v{{ octoberVersion }}{% endif %}" />{% endif %}
+{% if this.theme.generator_tag %}<meta name="generator" value="October CMS{% if this.theme.generator_tag_version %} v{{ octoberVersion }}{% endif %}" />{% endif %}
+{% if this.theme.color_scheme_tag %}<meta name="color-scheme" value="{{ this.theme.dark_scheme == '1' ? 'dark light' : 'light dark' }}" />{% endif %}
+{% if this.theme.theme_color_tag %}<meta name="theme-color" value="{{ this.theme.color_primary | trim }}" />{% endif %}
 <title>{{ this.page.title }} | {{ this.theme.site_name }}</title>
 
 {# Favicons #}
-{% if this.theme.embed_favicon %}<link rel="icon" href="{{ this.theme.embed_favicon_path }}" sizes="any" />{% endif %}
-{% if this.theme.embed_vector %}<link rel="icon" href="{{ this.theme.embed_vector_path }}" type="image/svg+xml" />{% endif %}
-{% if this.theme.embed_apple_touch %}<link rel="apple-touch-icon" href="{{ this.theme.embed_apple_touch_path }}" />{% endif %}
-{% if this.theme.embed_webmanifest %}<link rel="manifest" href="{{ this.theme.embed_webmanifest_path }}" />{% endif %}
+{% if this.theme.favicon_tag %}<link rel="icon" href="{{ this.theme.favicon_path }}" sizes="any" />{% endif %}
+{% if this.theme.vector_icon_tag %}<link rel="icon" href="{{ this.theme.vector_icon_path }}" type="image/svg+xml" />{% endif %}
+{% if this.theme.apple_touch_tag %}<link rel="apple-touch-icon" href="{{ this.theme.apple_touch_path }}" />{% endif %}
+{% if this.theme.manifest_tag %}<link rel="manifest" href="{{ this.theme.manifest_path }}" />{% endif %}
 
 {# SEO Meta Tags #}
 <meta name="title" content="{{ this.page.meta_title|default(this.page.title) }}" />
 {% if this.page.meta_description %}<meta name="description" content="{{ this.page.meta_description }}" />{% endif %}
 {% if this.page['meta_keywords'] or newshub.meta_keywords %}<meta name="keywords" content="{{ this.page['meta_keywords'] | default(newshub.meta_keywords) }}" />{% endif %}
-{% if this.page['meta_author'] or newshub.meta_author %}<meta name="author" content="{{ this.page['meta_author'] | default(newshub.meta_author | default('OctoberCMS Leaf')) }}" />{% endif %}
-{% if this.page['meta_robots'] %}<meta name="robots" value="{{ this.page['meta_robots'] }}" />{% endif %}
+{% if this.page['meta_author'] or newshub.meta_author %}<meta name="author" content="{{ this.page['meta_author'] | default(newshub.meta_author | default('OctoberCMS NewsHub')) }}" />{% endif %}
+{% if this.theme.robots_tag %}<meta name="robots" value="{{ this.page.meta_robots | default(newshub.meta_robots | default('index,follow')) }}" />{% endif %}
 {% component 'alternateHrefLangElements' %}
 {% placeholder meta_tags %}
 
 {# Stylesheets #}
 {% if this.theme.embed_extras %}<link rel="stylesheet" href="{{ ['@framework.extras'] | theme }}" />{% endif %}
-<link rel="stylesheet" href="{{ 'assets/css/newshub.min.css?ver=1.2.2' | theme }}" />
-<style type="text/css">
-    :root {
-        --bs-primary: {{ this.theme.color_primary }};
-        --bs-secondary: {{ this.theme.color_secondary }};
-        --bs-success: {{ this.theme.color_success }};
-        --bs-info: {{ this.theme.color_info }};
-        --bs-warning: {{ this.theme.color_warning }};
-        --bs-danger: {{ this.theme.color_danger }};
-    }
-</style>
+<link rel="stylesheet" href="{{ 'assets/css/newshub.min.css?ver=1.3.0' | theme }}" />
+{% if this.theme.enable_color_palette %}
+    <style type="text/css">
+        :root {
+            {% if this.theme.gray_scheme == 'slate' %}
+                {% set color_light = '#f1f5f9' %}
+                {% set color_gray = '#475569' %}
+                {% set color_dark = '#0f172a' %}
+            --bs-gray-100: #f1f5f9;
+            --bs-gray-200: #e2e8f0;
+            --bs-gray-300: #cbd5e1;
+            --bs-gray-400: #94a3b8;
+            --bs-gray-500: #64748b;
+            --bs-gray-600: #475569;
+            --bs-gray-700: #334155;
+            --bs-gray-800: #1e293b;
+            --bs-gray-900: #0f172a;
+            {% elseif this.theme.gray_scheme == 'gray' %}
+                {% set color_light = '#f3f4f6' %}
+                {% set color_gray = '#4b5563' %}
+                {% set color_dark = '#111827' %}
+            --bs-gray-100: #f3f4f6;
+            --bs-gray-200: #e5e7eb;
+            --bs-gray-300: #d1d5db;
+            --bs-gray-400: #9ca3af;
+            --bs-gray-500: #6b7280;
+            --bs-gray-600: #4b5563;
+            --bs-gray-700: #374151;
+            --bs-gray-800: #1f2937;
+            --bs-gray-900: #111827;
+            {% elseif this.theme.gray_scheme == 'zinc' %}
+                {% set color_light = '#f4f4f5' %}
+                {% set color_gray = '#52525b' %}
+                {% set color_dark = '#18181b' %}
+            --bs-gray-100: #f4f4f5;
+            --bs-gray-200: #e4e4e7;
+            --bs-gray-300: #d4d4d8;
+            --bs-gray-400: #a1a1aa;
+            --bs-gray-500: #71717a;
+            --bs-gray-600: #52525b;
+            --bs-gray-700: #3f3f46;
+            --bs-gray-800: #27272a;
+            --bs-gray-900: #18181b;
+            {% elseif this.theme.gray_scheme == 'neutral' %}
+                {% set color_light = '#f5f5f5' %}
+                {% set color_gray = '#525252' %}
+                {% set color_dark = '#171717' %}
+            --bs-gray-100: #f5f5f5;
+            --bs-gray-200: #e5e5e5;
+            --bs-gray-300: #d4d4d4;
+            --bs-gray-400: #a3a3a3;
+            --bs-gray-500: #737373;
+            --bs-gray-600: #525252;
+            --bs-gray-700: #404040;
+            --bs-gray-800: #262626;
+            --bs-gray-900: #171717;
+            {% elseif this.theme.gray_scheme == 'stone' %}
+                {% set color_light = '#f5f5f4' %}
+                {% set color_gray = '#57534e' %}
+                {% set color_dark = '#1c1917' %}
+            --bs-gray-100: #f5f5f4;
+            --bs-gray-200: #e7e5e4;
+            --bs-gray-300: #d6d3d1;
+            --bs-gray-400: #a8a29e;
+            --bs-gray-500: #78716c;
+            --bs-gray-600: #57534e;
+            --bs-gray-700: #44403c;
+            --bs-gray-800: #292524;
+            --bs-gray-900: #1c1917;
+            {% else %}
+                {% set color_light = '#f8f9fa' %}
+                {% set color_gray = '#6c757d' %}
+                {% set color_dark = '#212529' %}
+            --bs-gray-100: #f8f9fa;
+            --bs-gray-200: #e9ecef;
+            --bs-gray-300: #dee2e6;
+            --bs-gray-400: #ced4da;
+            --bs-gray-500: #adb5bd;
+            --bs-gray-600: #6c757d;
+            --bs-gray-700: #495057;
+            --bs-gray-800: #343a40;
+            --bs-gray-900: #212529;
+            {% endif %}
+
+            --bs-primary: {{ this.theme.color_primary }};
+            --bs-secondary: {{ this.theme.color_secondary }};
+            --bs-success: {{ this.theme.color_success }};
+            --bs-info: {{ this.theme.color_info }};
+            --bs-warning: {{ this.theme.color_warning }};
+            --bs-danger: {{ this.theme.color_danger }};
+            --bs-light: {{ color_light }};
+            --bs-gray: {{ color_gray }};
+            --bs-dark: {{ color_dark }};
+            --bs-primary-rgb: {{ hexToRgb.call(this, this.theme.color_primary) }};
+            --bs-secondary-rgb: {{ hexToRgb.call(this, this.theme.color_secondary) }};
+            --bs-success-rgb: {{ hexToRgb.call(this, this.theme.color_success) }};
+            --bs-info-rgb: {{ hexToRgb.call(this, this.theme.color_info) }};
+            --bs-warning-rgb: {{ hexToRgb.call(this, this.theme.color_warning) }};
+            --bs-danger-rgb: {{ hexToRgb.call(this, this.theme.color_danger) }};
+            --bs-light-rgb: {{ hexToRgb.call(this, color_light) }};
+            --bs-gray-rgb: {{ hexToRgb.call(this, color_gray) }};
+            --bs-dark-rgb: {{ hexToRgb.call(this, color_dark) }};
+        }
+    </style>
+{% endif %}
 {% styles %}
 {% placeholder stylesheets %}
 
 {# Core JavaScripts #}
 <script type="text/javascript">
     document.documentElement.classList.remove('no-js');
-    window.newshub = {
-        defaultScheme: '{% if this.theme.dark_scheme %}dark{% else %}light{% endif %}'
-    };
+    {% if this.theme.enable_dark_scheme %}
+        window.newshub = {
+            enableDarkScheme: true,
+            defaultScheme: '{% if this.theme.dark_scheme %}dark{% else %}light{% endif %}'
+        };
+    {% else %}
+        window.newshub = {
+            enableDarkScheme: false,
+            defaultScheme: 'light',
+        };
+    {% endif %}
+
+    {% if this.theme.theme_color_tag and not this.theme.enable_color_palette %}
+        const primaryColor = window.getComputedStyle(document.head).getPropertyValue('--bs-primary');
+        const metaTag = document.head.querySelector('meta[name="theme-color"]');
+        if (metaTag && metaTag.getAttribute('value') !== primaryColor) {
+            metaTag.setAttribute('value', primaryColor.trim());
+        }
+    {% endif %}
 </script>
 {% placeholder javascripts %}

@@ -1,1 +1,10 @@
+# -----------------------------------
+#   General Files and Folders
+# -----------------------------------
+.DS_Store
+.prettierrc
+.ftpconfig
+*.dev
+*.Identifier
+nbproject
 node_modules

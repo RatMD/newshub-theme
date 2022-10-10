@@ -1,0 +1,61 @@
+@use "sass:math";
+
+// ----------------------------------------
+//  LocalePicker Component
+// ----------------------------------------
+
+.locale-picker {
+    width: 34px;
+    height: 34px;
+
+    button {
+        margin: 0;
+        padding: $spacer * 0.3;
+        display: inline-flex;
+        position: relative;
+        align-items: center;
+        justify-content: center;
+        border: 0;
+        border-radius: $border-radius;
+        background-color: transparent;
+        transition: background-color .15s ease;
+
+        &::after {
+            content: none;
+            display: none;
+        }
+
+        &:hover,
+        &:focus {
+            background-color: var(--bs-gray-300);
+        }
+
+        .dark &:hover,
+        .dark &:focus {
+            background-color: var(--bs-gray-800);
+        }
+    }
+
+    img {
+        width: 24px;
+        height: 24px;
+        display: inline-block;
+        object-fit: cover;
+        object-position: center;
+        border-radius: 50%;
+    }
+
+    .dropdown-menu {
+        min-width: auto;
+    }
+
+    .dropdown-item {
+        display: flex;
+        font-weight: 600;
+        align-items: center;
+
+        img {
+            margin-right: $spacer * 0.5;
+        }
+    }
+}

@@ -1,0 +1,8 @@
+// ----------------------------------------
+//  Close Button Component
+// ----------------------------------------
+
+.dark .btn-close {
+    --#{$prefix}btn-close-bg: #{ escape-svg($btn-close-dark-bg) };
+    background: transparent var(--#{$prefix}btn-close-bg) center / $btn-close-width auto no-repeat;
+}

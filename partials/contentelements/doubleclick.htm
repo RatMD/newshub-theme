@@ -3,8 +3,8 @@
     {% set classNames = classNames ~ ' ' ~ config.class_names %}
 {% endif %}
 
-<div {% if config.id and config.id | length > 0 %} id="{{ config.id }}"{% endif %} class="{{ classNames }}" data-rat-toggle="double-click">
-<div class="double-click" data-rat-toggle="double-click">
+<div {% if config.id and config.id | length > 0 %} id="{{ config.id }}"{% endif %} class="{{ classNames }}" data-newshub-toggle="double-click">
+<div class="double-click" data-newshub-toggle="double-click">
     <div class="double-click-title">
         {{ config.title | default('Third-Party Service') | raw }}
     </div>

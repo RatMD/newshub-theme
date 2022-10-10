@@ -1,0 +1,26 @@
+
+<div class="navbar-action-item sitepicker-action">
+    <button type="button" class="navbar-action-button" data-bs-toggle="modal" data-bs-target="#sitePickerModal">
+        {% partial 'icons/bootstrap/link-45deg' %}
+    </button>
+</div>
+
+{% put modals %}
+<div id="sitePickerModal" class="modal fade" tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Modal title</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <p>Modal body text goes here.</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Save changes</button>
+            </div>
+        </div>
+    </div>
+</div>
+{% endput %}

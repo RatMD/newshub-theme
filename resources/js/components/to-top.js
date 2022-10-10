@@ -1,5 +1,5 @@
-
 import query from '../utilities/query';
+import ready from '../utilities/ready';
 
 /**
  * Invoke Scroll-To-Top Button
@@ -31,5 +31,7 @@ function invokeScrollToTop(element)
 
 // Export Ready Handler
 export default () => {
-    query('.scroll-to-top').map(el => invokeScrollToTop(el));
+    ready(() => {
+        query('.scroll-to-top').map(el => invokeScrollToTop(el));
+    })
 };

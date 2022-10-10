@@ -1,6 +1,5 @@
-
 import query from '../utilities/query';
-import KeenSlider from '../vendors/keen-slider';
+import ready from '../utilities/ready';
 
 /**
  * Initialize Hero Slider Options
@@ -358,25 +357,27 @@ function invokeKeenSlider(element, options = {})
 
 // Export Ready Handler
 export default () => {
-    query('[data-keen-slider]').map(el => {
-        let temp = el.dataset.keenSlider.trim();
-        var options = {};
-
-        if (temp.length > 0 && temp[0] === '{') {
-            try {
-                let jsonParser = typeof ocJSON === 'function' ? ocJSON : 
-                                 typeof (oc || {}).parseJSON === 'function' ? oc.parseJSON : 
-                                 JSON.parse;
-
-                let handle = jsonParser(temp);
-                if (typeof handle === 'object') {
-                    options = handle;
+    ready(() => {
+        query('[data-keen-slider]').map(el => {
+            let temp = el.dataset.keenSlider.trim();
+            var options = {};
+    
+            if (temp.length > 0 && temp[0] === '{') {
+                try {
+                    let jsonParser = typeof ocJSON === 'function' ? ocJSON : 
+                                     typeof (oc || {}).parseJSON === 'function' ? oc.parseJSON : 
+                                     JSON.parse;
+    
+                    let handle = jsonParser(temp);
+                    if (typeof handle === 'object') {
+                        options = handle;
+                    }
+                } catch(e) {
+                    console.error(`The KeenSlider data property is not a valid JSON: '${temp}'`);
                 }
-            } catch(e) {
-                console.error(`The KeenSlider data property is not a valid JSON: '${temp}'`);
             }
-        }
-
-        invokeKeenSlider(el, options);
-    });
+    
+            invokeKeenSlider(el, options);
+        });
+    })
 };

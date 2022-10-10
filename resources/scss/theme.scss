@@ -17,35 +17,35 @@
 //  Include Bootstrap Functions
 //----------------------------------------
 @import 'bootstrap/scss/functions';
+@import 'core-functions';
 
 
 //----------------------------------------
-//  Include Custom Variables
+//  Include Bootstrap Basics
 //----------------------------------------
-@import 'variables';
+@import 'core-variables';                   // Load Custom Variables
+@import 'bootstrap/scss/variables';         // Load Bootstrap Variables
+@import 'bootstrap/scss/maps';              // Load Bootstrap Maps
+@import 'bootstrap/scss/mixins';            // Load Bootstrap Mixins
+@import 'core-mixins';                      // Load Custom Mixins
+@import 'core-utilities';                   // Load Custom Utilities
+@import 'bootstrap/scss/utilities';         // Load Bootstrap Utilities
+@import 'core-overrides';                   // Load Custom Overrides
 
 
 //----------------------------------------
-//  Include Bootstrap Requirements
+//  Include Bootstrap Core
 //----------------------------------------
-@import 'bootstrap/scss/variables';
-@import 'bootstrap/scss/maps';
-@import 'bootstrap/scss/mixins';
+@import 'base/fonts';
 @import 'bootstrap/scss/root';
-
-
-//----------------------------------------
-//  Include Custom Overrides 
-//----------------------------------------
-@import 'overrides';
-@import 'utilities';
+@import 'base/root';
+@import 'bootstrap/scss/reboot';
+@import 'base/core';
 
 
 //----------------------------------------
 //  Include Bootstrap Components
 //----------------------------------------
-@import 'bootstrap/scss/utilities';
-@import 'bootstrap/scss/reboot';
 @import 'bootstrap/scss/type';
 @import 'bootstrap/scss/images';
 @import 'bootstrap/scss/containers';
@@ -79,14 +79,14 @@
 
 
 //----------------------------------------
-//  Include Custom Components | Stylings
+//  Include Custom Components
 //----------------------------------------
-@import 'base';
-@import 'components';
-@import 'vendors';
+@import 'custom-components';
+@import 'custom-vendors';
 
 
 //----------------------------------------
 //  Include Bootstrap Utility API
 //----------------------------------------
 @import 'bootstrap/scss/utilities/api';
+@import 'custom-utilities';

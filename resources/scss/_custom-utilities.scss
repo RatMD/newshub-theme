@@ -1,0 +1,40 @@
+
+// ----------------------------------------
+//  Custom Colored Link Classes
+// ----------------------------------------
+@each $color, $value in $theme-colors {
+    .dark .dark\:link-#{$color} {
+        color: $value !important;
+  
+        @if $link-shade-percentage != 0 {
+            &:hover,
+            &:focus {
+                color: if(color-contrast($value) == $color-contrast-light, shade-color($value, $link-shade-percentage), tint-color($value, $link-shade-percentage)) !important;
+            }   
+        }
+    }
+}
+
+
+// ----------------------------------------
+//  Custom Utility Classes
+// ----------------------------------------
+html.no-js .show-on-js {
+    display: none !important;
+}
+
+html:not(.no-js) .hide-on-js {
+    display: none !important;
+}
+
+.show-on-dark {
+    display: none;
+
+    .dark & {
+        display: inherit;
+    }
+}
+
+.dark .hide-on-dark {
+    display: none;
+}

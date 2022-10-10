@@ -1,0 +1,67 @@
+
+// ----------------------------------------
+//  Dropdown Menu Stylings
+// ----------------------------------------
+.dropdown-menu {
+    padding: 0;
+    opacity: 0;
+    display: block;
+    box-shadow: none;
+    pointer-events: none;
+    background-color: transparent;
+
+    ul {
+        margin: 15px 0 0 0;
+        padding: 0;
+        display: block;
+        opacity: 0;
+        list-style: none;
+        box-shadow: $box-shadow;
+        background-color: $white;
+        transition: margin .2s ease, opacity .2s ease;
+
+        li {
+            padding: 0;
+            position: relative;
+
+            .dropdown-item {
+                padding: $spacer * 0.5 $spacer * 1.25;
+                transition: background-color .15s ease-in-out;
+            }
+
+            &:first-child {
+                .dropdown-item::before {
+                    top: -10px;
+                    left: 50%;
+                    width: 20px;
+                    margin-left: -10px;
+                    height: 0;
+                    content: "";
+                    position: absolute;
+                    border-style: solid;
+                    border-width: 0 10px 10px 10px;
+                    border-color: transparent transparent $white transparent;
+                    transition: border-color .15s ease-in-out;
+                }
+
+                &:hover .dropdown-item::before {
+                    border-bottom-color: $gray-200;
+                }
+
+                .dropdown-item.active::before {
+                    border-bottom-color: var(--bs-dropdown-link-active-bg);
+                }
+            }
+        }
+    }
+    
+    &.show {
+        opacity: 1;
+        pointer-events: fill;
+
+        ul {
+            margin-top: 0;
+            opacity: 1;
+        }
+    }
+}

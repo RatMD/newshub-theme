@@ -1,5 +1,5 @@
-
 import query from '../utilities/query';
+import ready from '../utilities/ready';
 
 /**
  * Invoke Double-Click Solution
@@ -23,5 +23,7 @@ function invokeDoubleClick(element)
 
 // Export Ready Handler
 export default () => {
-    query('[data-rat-toggle="double-click"]').map(el => invokeDoubleClick(el));
+    ready(() => {
+        query('[data-newshub-toggle="double-click"]').map(el => invokeDoubleClick(el));
+    });
 };

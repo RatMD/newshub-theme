@@ -1,0 +1,18 @@
+
+<div class="navbar-action-item user-action">
+    <button type="button" class="navbar-action-button" data-bs-toggle="offcanvas" data-bs-target="#accountOffcanvas">
+        {% partial 'icons/bootstrap/person-circle' %}
+    </button>
+</div>
+
+{% put offcanvas %}
+<div class="offcanvas offcanvas-end" tabindex="-1" id="accountOffcanvas">
+    <div class="offcanvas-header">
+        <h5 class="offcanvas-title" id="offcanvasLabel">Sign in or Create an Account</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    </div>
+    <div class="offcanvas-body">
+        Content for the offcanvas goes here. You can place just about any Bootstrap component or custom elements here.
+    </div>
+</div>
+{% endput %}

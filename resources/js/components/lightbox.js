@@ -1,7 +1,5 @@
-
-
 import query from '../utilities/query';
-import Lightbox from './vendors/bootstrap-lightbox';
+import ready from '../utilities/ready';
 
 /**
  * Invoke Scroll-To-Top Button
@@ -22,13 +20,12 @@ function invokeLightbox(element)
 
 // Export Ready Handler
 export default () => {
-    if (typeof Lightbox === 'undefined') {
-        return;
-    }
-    query('[data-rat-toggle="lightbox"]').map(el => invokeLightbox(el));
-    query('.post-lightbox').map(el => {
-        el.dataset.gallery = "post-gallery";
-        el.dataset.caption = el.querySelector('img').alt;
-        invokeLightbox(el)
-    });
+    ready(() => {
+        query('[data-newshub-toggle="lightbox"]').map(el => invokeLightbox(el));
+        query('.post-lightbox').map(el => {
+            el.dataset.gallery = "post-gallery";
+            el.dataset.caption = el.querySelector('img').alt;
+            invokeLightbox(el)
+        });
+    })
 };

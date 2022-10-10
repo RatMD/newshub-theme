@@ -1,128 +1,314 @@
+toc:
+    name: theme.newshub::lang.widget.toc.label
+    description: theme.newshub::lang.widget.toc.comment
+    fields:
+        title:
+            type: text
+            label: theme.newshub::lang.widget.general.title.label
+            comment: theme.newshub::lang.widget.general.title.comment
+            span: left
+        subtitle:
+            type: text
+            label: theme.newshub::lang.widget.general.subtitle.label
+            comment: theme.newshub::lang.widget.general.subtitle.comment
+            span: right
+        title_first:
+            type: switch
+            label: theme.newshub::lang.widget.toc.title_first.label
+            comment: theme.newshub::lang.widget.toc.title_first.comment
+            default: true
+            span: left
+        javascript_anchors:
+            type: switch
+            label: theme.newshub::lang.widget.toc.javascript_anchors.label
+            comment: theme.newshub::lang.widget.toc.javascript_anchors.comment
+            default: true
+            span: right
 
-fields:
-    widget_type:
-        type: dropdown
-        label: theme.newshub::lang.option.sidebars.widget_type.label
-        comment: theme.newshub::lang.option.sidebars.widget_type.comment
-        showSearch: false
-        options:
-            articles: theme.newshub::lang.option.sidebars.widget_type.articles
-            authors: theme.newshub::lang.option.sidebars.widget_type.author
-            categories: theme.newshub::lang.option.sidebars.widget_type.category
-            tags: theme.newshub::lang.option.sidebars.widget_type.tags
-            static_menu: theme.newshub::lang.option.sidebars.widget_type.static_menu
-            content: theme.newshub::lang.option.sidebars.widget_type.content
-            html: theme.newshub::lang.option.sidebars.widget_type.html
-            toc: theme.newshub::lang.option.sidebars.widget_type.toc
-        span: left
-    
-    widget_title:
-        type: text
-        label: theme.newshub::lang.option.sidebars.widget_title.label
-        comment: theme.newshub::lang.option.sidebars.widget_title.comment
-        span: right
-    
-    widget_subtitle:
-        type: text
-        label: theme.newshub::lang.option.sidebars.widget_subtitle.label
-        comment: theme.newshub::lang.option.sidebars.widget_subtitle.comment
-        span: right
-    
-    __widget_options_ruler:
-        type: ruler
-    
-    #############################
-    ### WIDGET: LIST ARTICLES ###
-    #############################
-    widget_articles:
-        type: nestedform
-        showPanel: false
-        form: ~/themes/newshub/config/widgets/list-articles.yaml
-        trigger:
-            action: show
-            condition: value[articles]
-            field: widget_type
+blog_posts:
+    name: theme.newshub::lang.widget.blog_posts.label
+    description: theme.newshub::lang.widget.blog_posts.comment
+    fields:
+        title:
+            type: text
+            label: theme.newshub::lang.widget.general.title.label
+            comment: theme.newshub::lang.widget.general.title.comment
+            span: left
+        subtitle:
+            type: text
+            label: theme.newshub::lang.widget.general.subtitle.label
+            comment: theme.newshub::lang.widget.general.subtitle.comment
+            span: right
+        list_type:
+            type: dropdown 
+            label: theme.newshub::lang.widget.blog_posts.list_type.label
+            comment: theme.newshub::lang.widget.blog_posts.list_type.comment
+            showSearch: false
+            default: latest
+            options:
+                latest: theme.newshub::lang.widget.blog_posts.list_type.latest
+                random: theme.newshub::lang.widget.blog_posts.list_type.random
+                by_author: theme.newshub::lang.widget.blog_posts.list_type.by_author
+                by_category: theme.newshub::lang.widget.blog_posts.list_type.by_category
+                by_tag: theme.newshub::lang.widget.blog_posts.list_type.by_tag
+                by_comments: theme.newshub::lang.widget.blog_posts.list_type.by_comments
+                by_views: theme.newshub::lang.widget.blog_posts.list_type.by_views
+                by_visitors: theme.newshub::lang.widget.blog_posts.list_type.by_visitors
+            span: left
+        list_author:
+            type: recordfinder
+            label: theme.newshub::lang.widget.blog_posts.list_author.label
+            comment: theme.newshub::lang.widget.blog_posts.list_author.comment
+            list: ~/modules/backend/models/user/columns.yaml
+            nameFrom: login
+            modelClass: Backend\Models\User
+            useRelation: false
+            required: true
+            trigger:
+                action: show
+                condition: value[by_author]
+                field: list_type
+            span: right
+        list_category:
+            type: recordfinder
+            label: theme.newshub::lang.widget.blog_posts.list_category.label
+            comment: theme.newshub::lang.widget.blog_posts.list_category.comment
+            list: ~/plugins/rainlab/blog/models/category/columns.yaml
+            modelClass: RainLab\Blog\Models\Category
+            useRelation: false
+            required: true
+            trigger:
+                action: show
+                condition: value[by_category]
+                field: list_type
+            span: right
+        list_tag:
+            type: recordfinder
+            label: theme.newshub::lang.widget.blog_posts.list_tag.label
+            comment: theme.newshub::lang.widget.blog_posts.list_tag.comment
+            list: ~/plugins/ratmd/bloghub/models/tag/columns.yaml
+            modelClass: RatMD\BlogHub\Models\Tag
+            useRelation: false
+            required: true
+            trigger:
+                action: show
+                condition: value[by_tag]
+                field: list_type
+            span: right
+        number:
+            type: number
+            label: theme.newshub::lang.widget.shared.number.label
+            comment: theme.newshub::lang.widget.shared.number.comment
+            default: 5
+            span: left
 
-    ############################
-    ### WIDGET: LIST AUTHORS ###
-    ############################
-    widget_authors:
-        type: nestedform
-        showPanel: false
-        form: ~/themes/newshub/config/widgets/list-authors.yaml
-        trigger:
-            action: show
-            condition: value[authors]
-            field: widget_type
+blog_comments:
+    name: theme.newshub::lang.widget.blog_comments.label
+    description: theme.newshub::lang.widget.blog_comments.comment
+    fields:
+        title:
+            type: text
+            label: theme.newshub::lang.widget.general.title.label
+            comment: theme.newshub::lang.widget.general.title.comment
+            span: left
+        subtitle:
+            type: text
+            label: theme.newshub::lang.widget.general.subtitle.label
+            comment: theme.newshub::lang.widget.general.subtitle.comment
+            span: right
+        number:
+            type: number
+            label: theme.newshub::lang.widget.shared.number.label
+            comment: theme.newshub::lang.widget.shared.number.comment
+            default: 5
+            span: left
+        avatars:
+            type: switch
+            label: theme.newshub::lang.widget.shared.avatars.label
+            comment: theme.newshub::lang.widget.shared.avatars.comment
+            default: false
+            span: left
 
-    ###############################
-    ### WIDGET: LIST CATEGORIES ###
-    ###############################
-    widget_categories:
-        type: nestedform
-        showPanel: false
-        form: ~/themes/newshub/config/widgets/list-categories.yaml
-        trigger:
-            action: show
-            condition: value[categories]
-            field: widget_type
+blog_authors:
+    name: theme.newshub::lang.widget.blog_authors.label
+    description: theme.newshub::lang.widget.blog_authors.comment
+    fields:
+        title:
+            type: text
+            label: theme.newshub::lang.widget.general.title.label
+            comment: theme.newshub::lang.widget.general.title.comment
+            span: left
+        subtitle:
+            type: text
+            label: theme.newshub::lang.widget.general.subtitle.label
+            comment: theme.newshub::lang.widget.general.subtitle.comment
+            span: right
+        number:
+            type: number
+            label: theme.newshub::lang.widget.shared.number.label
+            comment: theme.newshub::lang.widget.shared.number.comment
+            default: 5
+            span: left
+        counter:
+            type: switch
+            label: theme.newshub::lang.widget.shared.counter.label
+            comment: theme.newshub::lang.widget.shared.counter.comment
+            default: true
+            span: left
+        avatars:
+            type: switch
+            label: theme.newshub::lang.widget.shared.avatars.label
+            comment: theme.newshub::lang.widget.shared.avatars.comment
+            default: true
+            span: right
 
-    #########################
-    ### WIDGET: LIST TAGS ###
-    #########################
-    widget_tags:
-        type: nestedform
-        showPanel: false
-        form: ~/themes/newshub/config/widgets/list-tags.yaml
-        trigger:
-            action: show
-            condition: value[tags]
-            field: widget_type
+blog_categories:
+    name: theme.newshub::lang.widget.blog_categories.label
+    description: theme.newshub::lang.widget.blog_categories.comment
+    fields:
+        title:
+            type: text
+            label: theme.newshub::lang.widget.general.title.label
+            comment: theme.newshub::lang.widget.general.title.comment
+            span: left
+        subtitle:
+            type: text
+            label: theme.newshub::lang.widget.general.subtitle.label
+            comment: theme.newshub::lang.widget.general.subtitle.comment
+            span: right
+        number:
+            type: number
+            label: theme.newshub::lang.widget.shared.number.label
+            comment: theme.newshub::lang.widget.shared.number.comment
+            default: 5
+            span: left
+        counter:
+            type: switch
+            label: theme.newshub::lang.widget.shared.counter.label
+            comment: theme.newshub::lang.widget.shared.counter.comment
+            default: true
+            span: left
+        empty:
+            type: switch
+            label: theme.newshub::lang.widget.blog_categories.empty.label
+            comment: theme.newshub::lang.widget.blog_categories.empty.comment
+            default: true
+            span: right
 
-    ###########################
-    ### WIDGET: STATIC MENU ###
-    ###########################
-    widget_static_menu:
-        type: nestedform
-        showPanel: false
-        form: ~/themes/newshub/config/widgets/static-menu.yaml
-        trigger:
-            action: show
-            condition: value[static_menu]
-            field: widget_type
+blog_tags:
+    name: theme.newshub::lang.widget.blog_tags.label
+    description: theme.newshub::lang.widget.blog_tags.comment
+    fields:
+        title:
+            type: text
+            label: theme.newshub::lang.widget.general.title.label
+            comment: theme.newshub::lang.widget.general.title.comment
+            span: left
+        subtitle:
+            type: text
+            label: theme.newshub::lang.widget.general.subtitle.label
+            comment: theme.newshub::lang.widget.general.subtitle.comment
+            span: right
+        number:
+            type: number
+            label: theme.newshub::lang.widget.shared.number.label
+            comment: theme.newshub::lang.widget.shared.number.comment
+            default: 5
+            span: left
+        counter:
+            type: switch
+            label: theme.newshub::lang.widget.shared.counter.label
+            comment: theme.newshub::lang.widget.shared.counter.comment
+            default: true
+            span: left
+        promoted:
+            type: switch
+            label: theme.newshub::lang.widget.blog_tags.promoted.label
+            comment: theme.newshub::lang.widget.blog_tags.promoted.comment
+            default: true
+            span: right
 
-    #######################
-    ### WIDGET: CONTENT ###
-    #######################
-    widget_content:
-        type: nestedform
-        showPanel: false
-        form: ~/themes/newshub/config/widgets/content.yaml
-        trigger:
-            action: show
-            condition: value[content]
-            field: widget_type
+static_menu:
+    name: theme.newshub::lang.widget.static_menu.label
+    description: theme.newshub::lang.widget.static_menu.comment
+    fields:
+        title:
+            type: text
+            label: theme.newshub::lang.widget.general.title.label
+            comment: theme.newshub::lang.widget.general.title.comment
+            span: left
+        subtitle:
+            type: text
+            label: theme.newshub::lang.widget.general.subtitle.label
+            comment: theme.newshub::lang.widget.general.subtitle.comment
+            span: right
+        menu_code:
+            type: text
+            label: theme.newshub::lang.widget.static_menu.menu_code.label
+            comment: theme.newshub::lang.widget.static_menu.menu_code.comment
+            required: true
+            span: left
 
-    #########################
-    ### WIDGET: HTML CODE ###
-    #########################
-    widget_html:
-        type: nestedform
-        showPanel: false
-        form: ~/themes/newshub/config/widgets/html.yaml
-        trigger:
-            action: show
-            condition: value[html]
-            field: widget_type
+content:
+    name: theme.newshub::lang.widget.content.label
+    description: theme.newshub::lang.widget.content.comment
+    fields:
+        title:
+            type: text
+            label: theme.newshub::lang.widget.general.title.label
+            comment: theme.newshub::lang.widget.general.title.comment
+            span: left
+        subtitle:
+            type: text
+            label: theme.newshub::lang.widget.general.subtitle.label
+            comment: theme.newshub::lang.widget.general.subtitle.comment
+            span: right
+        content:
+            type: richeditor
+            label: theme.newshub::lang.widget.shared.content.label
+            comment: theme.newshub::lang.widget.shared.content.comment
 
-    ################################
-    ### WIDGET: TABLE OF CONTENT ###
-    ################################
-    widget_toc:
-        type: nestedform
-        showPanel: false
-        form: ~/themes/newshub/config/widgets/toc.yaml
-        trigger:
-            action: show
-            condition: value[toc]
-            field: widget_type
+html:
+    name: theme.newshub::lang.widget.html.label
+    description: theme.newshub::lang.widget.html.comment
+    fields:
+        title:
+            type: text
+            label: theme.newshub::lang.widget.general.title.label
+            comment: theme.newshub::lang.widget.general.title.comment
+            span: left
+        subtitle:
+            type: text
+            label: theme.newshub::lang.widget.general.subtitle.label
+            comment: theme.newshub::lang.widget.general.subtitle.comment
+            span: right
+        content:
+            type: codeeditor
+            label: theme.newshub::lang.widget.shared.content.label
+            comment: theme.newshub::lang.widget.shared.content.comment
+            language: html
+
+image:
+    name: theme.newshub::lang.widget.image.label
+    description: theme.newshub::lang.widget.image.comment
+    fields:
+        title:
+            type: text
+            label: theme.newshub::lang.widget.general.title.label
+            comment: theme.newshub::lang.widget.general.title.comment
+            span: left
+        subtitle:
+            type: text
+            label: theme.newshub::lang.widget.general.subtitle.label
+            comment: theme.newshub::lang.widget.general.subtitle.comment
+            span: right
+        image:
+            type: mediafinder
+            label: theme.newshub::lang.widget.image.image.label
+            comment: theme.newshub::lang.widget.image.image.comment
+            mode: image
+            maxItems: 1
+        content:
+            type: textarea
+            label: theme.newshub::lang.widget.shared.content.label
+            comment: theme.newshub::lang.widget.shared.content.comment

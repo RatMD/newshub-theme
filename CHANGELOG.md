@@ -1,8 +1,56 @@
 NewsHub - Changelog
 ===================
 
-Version 1.3.0 - in Progress
+Version 1.3.0 - In Progress
 ---------------------------
+- Add: Additional Meta-Tag theme options (base, robots, color-scheme and theme-color).
+- Add: "Provide Dark Color-Scheme" option (to toggle the dark color-scheme in general).
+- Add: "Overwrite CSS Color Palette" option (to overwrite the Theme Colors using css properties).
+- Add: "Gray Color Palette" option to change the gray colors / style. 
+- Add: "Header Position" option to change the header position behavior (Static, Sticky or Slide).
+- Add: "User Action" header integration (requires RainLab.User), available on Extended navbar style only.
+- Add: "Site Picker" header integration (requires October CMS v3.1), available on Extended navbar style only.
+- Add: "Slider Controls" option to toggle the control buttons on the Hero-Slider.
+- Add: "Slider Indicators" option to toggle the slide-indicators on the Hero-Slider.
+- Add: New Notice theme options, which is shown above the article list on the homepage.
+- Add: "Post Category" option to toggle the Category Link on the post lists.
+- Add: "Post Featured Tags" option to toggle the Featured Tag Links on the post lists.
+- Add: "Share Links" option to toggle privacy-protected Share Links above the article content.
+- Add: "Similar / Random Posts" option to toggle the Similar / Random post section below the single post.
+- Add: New Sidebar Widget Builder theme option.
+- Add: New Sidebar widget `Related Posts`, to display a list of related posts (on single blog posts only).
+- Add: New Sidebar widget `Blog Comment`, to display a list of comments.
+- Add: New Sidebar widget `Image`, to display custom image with text.
+- Add: Default favicon + webmanifest set.
+- Add: New Navbar Toggler ([CodePen Source](https://codepen.io/ainalem/pen/LJYRxz)).
+- Update: Use the grouped repeater widget for sidebar widgets.
+- Update: Sidebar to Widget environment for Homepage, Archive, Static Page and Blog Post pages.
+- Update: `Blog Posts` widget replaces `List Articles`.
+- Update: `Blog Authors` widget replaces `List Authors`.
+- Update: `Blog Categories` widget replaces `List Categories`.
+- Update: `Blog Tags` widget replaces `List Tags`.
+- Update: `Static Menu` widget replaces `Static Menu`.
+- Update: `Content` widget replaces `Content`.
+- Update: `HTML Code` widget replaces `HTML Code`.
+- Update: `Table of Contents` widget replaces `Table of Contents`.
+- Update: `Current Author` widget replaces `Current Author`.
+- Update: `Current Categories` widget replaces `Current Categories`.
+- Update: `Current Tags` widget replaces `Current Tags`.
+- Update: `Next | Previous Posts` widget replaces `Next / Previous Buttons`.
+- Update: Meta-Tag theme options.
+- Update: Appearance theme options.
+- Update: Header theme options.
+- Update: Change rollup bundle to esbuild bundle.
+- Update: Bootstrap package to v5.2.2.
+- Update: Keen Slider package to v6.8.2.
+- Update: Set full color palette into style tag (including rgb variants).
+- Update: Main SCSS file structure.
+- Update: Re-written header / navbar JavaScript (within the new Navbar class).
+- Update: Change dropdown design / stylings on all header actions (same styling as main-menu).
+- Update: Offcanvas and Modal design (+ dark design variant).
+- Update: Dark (and Light) Bootstrap stylings and improvements.
+- Remove: "sticky_header" option, has been replaced with "Header Position" > "Sticky".
+- Bugfix: Set HTML lang to current locale instead of fixed 'en'.
 
 ### ToDo
 - Add: Support for RainLab.User plugin.
@@ -10,12 +58,7 @@ Version 1.3.0 - in Progress
 - Add: New Blog Posts Content Element (show posts by author, category, date or tag).
 - Add: New Blog Lists Content Element (show list of authors, categories or tags).
 - Add: New File List Content Element (show download file list with icon and stuff).
-- Add: New Sidebar widget `Related Posts`, to display a list of related posts.
-- Add: New Sidebar widget `Comment`, to display a list of comments.
-- Add: New Sidebar widget `Image`, to display custom image with text.
-- Update: Change dropdown design / stylings on all header actions (same styling as main-menu).
-- Update: Use the grouped repeater widget for sidebar widgets.
-- Update: Sidebar to Widget environment for Homepage, Page and Post.
+- Update: Change Bootstrap 5 Lightbox package with a custom Lightbox plugin.
 
 Version 1.2.2 - Stable
 ----------------------

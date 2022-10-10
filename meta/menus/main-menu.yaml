@@ -13,12 +13,12 @@ items:
             cssClass: ''
             isExternal: '0'
     -
-        title: Magazine
+        title: Pages
         nesting: null
-        type: cms-page
+        type: header
         url: null
         code: ''
-        reference: magazine
+        reference: null
         cmsPage: null
         replace: null
         viewBag:
@@ -27,11 +27,11 @@ items:
                     title: ''
                     url: ''
             isHidden: '0'
-            cssClass: ''
+            cssClass: master-menu
             isExternal: '0'
         items:
             -
-                title: 'Example Archives'
+                title: Archives
                 nesting: null
                 type: header
                 url: null
@@ -48,6 +48,23 @@ items:
                     cssClass: ''
                     isExternal: '0'
                 items:
+                    -
+                        title: 'Magazine Page'
+                        nesting: null
+                        type: cms-page
+                        url: null
+                        code: ''
+                        reference: magazine
+                        cmsPage: null
+                        replace: null
+                        viewBag:
+                            locale:
+                                de:
+                                    title: ''
+                                    url: ''
+                            isHidden: '0'
+                            cssClass: ''
+                            isExternal: '0'
                     -
                         title: 'Author Archive'
                         nesting: null
@@ -116,8 +133,25 @@ items:
                             isHidden: '0'
                             cssClass: ''
                             isExternal: '0'
+                    -
+                        title: 'Search Archive'
+                        nesting: null
+                        type: url
+                        url: 'http://127.0.0.1:8000/magazine/search?search=article'
+                        code: ''
+                        reference: null
+                        cmsPage: null
+                        replace: null
+                        viewBag:
+                            locale:
+                                de:
+                                    title: ''
+                                    url: ''
+                            isHidden: '0'
+                            cssClass: ''
+                            isExternal: '0'
             -
-                title: 'Example Articles'
+                title: Articles
                 nesting: null
                 type: header
                 url: null
@@ -169,12 +203,12 @@ items:
                             cssClass: ''
                             isExternal: '0'
                     -
-                        title: 'Gallery Article'
+                        title: 'Carousel Article'
                         nesting: null
                         type: blog-post
                         url: null
                         code: ''
-                        reference: '7'
+                        reference: '10'
                         cmsPage: blog/post
                         replace: null
                         viewBag:
@@ -186,12 +220,12 @@ items:
                             cssClass: ''
                             isExternal: '0'
                     -
-                        title: 'Carousel Article'
+                        title: 'Gallery Article'
                         nesting: null
                         type: blog-post
                         url: null
                         code: ''
-                        reference: '10'
+                        reference: '7'
                         cmsPage: blog/post
                         replace: null
                         viewBag:
@@ -211,6 +245,166 @@ items:
                         reference: '9'
                         cmsPage: blog/post
                         replace: null
+                        viewBag:
+                            locale:
+                                de:
+                                    title: ''
+                                    url: ''
+                            isHidden: '0'
+                            cssClass: ''
+                            isExternal: '0'
+                    -
+                        title: 'Featured Article'
+                        type: url
+                        url: /
+                        code: ''
+                        viewBag:
+                            locale:
+                                de:
+                                    title: ''
+                                    url: ''
+                            isHidden: '0'
+                            cssClass: ''
+                            isExternal: '0'
+            -
+                title: Community
+                type: header
+                code: ''
+                viewBag:
+                    locale:
+                        de:
+                            title: ''
+                            url: ''
+                    isHidden: '0'
+                    cssClass: ''
+                    isExternal: '0'
+                items:
+                    -
+                        title: 'User Account'
+                        type: url
+                        url: /
+                        code: ''
+                        viewBag:
+                            locale:
+                                de:
+                                    title: ''
+                                    url: ''
+                            isHidden: '0'
+                            cssClass: ''
+                            isExternal: '0'
+                    -
+                        title: 'User Profile'
+                        type: url
+                        url: /
+                        code: ''
+                        viewBag:
+                            locale:
+                                de:
+                                    title: ''
+                                    url: ''
+                            isHidden: '0'
+                            cssClass: ''
+                            isExternal: '0'
+                    -
+                        title: 'Profile Settings'
+                        type: url
+                        url: /
+                        code: ''
+                        viewBag:
+                            locale:
+                                de:
+                                    title: ''
+                                    url: ''
+                            isHidden: '0'
+                            cssClass: ''
+                            isExternal: '0'
+                    -
+                        title: 'Community Forum'
+                        type: url
+                        url: /
+                        code: ''
+                        viewBag:
+                            locale:
+                                de:
+                                    title: ''
+                                    url: ''
+                            isHidden: '0'
+                            cssClass: ''
+                            isExternal: '0'
+            -
+                title: Specials
+                nesting: null
+                type: header
+                url: null
+                code: ''
+                reference: null
+                cmsPage: null
+                replace: null
+                viewBag:
+                    locale:
+                        de:
+                            title: ''
+                            url: ''
+                    isHidden: '0'
+                    cssClass: ''
+                    isExternal: '0'
+                items:
+                    -
+                        title: '404 Page not Found'
+                        nesting: null
+                        type: url
+                        url: /
+                        code: ''
+                        reference: null
+                        cmsPage: null
+                        replace: null
+                        viewBag:
+                            locale:
+                                de:
+                                    title: ''
+                                    url: ''
+                            isHidden: '0'
+                            cssClass: ''
+                            isExternal: '0'
+                    -
+                        title: 'An error occured'
+                        nesting: null
+                        type: url
+                        url: /
+                        code: ''
+                        reference: null
+                        cmsPage: null
+                        replace: null
+                        viewBag:
+                            locale:
+                                de:
+                                    title: ''
+                                    url: ''
+                            isHidden: '0'
+                            cssClass: ''
+                            isExternal: '0'
+                    -
+                        title: 'Maintenance Page'
+                        nesting: null
+                        type: url
+                        url: /
+                        code: ''
+                        reference: null
+                        cmsPage: null
+                        replace: null
+                        viewBag:
+                            locale:
+                                de:
+                                    title: ''
+                                    url: ''
+                            isHidden: '0'
+                            cssClass: ''
+                            isExternal: '0'
+                    -
+                        title: 'Under Constructions'
+                        type: url
+                        url: /
+                        code: ''
                         viewBag:
                             locale:
                                 de:
@@ -271,12 +465,49 @@ items:
                     isHidden: '0'
                     cssClass: ''
                     isExternal: '0'
+            -
+                title: 'Test SubMenu'
+                nesting: null
+                type: url
+                url: /
+                code: ''
+                reference: null
+                cmsPage: null
+                replace: null
+                viewBag:
+                    locale:
+                        de:
+                            title: ''
+                            url: ''
+                    isHidden: '0'
+                    cssClass: ''
+                    isExternal: '0'
+                items:
+                    -
+                        title: 'Test SubMenu'
+                        nesting: null
+                        type: url
+                        url: /
+                        code: ''
+                        reference: null
+                        cmsPage: null
+                        replace: null
+                        viewBag:
+                            locale:
+                                de:
+                                    title: ''
+                                    url: ''
+                            isHidden: '0'
+                            cssClass: ''
+                            isExternal: '0'
     -
         title: 'Page Builder'
         nesting: 1
         type: static-page
+        url: null
         code: ''
         reference: page-builder
+        cmsPage: null
         replace: 0
         viewBag:
             locale:

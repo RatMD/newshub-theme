@@ -1,0 +1,38 @@
+
+// ----------------------------------------
+//  Modal Component
+// ----------------------------------------
+
+.modal {
+    .modal-content {
+        box-shadow: $box-shadow-lg;
+    }
+
+    .modal-header {
+        border-bottom: 0;
+        background-color: var(--bs-gray-100);
+    }
+    
+    .modal-body {
+        padding-top: $spacer * 2;
+        padding-bottom: 0;
+    }
+
+    .modal-footer {
+        border-top: 0;
+    }
+}
+
+.dark .modal {
+    .modal-header {
+        background-color: var(--bs-gray-900);
+    }
+    
+    .modal-body {
+        background-color: var(--bs-gray-800);
+    }
+
+    .modal-footer {
+        background-color: var(--bs-gray-800);
+    }
+}
