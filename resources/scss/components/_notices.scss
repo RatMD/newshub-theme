@@ -1,0 +1,95 @@
+@use "sass:map";
+
+// ----------------------------------------
+//  Notice Component
+// ----------------------------------------
+
+.notice {
+    --#{$prefix}notice-bg: #{transparent};
+    --#{$prefix}notice-color: #{transparent};
+    --#{$prefix}notice-border-radius: #{$border-radius};
+    --#{$prefix}notice-padding-x: #{$spacer * 0.5};
+    --#{$prefix}notice-padding-y: #{$spacer * 0.5};
+    --#{$prefix}notice-label-bg: #{transparent};
+    --#{$prefix}notice-label-color: #{transparent};
+    --#{$prefix}notice-label-padding-x: #{$spacer * 0.75};
+    --#{$prefix}notice-label-padding-y: #{$spacer * 0.15};
+
+    color: var(--#{$prefix}notice-color);
+    margin: 0 0 $spacer 0;
+    padding: var(--#{$prefix}notice-padding-y) var(--#{$prefix}notice-padding-x);
+    display: flex;
+    align-items: center;
+    background-color: var(--#{$prefix}notice-bg);
+    border-radius: var(--#{$prefix}border-radius);
+    text-decoration: none;
+
+    &:hover {
+        color: var(--#{$prefix}notice-color);
+    }
+    .notice-label {
+        color: var(--#{$prefix}notice-label-color);
+        margin-right: $spacer * 0.75;
+        padding: var(--#{$prefix}notice-label-padding-y) var(--#{$prefix}notice-label-padding-x);
+        font-weight: 600;
+        background-color: var(--#{$prefix}notice-label-bg);
+        border-radius: var(--#{$prefix}border-radius);
+        @include font-size(map.get($font-sizes, 7));
+    }
+    .notice-text {
+        margin: 0;
+        padding: 0;
+        display: block;
+    }
+}
+
+
+// ----------------------------------------
+//  Notices Colors
+// ----------------------------------------
+@each $state, $value in $theme-colors {
+    $weight: -90%;
+    @if $state == 'light' {
+        $weight: -50%;
+    }
+
+    $notice-color: $value;
+    $notice-bg: shift-color($value, $weight);
+    @if (contrast-ratio($notice-bg, $notice-color) < $min-contrast-ratio) {
+        $notice-color: mix($value, color-contrast($notice-bg), abs($weight));
+    }
+
+    .notice-#{$state} {
+        --#{$prefix}notice-color: #{$notice-color};
+        --#{$prefix}notice-bg: #{$notice-bg};
+        --#{$prefix}notice-label-bg: #{$notice-color};
+        --#{$prefix}notice-label-color: #{$notice-bg};
+        
+        a {
+            color: $value;
+        }
+    }
+
+    $weight: 90%;
+    $notice-color: $value;
+    $notice-bg: shift-color($value, $weight);
+    @if (contrast-ratio($notice-bg, $notice-color) < $min-contrast-ratio) {
+        $notice-color: mix($value, color-contrast($notice-bg), abs($weight));
+    }
+    
+    $notice-label: $white;
+    @if (contrast-ratio($notice-color, $notice-label) < 3.5) {
+        $notice-label: $black;
+    }
+
+    .dark .notice-#{$state} {
+        --#{$prefix}notice-color: #{$notice-color};
+        --#{$prefix}notice-bg: #{transparentize($value, 0.9)};
+        --#{$prefix}notice-label-bg: #{$notice-color};
+        --#{$prefix}notice-label-color: #{$notice-label};
+        
+        a {
+            color: $value;
+        }
+    }
+}

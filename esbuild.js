@@ -25,7 +25,7 @@ function assets(disableJs, disableCss, watchMode) {
     const entryPoints = {};
 
     if (!disableJs) {
-        entryPoints['js/newshub.min'] = 'resources/js/theme.js';
+        entryPoints['js/newshub.min'] = 'resources/ts/theme.ts';
     }
 
     if (!disableCss) {
@@ -39,7 +39,7 @@ function assets(disableJs, disableCss, watchMode) {
             external: [
                 '*.woff', 
                 '*.woff2',
-                '/resources/js/vendors/*'
+                '/resources/ts/vendors/*'
             ],
             format: 'iife',
             outdir: 'assets',
@@ -90,7 +90,7 @@ function vendors() {
             external: [],
             format: 'iife',
             keepNames: true,
-            outdir: 'assets/js/vendors',
+            outdir: 'assets/ts/vendors',
             minify: true,
             sourcemap: true,
             target: "es2019",

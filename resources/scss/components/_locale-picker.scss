@@ -27,12 +27,12 @@
 
         &:hover,
         &:focus {
-            background-color: var(--bs-gray-300);
+            background-color: var(--#{$prefix}gray-300);
         }
 
         .dark &:hover,
         .dark &:focus {
-            background-color: var(--bs-gray-800);
+            background-color: var(--#{$prefix}gray-800);
         }
     }
 

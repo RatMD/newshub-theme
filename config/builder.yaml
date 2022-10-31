@@ -501,9 +501,19 @@ content:
     icon: newshub-bi newshub-bi-content
     fields:
         title:
-            type: text
+            type: ratmd.input-select
             label: theme.newshub::lang.builder.globals.title.label
             comment: theme.newshub::lang.builder.globals.title.comment
+            defaultOption: h2
+            options: 
+                h1: theme.newshub::lang.builder.header.layout.h1
+                h2: theme.newshub::lang.builder.header.layout.h2
+                h3: theme.newshub::lang.builder.header.layout.h3
+                h4: theme.newshub::lang.builder.header.layout.h4
+                h5: theme.newshub::lang.builder.header.layout.h5
+                h6: theme.newshub::lang.builder.header.layout.h6
+                hidden: theme.newshub::lang.builder.globals.hidden
+            showSearch: false
             span: left
         layout:
             type: dropdown
@@ -1317,12 +1327,26 @@ slider:
             comment: theme.newshub::lang.builder.carousel.indicators.comment
             default: true
             span: right
+        autoplay:
+            type: switch
+            label: theme.newshub::lang.builder.slider.autoplay.label
+            comment: theme.newshub::lang.builder.slider.autoplay.comment
+            default: true
+            span: left
+            trigger:
+                action: disable
+                field: animation
+                condition: value[marquee]
         loop:
             type: switch
             label: theme.newshub::lang.builder.carousel.loop.label
             comment: theme.newshub::lang.builder.carousel.loop.comment
             default: false
-            span: left
+            span: right
+            trigger:
+                action: disable
+                field: animation
+                condition: value[marquee]
         animation:
             type: balloon-selector
             label: theme.newshub::lang.builder.slider.animation.label
@@ -1332,6 +1356,7 @@ slider:
                 slide: theme.newshub::lang.builder.carousel.animation.slide
                 fade: theme.newshub::lang.builder.carousel.animation.fade
                 zoom: theme.newshub::lang.builder.carousel.animation.zoom
+                marquee: theme.newshub::lang.builder.carousel.animation.marquee
             span: left
         interval:
             type: number
@@ -1352,45 +1377,12 @@ slider:
             comment: theme.newshub::lang.builder.slider.spacing.comment
             default: 0
             span: right
-        autoplay:
-            type: switch
-            label: theme.newshub::lang.builder.slider.autoplay.label
-            comment: theme.newshub::lang.builder.slider.autoplay.comment
-            default: true
-            span: left
-        marquee:
-            type: switch
-            label: theme.newshub::lang.builder.slider.marquee.label
-            comment: theme.newshub::lang.builder.slider.marquee.comment
-            default: false
-            span: right
-            trigger:
-                action: show
-                field: autoplay
-                condition: checked
-        autoplay_interval:
-            type: number
-            label: theme.newshub::lang.builder.slider.autoplay_interval.label
-            comment: theme.newshub::lang.builder.slider.autoplay_interval.comment
-            min: 0
-            default: 5000
-            span: left
-            trigger:
-                action: show
-                field: autoplay
-                condition: checked
         touch:
             type: switch
             label: theme.newshub::lang.builder.carousel.touch.label
             comment: theme.newshub::lang.builder.carousel.touch.comment
             default: true
             span: left
-        keyboard:
-            type: switch
-            label: theme.newshub::lang.builder.carousel.keyboard.label
-            comment: theme.newshub::lang.builder.carousel.keyboard.comment
-            default: true
-            span: right
         children:
             type: repeater
             label: theme.newshub::lang.builder.slider.items.label

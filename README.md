@@ -1,14 +1,26 @@
 NewsHub - Free Magazine Template
 ================================
-**NewsHub** is a simple and responsive magazine and blog template, exclusively designed for 
-OctoberCMS v2 / v3. It provides a minimalistic design using **Bootstrap v5.2** as powerful CSS and 
-JS Framework and includes **Bootstrap Icons** and the responsive **Keen Slider**.
+
+**NewsHub** is a free, minimalist and responsive Blog and Magazine template, designed for OctoberCMS 
+v2 and v3. It provides a clean and configurable structure using **Bootstrap v5.2** as powerful CSS 
+and JS Framework, includes the beautiful **Bootstrap Icons** and implements the responsive and 
+feature-rich **Keen Slider** package.
 
 [View the Demo-Website](https://themes.rat.md/newshub)
 
-[Check out the Documentation](https://octobercms.com/theme/ratmd-newshub#documentation)
+[Please rate our Template on the Marketplace](https://octobercms.com/theme/ratmd-newshub#reviews)
 
-[Contact Us](mailto:info@rat.md)
+[Contact us on any Question](mailto:info@rat.md)
+
+
+Support NewsHub
+---------------
+Please support us and our free NewsHub template by writing a [review](https://octobercms.com/theme/ratmd-newshub#reviews) 
+on our official [OctoberCMS marketplace page](https://octobercms.com/theme/ratmd-newshub). You can 
+also report bugs, request features and more on the [support forum](https://octobercms.com/theme/support/ratmd-newshub) 
+or directly on our [GitHub repository](https://github.com/RatMD/newshub-theme/issues).
+
+**We appreciate your support.**
 
 
 What's new in v1.3.0
@@ -18,7 +30,7 @@ header and navbar structure, integrating the new **Site-Picker** component (as i
 OctoberCMS v3.1 release) and providing more customization and improvements in general.
 
 - Support for the new **Site Picker** component, introduced in [OctoberCMS v3.1.0](https://octobercms.com/blog/post/october-cms-stable-version-31-live).
-- Support for the **RainLab.User** and **RainLab.Forum** plugins.
+- Support for the **RainLab.User**, **RainLab.Forum** and additional plugins.
 - A new **Sidebar Widget Builder** for your Homepage, Archives, Static Pages and Posts (with more widgets).
 - A nice bag full of new theme configurations and options.
 - Many improvements, especially for the header, navbar and general Bootstrap stylings.
@@ -38,7 +50,7 @@ create new static pages with over **18 different** Bootstrap and custom **conten
 
 All Features
 ------------
-- **Bootstrap** v5.2 with **Bootstrap Icons** v1.9.1 (usable as partials)
+- **Bootstrap** v5.2 with **Bootstrap Icons** v1.9 (usable as partials)
 - Fully **Responsive** and mobile-first
 - **Multi-Language Support** (using RainLab.Translate)
 - Native **Site-Picker Support** (requires OctoberCMS v3.1+)
@@ -91,8 +103,8 @@ We recommend using this template with the latest OctoberCMS **v3** version, howe
 is still available.
 
 - Modern Browser (IE and Edge Legacy are NOT supported!)
-- PHP 7.4+ / 8.0+
-- OctoberCMS v2 / v3
+- PHP 7.4+ / 8.0+ (recommended: 8.0)
+- OctoberCMS v2 / v3 (recommended: 3..1)
 - Plugin: [RainLab.Blog](https://octobercms.com/plugin/rainlab-blog)
 - Plugin: [RainLab.Pages](https://octobercms.com/plugin/rainlab-pages)
 - Plugin: [RainLab.Sitemap](https://octobercms.com/plugin/rainlab-sitemap)
@@ -103,6 +115,8 @@ is still available.
 The following plugins are not required but supported by the **NewsHub** template:
 
 - Plugin: [JanVince.SmallContactForm](https://octobercms.com/plugin/janvince-smallcontactform)
+- Plugin: [JanVince.SmallGDPR](https://octobercms.com/plugin/janvince-smallgdpr)
+- Plugin: [BlakeJones.MagicForms](https://octobercms.com/plugin/blakejones-magicforms)
 - Plugin: [RainLab.BlogVideoExtension](https://octobercms.com/plugin/rainlab-blogvideoextension)
 - Plugin: [RainLab.User](https://octobercms.com/plugin/rainlab-user) 
 - Plugin: [RainLab.Forum](https://octobercms.com/plugin/rainlab-forum) 

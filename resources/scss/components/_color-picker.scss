@@ -22,16 +22,16 @@
         &:hover,
         &:focus,
         &:focus-within {
-            background-color: var(--bs-gray-300);
+            background-color: var(--#{$prefix}gray-300);
         }
 
         .dark & {
-            color: var(--bs-gray-300);
+            color: var(--#{$prefix}gray-300);
         }
         .dark &:hover,
         .dark &:focus,
         .dark &:focus-within {
-            background-color: var(--bs-gray-800);
+            background-color: var(--#{$prefix}gray-800);
         }
 
         input[type="checkbox"] {

@@ -70,13 +70,13 @@ code = "meta-menu"
 
         {# Language Picker | Color Picker (Condensed) #}
         {% if this.theme.header_style == 'condensed' %}
-            {% if this.theme.languages_menu_top or this.theme.color_switch_top %}
+            {% if this.theme.languages_menu_top or (this.theme.color_switch_top and this.theme.enable_dark_scheme) %}
                 <div class="navbar-picker">
                     {% if this.theme.languages_menu_top %}
                         {% partial 'localepicker/default' dropdown=true dropdown_classes='dropdown-menu-center' %}
                     {% endif %}
                     
-                    {% if this.theme.color_switch_top %}
+                    {% if this.theme.color_switch_top and this.theme.enable_dark_scheme %}
                         {% partial 'colorpicker/default' %}
                     {% endif %}
                 </div>
@@ -95,7 +95,7 @@ code = "meta-menu"
         {# Action Toolbar (Extended) #}
         {% if this.theme.header_style == 'extended' %}
             {% set actions = 0 %}
-            {% if this.theme.color_switch_top %}
+            {% if this.theme.color_switch_top and this.theme.enable_dark_scheme %}
                 {% set actions = actions + 1 %}
             {% endif %}
             {% if this.theme.languages_menu_top %}

@@ -13,239 +13,185 @@
 .keen-slider {
     position: relative;
 
-    .keen-slider-slide {
-        z-index: 50;
-        position: relative;
-    }
-    .keen-slider-controls {
-        top: 0;
-        left: 0;
-        right: 0;
-        height: 100%;
-        overflow: visible;
-        z-index: 100;
-        position: absolute;
-        pointer-events: none;
-
-        & > button {
-            top: 0;
-            bottom: 0;
-            color: $white;
-            height: 100%;
-            display: flex;
-            padding: 0 $spacer * 2;
-            position: absolute;
-            align-items: center;
-            justify-content: center;
-            pointer-events: fill;
-            outline: none !important;
-            box-shadow: none !important;
-
-            svg {
-                width: 32px;
-                height: 32px;
-            }
-
-            &[data-keen-slider-control="prev"],
-            &[data-keen-slider-control="previous"] {
-                left: 0;
-            }
-            &[data-keen-slider-control="next"] {
-                right: 0;
-            }
-        }
-    }
-    .keen-slider-indicators {
-        left: 0;
-        right: 0;
-        bottom: 0;
-        overflow: visible;
-        z-index: 100;
-        display: flex;
-        justify-content: center;
-        position: absolute;
-        pointer-events: none;
-
-        & > [data-keen-slider-indicator] {
-            width: 32px;
-            height: 4px;
-            padding: 0;
-            margin-left: $spacer * 0.15;
-            margin-right: $spacer * 0.15;
-            margin-bottom: $spacer * 1;
-            pointer-events: fill;
-            outline: none !important;
-            border: 0;
-            border-radius: 3px;
-            opacity: 0.5;
-            box-shadow: none !important;
-            background-color: white;
-            transition: background-color 200ms ease, opacity 200ms ease;
-
-            &.active {
-                opacity: 0.9;
-            }
-        }
-    }
-
-    .slide-image {
-        z-index: 50;
-        position: relative;
-    }
     a {
         text-decoration: none;
     }
+    .keen-slider-slide {
+        position: relative;
+    }
     .slide-content {
-        color: $white;
+        color: var(--#{$prefix}white);
         left: 0;
         right: 0;
-        bottom: $spacer * 2;
-        z-index: 100;
-        padding: $spacer * 2 $spacer * 3;
-        text-align: center;
-        position: absolute;
-        background-color: rgba(0, 0, 0, 0.5);
-
-        div.h4 {
-            margin: 0 !important;
-        }
-        p {
-            margin: 0;
-        }
-    }
-}
-
-// ----------------------------------------
-//  Multiple Stylings
-// ----------------------------------------
-
-.keen-slider.keen-slider-multiple {
-    &[data-keen-controls],
-    &[data-keen-indicators] {
-        padding-bottom: 34px;
-    }
-
-    .keen-slider-controls,
-    .keen-slider-indicators {
-        top: auto;
-        height: 34px;
-        display: flex;
         bottom: 0;
+        padding: $spacer * 2 $spacer * 2;
+        position: absolute;
+        text-align: center;
+        background-color: transparent;
+        background-image: linear-gradient(to top, rgba(0, 0, 0, 0.9) 0%, rgba(0, 0, 0, 0.0) 100%);
+
+        .slide-title {
+            margin-bottom: $spacer * 0.5 !important;
+        }
     }
 
-    .keen-slider-controls {
-        justify-content: space-between;
-
-        & > button {
+    // Multiple Slides
+    &.keen-slider-multiple {
+        .slide-content {
+            color: var(--#{$prefix}body-color);
+            left: auto;
+            right: auto;
+            bottom: auto;
+            padding: $spacer * 1.25 $spacer * 0.5 $spacer * 0.5;
             position: relative;
+            text-align: left;
+            background-image: none;
+            text-decoration: none;
 
-            svg {
-                fill: var(--#{$prefix}body-color);
+            .slide-title.h5 {
+                @extend .h6;
+                margin: 0 !important;
+            }
+            .slide-text {
+                margin: 0;
+                font-size: map-get($font-sizes, 8);
+
+                p {
+                    margin-bottom: 0;
+                }
             }
         }
     }
 
-    .keen-slider-indicators {
-        align-items: center;
-
-        & > [data-keen-slider-indicator] {
-            margin-bottom: 0;
-            background-color: var(--#{$prefix}body-color);
+    // Slide Animation
+    &.keen-slider-slide {
+        .keen-slider-slide {
+            width: 100%;
+            height: 100%;
+            flex: 0 0 100%;
         }
     }
     
-    .slide-content {
-        color: var(--#{$prefix}body-color);
-        left: auto;
-        right: auto;
-        bottom: auto;
-        padding-top: $spacer;
-        position: relative;
-        background-color: transparent;
-        text-decoration: none;
-
-        .h4 {
-            @extend .h6;
-        }
-        p {
-            @extend .fs-7;
-        }
-    }
-}
-
-
-// ----------------------------------------
-//  Fade Animation Stylings
-// ----------------------------------------
-
-.keen-slider.keen-slider-fade {
-    width: 100%;
-    height: 600px;
-    max-height: 50vh;
-    position: relative;
-    overflow: hidden;
-
-    .keen-slider-slide {
-        top: 0;
-        opacity: 0;
+    // Fade Animation
+    &.keen-slider-fade {
         width: 100%;
-        height: 100%;
-        position: absolute;
+        height: 600px;
+        max-height: 50vh;
+        overflow: hidden;
 
-        .slide-image {
-            top: 50%;
-            left: 50%;
+        .keen-slider-slide {
+            top: 0;
+            opacity: 0;
             width: 100%;
             height: 100%;
             position: absolute;
-            transform: translateY(-50%) translateX(-50%);
 
-            img {
-                width: 100%;
-                height: 100%;
-                object-fit: cover;
-                object-position: center;
-            }
-        }
-    }
-}
-
-
-// ----------------------------------------
-//  Zoom Animation Stylings
-// ----------------------------------------
-
-.keen-slider.keen-slider-zoom {
-    width: 100%;
-    height: 600px;
-    max-height: 50vh;
-    overflow: hidden;
-    position: relative;
-    perspective: 1000px;
-
-    .keen-slider-slide {
-        width: 100%;
-        height: 100%;
-        position: relative;
-
-        .slide-image {
-            width: 100%;
-            height: 100%;
-            overflow: hidden;
-            position: absolute;
-
-            img {
+            .slide-image {
                 top: 50%;
                 left: 50%;
                 width: 100%;
                 height: 100%;
-                object-fit: cover;
-                object-position: center;
                 position: absolute;
-                background-color: transparent;
                 transform: translateY(-50%) translateX(-50%);
+
+                img {
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                    object-position: center;
+                }
             }
         }
+    }
+
+    // Slide Animation
+    &.keen-slider-zoom {
+        width: 100%;
+        height: 600px;
+        max-height: 50vh;
+        overflow: hidden;
+        perspective: 1000px;
+    
+        .keen-slider-slide {
+            width: 100%;
+            height: 100%;
+            position: relative;
+    
+            .slide-image {
+                width: 100%;
+                height: 100%;
+                overflow: hidden;
+                position: absolute;
+    
+                img {
+                    top: 50%;
+                    left: 50%;
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                    object-position: center;
+                    position: absolute;
+                    background-color: transparent;
+                    transform: translateY(-50%) translateX(-50%);
+                }
+            }
+        }
+    }
+
+    // Marquee Animation
+    &.keen-slider-marquee {
+        
+    }
+}
+
+
+// ----------------------------------------
+//  Control Stylings
+// ----------------------------------------
+
+.keen-slider-controls {
+    position: absolute;
+    z-index: 200;
+
+    .no-js & {
+        display: none;
+    }
+
+    button {
+        color: rgba(255, 255, 255, 0.5);
+        width: 48px;
+        height: 48px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border: 2px solid rgba(255, 255, 255, 0.5);
+        border-radius: 50%;
+
+        &:hover {
+            color: white;
+            border-color: white;
+        }
+
+        svg {
+            flex: 0 0 24px;
+            width: 24px;
+            height: 24px;
+        }
+    }
+}
+
+
+// ----------------------------------------
+//  Indicator Stylings
+// ----------------------------------------
+
+.keen-slider-indicators {
+    .no-js & {
+        display: none;
+    }
+
+    button {
+
     }
 }
 
@@ -255,6 +201,20 @@
 // ----------------------------------------
 
 .keen-slider-hero {
+    padding-bottom: 60px;
+
+    // No-JS / Loading Styles
+    @include media-breakpoint-up(lg) {
+        .keen-slider-slide {
+            flex: 0 0 calc(100% / 3);
+        }
+
+        html.no-js & .keen-slider-slide {
+            flex: 0 0 calc(100% / 3 - $spacer);
+            margin-right: $spacer;
+        }
+    }
+
     .hero-slide-item {
         width: auto;
         height: 400px;
@@ -267,7 +227,7 @@
             border-radius: 10px;
         }
         @include media-breakpoint-up(xl) {
-            height: 600px;
+            height: 650px;
         }
         .slide-image {
             width: auto;
@@ -373,6 +333,7 @@
     }
 
     .keen-slider-controls {
+        bottom: 0;
         width: 100%;
         padding-top: $spacer * 1.25;
         padding-bottom: $spacer * 1.25;
@@ -385,18 +346,24 @@
         }
 
         button {
+            margin: 0 $spacer;
             padding: $spacer $spacer * 0.75;
             box-shadow: none !important;
-
-            svg {
-                color: var(--#{$prefix}body-color);
-                width: 24px;
-                height: 24px;
+            border: 0;
+            border-radius: 0;
+            background-size: 32px 32px;
+            background-color: transparent;
+            background-repeat: no-repeat;
+            background-position: center center;
+            
+            &.control-prev {
+                background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='%23232323' class='bi bi-chevron-left' viewBox='0 0 16 16'%3E%3Cpath fill-rule='evenodd' d='M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z'/%3E%3C/svg%3E");
+            }
+            &.control-next {
+                background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='%23232323' class='bi bi-chevron-right' viewBox='0 0 16 16'%3E%3Cpath fill-rule='evenodd' d='M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z'/%3E%3C/svg%3E");
             }
             &:disabled {
-                svg {
-                    opacity: 0.25;
-                }
+                opacity: 0.25;
             }
         }
     }

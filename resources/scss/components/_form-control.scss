@@ -67,7 +67,7 @@
             top: 0;
             left: 0;
             right: 0;
-            color: var(--bs-gray-500);
+            color: var(--#{$prefix}gray-500);
             width: 42px;
             height: 42px;
             display: inline-flex;
@@ -83,11 +83,11 @@
         }
 
         &:hover .form-control-icon {
-            color: var(--bs-gray-800);
+            color: var(--#{$prefix}gray-800);
         }
 
         &:focus-within .form-control-icon {
-            color: var(--bs-primary);
+            color: var(--#{$prefix}primary);
         }
 
         .form-control.form-control-sm + .form-control-icon {
@@ -112,15 +112,15 @@
 
         .dark & {
             .form-control-icon {
-                color: var(--bs-gray-700);
+                color: var(--#{$prefix}gray-700);
             }
 
             &:hover .form-control-icon {
-                color: var(--bs-gray-500);
+                color: var(--#{$prefix}gray-500);
             }
 
             &:focus-within .form-control-icon {
-                color: var(--bs-primary);
+                color: var(--#{$prefix}primary);
             }
         }
     }

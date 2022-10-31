@@ -104,7 +104,7 @@
 
         a {
             color: var(--#{$prefix}dark);
-            padding: var(--bs-list-group-item-padding-y) var(--bs-list-group-item-padding-x);
+            padding: var(--#{$prefix}list-group-item-padding-y) var(--#{$prefix}list-group-item-padding-x);
             display: block;
             text-decoration: none;
             transition: color 0.20s ease, background-color 0.20s ease;

@@ -9,7 +9,7 @@
 
     .modal-header {
         border-bottom: 0;
-        background-color: var(--bs-gray-100);
+        background-color: var(--#{$prefix}gray-100);
     }
     
     .modal-body {
@@ -27,15 +27,15 @@
 
     .dark & {
         .modal-header {
-            background-color: var(--bs-gray-900);
+            background-color: var(--#{$prefix}gray-900);
         }
         
         .modal-body {
-            background-color: var(--bs-gray-800);
+            background-color: var(--#{$prefix}gray-800);
         }
     
         .modal-footer {
-            background-color: var(--bs-gray-800);
+            background-color: var(--#{$prefix}gray-800);
         }
     }
 }
@@ -62,23 +62,23 @@
             padding: $spacer * 0.75;
             position: absolute;
             transform: translateX(-50%);
-            background-color: var(--bs-gray-200);
+            background-color: var(--#{$prefix}gray-200);
             border-radius: 0;
             transition: background-color .15s ease;
             box-shadow: none;
 
             &:hover {
-                background-color: var(--bs-white);
+                background-color: var(--#{$prefix}white);
             }
         }
     }
 
     .dark & .modal-content .modal-body {
         .btn-close {
-            background-color: var(--bs-gray-900);
+            background-color: var(--#{$prefix}gray-900);
 
             &:hover {
-                background-color: var(--bs-gray-800);
+                background-color: var(--#{$prefix}gray-800);
             }
         }
     }

@@ -6,7 +6,7 @@
     {% set classNames = classNames ~ ' keen-slider-multiple' %}
 {% endif %}
 {% if config.class_names|length > 0 %}
-    {% set classNames = config.class_names ~ ' keen-slider' %}
+    {% set classNames = classNames ~ ' ' ~ config.class_names %}
 {% endif %}
 
 {% set id = this.page.id ~ '_' ~ random() %}
@@ -14,25 +14,18 @@
     {% set id = config.id %}
 {% endif %}
 
-<div id="{{ id }}" class="{{ classNames }}" data-keen-slider="{
-        _newshub: {
-            animation: '{{ config.animation }}',
-            autoplay: {{ config.autoplay == '0' ? 'false' : 'true' }},
-            autoplayStyle: '{{ config.marquee == '0' ? 'stops' : 'marquee' }}',
-            autoplayInterval: {{ config.autoplay_interval }}
-        },
-        defaultAnimation: {
-            duration: {{ config.interval }}
-        },
-        drag: {{ config.touch == '0' ? 'false' : 'true' }},
-        loop: {{ config.loop == '0'? 'false': 'true' }},
-        keyboard: {{ config.keyboard == '0' ? 'false' : 'true' }},
-        slides: {
-            perView: {{ config.slides }},
-            spacing: {{ config.spacing }}
-        },
-    }"{{ config.controls == '1' ? ' data-keen-controls' : '' }} {{ config.indicators == '1' ? ' data-keen-indicators' : '' }}>
-
+<div id="{{ id }}" class="{{ classNames }}" 
+    data-keen-slider
+    data-keen-slider-amount="{{ config.slides }}"
+    data-keen-slider-animation="{{ config.animation }}"
+    data-keen-slider-autoplay="{{ config.animation ? 'true' : 'false' }}"
+    data-keen-slider-controls="{{ config.controls ? '[data-keen-slider-control]' : 'false' }}"
+    data-keen-slider-interval="{{ config.interval }}"
+    data-keen-slider-indicators="{{ config.indicators ? '[data-keen-slider-indicator]' : 'false' }}"
+    data-keen-slider-loop="{{ config.loop ? 'true' : 'false' }}"
+    data-keen-slider-spacing="{{ config.spacing }}"
+    data-keen-slider-touch="{{ config.touch ? 'true' : 'false' }}"
+    >
     {% for slide in config.children %}
         <div class="keen-slider-slide">
             {% if slide.link|length > 0 %}<a href="{{ slide.link }}"{% if slide.title|length > 0 %} alt="{{ slide.title }}"{% endif %}>{% endif %}
@@ -43,10 +36,12 @@
                 {% if slide.title|length > 0 or slide.content|length > 0 %}
                     <div class="slide-content font-semibold fs-6">
                         {% if slide.title|length > 0 %}
-                            <div class="h4 font-bold">{{ slide.title }}</div>
+                            <div class="slide-title h5">{{ slide.title }}</div>
                         {% endif %}
                         {% if slide.content|length > 0 %}
-                            {{ slide.content | md }}
+                            <div class="slide-text">
+                                {{ slide.content | md }}
+                            </div>
                         {% endif %}
                     </div>
                 {% endif %}
@@ -57,10 +52,10 @@
     {% if config.controls == '1' and config.children|length > 0 %}
         <div class="keen-slider-controls">
             <button type="button" class="btn btn-link" data-keen-slider-control="prev">
-                {% partial "icons/bootstrap/chevron-left" %}
+                {% partial "icons/bootstrap/arrow-left" %}
             </button>
             <button type="button" class="btn btn-link" data-keen-slider-control="next">
-                {% partial "icons/bootstrap/chevron-right" %}
+                {% partial "icons/bootstrap/arrow-right" %}
             </button>
         </div>
     {% endif %}

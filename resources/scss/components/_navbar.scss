@@ -54,13 +54,13 @@
     svg {
         path {
             fill: none;
-            stroke: var(--bs-gray-800);
+            stroke: var(--#{$prefix}gray-800);
             stroke-width: 5.5;
             stroke-linecap: round;
             transition: stroke-dasharray 400ms, stroke-dashoffset 400ms, stroke 400ms;
 
             .dark & {
-                stroke: var(--bs-gray-400);
+                stroke: var(--#{$prefix}gray-400);
             }
             &:nth-child(1) {
                 stroke-dasharray: 40 121;
@@ -75,7 +75,7 @@
         transform: rotate(45deg);
 
         path {
-            stroke: var(--bs-danger);
+            stroke: var(--#{$prefix}danger);
         }
         &:nth-child(1) {
             stroke-dashoffset: -68px;
@@ -106,10 +106,10 @@
 
     // Icons
     svg {
-        color: var(--bs-gray-700);
+        color: var(--#{$prefix}gray-700);
     }
     .dark & svg {
-        color: var(--bs-gray-300);
+        color: var(--#{$prefix}gray-300);
     }
 
     // Mobile Icon
@@ -141,7 +141,7 @@
         }
         .navbar-subnav .nav-item:hover & {
             border: 0;
-            background-color: var(--bs-gray-100);
+            background-color: var(--#{$prefix}gray-100);
         }
     }
 }
@@ -154,7 +154,7 @@
     display: flex;
 
     .dark & {
-        --bs-nav-link-color: var(--bs-gray-400);
+        --#{$prefix}nav-link-color: var(--#{$prefix}gray-400);
     }
 
     // Social Colors
@@ -178,8 +178,8 @@
 
     // Navbar Social Navigation
     &.navbar-nav-socials {
-        --bs-nav-link-padding-x: #{math.div($spacer, 2)};
-        --bs-nav-link-padding-y: #{math.div($spacer, 2)};
+        --#{$prefix}nav-link-padding-x: #{math.div($spacer, 2)};
+        --#{$prefix}nav-link-padding-y: #{math.div($spacer, 2)};
         width: 100%;
         height: 32px;
         overflow: hidden;
@@ -296,7 +296,7 @@
         position: absolute;
         transition: height .3s ease, overflow 0s linear .3s, background-color .3s ease;
         pointer-events: none;
-        background-color: var(--bs-gray-100);
+        background-color: var(--#{$prefix}gray-100);
 
         @include media-breakpoint-up(lg) {
             top: none;
@@ -363,27 +363,27 @@
             }
         }
         .nav-title {
-            color: var(--bs-gray-600);
-            padding: var(--bs-nav-link-padding-y) var(--bs-nav-link-padding-x);
+            color: var(--#{$prefix}gray-600);
+            padding: var(--#{$prefix}nav-link-padding-y) var(--#{$prefix}nav-link-padding-x);
             
             @include media-breakpoint-up(lg) {
-                color: var(--bs-gray-700);
-                padding-right: var(--bs-navbar-nav-link-padding-x);
-                padding-left: var(--bs-navbar-nav-link-padding-x);
+                color: var(--#{$prefix}gray-700);
+                padding-right: var(--#{$prefix}navbar-nav-link-padding-x);
+                padding-left: var(--#{$prefix}navbar-nav-link-padding-x);
             }
         }
         .nav-link {
-            color: var(--bs-body-color);
+            color: var(--#{$prefix}body-color);
             
             @include media-breakpoint-up(lg) {
-                color: var(--bs-gray-700);
+                color: var(--#{$prefix}gray-700);
             }
         }
 
         @include media-breakpoint-up(lg) {
             .nav-item:hover > .nav-title,
             .nav-item:hover > .nav-link {
-                color: var(--bs-primary);
+                color: var(--#{$prefix}primary);
             }
         }
 
@@ -419,7 +419,7 @@
                 opacity: 0;
                 overflow: visible;
                 flex-direction: column;
-                background-color: var(--bs-white);
+                background-color: var(--#{$prefix}white);
                 transform: translateX(-50%);
                 box-shadow: $box-shadow;
                 pointer-events: none;
@@ -443,13 +443,13 @@
                         position: absolute;
                         border-style: solid;
                         border-width: 0 10px 10px 10px;
-                        border-color: transparent transparent  var(--bs-white) transparent;
+                        border-color: transparent transparent  var(--#{$prefix}white) transparent;
                         transition: border-color .15s ease-in-out;
                     }
 
                     &:hover {
                         &:first-child::before {
-                            border-bottom-color: var(--bs-gray-100);
+                            border-bottom-color: var(--#{$prefix}gray-100);
                         }
                     }
                 }
@@ -464,7 +464,7 @@
 
                 .nav-item:hover > .nav-title,
                 .nav-item:hover > .nav-link {
-                    background-color: var(--bs-gray-100)
+                    background-color: var(--#{$prefix}gray-100)
                 }
             }
             .nav-item:hover > .navbar-subnav,
@@ -508,7 +508,7 @@
                 .nav-item:first-child::before {
                     left: 100%;
                     margin-left: -10px;
-                    border-color: transparent transparent var(--bs-white) transparent;
+                    border-color: transparent transparent var(--#{$prefix}white) transparent;
                     transition: none;
                 }
                 .nav-item:first-child::after {
@@ -522,7 +522,7 @@
                     position: absolute;
                     border-style: solid;
                     border-width: 10px 10px 0 10px;
-                    border-color: var(--bs-white) transparent transparent transparent;
+                    border-color: var(--#{$prefix}white) transparent transparent transparent;
                 }
             }
         }
@@ -532,7 +532,7 @@
             @include media-breakpoint-up(lg) {
                 left: 0;
                 right: 0;
-                background-color: var(--bs-gray-100);
+                background-color: var(--#{$prefix}gray-100);
 
                 .navbar-nav {
                     flex: 1 1 0;
@@ -543,7 +543,7 @@
                 .nav-title,
                 .nav-item:hover > .nav-title {
                     cursor: default;
-                    color: var(--bs-gray-600);
+                    color: var(--#{$prefix}gray-600);
                 }
 
                 .nav-link {
@@ -563,21 +563,21 @@
     }
 
     .dark & .navbar-nav-main {
-        background-color: var(--bs-dark);
+        background-color: var(--#{$prefix}dark);
 
         .nav-title,
         .nav-link {
-            color: var(--bs-gray-300);
+            color: var(--#{$prefix}gray-300);
         }
 
         &:hover {
             > .nav-item > .nav-title,
             > .nav-item > .nav-link {
-                color: var(--bs-gray-600);
+                color: var(--#{$prefix}gray-600);
             }
             > .nav-item:hover > .nav-title,
             > .nav-item:hover > .nav-link {
-                color: var(--bs-gray-100);
+                color: var(--#{$prefix}gray-100);
             }
         }
     
@@ -585,18 +585,18 @@
             .navbar-subnav {
                 > .nav-item > .nav-title,
                 > .nav-item > .nav-link {
-                    color: var(--bs-gray-700);
+                    color: var(--#{$prefix}gray-700);
                 }
 
                 > .nav-item:hover > .nav-title,
                 > .nav-item:hover > .nav-link {
-                    color: var(--bs-primary);
+                    color: var(--#{$prefix}primary);
                 }
             }
         }
 
         .navbar-subnav-master {
-            background-color: var(--bs-dark);
+            background-color: var(--#{$prefix}dark);
         }
     }
 }
@@ -856,7 +856,7 @@
     z-index: 50;
     display: flex;
     justify-content: flex-end;
-    background-color: var(--bs-gray-100);
+    background-color: var(--#{$prefix}gray-100);
     transition: width 0s ease .25s, flex-basis 0s ease .25s;
 
     @include media-breakpoint-up(lg) {
@@ -911,17 +911,17 @@
         &:hover,
         &:focus,
         &:focus-within {
-            background-color: var(--bs-gray-300);
+            background-color: var(--#{$prefix}gray-300);
         }
 
         .dark & {
-            color: var(--bs-gray-300);
+            color: var(--#{$prefix}gray-300);
         }
 
         .dark &:hover,
         .dark &:focus,
         .dark &:focus-within {
-            background-color: var(--bs-gray-800);
+            background-color: var(--#{$prefix}gray-800);
         }
     }
 
@@ -932,14 +932,14 @@
         margin-left: auto;
         border: 0;
         background-color: transparent;
-        background-color: var(--bs-gray-100);
+        background-color: var(--#{$prefix}gray-100);
         transition: margin .5s ease;
         
         @include media-breakpoint-up(lg) {
             display: none;
         }
         svg {
-            color: var(--bs-gray-700);
+            color: var(--#{$prefix}gray-700);
             width: 24px;
             height: 24px;
             transition: transform .5s ease;

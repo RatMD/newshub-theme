@@ -1,12 +1,12 @@
 
 /**
  * Asynchronous Wait command
- * @param {*} factory 
- * @returns {Promise}
+ * @param factory 
+ * @returns
  */
-function wait(ms) {
+function wait(ms: number): Promise<true> {
     return new Promise((resolve, reject) => {
-        setTimeout(() => { resolve() }, ms);
+        setTimeout(() => { resolve(true) }, ms);
     });
 }
 

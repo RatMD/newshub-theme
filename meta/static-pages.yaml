@@ -2,7 +2,6 @@ static-pages:
     about:
         about-imprint: {  }
         about-privacy-policy: {  }
-    contact: {  }
     page-builder:
         page-builder-accordion: {  }
         page-builder-alerts: {  }
@@ -20,3 +19,4 @@ static-pages:
         page-builder-slider: {  }
         page-builder-tabs: {  }
         page-builder-text-teaser: {  }
+    contact: {  }

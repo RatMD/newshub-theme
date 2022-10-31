@@ -8,11 +8,18 @@ Version 1.3.0 - In Progress
 - Add: "Overwrite CSS Color Palette" option (to overwrite the Theme Colors using css properties).
 - Add: "Gray Color Palette" option to change the gray colors / style. 
 - Add: "Header Position" option to change the header position behavior (Static, Sticky or Slide).
-- Add: "User Action" header integration (requires RainLab.User), available on Extended navbar style only.
-- Add: "Site Picker" header integration (requires October CMS v3.1), available on Extended navbar style only.
+- Add: New Notice theme options (and stylings), which is shown above the article list on the homepage.
+
 - Add: "Slider Controls" option to toggle the control buttons on the Hero-Slider.
 - Add: "Slider Indicators" option to toggle the slide-indicators on the Hero-Slider.
-- Add: New Notice theme options, which is shown above the article list on the homepage.
+
+- Bugfix: Bootstrap URL on placeholder / demo copyright text.
+- Bugfix: No-JS & JS-Loading styles for keen hero slider.
+
+
+
+- Add: "User Action" header integration (requires RainLab.User), available on Extended navbar style only.
+- Add: "Site Picker" header integration (requires October CMS v3.1), available on Extended navbar style only.
 - Add: "Post Category" option to toggle the Category Link on the post lists.
 - Add: "Post Featured Tags" option to toggle the Featured Tag Links on the post lists.
 - Add: "Share Links" option to toggle privacy-protected Share Links above the article content.
@@ -53,8 +60,12 @@ Version 1.3.0 - In Progress
 - Bugfix: Set HTML lang to current locale instead of fixed 'en'.
 
 ### ToDo
-- Add: Support for RainLab.User plugin.
-- Add: Support for RainLab.Forum plugin.
+- Add: Support for [BlakeJones.MagicForms](https://octobercms.com/plugin/blakejones-magicforms) OC Plugin.
+- Add: Support for [JanVince.SmallContactForm](https://octobercms.com/plugin/janvince-smallcontactform) OC Plugin.
+- Add: Support for [JanVince.SmallGDPR](https://octobercms.com/plugin/janvince-smallgdpr) OC Plugin.
+- Add: Support for [RainLab.BlogVideoExtension](https://octobercms.com/plugin/rainlab-blogvideoextension) OC Plugin.
+- Add: Support for [RainLab.User](https://octobercms.com/plugin/rainlab-user) OC Plugin.
+- Add: Support for [RainLab.Forum](https://octobercms.com/plugin/rainlab-forum) OC Plugin.
 - Add: New Blog Posts Content Element (show posts by author, category, date or tag).
 - Add: New Blog Lists Content Element (show list of authors, categories or tags).
 - Add: New File List Content Element (show download file list with icon and stuff).

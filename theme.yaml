@@ -12,6 +12,7 @@ require:
     - 'RainLab.Sitemap'
     - 'RainLab.Translate'
     - 'RatMD.BlogHub'
+    - 'RatMD.FormUI'
 form: config/options.yaml
 translate: config/lang.yaml
 

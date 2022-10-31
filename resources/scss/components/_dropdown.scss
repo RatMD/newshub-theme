@@ -49,7 +49,7 @@
                 }
 
                 .dropdown-item.active::before {
-                    border-bottom-color: var(--bs-dropdown-link-active-bg);
+                    border-bottom-color: var(--#{$prefix}dropdown-link-active-bg);
                 }
             }
         }

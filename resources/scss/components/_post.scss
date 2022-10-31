@@ -157,7 +157,7 @@
             &::before {
                 top: 0;
                 left: -50vw;
-                right: calc(100% - (var(--bs-gutter-x)*.5));
+                right: calc(100% - (var(--#{$prefix}gutter-x)*.5));
                 bottom: 0;
                 content: "";
                 display: block;
