@@ -297,9 +297,6 @@ return [
 
 
 
-
-
-
     "builder.tab.content_elements" => "Content Elements",
     "builder.tab.page_configuration" => "Page Configuration",
     "builder.use_container.label" => "Use Main Container",

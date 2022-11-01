@@ -1,3 +1,6 @@
+[account]
+
+==
 
 <div class="navbar-action-item user-action">
     <button type="button" class="navbar-action-button" data-bs-toggle="offcanvas" data-bs-target="#accountOffcanvas">
@@ -5,14 +8,34 @@
     </button>
 </div>
 
-{% put offcanvas %}
+{% put offscreen %}
 <div class="offcanvas offcanvas-end" tabindex="-1" id="accountOffcanvas">
     <div class="offcanvas-header">
-        <h5 class="offcanvas-title" id="offcanvasLabel">Sign in or Create an Account</h5>
+        <h5 class="offcanvas-title">Sign in or Create an Account</h5>
         <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
     </div>
     <div class="offcanvas-body">
-        Content for the offcanvas goes here. You can place just about any Bootstrap component or custom elements here.
+        {{ form_ajax('onRegister') }}
+            <div class="form-group">
+                <label for="offcanvasRegisterUsername">Your Username</label>
+                <input id="offcanvasRegisterUsername" type="text" name="username" class="form-control" placeholder="Your Username" />
+            </div>
+
+            <div class="form-group">
+                <label for="offcanvasRegisterEmail">Your E-Mail</label>
+                <input id="offcanvasRegisterEmail" type="email" name="email" class="form-control" placeholder="Your E-Mail address" />
+            </div>
+
+            <div class="form-group">
+                <label for="offcanvasRegisterName">Your Name</label>
+                <input id="offcanvasRegisterName" type="text" name="name" class="form-control" placeholder="Your full name" />
+            </div>
+
+            <div class="form-group">
+                <label for="offcanvasRegisterPassword">Your Password</label>
+                <input id="offcanvasRegisterPassword" type="password" name="password" class="form-control" placeholder="Your Password" />
+            </div>
+        {{ form_close() }}
     </div>
 </div>
 {% endput %}

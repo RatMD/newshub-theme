@@ -86,8 +86,8 @@ function onInit()
         </a>
     {% endif %}
 
-    {% placeholder modals %}
-    {% placeholder offcanvas %}
+    {% set offscreen = placeholder('offscreen') %}
+    {{ offscreen | raw }}
 
     {% partial 'page/scripts' %}
 </body>

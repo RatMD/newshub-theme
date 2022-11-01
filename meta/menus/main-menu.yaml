@@ -13,6 +13,261 @@ items:
             cssClass: ''
             isExternal: '0'
     -
+        title: Features
+        nesting: null
+        type: cms-page
+        url: null
+        code: ''
+        reference: features
+        cmsPage: null
+        replace: null
+        viewBag:
+            locale:
+                de:
+                    title: ''
+                    url: ''
+            isHidden: '0'
+            cssClass: ''
+            isExternal: '0'
+        items:
+            -
+                title: 'All Features'
+                type: cms-page
+                code: ''
+                reference: features
+                viewBag:
+                    locale:
+                        de:
+                            title: ''
+                            url: ''
+                    isHidden: '0'
+                    cssClass: ''
+                    isExternal: '0'
+            -
+                title: Template
+                nesting: null
+                type: header
+                url: null
+                code: ''
+                reference: null
+                cmsPage: null
+                replace: null
+                viewBag:
+                    locale:
+                        de:
+                            title: ''
+                            url: ''
+                    isHidden: '0'
+                    cssClass: ''
+                    isExternal: '0'
+                items:
+                    -
+                        title: Configuration
+                        nesting: null
+                        type: url
+                        url: /
+                        code: ''
+                        reference: null
+                        cmsPage: null
+                        replace: null
+                        viewBag:
+                            locale:
+                                de:
+                                    title: ''
+                                    url: ''
+                            isHidden: '0'
+                            cssClass: ''
+                            isExternal: '0'
+                    -
+                        title: 'Page Layouts'
+                        nesting: null
+                        type: url
+                        url: /
+                        code: ''
+                        reference: null
+                        cmsPage: null
+                        replace: null
+                        viewBag:
+                            locale:
+                                de:
+                                    title: ''
+                                    url: ''
+                            isHidden: '0'
+                            cssClass: ''
+                            isExternal: '0'
+                    -
+                        title: 'Menu Positions'
+                        nesting: null
+                        type: url
+                        url: /
+                        code: ''
+                        reference: null
+                        cmsPage: null
+                        replace: null
+                        viewBag:
+                            locale:
+                                de:
+                                    title: ''
+                                    url: ''
+                            isHidden: '0'
+                            cssClass: ''
+                            isExternal: '0'
+                    -
+                        title: 'Sidebars & Widgets'
+                        nesting: null
+                        type: url
+                        url: /
+                        code: ''
+                        reference: null
+                        cmsPage: null
+                        replace: null
+                        viewBag:
+                            locale:
+                                de:
+                                    title: ''
+                                    url: ''
+                            isHidden: '0'
+                            cssClass: ''
+                            isExternal: '0'
+            -
+                title: Vendors
+                nesting: null
+                type: header
+                url: null
+                code: ''
+                reference: null
+                cmsPage: null
+                replace: null
+                viewBag:
+                    locale:
+                        de:
+                            title: ''
+                            url: ''
+                    isHidden: '0'
+                    cssClass: ''
+                    isExternal: '0'
+                items:
+                    -
+                        title: 'Bootstrap 5.2'
+                        nesting: null
+                        type: url
+                        url: /
+                        code: ''
+                        reference: null
+                        cmsPage: null
+                        replace: null
+                        viewBag:
+                            locale:
+                                de:
+                                    title: ''
+                                    url: ''
+                            isHidden: '0'
+                            cssClass: ''
+                            isExternal: '0'
+                    -
+                        title: 'Bootstrap Icons'
+                        nesting: null
+                        type: url
+                        url: /
+                        code: ''
+                        reference: null
+                        cmsPage: null
+                        replace: null
+                        viewBag:
+                            locale:
+                                de:
+                                    title: ''
+                                    url: ''
+                            isHidden: '0'
+                            cssClass: ''
+                            isExternal: '0'
+                    -
+                        title: 'Keen Slider'
+                        nesting: null
+                        type: url
+                        url: /
+                        code: ''
+                        reference: null
+                        cmsPage: null
+                        replace: null
+                        viewBag:
+                            locale:
+                                de:
+                                    title: ''
+                                    url: ''
+                            isHidden: '0'
+                            cssClass: ''
+                            isExternal: '0'
+            -
+                title: OctoberCMS
+                nesting: null
+                type: header
+                url: null
+                code: ''
+                reference: null
+                cmsPage: null
+                replace: null
+                viewBag:
+                    locale:
+                        de:
+                            title: ''
+                            url: ''
+                    isHidden: '0'
+                    cssClass: ''
+                    isExternal: '0'
+                items:
+                    -
+                        title: 'Core Features'
+                        nesting: null
+                        type: url
+                        url: /
+                        code: ''
+                        reference: null
+                        cmsPage: null
+                        replace: null
+                        viewBag:
+                            locale:
+                                de:
+                                    title: ''
+                                    url: ''
+                            isHidden: '0'
+                            cssClass: ''
+                            isExternal: '0'
+                    -
+                        title: 'Supported Plugins'
+                        nesting: null
+                        type: url
+                        url: /
+                        code: ''
+                        reference: null
+                        cmsPage: null
+                        replace: null
+                        viewBag:
+                            locale:
+                                de:
+                                    title: ''
+                                    url: ''
+                            isHidden: '0'
+                            cssClass: ''
+                            isExternal: '0'
+            -
+                title: 'Page Builder'
+                nesting: null
+                type: url
+                url: /
+                code: ''
+                reference: null
+                cmsPage: null
+                replace: null
+                viewBag:
+                    locale:
+                        de:
+                            title: ''
+                            url: ''
+                    isHidden: '0'
+                    cssClass: ''
+                    isExternal: '0'
+    -
         title: Pages
         nesting: null
         type: header
@@ -443,211 +698,13 @@ items:
                             cssClass: ''
                             isExternal: '0'
     -
-        title: Features
-        nesting: null
-        type: cms-page
-        url: null
-        code: ''
-        reference: features
-        cmsPage: null
-        replace: null
-        viewBag:
-            locale:
-                de:
-                    title: ''
-                    url: ''
-            isHidden: '0'
-            cssClass: ''
-            isExternal: '0'
-        items:
-            -
-                title: 'All Features'
-                type: url
-                url: /
-                code: ''
-                viewBag:
-                    locale:
-                        de:
-                            title: ''
-                            url: ''
-                    isHidden: '0'
-                    cssClass: ''
-                    isExternal: '0'
-            -
-                title: Template
-                type: header
-                code: ''
-                viewBag:
-                    locale:
-                        de:
-                            title: ''
-                            url: ''
-                    isHidden: '0'
-                    cssClass: ''
-                    isExternal: '0'
-                items:
-                    -
-                        title: Configuration
-                        type: url
-                        url: /
-                        code: ''
-                        viewBag:
-                            locale:
-                                de:
-                                    title: ''
-                                    url: ''
-                            isHidden: '0'
-                            cssClass: ''
-                            isExternal: '0'
-                    -
-                        title: 'Page Layouts'
-                        type: url
-                        url: /
-                        code: ''
-                        viewBag:
-                            locale:
-                                de:
-                                    title: ''
-                                    url: ''
-                            isHidden: '0'
-                            cssClass: ''
-                            isExternal: '0'
-                    -
-                        title: 'Menu Positions'
-                        type: url
-                        url: /
-                        code: ''
-                        viewBag:
-                            locale:
-                                de:
-                                    title: ''
-                                    url: ''
-                            isHidden: '0'
-                            cssClass: ''
-                            isExternal: '0'
-                    -
-                        title: 'Sidebars & Widgets'
-                        type: url
-                        url: /
-                        code: ''
-                        viewBag:
-                            locale:
-                                de:
-                                    title: ''
-                                    url: ''
-                            isHidden: '0'
-                            cssClass: ''
-                            isExternal: '0'
-            -
-                title: Vendors
-                type: header
-                code: ''
-                viewBag:
-                    locale:
-                        de:
-                            title: ''
-                            url: ''
-                    isHidden: '0'
-                    cssClass: ''
-                    isExternal: '0'
-                items:
-                    -
-                        title: 'Bootstrap 5.2'
-                        type: url
-                        url: /
-                        code: ''
-                        viewBag:
-                            locale:
-                                de:
-                                    title: ''
-                                    url: ''
-                            isHidden: '0'
-                            cssClass: ''
-                            isExternal: '0'
-                    -
-                        title: 'Bootstrap Icons'
-                        type: url
-                        url: /
-                        code: ''
-                        viewBag:
-                            locale:
-                                de:
-                                    title: ''
-                                    url: ''
-                            isHidden: '0'
-                            cssClass: ''
-                            isExternal: '0'
-                    -
-                        title: 'Keen Slider'
-                        type: url
-                        url: /
-                        code: ''
-                        viewBag:
-                            locale:
-                                de:
-                                    title: ''
-                                    url: ''
-                            isHidden: '0'
-                            cssClass: ''
-                            isExternal: '0'
-            -
-                title: OctoberCMS
-                type: header
-                code: ''
-                viewBag:
-                    locale:
-                        de:
-                            title: ''
-                            url: ''
-                    isHidden: '0'
-                    cssClass: ''
-                    isExternal: '0'
-                items:
-                    -
-                        title: 'Core Features'
-                        type: url
-                        url: /
-                        code: ''
-                        viewBag:
-                            locale:
-                                de:
-                                    title: ''
-                                    url: ''
-                            isHidden: '0'
-                            cssClass: ''
-                            isExternal: '0'
-                    -
-                        title: 'Supported Plugins'
-                        type: url
-                        url: /
-                        code: ''
-                        viewBag:
-                            locale:
-                                de:
-                                    title: ''
-                                    url: ''
-                            isHidden: '0'
-                            cssClass: ''
-                            isExternal: '0'
-            -
-                title: 'Page Builder'
-                type: url
-                url: /
-                code: ''
-                viewBag:
-                    locale:
-                        de:
-                            title: ''
-                            url: ''
-                    isHidden: '0'
-                    cssClass: ''
-                    isExternal: '0'
-    -
         title: Documentation
         nesting: 1
         type: static-page
+        url: null
         code: ''
         reference: page-builder
+        cmsPage: null
         replace: 0
         viewBag:
             locale:
@@ -661,8 +718,10 @@ items:
         title: About
         nesting: 0
         type: static-page
+        url: null
         code: ''
         reference: about
+        cmsPage: null
         replace: 0
         viewBag:
             locale:
@@ -675,9 +734,13 @@ items:
         items:
             -
                 title: 'New in 1.3.0'
+                nesting: null
                 type: url
                 url: /
                 code: ''
+                reference: null
+                cmsPage: null
+                replace: null
                 viewBag:
                     locale:
                         de:
@@ -688,9 +751,13 @@ items:
                     isExternal: '0'
             -
                 title: 'New in 1.2.0'
+                nesting: null
                 type: url
                 url: /
                 code: ''
+                reference: null
+                cmsPage: null
+                replace: null
                 viewBag:
                     locale:
                         de:
@@ -701,9 +768,13 @@ items:
                     isExternal: '0'
             -
                 title: Changelog
+                nesting: null
                 type: url
                 url: /
                 code: ''
+                reference: null
+                cmsPage: null
+                replace: null
                 viewBag:
                     locale:
                         de:
@@ -716,8 +787,10 @@ items:
                 title: Contact
                 nesting: 0
                 type: static-page
+                url: null
                 code: ''
                 reference: contact
+                cmsPage: null
                 replace: 0
                 viewBag:
                     locale:
