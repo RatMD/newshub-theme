@@ -1,25 +1,12 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<svg width="32px" height="24px" viewBox="0 0 32 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-    <title>flags/L/IS - Iceland</title>
-    <defs>
-        <rect id="path-1" x="0" y="0" width="32" height="24"></rect>
-        <rect id="path-3" x="0" y="0" width="32" height="24"></rect>
-    </defs>
-    <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-        <g id="flag">
-            <mask id="mask-2" fill="white">
-                <use xlink:href="#path-1"></use>
-            </mask>
-            <g id="mask"></g>
-            <g id="contents" mask="url(#mask-2)">
-                <mask id="mask-4" fill="white">
-                    <use xlink:href="#path-3"></use>
-                </mask>
-                <use id="background" fill="#0061C1" xlink:href="#path-3"></use>
-                <g id="mark" mask="url(#mask-4)" fill="#D21034" stroke="#F1F9FF" stroke-width="2">
-                    <path d="M15,-1 L15,9 L33,9 L33,15 L15,15 L15,25 L9,25 L9,15 L-1,15 L-1,9 L9,9 L9,-1 L15,-1 Z" id="cross"></path>
-                </g>
-            </g>
-        </g>
-    </g>
+<svg xmlns="http://www.w3.org/2000/svg" id="flag-icons-is" viewBox="0 0 640 480">
+  <defs>
+    <clipPath id="a">
+      <path fill-opacity=".7" d="M0 0h640v480H0z"/>
+    </clipPath>
+  </defs>
+  <g fill-rule="evenodd" stroke-width="0" clip-path="url(#a)">
+    <path fill="#003897" d="M0 0h666.7v480H0z"/>
+    <path fill="#fff" d="M0 186.7h186.7V0h106.6v186.7h373.4v106.6H293.3V480H186.7V293.3H0V186.7z"/>
+    <path fill="#d72828" d="M0 213.3h213.3V0h53.4v213.3h400v53.4h-400V480h-53.4V266.7H0v-53.4z"/>
+  </g>
 </svg>

@@ -10249,6 +10249,39 @@ y .form-group:last-child {
 .section.section-copyright a:hover {
   color: var(--bs-footer-link-hover-color);
 }
+.sitepicker-modal .list-group {
+  border: 0;
+}
+.sitepicker-modal .list-group-item {
+  margin: 0.25rem;
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+}
+.sitepicker-modal .site-link {
+  color: var(--bs-body-text);
+  padding: var(--bs-list-group-item-padding-y) var(--bs-list-group-item-padding-x);
+  display: flex;
+  align-items: center;
+  font-weight: 600;
+  text-decoration: none;
+  border-radius: 3px;
+}
+.sitepicker-modal .site-link:hover {
+  background-color: var(--bs-gray-200);
+}
+.sitepicker-modal .current .site-link {
+  color: var(--bs-primary);
+  background-color: rgb(var(--bs-primary-rgb), 0.15);
+}
+.sitepicker-modal .site-flag,
+.sitepicker-modal .site-without-flag {
+  width: 32px;
+  height: 32px;
+  margin-right: 0.5rem;
+  object-fit: cover;
+  object-position: center center;
+}
 .toc {
   margin: 0;
   padding: 0;

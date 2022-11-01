@@ -1,25 +1,13 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<svg width="32px" height="24px" viewBox="0 0 32 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-    <title>flags/L/CL - Chile</title>
-    <defs>
-        <rect id="path-1" x="0" y="0" width="32" height="24"></rect>
-    </defs>
-    <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-        <g id="flag">
-            <mask id="mask-2" fill="white">
-                <use xlink:href="#path-1"></use>
-            </mask>
-            <g id="mask"></g>
-            <g id="contents" mask="url(#mask-2)">
-                <g transform="translate(0.000000, -2.000000)">
-                    <polygon id="4" fill="#3D58DB" points="0 2 14 2 14 16 0 16"></polygon>
-                    <polygon id="3" fill="#F7FCFF" points="14 0 32 0 32 16 14 16"></polygon>
-                    <polygon id="1" fill="#E31D1C" points="0 16 32 16 32 26 0 26"></polygon>
-                    <g id="mark" stroke-width="1" fill="none" transform="translate(0.000000, 4.000000)">
-                        <polygon id="Star-5" fill="#F7FCFF" points="7.01434868 7.7833195 3.21068292 10.0548041 5.08784637 6.18994895 1.76374704 3.67974912 5.60123279 3.63865568 7.04892276 0.211427579 7.98104777 3.63865568 11.6132788 3.65577744 8.85065523 6.11094537 10.2852286 10.0548041"></polygon>
-                    </g>
-                </g>
-            </g>
-        </g>
-    </g>
+<svg xmlns="http://www.w3.org/2000/svg" id="flag-icons-cl" viewBox="0 0 640 480">
+  <defs>
+    <clipPath id="a">
+      <path fill-opacity=".7" d="M0 0h682.7v512H0z"/>
+    </clipPath>
+  </defs>
+  <g fill-rule="evenodd" clip-path="url(#a)" transform="scale(.9375)">
+    <path fill="#fff" d="M256 0h512v256H256z"/>
+    <path fill="#0039a6" d="M0 0h256v256H0z"/>
+    <path fill="#fff" d="M167.8 191.7 128.2 162l-39.5 30 14.7-48.8L64 113.1l48.7-.5L127.8 64l15.5 48.5 48.7.1-39.2 30.4 15 48.7z"/>
+    <path fill="#d52b1e" d="M0 256h768v256H0z"/>
+  </g>
 </svg>

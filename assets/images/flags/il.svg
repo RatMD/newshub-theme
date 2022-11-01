@@ -1,26 +1,14 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<svg width="32px" height="24px" viewBox="0 0 32 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-    <title>flags/L/IL - Isreal</title>
-    <defs>
-        <rect id="path-1" x="0" y="0" width="32" height="24"></rect>
-        <rect id="path-3" x="0" y="0" width="32" height="24"></rect>
-    </defs>
-    <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-        <g id="flag">
-            <mask id="mask-2" fill="white">
-                <use xlink:href="#path-1"></use>
-            </mask>
-            <g id="mask"></g>
-            <g id="contents" mask="url(#mask-2)">
-                <mask id="mask-4" fill="white">
-                    <use xlink:href="#path-3"></use>
-                </mask>
-                <use id="background" fill="#F7FCFF" xlink:href="#path-3"></use>
-                <rect id="top" fill="#3D58DB" mask="url(#mask-4)" x="0" y="3" width="32" height="3"></rect>
-                <rect id="bottom" fill="#3D58DB" mask="url(#mask-4)" x="0" y="18" width="32" height="3"></rect>
-                <path d="M13.0205383,13.9295344 L19.1532454,13.9295344 L16.1065688,8.45993352 L13.0205383,13.9295344 Z M20.7582031,14.9387627 L11.3812136,14.9387627 L16.1159313,6.62028792 L20.7582031,14.9387627 Z" id="Rectangle-31" fill="#3D58DB" fill-rule="nonzero" mask="url(#mask-4)"></path>
-                <path d="M13.0509864,16.1875497 L19.0453533,16.1875497 L16.1092315,10.7063653 L13.0509864,16.1875497 Z M20.680771,17.1614863 L11.2639824,17.1614863 L16.1358674,9.07604867 L20.680771,17.1614863 Z" id="Rectangle-31" fill="#3D58DB" fill-rule="nonzero" mask="url(#mask-4)" transform="translate(15.972377, 13.118767) scale(1, -1) translate(-15.972377, -13.118767) "></path>
-            </g>
-        </g>
-    </g>
+<svg xmlns="http://www.w3.org/2000/svg" id="flag-icons-il" viewBox="0 0 640 480">
+  <defs>
+    <clipPath id="a">
+      <path fill-opacity=".7" d="M-87.6 0H595v512H-87.6z"/>
+    </clipPath>
+  </defs>
+  <g fill-rule="evenodd" clip-path="url(#a)" transform="translate(82.1) scale(.94)">
+    <path fill="#fff" d="M619.4 512H-112V0h731.4z"/>
+    <path fill="#0038b8" d="M619.4 115.2H-112V48h731.4zm0 350.5H-112v-67.2h731.4zm-483-275 110.1 191.6L359 191.6l-222.6-.8z"/>
+    <path fill="#fff" d="m225.8 317.8 20.9 35.5 21.4-35.3-42.4-.2z"/>
+    <path fill="#0038b8" d="M136 320.6 246.2 129l112.4 190.8-222.6.8z"/>
+    <path fill="#fff" d="m225.8 191.6 20.9-35.5 21.4 35.4-42.4.1zM182 271.1l-21.7 36 41-.1-19.3-36zm-21.3-66.5 41.2.3-19.8 36.3-21.4-36.6zm151.2 67 20.9 35.5-41.7-.5 20.8-35zm20.5-67-41.2.3 19.8 36.3 21.4-36.6zm-114.3 0L189.7 256l28.8 50.3 52.8 1.2 32-51.5-29.6-52-55.6.5z"/>
+  </g>
 </svg>

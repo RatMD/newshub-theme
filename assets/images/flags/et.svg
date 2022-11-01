@@ -1,34 +1,14 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<svg width="32px" height="24px" viewBox="0 0 32 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-    <title>flags/L/ET - Ethiopia</title>
-    <defs>
-        <rect id="path-1" x="0" y="0" width="32" height="24"></rect>
-        <rect id="path-3" x="0" y="0" width="32" height="24"></rect>
-    </defs>
-    <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-        <g id="flag">
-            <mask id="mask-2" fill="white">
-                <use xlink:href="#path-1"></use>
-            </mask>
-            <g id="mask"></g>
-            <g id="contents" mask="url(#mask-2)">
-                <mask id="mask-4" fill="white">
-                    <use xlink:href="#path-3"></use>
-                </mask>
-                <use id="background" fill="#FECA00" xlink:href="#path-3"></use>
-                <rect id="top" fill="#5EAA22" mask="url(#mask-4)" x="0" y="0" width="32" height="8"></rect>
-                <rect id="bottom" fill="#E31D1C" mask="url(#mask-4)" x="0" y="16" width="32" height="8"></rect>
-                <g id="mark" mask="url(#mask-4)">
-                    <g transform="translate(10.000000, 6.000000)">
-                        <circle id="Oval-20" stroke="none" fill="#2B77B8" fill-rule="evenodd" cx="6" cy="6" r="6"></circle>
-                        <polygon id="Star-9" stroke="#FECA00" stroke-width="1.5" fill="none" points="6 8 3.23796434 8.92652847 4.09788697 6.61803399 2.22443106 4.38196601 4.8244295 4.38196601 6 2 7.1755705 4.38196601 9.83288319 4.38196601 7.90211303 6.61803399 8.58743622 8.92652847"></polygon>
-                        <line x1="5.69610744" y1="6.03448771" x2="3.61144586" y2="10.3946201" id="Path-42" stroke="#2B77B8" stroke-width="1" fill="none"></line>
-                        <line x1="5.36809058" y1="5.47945267" x2="1.36809058" y2="5.47945267" id="Path-42" stroke="#2B77B8" stroke-width="1" fill="none"></line>
-                        <line x1="6.1214614" y1="6.83759504" x2="10.030507" y2="8.64173864" id="Path-42" stroke="#2B77B8" stroke-width="1" fill="none"></line>
-                        <line x1="6.96667694" y1="5.87368317" x2="9.79626735" y2="2.77649203" id="Path-42" stroke="#2B77B8" stroke-width="1" fill="none"></line>
-                    </g>
-                </g>
-            </g>
-        </g>
-    </g>
+<svg xmlns="http://www.w3.org/2000/svg" id="flag-icons-et" viewBox="0 0 640 480">
+  <defs>
+    <clipPath id="a">
+      <path fill-opacity=".7" d="M-61.3 0h682.7v512H-61.3z"/>
+    </clipPath>
+  </defs>
+  <g fill-rule="evenodd" stroke-width="1pt" clip-path="url(#a)" transform="translate(57.5) scale(.94)">
+    <path fill="#ffc621" d="M-238 3.5H800v498H-238z"/>
+    <path fill="#ef2118" d="M-240 342.5H799.3V512H-240z"/>
+    <path fill="#298c08" d="M-238 0H800v180H-238z"/>
+    <circle cx="534.2" cy="353" r="199.7" fill="#006bc6" transform="matrix(.54 0 0 .54 -25.8 74)"/>
+    <path fill="#ffc621" d="m214.3 188.2-6.5 4.5 23.5 33 6.3-4-23.4-33.5zm29.4 78-9.7-6.8 4-12.7-48.1.7-14-10.7 65.7-.7 12.2-36.9 6.6 15-16.7 52zm76.5-70.7-6.3-4.8-24.3 32.4 5.6 4.7 25-32.3zM254.8 247l3.5-11.2h13.3L256.4 190l6-16.5 20.5 62.4 38.8.5-12.2 10.7-54.7-.2zm90.6 51.2 2.7-7.4-38.3-13.3-2.8 7 38.4 13.7zm-69.1-46.4 11.7-.1 4.1 12.6 38.8-28.5 17.6.6-53.1 38.7 11.5 37.2-14-8.4-16.6-52.1zm-19.8 102 7.9.2.3-40.5-7.4-.5-.8 40.9zm22-80.3 3.8 11.1-10.7 8 39.4 27.7 5 16.8-53.6-38-31.5 22.7 3.5-16 44-32.3zm-103.3 13 2.3 7.5 38.7-12.2-2-7.2-39 11.9zm83.2-4-9.4 7.1-10.8-7.7-14.2 46-14.4 10 19.5-62.7-31.4-23 16.3-1.6 44.4 31.9z"/>
+  </g>
 </svg>

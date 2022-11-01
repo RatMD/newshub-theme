@@ -1,22 +1,8 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<svg width="32px" height="24px" viewBox="0 0 32 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-    <title>flags/L/JM - Jamaica</title>
-    <defs>
-        <rect id="path-1" x="0" y="0" width="32" height="24"></rect>
-    </defs>
-    <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-        <g id="flag">
-            <mask id="mask-2" fill="white">
-                <use xlink:href="#path-1"></use>
-            </mask>
-            <g id="mask"></g>
-            <g id="contents" mask="url(#mask-2)">
-                <g transform="translate(-2.000000, 0.000000)">
-                    <polygon id="background" stroke="none" fill="#009933" points="2 0 34 0 34 24 2 24"></polygon>
-                    <path d="M-0.35,-2.86483791 L17.6584757,12 L-0.35,26.8648379 L-0.35,-2.86483791 Z" id="triangle" stroke="#FECA00" stroke-width="2.7" fill="#272727"></path>
-                    <path d="M18.4311589,-2.78365482 L37.1803334,12 L18.4311589,26.7836548 L18.4311589,-2.78365482 Z" id="triangle" stroke="#FECA00" stroke-width="2.7" fill="#272727" transform="translate(27.390579, 12.000000) scale(-1, 1) translate(-27.390579, -12.000000) "></path>
-                </g>
-            </g>
-        </g>
-    </g>
+<svg xmlns="http://www.w3.org/2000/svg" id="flag-icons-jm" viewBox="0 0 640 480">
+  <g fill-rule="evenodd">
+    <path d="m0 0 320 240L0 480zm640 0L320 240l320 240z"/>
+    <path fill="#090" d="m0 0 320 240L640 0zm0 480 320-240 320 240z"/>
+    <path fill="#fc0" d="M640 0h-59.6L0 435.3V480h59.6L640 44.7z"/>
+    <path fill="#fc0" d="M0 0v44.7L580.4 480H640v-44.7L59.6 0z"/>
+  </g>
 </svg>

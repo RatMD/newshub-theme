@@ -1,26 +1,33 @@
 
-<div class="navbar-action-item sitepicker-action">
-    <button type="button" class="navbar-action-button" data-bs-toggle="modal" data-bs-target="#sitePickerModal">
-        {% partial 'icons/bootstrap/link-45deg' %}
-    </button>
-</div>
+{% if sitePicker and sitePicker.sites %}
+    <div class="navbar-action-item sitepicker-action">
+        <button type="button" class="navbar-action-button" data-bs-toggle="modal" data-bs-target="#sitePickerModal">
+            {% partial 'icons/bootstrap/link-45deg' %}
+        </button>
+    </div>
 
-{% put offscreen %}
-<div id="sitePickerModal" class="modal fade" tabindex="-1">
-    <div class="modal-dialog modal-dialog-centered">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title">Modal title</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-                <p>Modal body text goes here.</p>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary">Save changes</button>
+    {% put offscreen %}
+        <div id="sitePickerModal" class="modal fade sitepicker-modal" tabindex="-1">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-body p-5">
+                        <ul class="list-group">
+                            {% for site in sitePicker.sites %}
+                                <li class="list-group-item{{ this.site.code == site.code ? ' current' : '' }}">
+                                    <a href="{{ site.url }}" class="list-group-link site-link site-{{ site.cpde }}">
+                                        {% if site.flagIcon %}
+                                            <img src="{{ ('assets/images/flags/' ~ site.flagIcon|slice(5) ~ '.svg') | theme  }}" alt="" class="site-flag" />
+                                        {% else %}
+                                            <span class="site-without-flag"></span>
+                                        {% endif %}
+                                        <span class="site-name">{{ site.name }}</span>
+                                    </a>
+                                </li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                </div>
             </div>
         </div>
-    </div>
-</div>
-{% endput %}
+    {% endput %}
+{% endif %}
