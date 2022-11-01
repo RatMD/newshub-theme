@@ -13,7 +13,13 @@ require:
     - 'RainLab.Translate'
     - 'RatMD.BlogHub'
 form: config/options.yaml
-translate: config/lang.yaml
+translate:
+    en: lang/en.json
+    en-gb: lang/en.json
+    en-us: lang/en.json
+    de: lang/de.json
+    de-at: lang/de.json
+    de-de: lang/de.json
 
 ratmd.bloghub:
     post:
