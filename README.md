@@ -104,22 +104,45 @@ is still available.
 
 - Modern Browser (IE and Edge Legacy are NOT supported!)
 - PHP 7.4+ / 8.0+ (recommended: 8.0)
-- OctoberCMS v2 / v3 (recommended: 3..1)
+- OctoberCMS v2 / v3 (recommended: 3.1)
 - Plugin: [RainLab.Blog](https://octobercms.com/plugin/rainlab-blog)
 - Plugin: [RainLab.Pages](https://octobercms.com/plugin/rainlab-pages)
 - Plugin: [RainLab.Sitemap](https://octobercms.com/plugin/rainlab-sitemap)
-- Plugin: [RainLab.Translate](https://octobercms.com/plugin/rainlab-translate)
-- Plugin: [RatMD.BlogHub](https://octobercms.com/plugin/ratmd-bloghub)
+- Plugin: [RainLab.Translate](https://octobercms.com/plugin/rainlab-translate) (Supports v1 and v2)
+- Plugin: [RatMD.BlogHub](https://octobercms.com/plugin/ratmd-bloghub) (Requires v1.2+)
 
 ### Supports
 The following plugins are not required but supported by the **NewsHub** template:
 
-- Plugin: [JanVince.SmallContactForm](https://octobercms.com/plugin/janvince-smallcontactform)
+- Plugin: [JanVince.SmallContactForm](https://octobercms.com/plugin/janvince-smallcontactform) (currently incompatible with OC v3.1)
 - Plugin: [JanVince.SmallGDPR](https://octobercms.com/plugin/janvince-smallgdpr)
 - Plugin: [BlakeJones.MagicForms](https://octobercms.com/plugin/blakejones-magicforms)
 - Plugin: [RainLab.BlogVideoExtension](https://octobercms.com/plugin/rainlab-blogvideoextension)
 - Plugin: [RainLab.User](https://octobercms.com/plugin/rainlab-user) 
 - Plugin: [RainLab.Forum](https://octobercms.com/plugin/rainlab-forum) 
+
+### Tested with
+NewsHub has been successfully tested with the following stacks:
+
+- OctoberCMS v2.2.21 (using PHP v7.4.15)
+- OctoberCMS v3.0.76 (using PHP v8.0.23)
+- OctoberCMS v3.1.20 (using PHP v8.1.10)
+
+Our Front-End testing is based on:
+
+- Google Chrome (Latest), Windows 10
+- Mozilla Firefox (Latest), Windows 10
+- Microsoft Edge (Latest), Windows 10
+- Apple Safari (v15.6), macOS 12 (Monterey) - via [BrowserStack](https://browserstack.com)
+- Apple Safari (v14.1), macOS 11 (Big Sur) - via [BrowserStack](https://browserstack.com)
+- Apple Safari (v13.1), macOS 10.15 (Catalina) - via [BrowserStack](https://browserstack.com)
+- Apple Safari on iPhone 14 / iOS 16 - via [BrowserStack](https://browserstack.com)
+- Apple Safari on iPhone 13 / iOS 15 - via [BrowserStack](https://browserstack.com)
+- Apple Safari on iPhone 12 / iOS 14 - via [BrowserStack](https://browserstack.com)
+
+Due to the testing via BrowserStack we cannot guarantee, that NewsHub works seamless on Apple 
+devices / on the Safari browser. If you notice any bug or strange behavior please contact us per 
+mail or via an GitHub issue, Thanks!
 
 
 Dependencies

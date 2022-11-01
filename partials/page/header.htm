@@ -72,7 +72,7 @@ code = "meta-menu"
         {% if this.theme.header_style == 'condensed' %}
             {% if this.theme.languages_menu_top or (this.theme.color_switch_top and this.theme.enable_dark_scheme) %}
                 <div class="navbar-picker">
-                    {% if this.theme.languages_menu_top %}
+                    {% if this.theme.languages_menu_top and legacyTranslate %}
                         {% partial 'localepicker/default' dropdown=true dropdown_classes='dropdown-menu-center' %}
                     {% endif %}
                     
@@ -98,7 +98,7 @@ code = "meta-menu"
             {% if this.theme.color_switch_top and this.theme.enable_dark_scheme %}
                 {% set actions = actions + 1 %}
             {% endif %}
-            {% if this.theme.languages_menu_top %}
+            {% if this.theme.languages_menu_top and legacyTranslate %}
                 {% set actions = actions + 1 %}
             {% endif %}
             {% if this.theme.site_picker_top %}
@@ -112,7 +112,7 @@ code = "meta-menu"
             {% endif %}
 
             <div class="navbar-actions{{ actions >= 2 ? ' actions-toggle': '' }}">
-                {% if this.theme.languages_menu_top %}
+                {% if this.theme.languages_menu_top and legacyTranslate %}
                     {% partial 'localepicker/default' dropdown=true %}
                 {% endif %}
 

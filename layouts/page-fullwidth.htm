@@ -15,8 +15,12 @@ staticBreadcrumbs_skipLast = true
 <?php
 function onInit()
 {
-    $this['legacy'] = version_compare(\System\Classes\UpdateManager::instance()->getCurrentVersion(), '3.0.0', '<');
-    $this['octoberVersion'] = \System\Classes\UpdateManager::instance()->getCurrentVersion();
+    $this['octoberVersion'] = \System::VERSION;
+    $this['rainlabTranslateVersion'] = \System\Classes\VersionManager::instance()->getLatestVersion('RainLab.Translate');
+
+    $this['legacy'] = version_compare($this['octoberVersion'], '3.0.0', '<');
+    $this['legacyTranslate'] = version_compare($this['rainlabTranslateVersion'], '2.0.0', '<');
+    
     $this['hexToRgb'] = function ($hex) {
         [$r, $g, $b] = sscanf($hex, "#%02x%02x%02x");
         return "$r, $g, $b";
