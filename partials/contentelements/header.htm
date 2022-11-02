@@ -41,13 +41,13 @@
 
 {# Render Content Element #}
 {% if config.p_tag == '0' %}
-    <{{ config.title.layout|default(config.layout) }}{% if id|length > 0 %} id="{{ id }}"{% endif %} class="{{ classNames|trim }}">
+    <{{ config.title.layout|default(config.layout) }}{% if id|length > 0 %} id="{{ id }}"{% endif %} class="heading {{ classNames|trim }}">
         {% if config.link|length > 0 %}<a href="{{ config.link }}" title="{{ config.title.label|default(config.title) }}">{% endif %}
             {{ config.title.label|default(config.title) }}
         {% if config.link|length > 0 %}</a>{% endif %}
     </{{ config.title.layout|default(config.layout) }}>
 {% else %}
-    <p{% if id|length > 0 %} id="{{ id }}"{% endif %} class="{{ classNames|trim }}">
+    <p{% if id|length > 0 %} id="{{ id }}"{% endif %} class="heading {{ classNames|trim }}">
         {% if config.link|length > 0 %}<a href="{{ config.link }}" title="{{ config.title.label|default(config.title) }}">{% endif %}
             {{ config.title.label|default(config.title) }}
         {% if config.link|length > 0 %}</a>{% endif %}
