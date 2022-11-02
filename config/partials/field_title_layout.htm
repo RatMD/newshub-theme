@@ -4,7 +4,7 @@
     $props = $model->getViewBag()->getProperties();
 
     // Backwards Compatibility to PageBuilder in NewsHub v1.2
-    if (is_string($props['content_elements'][$number]['title'])) {
+    if (is_string($props['content_elements'][$number]['title'] ?? [])) {
         $label = $props['content_elements'][$number]['title'];
         $layout = $props['content_elements'][$number]['layout'];
     } else {
