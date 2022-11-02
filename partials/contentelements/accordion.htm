@@ -1,29 +1,59 @@
+{% set id = config.details.id is defined and config.details.id|length > 0 ? config.details.id : '' %}
+{% set classNames = 'newshub-ce newshub-ce-accordion' %}
 
-{% set id = this.page.id ~ '_' ~ random() %}
-{% set stayOpen = config.always_open == '1' %}
-{% set firstIsOpen = false %}
-{% set classNames = config.class_names %}
-
-{% if config.id and config.id | length > 0 %}
+{# Backward Compatibility for NewsHub prior v1.3.0 #}
+{% if config.id is defined and config.id|length > 0 and id|length == 0 %}
     {% set id = config.id %}
 {% endif %}
+{% if id|length == 0 %}
+    {% set id = this.page.id ~ '_' ~ random() %}
+{% endif %}
 
+{# Set Spacings #}
+{% if config.spacings.outerBefore and config.spacings.outerBefore >= 0 %}
+    {% set classNames = classNames ~ ' mt-' ~ config.spacings.outerBefore %}
+{% endif %}
+{% if config.spacings.innerBefore and config.spacings.innerBefore >= 0 %}
+    {% set classNames = classNames ~ ' pt-' ~ config.spacings.innerBefore %}
+{% endif %}
+{% if config.spacings.innerAfter and config.spacings.innerAfter >= 0 %}
+    {% set classNames = classNames ~ ' pb-' ~ config.spacings.innerAfter %}
+{% endif %}
+{% if config.spacings.outerAfter and config.spacings.outerAfter >= 0 %}
+    {% set classNames = classNames ~ ' mb-' ~ config.spacings.outerAfter %}
+{% endif %}
+
+{# Accordion Style #}
+{% if config.style != 'default' %}
+    {% set classNames = classNames ~ ' accordion-' ~ config.style %}
+{% endif %}
+
+{# Icon Set #}
 {% if config.iconset == 'plusminus' %}
     {% set classNames = classNames ~ ' accordion-icons-alt' %}
 {% elseif config.iconset == 'noicon' %}
     {% set classNames = classNames ~ ' accordion-icons-hide' %}
 {% endif %}
 
+{# Icon Position #}
 {% if config.iconleft == '1' %}
     {% set classNames = classNames ~ ' accordion-icons-left' %}
 {% endif %}
 
-{% if config.style != 'default' %}
-    {% set classNames = classNames ~ ' accordion-' ~ config.style %}
+{# Set Custom Classes (with backward compatibility to NewsHub prior v1.3.0) #}
+{% if config.details.classes is defined and config.details.classes|length > 0 %}
+    {% set classNames = classNames ~ ' ' ~ config.details.classes %}
+{% elseif config.class_names is defined and config.class_names|length > 0 %}
+    {% set classNames = classNames ~ ' ' ~ config.class_names %}
 {% endif %}
 
+{# Settings #}
+{% set stayOpen = config.always_open == '1' %}
+{% set firstIsOpen = false %}
+
+{# Render Content Element #}
 {% if config.children | length > 0 %}
-    <div id="{{ id }}" class="accordion {{ classNames | trim }}">
+    <div id="{{ id }}" class="accordion {{ classNames|trim }}">
         {% for item in config.children %}
             <div class="accordion-item">
                 <div class="accordion-header">

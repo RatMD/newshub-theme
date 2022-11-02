@@ -1,4 +1,14 @@
-0<style>
+<style>
+    /* Hide Myself */
+    [data-field-name="viewBag[custom_newshub_js]"],
+    [data-field-name="viewBag[custom_newshub_css]"] {
+        height: 0 !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        visibility: hidden !important;
+        overflow: hidden !important;
+    }
+
     /* Input Groups */
     .input-group.ratmd-newshub-input-dropdown-field .select2,
     .input-group.ratmd-newshub-input-dropdown-field .select2 .select2-selection {
@@ -82,9 +92,6 @@
     }
 
     /** FlexBox Layout & Icons */
-    [data-field-name="viewBag[flexbox_backend_js]"] {
-        display: none !important;
-    }
     .newshub-flexbox-layout {
         padding: 30px 15px;
         border: 1px solid #cfd7e1;

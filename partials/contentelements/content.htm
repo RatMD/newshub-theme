@@ -1,5 +1,10 @@
-
+{% set id = config.details.id is defined and config.details.id|length > 0 ? config.details.id : '' %}
 {% set classNames = 'newshub-ce newshub-ce-content' %}
+
+{# Backward Compatibility for NewsHub prior v1.3.0 #}
+{% if config.id is defined and config.id|length > 0 and id|length == 0 %}
+    {% set id = config.id %}
+{% endif %}
 
 {# Set Spacings #}
 {% if config.spacings.outerBefore and config.spacings.outerBefore >= 0 %}
@@ -15,12 +20,15 @@
     {% set classNames = classNames ~ ' mb-' ~ config.spacings.outerAfter %}
 {% endif %}
 
-{# Set Custom Classes #}
-{% if config.details.classes and config.details.classes|length > 0 %}
+{# Set Custom Classes (with backward compatibility to NewsHub prior v1.3.0) #}
+{% if config.details.classes is defined and config.details.classes|length > 0 %}
     {% set classNames = classNames ~ ' ' ~ config.details.classes %}
+{% elseif config.class_names is defined and config.class_names|length > 0 %}
+    {% set classNames = classNames ~ ' ' ~ config.class_names %}
 {% endif %}
 
-<div{% if config.details.id and config.details.id|length > 0 %} id="{{ config.details.id }}"{% endif %} class="{{ classNames }} content">
+{# Render Content Element #}
+<div{% if id|length > 0 %} id="{{ id }}"{% endif %} class="content {{ classNames|trim }}">
     {% if config.title.label|trim|length > 0 and config.title.layout != 'hidden' %}
         <{{config.title.layout}}>{{ config.title.label }}</{{config.title.layout}}>
     {% endif %}

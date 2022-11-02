@@ -1,6 +1,17 @@
+<?php 
+    $name = $field->getName();
+    $number = intval(substr($name, 26, strpos($name, ']', 26) - 26));
+    $props = $model->getViewBag()->getProperties();
 
-<?php $label = is_null($value) ? '' : ($value['label'] ?? '') ?>
-<?php $layout = is_null($value) ? '' : ($value['layout'] ?? '') ?>
+    // Backwards Compatibility to PageBuilder in NewsHub v1.2
+    if (is_string($props['content_elements'][$number]['title'])) {
+        $label = $props['content_elements'][$number]['title'];
+        $layout = $props['content_elements'][$number]['layout'];
+    } else {
+        $label = is_null($value) ? '' : ($value['label'] ?? '');
+        $layout = is_null($value) ? '' : ($value['layout'] ?? '');
+    }
+?>
 
 <div class="input-group ratmd-newshub-input-dropdown-field">
     <input
