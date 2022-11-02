@@ -13,6 +13,10 @@ Version 1.3.0 - In Progress
 - Add: "Slider Controls" option to toggle the control buttons on the Hero-Slider.
 - Add: "Slider Indicators" option to toggle the slide-indicators on the Hero-Slider.
 
+- Add: New Title - Layout input group partial for NewsHubs page builder.
+- Add: New ID - class name input group partial for NewsHubs page builder.
+- Add: New Spacings input range partial for NewsHubs page builder.
+
 - Bugfix: Bootstrap URL on placeholder / demo copyright text.
 - Bugfix: No-JS & JS-Loading styles for keen hero slider.
 

@@ -1,0 +1,25 @@
+
+<?php $label = is_null($value) ? '' : ($value['label'] ?? '') ?>
+<?php $layout = is_null($value) ? '' : ($value['layout'] ?? '') ?>
+
+<div class="input-group ratmd-newshub-input-dropdown-field">
+    <input
+        type="text"
+        id="<?= $field->getId('label') ?>"
+        name="<?= $field->getName() ?>[label]"
+        value="<?= $label ?>"
+        class="form-control"
+        placeholder="Title"
+        autocomplete="off" />
+    <div class="col" style="flex: 0 0 20%">
+        <select
+            id="<?= $field->getId('layout') ?>"
+            name="<?= $field->getName() ?>[layout]"
+            class="form-control custom-select select-no-search"
+        >
+            <?php foreach ($field->getConfig('options') as $value => $option): ?>
+                <option value="<?= e($value) ?>"<?php echo $layout === $value ? ' selected="selected"' : "" ?>><?= e(trans($option)) ?></option>
+            <?php endforeach ?>
+        </select>
+    </div>
+</div>

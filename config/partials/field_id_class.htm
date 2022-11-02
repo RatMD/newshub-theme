@@ -1,0 +1,22 @@
+
+<?php $id = is_null($value) ? '' : ($value['id'] ?? '') ?>
+<?php $classes = is_null($value) ? '' : ($value['classes'] ?? '') ?>
+
+<div class="input-group ratmd-newshub-input-group-field">
+    <input
+        type="text"
+        id="<?= $field->getId('id') ?>"
+        name="<?= $field->getName() ?>[id]"
+        value="<?= $id ?>"
+        class="form-control col-12 col-md-6"
+        placeholder="custom-id"
+        autocomplete="off" />
+    <input
+        type="text"
+        id="<?= $field->getId('classes') ?>"
+        name="<?= $field->getName() ?>[classes]"
+        value="<?= $classes ?>"
+        class="form-control col-12 col-md-6"
+        placeholder="custom-classes"
+        autocomplete="off" />
+</div>

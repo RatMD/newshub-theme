@@ -99,17 +99,19 @@ All Features
 
 Requirements
 ------------
-We recommend using this template with the latest OctoberCMS **v3** version, however support for v2 
-is still available.
+We highly recommend using this template with the latest OctoberCMS **v3.1** release, with 
+RainLab.Translate **v2+** (unless you're using a plugin which is not v2+ compatible). However, we 
+still support OctoberCMS v2+ installations using RainLab.Translate v1.9+.
 
-- Modern Browser (IE and Edge Legacy are NOT supported!)
-- PHP 7.4+ / 8.0+ (recommended: 8.0)
-- OctoberCMS v2 / v3 (recommended: 3.1)
+- Modern Browser _(IE and Edge Legacy are NOT supported)_
+- PHP 7.4+ / 8.0+ _(recommended: v8.1)_
+- OctoberCMS v2+ / v3+ _(recommended: v3.1)
 - Plugin: [RainLab.Blog](https://octobercms.com/plugin/rainlab-blog)
 - Plugin: [RainLab.Pages](https://octobercms.com/plugin/rainlab-pages)
 - Plugin: [RainLab.Sitemap](https://octobercms.com/plugin/rainlab-sitemap)
-- Plugin: [RainLab.Translate](https://octobercms.com/plugin/rainlab-translate) (Supports v1 and v2)
-- Plugin: [RatMD.BlogHub](https://octobercms.com/plugin/ratmd-bloghub) (Requires v1.2+)
+- Plugin: [RainLab.Translate](https://octobercms.com/plugin/rainlab-translate) _(supported: v1.9+ and v2+)_
+- Plugin: [RatMD.BlogHub](https://octobercms.com/plugin/ratmd-bloghub) _(required: v1.2+)_
+- Plugin: [RatMD.FormUI](https://octobercms.com/plugin/ratmd-formui)
 
 ### Supports
 The following plugins are not required but supported by the **NewsHub** template:

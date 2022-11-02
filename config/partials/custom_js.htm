@@ -1,0 +1,156 @@
+<script>
+    if (typeof window.newshub === 'undefined') {
+        window.newshub = {}
+        window.newshub.flexboxLayoutDataset = {
+            '1': {
+                values: {
+                    default: ['12', '1/1']
+                },
+                className: 'col-12 col-md-12 col-lg-[amount]'
+            },
+            '2': {
+                values: {
+                    smaller: ['4', '1/3'],
+                    default: ['6', '1/2'],
+                    larger: ['8', '2/3']
+                },
+                className: 'col-12 col-md-6 col-lg-[amount]'
+            },
+            '3': {
+                values: {
+                    smaller: ['3', '1/4'],
+                    default: ['4', '1/3'],
+                    larger: ['6', '2/4']
+                },
+                className: 'col-12 col-lg-[amount]'
+            },
+            '4': {
+                values: {
+                    smaller: ['2', '1/5'],
+                    default: ['3', '1/4'],
+                    larger: ['6', '2/5']
+                },
+                className: 'col-12 col-md-6 col-lg-[amount]'
+            },
+        };
+
+        function updateInputs(container, dataset) {
+            let primary = parseInt(container.find('[data-flexbox-primary]').val());
+            let columns = parseInt(container.find('[data-flexbox-columns]').val());
+
+            let inputs = container.find('[data-field-name^="column_"] input:not(:disabled)');
+            inputs.map(function (idx) {
+                if (primary > 0 && primary === idx+1) {
+                    $(this).val(dataset.className.replace('[amount]', dataset.values.larger[0]));
+                } else {
+                    $(this).val(dataset.className.replace('[amount]', primary === 0 ? dataset.values.default[0]: dataset.values.smaller[0]));
+                }
+            });
+        }
+
+        // Toggle Primary
+        jQuery(document).on('click', '[data-flexbox-column]', (event) => {
+            let current = jQuery(event.target.tagName.toUpperCase() === 'SPAN' ? event.target.parentElement: event.target);
+            let container = current.parents('.newshub-flexbox-layout');
+
+            let primary = container.find('[data-flexbox-primary]');
+            let columns = container.find('[data-flexbox-columns]');
+            let dataset = newshub.flexboxLayoutDataset[columns.val()];
+
+            if (columns === '1') {
+                return;
+            }
+
+            // Toggle Primary
+            container.find('.newshub-flexbox-configurator').removeClass(`primary-${primary.val()}`);
+
+            if (primary.val() == current.data('flexbox-column')) {
+                primary.val('0');
+                current.children('span:last-child').text(container.data('flexbox-string-set'));
+                container.find('[data-flexbox-column]:not(.hidden)').removeClass().addClass(`col-${dataset.values.default[0]}`);
+            } else {
+                primary.val(current.data('flexbox-column'));
+                container.find('.newshub-flexbox-configurator').addClass(`primary-${primary.val()}`);
+                container.find('[data-flexbox-column]:not(.hidden)').each(function() {
+                    if ($(this).data('flexbox-column') == current.data('flexbox-column')) {
+                        $(this).removeClass();
+                        $(this).addClass(`col-${dataset.values.larger[0]}`);
+                        $(this).children('span:last-child').text(container.data('flexbox-string-unset'));
+                    } else {
+                        $(this).removeClass();
+                        $(this).addClass(`col-${dataset.values.smaller[0]}`);
+                        $(this).children('span:last-child').text(container.data('flexbox-string-set'));
+                    }
+                });
+            }
+            updateInputs(container, dataset);
+        });
+
+        // Change FlexBox Columns
+        jQuery(document).on('click', '[data-repeater-group="flexbox"] [data-field-name="columns"] li', (event) => {
+            let current = jQuery(event.target);
+            let container = jQuery(event.target).parents('[data-repeater-group="flexbox"]');
+            
+            let primary = container.find('[data-flexbox-primary]');
+            let columns = container.find('[data-flexbox-columns]');
+            let dataset = newshub.flexboxLayoutDataset[current.data('value')];
+
+            // Reset Data
+            container.find('.newshub-flexbox-configurator').removeClass(`primary-${primary.val()}`);
+            primary.val('0');
+            columns.val(current.data('value'));
+
+            // Build FlexBox Container
+            container.find('[data-flexbox-column]').each(function() {
+                $(this).removeClass();
+
+                if (parseInt($(this).data('flexbox-column')) > parseInt(current.data('value'))) {
+                    $(this).addClass('hidden');
+                } else {
+                    $(this).addClass(`col-${dataset.values.default[0]}`);
+                }
+            });
+
+            // Update Input Fields
+            let inputs = container.find('[data-field-name^="column_"] input');
+            inputs.map(function(idx) {
+                if (idx+1 <= parseInt(columns.val())) {
+                    this.disabled = false;
+                } else {
+                    this.disabled = true;
+                }
+                this.value = '';
+            });
+            updateInputs(container, dataset);
+        })
+
+        // Manual Switch
+        jQuery(document).on('change', '[data-flexbox-manual]', (event) => {
+            let container = $(event.target).parents('.newshub-flexbox-layout');
+            if (event.target.checked) {
+                container.addClass('manual-configuration');
+            } else {
+                container.removeClass('manual-configuration');
+            }
+        });
+        
+        // Range Slider
+        jQuery(document).on('input', '[data-newshub-handle="spacing-slider"]', (event) => {
+            let input = event.target;
+            let tooltip = input.nextElementSibling;
+            tooltip.className = `newshub-tooltip newshub-tooltip-pos-${input.value}`;
+            tooltip.innerText = [
+                'none',
+                'xxs',
+                'xs',
+                'sm',
+                'md',
+                'lg',
+                'xl',
+                'xxl',
+                'xxxl'
+            ][parseInt(input.value)];
+
+        });
+    }
+</script>

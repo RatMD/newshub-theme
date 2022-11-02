@@ -28,6 +28,7 @@
         font-weight: 600;
         text-decoration: none;
         border-radius: $border-radius;
+        transition: color .15s ease, background-color .15s ease;
 
         &:hover {
             background-color: var(--bs-gray-200);

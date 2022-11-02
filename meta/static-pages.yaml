@@ -20,3 +20,4 @@ static-pages:
         page-builder-tabs: {  }
         page-builder-text-teaser: {  }
     contact: {  }
+    features: {  }

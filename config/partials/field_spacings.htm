@@ -1,0 +1,48 @@
+
+
+<?php
+    $spacings = [
+        'outerBefore' => Lang::get('theme.newshub::lang.builder.globals.spacing.label_margin_top'),
+        'innerBefore' => Lang::get('theme.newshub::lang.builder.globals.spacing.label_padding_top'),
+        'innerAfter'  => Lang::get('theme.newshub::lang.builder.globals.spacing.label_padding_bottom'),
+        'outerAfter'  => Lang::get('theme.newshub::lang.builder.globals.spacing.label_margin_bottom')
+    ];
+?>
+
+<div class="d-flex">
+    <?php foreach($spacings AS $key => $label) { ?>
+        <?php $val = is_array($value) ? ($value[$key] ?? 0) : 0 ?>
+        <div class="col12 col-md-6 col-lg-3 px-2">
+            <div class="d-flex flex-column">
+                <div class="col-12">
+                    <label for="<?php $field->getId($key) ?>" class="form-label"></label>
+                </div>
+
+                <div class="col-12 position-relative">
+                    <input 
+                        id="customRange1" 
+                        type="range" 
+                        class="form-range newshub-range" 
+                        min="0" 
+                        max="8" 
+                        value="<?= $val ?>"
+                        name="<?= $field->getName() ?>[<?= $key ?>]"
+                        data-newshub-handle="spacing-slider" 
+                    />
+                    <div class="newshub-tooltip newshub-tooltip-pos-<?= $val ?>"><?= [
+                            0 => 'none',
+                            1 => 'xxs',
+                            2 => 'xs',
+                            3 => 'sm',
+                            4 => 'md',
+                            5 => 'lg',
+                            6 => 'xl',
+                            7 => 'xxl',
+                            8 => 'xxxl'
+                    ][$val] ?></div>
+                    <label for="customRange1" class="form-label newshub-range-label"><?= e($label) ?></label>
+                </div>
+            </div>
+        </div>
+    <?php } ?> 
+</div>

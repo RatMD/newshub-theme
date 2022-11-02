@@ -10253,7 +10253,7 @@ y .form-group:last-child {
   border: 0;
 }
 .sitepicker-modal .list-group-item {
-  margin: 0.25rem;
+  margin: 0.25rem 0;
   padding: 0;
   border: 0;
   border-radius: 0;
@@ -10266,6 +10266,7 @@ y .form-group:last-child {
   font-weight: 600;
   text-decoration: none;
   border-radius: 3px;
+  transition: color 0.15s ease, background-color 0.15s ease;
 }
 .sitepicker-modal .site-link:hover {
   background-color: var(--bs-gray-200);
