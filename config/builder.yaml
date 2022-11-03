@@ -654,90 +654,26 @@ flexbox:
             label: theme.newshub::lang.builder.globals.name.label
             comment: theme.newshub::lang.builder.globals.name.comment
             span: left
-        id:
-            type: text
+        details:
+            type: partial
+            path: '#/newshub/config/partials/field_id_class.htm'
             label: theme.newshub::lang.builder.globals.id.label
             comment: theme.newshub::lang.builder.globals.id.comment
-            span: left
-        class_names:
-            type: text
-            label: theme.newshub::lang.builder.globals.class_names.label
-            comment: theme.newshub::lang.builder.globals.class_names.comment
             span: right
+        spacings:
+            type: partial
+            path: '#/newshub/config/partials/field_spacings.htm'
+            label: theme.newshub::lang.builder.globals.spacing.label
+            comment: theme.newshub::lang.builder.globals.spacing.comment
+        _separate_general_settings:
+            type: ruler
+            cssClass: mt-3 mb-3
         wrap_container:
             type: switch
             label: theme.newshub::lang.builder.globals.wrap_container.label
             comment: theme.newshub::lang.builder.globals.wrap_container.comment
             default: false
             span: left
-        margin_top:
-            type: balloon-selector
-            label: theme.newshub::lang.builder.globals.spacing.label_margin_top
-            default: default
-            showSearch: false
-            options:
-                default: default
-                mt-0: none
-                mt-1: xxs
-                mt-2: xs
-                mt-3: sm
-                mt-4: md
-                mt-5: lg
-                mt-6: xl
-                mt-7: xxl
-                mt-8: xxxl
-            span: left
-        padding_top:
-            type: balloon-selector
-            label: theme.newshub::lang.builder.globals.spacing.label_padding_top
-            default: default
-            showSearch: false
-            options:
-                default: default
-                pt-0: none
-                pt-1: xxs
-                pt-2: xs
-                pt-3: sm
-                pt-4: md
-                pt-5: lg
-                pt-6: xl
-                pt-7: xxl
-                pt-8: xxxl
-            span: right
-        margin_bottom:
-            type: balloon-selector
-            label: theme.newshub::lang.builder.globals.spacing.label_margin_bottom
-            default: default
-            showSearch: false
-            options:
-                default: default
-                mb-0: none
-                mb-1: xxs
-                mb-2: xs
-                mb-3: sm
-                mb-4: md
-                mb-5: lg
-                mb-6: xl
-                mb-7: xxl
-                mb-8: xxxl
-            span: left
-        padding_bottom:
-            type: balloon-selector
-            label: theme.newshub::lang.builder.globals.spacing.label_padding_bottom
-            default: default
-            showSearch: false
-            options:
-                default: default
-                pb-0: none
-                pb-1: xxs
-                pb-2: xs
-                pb-3: sm
-                pb-4: md
-                pb-5: lg
-                pb-6: xl
-                pb-7: xxl
-                pb-8: xxxl
-            span: right
         columns:
             type: balloon-selector
             label: theme.newshub::lang.builder.flexbox.columns.label

@@ -1,5 +1,26 @@
-{% set classNames = 'row ' ~ config.class_names %}
+{% set id = config.details.id is defined and config.details.id|length > 0 ? config.details.id : '' %}
+{% set classNames = 'flexbox newshub-ce newshub-ce-flexbox row' %}
 
+{# Backward Compatibility for NewsHub prior v1.3.0 #}
+{% if config.id is defined and config.id|length > 0 and id|length == 0 %}
+    {% set id = config.id %}
+{% endif %}
+
+{# Set Spacings #}
+{% if config.spacings.outerBefore and config.spacings.outerBefore >= 0 %}
+    {% set classNames = classNames ~ ' mt-' ~ config.spacings.outerBefore %}
+{% endif %}
+{% if config.spacings.innerBefore and config.spacings.innerBefore >= 0 %}
+    {% set classNames = classNames ~ ' pt-' ~ config.spacings.innerBefore %}
+{% endif %}
+{% if config.spacings.innerAfter and config.spacings.innerAfter >= 0 %}
+    {% set classNames = classNames ~ ' pb-' ~ config.spacings.innerAfter %}
+{% endif %}
+{% if config.spacings.outerAfter and config.spacings.outerAfter >= 0 %}
+    {% set classNames = classNames ~ ' mb-' ~ config.spacings.outerAfter %}
+{% endif %}
+
+{# Set Spacings prior NewsHub v1.3.0 #}
 {% if config.margin_top != 'default' %} 
     {% set classNames = classNames ~ ' ' ~ config.margin_top %}
 {% endif %}
@@ -13,8 +34,9 @@
     {% set classNames = classNames ~ ' ' ~ config.margin_top %}
 {% endif %}
 
+{# Render Content Element #}
 {% if config.wrap_container == '1' %}<div class="container">{% endif %}
-<div{% if config.id and config.id | length > 0 %} id="{{ config.id }}"{% endif %} class="{{ classNames }}">
+<div{% if id|length > 0 %} id="{{ id }}"{% endif %} class="{{ classNames|trim }}">
     {% if config.columns >= 1 %}
         <div class="{{ config.layout.column_1 }}">
             {% for element in config.children_1 %}
