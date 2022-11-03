@@ -4,12 +4,12 @@
     $props = $model->getViewBag()->getProperties();
 
     // Backwards Compatibility to PageBuilder in NewsHub v1.2
-    if (is_string($props['content_elements'][$number]['id'] ?? null)) {
-        $id = $props['content_elements'][$number]['id'];
-        $classes = $props['content_elements'][$number]['class_names'];
-    } else {
+    if (is_null($value) || is_array($value)) {
         $id = is_null($value) ? '' : ($value['id'] ?? '');
         $classes = is_null($value) ? '' : ($value['classes'] ?? '');
+    } else {
+        $id = $props['content_elements'][$number]['id'] ?? '';
+        $classes = $props['content_elements'][$number]['class_names'] ?? '';
     }
 ?>
 
