@@ -14,7 +14,7 @@
 
 {% set isActive = false %}
 {% if config.children | length > 0 %}
-    <div id="{{ id }}" class="{{ classNames }}">
+    <div id="{{ id }}" class="{{ classNames|trim }}">
         <nav>
             <div class="nav nav-tabs {{ config.position == 'vertical' ? 'flex-md-column' : 'justify-content-' ~ config.alignment }}" role="tablist">
                 {% for tab in config.children %}

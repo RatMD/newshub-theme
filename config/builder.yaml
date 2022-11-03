@@ -744,16 +744,20 @@ gallery:
             label: theme.newshub::lang.builder.globals.name.label
             comment: theme.newshub::lang.builder.globals.name.comment
             span: left
-        id:
-            type: text
+        details:
+            type: partial
+            path: '#/newshub/config/partials/field_id_class.htm'
             label: theme.newshub::lang.builder.globals.id.label
             comment: theme.newshub::lang.builder.globals.id.comment
-            span: left
-        class_names:
-            type: text
-            label: theme.newshub::lang.builder.globals.class_names.label
-            comment: theme.newshub::lang.builder.globals.class_names.comment
             span: right
+        spacings:
+            type: partial
+            path: '#/newshub/config/partials/field_spacings.htm'
+            label: theme.newshub::lang.builder.globals.spacing.label
+            comment: theme.newshub::lang.builder.globals.spacing.comment
+        _separate_general_settings:
+            type: ruler
+            cssClass: mt-3 mb-3
         columns:
             type: balloon-selector
             label: theme.newshub::lang.builder.gallery.columns.label
@@ -868,17 +872,12 @@ image:
     icon: newshub-bi newshub-bi-image
     fields:
         title:
-            type: text
+            type: partial
+            path: '#/newshub/config/partials/field_title_layout.htm'
             label: theme.newshub::lang.builder.globals.title.label
             comment: theme.newshub::lang.builder.globals.title.comment
-            span: left
-        layout:
-            type: dropdown
-            label: theme.newshub::lang.builder.header.layout.label
-            comment: theme.newshub::lang.builder.header.layout.comment
-            default: hidden
-            showSearch: false
-            options:
+            defaultOption: h2
+            options: 
                 h1: theme.newshub::lang.builder.header.layout.h1
                 h2: theme.newshub::lang.builder.header.layout.h2
                 h3: theme.newshub::lang.builder.header.layout.h3
@@ -886,17 +885,22 @@ image:
                 h5: theme.newshub::lang.builder.header.layout.h5
                 h6: theme.newshub::lang.builder.header.layout.h6
                 hidden: theme.newshub::lang.builder.globals.hidden
-            span: right
-        id:
-            type: text
+            showSearch: false
+            span: left
+        details:
+            type: partial
+            path: '#/newshub/config/partials/field_id_class.htm'
             label: theme.newshub::lang.builder.globals.id.label
             comment: theme.newshub::lang.builder.globals.id.comment
-            span: left
-        class_names:
-            type: text
-            label: theme.newshub::lang.builder.globals.class_names.label
-            comment: theme.newshub::lang.builder.globals.class_names.comment
             span: right
+        spacings:
+            type: partial
+            path: '#/newshub/config/partials/field_spacings.htm'
+            label: theme.newshub::lang.builder.globals.spacing.label
+            comment: theme.newshub::lang.builder.globals.spacing.comment
+        _separate_general_settings:
+            type: ruler
+            cssClass: mt-3 mb-3
         image:
             type: mediafinder
             label: theme.newshub::lang.builder.image.image.label
@@ -958,17 +962,12 @@ list:
     icon: newshub-bi newshub-bi-list
     fields:
         title:
-            type: text
+            type: partial
+            path: '#/newshub/config/partials/field_title_layout.htm'
             label: theme.newshub::lang.builder.globals.title.label
             comment: theme.newshub::lang.builder.globals.title.comment
-            span: left
-        layout:
-            type: dropdown
-            label: theme.newshub::lang.builder.header.layout.label
-            comment: theme.newshub::lang.builder.header.layout.comment
-            default: hidden
-            showSearch: false
-            options:
+            defaultOption: h2
+            options: 
                 h1: theme.newshub::lang.builder.header.layout.h1
                 h2: theme.newshub::lang.builder.header.layout.h2
                 h3: theme.newshub::lang.builder.header.layout.h3
@@ -976,17 +975,22 @@ list:
                 h5: theme.newshub::lang.builder.header.layout.h5
                 h6: theme.newshub::lang.builder.header.layout.h6
                 hidden: theme.newshub::lang.builder.globals.hidden
-            span: right
-        id:
-            type: text
+            showSearch: false
+            span: left
+        details:
+            type: partial
+            path: '#/newshub/config/partials/field_id_class.htm'
             label: theme.newshub::lang.builder.globals.id.label
             comment: theme.newshub::lang.builder.globals.id.comment
-            span: left
-        class_names:
-            type: text
-            label: theme.newshub::lang.builder.globals.class_names.label
-            comment: theme.newshub::lang.builder.globals.class_names.comment
             span: right
+        spacings:
+            type: partial
+            path: '#/newshub/config/partials/field_spacings.htm'
+            label: theme.newshub::lang.builder.globals.spacing.label
+            comment: theme.newshub::lang.builder.globals.spacing.comment
+        _separate_general_settings:
+            type: ruler
+            cssClass: mt-3 mb-3
         style:
             type: dropdown
             label: theme.newshub::lang.builder.list.style.label
@@ -1010,17 +1014,12 @@ quote:
     icon: newshub-bi newshub-bi-quote
     fields:
         title:
-            type: text
+            type: partial
+            path: '#/newshub/config/partials/field_title_layout.htm'
             label: theme.newshub::lang.builder.globals.title.label
             comment: theme.newshub::lang.builder.globals.title.comment
-            span: left
-        layout:
-            type: dropdown
-            label: theme.newshub::lang.builder.header.layout.label
-            comment: theme.newshub::lang.builder.header.layout.comment
-            default: hidden
-            showSearch: false
-            options:
+            defaultOption: h2
+            options: 
                 h1: theme.newshub::lang.builder.header.layout.h1
                 h2: theme.newshub::lang.builder.header.layout.h2
                 h3: theme.newshub::lang.builder.header.layout.h3
@@ -1028,17 +1027,22 @@ quote:
                 h5: theme.newshub::lang.builder.header.layout.h5
                 h6: theme.newshub::lang.builder.header.layout.h6
                 hidden: theme.newshub::lang.builder.globals.hidden
-            span: right
-        id:
-            type: text
+            showSearch: false
+            span: left
+        details:
+            type: partial
+            path: '#/newshub/config/partials/field_id_class.htm'
             label: theme.newshub::lang.builder.globals.id.label
             comment: theme.newshub::lang.builder.globals.id.comment
-            span: left
-        class_names:
-            type: text
-            label: theme.newshub::lang.builder.globals.class_names.label
-            comment: theme.newshub::lang.builder.globals.class_names.comment
             span: right
+        spacings:
+            type: partial
+            path: '#/newshub/config/partials/field_spacings.htm'
+            label: theme.newshub::lang.builder.globals.spacing.label
+            comment: theme.newshub::lang.builder.globals.spacing.comment
+        _separate_general_settings:
+            type: ruler
+            cssClass: mt-3 mb-3
         alignment:
             type: balloon-selector
             label: theme.newshub::lang.builder.globals.textalignment
@@ -1047,18 +1051,20 @@ quote:
                 start: theme.newshub::lang.builder.globals.left
                 center: theme.newshub::lang.builder.globals.center
                 end: theme.newshub::lang.builder.globals.right
-        content:
-            type: textarea
-            label: theme.newshub::lang.builder.quote.content.label
-            comment: theme.newshub::lang.builder.quote.content.comment
         source:
             type: text
             label: theme.newshub::lang.builder.quote.text.label
             comment: theme.newshub::lang.builder.quote.text.comment
+            span: left
         link:
             type: text
             label: theme.newshub::lang.builder.quote.link.label
             comment: theme.newshub::lang.builder.quote.link.comment
+            span: right
+        content:
+            type: textarea
+            label: theme.newshub::lang.builder.quote.content.label
+            comment: theme.newshub::lang.builder.quote.content.comment
 
 section: 
     name: theme.newshub::lang.builder.section.label
@@ -1125,15 +1131,11 @@ separator:
             label: theme.newshub::lang.builder.globals.name.label
             comment: theme.newshub::lang.builder.globals.name.comment
             span: left
-        id:
-            type: text
+        details:
+            type: partial
+            path: '#/newshub/config/partials/field_id_class.htm'
             label: theme.newshub::lang.builder.globals.id.label
             comment: theme.newshub::lang.builder.globals.id.comment
-            span: left
-        class_names:
-            type: text
-            label: theme.newshub::lang.builder.globals.class_names.label
-            comment: theme.newshub::lang.builder.globals.class_names.comment
             span: right
         spacing_above:
             type: balloon-selector
@@ -1197,16 +1199,20 @@ slider:
             label: theme.newshub::lang.builder.globals.name.label
             comment: theme.newshub::lang.builder.globals.name.comment
             span: left
-        id:
-            type: text
+        details:
+            type: partial
+            path: '#/newshub/config/partials/field_id_class.htm'
             label: theme.newshub::lang.builder.globals.id.label
             comment: theme.newshub::lang.builder.globals.id.comment
-            span: left
-        class_names:
-            type: text
-            label: theme.newshub::lang.builder.globals.class_names.label
-            comment: theme.newshub::lang.builder.globals.class_names.comment
             span: right
+        spacings:
+            type: partial
+            path: '#/newshub/config/partials/field_spacings.htm'
+            label: theme.newshub::lang.builder.globals.spacing.label
+            comment: theme.newshub::lang.builder.globals.spacing.comment
+        _separate_general_settings:
+            type: ruler
+            cssClass: mt-3 mb-3
         controls:
             type: switch
             label: theme.newshub::lang.builder.carousel.controls.label

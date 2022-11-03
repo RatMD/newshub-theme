@@ -1,17 +1,32 @@
-{% set classNames = config.class_names %}
+{% set id = config.details.id is defined and config.details.id|length > 0 ? config.details.id : '' %}
+{% set classNames = 'separator newshub-ce newshub-ce-separator' %}
 
+{# Backward Compatibility for NewsHub prior v1.3.0 #}
+{% if config.id is defined and config.id|length > 0 and id|length == 0 %}
+    {% set id = config.id %}
+{% endif %}
+
+{# Set Custom Classes (with backward compatibility to NewsHub prior v1.3.0) #}
+{% if config.details.classes is defined and config.details.classes|length > 0 %}
+    {% set classNames = classNames ~ ' ' ~ config.details.classes %}
+{% elseif config.class_names is defined and config.class_names|length > 0 %}
+    {% set classNames = classNames ~ ' ' ~ config.class_names %}
+{% endif %}
+
+{# Set Spacings #}
 {% if config.spacing_above != 'default' %}
     {% set classNames = classNames ~ ' ' ~ config.spacing_above %}
 {% endif %}
-
 {% if config.spacing_below != 'default' %}
     {% set classNames = classNames ~ ' ' ~ config.spacing_below %}
 {% endif %}
 
+{# Set horizontal rule #}
 {% if config.hr == 'hidden' %}
     {% set classNames = classNames ~ ' border-transparent' %}
 {% elseif config.hr != 'default' %}
     {% set classNames = classNames ~ ' border-' ~ config.hr %}
 {% endif %}
 
-<hr{% if config.id and config.id | length > 0 %} id="{{ config.id }}"{% endif %} class="section {{ classNames | trim }}" />
+{# Render Content Element #}
+<hr{% if id|length > 0 %} id="{{ id }}"{% endif %} class="{{ classNames|trim }}" />

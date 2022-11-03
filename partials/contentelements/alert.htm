@@ -32,7 +32,7 @@
 {% set title = config.title.label is defined ? config.title.label : config.title %}
 {% set layout = config.title.layout is defined ? config.title.layout : config.layout %}
 
-<div{% if id|length > 0 %} id="{{ id }}"{% endif %} class="{{ classNames }}" role="alert">
+<div{% if id|length > 0 %} id="{{ id }}"{% endif %} class="{{ classNames|trim }}" role="alert">
     {% if layout != 'hidden' and title|length > 0 %}
         {% if layout == 'default' %}
             <div class="alert-heading h4 mt-0 font-sans-serif mb-3">{{ title }}</div>

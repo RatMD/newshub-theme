@@ -7,7 +7,7 @@
         {% set classNames = classNames ~ ' row' %}
     {% endif %}
 
-    <div{% if config.id and config.id | length > 0 %} id="{{ config.id }}"{% endif %} class="{{ classNames }}">
+    <div{% if config.id and config.id | length > 0 %} id="{{ config.id }}"{% endif %} class="{{ classNames|trim }}">
         <p class="lead {% if config.position == 'top' %}col-12{% else %}col-12 col-lg-5{% endif %}">
             {{ config.teaser }}
         </p>
