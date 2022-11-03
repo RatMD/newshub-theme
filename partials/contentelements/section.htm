@@ -1,6 +1,26 @@
+{% set id = config.details.id is defined and config.details.id|length > 0 ? config.details.id : '' %}
+{% set classNames = 'section newshub-ce newshub-ce-section' %}
 
-{% set classNames = config.class_names %}
+{# Backward Compatibility for NewsHub prior v1.3.0 #}
+{% if config.id is defined and config.id|length > 0 and id|length == 0 %}
+    {% set id = config.id %}
+{% endif %}
 
+{# Set Spacings #}
+{% if config.spacings.outerBefore and config.spacings.outerBefore >= 0 %}
+    {% set classNames = classNames ~ ' mt-' ~ config.spacings.outerBefore %}
+{% endif %}
+{% if config.spacings.innerBefore and config.spacings.innerBefore >= 0 %}
+    {% set classNames = classNames ~ ' pt-' ~ config.spacings.innerBefore %}
+{% endif %}
+{% if config.spacings.innerAfter and config.spacings.innerAfter >= 0 %}
+    {% set classNames = classNames ~ ' pb-' ~ config.spacings.innerAfter %}
+{% endif %}
+{% if config.spacings.outerAfter and config.spacings.outerAfter >= 0 %}
+    {% set classNames = classNames ~ ' mb-' ~ config.spacings.outerAfter %}
+{% endif %}
+
+{# Set Spacings prior NewsHub v1.3.0 #}
 {% if config.margin_top != 'default' %} 
     {% set classNames = classNames ~ ' ' ~ config.margin_top %}
 {% endif %}
@@ -13,11 +33,21 @@
 {% if config.padding_bottom != 'default' %} 
     {% set classNames = classNames ~ ' ' ~ config.margin_top %}
 {% endif %}
-{% if config.background | default('default') != 'default' %} 
+
+{# Set BAckground Color #}
+{% if config.background|default('default') != 'default' %} 
     {% set classNames = classNames ~ ' text-bg-' ~ config.background %}
 {% endif %}
 
-<section{% if config.id and config.id | length > 0 %} id="{{ config.id }}"{% endif %} class="section {{ classNames | trim }}">
+{# Set Custom Classes (with backward compatibility to NewsHub prior v1.3.0) #}
+{% if config.details.classes is defined and config.details.classes|length > 0 %}
+    {% set classNames = classNames ~ ' ' ~ config.details.classes %}
+{% elseif config.class_names is defined and config.class_names|length > 0 %}
+    {% set classNames = classNames ~ ' ' ~ config.class_names %}
+{% endif %}
+
+{# Render Element #}
+<section{% if id|length > 0 %} id="{{ id }}"{% endif %} class="section {{ classNames|trim }}">
     {% if config.wrap_container == '1' %}<div class="container flex-column">{% endif %}
         {% for element in config.children %}
             {% if hasPartial('contentelements/' ~ element._group) %}
