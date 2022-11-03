@@ -418,16 +418,20 @@ carousel:
             label: theme.newshub::lang.builder.globals.name.label
             comment: theme.newshub::lang.builder.globals.name.comment
             span: left
-        id:
-            type: text
+        details:
+            type: partial
+            path: '#/newshub/config/partials/field_id_class.htm'
             label: theme.newshub::lang.builder.globals.id.label
             comment: theme.newshub::lang.builder.globals.id.comment
-            span: left
-        class_names:
-            type: text
-            label: theme.newshub::lang.builder.globals.class_names.label
-            comment: theme.newshub::lang.builder.globals.class_names.comment
             span: right
+        spacings:
+            type: partial
+            path: '#/newshub/config/partials/field_spacings.htm'
+            label: theme.newshub::lang.builder.globals.spacing.label
+            comment: theme.newshub::lang.builder.globals.spacing.comment
+        _separate_general_settings:
+            type: ruler
+            cssClass: mt-3 mb-3
         autoplay:
             type: switch
             label: theme.newshub::lang.builder.carousel.autoplay.label

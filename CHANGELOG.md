@@ -21,6 +21,7 @@ Version 1.3.0 - In Progress
 - Update: Alert / Callout content element (new structure).
 - Update: Card content element (new structure).
 - Update: Card Group content element (new structure).
+- Update: Carousel content element (new structure).
 - Update: Content content element (new structure).
 - Update: Heading content element (new structure).
 - Update: Section content element (new structure).
