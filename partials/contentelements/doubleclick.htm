@@ -1,21 +1,45 @@
-{% set classNames = 'double-click' %}
-{% if config.class_names and config.class_names|length > 0 %}
+{% set id = config.details.id is defined and config.details.id|length > 0 ? config.details.id : '' %}
+{% set classNames = 'double-click newshub-ce newshub-ce-double-click' %}
+
+{# Backward Compatibility for NewsHub prior v1.3.0 #}
+{% if config.id is defined and config.id|length > 0 and id|length == 0 %}
+    {% set id = config.id %}
+{% endif %}
+
+{# Set Spacings #}
+{% if config.spacings.outerBefore and config.spacings.outerBefore >= 0 %}
+    {% set classNames = classNames ~ ' mt-' ~ config.spacings.outerBefore %}
+{% endif %}
+{% if config.spacings.innerBefore and config.spacings.innerBefore >= 0 %}
+    {% set classNames = classNames ~ ' pt-' ~ config.spacings.innerBefore %}
+{% endif %}
+{% if config.spacings.innerAfter and config.spacings.innerAfter >= 0 %}
+    {% set classNames = classNames ~ ' pb-' ~ config.spacings.innerAfter %}
+{% endif %}
+{% if config.spacings.outerAfter and config.spacings.outerAfter >= 0 %}
+    {% set classNames = classNames ~ ' mb-' ~ config.spacings.outerAfter %}
+{% endif %}
+
+{# Set Custom Classes (with backward compatibility to NewsHub prior v1.3.0) #}
+{% if config.details.classes is defined and config.details.classes|length > 0 %}
+    {% set classNames = classNames ~ ' ' ~ config.details.classes %}
+{% elseif config.class_names is defined and config.class_names|length > 0 %}
     {% set classNames = classNames ~ ' ' ~ config.class_names %}
 {% endif %}
 
-<div {% if config.id and config.id | length > 0 %} id="{{ config.id }}"{% endif %} class="{{ classNames }}" data-newshub-toggle="double-click">
-<div class="double-click" data-newshub-toggle="double-click">
+{# Render Content Element #}
+<div{% if id|length > 0 %} id="{{ id }}"{% endif %} class="{{ classNames|trim }}" data-newshub-toggle="double-click">
     <div class="double-click-title">
-        {{ config.title | default('Third-Party Service') | raw }}
+        {{ config.title|default('Third-Party Service')|raw }}
     </div>
     <div class="double-click-description">
-        {{ config.description | default("This content is hosted on a different website, which may sets cookies. Click on the button below, when you're cool with that.") | raw }}
+        {{ config.description|default("This content is hosted on a different website, which may sets cookies. Click on the button below, when you're cool with that.")|raw }}
     </div>
     <button type="button" class="double-click-button">
-        {{ config.button_text | default('Accept Cookies & Load Content') | raw }}
+        {{ config.button_text|default('Accept Cookies & Load Content')|raw }}
     </button>
 
     <template class="double-click-content">
-        {{ config.content | raw }}
+        {{ config.content|raw }}
     </template>
 </div>

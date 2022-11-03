@@ -23,11 +23,13 @@ Version 1.3.0 - In Progress
 - Update: Card Group content element (new structure).
 - Update: Carousel content element (new structure).
 - Update: Content content element (new structure).
+- Update: Double Click content element (new structure).
 - Update: Heading content element (new structure).
 - Update: Section content element (new structure).
 
 - Bugfix: Bootstrap URL on placeholder / demo copyright text.
 - Bugfix: No-JS & JS-Loading styles for keen hero slider.
+- Bugfix: Remove additional div container tag on the Double-Click content element.
 
 
 
