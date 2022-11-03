@@ -220,6 +220,12 @@ card:
         _separate_general_settings:
             type: ruler
             cssClass: mt-3 mb-3
+        simple_style:
+            type: switch
+            label: theme.newshub::lang.builder.card.style.label
+            comment: theme.newshub::lang.builder.card.style.comment
+            default: false
+            span: left
         subtitle:
             type: partial
             path: '#/newshub/config/partials/field_title_layout.htm'
@@ -235,24 +241,6 @@ card:
                 h6: theme.newshub::lang.builder.header.layout.h6
                 hidden: theme.newshub::lang.builder.globals.hidden
             showSearch: false
-            span: left
-        simple_style:
-            type: switch
-            label: theme.newshub::lang.builder.card.style.label
-            comment: theme.newshub::lang.builder.card.style.comment
-            default: false
-            span: left
-        size:
-            type: balloon-selector
-            label: theme.newshub::lang.builder.card.size.label
-            comment: theme.newshub::lang.builder.card.size.comment
-            default: medium
-            options:
-                none: none
-                small: sm
-                medium: md
-                large: lg
-                fullwidth: 100%
             span: left
         color:
             type: dropdown
@@ -275,10 +263,18 @@ card:
                 action: hide
                 field: simple_style
                 condition: checked
-        content:
-            type: markdown
-            label: theme.newshub::lang.builder.card.content.label
-            comment: theme.newshub::lang.builder.card.content.comment
+        size:
+            type: balloon-selector
+            label: theme.newshub::lang.builder.card.size.label
+            comment: theme.newshub::lang.builder.card.size.comment
+            default: medium
+            options:
+                none: none
+                small: sm
+                medium: md
+                large: lg
+                fullwidth: 100%
+            span: left
         image:
             type: mediafinder
             label: theme.newshub::lang.builder.card.image.label
@@ -287,6 +283,10 @@ card:
             required: true
             maxItems: 1
             span: left
+        content:
+            type: markdown
+            label: theme.newshub::lang.builder.card.content.label
+            comment: theme.newshub::lang.builder.card.content.comment
 
 cardgroup:
     name: theme.newshub::lang.builder.cardgroup.label
@@ -298,16 +298,20 @@ cardgroup:
             label: theme.newshub::lang.builder.globals.name.label
             comment: theme.newshub::lang.builder.globals.name.comment
             span: left
-        id:
-            type: text
+        details:
+            type: partial
+            path: '#/newshub/config/partials/field_id_class.htm'
             label: theme.newshub::lang.builder.globals.id.label
             comment: theme.newshub::lang.builder.globals.id.comment
-            span: left
-        class_names:
-            type: text
-            label: theme.newshub::lang.builder.globals.class_names.label
-            comment: theme.newshub::lang.builder.globals.class_names.comment
             span: right
+        spacings:
+            type: partial
+            path: '#/newshub/config/partials/field_spacings.htm'
+            label: theme.newshub::lang.builder.globals.spacing.label
+            comment: theme.newshub::lang.builder.globals.spacing.comment
+        _separate_general_settings:
+            type: ruler
+            cssClass: mt-3 mb-3
         children:
             type: repeater
             label: theme.newshub::lang.builder.cardgroup.items.label
@@ -318,17 +322,12 @@ cardgroup:
             form:
                 fields:
                     title:
-                        type: text
+                        type: partial
+                        path: '#/newshub/config/partials/field_title_layout.htm'
                         label: theme.newshub::lang.builder.globals.title.label
                         comment: theme.newshub::lang.builder.globals.title.comment
-                        span: left
-                    layout:
-                        type: dropdown
-                        label: theme.newshub::lang.builder.card.layout.label
-                        comment: theme.newshub::lang.builder.card.layout.comment
-                        showSearch: false
-                        default: default
-                        options:
+                        defaultOption: default
+                        options: 
                             default: theme.newshub::lang.builder.globals.default
                             h1: theme.newshub::lang.builder.header.layout.h1
                             h2: theme.newshub::lang.builder.header.layout.h2
@@ -337,19 +336,35 @@ cardgroup:
                             h5: theme.newshub::lang.builder.header.layout.h5
                             h6: theme.newshub::lang.builder.header.layout.h6
                             hidden: theme.newshub::lang.builder.globals.hidden
+                        showSearch: false
+                        span: left
+                    details:
+                        type: partial
+                        path: '#/newshub/config/partials/field_id_class.htm'
+                        label: theme.newshub::lang.builder.globals.id.label
+                        comment: theme.newshub::lang.builder.globals.id.comment
                         span: right
+                    spacings:
+                        type: partial
+                        path: '#/newshub/config/partials/field_spacings.htm'
+                        label: theme.newshub::lang.builder.globals.spacing.label
+                        comment: theme.newshub::lang.builder.globals.spacing.comment
+                    _separate_general_settings:
+                        type: ruler
+                        cssClass: mt-3 mb-3
+                    simple_style:
+                        type: switch
+                        label: theme.newshub::lang.builder.card.style.label
+                        comment: theme.newshub::lang.builder.card.style.comment
+                        default: false
+                        span: left
                     subtitle:
-                        type: text
+                        type: partial
+                        path: '#/newshub/config/partials/field_title_layout.htm'
                         label: theme.newshub::lang.builder.globals.subtitle.label
                         comment: theme.newshub::lang.builder.globals.subtitle.comment
-                        span: left
-                    sublayout:
-                        type: dropdown
-                        label: theme.newshub::lang.builder.card.sublayout.label
-                        comment: theme.newshub::lang.builder.card.sublayout.comment
-                        showSearch: false
-                        default: default
-                        options:
+                        defaultOption: default
+                        options: 
                             default: theme.newshub::lang.builder.globals.default
                             h2: theme.newshub::lang.builder.header.layout.h2
                             h3: theme.newshub::lang.builder.header.layout.h3
@@ -357,34 +372,41 @@ cardgroup:
                             h5: theme.newshub::lang.builder.header.layout.h5
                             h6: theme.newshub::lang.builder.header.layout.h6
                             hidden: theme.newshub::lang.builder.globals.hidden
-                        span: right
-                    id:
-                        type: text
-                        label: theme.newshub::lang.builder.globals.id.label
-                        comment: theme.newshub::lang.builder.globals.id.comment
+                        showSearch: false
                         span: left
-                    class_names:
-                        type: text
-                        label: theme.newshub::lang.builder.globals.class_names.label
-                        comment: theme.newshub::lang.builder.globals.class_names.comment
+                    color:
+                        type: dropdown
+                        label: theme.newshub::lang.builder.card.color.label
+                        comment: theme.newshub::lang.builder.card.color.comment
+                        default: default
+                        showSearch: false
+                        options:
+                            default: theme.newshub::lang.builder.globals.default
+                            primary: theme.newshub::lang.builder.globals.color.primary 
+                            secondary: theme.newshub::lang.builder.globals.color.secondary
+                            success: theme.newshub::lang.builder.globals.color.success
+                            danger: theme.newshub::lang.builder.globals.color.danger
+                            warning: theme.newshub::lang.builder.globals.color.warning
+                            info: theme.newshub::lang.builder.globals.color.info
+                            light: theme.newshub::lang.builder.globals.color.light
+                            dark: theme.newshub::lang.builder.globals.color.dark
                         span: right
-                    simple_style:
-                        type: switch
-                        label: theme.newshub::lang.builder.card.style.label
-                        comment: theme.newshub::lang.builder.card.style.comment
-                        default: false
-                        span: left
-                    content:
-                        type: markdown
-                        label: theme.newshub::lang.builder.card.content.label
-                        comment: theme.newshub::lang.builder.card.content.comment
+                        trigger:
+                            action: hide
+                            field: simple_style
+                            condition: checked
                     image:
                         type: mediafinder
                         label: theme.newshub::lang.builder.card.image.label
                         comment: theme.newshub::lang.builder.card.image.comment
                         mode: image
+                        required: true
                         maxItems: 1
                         span: left
+                    content:
+                        type: markdown
+                        label: theme.newshub::lang.builder.card.content.label
+                        comment: theme.newshub::lang.builder.card.content.comment
 
 carousel:
     name: theme.newshub::lang.builder.carousel.label

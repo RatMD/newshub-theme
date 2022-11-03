@@ -20,6 +20,7 @@ Version 1.3.0 - In Progress
 - Update: Accordion content element (new structure).
 - Update: Alert / Callout content element (new structure).
 - Update: Card content element (new structure).
+- Update: Card Group content element (new structure).
 - Update: Content content element (new structure).
 - Update: Heading content element (new structure).
 - Update: Section content element (new structure).
@@ -81,6 +82,7 @@ Version 1.3.0 - In Progress
 - Add: New Blog Lists Content Element (show list of authors, categories or tags).
 - Add: New File List Content Element (show download file list with icon and stuff).
 - Update: Change Bootstrap 5 Lightbox package with a custom Lightbox plugin.
+- Update: Add "Number of Cards / Row" option on Card Group.
 
 Version 1.2.2 - Stable
 ----------------------

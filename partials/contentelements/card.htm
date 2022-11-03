@@ -21,6 +21,13 @@
     {% set classNames = classNames ~ ' mb-' ~ config.spacings.outerAfter %}
 {% endif %}
 
+{# Set Custom Classes (with backward compatibility to NewsHub prior v1.3.0) #}
+{% if config.details.classes is defined and config.details.classes|length > 0 %}
+    {% set classNames = classNames ~ ' ' ~ config.details.classes %}
+{% elseif config.class_names is defined and config.class_names|length > 0 %}
+    {% set classNames = classNames ~ ' ' ~ config.class_names %}
+{% endif %}
+
 {# Set Card Size #}
 {% if config.size and config.size != 'none' %}
     {% set classNames = classNames ~ ' card-' ~ config.size %}
