@@ -17,6 +17,13 @@ Version 1.3.0 - In Progress
 - Add: New ID - class name input group partial for NewsHubs page builder.
 - Add: New Spacings input range partial for NewsHubs page builder.
 
+- Update: Accordion content element (new structure).
+- Update: Alert / Callout content element (new structure).
+- Update: Card content element (new structure).
+- Update: Content content element (new structure).
+- Update: Heading content element (new structure).
+- Update: Section content element (new structure).
+
 - Bugfix: Bootstrap URL on placeholder / demo copyright text.
 - Bugfix: No-JS & JS-Loading styles for keen hero slider.
 
