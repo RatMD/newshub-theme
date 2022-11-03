@@ -1,5 +1,7 @@
 {% set id = config.details.id is defined and config.details.id|length > 0 ? config.details.id : '' %}
 {% set classNames = 'newshub-ce newshub-ce-heading' %}
+{% set title = config.title.label is defined ? config.title.label : config.title %}
+{% set layout = config.title.layout is defined ? config.title.layout : config.layout %}
 
 {# Backward Compatibility for NewsHub prior v1.3.0 #}
 {% if config.id is defined and config.id|length > 0 and id|length == 0 %}
@@ -31,7 +33,7 @@
 {% if config.style | slice(0, 7) == 'display' %}
     {% set classNames = classNames ~ ' ' ~ config.style %}
 {% else %}
-    {% set classNames = classNames ~ ' ' ~ (config.title.layout|default(config.layout)) %}
+    {% set classNames = classNames ~ ' ' ~ layout %}
 {% endif %}
 
 {# Set Separator Style #}
@@ -41,15 +43,15 @@
 
 {# Render Content Element #}
 {% if config.p_tag == '0' %}
-    <{{ config.title.layout|default(config.layout) }}{% if id|length > 0 %} id="{{ id }}"{% endif %} class="heading {{ classNames|trim }}">
-        {% if config.link|length > 0 %}<a href="{{ config.link }}" title="{{ config.title.label|default(config.title) }}">{% endif %}
-            {{ config.title.label|default(config.title) }}
+    <{{ layout }}{% if id|length > 0 %} id="{{ id }}"{% endif %} class="heading {{ classNames|trim }}">
+        {% if config.link|length > 0 %}<a href="{{ config.link }}" title="{{ title }}">{% endif %}
+            {{ title }}
         {% if config.link|length > 0 %}</a>{% endif %}
-    </{{ config.title.layout|default(config.layout) }}>
+    </{{ layout }}>
 {% else %}
     <p{% if id|length > 0 %} id="{{ id }}"{% endif %} class="heading {{ classNames|trim }}">
-        {% if config.link|length > 0 %}<a href="{{ config.link }}" title="{{ config.title.label|default(config.title) }}">{% endif %}
-            {{ config.title.label|default(config.title) }}
+        {% if config.link|length > 0 %}<a href="{{ config.link }}" title="{{ title }}">{% endif %}
+            {{ title }}
         {% if config.link|length > 0 %}</a>{% endif %}
     </p>
 {% endif %}

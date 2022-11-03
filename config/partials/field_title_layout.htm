@@ -8,7 +8,7 @@
         $label = is_null($value) ? '' : ($value['label'] ?? '');
         $layout = is_null($value) ? '' : ($value['layout'] ?? '');
     } else {
-        $label = $props['content_elements'][$number]['title'] ?? '';
+        $label = is_string($value) ? $value : ($props['content_elements'][$number]['title'] ?? '');
         $layout = $props['content_elements'][$number]['layout'] ?? '';
     }
 

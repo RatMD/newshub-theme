@@ -29,14 +29,16 @@
 {% endif %}
 
 {# Render Content Element #}
+{% set title = config.title.label is defined ? config.title.label : config.title %}
+{% set layout = config.title.layout is defined ? config.title.layout : config.layout %}
+
 <div{% if id|length > 0 %} id="{{ id }}"{% endif %} class="{{ classNames }}" role="alert">
-    {% if config.layout != 'hidden' %}
-        {% if config.layout == 'default' %}
-            <div class="alert-heading h4 mt-0 font-sans-serif mb-3">{{ config.title }}</div>
+    {% if layout != 'hidden' and title|length > 0 %}
+        {% if layout == 'default' %}
+            <div class="alert-heading h4 mt-0 font-sans-serif mb-3">{{ title }}</div>
         {% else %}
-            <{{ config.layout }} class="alert-heading">{{ config.title }}</{{ config.layout }}>
+            <{{ layout }} class="alert-heading">{{ title }}</{{ layout }}>
         {% endif %}
     {% endif %}
-    
     {{ config.content | md }}
 </div>
