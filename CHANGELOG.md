@@ -105,7 +105,7 @@ Version 1.2.1 - Stable
 - Update: Bootstrap package to v5.2.1.
 - Update: Keen Slider package to v6.8.0.
 - Update: @rollup/plugin-bode-resolve dev-pacakge to v14.1.0.
-- Update: sass dev-pacakge to v1.54.9.
+- Update: sass dev-package to v1.54.9.
 
 Version 1.2.0 - Stable
 ----------------------
@@ -147,7 +147,7 @@ Version 1.2.0 - Stable
 Version 1.1.2 - Stable
 ----------------------
 - Add: Weekly Archive page (provided by RatMD.BlogHub v1.3.0).
-- Update: RatMD.BlogHub v1.3.0 compatibiliy.
+- Update: RatMD.BlogHub v1.3.0 compatibility.
 - Fix: Prevent Meta details when no user is available on the post.
 - Fix: Add jQuery dependency for October CMS v2.
 
@@ -176,9 +176,9 @@ Version 1.1.0 - Stable
 
 Version 1.0.1 - Stable
 ----------------------
-- Update: Add dark hightlight.js stylings for pre, code elements.
+- Update: Add dark highlight.js stylings for pre, code elements.
 - Fix: Form stylings on dark color scheme.
-- Fix: background color on the fullwidth page layout.
+- Fix: background color on the full-width page layout.
 - Fix: Callout Color variables on dark scheme.
 - Fix: Example component styling + dark border color.
 - Fix: Navbar below Hero-Slider (when Header is not set to 'sticky').
