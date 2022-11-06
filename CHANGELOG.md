@@ -5,6 +5,7 @@ Version 1.3.0 - In Progress
 ---------------------------
 - Add: Support of the new sitePicker core component, as of OctoberCMS v3.1.
 - Add: New Locale / Site Picker Preference theme options.
+- Add: Use Locale / Site Picker as dropdown, modal or switch action toggler.
 - Add: Additional Meta-Tag theme options (base, robots, color-scheme and theme-color).
 - Add: "Provide Dark Color-Scheme" option (to toggle the dark color-scheme in general).
 - Add: "Overwrite CSS Color Palette" option (to overwrite the Theme Colors using css properties).
@@ -73,7 +74,6 @@ Version 1.3.0 - In Progress
 - Add: New Blog Lists Content Element (show list of authors, categories or tags).
 - Add: New File List Content Element (show download file list with icon and stuff).
 - Add: "User Action" header integration (requires RainLab.User), available on Extended navbar style only.
-- Add: "Site Picker" header integration (requires October CMS v3.1), available on Extended navbar style only.
 - Add: "Post Category" option to toggle the Category Link on the post lists.
 - Add: "Post Featured Tags" option to toggle the Featured Tag Links on the post lists.
 - Add: "Share Links" option to toggle privacy-protected Share Links above the article content.

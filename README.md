@@ -125,7 +125,7 @@ The following plugins are not required but supported by the **NewsHub** template
 ### Tested with
 NewsHub has been successfully tested with the following stacks:
 
-- OctoberCMS v2.2.21 (using PHP v7.4.15)
+- OctoberCMS v2.2.34 (using PHP v7.4.33)
 - OctoberCMS v3.0.76 (using PHP v8.0.23)
 - OctoberCMS v3.1.20 (using PHP v8.1.10)
 

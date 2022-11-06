@@ -626,7 +626,7 @@
             order: 1;
             grid-column: span 2;
         }
-        .navbar-picker + .navbar-nav-socials {
+        .navbar-actions + .navbar-nav-socials {
             grid-column: 2;
             justify-content: flex-end;
         }
@@ -643,7 +643,7 @@
                 min-width: auto;
                 margin-right: 0;
             }
-            .navbar-picker {
+            .navbar-actions {
                 order: 2;
                 flex: 1;
                 min-width: auto
@@ -660,7 +660,7 @@
             }
             
             &.has-actions {
-                .navbar-picker {
+                .navbar-actions {
                     order: 4;
                     justify-content: flex-start;
 
@@ -680,17 +680,6 @@
                     min-width: auto
                 }
             }
-        }
-    }
-
-    // Navbar Picker (Language | Color)
-    .navbar-picker {
-        height: 34px;
-        display: flex;
-        transition: height .15s ease;
-
-        & > *:not(_last-child) {
-            margin-right: $spacer * 0.5;
         }
     }
 }
@@ -778,7 +767,7 @@
     box-shadow: 0 4px 2px -2px rgba(0, 0, 0, 0.15);
 
     @include media-breakpoint-down(lg) {
-        .navbar-picker,
+        .navbar-actions,
         .navbar-nav-meta,
         .navbar-nav-socials,
         .navbar-separator {
@@ -882,19 +871,15 @@
         }
     }
 
-    .navbar-action-item {
+    .navbar-action {
         width: 34px;
         height: 34px;
-
-        &.sitepicker-action .navbar-action-button {
-            svg {
-                width: 20px;
-                height: 20px;
-            }
-        }
+        position: relative;
     }
 
+    .navbar-action-toggle,
     .navbar-action-button {
+        color: var(--#{$prefix}gray-600);
         cursor: pointer;
         width: 34px;
         height: 34px;
@@ -903,27 +888,98 @@
         display: inline-flex;
         align-items: center;
         justify-content: center;
+        text-decoration: none;
         border: 0;
         border-radius: $border-radius;
         background-color: transparent;
-        transition: background-color .15s ease;
+        transition: background-color .2s ease, color .2s ease;
+
+        img {
+            width: 20px;
+            height: 20px;
+            object-fit: cover;
+            object-position: center;
+        }
         
         &:hover,
         &:focus,
         &:focus-within {
+            color: var(--#{$prefix}gray-900);
             background-color: var(--#{$prefix}gray-300);
         }
 
         .dark & {
-            color: var(--#{$prefix}gray-300);
+            color: var(--#{$prefix}gray-400);
         }
 
         .dark &:hover,
         .dark &:focus,
         .dark &:focus-within {
+            color: var(--#{$prefix}gray-100);
             background-color: var(--#{$prefix}gray-800);
         }
     }
+    .navbar-action-toggle {
+        padding: 0;
+        overflow: hidden;
+        flex-wrap: nowrap;
+        justify-content: flex-start;
+        flex-direction: column;
+        vertical-align: top;
+
+        span {
+            flex: 0 0 34px;
+            width: 34px;
+            height: 34px;
+            display: flex;
+            position: relative;
+            align-items: center;
+            justify-content: center;
+            transition: margin .2s ease;
+        }
+
+        input[type="checkbox"] {
+            display: none;
+
+            &:not(:checked) + span {
+                margin-top: 0;
+            }
+            &:checked + span {
+                margin-top: -34px;
+            }
+        }
+
+        &:hover span:first-child {
+            margin-top: -34px;
+        } 
+
+        &:hover {
+            input[type="checkbox"] {
+                &:not(:checked) + span {
+                    margin-top: -34px;
+                }
+                &:checked + span {
+                    margin-top: 0;
+                }
+            }
+        }
+    }
+    .navbar-action.action-sitepicker.sitepicker-toggle {
+        width: 64px;
+        
+        .navbar-action-toggle {
+            width: 64px;
+
+            span {
+                width: 64px;
+
+                img {
+                    margin-left: 4px;
+                }
+            }
+        }
+    }
+
 
     .navbar-action-toggler {
         width: 40px;

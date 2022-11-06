@@ -4,17 +4,47 @@
     {% set style = 'dropdown' %}
 {% endif %}
 
+{% set activeSite = sitePicker.sites[0] %}
+{% for site in sitePicker.sites %}
+    {% if this.site.code == site.code %}
+        {% set activeSite = site %}
+    {% endif %}
+{% endfor %}
+
 {% if style == 'dropdown' %}
-    <div class="navbar-action-item sitepicker-action">
-        <button type="button" class="navbar-action-button" data-bs-toggle="modal" data-bs-target="#sitePickerModal">
-            {% partial 'icons/bootstrap/globe2' %}
+    <div class="navbar-action action-sitepicker dropdown-center" data-newshub-action="sitepicker">
+        <button type="button" class="navbar-action-button" aria-expanded="false" data-newshub-toggle="dropdown" data-bs-display="dynamic" data-bs-auto-close="true">
+            {% if this.theme.oc_picker_usage == 'locale' %}
+                {% set localeImage = activeSite.locale|split('-')|last %}
+                <img src="{{ ('assets/images/flags/' ~ localeImage ~ '.svg') | theme }}" alt="{{ name }}" class="rounded-circle" />
+            {% else %}
+                {% partial 'icons/bootstrap/globe2' %}
+            {% endif %}
         </button>
+
+        <div class="dropdown-menu{{ dropdown_classes ? ' ' ~ dropdown_classes : '' }}">
+            <ul>
+                {% for site in sitePicker.sites %}
+                    <li><a href="{{ site.url }}" class="dropdown-item{% if activeSite.code == site.code %} active{% endif %}">
+                        {% if this.theme.oc_picker_usage == 'locale' %}
+                            {% set localeImage = site.locale|split('-')|last %}
+                            <img src="{{ ('assets/images/flags/' ~ localeImage ~ '.svg') | theme }}" alt="{{ name }}" class="rounded-circle" />
+                        {% endif %}
+                        <span>{{ site.name }}</span>
+                    </a></li>
+                {% endfor %}
+            </ul>
+        </div>
     </div>
-    
 {% elseif style == 'modal' %}
-    <div class="navbar-action-item sitepicker-action">
+    <div class="navbar-action action-sitepicker">
         <button type="button" class="navbar-action-button" data-bs-toggle="modal" data-bs-target="#sitePickerModal">
-            {% partial 'icons/bootstrap/globe2' %}
+            {% if this.theme.oc_picker_usage == 'locale' %}
+                {% set localeImage = activeSite.locale|split('-')|last %}
+                <img src="{{ ('assets/images/flags/' ~ localeImage ~ '.svg') | theme }}" alt="{{ name }}" class="rounded-circle" />
+            {% else %}
+                {% partial 'icons/bootstrap/globe2' %}
+            {% endif %}
         </button>
     </div>
 
@@ -23,14 +53,14 @@
             <div class="modal-dialog modal-dialog-centered">
                 <div class="modal-content">
                     <div class="modal-body p-5">
-                        <ul class="list-group">
+                        <ul class="list-group list-group-flush list-group-buttons">
                             {% for site in sitePicker.sites %}
-                                <li class="list-group-item{{ this.site.code == site.code ? ' current' : '' }}">
-                                    <a href="{{ site.url }}" class="list-group-link site-link site-{{ site.cpde }}">
+                                <li class="list-group-item{{ this.site.code == site.code ? ' active' : '' }}">
+                                    <a href="{{ site.url }}" class="list-group-button fw-semibold site-link site-{{ site.code }}">
                                         {% if site.flagIcon %}
-                                            <img src="{{ ('assets/images/flags/' ~ site.flagIcon|slice(5) ~ '.svg') | theme  }}" alt="" class="site-flag" />
+                                            <img src="{{ ('assets/images/flags/' ~ site.flagIcon|slice(5) ~ '.svg') | theme  }}" alt="" class="site-flag rounded-circle" />
                                         {% else %}
-                                            <span class="site-without-flag"></span>
+                                            <span class="site-without-flag rounded-circle"></span>
                                         {% endif %}
                                         <span class="site-name">{{ site.name }}</span>
                                     </a>
@@ -43,4 +73,26 @@
         </div>
     {% endput %}
 {% elseif style == 'switch' %}
+    {% set oppositeSite = 0 %}
+    {% for site in sitePicker.sites %}
+        {% if activeSite.code != site.code and oppositeSite == 0 %}
+            {% set oppositeSite = site %}
+        {% endif %}
+    {% endfor %}
+
+    <div class="navbar-action action-sitepicker sitepicker-toggle" data-newshub-action="sitepicker">
+        <a href="{{ oppositeSite.url }}" type="button" class="navbar-action-toggle">
+            <span>
+                {% set localeImage = activeSite.locale|split('-')|last %}
+                <img src="{{ ('assets/images/flags/' ~ localeImage ~ '.svg') | theme }}" alt="{{ name }}" class="rounded-circle" />
+                <span class="text-uppercase fw-semibold">{{ activeSite.locale|split('-')|first }}</span>
+            </span>
+
+            <span>
+                {% set localeImage = oppositeSite.locale|split('-')|last %}
+                <img src="{{ ('assets/images/flags/' ~ localeImage ~ '.svg') | theme }}" alt="{{ name }}" class="rounded-circle" />
+                <span class="text-uppercase fw-semibold">{{ oppositeSite.locale|split('-')|first }}</span>
+            </span>
+        </a>
+    </div>
 {% endif %}

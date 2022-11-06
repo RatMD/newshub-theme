@@ -11,6 +11,7 @@
     .list-group-item {
         position: relative;
     }
+
     .list-group-image {
         top: 50%;
         left: $spacer * 0.35;
@@ -24,4 +25,53 @@
             margin-left: $spacer * 2;
         }
     }
+    
+    .site-flag,
+    .site-without-flag {
+        width: 32px;
+        height: 32px;
+        margin-right: $spacer * 0.5;
+        object-fit: cover;
+        object-position: center center;
+    }
 }
+
+.list-group.list-group-buttons {
+    --#{$prefix}list-group-action-hover-bg: var(--#{$prefix}gray-200);
+
+    .list-group-item {
+        padding: 0;
+        border: 0;
+        margin-bottom: $spacer * .25;
+        background-color: transparent;
+        border-radius: 0;
+
+        .list-group-button {
+            color: var(--#{$prefix}list-group-color);
+            padding: var(--#{$prefix}list-group-item-padding-y) var(--#{$prefix}list-group-item-padding-x);
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+            border: var(--#{$prefix}list-group-border-width) solid var(--#{$prefix}list-group-border-color);
+            border-radius: var(--#{$prefix}list-group-border-radius);
+            background-color: var(--#{$prefix}list-group-bg);
+            transition: color .15s ease, background-color .15s ease;
+
+            &:hover {
+                color: var(--#{$prefix}list-group-action-hover-color);
+                background-color: var(--#{$prefix}list-group-action-hover-bg);
+            }
+        }
+
+        &.active .list-group-button {
+            color: var(--#{$prefix}list-group-active-color);
+            border-color: var(--#{$prefix}list-group-active-border-color); 
+            background-color: var(--#{$prefix}list-group-active-bg);
+        }
+    }
+
+    &.list-group-flush > .list-group-item .list-group-button {
+        border-width: 0;
+    }
+}
+

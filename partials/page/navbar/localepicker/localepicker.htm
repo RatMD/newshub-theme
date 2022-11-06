@@ -2,41 +2,37 @@
 {% set style = this.theme.oc_picker_style %}
 
 {% if style == 'dropdown' %}
+    {{ form_open() }}
+        <div class="navbar-action action-localepicker" data-newshub-action="localepicker">
+            <button type="button" class="navbar-action-button" data-newshub-toggle="dropdown" data-bs-display="dynamic" data-bs-auto-close="true" aria-expanded="false">
+                {% for code, name in locales %}
+                    {% if code == activeLocale %}
+                        {% if code == 'en' %}
+                            {% set code = 'gb_UKM' %}
+                        {% endif %}
+                        <img src="{{ ('assets/images/flags/' ~ code ~ '.svg') | theme }}" alt="{{ name }}" />
+                    {% endif %}
+                {% endfor %}
+            </button>
 
+            <div class="dropdown-menu{{ dropdown_classes ? ' ' ~ dropdown_classes : '' }}">
+                <ul>
+                    {% for code, name in locales %}
+                        <li><a href="#" class="dropdown-item{% if code == activeLocale %} active{% endif %}"  data-request="onSwitchLocale" data-request-data="locale: '{{ code }}'">
+                            {% if code == 'en' %}
+                                {% set code = 'gb_UKM' %}
+                            {% endif %}
+
+                            <img src="{{ ('assets/images/flags/' ~ code ~ '.svg') | theme }}" alt="{{ name }}" />
+                            <span>{{ name }}</span>
+                        </a></li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+    {{ form_close() }}
 {% elseif style == 'modal' %}
 
 {% elseif style == 'switch' %}
 
 {% endif %}
-
-
-{{ form_open() }}
-    <div class="locale-picker {{ dropdown ? 'dropdown-center' : 'dropup dropup-center' }} position-relative">
-        <button type="button" aria-expanded="false" class="dropdown-toggle" data-newshub-toggle="dropdown" data-bs-display="dynamic" data-bs-auto-close="true">
-            {% for code, name in locales %}
-                {% if code == activeLocale %}
-                    {% if code == 'en' %}
-                        {% set code = 'gb_UKM' %}
-                    {% endif %}
-                    <img src="{{ ('assets/images/flags/' ~ code ~ '.svg') | theme }}" alt="{{ name }}" />
-                {% endif %}
-            {% endfor %}
-        </button>
-
-        <div class="dropdown-menu{{ dropdown_classes ? ' ' ~ dropdown_classes : '' }}">
-            <ul>
-                {% for code, name in locales %}
-                    <li><a href="#" class="dropdown-item{% if code == activeLocale %} active{% endif %}"  data-request="onSwitchLocale" data-request-data="locale: '{{ code }}'">
-                        {% if code == 'en' %}
-                            {% set code = 'gb_UKM' %}
-                        {% endif %}
-
-                        <img src="{{ ('assets/images/flags/' ~ code ~ '.svg') | theme }}" alt="{{ name }}" />
-                        <span>{{ name }}</span>
-                    </a></li>
-                {% endfor %}
-            </ul>
-        </div>
-    </div>
-{{ form_close() }}
-

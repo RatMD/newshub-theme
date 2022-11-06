@@ -71,7 +71,7 @@ code = "meta-menu"
         {# Site Picker | Color Picker (Condensed) #}
         {% if this.theme.header_style == 'condensed' %}
             {% if this.theme.site_picker_top or (this.theme.color_switch_top and this.theme.enable_dark_scheme) %}
-                <div class="navbar-picker">
+                <div class="navbar-actions">
                     {% if this.theme.site_picker_top %}
                         {% partial 'page/navbar/localepicker/default' %}
                     {% endif %}
