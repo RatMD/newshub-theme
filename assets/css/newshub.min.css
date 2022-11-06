@@ -151,6 +151,11 @@
     serif;
   --bs-font-special: "Alegreya Sans", sans-serif;
 }
+*:target {
+  scroll-snap-type: x mandatory;
+  scroll-snap-align: start;
+  scroll-margin-top: 40px;
+}
 *,
 *::before,
 *::after {

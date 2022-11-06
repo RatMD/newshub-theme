@@ -7,3 +7,9 @@
     --#{$prefix}font-serif: #{inspect($font-family-serif)};
     --#{$prefix}font-special: #{inspect($font-family-special)};
 }
+
+*:target {
+    scroll-snap-type: x mandatory;
+    scroll-snap-align: start;
+    scroll-margin-top: 40px;
+}

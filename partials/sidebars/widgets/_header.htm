@@ -1,0 +1,10 @@
+{% if config.title or config.subtitle %}
+    <div class="card-header">
+        {% if config.title or config.subtitle %}
+            <h2 class="card-title">{{ config.title }}</h2>
+        {% endif %}
+        {% if config.title or config.subtitle %}
+            <span class="card-subtitle">{{ config.subtitle }}</span>
+        {% endif %}
+    </div>
+{% endif %}

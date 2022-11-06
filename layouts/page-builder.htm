@@ -101,7 +101,7 @@ function onInit()
 
                 <article class="section py-6{{ use_container == '1' and show_sidebar == '1' ? ' section-with-sidebar' : '' }}">
                     {% if use_container == '1' %}<div class="container">{% endif %}
-                        <div class="post-content main-area">
+                        <div id="pageContentMain" class="post-content main-area">
                             {% for element in content_elements %}
                                 {% if hasPartial('contentelements/' ~ element._group) %}
                                     {% partial ('contentelements/' ~ element._group) config=element group=element._group %}

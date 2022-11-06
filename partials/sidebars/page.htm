@@ -1,10 +1,7 @@
 {% for widget in this.theme.sidebar_page %}
-    {% if hasPartial('sidebars/widgets/' ~ widget.widget_type) %}
-        {% set options = widget['widget_' ~ widget.widget_type] %}
-        {% partial ('sidebars/widgets/' ~ widget.widget_type) widget=widget options=options %}
+    {% if hasPartial('sidebars/widgets/' ~ widget._group) %}
+        {% partial ('sidebars/widgets/' ~ widget._group) config=widget widget=widget._group %}
     {% else %}
-        Widget {{ widget.widget_type }} not found.
+        Widget {{ widget._group }} not found.
     {% endif %}
-{% else %}
-    No widget
 {% endfor %}

@@ -1,4 +1,4 @@
-{% for widget in this.theme.sidebar_post %}
+{% for widget in this.theme.sidebar_archives %}
     {% if hasPartial('sidebars/widgets/' ~ widget._group) %}
         {% partial ('sidebars/widgets/' ~ widget._group) config=widget widget=widget._group %}
     {% else %}

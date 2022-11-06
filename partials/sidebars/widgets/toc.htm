@@ -3,28 +3,35 @@
 <?
 function onEnd()
 {
-    $config = $this['options'];
-    $firstTitle = $config['widget_title_as_first'] === '1';
-    $useJavaScript = $config['widget_js_anchors'] === '1';
+    $config = $this['config'];
+    $firstTitle = $config['title_first'] === '1';
+    $useJavaScript = $config['javascript_anchors'] === '1';
 
     // Fetch Header
     if (!isset($this->content_elements)) {
         $content = $this->page->content;
-    preg_match_all('/<h([1-6])(?:[^\>]+)?>(.*?)<\/h\1>/', $content, $matches);
-    $count = count($matches[0]);
+        preg_match_all('/<h([1-6])(?:[^\>]+)?>(.*?)<\/h\1>/', $content, $matches);
+        $count = count($matches[0]);
     } else {
         $count = 0;
         $matches = [[], [], []];
 
         foreach ($this->content_elements AS $ce) {
-            if (empty($ce['layout'])) {
+            if (empty($ce['title'])) {
                 continue;
             }
-            if (!is_string($ce['layout']) || $ce['layout'] === 'hidden') {
+            if (!is_array($ce['title']) && empty($ce['layout'])) {
                 continue;
             }
-            $matches[1][] = substr($ce['layout'], 1);
-            $matches[2][] = $ce['title'];
+
+            $title = $ce['title']['label'] ?? $ce['title'];
+            $layout = $ce['title']['layout'] ?? $ce['layout'];
+            if (empty($title) || empty($layout) || !is_string($layout) || $layout === 'hidden') {
+                continue;
+            }
+
+            $matches[1][] = substr($layout, 1);
+            $matches[2][] = $title;
             $count++;
         }
     }
@@ -103,26 +110,18 @@ function onEnd()
     }
     $this['toc'] = $result;
     $this['toc_js'] = $useJavaScript;
+    $this['currentURL'] = request()->getRequestUri();
 }
 ?>
 ==
 {% from "page/macros.htm" import toc_builder %}
 
 {% if toc %}
-    <div class="card card-simple">
-        {% if widget.widget_title or widget.widget_subtitle %}
-            <div class="card-header">
-                {% if widget.widget_title or widget.widget_subtitle %}
-                    <h2 class="card-title">{{ widget.widget_title }}</h2>
-                {% endif %}
-                {% if widget.widget_title or widget.widget_subtitle %}
-                    <span class="card-subtitle">{{ widget.widget_subtitle }}</span>
-                {% endif %}
-            </div>
-        {% endif %}
+    <div class="card card-simple"{{ config.javascript_anchors ? ' data-handle="js-anchors" data-target="#pageContentMain"' : '' }}>
+        {% partial 'sidebars/widgets/_header' config = config %}
 
         <div class="card-body">
-            {{ toc_builder(toc) }}
+            {{ toc_builder(toc, currentURL) }}
         </div>
     </div>
 {% endif %}

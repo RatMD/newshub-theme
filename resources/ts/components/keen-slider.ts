@@ -253,7 +253,6 @@ class KeenSliderNewsHub {
                 this.slider.moveToIdx(idx);
             } else {
                 if (idx * per >= len - 1) {
-                    console.log('okay');
                     this.slider.moveToIdx(len - per);
                 } else {
                     this.slider.moveToIdx(idx * per);

@@ -32,9 +32,13 @@ items:
         items:
             -
                 title: 'All Features'
+                nesting: null
                 type: cms-page
+                url: null
                 code: ''
                 reference: features
+                cmsPage: null
+                replace: null
                 viewBag:
                     locale:
                         de:
@@ -698,19 +702,13 @@ items:
                             cssClass: ''
                             isExternal: '0'
     -
-        title: Documentation
+        title: Components
         nesting: 1
         type: static-page
-        url: null
         code: ''
         reference: page-builder
-        cmsPage: null
         replace: 0
         viewBag:
-            locale:
-                de:
-                    title: ''
-                    url: ''
             isHidden: '0'
             cssClass: columns-2
             isExternal: '0'
