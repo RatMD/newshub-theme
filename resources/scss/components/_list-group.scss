@@ -6,3 +6,22 @@
 .dark .list-group {
     --#{$prefix}list-group-color: var(--#{$prefix}body-color);
 }
+
+.list-group {
+    .list-group-item {
+        position: relative;
+    }
+    .list-group-image {
+        top: 50%;
+        left: $spacer * 0.35;
+        right: 0;
+        width: 32px;
+        height: 32px;
+        margin-top: - 16px;
+        position: absolute;
+
+        & + span {
+            margin-left: $spacer * 2;
+        }
+    }
+}

@@ -3,10 +3,10 @@
 <?
 function onEnd()
 {
-    $config = $this['options'];
-    $limit = is_numeric($config['widget_authors_count'])? intval($config['widget_authors_count']): 5;
-    $showAvatar = $config['widget_authors_avatar'] === '1';
-    $showCount = $config['widget_authors_posts_count'] === '1';
+    $config = $this['config'];
+    $limit = is_numeric($config['number'])? intval($config['number']): 5;
+    $showAvatar = $config['avatars'] === '1';
+    $showCount = $config['counter'] === '1';
 
     // Main Tags Query
     $authors = Backend\Models\User::with('avatar')
@@ -23,33 +23,26 @@ function onEnd()
     $viewBag = $ctrl->getLayout()->getViewBag()->getProperties();
 
     $this['widget_authors'] = $authors->get()->all();
-    $this['widget_authors_show_avatar'] = $showAvatar;
-    $this['widget_authors_show_count'] = $showCount;
 }
 ?>
 ==
 
 {% if widget_authors|length > 0 %}
     <div class="card card-simple">
-        {% if widget.widget_title or widget.widget_subtitle %}
-            <div class="card-header">
-                {% if widget.widget_title or widget.widget_subtitle %}
-                    <h2 class="card-title">{{ widget.widget_title }}</h2>
-                {% endif %}
-                {% if widget.widget_title or widget.widget_subtitle %}
-                    <span class="card-subtitle">{{ widget.widget_subtitle }}</span>
-                {% endif %}
-            </div>
-        {% endif %}
+        {% partial 'sidebars/widgets/_header' config=config %}
 
         <div class="card-body">
             <ul class="list-group list-group-flush">
                 {% for author in widget_authors %}
                     <li class="list-group-item">
                         <a href="{{ ('magazine/author/' ~ author.bloghub_slug()) | app }}" title="{{ 'archive.author_archive' | _ }}: {{ author.bloghub_display() }}">
-                            {{ author.bloghub_display() }}
+                            {% if config.avatars and author.avatar %}
+                                <img src="{{ author.avatar.path }}" class="list-group-image" />
+                            {% endif %}
 
-                            {% if widget_authors_show_count %}
+                            <span>{{ author.bloghub_display() }}</span>
+                            
+                            {% if config.counter %}
                                 {% set count = author.posts_count | default(0) %}
                                 <span class="position-absolute top-50 start-100 translate-middle badge rounded-pill{{ count == 0? ' bg-secondary': ' bg-danger' }}">
                                     {{ count }}

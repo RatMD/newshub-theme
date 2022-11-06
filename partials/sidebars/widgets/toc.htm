@@ -118,7 +118,7 @@ function onEnd()
 
 {% if toc %}
     <div class="card card-simple"{{ config.javascript_anchors ? ' data-handle="js-anchors" data-target="#pageContentMain"' : '' }}>
-        {% partial 'sidebars/widgets/_header' config = config %}
+        {% partial 'sidebars/widgets/_header' config=config %}
 
         <div class="card-body">
             {{ toc_builder(toc, currentURL) }}

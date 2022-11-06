@@ -3,8 +3,8 @@
 <?
 function onEnd()
 {
-    $config = $this['options'];
-    $limit = is_numeric($config['widget_articles_count'])? intval($config['widget_articles_count']): 5;
+    $config = $this['config'];
+    $limit = is_numeric($config['number'])? intval($config['number']): 5;
 
     // Main Posts Query
     $prefix = 'widget-posts-';
@@ -13,7 +13,7 @@ function onEnd()
         ->limit($limit);
 
     // Modify Query
-    switch($config['widget_articles_type']) {
+    switch($config['list_type']) {
         case "latest":
             $posts->orderBy('published_at', 'DESC');
             $prefix = 'widget-latest-';
@@ -23,18 +23,18 @@ function onEnd()
             $prefix = 'widget-random-';
             break;
         case "by_author":
-            $posts->where('user_id', $config['widget_articles_by_author']);
+            $posts->where('user_id', $config['list_author']);
             $prefix = 'widget-byauthor-';
             break;
         case "by_category":
-            $category = $config['widget_articles_by_category'];
+            $category = $config['list_category'];
             $posts->whereHas('categories', function($query) use ($category) {
                 return $query->where('rainlab_blog_categories.id', $category);
             });
             $prefix = 'widget-bycategory-';
             break;
         case "by_tag":
-            $tag = $config['widget_articles_by_tag'];
+            $tag = $config['list_tag'];
             $posts->whereHas('ratmd_bloghub_tags', function($query) use ($tag) {
                 return $query->where('ratmd_bloghub_tags.id', $tag);
             });
@@ -64,16 +64,7 @@ function onEnd()
 
 {% if widget_posts|length > 0 %}
     <div class="card card-simple">
-        {% if widget.widget_title or widget.widget_subtitle %}
-            <div class="card-header">
-                {% if widget.widget_title or widget.widget_subtitle %}
-                    <h2 class="card-title">{{ widget.widget_title }}</h2>
-                {% endif %}
-                {% if widget.widget_title or widget.widget_subtitle %}
-                    <span class="card-subtitle">{{ widget.widget_subtitle }}</span>
-                {% endif %}
-            </div>
-        {% endif %}
+        {% partial 'sidebars/widgets/_header' config=config %}
 
         <div class="card-body">
             {% partial 'blog/sections/posts-condensed'

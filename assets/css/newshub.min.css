@@ -7848,6 +7848,21 @@ y .form-group:last-child {
 .dark .list-group {
   --bs-list-group-color: var(--bs-body-color);
 }
+.list-group .list-group-item {
+  position: relative;
+}
+.list-group .list-group-image {
+  top: 50%;
+  left: 0.35rem;
+  right: 0;
+  width: 32px;
+  height: 32px;
+  margin-top: -16px;
+  position: absolute;
+}
+.list-group .list-group-image + span {
+  margin-left: 2rem;
+}
 .modal .modal-content {
   box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.175);
 }
