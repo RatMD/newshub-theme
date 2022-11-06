@@ -3,16 +3,13 @@
 
 {% if style == 'dropdown' %}
     {{ form_open() }}
-        <div class="navbar-action action-localepicker" data-newshub-action="localepicker">
+        <div class="navbar-action action-localepicker dropdown-center" data-newshub-action="localepicker">
             <button type="button" class="navbar-action-button" data-newshub-toggle="dropdown" data-bs-display="dynamic" data-bs-auto-close="true" aria-expanded="false">
-                {% for code, name in locales %}
-                    {% if code == activeLocale %}
-                        {% if code == 'en' %}
-                            {% set code = 'gb_UKM' %}
-                        {% endif %}
-                        <img src="{{ ('assets/images/flags/' ~ code ~ '.svg') | theme }}" alt="{{ name }}" />
-                    {% endif %}
-                {% endfor %}
+                {% if localePicker.activeLocale == 'en' %}
+                    <img src="{{ ('assets/images/flags/gb.svg') | theme }}" alt="{{ localePicker.activeLocaleName }}" class="rounded-circle" />
+                {% else %}
+                    <img src="{{ ('assets/images/flags/' ~ localePicker.activeLocale ~ '.svg') | theme }}" alt="{{ localePicker.activeLocaleName }}" class="rounded-circle" />
+                {% endif %}
             </button>
 
             <div class="dropdown-menu{{ dropdown_classes ? ' ' ~ dropdown_classes : '' }}">
@@ -20,10 +17,10 @@
                     {% for code, name in locales %}
                         <li><a href="#" class="dropdown-item{% if code == activeLocale %} active{% endif %}"  data-request="onSwitchLocale" data-request-data="locale: '{{ code }}'">
                             {% if code == 'en' %}
-                                {% set code = 'gb_UKM' %}
+                                {% set code = 'gb' %}
                             {% endif %}
 
-                            <img src="{{ ('assets/images/flags/' ~ code ~ '.svg') | theme }}" alt="{{ name }}" />
+                            <img src="{{ ('assets/images/flags/' ~ code ~ '.svg') | theme }}" alt="{{ name }}" class="rounded-circle" />
                             <span>{{ name }}</span>
                         </a></li>
                     {% endfor %}
@@ -32,7 +29,69 @@
         </div>
     {{ form_close() }}
 {% elseif style == 'modal' %}
+    <div class="navbar-action action-localepicker">
+        <button type="button" class="navbar-action-button" data-bs-toggle="modal" data-bs-target="#localePickerModal">
+            {% if localePicker.activeLocale == 'en' %}
+                <img src="{{ ('assets/images/flags/gb.svg') | theme }}" alt="{{ localePicker.activeLocaleName }}" class="rounded-circle" />
+            {% else %}
+                <img src="{{ ('assets/images/flags/' ~ localePicker.activeLocale ~ '.svg') | theme }}" alt="{{ localePicker.activeLocaleName }}" class="rounded-circle" />
+            {% endif %}
+        </button>
+    </div>
 
+    {% put offscreen %}
+        <div id="localePickerModal" class="modal fade localepicker-modal" tabindex="-1">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-body p-5">
+                        <ul class="list-group list-group-flush list-group-buttons">
+                            {% for code, name in locales %}
+                                <li class="list-group-item{{ code == localePicker.activeLocale ? ' active' : '' }}">
+                                    <a href="#" class="list-group-button fw-semibold site-link" data-request="onSwitchLocale" data-request-data="locale: '{{ code }}'">
+                                        {% if code == 'en' %}
+                                            {% set code = 'gb' %}
+                                        {% endif %}
+
+                                        <img src="{{ ('assets/images/flags/' ~ code ~ '.svg') | theme }}" alt="{{ name }}" class="site-flag rounded-circle" />
+                                        <span>{{ name }}</span>
+                                    </a>
+                                </li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    {% endput %}
 {% elseif style == 'switch' %}
+    {% set oppositeLocale = 0 %}
+    {% set oppositeLocaleName = 0 %}
+    {% for code, name in localePicker.locales %}
+        {% if localePicker.activeLocale != code and oppositeLocale == 0 %}
+            {% set oppositeLocale = code %}
+            {% set oppositeLocaleName = name %}
+        {% endif %}
+    {% endfor %}
 
+    <div class="navbar-action action-sitepicker sitepicker-toggle" data-newshub-action="sitepicker">
+        <a href="#" type="button" class="navbar-action-toggle" data-request="onSwitchLocale" data-request-data="locale: '{{ oppositeLocale }}'">
+            <span>
+                {% if localePicker.activeLocale == 'en' %}
+                    <img src="{{ ('assets/images/flags/gb.svg') | theme }}" alt="{{ localePicker.activeLocaleName }}" class="rounded-circle" />
+                {% else %}
+                    <img src="{{ ('assets/images/flags/' ~ localePicker.activeLocale ~ '.svg') | theme }}" alt="{{ localePicker.activeLocaleName }}" class="rounded-circle" />
+                {% endif %}
+                <span class="text-uppercase fw-semibold">{{ localePicker.activeLocale }}</span>
+            </span>
+
+            <span>
+                {% if oppositeLocale == 'en' %}
+                    <img src="{{ ('assets/images/flags/gb.svg') | theme }}" alt="{{ oppositeLocaleName }}" class="rounded-circle" />
+                {% else %}
+                    <img src="{{ ('assets/images/flags/' ~ oppositeLocale ~ '.svg') | theme }}" alt="{{ oppositeLocaleName }}" class="rounded-circle" />
+                {% endif %}
+                <span class="text-uppercase fw-semibold">{{ oppositeLocale }}</span>
+            </span>
+        </a>
+    </div>
 {% endif %}
