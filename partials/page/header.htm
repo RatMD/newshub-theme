@@ -39,7 +39,7 @@ code = "meta-menu"
 <nav class="navbar navbar-main navbar-expand-lg{{ withMetaMenu ? ' with-meta-menu': '' }}{{ withSocialMenu ? ' with-social-menu': '' }}">
         {% set innerClass = '' %}
         {% if this.theme.header_style == 'condensed' %}
-            {% if this.theme.languages_menu_top or this.theme.color_switch_top %}
+            {% if this.theme.site_picker_top or this.theme.color_switch_top %}
                 {% set innerClass = 'has-actions' %}
             {% endif %}
         {% endif %}
@@ -68,16 +68,16 @@ code = "meta-menu"
             }) }}
         {% endif %}
 
-        {# Language Picker | Color Picker (Condensed) #}
+        {# Site Picker | Color Picker (Condensed) #}
         {% if this.theme.header_style == 'condensed' %}
-            {% if this.theme.languages_menu_top or (this.theme.color_switch_top and this.theme.enable_dark_scheme) %}
+            {% if this.theme.site_picker_top or (this.theme.color_switch_top and this.theme.enable_dark_scheme) %}
                 <div class="navbar-picker">
-                    {% if this.theme.languages_menu_top and legacyTranslate %}
-                        {% partial 'localepicker/default' dropdown=true dropdown_classes='dropdown-menu-center' %}
+                    {% if this.theme.site_picker_top %}
+                        {% partial 'page/navbar/localepicker/default' %}
                     {% endif %}
                     
                     {% if this.theme.color_switch_top and this.theme.enable_dark_scheme %}
-                        {% partial 'colorpicker/default' %}
+                        {% partial 'page/navbar/colorpicker/default' %}
                     {% endif %}
                 </div>
             {% endif %}
@@ -98,9 +98,6 @@ code = "meta-menu"
             {% if this.theme.color_switch_top and this.theme.enable_dark_scheme %}
                 {% set actions = actions + 1 %}
             {% endif %}
-            {% if this.theme.languages_menu_top and legacyTranslate %}
-                {% set actions = actions + 1 %}
-            {% endif %}
             {% if this.theme.site_picker_top %}
                 {% set actions = actions + 1 %}
             {% endif %}
@@ -112,24 +109,20 @@ code = "meta-menu"
             {% endif %}
 
             <div class="navbar-actions{{ actions >= 2 ? ' actions-toggle': '' }}">
-                {% if this.theme.languages_menu_top and legacyTranslate %}
-                    {% partial 'localepicker/default' dropdown=true %}
-                {% endif %}
-
                 {% if this.theme.site_picker_top %}
-                    {% partial 'sitepicker/default' %}
+                    {% partial 'page/navbar/localepicker/default' %}
                 {% endif %}
 
                 {% if this.theme.color_switch_top %}
-                    {% partial 'colorpicker/default' %}
+                    {% partial 'page/navbar/colorpicker/default' %}
                 {% endif %}
 
                 {% if this.theme.search_button %}
-                    {% partial 'searchbutton/default' %}
+                    {% partial 'page/navbar/searchaction/default' %}
                 {% endif %}
 
                 {% if this.theme.user_button %}
-                    {% partial 'userbutton/default' %}
+                    {% partial 'page/navbar/useraction/default' %}
                 {% endif %}
 
                 {% if actions >= 2 %}

@@ -1,5 +1,17 @@
 
-{% if sitePicker and sitePicker.sites %}
+{% set style = this.theme.oc_picker_style %}
+{% if this.theme.oc_picker_usage == 'sites' and style == 'switch' %}
+    {% set style = 'dropdown' %}
+{% endif %}
+
+{% if style == 'dropdown' %}
+    <div class="navbar-action-item sitepicker-action">
+        <button type="button" class="navbar-action-button" data-bs-toggle="modal" data-bs-target="#sitePickerModal">
+            {% partial 'icons/bootstrap/globe2' %}
+        </button>
+    </div>
+    
+{% elseif style == 'modal' %}
     <div class="navbar-action-item sitepicker-action">
         <button type="button" class="navbar-action-button" data-bs-toggle="modal" data-bs-target="#sitePickerModal">
             {% partial 'icons/bootstrap/globe2' %}
@@ -30,4 +42,5 @@
             </div>
         </div>
     {% endput %}
+{% elseif style == 'switch' %}
 {% endif %}

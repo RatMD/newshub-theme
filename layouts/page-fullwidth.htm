@@ -2,6 +2,9 @@
 description = "Fullwidth Page Layout"
 
 [localePicker]
+forceUrl = 0
+
+[sitePicker]
 
 [alternateHrefLangElements]
 
@@ -11,6 +14,18 @@ description = "Fullwidth Page Layout"
 
 [viewBag]
 staticBreadcrumbs_skipLast = true
+bloghubAuthorPage = "blog/author"
+bloghubDatePage = "blog/date"
+bloghubTagPage = "blog/tag"
+
+[bloghubBase]
+archiveAuthor = "blog/author"
+archiveDate = "blog/date"
+archiveTag = "blog/tag"
+authorUseSlugOnly = 0
+date404OnInvalid = 0
+date404OnEmpty = 0
+tagAllowMultiple = 1
 ==
 <?php
 function onInit()

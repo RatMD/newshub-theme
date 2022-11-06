@@ -3,6 +3,8 @@ NewsHub - Changelog
 
 Version 1.3.0 - In Progress
 ---------------------------
+- Add: Support of the new sitePicker core component, as of OctoberCMS v3.1.
+- Add: New Locale / Site Picker Preference theme options.
 - Add: Additional Meta-Tag theme options (base, robots, color-scheme and theme-color).
 - Add: "Provide Dark Color-Scheme" option (to toggle the dark color-scheme in general).
 - Add: "Overwrite CSS Color Palette" option (to overwrite the Theme Colors using css properties).

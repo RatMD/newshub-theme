@@ -1,0 +1,16 @@
+
+{% set partialFile = null %}
+
+{% if sitePicker is not null and (localePicker is null or (localePicker is not null and this.theme.prefer_sitepicker)) %}
+    {% if sitePicker.sites and sitePicker.sites|length > 1 %}
+        {% set partialFile = 'sitepicker' %}
+    {% endif %}
+{% elseif localePicker is not null %}
+    {% if localePicker.locales|length > 1 %}
+        {% set partialFile = 'localepicker' %}
+    {% endif %}
+{% endif %}
+
+{% if partialFile is not null %}
+    {% partial ('page/navbar/localepicker/' ~ partialFile) %}
+{% endif %}

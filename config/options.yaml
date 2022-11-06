@@ -57,6 +57,46 @@ tabs:
             label: theme.newshub::lang.option.embed_extras.label
             comment: theme.newshub::lang.option.embed_extras.comment
             default: false
+        
+        __october_preferences:
+            tab: theme.newshub::lang.option.tabs.preferences
+            type: section
+            label: theme.newshub::lang.option.sections.preferences
+        prefer_sitepicker:
+            tab: theme.newshub::lang.option.tabs.preferences
+            type: switch
+            label: theme.newshub::lang.option.prefer_sitepicker.label
+            comment: theme.newshub::lang.option.prefer_sitepicker.comment
+            default: false
+            span: left
+        oc_picker_usage:
+            tab: theme.newshub::lang.option.tabs.preferences
+            type: balloon-selector
+            label: theme.newshub::lang.option.oc_picker_usage.label
+            comment: theme.newshub::lang.option.oc_picker_usage.comment
+            options:
+                locale: theme.newshub::lang.option.oc_picker_usage.locale
+                sites: theme.newshub::lang.option.oc_picker_usage.sites
+            default: locale
+            span: left
+        oc_picker_style:
+            tab: theme.newshub::lang.option.tabs.preferences
+            type: balloon-selector
+            label: theme.newshub::lang.option.oc_picker_style.label
+            comment: theme.newshub::lang.option.oc_picker_style.comment
+            options:
+                dropdown: theme.newshub::lang.option.oc_picker_style.dropdown
+                modal: theme.newshub::lang.option.oc_picker_style.modal
+                switch: theme.newshub::lang.option.oc_picker_style.switch
+            default: dropdown
+            span: right
+        __hint_preferences:
+            tab: theme.newshub::lang.option.tabs.preferences
+            type: hint
+            mode: info
+            label: theme.newshub::lang.option.tip.preferences.label
+            comment: theme.newshub::lang.option.tip.preferences.comment
+            commentHtml: true
 
         __section_general_tags:
             tab: theme.newshub::lang.option.tabs.meta
@@ -440,25 +480,13 @@ tabs:
                 field: enable_dark_scheme
                 condition: checked
             span: left
-        languages_menu_top:
-            tab: theme.newshub::lang.option.tabs.header
-            type: switch
-            label: theme.newshub::lang.option.languages_menu.label
-            comment: theme.newshub::lang.option.languages_menu.comment
-            default: false
-            span: right
         site_picker_top:
             tab: theme.newshub::lang.option.tabs.header
             type: switch
             label: theme.newshub::lang.option.site_picker.label
             comment: theme.newshub::lang.option.site_picker.comment
-            commentHtml: true
             default: false
-            trigger:
-                action: show
-                condition: value[extended]
-                field: header_style
-            span: left
+            span: right
         search_button:
             tab: theme.newshub::lang.option.tabs.header
             type: switch
@@ -731,21 +759,13 @@ tabs:
                 field: enable_dark_scheme
                 condition: checked
             span: left
-        languages_menu_bottom:
-            tab: theme.newshub::lang.option.tabs.footer
-            type: switch
-            label: theme.newshub::lang.option.languages_menu.label
-            comment: theme.newshub::lang.option.languages_menu_bottom.comment
-            default: false
-            span: right
         site_picker_bottom:
             tab: theme.newshub::lang.option.tabs.footer
             type: switch
             label: theme.newshub::lang.option.site_picker.label
             comment: theme.newshub::lang.option.site_picker_bottom.comment
-            commentHtml: true
             default: false
-            span: left
+            span: right
         copyright_text_left:
             tab: theme.newshub::lang.option.tabs.footer
             type: textarea
