@@ -9,10 +9,8 @@ Version 1.3.0 - In Progress
 - Add: "Gray Color Palette" option to change the gray colors / style. 
 - Add: "Header Position" option to change the header position behavior (Static, Sticky or Slide).
 - Add: New Notice theme options (and stylings), which is shown above the article list on the homepage.
-
 - Add: "Slider Controls" option to toggle the control buttons on the Hero-Slider.
 - Add: "Slider Indicators" option to toggle the slide-indicators on the Hero-Slider.
-
 - Add: New Title - Layout input group partial for NewsHubs page builder.
 - Add: New ID - class name input group partial for NewsHubs page builder.
 - Add: New Spacings input range partial for NewsHubs page builder.
@@ -33,6 +31,8 @@ Version 1.3.0 - In Progress
 - Update: Section content element (new structure).
 - Update: Separator content element (new structure).
 - Update: Slider content element (new structure).
+- Update: Tabs content element (new structure).
+- Update: Text with Teaser content element (new structure).
 
 - Bugfix: Bootstrap URL on placeholder / demo copyright text.
 - Bugfix: No-JS & JS-Loading styles for keen hero slider.

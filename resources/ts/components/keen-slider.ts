@@ -246,8 +246,18 @@ class KeenSliderNewsHub {
             this.slider.prev();
         } else {
             let idx = typeof direction === 'string' ? parseInt(direction) : direction;
-            if (!isNaN(idx)) {
+            let per = typeof this.slider.options.slides === 'object' ? this.slider.options.slides.perView as number : 1;
+            let len = this.slider.track.details.slides.length;
+
+            if (per === 1) {
                 this.slider.moveToIdx(idx);
+            } else {
+                if (idx * per >= len - 1) {
+                    console.log('okay');
+                    this.slider.moveToIdx(len - per);
+                } else {
+                    this.slider.moveToIdx(idx * per);
+                }
             }
         }
     }
@@ -415,51 +425,101 @@ class KeenSliderNewsHub {
      * @param slider Current KeenSlider instance.
      */
     public pluginIndicators(slider: KeenSliderInstance) {
-        let custom = typeof this.config.indicators === 'string';
+        let custom = typeof this.config.controls === 'string';
+        let indicators: HTMLElement[] = custom ? query(this.config.controls as string, this.root.parentElement) : [];
 
-        slider.on('created', () => {
+        // Create Indicators
+        const createIndicators = ((slider: KeenSliderInstance) => {
+            let len = slider.slides.length;
+            let abs = slider.track.details.abs;
+            let per = typeof slider.options.slides === 'object' ? (slider.options.slides.perView as number) : 1;
+            let num = Math.ceil(len / per);
 
-        });
-        
-        slider.on('destroyed', () => {
-            
-        });
-
-        if (typeof this.config.indicators === 'boolean') {
-            slider.on('created', () => {
-
-            });
-
-            slider.on('optionsChanged', () => {
-
-            });
-
-            slider.on('slideChanged', () => {
-
-            });
-
-            slider.on('destroyed', () => {
-
-            });
-        } else {
-            let indicators = query(this.config.indicators, this.root).filter(el => {
-                return el.hasAttribute('data-slide-to') || el.hasAttribute('data-keen-slider-indicator')
-            });
-            if (indicators.length === 0) {
-                return
+            for (let i = 0; i < num; i++) {
+                let btn = document.createElement('BUTTON') as HTMLButtonElement;
+                btn.type = 'button';
+                btn.className = `keen-slider-indicator indicator-${i}`;
+                btn.dataset.slideTo = i.toString();
+                indicators.push(btn);
             }
 
-            let eventListener = ((element) => {
-                this.slideTo(element.dataset.slideTo || element.dataset.keenSliderIndicator);
-            }).bind(this);
+            let buttons = document.createElement('DIV');
+            buttons.className = 'keen-slider-indicators';
+            buttons.append(...indicators);
 
-            slider.on('created', () => {
-                indicators.map(el => el.addEventListener('click', eventListener.bind(el)))
+            this.root.appendChild(buttons);
+        }).bind(this);
+
+        // Update Indicators
+        const updateIndicators = ((slider) => {
+            if (!indicators || indicators.length === 0) {
+                return;
+            }
+
+            let len = slider.slides.length;
+            let abs = slider.track.details.abs;
+            let per = typeof slider.options.slides === 'object' ? (slider.options.slides.perView as number) : 1;
+            let num = per === 1 ? abs : Math.floor(abs / per);
+
+            // Select Last Indicator, when last 'page' is smaller then perView
+            if (per > 1) {
+                if (abs + per === len && num < Math.ceil(len / per) - 1) {
+                    num++;
+                }
+            }
+
+            indicators.map((el, idx) => {
+                if (idx === num) {
+                    el.classList.add('current');
+                } else {
+                    el.classList.remove('current');
+                }
             });
-            slider.on('destroyed', () => {
-                indicators.map(el => el.removeEventListener('click', eventListener.bind(el)));
+        }).bind(this);
+
+        // Remove Indicators
+        const removeIndicators = ((slider) => {
+            if (!indicators || indicators.length === 0) {
+                return;
+            }
+
+            let buttons = indicators[0].parentElement;
+            if (buttons && buttons.parentElement) {
+                buttons.remove();
+                indicators = [];
+            }
+        }).bind(this);
+
+        // Handle Indicators
+        slider.on('created', (slider) => {
+            if (!custom) {
+                createIndicators(slider);
+            }
+
+            indicators.map(el => {
+                el.addEventListener('click', (ev) => {
+                    let pos = el.dataset.slideTo || el.dataset.keenSliderIndicator;
+                    ev.preventDefault();
+                    this.slideTo(pos);
+                });
             });
-        }
+
+            updateIndicators(slider);
+        });
+
+        slider.on('optionsChanged', (slider) => {
+            updateIndicators(slider);
+        });
+
+        slider.on('slideChanged', (slider) => {
+            updateIndicators(slider);
+        });
+
+        slider.on('destroyed', (slider) => {
+            if (!custom) {
+                removeIndicators(slider);
+            }
+        });
     }
 
 
@@ -474,27 +534,24 @@ class KeenSliderNewsHub {
         let controls: HTMLElement[] = custom ? query(this.config.controls as string, this.root.parentElement) : [];
 
         // Create Controls
-        const createControls = ((slider) => {
-            let prevButton = document.createElement('BUTTON') as HTMLButtonElement;
-            prevButton.type = 'button';
-            prevButton.className = 'keen-slider-control control-prev';
-            prevButton.dataset.slideTo = 'prev';
-
-            let nextButton = document.createElement('BUTTON') as HTMLButtonElement;
-            nextButton.type = 'button';
-            nextButton.className = 'keen-slider-control control-next';
-            nextButton.dataset.slideTo = 'next';
+        const createControls = ((slider: KeenSliderInstance) => {
+            controls = ['prev', 'next'].map(type => {
+                let btn = document.createElement('BUTTON') as HTMLButtonElement;
+                btn.type = 'button';
+                btn.className = `keen-slider-control control-${type}`;
+                btn.dataset.slideTo = type;
+                return btn;
+            });
 
             let buttons = document.createElement('DIV');
             buttons.className = 'keen-slider-controls';
-            buttons.append(prevButton, nextButton);
+            buttons.append(...controls);
 
-            controls = [prevButton, nextButton];
             this.root.appendChild(buttons);
         }).bind(this);
 
         // Update Controls
-        const updateControls = ((slider) => {
+        const updateControls = ((slider: KeenSliderInstance) => {
             if (!controls || controls.length === 0) {
                 return;
             }
@@ -519,7 +576,7 @@ class KeenSliderNewsHub {
                 } else {
                     let abs = slider.track.details.abs;
                     let len = slider.track.details.slides.length;
-                    let per = slider.options.slides.perView || 1;
+                    let per = typeof slider.options.slides === 'object' ? (slider.options.slides.perView as number) : 1;
                     let pos = control.dataset.slideTo || control.dataset.keenSliderControl;
 
                     if (pos === 'prev' || pos === 'previous') {
@@ -532,7 +589,7 @@ class KeenSliderNewsHub {
         }).bind(this);
 
         // Remove Controls
-        const removeControls = ((slider) => {
+        const removeControls = ((slider: KeenSliderInstance) => {
             if (!controls || controls.length === 0) {
                 return;
             }
@@ -632,7 +689,6 @@ async function invokeKeenSlider() {
 
             config[key] = value;
         }
-        console.log(config);
 
         KeenSliderNewsHub.getOrCreateInstance(el, config);
     });
