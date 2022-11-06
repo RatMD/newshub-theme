@@ -77,10 +77,10 @@ function vendors() {
     const entryPoints = {};
 
     fs.readdirSync(
-        join(process.cwd(), 'resources', 'js', 'vendors')
+        join(process.cwd(), 'resources', 'ts', 'vendors')
     ).forEach(file => {
         let basename = file.slice(0, file.lastIndexOf('.'));
-        entryPoints[`${basename}.min`] = `resources/js/vendors/${file}`;
+        entryPoints[`${basename}.min`] = `resources/ts/vendors/${file}`;
     });
 
     require('esbuild')
@@ -90,7 +90,7 @@ function vendors() {
             external: [],
             format: 'iife',
             keepNames: true,
-            outdir: 'assets/ts/vendors',
+            outdir: 'assets/js/vendors',
             minify: true,
             sourcemap: true,
             target: "es2019",

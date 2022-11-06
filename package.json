@@ -10,24 +10,25 @@
     ],
     "main": "resources/js/theme.js",
     "scripts": {
-        "build:css": "node esbuild.js --no-js",
-        "watch:css": "node esbuild.js --no-js --watch",
-        "build:js": "node esbuild.js --no-css",
-        "watch:js": "node esbuild.js --no-css --watch",
         "build": "node esbuild.js",
+        "build:css": "node esbuild.js --no-js",
+        "build:js": "node esbuild.js --no-css",
         "watch": "node esbuild.js --watch",
+        "watch:css": "node esbuild.js --no-js --watch",
+        "watch:js": "node esbuild.js --no-css --watch",
         "vendors": "node esbuild.js --vendors"
     },
     "author": "rat.md <info@rat.md> (https://rat.md)",
     "license": "MIT",
     "private": true,
     "dependencies": {
+        "@popperjs/core": "^2.11.6",
         "bootstrap": "^5.2.2",
         "bootstrap-icons": "^1.9.1",
-        "keen-slider": "^6.8.2"
+        "keen-slider": "^6.8.3"
     },
     "devDependencies": {
-        "esbuild": "^0.15.10",
-        "esbuild-sass-plugin": "^2.3.3"
+        "esbuild": "^0.15.13",
+        "esbuild-sass-plugin": "^2.4.0"
     }
 }

@@ -33,14 +33,35 @@ Version 1.3.0 - In Progress
 - Update: Slider content element (new structure).
 - Update: Tabs content element (new structure).
 - Update: Text with Teaser content element (new structure).
+- Update: Theme Options structure & layout.
+- Update: Main SCSS file structure.
+- Update: Set full color palette into style tag (including rgb variants).
+- Update: Change dropdown design / stylings on all header actions (same styling as main-menu).
+- Update: Change search modal / overlay design.
+- Update: Re-written header / navbar JavaScript (within the new Navbar class).
+- Update: Change rollup bundle to esbuild bundle (using TypeScript instead of JavaScript).
+- Update: Bootstrap package to v5.2.2.
+- Update: Keen Slider package to v6.8.3.
 
+- Remove: "sticky_header" option, has been replaced with "Header Position" > "Sticky".
+
+- Bugfix: Set HTML lang to current locale instead of fixed 'en'.
 - Bugfix: Bootstrap URL on placeholder / demo copyright text.
 - Bugfix: No-JS & JS-Loading styles for keen hero slider.
 - Bugfix: Remove additional div container tag on the Double-Click content element.
 - Bugfix: Class Names has not been passed to the quote content element.
 
 
-
+### ToDo
+- Add: Support for [BlakeJones.MagicForms](https://octobercms.com/plugin/blakejones-magicforms) OC Plugin.
+- Add: Support for [JanVince.SmallContactForm](https://octobercms.com/plugin/janvince-smallcontactform) OC Plugin.
+- Add: Support for [JanVince.SmallGDPR](https://octobercms.com/plugin/janvince-smallgdpr) OC Plugin.
+- Add: Support for [RainLab.BlogVideoExtension](https://octobercms.com/plugin/rainlab-blogvideoextension) OC Plugin.
+- Add: Support for [RainLab.User](https://octobercms.com/plugin/rainlab-user) OC Plugin.
+- Add: Support for [RainLab.Forum](https://octobercms.com/plugin/rainlab-forum) OC Plugin.
+- Add: New Blog Posts Content Element (show posts by author, category, date or tag).
+- Add: New Blog Lists Content Element (show list of authors, categories or tags).
+- Add: New File List Content Element (show download file list with icon and stuff).
 - Add: "User Action" header integration (requires RainLab.User), available on Extended navbar style only.
 - Add: "Site Picker" header integration (requires October CMS v3.1), available on Extended navbar style only.
 - Add: "Post Category" option to toggle the Category Link on the post lists.
@@ -67,31 +88,8 @@ Version 1.3.0 - In Progress
 - Update: `Current Categories` widget replaces `Current Categories`.
 - Update: `Current Tags` widget replaces `Current Tags`.
 - Update: `Next | Previous Posts` widget replaces `Next / Previous Buttons`.
-- Update: Meta-Tag theme options.
-- Update: Appearance theme options.
-- Update: Header theme options.
-- Update: Change rollup bundle to esbuild bundle.
-- Update: Bootstrap package to v5.2.2.
-- Update: Keen Slider package to v6.8.2.
-- Update: Set full color palette into style tag (including rgb variants).
-- Update: Main SCSS file structure.
-- Update: Re-written header / navbar JavaScript (within the new Navbar class).
-- Update: Change dropdown design / stylings on all header actions (same styling as main-menu).
 - Update: Offcanvas and Modal design (+ dark design variant).
 - Update: Dark (and Light) Bootstrap stylings and improvements.
-- Remove: "sticky_header" option, has been replaced with "Header Position" > "Sticky".
-- Bugfix: Set HTML lang to current locale instead of fixed 'en'.
-
-### ToDo
-- Add: Support for [BlakeJones.MagicForms](https://octobercms.com/plugin/blakejones-magicforms) OC Plugin.
-- Add: Support for [JanVince.SmallContactForm](https://octobercms.com/plugin/janvince-smallcontactform) OC Plugin.
-- Add: Support for [JanVince.SmallGDPR](https://octobercms.com/plugin/janvince-smallgdpr) OC Plugin.
-- Add: Support for [RainLab.BlogVideoExtension](https://octobercms.com/plugin/rainlab-blogvideoextension) OC Plugin.
-- Add: Support for [RainLab.User](https://octobercms.com/plugin/rainlab-user) OC Plugin.
-- Add: Support for [RainLab.Forum](https://octobercms.com/plugin/rainlab-forum) OC Plugin.
-- Add: New Blog Posts Content Element (show posts by author, category, date or tag).
-- Add: New Blog Lists Content Element (show list of authors, categories or tags).
-- Add: New File List Content Element (show download file list with icon and stuff).
 - Update: Change Bootstrap 5 Lightbox package with a custom Lightbox plugin.
 - Update: Add "Number of Cards / Row" option on Card Group.
 
