@@ -1,6 +1,12 @@
 import query from '../utilities/query';
 import ready from '../utilities/ready';
 
+
+/**
+ * @todo To be replaced
+ */
+
+
 /**
  * Invoke Scroll-To-Top Button
  * @param {*} element 

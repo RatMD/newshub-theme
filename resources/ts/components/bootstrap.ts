@@ -11,7 +11,7 @@ function invokeBootstrapDropdown(element)
         if (element === event.target || element.contains(event.target)) {
             event.preventDefault();
 
-            let instance = Bootstrap.Dropdown.getOrCreateInstance(element, {
+            let instance = window['Bootstrap'].Dropdown.getOrCreateInstance(element, {
                 autoClose: true
             });
 
@@ -22,7 +22,7 @@ function invokeBootstrapDropdown(element)
             // Toggle Dropdown
             instance.toggle();
         } else {
-            let instance = Bootstrap.Dropdown.getInstance(element, {
+            let instance = window['Bootstrap'].Dropdown.getInstance(element, {
                 autoClose: true
             });
 
@@ -42,7 +42,7 @@ function invokeBootstrapTooltip(element)
     if (element.hasAttribute('data-rat-init')) {
         return;
     }
-    new Bootstrap.Tooltip(element);
+    new window['Bootstrap'].Tooltip(element);
     element.dataset.ratInit = '1';
 }
 
@@ -55,7 +55,7 @@ function invokeBootstrapPopover(element)
     if (element.hasAttribute('data-rat-init')) {
         return;
     }
-    new Bootstrap.Popover(element);
+    new window['Bootstrap'].Popover(element);
     element.dataset.ratInit = '1';
 }
 

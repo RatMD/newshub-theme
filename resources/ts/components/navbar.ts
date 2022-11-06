@@ -135,10 +135,10 @@ class Navbar {
         }
 
         // Subnav Toggler
-        Array.from(this.root.querySelectorAll('.navbar-subnav-toggler')).map(el => {
+        Array.from(this.root.querySelectorAll('.navbar-subnav-toggler')).map((el: HTMLElement) => {
             el.addEventListener('click', this.toggleSubMenu.bind(this, el));
         });
-        Array.from(this.root.querySelectorAll('.nav-title')).map(el => {
+        Array.from(this.root.querySelectorAll('.nav-title')).map((el: HTMLElement) => {
             let toggler = el.parentElement.querySelector('.navbar-subnav-toggler');
             if (toggler) {
                 el.addEventListener('click', this.toggleSubMenu.bind(this, toggler));
@@ -289,13 +289,13 @@ class Navbar {
     onResize(event) {
 
         // Close SubMenus
-        Array.from(this.root.querySelectorAll('.nav-item.item-open')).map(el => {
+        Array.from(this.root.querySelectorAll('.nav-item.item-open')).map((el: HTMLElement) => {
             this.closeSubMenu(el, el.querySelector('.navbar-subnav-toggler'));
         });
 
         // Close Menu
         if (this.root.classList.contains('header-menu-active')) {
-            this.toggleMenu();
+            this.toggleMenu(null);
         }
     }
 
@@ -322,13 +322,13 @@ class Navbar {
         }
 
         // Close SubMenus
-        Array.from(this.root.querySelectorAll('.nav-item.item-open')).map(el => {
+        Array.from(this.root.querySelectorAll('.nav-item.item-open')).map((el: HTMLElement) => {
             this.closeSubMenu(el, el.querySelector('.navbar-subnav-toggler'));
         });
 
         // Close Menu
         if (this.root.classList.contains('header-menu-active')) {
-            this.toggleMenu();
+            this.toggleMenu(null);
         }
     }
 
@@ -387,13 +387,13 @@ class Navbar {
      */
     closeMenu() {
         if (this.style === 'sticky') {
-            setTimeout(() => { this.stickyNavbar(); }, 250); // Check Sticky Navbar Position after menu has been closed.
+            setTimeout(() => { this.stickyNavbar(null); }, 250); // Check Sticky Navbar Position after menu has been closed.
         } else if (this.style === 'slide') {
             this.root.style.removeProperty('height');
         }
 
         // Close SubMenus
-        Array.from(this.root.querySelectorAll('.nav-item.item-open')).map(el => {
+        Array.from(this.root.querySelectorAll('.nav-item.item-open')).map((el: HTMLElement) => {
             this.closeSubMenu(el, el.querySelector('.navbar-subnav-toggler'));
         });
 
@@ -467,7 +467,7 @@ class Navbar {
      */
     closeSubMenu(item, button) {
         if (item.classList.contains('master-menu') && this.style === 'sticky') {
-            setTimeout(() => { this.stickyNavbar(); }, 250); // Check Sticky Navbar Position after menu has been closed.
+            setTimeout(() => { this.stickyNavbar(null); }, 250); // Check Sticky Navbar Position after menu has been closed.
         }
 
         const subnav = item.querySelector('.navbar-subnav,.navbar-subnav-master');
@@ -485,7 +485,7 @@ class Navbar {
         }
 
         if (document.activeElement === button || document.activeElement === item) {
-            document.activeElement.blur();
+            (document.activeElement as HTMLButtonElement).blur();
         }
     }
 

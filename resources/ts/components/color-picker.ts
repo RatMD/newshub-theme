@@ -7,10 +7,10 @@ import ready from '../utilities/ready';
  */
 function invokeColorPicker(element)
 {
-    const defaultScheme = window.newshub.defaultScheme;
+    const defaultScheme = window['newshub'].defaultScheme;
 
     function onLoad() {
-        query('[data-newshub-toggle="color-picker"]').map(el => {
+        query('[data-newshub-toggle="color-picker"]').map((el: HTMLInputElement) => {
             let style = localStorage.getItem('newshub-color-scheme') || defaultScheme;
             if(style === 'light') {
                 el.checked = false;
