@@ -131,15 +131,15 @@ NewsHub has been successfully tested with the following stacks:
 
 Our Front-End testing is based on:
 
-- Windows (Real Machine)
+- Microsoft Windows (Real Machine)
 	- Google Chrome (Latest) on Windows 10
 	- Mozilla Firefox (Latest) on Windows 10
 	- Microsoft Edge (Latest) on Windows 10
-- MacOS (Via [BrowserStack](https://browserstack.com))
+- Apple MacOS (Via [BrowserStack](https://browserstack.com))
 	- Apple Safari (v15.6) on macOS 12 (Monterey) 
 	- Apple Safari (v14.1) on macOS 11 (Big Sur)
 	- Apple Safari (v13.1) on macOS 10.15 (Catalina)
-- MacOS (Via [BrowserStack](https://browserstack.com))
+- Apple iOS (Via [BrowserStack](https://browserstack.com))
 	- Apple Safari on iPhone 14 / iOS 16
 	- Apple Safari on iPhone 13 / iOS 15
 	- Apple Safari on iPhone 12 / iOS 14
@@ -156,26 +156,27 @@ The following dependencies are already bundled with this template, of course.
 - Bootstrap v5.2.2 - MIT licensed
 - Bootstrap Icons v1.9.1 - MIT licensed
 - [Flag Icons](https://flagicons.lipis.dev/) - MIT licensed
-- Keen Slider v6.8.2 - MIT licensed
-- jQuery *\** (only in OctoberCMS v2, see below) - MIT licensed
+- Keen Slider v6.8.3 - MIT licensed
+- jQuery*\** (only in OctoberCMS v2, see below) - MIT licensed
 
 **Attention**: By default, jQuery is only included on OctoberCMS v2 installations using October's 
 provided jQuery version, using jQuery for OctoberCMS v3 and above requires to set the "Embed jQuery" 
 option on the theme configuration page.
 
 ### Development Dependencies
-The development of the **NewsHub** OctoberCMS template is done using node.js (v16+) with an included 
-and configured esBuild stack. View the package.json in the root template directory for more details.
+The development of the **NewsHub** OctoberCMS template is done in TypeScript using node.js (v16+) 
+with an included and configured esBuild stack. View the package.json in the root template directory 
+for more details.
 
 Available Commands:
 
-- `npm run vendors` - Build & Bundle the required dependencies (as listed above).
 - `npm run build` - Build & Bundle the source files (JS & SCSS).
-- `npm run watch` - Watch the source files (JS & SCSS) and bundle on each change.
-- `npm run build:js` - Build & Bundle the JavaScript source files.
-- `npm run watch:js` - Watch the JavaScript source files and bundle on each change.
 - `npm run build:css` - Build & Bundle the SCSS source files.
+- `npm run build:js` - Build & Bundle the JavaScript source files.
+- `npm run watch` - Watch the source files (JS & SCSS) and bundle on each change.
 - `npm run watch:css` - Watch the SCSS source files and bundle on each change.
+- `npm run watch:js` - Watch the JavaScript source files and bundle on each change.
+- `npm run vendors` - Build & Bundle the required dependencies (as listed above).
 
 
 Need Support?
