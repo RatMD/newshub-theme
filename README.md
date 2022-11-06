@@ -111,12 +111,11 @@ still support OctoberCMS v2+ installations using RainLab.Translate v1.9+.
 - Plugin: [RainLab.Sitemap](https://octobercms.com/plugin/rainlab-sitemap)
 - Plugin: [RainLab.Translate](https://octobercms.com/plugin/rainlab-translate) _(supported: v1.9+ and v2+)_
 - Plugin: [RatMD.BlogHub](https://octobercms.com/plugin/ratmd-bloghub) _(required: v1.2+)_
-- Plugin: [RatMD.FormUI](https://octobercms.com/plugin/ratmd-formui)
 
 ### Supports
 The following plugins are not required but supported by the **NewsHub** template:
 
-- Plugin: [JanVince.SmallContactForm](https://octobercms.com/plugin/janvince-smallcontactform) (currently incompatible with OC v3.1)
+- Plugin: [JanVince.SmallContactForm](https://octobercms.com/plugin/janvince-smallcontactform) _(incompatible with OC v3.1 + RainLab.Translate v2)_
 - Plugin: [JanVince.SmallGDPR](https://octobercms.com/plugin/janvince-smallgdpr)
 - Plugin: [BlakeJones.MagicForms](https://octobercms.com/plugin/blakejones-magicforms)
 - Plugin: [RainLab.BlogVideoExtension](https://octobercms.com/plugin/rainlab-blogvideoextension)
