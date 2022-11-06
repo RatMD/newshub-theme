@@ -115,12 +115,12 @@ still support OctoberCMS v2+ installations using RainLab.Translate v1.9+.
 ### Supports
 The following plugins are not required but supported by the **NewsHub** template:
 
+- Plugin: [BlakeJones.MagicForms](https://octobercms.com/plugin/blakejones-magicforms)
 - Plugin: [JanVince.SmallContactForm](https://octobercms.com/plugin/janvince-smallcontactform) _(incompatible with OC v3.1 + RainLab.Translate v2)_
 - Plugin: [JanVince.SmallGDPR](https://octobercms.com/plugin/janvince-smallgdpr)
-- Plugin: [BlakeJones.MagicForms](https://octobercms.com/plugin/blakejones-magicforms)
 - Plugin: [RainLab.BlogVideoExtension](https://octobercms.com/plugin/rainlab-blogvideoextension)
-- Plugin: [RainLab.User](https://octobercms.com/plugin/rainlab-user) 
 - Plugin: [RainLab.Forum](https://octobercms.com/plugin/rainlab-forum) 
+- Plugin: [RainLab.User](https://octobercms.com/plugin/rainlab-user) 
 
 ### Tested with
 NewsHub has been successfully tested with the following stacks:
@@ -131,19 +131,22 @@ NewsHub has been successfully tested with the following stacks:
 
 Our Front-End testing is based on:
 
-- Google Chrome (Latest), Windows 10
-- Mozilla Firefox (Latest), Windows 10
-- Microsoft Edge (Latest), Windows 10
-- Apple Safari (v15.6), macOS 12 (Monterey) - via [BrowserStack](https://browserstack.com)
-- Apple Safari (v14.1), macOS 11 (Big Sur) - via [BrowserStack](https://browserstack.com)
-- Apple Safari (v13.1), macOS 10.15 (Catalina) - via [BrowserStack](https://browserstack.com)
-- Apple Safari on iPhone 14 / iOS 16 - via [BrowserStack](https://browserstack.com)
-- Apple Safari on iPhone 13 / iOS 15 - via [BrowserStack](https://browserstack.com)
-- Apple Safari on iPhone 12 / iOS 14 - via [BrowserStack](https://browserstack.com)
+- Windows (Real Machine)
+	- Google Chrome (Latest) on Windows 10
+	- Mozilla Firefox (Latest) on Windows 10
+	- Microsoft Edge (Latest) on Windows 10
+- MacOS (Via [BrowserStack](https://browserstack.com))
+	- Apple Safari (v15.6) on macOS 12 (Monterey) 
+	- Apple Safari (v14.1) on macOS 11 (Big Sur)
+	- Apple Safari (v13.1) on macOS 10.15 (Catalina)
+- MacOS (Via [BrowserStack](https://browserstack.com))
+	- Apple Safari on iPhone 14 / iOS 16
+	- Apple Safari on iPhone 13 / iOS 15
+	- Apple Safari on iPhone 12 / iOS 14
 
 Due to the testing via BrowserStack we cannot guarantee, that NewsHub works seamless on Apple 
 devices / on the Safari browser. If you notice any bug or strange behavior please contact us per 
-mail or via an GitHub issue, Thanks!
+mail or via GitHub issue, Thanks!
 
 
 Dependencies
