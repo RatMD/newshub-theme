@@ -1,0 +1,45 @@
+##
+==
+<?
+function onEnd()
+{
+    $config = $this['config'];
+    $limit = is_numeric($config['number'])? intval($config['number']): 5;
+    $showAvatar = $config['avatars'] === '1';
+
+    // Main Tags Query
+    $comments = RatMD\BlogHub\Models\Comment::where('status', 'approved')
+        ->orderBy('created_at', 'DESC')
+        ->limit($limit);
+
+    // Apply Query
+    $this['widget_comments'] = $comments->get()->all();
+}
+?>
+==
+
+{% if widget_comments|length > 0 %}
+    <div class="card card-simple">
+        {% partial 'sidebars/widgets/_header' config=config %}
+
+        <div class="card-body">
+            <ul class="list-group list-group-flush">
+                {% for comment in widget_comments %}
+                    <li class="list-group-item">
+                        <a href="{{ comment.post.url }}#comments">
+                            {% if config.avatars and comment.avatar %}
+                                <img src="{{ comment.avatar }}" class="list-group-image rounded-circle" />
+                            {% endif %}
+                            <div>
+                                <span>
+                                    <b>{{ comment.display_name }}</b> {{ comment.parent_id is null ? 'commented on' : 'replied on' }} <b>{{ comment.post.title }}</b>
+                                </span>
+
+                            </div>
+                        </a>
+                    </li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+{% endif %}

@@ -17,6 +17,11 @@ Version 1.3.0 - In Progress
 - Add: New Title - Layout input group partial for NewsHubs page builder.
 - Add: New ID - class name input group partial for NewsHubs page builder.
 - Add: New Spacings input range partial for NewsHubs page builder.
+- Add: New Sidebar widget `Blog Comment`, to display a list of comments.
+- Add: New Sidebar widget `Related Posts`, to display a list of related posts (on single blog posts only).
+- Add: New Sidebar widget `Image`, to display custom image with text.
+- Add: New Navbar Toggler ([CodePen Source](https://codepen.io/ainalem/pen/LJYRxz)).
+- Add: Default favicon + webmanifest set.
 
 - Update: Accordion content element (new structure).
 - Update: Alert / Callout content element (new structure).
@@ -44,6 +49,13 @@ Version 1.3.0 - In Progress
 - Update: `Blog Categories` widget replaces `List Categories` (new builder structure).
 - Update: `Blog Tags` widget replaces `List Tags` (new builder structure).
 - Update: `Table of Contents` widget replaces `Table of Contents` (new builder structure).
+- Update: `Static Menu` widget replaces `Static Menu`.
+- Update: `Content` widget replaces `Content`.
+- Update: `HTML Code` widget replaces `HTML Code`.
+- Update: `Current Author` widget replaces `Current Author`.
+- Update: `Current Categories` widget replaces `Current Categories`.
+- Update: `Current Tags` widget replaces `Current Tags`.
+- Update: `Next | Previous Posts` widget replaces `Next / Previous Buttons`.
 - Update: Missing JavaScript Anchors for Table of Contents Widget.
 - Update: Main SCSS file structure.
 - Update: Set full color palette into style tag (including rgb variants).
@@ -79,19 +91,7 @@ Version 1.3.0 - In Progress
 - Add: "Share Links" option to toggle privacy-protected Share Links above the article content.
 - Add: "Similar / Random Posts" option to toggle the Similar / Random post section below the single post.
 - Add: New Sidebar Widget Builder theme option.
-- Add: New Sidebar widget `Related Posts`, to display a list of related posts (on single blog posts only).
-- Add: New Sidebar widget `Blog Comment`, to display a list of comments.
-- Add: New Sidebar widget `Image`, to display custom image with text.
-- Add: Default favicon + webmanifest set.
-- Add: New Navbar Toggler ([CodePen Source](https://codepen.io/ainalem/pen/LJYRxz)).
 - Update: Sidebar to Widget environment for Homepage, Archive, Static Page and Blog Post pages.
-- Update: `Static Menu` widget replaces `Static Menu`.
-- Update: `Content` widget replaces `Content`.
-- Update: `HTML Code` widget replaces `HTML Code`.
-- Update: `Current Author` widget replaces `Current Author`.
-- Update: `Current Categories` widget replaces `Current Categories`.
-- Update: `Current Tags` widget replaces `Current Tags`.
-- Update: `Next | Previous Posts` widget replaces `Next / Previous Buttons`.
 - Update: Offcanvas and Modal design (+ dark design variant).
 - Update: Dark (and Light) Bootstrap stylings and improvements.
 - Update: Change Bootstrap 5 Lightbox package with a custom Lightbox plugin.

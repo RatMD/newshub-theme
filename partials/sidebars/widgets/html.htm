@@ -1,26 +1,10 @@
-##
-==
-<?
-function onEnd()
-{
-}
-?>
-==
+
 <div class="card card-simple">
-    {% if widget.widget_title or widget.widget_subtitle %}
-        <div class="card-header">
-            {% if widget.widget_title or widget.widget_subtitle %}
-                <h2 class="card-title">{{ widget.widget_title }}</h2>
-            {% endif %}
-            {% if widget.widget_title or widget.widget_subtitle %}
-                <span class="card-subtitle">{{ widget.widget_subtitle }}</span>
-            {% endif %}
-        </div>
-    {% endif %}
+    {% partial 'sidebars/widgets/_header' config=config %}
 
     <div class="card-body">
         <div class="content">
-            {{ widget.widget_html.widget_html_content | raw }}
+            {{ config.content | raw }}
         </div>
     </div>
 </div>

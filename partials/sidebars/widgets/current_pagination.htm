@@ -1,0 +1,20 @@
+{% set prevPost = post.bloghub.prev(1, config.same_category == '1') %}
+{% set nextPost = post.bloghub.next(1, config.same_category == '1') %}
+
+{% if prevPost or nextPost %}
+    {% if wrap %}<div class="{{ wrap }}">{% endif %}
+    <div class="card card-simple">
+        {% partial 'sidebars/widgets/_header' config=config %}
+
+        <div class="card-body">
+            {% if prevPost %}
+                {% partial 'blog/components/button' post=prevPost %}
+            {% endif %}
+
+            {% if nextPost %}
+                {% partial 'blog/components/button' post=nextPost %}
+            {% endif %}
+        </div>   
+    </div>
+    {% if wrap %}</div>{% endif %}
+{% endif %}

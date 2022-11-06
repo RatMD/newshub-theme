@@ -7870,7 +7870,7 @@ y .form-group:last-child {
   margin-top: -16px;
   position: absolute;
 }
-.list-group .list-group-image + span {
+.list-group .list-group-image + * {
   margin-left: 2rem;
 }
 .list-group .site-flag,

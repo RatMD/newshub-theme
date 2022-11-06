@@ -95,8 +95,8 @@ current_pagination:
             span: right
         same_category:
             type: switch
-            label: theme.newshub::lang.widget.shared.counter.label
-            comment: theme.newshub::lang.widget.shared.counter.comment
+            label: theme.newshub::lang.widget.current_pagination.same_category.label
+            comment: theme.newshub::lang.widget.current_pagination.same_category.comment
             default: true
             span: left
 

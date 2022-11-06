@@ -1,0 +1,16 @@
+
+<div class="card card-simple">
+    {% if config.image %}
+        <img src="{{ config.image|media }}" alt="{{ config.title }}" class="card-img-top m-auto mb-4 w-100" />
+    {% endif %}
+
+    <div class="card-body">
+        {% partial 'sidebars/widgets/_header' config=config %}
+        
+        {% if config.content %}
+            <div class="content">
+                {{ config.content | raw }}
+            </div>
+        {% endif %}
+    </div>
+</div>

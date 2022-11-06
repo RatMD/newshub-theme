@@ -1,16 +1,7 @@
 {% if post.categories %}
     {% if wrap %}<div class="{{ wrap }}">{% endif %}
     <div class="card card-simple">
-        {% if widget.widget_title or widget.widget_subtitle %}
-            <div class="card-header">
-                {% if widget.widget_title or widget.widget_subtitle %}
-                    <h2 class="card-title">{{ widget.widget_title }}</h2>
-                {% endif %}
-                {% if widget.widget_title or widget.widget_subtitle %}
-                    <span class="card-subtitle">{{ widget.widget_subtitle }}</span>
-                {% endif %}
-            </div>
-        {% endif %}
+        {% partial 'sidebars/widgets/_header' config=config %}
 
         <div class="card-body">
             <ul class="list-group list-group-flush">
@@ -19,7 +10,7 @@
                         <a href="{{ category.url }}" title="{{ 'archive.category_archive' | _ }}: {{ category.name }}">
                             {{ category.name }}
 
-                            {% if options.widget_posts_count == '1' %}
+                            {% if config.counter == '1' %}
                                 {% set count = category.posts_count.0.count | default(0) %}
                                 <span class="position-absolute top-50 start-100 translate-middle badge rounded-pill{{ count == 0? ' bg-secondary': ' bg-danger' }}">
                                     {{ count }}

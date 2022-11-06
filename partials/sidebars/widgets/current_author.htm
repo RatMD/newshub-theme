@@ -3,16 +3,16 @@
 <?
 function onEnd()
 {
-    $config = $this['options'];
+    $config = $this['config'];
 
-    if ($config['widget_posts_count'] === '1') {
+    if ($config['counter'] === '1') {
         $count = RainLab\Blog\Models\Post::where('user_id', $this->post->user->id)
             ->where('published', 1)
             ->count();
         $this['widget_author_count'] = $count;
     }
 
-    if ($config['widget_favourite_category'] === '1') {
+    if ($config['favorite_category'] === '1') {
         $category = RainLab\Blog\Models\Category::with('posts')
             ->from('rainlab_blog_categories', 'category')
             ->selectRaw('*, (
@@ -34,20 +34,11 @@ function onEnd()
 {% if post.ratmd_bloghub_tags|length > 0 %}
     {% if wrap %}<div class="{{ wrap }}">{% endif %}
     <div class="card card-simple">
-        {% if widget.widget_title or widget.widget_subtitle %}
-            <div class="card-header">
-                {% if widget.widget_title or widget.widget_subtitle %}
-                    <h2 class="card-title">{{ widget.widget_title }}</h2>
-                {% endif %}
-                {% if widget.widget_title or widget.widget_subtitle %}
-                    <span class="card-subtitle">{{ widget.widget_subtitle }}</span>
-                {% endif %}
-            </div>
-        {% endif %}
+        {% partial 'sidebars/widgets/_header' config=config %}
 
         <div class="card-body">
             <div class="row flex-wrap">
-                {% if options.widget_avatar %}
+                {% if config.avatar %}
                     {% set avatar = post.user.getAvatarThumb(64) %}
                     <div class="col-12 col-lg-3 d-flex justify-content-center align-self-start">
                         <img src="{{ avatar }}" class="rounded" width="64" height="64" alt="{{ post.user.bloghub_display() }}" />
@@ -56,19 +47,19 @@ function onEnd()
                 
                 <div class="col-12 col-lg-9">
                     <b class="fs-5 font-special">{{ post.user.bloghub_display() }}</b>
-                    {% if options.widget_description and post.user.ratmd_bloghub_about_me %}
+                    {% if config.aboutme and post.user.ratmd_bloghub_about_me %}
                         <p class="fs-7">{{ post.user.ratmd_bloghub_about_me }}</p>
                     {% endif %}
                 </div>
                 
-                {% if options.widget_posts_count %}
+                {% if config.counter %}
                     <div class="col-12 mt-3">
                         <span class="fs-8 text-uppercase d-block">{{ 'posts.number_of_posts' | _ }} </span>
                         <b>{{ widget_author_count }}</b> {{ 'posts.posts_in' | _ }} {{ post.user.created_at | date('F, Y') }}
                     </div>
                 {% endif %}
                 
-                {% if options.widget_favourite_category and widget_author_category %}
+                {% if config.favorite_category and widget_author_category %}
                     <div class="col-12 mt-3">
                         <span class="fs-8 text-uppercase d-block">{{ 'posts.favourite_category' | _ }} y</span>
                         <b>{{ widget_author_category.count }}</b> {{ 'posts.posts_since' | _ }} {{ widget_author_category.name }}

@@ -1,0 +1,16 @@
+
+{% set related_posts = post.bloghub.related %}
+
+{% if related_posts|length > 0 %}
+    <div class="card card-simple">
+        {% partial 'sidebars/widgets/_header' config=config %}
+
+        <div class="card-body">
+            {% partial 'blog/sections/posts-condensed'
+                posts=related_posts
+                prefix='single-srelated'
+                datetime='short'
+            %}
+        </div>
+    </div>
+{% endif %}
