@@ -31,7 +31,11 @@ tagAllowMultiple = 1
 function onInit()
 {
     $this['octoberVersion'] = \System::VERSION;
-    $this['rainlabTranslateVersion'] = \System\Classes\VersionManager::instance()->getLatestVersion('RainLab.Translate');
+    if (version_compare($this['octoberVersion'], '3.0.0', '<')) {
+        $this['rainlabTranslateVersion'] = \System\Models\PluginVersion::where('code', 'RainLab.Translate')->first()->version;
+    } else {
+        $this['rainlabTranslateVersion'] = \System\Classes\VersionManager::instance()->getLatestVersion('RainLab.Translate');
+    }
 
     $this['legacy'] = version_compare($this['octoberVersion'], '3.0.0', '<');
     $this['legacyTranslate'] = version_compare($this['rainlabTranslateVersion'], '2.0.0', '<');
