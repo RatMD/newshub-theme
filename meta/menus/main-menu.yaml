@@ -703,9 +703,13 @@ items:
                             isExternal: '0'
                     -
                         title: Contact
+                        nesting: null
                         type: cms-page
+                        url: null
                         code: ''
                         reference: contact
+                        cmsPage: null
+                        replace: null
                         viewBag:
                             isHidden: '0'
                             cssClass: ''
@@ -784,23 +788,6 @@ items:
                 reference: null
                 cmsPage: null
                 replace: null
-                viewBag:
-                    locale:
-                        de:
-                            title: ''
-                            url: ''
-                    isHidden: '0'
-                    cssClass: ''
-                    isExternal: '0'
-            -
-                title: Contact
-                nesting: 0
-                type: static-page
-                url: null
-                code: ''
-                reference: contact
-                cmsPage: null
-                replace: 0
                 viewBag:
                     locale:
                         de:
