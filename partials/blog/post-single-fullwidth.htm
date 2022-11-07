@@ -39,29 +39,31 @@
         </div>
     </article>
 
-    <footer class="pb-6">
-        <div class="container">
-            {% set similarPosts = post.bloghub_similar_posts() %}
-            {% if similarPosts|length > 0 %}
-                <h2 class="mb-5">{{ 'posts.widget.similar' | _ }}</h2>
-                <div class="latest-posts">
-                    {% partial 'blog/sections/posts-columns' 
-                        posts=similarPosts
-                        prefix='similar'
-                        datetime='short'
-                    %}
-                </div>
-            {% else %}
-                {% set randomPosts = post.bloghub_random_posts() %}
-                {% if randomPosts|length > 0 %}
-                    <h2 class="mb-5">{{ 'posts.widget.random' | _ }}</h2>
-                    {% partial 'blog/sections/posts-columns' 
-                        posts=randomPosts
-                        prefix='random'
-                        datetime='short'
-                    %}
+    {% if this.theme.similar_articles %}
+        <footer class="pb-6">
+            <div class="container">
+                {% set similarPosts = post.bloghub_similar_posts() %}
+                {% if similarPosts|length > 0 %}
+                    <h2 class="mb-5">{{ 'posts.widget.similar' | _ }}</h2>
+                    <div class="latest-posts">
+                        {% partial 'blog/sections/posts-columns' 
+                            posts=similarPosts
+                            prefix='similar'
+                            datetime='short'
+                        %}
+                    </div>
+                {% else %}
+                    {% set randomPosts = post.bloghub_random_posts() %}
+                    {% if randomPosts|length > 0 %}
+                        <h2 class="mb-5">{{ 'posts.widget.random' | _ }}</h2>
+                        {% partial 'blog/sections/posts-columns' 
+                            posts=randomPosts
+                            prefix='random'
+                            datetime='short'
+                        %}
+                    {% endif %}
                 {% endif %}
-            {% endif %}
-        </div>
-    </footer>
+            </div>
+        </footer>
+    {% endif %}
 </section>

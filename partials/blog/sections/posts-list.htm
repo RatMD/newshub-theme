@@ -41,13 +41,31 @@
                         {% endif %}
                     </div>
                 {% endif %}
+
+                {% if this.theme.featured_tag_list %}
+                    <div class="content-badges">
+                        {% for tag in post.bloghub.tags %}
+                            {% if tag.promote %}
+                                <span class="badge{% if not tag.color %} bg-primary{% endif %}" {% if tag.color %}style="background-color: {{ tag.color }}"{% endif %}>
+                                    {% if not tag.title %}
+                                        {{ tag.slug | title }}
+                                    {% else %}
+                                        {{ tag.title }}
+                                    {% endif %}
+                                </span>
+                            {% endif %}
+                        {% endfor %}
+                    </div>
+                {% endif %}
             </a>
 
             <div class="post-content">
-                <div class="post-category">
-                    <span>{{ 'posts.posted_in' | _ }}</span>
-                    <span>{{ post.categories[0].name }}</span>
-                </div>
+                {% if this.theme.category_list %}
+                    <div class="post-category">
+                        <span>{{ 'posts.posted_in' | _ }}</span>
+                        <a href="{{ post.categories[0].url }}" title="{{ post.categories[0].name }}">{{ post.categories[0].name }}</a>
+                    </div>
+                {% endif %}
             
                 <h2 class="post-title">
                     <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
@@ -63,7 +81,7 @@
                     </address>
                 </div>
 
-                <div class="post-summary">
+                <div class="post-summary{{ this.theme.category_list ? '' : ' no-category' }}">
                     {{ post.summary | raw }}
                 </div>
             </div>

@@ -1,0 +1,20 @@
+##
+url = "/forum/topic/:slug"
+layout = "default"
+title = "Forum"
+description = "Forum"
+meta_title = "Forum"
+meta_description = "Forum"
+
+[viewBag]
+localeUrl[de] = "/forum/topic/:slug"
+localeTitle[de] = "Forum"
+localeMeta_title[de] = "Forum"
+localeMeta_description[de] = "Forum"
+
+[forumTopic]
+memberPage = "forum/member"
+channelPage = "forum/channel"
+==
+<h1>{{ topic.subject }}</h1>
+{% component 'forumTopic' %}

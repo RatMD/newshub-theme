@@ -9747,6 +9747,44 @@ y .form-group:last-child {
 .post-button:hover .post-title {
   background-size: 100% 2px;
 }
+.share-links {
+  padding: 0 1rem;
+  display: flex;
+  align-items: center;
+  margin-bottom: 2rem;
+  padding-bottom: 2rem;
+  border-bottom: 1px solid var(--bs-gray-300);
+}
+.share-links .share-title {
+  color: var(--bs-gray-500);
+  margin-right: auto;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.15rem;
+}
+.share-links a {
+  color: var(--bs-gray-600);
+  width: 24px;
+  height: 24px;
+  margin: 0 0.5rem;
+  transition: color 0.15s ease;
+}
+.share-links a svg {
+  width: 24px;
+  height: 24px;
+}
+.share-links a.share-twitter:hover {
+  color: #1da1f2;
+}
+.share-links a.share-facebook:hover {
+  color: #1877f2;
+}
+.share-links a.share-tumblr:hover {
+  color: #35465d;
+}
+.share-links a.share-linkedin:hover {
+  color: #0a66c2;
+}
 .posts-list .post {
   display: flex;
   position: relative;
@@ -9880,6 +9918,18 @@ y .form-group:last-child {
   font-size: 0.8rem;
   font-weight: 600;
 }
+.posts-list .post .post-thumbnail .content-badges {
+  bottom: 0;
+  z-index: 50;
+  padding: 0.5rem;
+  display: block;
+  position: absolute;
+  filter: grayscale(100%);
+  transition: filter 0.15s ease;
+}
+.posts-list .post:hover .post-thumbnail .content-badges {
+  filter: grayscale(0%);
+}
 .posts-list .post:hover .post-thumbnail img {
   filter: grayscale(50%);
 }
@@ -9896,6 +9946,7 @@ y .form-group:last-child {
   }
 }
 .posts-list .post .post-content .post-category {
+  color: var(--bs-gray-600);
   opacity: 0.75;
   margin-bottom: 1rem;
   font-size: 0.9rem;
@@ -9907,6 +9958,14 @@ y .form-group:last-child {
   .posts-list .post .post-content .post-category {
     margin-bottom: 0;
   }
+}
+.posts-list .post .post-content .post-category a {
+  color: var(--bs-gray-800);
+  text-decoration: none;
+  transition: color 0.15s ease;
+}
+.posts-list .post .post-content .post-category a:hover {
+  color: var(--bs-primary);
 }
 .posts-list .post .post-content .post-title a {
   color: var(--bs-body-color);
@@ -9958,6 +10017,9 @@ y .form-group:last-child {
 .posts-list .post .post-content .post-summary p {
   margin: 0;
   padding: 0;
+}
+.posts-list .post .post-content .post-summary.no-category {
+  -webkit-line-clamp: 5;
 }
 .posts-list {
   display: flex;

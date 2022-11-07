@@ -234,3 +234,47 @@
         background-size: 100% 2px;
     }
 }
+
+
+.share-links {
+    padding: 0 $spacer;
+    display: flex;
+    align-items: center;
+    margin-bottom: $spacer * 2;
+    padding-bottom: $spacer * 2;
+    border-bottom: 1px solid var(--#{$prefix}gray-300);
+
+    .share-title {
+        color: var(--#{$prefix}gray-500);
+        margin-right: auto;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 0.15rem;
+    }
+
+    a {
+        color: var(--#{$prefix}gray-600);
+        width: 24px;
+        height: 24px;
+        margin: 0 $spacer * 0.5;
+        transition: color .15s ease;
+
+        svg {
+            width: 24px;
+            height: 24px;
+        }
+
+        &.share-twitter:hover {
+            color: map-get($social-networks, 'twitter');
+        }
+        &.share-facebook:hover {
+            color: map-get($social-networks, 'facebook');
+        }
+        &.share-tumblr:hover {
+            color: map-get($social-networks, 'tumblr');
+        }
+        &.share-linkedin:hover {
+            color: map-get($social-networks, 'linkedin');
+        }
+    }
+}
