@@ -4,6 +4,7 @@ NewsHub - Changelog
 Version 1.3.0 - In Progress
 ---------------------------
 - Add: Support of the new sitePicker core component, as of OctoberCMS v3.1.
+- Add: Support for [BlakeJones.MagicForms](https://octobercms.com/plugin/blakejones-magicforms) OC Plugin.
 - Add: New Locale / Site Picker Preference theme options.
 - Add: Use Locale / Site Picker as dropdown, modal or switch action toggler.
 - Add: Additional Meta-Tag theme options (base, robots, color-scheme and theme-color).
@@ -69,9 +70,7 @@ Version 1.3.0 - In Progress
 - Update: Change rollup bundle to esbuild bundle (using TypeScript instead of JavaScript).
 - Update: Bootstrap package to v5.2.2.
 - Update: Keen Slider package to v6.8.3.
-
 - Remove: "sticky_header" option, has been replaced with "Header Position" > "Sticky".
-
 - Bugfix: Set HTML lang to current locale instead of fixed 'en'.
 - Bugfix: Bootstrap URL on placeholder / demo copyright text.
 - Bugfix: No-JS & JS-Loading styles for keen hero slider.
@@ -80,7 +79,6 @@ Version 1.3.0 - In Progress
 
 
 ### ToDo
-- Add: Support for [BlakeJones.MagicForms](https://octobercms.com/plugin/blakejones-magicforms) OC Plugin.
 - Add: Support for [JanVince.SmallContactForm](https://octobercms.com/plugin/janvince-smallcontactform) OC Plugin.
 - Add: Support for [JanVince.SmallGDPR](https://octobercms.com/plugin/janvince-smallgdpr) OC Plugin.
 - Add: Support for [RainLab.BlogVideoExtension](https://octobercms.com/plugin/rainlab-blogvideoextension) OC Plugin.

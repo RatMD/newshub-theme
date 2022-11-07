@@ -9117,6 +9117,9 @@ y .form-group:last-child {
 .callout p:last-child {
   margin-bottom: 0;
 }
+.callout p:last-child {
+  margin-bottom: 0;
+}
 .callout .alert-heading {
   color: inherit;
 }

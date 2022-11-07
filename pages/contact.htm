@@ -1,0 +1,80 @@
+url = "/contact"
+layout = "default"
+title = "Contact"
+
+[emptyForm]
+rules[first_name] = "required"
+rules[message] = "required"
+rules[email] = "required|email"
+rules[last_name] = "required"
+messages_success = "Thanks for your message, we'll respond as soon as possible."
+messages_errors = "Something went wrong, please check the errors below."
+inline_errors = "disabled"
+allowed_fields[] = "first_name"
+allowed_fields[] = "last_name"
+allowed_fields[] = "email"
+allowed_fields[] = "message"
+sanitize_data = "disabled"
+anonymize_ip = "partial"
+recaptcha_theme = "light"
+recaptcha_type = "image"
+recaptcha_size = "normal"
+emails_date_format = "Y-m-d"
+
+[viewBag]
+localeUrl[de] = "/kontakt"
+localeTitle[de] = "Kontakt"
+==
+<div class="post-single page-single">
+    <section class="section section-page">
+        <header class="py-6 bg-light dark:bg-dark">
+            <div class="container">
+                <div class="post-header">
+                    <h1 class="post-title">{{ page.title | default(this.page.title) }}</h1>
+                </div>
+            </div>
+        </header>
+
+        <article class="section py-6">
+            <div class="container">
+                <div class="post-content main-area">
+                    <form data-request="emptyForm::onFormSubmit">
+                        {{ form_token() }}
+                        
+                        <div id="emptyForm_forms_flash"></div>
+                        
+                        <div class="row">
+                            <div class="col-12 col-lg-6">
+                                <div class="form-group">
+                                    <label for="first_name" class="form-label">Your First Name<span class="text-danger">*</span></label>
+                                    <input type="text" id="first_name" name="first_name" class="form-control" placeholder="Your First Name" required />
+                                </div>
+                            </div>
+
+                            <div class="col-12 col-lg-6">
+                                <div class="form-group">
+                                    <label for="last_name" class="form-label">Your Last Name<span class="text-danger">*</span></label>
+                                    <input type="text" id="last_name" name="last_name" class="form-control" placeholder="Your Last Name" required />
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="email" class="form-label">Your E-Mail Address<span class="text-danger">*</span></label>
+                            <input type="email" id="email" name="email" class="form-control" placeholder="Your E-Mail Address" required />
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="message" class="form-label">Your Message<span class="text-danger">*</span></label>
+                            <textarea id="message" name="message" class="form-control" rows="6" placeholder="Your Message" required></textarea>
+                        </div>
+                        
+                        <div class="form-group d-flex mt-5 justify-content-end">
+                            <button id="submitContactForm" type="submit" class="btn btn-primary">Submit Message</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </article>
+    </section>
+</div>

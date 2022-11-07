@@ -701,12 +701,23 @@ items:
                             isHidden: '0'
                             cssClass: ''
                             isExternal: '0'
+                    -
+                        title: Contact
+                        type: cms-page
+                        code: ''
+                        reference: contact
+                        viewBag:
+                            isHidden: '0'
+                            cssClass: ''
+                            isExternal: '0'
     -
         title: Components
         nesting: 1
         type: static-page
+        url: null
         code: ''
         reference: page-builder
+        cmsPage: null
         replace: 0
         viewBag:
             isHidden: '0'
