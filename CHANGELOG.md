@@ -69,6 +69,7 @@ Version 1.3.0 - In Progress
 - Update: Re-written header / navbar JavaScript (within the new Navbar class).
 - Update: Change rollup bundle to esbuild bundle (using TypeScript instead of JavaScript).
 - Update: Bootstrap package to v5.2.2.
+- Update: Change Bootstrap 5 Lightbox package with a custom Lightbox plugin.
 - Update: Keen Slider package to v6.8.3.
 - Remove: "sticky_header" option, has been replaced with "Header Position" > "Sticky".
 - Bugfix: Set HTML lang to current locale instead of fixed 'en'.
@@ -92,7 +93,6 @@ Version 1.3.0 - In Progress
 - Update: Sidebar to Widget environment for Homepage, Archive, Static Page and Blog Post pages.
 - Update: Offcanvas and Modal design (+ dark design variant).
 - Update: Dark (and Light) Bootstrap stylings and improvements.
-- Update: Change Bootstrap 5 Lightbox package with a custom Lightbox plugin.
 - Update: Add "Number of Cards / Row" option on Card Group.
 
 Version 1.2.2 - Stable
