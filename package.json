@@ -23,6 +23,7 @@
     "private": true,
     "dependencies": {
         "@popperjs/core": "^2.11.6",
+        "@rat.md/bs-lightbox": "^1.0.3",
         "bootstrap": "^5.2.2",
         "bootstrap-icons": "^1.9.1",
         "keen-slider": "^6.8.3"
