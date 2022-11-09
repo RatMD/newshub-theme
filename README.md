@@ -153,10 +153,11 @@ Dependencies
 ------------
 The following dependencies are already bundled with this template, of course.
 
-- Bootstrap v5.2.2 - MIT licensed
-- Bootstrap Icons v1.9.1 - MIT licensed
+- [Bootstrap](https://getbootstrap.com) v5.2.2 - MIT licensed
+- [Bootstrap Icons](https://icons.getbootstrap.com) v1.9.1 - MIT licensed
 - [Flag Icons](https://flagicons.lipis.dev/) - MIT licensed
-- Keen Slider v6.8.3 - MIT licensed
+- [Keen Slider](https://keen-slider.io/) v6.8.3 - MIT licensed
+- [@rat.md/bs-lightbox](https://ratmd.github.io/bs-lightbox/) v1.0.3 - MIT licensed
 - jQuery*\** (only in OctoberCMS v2, see below) - MIT licensed
 
 **Attention**: By default, jQuery is only included on OctoberCMS v2 installations using October's 
