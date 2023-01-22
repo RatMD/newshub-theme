@@ -14,12 +14,12 @@ require:
     - 'RatMD.BlogHub'
 form: config/options.yaml
 translate:
-    en: lang/en.json
-    en-gb: lang/en.json
-    en-us: lang/en.json
-    de: lang/de.json
-    de-at: lang/de.json
-    de-de: lang/de.json
+    en: lang/en.yaml
+    en-gb: lang/en.yaml
+    en-us: lang/en.yaml
+    de: lang/de.yaml
+    de-at: lang/de.yaml
+    de-de: lang/de.yaml
 
 ratmd.bloghub:
     post:

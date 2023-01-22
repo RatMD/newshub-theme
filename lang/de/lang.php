@@ -1,7 +1,7 @@
 <?php declare(strict_types=1);
 
 return [
-
+    
     // Custom Meta Options
     "custom_meta.tab" => "Darstellung",
     "custom_meta.simple_title.label" => "Einfacher Titel",
