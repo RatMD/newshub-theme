@@ -25,35 +25,35 @@ ratmd.bloghub:
     post:
         simple_subtitle:
             type: text
-            tab: theme.newshub::lang.custom_meta.tab
-            label: theme.newshub::lang.custom_meta.simple_subtitle.title
-            comment: theme.newshub::lang.custom_meta.simple_subtitle.comment
+            tab: theme.ratmd-newshub::lang.custom_meta.tab
+            label: theme.ratmd-newshub::lang.custom_meta.simple_subtitle.title
+            comment: theme.ratmd-newshub::lang.custom_meta.simple_subtitle.comment
             span: left
         simple_title:
             type: text
-            tab: theme.newshub::lang.custom_meta.tab
-            label: theme.newshub::lang.custom_meta.simple_title.label
-            comment: theme.newshub::lang.custom_meta.simple_title.comment
+            tab: theme.ratmd-newshub::lang.custom_meta.tab
+            label: theme.ratmd-newshub::lang.custom_meta.simple_title.label
+            comment: theme.ratmd-newshub::lang.custom_meta.simple_title.comment
             span: right
         layout:
             type: dropdown
-            tab: theme.newshub::lang.custom_meta.tab
-            label: theme.newshub::lang.custom_meta.post_layout.label
-            comment: theme.newshub::lang.custom_meta.post_layout.comment
+            tab: theme.ratmd-newshub::lang.custom_meta.tab
+            label: theme.ratmd-newshub::lang.custom_meta.post_layout.label
+            comment: theme.ratmd-newshub::lang.custom_meta.post_layout.comment
             default: default
             showSearch: false
             options:
-                default: theme.newshub::lang.custom_meta.post_layout.default
-                fullwidth: theme.newshub::lang.custom_meta.post_layout.fullwidth
-                heroimage: theme.newshub::lang.custom_meta.post_layout.heroimage
+                default: theme.ratmd-newshub::lang.custom_meta.post_layout.default
+                fullwidth: theme.ratmd-newshub::lang.custom_meta.post_layout.fullwidth
+                heroimage: theme.ratmd-newshub::lang.custom_meta.post_layout.heroimage
         images:
             type: dropdown
-            tab: theme.newshub::lang.custom_meta.tab
-            label: theme.newshub::lang.custom_meta.images.label
-            comment: theme.newshub::lang.custom_meta.images.comment
+            tab: theme.ratmd-newshub::lang.custom_meta.tab
+            label: theme.ratmd-newshub::lang.custom_meta.images.label
+            comment: theme.ratmd-newshub::lang.custom_meta.images.comment
             default: default
             showSearch: false
             options:
-                carousel: theme.newshub::lang.custom_meta.images.carousel
-                gallery: theme.newshub::lang.custom_meta.images.gallery
-                hidden: theme.newshub::lang.custom_meta.images.hidden
+                carousel: theme.ratmd-newshub::lang.custom_meta.images.carousel
+                gallery: theme.ratmd-newshub::lang.custom_meta.images.gallery
+                hidden: theme.ratmd-newshub::lang.custom_meta.images.hidden

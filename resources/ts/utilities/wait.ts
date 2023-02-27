@@ -5,8 +5,8 @@
  * @returns
  */
 function wait(ms: number): Promise<true> {
-    return new Promise((resolve, reject) => {
-        setTimeout(() => { resolve(true) }, ms);
+    return new Promise(resolve => {
+        setTimeout(resolve.bind(null, null), ms);
     });
 }
 

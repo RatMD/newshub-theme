@@ -17,30 +17,31 @@
 //  Include Bootstrap Functions
 //----------------------------------------
 @import 'bootstrap/scss/functions';
-@import 'core-functions';
+@import './core-functions';
 
 
 //----------------------------------------
 //  Include Bootstrap Basics
 //----------------------------------------
-@import 'core-variables';                   // Load Custom Variables
-@import 'bootstrap/scss/variables';         // Load Bootstrap Variables
-@import 'bootstrap/scss/maps';              // Load Bootstrap Maps
-@import 'bootstrap/scss/mixins';            // Load Bootstrap Mixins
-@import 'core-mixins';                      // Load Custom Mixins
-@import 'core-utilities';                   // Load Custom Utilities
-@import 'bootstrap/scss/utilities';         // Load Bootstrap Utilities
-@import 'core-overrides';                   // Load Custom Overrides
+@import './core-variables';
+@import 'bootstrap/scss/variables';
+@import 'bootstrap/scss/variables-dark';
+@import 'bootstrap/scss/maps';
+@import 'bootstrap/scss/mixins';
+@import './core-mixins';
+@import './core-utilities';
+@import 'bootstrap/scss/utilities';
+@import './core-overrides';
 
 
 //----------------------------------------
 //  Include Bootstrap Core
 //----------------------------------------
-@import 'base/fonts';
+@import './base/fonts';
 @import 'bootstrap/scss/root';
-@import 'base/root';
+@import './base/root';
 @import 'bootstrap/scss/reboot';
-@import 'base/core';
+@import './base/core';
 
 
 //----------------------------------------
@@ -81,12 +82,12 @@
 //----------------------------------------
 //  Include Custom Components
 //----------------------------------------
-@import 'custom-components';
-@import 'custom-vendors';
+@import './custom-components';
+@import './custom-vendors';
 
 
 //----------------------------------------
 //  Include Bootstrap Utility API
 //----------------------------------------
 @import 'bootstrap/scss/utilities/api';
-@import 'custom-utilities';
+@import './custom-utilities';

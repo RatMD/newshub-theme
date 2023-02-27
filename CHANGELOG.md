@@ -68,16 +68,19 @@ Version 1.3.0 - In Progress
 - Update: Change search modal / overlay design.
 - Update: Re-written header / navbar JavaScript (within the new Navbar class).
 - Update: Change rollup bundle to esbuild bundle (using TypeScript instead of JavaScript).
-- Update: Bootstrap package to v5.2.2.
+- Update: Bootstrap package to v5.3.0-alpha1.
 - Update: Change Bootstrap 5 Lightbox package with a custom Lightbox plugin.
-- Update: Keen Slider package to v6.8.3.
-- Remove: "sticky_header" option, has been replaced with "Header Position" > "Sticky".
-- Bugfix: Set HTML lang to current locale instead of fixed 'en'.
-- Bugfix: Bootstrap URL on placeholder / demo copyright text.
-- Bugfix: No-JS & JS-Loading styles for keen hero slider.
-- Bugfix: Remove additional div container tag on the Double-Click content element.
-- Bugfix: Class Names has not been passed to the quote content element.
+- Update: Keen Slider package to v6.8.5.
 
+- Remove: "sticky_header" option, has been replaced with "Header Position" > "Sticky".
+
+- Fix: Set HTML lang to current locale instead of fixed 'en'.
+- Fix: Bootstrap URL on placeholder / demo copyright text.
+- Fix: No-JS & JS-Loading styles for keen hero slider.
+- Fix: Remove additional div container tag on the Double-Click content element.
+- Fix: Class Names has not been passed to the quote content element.
+- Fix: Use the theme's author name in theme-links (`ratmd-newshub` instead of `newshub`).
+- Fix: Issues with translations (and YAML import links), as mentioned in [#4](https://github.com/RatMD/newshub-theme/issues/4).
 
 ### ToDo
 - Add: Support for [JanVince.SmallContactForm](https://octobercms.com/plugin/janvince-smallcontactform) OC Plugin.

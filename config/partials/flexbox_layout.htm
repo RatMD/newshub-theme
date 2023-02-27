@@ -45,8 +45,8 @@
 ?>
 
 <div class="newshub-flexbox-layout <?= $value['manual'] == '1' ? 'manual-configuration' : '' ?>" 
-    data-flexbox-string-set="<?= Lang::get('theme.newshub::lang.builder.flexbox.layout.set_primary') ?>"
-    data-flexbox-string-unset="<?= Lang::get('theme.newshub::lang.builder.flexbox.layout.unset_primary') ?>">
+    data-flexbox-string-set="<?= Lang::get('theme.ratmd-newshub::lang.builder.flexbox.layout.set_primary') ?>"
+    data-flexbox-string-unset="<?= Lang::get('theme.ratmd-newshub::lang.builder.flexbox.layout.unset_primary') ?>">
     <div class="newshub-flexbox-config">
         <input type="hidden" name="<?= $field->getName() ?>[columns]" value="<?= $value['columns'] ?>" data-flexbox-columns />
         <input type="hidden" name="<?= $field->getName() ?>[primary]" value="<?= $value['primary'] ?>" data-flexbox-primary />
@@ -64,39 +64,39 @@
             />
 
             <label for="<?= $field->getId('manual') ?>" class="form-check-label">
-                <?= Lang::get('theme.newshub::lang.builder.flexbox.layout.manual') ?>
+                <?= Lang::get('theme.ratmd-newshub::lang.builder.flexbox.layout.manual') ?>
             </label>
             <p class="form-text">
-                <?= Lang::get('theme.newshub::lang.builder.flexbox.layout.manual_comment') ?>
+                <?= Lang::get('theme.ratmd-newshub::lang.builder.flexbox.layout.manual_comment') ?>
             </p>
         </div>
     </div>
 
     <div class="newshub-flexbox-configurator <?= $value['primary'] == '0' ? '' : ('primary-' . $value['primary']) ?>">
         <div class="<?= $classes['1'] ?>" data-flexbox-column="1">
-            <span><?= Lang::get('theme.newshub::lang.builder.flexbox.layout.column_1') ?></span>
-            <span><?= Lang::get('theme.newshub::lang.builder.flexbox.layout.set_primary') ?></span>
+            <span><?= Lang::get('theme.ratmd-newshub::lang.builder.flexbox.layout.column_1') ?></span>
+            <span><?= Lang::get('theme.ratmd-newshub::lang.builder.flexbox.layout.set_primary') ?></span>
         </div>
 
         <div class="<?= $classes['2'] ?? '' ?><?= (intval($value['columns']) >= 2) ? ' ': ' hidden' ?>" data-flexbox-column="2">
-            <span><?= Lang::get('theme.newshub::lang.builder.flexbox.layout.column_2') ?></span>
-            <span><?= Lang::get('theme.newshub::lang.builder.flexbox.layout.set_primary') ?></span>
+            <span><?= Lang::get('theme.ratmd-newshub::lang.builder.flexbox.layout.column_2') ?></span>
+            <span><?= Lang::get('theme.ratmd-newshub::lang.builder.flexbox.layout.set_primary') ?></span>
         </div>
 
         <div class="<?= $classes['3'] ?? '' ?><?= (intval($value['columns']) >= 3) ? ' ': ' hidden' ?>" data-flexbox-column="3">
-            <span><?= Lang::get('theme.newshub::lang.builder.flexbox.layout.column_3') ?></span>
-            <span><?= Lang::get('theme.newshub::lang.builder.flexbox.layout.set_primary') ?></span>
+            <span><?= Lang::get('theme.ratmd-newshub::lang.builder.flexbox.layout.column_3') ?></span>
+            <span><?= Lang::get('theme.ratmd-newshub::lang.builder.flexbox.layout.set_primary') ?></span>
         </div>
 
         <div class="<?= $classes['4'] ?? '' ?><?= (intval($value['columns']) >= 4) ? ' ': ' hidden' ?>" data-flexbox-column="4">
-            <span><?= Lang::get('theme.newshub::lang.builder.flexbox.layout.column_4') ?></span>
-            <span><?= Lang::get('theme.newshub::lang.builder.flexbox.layout.set_primary') ?></span>
+            <span><?= Lang::get('theme.ratmd-newshub::lang.builder.flexbox.layout.column_4') ?></span>
+            <span><?= Lang::get('theme.ratmd-newshub::lang.builder.flexbox.layout.set_primary') ?></span>
         </div>
     </div>
 
     <div class="newshub-flexbox-inputs">
         <div id="<?= $field->getId('column-1-group') ?>" class="form-group text-field span-left" data-field-name="column_1">
-            <label for="<?= $field->getId('column-1') ?>" class="form-label"><?= Lang::get('theme.newshub::lang.builder.flexbox.layout.column_1') ?></label>
+            <label for="<?= $field->getId('column-1') ?>" class="form-label"><?= Lang::get('theme.ratmd-newshub::lang.builder.flexbox.layout.column_1') ?></label>
             <input 
                 id="<?= $field->getId('column-1') ?>" 
                 type="text" 
@@ -107,11 +107,11 @@
                 autocomplete="off" 
                 maxlength="255"
             />
-            <p class="form-text"><?= Lang::get('theme.newshub::lang.builder.flexbox.layout.class_names') ?></p>
+            <p class="form-text"><?= Lang::get('theme.ratmd-newshub::lang.builder.flexbox.layout.class_names') ?></p>
         </div>
 
         <div id="<?= $field->getId('column-2-group') ?>" class="form-group text-field span-right" data-field-name="column_2">
-            <label for="<?= $field->getId('column-2') ?>" class="form-label"><?= Lang::get('theme.newshub::lang.builder.flexbox.layout.column_2') ?></label>
+            <label for="<?= $field->getId('column-2') ?>" class="form-label"><?= Lang::get('theme.ratmd-newshub::lang.builder.flexbox.layout.column_2') ?></label>
             <input 
                 id="<?= $field->getId('column-2') ?>" 
                 type="text" 
@@ -123,11 +123,11 @@
                 maxlength="255"
                 <?= (intval($value['columns']) < 2)? 'disabled="disabled"' : '' ?>
             />
-            <p class="form-text"><?= Lang::get('theme.newshub::lang.builder.flexbox.layout.class_names') ?></p>
+            <p class="form-text"><?= Lang::get('theme.ratmd-newshub::lang.builder.flexbox.layout.class_names') ?></p>
         </div>
 
         <div id="<?= $field->getId('column-3-group') ?>" class="form-group text-field span-left" data-field-name="column_3">
-            <label for="<?= $field->getId('column-3') ?>" class="form-label"><?= Lang::get('theme.newshub::lang.builder.flexbox.layout.column_3') ?></label>
+            <label for="<?= $field->getId('column-3') ?>" class="form-label"><?= Lang::get('theme.ratmd-newshub::lang.builder.flexbox.layout.column_3') ?></label>
             <input 
                 id="<?= $field->getId('column-3') ?>" 
                 type="text" 
@@ -139,11 +139,11 @@
                 maxlength="255"
                 <?= (intval($value['columns']) < 3)? 'disabled="disabled"' : '' ?>
             />
-            <p class="form-text"><?= Lang::get('theme.newshub::lang.builder.flexbox.layout.class_names') ?></p>
+            <p class="form-text"><?= Lang::get('theme.ratmd-newshub::lang.builder.flexbox.layout.class_names') ?></p>
         </div>
 
         <div id="<?= $field->getId('column-4-group') ?>" class="form-group text-field span-right" data-field-name="column_4">
-            <label for="<?= $field->getId('column-4') ?>" class="form-label"><?= Lang::get('theme.newshub::lang.builder.flexbox.layout.column_4') ?></label>
+            <label for="<?= $field->getId('column-4') ?>" class="form-label"><?= Lang::get('theme.ratmd-newshub::lang.builder.flexbox.layout.column_4') ?></label>
             <input 
                 id="<?= $field->getId('column-4') ?>" 
                 type="text" 
@@ -155,7 +155,7 @@
                 maxlength="255"
                 <?= (intval($value['columns']) < 4)? 'disabled="disabled"' : '' ?>
             />
-            <p class="form-text"><?= Lang::get('theme.newshub::lang.builder.flexbox.layout.class_names') ?></p>
+            <p class="form-text"><?= Lang::get('theme.ratmd-newshub::lang.builder.flexbox.layout.class_names') ?></p>
         </div>
     </div>
 </div>

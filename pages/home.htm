@@ -52,7 +52,6 @@ postPage = "blog/post"
         {% endif %}
         
         <h1 class="mb-5">{{ 'posts.widget.latest' | _ }}</h1>
-        
         {% if latest.posts|length > 0 %}
             {% partial 'blog/sections/posts-columns' 
                 posts=latest.posts|slice(0, 3)

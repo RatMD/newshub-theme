@@ -1,40 +1,40 @@
 tabs:
     fields:
         __brand_section:
-            tab: theme.newshub::lang.option.tabs.general
+            tab: theme.ratmd-newshub::lang.option.tabs.general
             type: section
-            label: theme.newshub::lang.option.sections.brand
+            label: theme.ratmd-newshub::lang.option.sections.brand
         site_name:
-            tab: theme.newshub::lang.option.tabs.general
+            tab: theme.ratmd-newshub::lang.option.tabs.general
             type: text
-            label: theme.newshub::lang.option.site_name.label
-            comment: theme.newshub::lang.option.site_name.comment
+            label: theme.ratmd-newshub::lang.option.site_name.label
+            comment: theme.ratmd-newshub::lang.option.site_name.comment
             default: NewsHub
             span: left
         site_slogan:
-            tab: theme.newshub::lang.option.tabs.general
+            tab: theme.ratmd-newshub::lang.option.tabs.general
             type: text
-            label: theme.newshub::lang.option.site_slogan.label
-            comment: theme.newshub::lang.option.site_slogan.comment
+            label: theme.ratmd-newshub::lang.option.site_slogan.label
+            comment: theme.ratmd-newshub::lang.option.site_slogan.comment
             default: NewsHub is a premium Blog & Magazine template for OctoberCMS.
             span: right
         site_logo:
-            tab: theme.newshub::lang.option.tabs.general
+            tab: theme.ratmd-newshub::lang.option.tabs.general
             type: fileupload
             mode: image
-            label: theme.newshub::lang.option.site_logo.label
-            comment: theme.newshub::lang.option.site_logo.comment
+            label: theme.ratmd-newshub::lang.option.site_logo.label
+            comment: theme.ratmd-newshub::lang.option.site_logo.comment
             imageHeight: 60
             maxFiles: 1
             useCaption: false
             thumbOptions: false
             span: left
         site_logo_inverted:
-            tab: theme.newshub::lang.option.tabs.general
+            tab: theme.ratmd-newshub::lang.option.tabs.general
             type: fileupload
             mode: image
-            label: theme.newshub::lang.option.site_logo_inverted.label
-            comment: theme.newshub::lang.option.site_logo_inverted.comment
+            label: theme.ratmd-newshub::lang.option.site_logo_inverted.label
+            comment: theme.ratmd-newshub::lang.option.site_logo_inverted.comment
             imageHeight: 60
             maxFiles: 1
             useCaption: false
@@ -42,108 +42,108 @@ tabs:
             span: right
 
         __library_section:
-            tab: theme.newshub::lang.option.tabs.general
+            tab: theme.ratmd-newshub::lang.option.tabs.general
             type: section
-            label: theme.newshub::lang.option.sections.libraries
+            label: theme.ratmd-newshub::lang.option.sections.libraries
         embed_jquery:
-            tab: theme.newshub::lang.option.tabs.general
+            tab: theme.ratmd-newshub::lang.option.tabs.general
             type: switch
-            label: theme.newshub::lang.option.embed_jquery.label
-            comment: theme.newshub::lang.option.embed_jquery.comment
+            label: theme.ratmd-newshub::lang.option.embed_jquery.label
+            comment: theme.ratmd-newshub::lang.option.embed_jquery.comment
             default: false
         embed_extras:
-            tab: theme.newshub::lang.option.tabs.general
+            tab: theme.ratmd-newshub::lang.option.tabs.general
             type: switch
-            label: theme.newshub::lang.option.embed_extras.label
-            comment: theme.newshub::lang.option.embed_extras.comment
+            label: theme.ratmd-newshub::lang.option.embed_extras.label
+            comment: theme.ratmd-newshub::lang.option.embed_extras.comment
             default: false
         
         __october_preferences:
-            tab: theme.newshub::lang.option.tabs.preferences
+            tab: theme.ratmd-newshub::lang.option.tabs.preferences
             type: section
-            label: theme.newshub::lang.option.sections.preferences
+            label: theme.ratmd-newshub::lang.option.sections.preferences
         prefer_sitepicker:
-            tab: theme.newshub::lang.option.tabs.preferences
+            tab: theme.ratmd-newshub::lang.option.tabs.preferences
             type: switch
-            label: theme.newshub::lang.option.prefer_sitepicker.label
-            comment: theme.newshub::lang.option.prefer_sitepicker.comment
+            label: theme.ratmd-newshub::lang.option.prefer_sitepicker.label
+            comment: theme.ratmd-newshub::lang.option.prefer_sitepicker.comment
             default: false
             span: left
         oc_picker_usage:
-            tab: theme.newshub::lang.option.tabs.preferences
+            tab: theme.ratmd-newshub::lang.option.tabs.preferences
             type: balloon-selector
-            label: theme.newshub::lang.option.oc_picker_usage.label
-            comment: theme.newshub::lang.option.oc_picker_usage.comment
+            label: theme.ratmd-newshub::lang.option.oc_picker_usage.label
+            comment: theme.ratmd-newshub::lang.option.oc_picker_usage.comment
             options:
-                locale: theme.newshub::lang.option.oc_picker_usage.locale
-                sites: theme.newshub::lang.option.oc_picker_usage.sites
+                locale: theme.ratmd-newshub::lang.option.oc_picker_usage.locale
+                sites: theme.ratmd-newshub::lang.option.oc_picker_usage.sites
             default: locale
             span: left
         oc_picker_style:
-            tab: theme.newshub::lang.option.tabs.preferences
+            tab: theme.ratmd-newshub::lang.option.tabs.preferences
             type: balloon-selector
-            label: theme.newshub::lang.option.oc_picker_style.label
-            comment: theme.newshub::lang.option.oc_picker_style.comment
+            label: theme.ratmd-newshub::lang.option.oc_picker_style.label
+            comment: theme.ratmd-newshub::lang.option.oc_picker_style.comment
             options:
-                dropdown: theme.newshub::lang.option.oc_picker_style.dropdown
-                modal: theme.newshub::lang.option.oc_picker_style.modal
-                switch: theme.newshub::lang.option.oc_picker_style.switch
+                dropdown: theme.ratmd-newshub::lang.option.oc_picker_style.dropdown
+                modal: theme.ratmd-newshub::lang.option.oc_picker_style.modal
+                switch: theme.ratmd-newshub::lang.option.oc_picker_style.switch
             default: dropdown
             span: right
         __hint_preferences:
-            tab: theme.newshub::lang.option.tabs.preferences
+            tab: theme.ratmd-newshub::lang.option.tabs.preferences
             type: hint
             mode: info
-            label: theme.newshub::lang.option.tip.preferences.label
-            comment: theme.newshub::lang.option.tip.preferences.comment
+            label: theme.ratmd-newshub::lang.option.tip.preferences.label
+            comment: theme.ratmd-newshub::lang.option.tip.preferences.comment
             commentHtml: true
 
         __section_general_tags:
-            tab: theme.newshub::lang.option.tabs.meta
+            tab: theme.ratmd-newshub::lang.option.tabs.meta
             type: section
-            label: theme.newshub::lang.option.section.general_tags
+            label: theme.ratmd-newshub::lang.option.section.general_tags
         base_tag:
-            tab: theme.newshub::lang.option.tabs.meta
+            tab: theme.ratmd-newshub::lang.option.tabs.meta
             type: switch
-            label: theme.newshub::lang.option.meta_tags.base_tag.label
-            comment: theme.newshub::lang.option.meta_tags.base_tag.comment
+            label: theme.ratmd-newshub::lang.option.meta_tags.base_tag.label
+            comment: theme.ratmd-newshub::lang.option.meta_tags.base_tag.comment
             default: false
             span: left
         robots_tag:
-            tab: theme.newshub::lang.option.tabs.meta
+            tab: theme.ratmd-newshub::lang.option.tabs.meta
             type: switch
-            label: theme.newshub::lang.option.meta_tags.robots_tag.label
-            comment: theme.newshub::lang.option.meta_tags.robots_tag.comment
+            label: theme.ratmd-newshub::lang.option.meta_tags.robots_tag.label
+            comment: theme.ratmd-newshub::lang.option.meta_tags.robots_tag.comment
             default: true
             span: right
         color_scheme_tag:
-            tab: theme.newshub::lang.option.tabs.meta
+            tab: theme.ratmd-newshub::lang.option.tabs.meta
             type: switch
-            label: theme.newshub::lang.option.meta_tags.color_scheme_tag.label
-            comment: theme.newshub::lang.option.meta_tags.color_scheme_tag.comment
+            label: theme.ratmd-newshub::lang.option.meta_tags.color_scheme_tag.label
+            comment: theme.ratmd-newshub::lang.option.meta_tags.color_scheme_tag.comment
             default: true
             span: left
         theme_color_tag:
-            tab: theme.newshub::lang.option.tabs.meta
+            tab: theme.ratmd-newshub::lang.option.tabs.meta
             type: switch
-            label: theme.newshub::lang.option.meta_tags.theme_color_tag.label
-            comment: theme.newshub::lang.option.meta_tags.theme_color_tag.comment
+            label: theme.ratmd-newshub::lang.option.meta_tags.theme_color_tag.label
+            comment: theme.ratmd-newshub::lang.option.meta_tags.theme_color_tag.comment
             default: true
             span: right
 
         __section_favicon_tags:
-            tab: theme.newshub::lang.option.tabs.meta
+            tab: theme.ratmd-newshub::lang.option.tabs.meta
             type: section
-            label: theme.newshub::lang.option.section.favicon_tags
+            label: theme.ratmd-newshub::lang.option.section.favicon_tags
         favicon_tag:
-            tab: theme.newshub::lang.option.tabs.meta
+            tab: theme.ratmd-newshub::lang.option.tabs.meta
             type: switch
-            label: theme.newshub::lang.option.meta_tags.favicon_tag.label
-            comment: theme.newshub::lang.option.meta_tags.favicon_tag.comment
+            label: theme.ratmd-newshub::lang.option.meta_tags.favicon_tag.label
+            comment: theme.ratmd-newshub::lang.option.meta_tags.favicon_tag.comment
             default: true
             span: left
         favicon_path:
-            tab: theme.newshub::lang.option.tabs.meta
+            tab: theme.ratmd-newshub::lang.option.tabs.meta
             type: text
             default: '/favicon.ico'
             placeholder: '/favicon.ico'
@@ -153,14 +153,14 @@ tabs:
                 action: enable
                 condition: checked
         vector_icon_tag:
-            tab: theme.newshub::lang.option.tabs.meta
+            tab: theme.ratmd-newshub::lang.option.tabs.meta
             type: switch
-            label: theme.newshub::lang.option.meta_tags.vector_icon_tag.label
-            comment: theme.newshub::lang.option.meta_tags.vector_icon_tag.comment
+            label: theme.ratmd-newshub::lang.option.meta_tags.vector_icon_tag.label
+            comment: theme.ratmd-newshub::lang.option.meta_tags.vector_icon_tag.comment
             default: false
             span: left
         vector_icon_path:
-            tab: theme.newshub::lang.option.tabs.meta
+            tab: theme.ratmd-newshub::lang.option.tabs.meta
             type: text
             default: '/icon.svg'
             placeholder: '/icon.svg'
@@ -170,14 +170,14 @@ tabs:
                 action: enable
                 condition: checked
         apple_touch_tag:
-            tab: theme.newshub::lang.option.tabs.meta
+            tab: theme.ratmd-newshub::lang.option.tabs.meta
             type: switch
-            label: theme.newshub::lang.option.meta_tags.apple_touch_tag.label
-            comment: theme.newshub::lang.option.meta_tags.apple_touch_tag.comment
+            label: theme.ratmd-newshub::lang.option.meta_tags.apple_touch_tag.label
+            comment: theme.ratmd-newshub::lang.option.meta_tags.apple_touch_tag.comment
             default: false
             span: left
         apple_touch_path:
-            tab: theme.newshub::lang.option.tabs.meta
+            tab: theme.ratmd-newshub::lang.option.tabs.meta
             type: text
             default: '/apple-touch-icon.png'
             placeholder: '/apple-touch-icon.png'
@@ -187,14 +187,14 @@ tabs:
                 action: enable
                 condition: checked
         manifest_tag:
-            tab: theme.newshub::lang.option.tabs.meta
+            tab: theme.ratmd-newshub::lang.option.tabs.meta
             type: switch
-            label: theme.newshub::lang.option.meta_tags.manifest_tag.label
-            comment: theme.newshub::lang.option.meta_tags.manifest_tag.comment
+            label: theme.ratmd-newshub::lang.option.meta_tags.manifest_tag.label
+            comment: theme.ratmd-newshub::lang.option.meta_tags.manifest_tag.comment
             default: false
             span: left
         manifest_path:
-            tab: theme.newshub::lang.option.tabs.meta
+            tab: theme.ratmd-newshub::lang.option.tabs.meta
             type: text
             default: '/webmanifest.manifest'
             placeholder: '/webmanifest.manifest'
@@ -204,29 +204,29 @@ tabs:
                 action: enable
                 condition: checked
         __hint_favicon:
-            tab: theme.newshub::lang.option.tabs.meta
+            tab: theme.ratmd-newshub::lang.option.tabs.meta
             type: hint
             mode: tip
-            label: theme.newshub::lang.option.tip.favicon.label
-            comment: theme.newshub::lang.option.tip.favicon.comment
+            label: theme.ratmd-newshub::lang.option.tip.favicon.label
+            comment: theme.ratmd-newshub::lang.option.tip.favicon.comment
             commentHtml: true
         
         __section_generator_tag:
-            tab: theme.newshub::lang.option.tabs.meta
+            tab: theme.ratmd-newshub::lang.option.tabs.meta
             type: section
-            label: theme.newshub::lang.option.section.generator_tag
+            label: theme.ratmd-newshub::lang.option.section.generator_tag
         generator_tag:
-            tab: theme.newshub::lang.option.tabs.meta
+            tab: theme.ratmd-newshub::lang.option.tabs.meta
             type: switch
-            label: theme.newshub::lang.option.meta_tags.generator_tag.label
-            comment: theme.newshub::lang.option.meta_tags.generator_tag.comment
+            label: theme.ratmd-newshub::lang.option.meta_tags.generator_tag.label
+            comment: theme.ratmd-newshub::lang.option.meta_tags.generator_tag.comment
             default: true
             span: left
         generator_tag_version:
-            tab: theme.newshub::lang.option.tabs.meta
+            tab: theme.ratmd-newshub::lang.option.tabs.meta
             type: switch
-            label: theme.newshub::lang.option.meta_tags.generator_tag_version.label
-            comment: theme.newshub::lang.option.meta_tags.generator_tag_version.comment
+            label: theme.ratmd-newshub::lang.option.meta_tags.generator_tag_version.label
+            comment: theme.ratmd-newshub::lang.option.meta_tags.generator_tag_version.comment
             default: false
             span: right
             trigger:
@@ -235,21 +235,21 @@ tabs:
                 condition: checked
         
         __color_scheme_section:
-            tab: theme.newshub::lang.option.tabs.appearance
+            tab: theme.ratmd-newshub::lang.option.tabs.appearance
             type: section
-            label: theme.newshub::lang.option.sections.color_scheme
+            label: theme.ratmd-newshub::lang.option.sections.color_scheme
         enable_dark_scheme:
-            tab: theme.newshub::lang.option.tabs.appearance
+            tab: theme.ratmd-newshub::lang.option.tabs.appearance
             type: switch
-            label: theme.newshub::lang.option.enable_dark_scheme.label
-            comment: theme.newshub::lang.option.enable_dark_scheme.comment
+            label: theme.ratmd-newshub::lang.option.enable_dark_scheme.label
+            comment: theme.ratmd-newshub::lang.option.enable_dark_scheme.comment
             default: true
             span: left
         dark_scheme:
-            tab: theme.newshub::lang.option.tabs.appearance
+            tab: theme.ratmd-newshub::lang.option.tabs.appearance
             type: switch
-            label: theme.newshub::lang.option.dark_scheme.label
-            comment: theme.newshub::lang.option.dark_scheme.comment
+            label: theme.ratmd-newshub::lang.option.dark_scheme.label
+            comment: theme.ratmd-newshub::lang.option.dark_scheme.comment
             default: false
             span: right
             trigger:
@@ -257,41 +257,41 @@ tabs:
                 field: enable_dark_scheme
                 condition: checked
         dark_header:
-            tab: theme.newshub::lang.option.tabs.appearance
+            tab: theme.ratmd-newshub::lang.option.tabs.appearance
             type: switch
-            label: theme.newshub::lang.option.dark_header.label
-            comment: theme.newshub::lang.option.dark_header.comment
+            label: theme.ratmd-newshub::lang.option.dark_header.label
+            comment: theme.ratmd-newshub::lang.option.dark_header.comment
             default: false
             span: left
         dark_footer:
-            tab: theme.newshub::lang.option.tabs.appearance
+            tab: theme.ratmd-newshub::lang.option.tabs.appearance
             type: switch
-            label: theme.newshub::lang.option.dark_footer.label
-            comment: theme.newshub::lang.option.dark_footer.comment
+            label: theme.ratmd-newshub::lang.option.dark_footer.label
+            comment: theme.ratmd-newshub::lang.option.dark_footer.comment
             default: false
             span: right
 
         __color_palette_section:
-            tab: theme.newshub::lang.option.tabs.appearance
+            tab: theme.ratmd-newshub::lang.option.tabs.appearance
             type: section
-            label: theme.newshub::lang.option.sections.color_palette
+            label: theme.ratmd-newshub::lang.option.sections.color_palette
         __hint_color_palette:
-            tab: theme.newshub::lang.option.tabs.appearance
+            tab: theme.ratmd-newshub::lang.option.tabs.appearance
             type: hint
             mode: tip
-            label: theme.newshub::lang.option.tip.color_palette.label
-            comment: theme.newshub::lang.option.tip.color_palette.comment
+            label: theme.ratmd-newshub::lang.option.tip.color_palette.label
+            comment: theme.ratmd-newshub::lang.option.tip.color_palette.comment
             commentHtml: true
         enable_color_palette:
-            tab: theme.newshub::lang.option.tabs.appearance
+            tab: theme.ratmd-newshub::lang.option.tabs.appearance
             type: switch
-            label: theme.newshub::lang.option.enable_color_palette.label
-            comment: theme.newshub::lang.option.enable_color_palette.comment
+            label: theme.ratmd-newshub::lang.option.enable_color_palette.label
+            comment: theme.ratmd-newshub::lang.option.enable_color_palette.comment
             default: false
         color_primary:
-            tab: theme.newshub::lang.option.tabs.appearance
+            tab: theme.ratmd-newshub::lang.option.tabs.appearance
             type: colorpicker
-            label: theme.newshub::lang.option.color_primary.label
+            label: theme.ratmd-newshub::lang.option.color_primary.label
             allowEmpty: false
             default: '#0d6efd'
             availableColors:
@@ -311,9 +311,9 @@ tabs:
                 field: enable_color_palette
                 condition: checked
         color_secondary:
-            tab: theme.newshub::lang.option.tabs.appearance
+            tab: theme.ratmd-newshub::lang.option.tabs.appearance
             type: colorpicker
-            label: theme.newshub::lang.option.color_secondary.label
+            label: theme.ratmd-newshub::lang.option.color_secondary.label
             allowEmpty: false
             default: '#6c757d'
             availableColors:
@@ -333,9 +333,9 @@ tabs:
                 field: enable_color_palette
                 condition: checked
         color_success:
-            tab: theme.newshub::lang.option.tabs.appearance
+            tab: theme.ratmd-newshub::lang.option.tabs.appearance
             type: colorpicker
-            label: theme.newshub::lang.option.color_success.label
+            label: theme.ratmd-newshub::lang.option.color_success.label
             allowEmpty: false
             default: '#198754'
             availableColors:
@@ -355,9 +355,9 @@ tabs:
                 field: enable_color_palette
                 condition: checked
         color_info:
-            tab: theme.newshub::lang.option.tabs.appearance
+            tab: theme.ratmd-newshub::lang.option.tabs.appearance
             type: colorpicker
-            label: theme.newshub::lang.option.color_info.label
+            label: theme.ratmd-newshub::lang.option.color_info.label
             allowEmpty: false
             default: '#0dcaf0'
             availableColors:
@@ -377,9 +377,9 @@ tabs:
                 field: enable_color_palette
                 condition: checked
         color_warning:
-            tab: theme.newshub::lang.option.tabs.appearance
+            tab: theme.ratmd-newshub::lang.option.tabs.appearance
             type: colorpicker
-            label: theme.newshub::lang.option.color_warning.label
+            label: theme.ratmd-newshub::lang.option.color_warning.label
             allowEmpty: false
             default: '#ffc107'
             availableColors:
@@ -399,9 +399,9 @@ tabs:
                 field: enable_color_palette
                 condition: checked
         color_danger:
-            tab: theme.newshub::lang.option.tabs.appearance
+            tab: theme.ratmd-newshub::lang.option.tabs.appearance
             type: colorpicker
-            label: theme.newshub::lang.option.color_danger.label
+            label: theme.ratmd-newshub::lang.option.color_danger.label
             allowEmpty: false
             default: '#dc3545'
             availableColors:
@@ -421,19 +421,19 @@ tabs:
                 field: enable_color_palette
                 condition: checked
         gray_scheme:
-            tab: theme.newshub::lang.option.tabs.appearance
+            tab: theme.ratmd-newshub::lang.option.tabs.appearance
             type: dropdown
-            label: theme.newshub::lang.option.gray_scheme.label
-            comment: theme.newshub::lang.option.gray_scheme.comment
+            label: theme.ratmd-newshub::lang.option.gray_scheme.label
+            comment: theme.ratmd-newshub::lang.option.gray_scheme.comment
             default: default
             showSearch: false
             options:
-                default: theme.newshub::lang.option.gray_scheme.default
-                gray: theme.newshub::lang.option.gray_scheme.gray
-                neutral: theme.newshub::lang.option.gray_scheme.neutral
-                slate: theme.newshub::lang.option.gray_scheme.slate
-                stone: theme.newshub::lang.option.gray_scheme.stone
-                zinc: theme.newshub::lang.option.gray_scheme.zinc
+                default: theme.ratmd-newshub::lang.option.gray_scheme.default
+                gray: theme.ratmd-newshub::lang.option.gray_scheme.gray
+                neutral: theme.ratmd-newshub::lang.option.gray_scheme.neutral
+                slate: theme.ratmd-newshub::lang.option.gray_scheme.slate
+                stone: theme.ratmd-newshub::lang.option.gray_scheme.stone
+                zinc: theme.ratmd-newshub::lang.option.gray_scheme.zinc
             span: left
             trigger:
                 action: show
@@ -441,39 +441,39 @@ tabs:
                 condition: checked
         
         __main_header_section:
-            tab: theme.newshub::lang.option.tabs.header
+            tab: theme.ratmd-newshub::lang.option.tabs.header
             type: section
-            label: theme.newshub::lang.option.sections.main_header
+            label: theme.ratmd-newshub::lang.option.sections.main_header
         header_style:
-            tab: theme.newshub::lang.option.tabs.header
+            tab: theme.ratmd-newshub::lang.option.tabs.header
             type: balloon-selector
-            label: theme.newshub::lang.option.header_style.label
-            comment: theme.newshub::lang.option.header_style.comment
-            commentAbove: theme.newshub::lang.option.header_style.commentAbove
+            label: theme.ratmd-newshub::lang.option.header_style.label
+            comment: theme.ratmd-newshub::lang.option.header_style.comment
+            commentAbove: theme.ratmd-newshub::lang.option.header_style.commentAbove
             default: condensed
             showSearch: false
             options:
-                condensed: theme.newshub::lang.option.header_style.condensed
-                extended: theme.newshub::lang.option.header_style.extended
+                condensed: theme.ratmd-newshub::lang.option.header_style.condensed
+                extended: theme.ratmd-newshub::lang.option.header_style.extended
             span: left
         header_position:
-            tab: theme.newshub::lang.option.tabs.header
+            tab: theme.ratmd-newshub::lang.option.tabs.header
             type: balloon-selector
-            label: theme.newshub::lang.option.header_position.label
-            commentAbove: theme.newshub::lang.option.header_position.commentAbove
-            comment: theme.newshub::lang.option.header_position.comment
+            label: theme.ratmd-newshub::lang.option.header_position.label
+            commentAbove: theme.ratmd-newshub::lang.option.header_position.commentAbove
+            comment: theme.ratmd-newshub::lang.option.header_position.comment
             default: static
             showSearch: false
             options:
-                static: theme.newshub::lang.option.header_position.static
-                sticky: theme.newshub::lang.option.header_position.sticky
-                slide: theme.newshub::lang.option.header_position.slide
+                static: theme.ratmd-newshub::lang.option.header_position.static
+                sticky: theme.ratmd-newshub::lang.option.header_position.sticky
+                slide: theme.ratmd-newshub::lang.option.header_position.slide
             span: right
         color_switch_top:
-            tab: theme.newshub::lang.option.tabs.header
+            tab: theme.ratmd-newshub::lang.option.tabs.header
             type: switch
-            label: theme.newshub::lang.option.color_switch.label
-            comment: theme.newshub::lang.option.color_switch.comment
+            label: theme.ratmd-newshub::lang.option.color_switch.label
+            comment: theme.ratmd-newshub::lang.option.color_switch.comment
             default: false
             trigger:
                 action: enable
@@ -481,17 +481,17 @@ tabs:
                 condition: checked
             span: left
         site_picker_top:
-            tab: theme.newshub::lang.option.tabs.header
+            tab: theme.ratmd-newshub::lang.option.tabs.header
             type: switch
-            label: theme.newshub::lang.option.site_picker.label
-            comment: theme.newshub::lang.option.site_picker.comment
+            label: theme.ratmd-newshub::lang.option.site_picker.label
+            comment: theme.ratmd-newshub::lang.option.site_picker.comment
             default: false
             span: right
         search_button:
-            tab: theme.newshub::lang.option.tabs.header
+            tab: theme.ratmd-newshub::lang.option.tabs.header
             type: switch
-            label: theme.newshub::lang.option.search_button.label
-            comment: theme.newshub::lang.option.search_button.comment
+            label: theme.ratmd-newshub::lang.option.search_button.label
+            comment: theme.ratmd-newshub::lang.option.search_button.comment
             commentHtml: true
             default: false
             trigger:
@@ -500,10 +500,10 @@ tabs:
                 field: header_style
             span: left
         user_button:
-            tab: theme.newshub::lang.option.tabs.header
+            tab: theme.ratmd-newshub::lang.option.tabs.header
             type: switch
-            label: theme.newshub::lang.option.user_button.label
-            comment: theme.newshub::lang.option.user_button.comment
+            label: theme.ratmd-newshub::lang.option.user_button.label
+            comment: theme.ratmd-newshub::lang.option.user_button.comment
             commentHtml: true
             default: false
             trigger:
@@ -513,246 +513,246 @@ tabs:
             span: right
         
         __hero_area_section:
-            tab: theme.newshub::lang.option.tabs.homepage
+            tab: theme.ratmd-newshub::lang.option.tabs.homepage
             type: section
-            label: theme.newshub::lang.option.sections.hero_area
+            label: theme.ratmd-newshub::lang.option.sections.hero_area
         hero_slider:
-            tab: theme.newshub::lang.option.tabs.homepage
+            tab: theme.ratmd-newshub::lang.option.tabs.homepage
             type: switch
-            label: theme.newshub::lang.option.hero_slider.label
-            comment: theme.newshub::lang.option.hero_slider.comment
+            label: theme.ratmd-newshub::lang.option.hero_slider.label
+            comment: theme.ratmd-newshub::lang.option.hero_slider.comment
             default: true
             span: left
         hero_slider_controls:
-            tab: theme.newshub::lang.option.tabs.homepage
+            tab: theme.ratmd-newshub::lang.option.tabs.homepage
             type: switch
-            label: theme.newshub::lang.option.hero_slider_controls.label
-            comment: theme.newshub::lang.option.hero_slider_controls.comment
+            label: theme.ratmd-newshub::lang.option.hero_slider_controls.label
+            comment: theme.ratmd-newshub::lang.option.hero_slider_controls.comment
             default: true
             span: left
         hero_slider_indicators:
-            tab: theme.newshub::lang.option.tabs.homepage
+            tab: theme.ratmd-newshub::lang.option.tabs.homepage
             type: switch
-            label: theme.newshub::lang.option.hero_slider_indicators.label
-            comment: theme.newshub::lang.option.hero_slider_indicators.comment
+            label: theme.ratmd-newshub::lang.option.hero_slider_indicators.label
+            comment: theme.ratmd-newshub::lang.option.hero_slider_indicators.comment
             default: false
             span: right
         hero_slider_number:
-            tab: theme.newshub::lang.option.tabs.homepage
+            tab: theme.ratmd-newshub::lang.option.tabs.homepage
             type: number
-            label: theme.newshub::lang.option.hero_slider_number.label
-            comment: theme.newshub::lang.option.hero_slider_number.comment
+            label: theme.ratmd-newshub::lang.option.hero_slider_number.label
+            comment: theme.ratmd-newshub::lang.option.hero_slider_number.comment
             default: 6
             span: left
         hero_slider_category:
-            tab: theme.newshub::lang.option.tabs.homepage
+            tab: theme.ratmd-newshub::lang.option.tabs.homepage
             type: recordfinder
-            label: theme.newshub::lang.option.hero_slider_category.label
-            comment: theme.newshub::lang.option.hero_slider_category.comment
+            label: theme.ratmd-newshub::lang.option.hero_slider_category.label
+            comment: theme.ratmd-newshub::lang.option.hero_slider_category.comment
             list: ~/plugins/rainlab/blog/models/category/columns.yaml
             modelClass: RainLab\Blog\Models\Category
             useRelation: false
             span: right
         
         __notice_section:
-            tab: theme.newshub::lang.option.tabs.homepage
+            tab: theme.ratmd-newshub::lang.option.tabs.homepage
             type: section
-            label: theme.newshub::lang.option.sections.notice
+            label: theme.ratmd-newshub::lang.option.sections.notice
         notice_enable:
-            tab: theme.newshub::lang.option.tabs.homepage
+            tab: theme.ratmd-newshub::lang.option.tabs.homepage
             type: switch
-            label: theme.newshub::lang.option.notice_enable.label
-            comment: theme.newshub::lang.option.notice_enable.comment
+            label: theme.ratmd-newshub::lang.option.notice_enable.label
+            comment: theme.ratmd-newshub::lang.option.notice_enable.comment
             default: false
         notice_color:
-            tab: theme.newshub::lang.option.tabs.homepage
+            tab: theme.ratmd-newshub::lang.option.tabs.homepage
             type: dropdown
-            label: theme.newshub::lang.option.notice_color.label
-            comment: theme.newshub::lang.option.notice_color.comment
+            label: theme.ratmd-newshub::lang.option.notice_color.label
+            comment: theme.ratmd-newshub::lang.option.notice_color.comment
             default: primary
             showSearch: false
             options:
-                primary: theme.newshub::lang.option.color_primary.label
-                secondary: theme.newshub::lang.option.color_secondary.label
-                success: theme.newshub::lang.option.color_success.label
-                info: theme.newshub::lang.option.color_info.label
-                warning: theme.newshub::lang.option.color_warning.label
-                danger: theme.newshub::lang.option.color_danger.label
+                primary: theme.ratmd-newshub::lang.option.color_primary.label
+                secondary: theme.ratmd-newshub::lang.option.color_secondary.label
+                success: theme.ratmd-newshub::lang.option.color_success.label
+                info: theme.ratmd-newshub::lang.option.color_info.label
+                warning: theme.ratmd-newshub::lang.option.color_warning.label
+                danger: theme.ratmd-newshub::lang.option.color_danger.label
             span: left
         notice_title:
-            tab: theme.newshub::lang.option.tabs.homepage
+            tab: theme.ratmd-newshub::lang.option.tabs.homepage
             type: text
-            label: theme.newshub::lang.option.notice_title.label
-            comment: theme.newshub::lang.option.notice_title.comment
+            label: theme.ratmd-newshub::lang.option.notice_title.label
+            comment: theme.ratmd-newshub::lang.option.notice_title.comment
             placeholder: Info
             span: left
         notice_link:
-            tab: theme.newshub::lang.option.tabs.homepage
+            tab: theme.ratmd-newshub::lang.option.tabs.homepage
             type: text
-            label: theme.newshub::lang.option.notice_link.label
-            comment: theme.newshub::lang.option.notice_link.comment
+            label: theme.ratmd-newshub::lang.option.notice_link.label
+            comment: theme.ratmd-newshub::lang.option.notice_link.comment
             span: right
         notice_content:
-            tab: theme.newshub::lang.option.tabs.homepage
+            tab: theme.ratmd-newshub::lang.option.tabs.homepage
             type: text
-            label: theme.newshub::lang.option.notice_content.label
-            comment: theme.newshub::lang.option.notice_content.comment
+            label: theme.ratmd-newshub::lang.option.notice_content.label
+            comment: theme.ratmd-newshub::lang.option.notice_content.comment
             placeholder: A info message.
         
         __posts_section:
-            tab: theme.newshub::lang.option.tabs.content
+            tab: theme.ratmd-newshub::lang.option.tabs.content
             type: section
-            label: theme.newshub::lang.option.sections.posts
+            label: theme.ratmd-newshub::lang.option.sections.posts
         view_counter:
-            tab: theme.newshub::lang.option.tabs.content
+            tab: theme.ratmd-newshub::lang.option.tabs.content
             type: switch
-            label: theme.newshub::lang.option.view_counter.label
-            comment: theme.newshub::lang.option.view_counter.comment
+            label: theme.ratmd-newshub::lang.option.view_counter.label
+            comment: theme.ratmd-newshub::lang.option.view_counter.comment
             default: true
             span: left
         comment_counter:
-            tab: theme.newshub::lang.option.tabs.content
+            tab: theme.ratmd-newshub::lang.option.tabs.content
             type: switch
-            label: theme.newshub::lang.option.comment_counter.label
-            comment: theme.newshub::lang.option.comment_counter.comment
+            label: theme.ratmd-newshub::lang.option.comment_counter.label
+            comment: theme.ratmd-newshub::lang.option.comment_counter.comment
             default: false
             span: right
         category_list:
-            tab: theme.newshub::lang.option.tabs.content
+            tab: theme.ratmd-newshub::lang.option.tabs.content
             type: switch
-            label: theme.newshub::lang.option.category_list.label
-            comment: theme.newshub::lang.option.category_list.comment
+            label: theme.ratmd-newshub::lang.option.category_list.label
+            comment: theme.ratmd-newshub::lang.option.category_list.comment
             default: true
             span: left
         featured_tag_list:
-            tab: theme.newshub::lang.option.tabs.content
+            tab: theme.ratmd-newshub::lang.option.tabs.content
             type: switch
-            label: theme.newshub::lang.option.featured_tag_list.label
-            comment: theme.newshub::lang.option.featured_tag_list.comment
+            label: theme.ratmd-newshub::lang.option.featured_tag_list.label
+            comment: theme.ratmd-newshub::lang.option.featured_tag_list.comment
             default: false
             span: right
         
         __post_section:
-            tab: theme.newshub::lang.option.tabs.content
+            tab: theme.ratmd-newshub::lang.option.tabs.content
             type: section
-            label: theme.newshub::lang.option.sections.post
+            label: theme.ratmd-newshub::lang.option.sections.post
         share_post:
-            tab: theme.newshub::lang.option.tabs.content
+            tab: theme.ratmd-newshub::lang.option.tabs.content
             type: switch
-            label: theme.newshub::lang.option.share_post.label
-            comment: theme.newshub::lang.option.share_post.comment
+            label: theme.ratmd-newshub::lang.option.share_post.label
+            comment: theme.ratmd-newshub::lang.option.share_post.comment
             default: false
             span: left
         similar_articles:
-            tab: theme.newshub::lang.option.tabs.content
+            tab: theme.ratmd-newshub::lang.option.tabs.content
             type: switch
-            label: theme.newshub::lang.option.similar_articles.label
-            comment: theme.newshub::lang.option.similar_articles.comment
+            label: theme.ratmd-newshub::lang.option.similar_articles.label
+            comment: theme.ratmd-newshub::lang.option.similar_articles.comment
             default: true
             span: left
 
         __localization_section:
-            tab: theme.newshub::lang.option.tabs.content
+            tab: theme.ratmd-newshub::lang.option.tabs.content
             type: section
-            label: theme.newshub::lang.option.sections.localization
+            label: theme.ratmd-newshub::lang.option.sections.localization
         datetime_format:
-            tab: theme.newshub::lang.option.tabs.content
+            tab: theme.ratmd-newshub::lang.option.tabs.content
             type: text
-            label: theme.newshub::lang.option.datetime_format.label
+            label: theme.ratmd-newshub::lang.option.datetime_format.label
             default: D., j. F Y - H:i
-            comment: theme.newshub::lang.option.datetime_format.comment
+            comment: theme.ratmd-newshub::lang.option.datetime_format.comment
             commentHtml: true
             span: left
         short_datetime_format:
-            tab: theme.newshub::lang.option.tabs.content
+            tab: theme.ratmd-newshub::lang.option.tabs.content
             type: text
-            label: theme.newshub::lang.option.short_datetime_format.label
+            label: theme.ratmd-newshub::lang.option.short_datetime_format.label
             default: M. j, Y - H:i
-            comment: theme.newshub::lang.option.datetime_format.comment
+            comment: theme.ratmd-newshub::lang.option.datetime_format.comment
             commentHtml: true
             span: right
         
         __section_sidebar:
-            tab: theme.newshub::lang.option.tabs.sidebars
+            tab: theme.ratmd-newshub::lang.option.tabs.sidebars
             type: section
-            label: theme.newshub::lang.option.sections.sidebar
+            label: theme.ratmd-newshub::lang.option.sections.sidebar
         _sidebar:
-            tab: theme.newshub::lang.option.tabs.sidebars
+            tab: theme.ratmd-newshub::lang.option.tabs.sidebars
             type: dropdown
-            label: theme.newshub::lang.option._sidebar.label
-            comment: theme.newshub::lang.option._sidebar.comment
-            emptyOption: theme.newshub::lang.option._sidebar.empty
+            label: theme.ratmd-newshub::lang.option._sidebar.label
+            comment: theme.ratmd-newshub::lang.option._sidebar.comment
+            emptyOption: theme.ratmd-newshub::lang.option._sidebar.empty
             showSearch: false
             options:
-                home: theme.newshub::lang.option._sidebar.home.label
-                archive: theme.newshub::lang.option._sidebar.archive.label
-                page: theme.newshub::lang.option._sidebar.page.label
-                post: theme.newshub::lang.option._sidebar.post.label
+                home: theme.ratmd-newshub::lang.option._sidebar.home.label
+                archive: theme.ratmd-newshub::lang.option._sidebar.archive.label
+                page: theme.ratmd-newshub::lang.option._sidebar.page.label
+                post: theme.ratmd-newshub::lang.option._sidebar.post.label
             span: left
         sidebar_home:
-            tab: theme.newshub::lang.option.tabs.sidebars
+            tab: theme.ratmd-newshub::lang.option.tabs.sidebars
             type: repeater
-            label: theme.newshub::lang.option._sidebar.home.label
-            commentAbove: theme.newshub::lang.option._sidebar.home.description
-            prompt: theme.newshub::lang.option._sidebar.prompt
+            label: theme.ratmd-newshub::lang.option._sidebar.home.label
+            commentAbove: theme.ratmd-newshub::lang.option._sidebar.home.description
+            prompt: theme.ratmd-newshub::lang.option._sidebar.prompt
             displayMode: builder
-            groups: '#/newshub/config/sidebars/homepage.yaml'
+            groups: '#/ratmd-newshub/config/sidebars/homepage.yaml'
             trigger: 
                 action: show
                 field: _sidebar
                 condition: value[home]
         sidebar_archive:
-            tab: theme.newshub::lang.option.tabs.sidebars
+            tab: theme.ratmd-newshub::lang.option.tabs.sidebars
             type: repeater
-            label: theme.newshub::lang.option._sidebar.archive.label
-            commentAbove: theme.newshub::lang.option._sidebar.archive.description
-            prompt: theme.newshub::lang.option._sidebar.prompt
+            label: theme.ratmd-newshub::lang.option._sidebar.archive.label
+            commentAbove: theme.ratmd-newshub::lang.option._sidebar.archive.description
+            prompt: theme.ratmd-newshub::lang.option._sidebar.prompt
             displayMode: builder
-            groups: '#/newshub/config/sidebars/archive.yaml'
+            groups: '#/ratmd-newshub/config/sidebars/archive.yaml'
             trigger: 
                 action: show
                 field: _sidebar
                 condition: value[archive]
         sidebar_page:
-            tab: theme.newshub::lang.option.tabs.sidebars
+            tab: theme.ratmd-newshub::lang.option.tabs.sidebars
             type: repeater
-            label: theme.newshub::lang.option._sidebar.page.label
-            commentAbove: theme.newshub::lang.option._sidebar.page.description
-            prompt: theme.newshub::lang.option._sidebar.prompt
+            label: theme.ratmd-newshub::lang.option._sidebar.page.label
+            commentAbove: theme.ratmd-newshub::lang.option._sidebar.page.description
+            prompt: theme.ratmd-newshub::lang.option._sidebar.prompt
             displayMode: builder
-            groups: '#/newshub/config/sidebars/page.yaml'
+            groups: '#/ratmd-newshub/config/sidebars/page.yaml'
             trigger: 
                 action: show
                 field: _sidebar
                 condition: value[page]
         sidebar_post:
-            tab: theme.newshub::lang.option.tabs.sidebars
+            tab: theme.ratmd-newshub::lang.option.tabs.sidebars
             type: repeater
-            label: theme.newshub::lang.option._sidebar.post.label
-            commentAbove: theme.newshub::lang.option._sidebar.post.description
-            prompt: theme.newshub::lang.option._sidebar.prompt
+            label: theme.ratmd-newshub::lang.option._sidebar.post.label
+            commentAbove: theme.ratmd-newshub::lang.option._sidebar.post.description
+            prompt: theme.ratmd-newshub::lang.option._sidebar.prompt
             displayMode: builder
-            groups: '#/newshub/config/sidebars/post.yaml'
+            groups: '#/ratmd-newshub/config/sidebars/post.yaml'
             trigger: 
                 action: show
                 field: _sidebar
                 condition: value[post]
             
         __footer_section:
-            tab: theme.newshub::lang.option.tabs.footer
+            tab: theme.ratmd-newshub::lang.option.tabs.footer
             type: section
-            label: theme.newshub::lang.option.sections.main_footer
+            label: theme.ratmd-newshub::lang.option.sections.main_footer
         to_top_button:
-            tab: theme.newshub::lang.option.tabs.footer
+            tab: theme.ratmd-newshub::lang.option.tabs.footer
             type: switch
-            label: theme.newshub::lang.option.to_top_button.label
-            comment: theme.newshub::lang.option.to_top_button.comment
+            label: theme.ratmd-newshub::lang.option.to_top_button.label
+            comment: theme.ratmd-newshub::lang.option.to_top_button.comment
             default: true
         color_switch_bottom:
-            tab: theme.newshub::lang.option.tabs.footer
+            tab: theme.ratmd-newshub::lang.option.tabs.footer
             type: switch
-            label: theme.newshub::lang.option.color_switch.label
-            comment: theme.newshub::lang.option.color_switch_bottom.comment
+            label: theme.ratmd-newshub::lang.option.color_switch.label
+            comment: theme.ratmd-newshub::lang.option.color_switch_bottom.comment
             default: false
             trigger:
                 action: enable
@@ -760,27 +760,27 @@ tabs:
                 condition: checked
             span: left
         site_picker_bottom:
-            tab: theme.newshub::lang.option.tabs.footer
+            tab: theme.ratmd-newshub::lang.option.tabs.footer
             type: switch
-            label: theme.newshub::lang.option.site_picker.label
-            comment: theme.newshub::lang.option.site_picker_bottom.comment
+            label: theme.ratmd-newshub::lang.option.site_picker.label
+            comment: theme.ratmd-newshub::lang.option.site_picker_bottom.comment
             default: false
             span: right
         copyright_text_left:
-            tab: theme.newshub::lang.option.tabs.footer
+            tab: theme.ratmd-newshub::lang.option.tabs.footer
             type: textarea
-            label: theme.newshub::lang.option.copyright_text_left.label
-            comment: theme.newshub::lang.option.copyright_text_left.comment
+            label: theme.ratmd-newshub::lang.option.copyright_text_left.label
+            comment: theme.ratmd-newshub::lang.option.copyright_text_left.comment
             default: >
                 Copyright {year} &copy; {site_name}
 
                 All rights reserved
             span: left
         copyright_text_right:
-            tab: theme.newshub::lang.option.tabs.footer
+            tab: theme.ratmd-newshub::lang.option.tabs.footer
             type: textarea
-            label: theme.newshub::lang.option.copyright_text_right.label
-            comment: theme.newshub::lang.option.copyright_text_right.comment
+            label: theme.ratmd-newshub::lang.option.copyright_text_right.label
+            comment: theme.ratmd-newshub::lang.option.copyright_text_right.comment
             default: >
                 NewsHub Template by [rat.md](https://rat.md)
 
