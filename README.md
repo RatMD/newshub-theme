@@ -127,7 +127,7 @@ NewsHub has been successfully tested with the following stacks:
 
 - OctoberCMS v2.2.34 (using PHP v7.4.33)
 - OctoberCMS v3.0.76 (using PHP v8.0.23)
-- OctoberCMS v3.1.20 (using PHP v8.1.10)
+- OctoberCMS v3.1.29 (using PHP v8.1.14)
 
 Our Front-End testing is based on:
 

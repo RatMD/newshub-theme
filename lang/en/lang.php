@@ -37,7 +37,7 @@ return [
     "option.site_slogan.label" => "Site Slogan",
     "option.site_slogan.comment" => "A small descriptive slogan about the content of your website.",
     "option.site_logo.label" => "Site Logo",
-    "option.site_logo.comment" => "Use your logo instead of the the site name (height should not exceed 40 pixels).",
+    "option.site_logo.comment" => "Use your logo instead of the site name (height should not exceed 40 pixels).",
     "option.site_logo_inverted.label" => "Inverted Site Logo",
     "option.site_logo_inverted.comment" => "A color-inverted version of your site logo, used for the dark color scheme.",
 
@@ -86,7 +86,7 @@ return [
     "option.meta_tags.manifest_tag.label" => "Manifest Tag",
     "option.meta_tags.manifest_tag.comment" => "Render a Webmanifest meta tag with your MANIFEST JSON file.",
     "option.tip.favicon.label" => "How to Favicon in 2022",
-    "option.tip.favicon.comment" => "We're using the following guide to generate and manage the Favicons on the Falcon template: <a href=\"https://evilmartians.com/chronicles/how-to-favicon-in-2021-six-files-that-fit-most-needs\" target=\"_blank\">How to Favicon in 2022: Six files that fit most needs</a>.",
+    "option.tip.favicon.comment" => "We're using the following guide to generate and manage the Favicons on the NewsHub template: <a href=\"https://evilmartians.com/chronicles/how-to-favicon-in-2021-six-files-that-fit-most-needs\" target=\"_blank\">How to Favicon in 2022: Six files that fit most needs</a>.",
 
     // Template Options - Meta / Generator Tags Settings
     "option.section.generator_tag" => "Generator Meta Tag",
@@ -399,7 +399,7 @@ return [
     "builder.alert.color.label" => "Alert color",
     "builder.alert.color.comment" => "Change the color scheme for this alert.",
     "builder.alert.callout.label" => "Use Callout Style",
-    "builder.alert.callout.comment" => "The the NewsHub Callout style instead of Bootstraps Alert one.",
+    "builder.alert.callout.comment" => "The NewsHub Callout style instead of Bootstraps Alert one.",
     "builder.alert.content.label" => "Alert Content",
     "builder.alert.content.comment" => "The main content shown in the alert box.",
 

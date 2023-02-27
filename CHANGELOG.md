@@ -98,9 +98,11 @@ Version 1.3.0 - In Progress
 - Update: Dark (and Light) Bootstrap stylings and improvements.
 - Update: Add "Number of Cards / Row" option on Card Group.
 
+
 Version 1.2.2 - Stable
 ----------------------
 - Bugfix: Fix errors on production context (Page object).
+
 
 Version 1.2.1 - Stable
 ----------------------
@@ -109,6 +111,7 @@ Version 1.2.1 - Stable
 - Update: Keen Slider package to v6.8.0.
 - Update: @rollup/plugin-bode-resolve dev-pacakge to v14.1.0.
 - Update: sass dev-package to v1.54.9.
+
 
 Version 1.2.0 - Stable
 ----------------------
@@ -147,6 +150,7 @@ Version 1.2.0 - Stable
 - Fix: Responsive design of navbars on mobile / small devices.
 - Fix: Framework Extras and Bootstrap JS functionalities.
 
+
 Version 1.1.2 - Stable
 ----------------------
 - Add: Weekly Archive page (provided by RatMD.BlogHub v1.3.0).
@@ -154,11 +158,13 @@ Version 1.1.2 - Stable
 - Fix: Prevent Meta details when no user is available on the post.
 - Fix: Add jQuery dependency for October CMS v2.
 
+
 Version 1.1.1 - Stable
 ----------------------
 - Update: Use OctoberCMS VScode Syntax.
 - Fix: Use Socials folder before Bootstrap icons.
 - Fix: Wrong condition on author archive page.
+
 
 Version 1.1.0 - Stable
 ----------------------
