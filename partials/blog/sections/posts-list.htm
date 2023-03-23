@@ -1,6 +1,6 @@
-{% if datetime == 'short' %}
+{% if datetime|default('') == 'short' %}
     {% set dateTimeFormat = this.theme.short_datetime_format %}
-{% elseif datetime == 'time' %}
+{% elseif datetime|default('') == 'time' %}
     {% set dateTimeFormat = 'H:i' %}
 {% else %}
     {% set dateTimeFormat = this.theme.datetime_format %}

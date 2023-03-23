@@ -44,10 +44,12 @@ function onStart() {
             <div class="keen-slider-slide">
                 <a href="{{ post.url }}" title="{{ post.title }}" class="hero-slide-item">
                     <div class="slide-image">
-                        <img src="{{ post.featured_images.0.getPath() }}" alt="{{ post.title }}" />
+                        {% if post.featured_images|length > 0 %}
+                            <img src="{{ post.featured_images.0.getPath() }}" alt="{{ post.title }}" />
+                        {% endif %}
                     </div>
                     <div class="slide-content">
-                        {% if post.ratmd_bloghub_meta_data.simple_title and post.ratmd_bloghub_meta_data.simple_subtitle %}
+                        {% if post.ratmd_bloghub_meta_data.simple_title is defined and post.ratmd_bloghub_meta_data.simple_subtitle is defined %}
                             <div class="content-subtitle">{{ post.ratmd_bloghub_meta_data.simple_subtitle }}</div>
                             <div class="content-title">{{ post.ratmd_bloghub_meta_data.simple_title }}</div>
                         {% else %}

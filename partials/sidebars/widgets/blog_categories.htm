@@ -36,7 +36,7 @@ function onEnd()
                 {% for category in widget_categories %}
                     <li class="list-group-item">
                         <a href="{{ category.url }}" title="{{ 'archive.category_archive' | _ }}: {{ category.name }}">
-                            {{ category.name | default(tag.slug | title) }}
+                            {{ category.name | default(category.slug) }}
 
                             {% if config.counter %}
                                 {% set count = category.posts_count | default(0) %}
