@@ -1,0 +1,16 @@
+<div class="janvince-smallgdpr">
+    {% set show = true %}
+    {% if sgCookies.consent is defined and sgCookies.consent is not empty %}
+        {% set show = false %}
+    {% elseif viewBag is defined and viewBag.property('hideCookiesBar', false) == true %}
+        {% set show = viewBag.hideCookiesBar %}
+    {% elseif page.viewBag is defined and page.viewBag.property('hideCookiesBar', false) == true %}
+        {% set show = false %}
+    {% endif %}
+
+    {% if show %}
+        {% partial __SELF__ ~ '::cookiesbar' %}
+    {% endif %}
+
+    {% partial '@run-scripts' %}
+</div>

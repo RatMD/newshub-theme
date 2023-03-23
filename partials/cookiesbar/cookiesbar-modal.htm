@@ -1,0 +1,60 @@
+<div id="sg-settings-modal-{{ __SELF__ }}" class="modal janvince-smallgdpr-modal fade" tabindex="-1" role="dialog" aria-labelledby="sg-settings-modal-{{ __SELF__ }}">
+    <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title">{{ cookiesSettingsGet('cookies_manage_title') }}</h3>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+
+            <div class="modal-body">
+                {% if cookiesSettingsGet('cookies_manage_content', null) %}
+                    <div class="content">{{ cookiesSettingsGet('cookies_manage_content')|raw }}</div>
+                {% endif %}
+
+                {% partial '@list-cookies-b5' 
+                    disablePageReload = cookiesSettingsGet('cookies_bar_disable_page_reload', 0) 
+                    disableSaveButton = true 
+                    modal = true
+                    customId = '-modal' %}
+            </div>
+
+            <div class="modal-footer">
+                <button type="button" 
+                        data-bs-dismiss="modal"
+                        class="btn btn-outline-dark">{{ 'janvince.smallgdpr::lang.settings.form_fields.cancel'|trans }}</button>
+                <button type="button"
+                        id="cookies-manage-save-modal" 
+                        class="btn btn-dark">{{ 'janvince.smallgdpr::lang.settings.form_fields.save_settings'|trans }}</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% put scripts %}
+    <script>
+        ;(function () {
+            let action = document.getElementById('cookies-manage-save-modal');
+            if (!action) {
+                return;
+            }
+
+            action.addEventListener('click', (event) => {
+                {% partial '@set-cookies' setOnlyManageCookies = true %}
+
+                {% if (cookiesSettingsGet('cookies_bar_disable_page_reload', 0) == 0) %}
+                    location.reload(true);
+                {% else %}
+                    let cookiesBar = document.querySelector('[data-cookies-bar]');
+                    if (cookiesBar && cookiesBar.parentElement) {
+                        cookiesBar.remove();
+                    }
+
+                    let cookiesBarModal = document.querySelector('.janvince-smallgdpr-modal');
+                    if (cookiesBarModal && cookiesBarModal.parentElement) {
+                        cookiesBarModal.remove();
+                    }
+                {% endif %}
+            });
+        })();
+    </script>
+{% endput %}

@@ -11,9 +11,9 @@
         {% set ul_class = ul_class ~ ' ' ~ options.ul_class %}
     {% endif %}
 
-    <ul{% if depth == 1 and options.ul_id and options.ul_id|length > 0 %} id="{{ options.ul_id }}"{% endif %} class="{{ ul_class }}">
+    <ul{% if depth == 1 and options.ul_id is defined and options.ul_id|length > 0 %} id="{{ options.ul_id }}"{% endif %} class="{{ ul_class }}">
         {% for item in items %}
-            {% if not item.viewBag.isHidden %}
+            {% if not item.viewBag.isHidden|default(0) %}
                 {% set li_class = 'nav-item item-type-' ~ item.type %}
                 {% if item.isActive %}
                     {% set li_class = li_class ~ ' item-current' %}
@@ -27,7 +27,7 @@
                 {% if depth == 1 and options.li_class is defined %}
                     {% set li_class = li_class ~ ' ' ~ options.li_class %}
                 {% endif %}
-                {% if item.viewBag.cssClass %}
+                {% if item.viewBag.cssClass is defined and item.viewBag.cssClass %}
                     {% set li_class = li_class ~ ' ' ~ item.viewBag.cssClass %}
                 {% endif %}
                 
@@ -38,7 +38,7 @@
                 {% if depth == 1 and options.a_class is defined %}
                     {% set a_class = a_class ~ ' ' ~ options.a_class %}
                 {% endif %}
-                {% if item.viewBag.isExternal %}
+                {% if item.viewBag.isExternal|default(0) %}
                     {% set a_class = a_class ~ ' link-external' %}
                 {% endif %}
 
@@ -46,13 +46,13 @@
                     {% if item.type == 'header' %}
                         <span class="nav-title">{{ item.title }}</span>
                     {% else %}
-                        <a href="{{ item.url }}" title="{{ item.title }}" class="{{ a_class }}"{% if item.viewBag.isExternal %} target="_blank"{% endif %}{% if item.isActive %} aria-current="page"{% endif %}>
+                        <a href="{{ item.url }}" title="{{ item.title }}" class="{{ a_class }}"{% if item.viewBag.isExternal|default(0) %} target="_blank"{% endif %}{% if item.isActive %} aria-current="page"{% endif %}>
                             {{ item.title }}
                         </a>
                     {% endif %}
 
                     {% if item.items and max_depth > depth %}
-                        <button class="navbar-subnav-toggler collapsed" type="button" aria-expanded="false" aria-label="{{ 'site.navbar.toggle' | _ }}">
+                        <button class="navbar-subnav-toggler collapsed" type="button" aria-expanded="false" aria-label="{{ 'alt.navbar-toggle' | _ }}">
                             {% partial 'icons/bootstrap/chevron-right' %}
                             <svg width='10px' height='8px' viewBox='0 0 4 3' version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' xml:space='preserve' fill='currentColor'><path d='M1.94,1.42l-1.28,-1.28l-0.66,0.66l1.94,1.94l0.658,-0.66l0,0.001l1.242,-1.242l-0.66,-0.659l-1.24,1.24Z'/></svg>
                         </button>
@@ -85,12 +85,12 @@
                     </li>
 
                     {% for child in item.items %}
-                        {% if not child.viewBag.isHidden and child.type != 'header' %}
+                        {% if not child.viewBag.isHidden|default(0) and child.type != 'header' %}
                             {% set li_class = 'nav-item item-type-' ~ child.type %}
                             {% if child.isActive %}
                                 {% set li_class = li_class ~ ' item-current' %}
                             {% endif %}
-                            {% if child.viewBag.cssClass %}
+                            {% if child.viewBag.cssClass is defined and child.viewBag.cssClass %}
                                 {% set li_class = li_class ~ ' ' ~ child.viewBag.cssClass %}
                             {% endif %}
                             
@@ -98,12 +98,12 @@
                             {% if child.isActive %}
                                 {% set a_class = a_class ~ ' active' %}
                             {% endif %}
-                            {% if child.viewBag.isExternal %}
+                            {% if child.viewBag.isExternal|default(0) %}
                                 {% set a_class = a_class ~ ' link-external' %}
                             {% endif %}
 
                             <li class="{{ li_class }}">
-                                <a href="{{ child.url }}" title="{{ child.title }}" class="{{ a_class }}"{% if child.viewBag.isExternal %} target="_blank"{% endif %}{% if child.isActive %} aria-current="page"{% endif %}>
+                                <a href="{{ child.url }}" title="{{ child.title }}" class="{{ a_class }}"{% if child.viewBag.isExternal|default(0) %} target="_blank"{% endif %}{% if child.isActive %} aria-current="page"{% endif %}>
                                     {{ child.title }}
                                 </a>
                             </li>
@@ -133,7 +133,7 @@
             {% if options.li_class is defined %}
                 {% set li_class = li_class ~ ' ' ~ options.li_class %}
             {% endif %}
-            {% if item.viewBag.cssClass %}
+            {% if item.viewBag.cssClass is defined and item.viewBag.cssClass %}
                 {% set li_class = li_class ~ ' ' ~ item.viewBag.cssClass %}
             {% endif %}
             
@@ -142,9 +142,9 @@
                 {% set a_class = a_class ~ ' ' ~ options.a_class %}
             {% endif %}
             
-            {% if not item.viewBag.isHidden %}
+            {% if not item.viewBag.isHidden|default(0) %}
                 <li class="{{ li_class }}">
-                    <a href="{{ item.url }}" title="{{ item.title }}" class="{{ a_class }}"{% if item.viewBag.isExternal %} target="_blank"{% endif %}>
+                    <a href="{{ item.url }}" title="{{ item.title }}" class="{{ a_class }}"{% if item.viewBag.isExternal|default(0) %} target="_blank"{% endif %}>
                         {% if hasPartial('icons/socials/' ~ item.code) %}
                             {% partial 'icons/socials/' ~ item.code %}
                         {% else %}
@@ -172,7 +172,7 @@
     <ul class="toc toc-depth-{{depth}}">
         {% for item in items %}
             <li class="toc-item" data-toc-position="{{ depth }}">
-                <a href="{{ path }}#{{ item.id }}" title="{{ 'site.widget.toc.goto' | _ }}: {{ item.label }}">{{ item.label }}</a>
+                <a href="{{ path }}#{{ item.id }}" title="{{ 'alt.goto' | _ }}: {{ item.label }}">{{ item.label }}</a>
             </li>
 
             {% if item.children %}

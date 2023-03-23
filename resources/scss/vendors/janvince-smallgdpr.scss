@@ -1,0 +1,264 @@
+
+// ----------------------------------------
+//  JanVince/SmallGDPR Stylings
+// ----------------------------------------
+
+.janvince-smallgdpr {
+    #cookies-bar {
+        &.cookies-bar-style-strip,
+        &.cookies-bar-style-strip-container {
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            z-index: 999;
+            display: block;
+            position: fixed;
+            background-color: rgba(var(--bs-dark-rgb), 0.5);
+
+            .cookies-bar-content {
+                top: 0;
+                left: 0;
+                right: 0;
+                padding-top: $spacer;
+                padding-bottom: $spacer;
+                max-height: 90%;
+                display: block;
+                overflow-x: auto;
+                padding-top: $spacer;
+                padding-bottom: $spacer;
+                background-color: $gray-100;
+            }
+
+            .cookies-bar-title {
+                margin: 0;
+            }
+
+            .cookies-bar-text {
+                margin: $spacer 0;
+
+                p:last-child {
+                    margin-bottom: 0;
+                }
+            }
+
+            .cookies-bar-actions {
+                display: flex;
+                flex-direction: column;
+
+                @include media-breakpoint-up(md) {
+                    gap: $spacer * 0.5;
+                    flex-direction: row;
+                    justify-content: stretch;
+                }
+
+                button {
+                    display: block;
+                    margin-top: $spacer * 0.5;
+                    border-radius: 0;
+                    
+                    @include media-breakpoint-up(md) {
+                        flex: 1 1 auto;
+                        margin-top: 0;
+                    }
+
+                    &:first-child {
+                        margin-top: 0;
+                        border-top-left-radius: $border-radius;
+                        border-top-right-radius: $border-radius;
+                        
+                        @include media-breakpoint-up(md) {
+                            border-top-left-radius: $border-radius;
+                            border-top-right-radius: 0;
+                            border-bottom-left-radius: $border-radius;
+                        }
+                    }
+
+                    &:last-child {
+                        border-bottom-left-radius: $border-radius;
+                        border-bottom-right-radius: $border-radius;
+                        
+                        @include media-breakpoint-up(md) {
+                            border-top-right-radius: $border-radius;
+                            border-bottom-left-radius: 0;
+                            border-bottom-right-radius: $border-radius;
+                        }
+                    }
+                }
+            }
+        }
+        &.cookies-bar-style-strip .cookies-bar-content {
+            padding-left: $spacer;
+            padding-right: $spacer;
+        }
+        &.cookies-bar-style-strip .cookies-bar-content,
+        &.cookies-bar-style-strip-container .cookies-bar-content .container .row .col-12 {
+            @include media-breakpoint-up(lg) {
+                padding-top: $spacer;
+                padding-bottom: $spacer;
+            }
+
+            @include media-breakpoint-up(xl) {
+                display: flex;
+                flex-wrap: wrap;
+                align-items: center;
+
+                .cookies-bar-title {
+                    flex: 0 0 100%;
+                }
+                .cookies-bar-text {
+                    flex: 0 0 calc(100% - 375px);
+                }
+                .cookies-bar-actions {
+                    flex: 0 0 350px;
+                    gap: 0;
+                    margin-left: 25px;
+                    flex-direction: column;
+                    justify-content: flex-start;
+
+                    button {
+                        margin-top: $spacer * 0.5;
+
+                        &:first-child {
+                            margin-top: 0;
+                            border-top-left-radius: $border-radius;
+                            border-top-right-radius: $border-radius;
+                            border-bottom-left-radius: 0;
+                            border-bottom-right-radius: 0;
+                        }
+    
+                        &:last-child {
+                            border-top-left-radius: 0;
+                            border-top-right-radius: 0;
+                            border-bottom-left-radius: $border-radius;
+                            border-bottom-right-radius: $border-radius;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    #cookies-bar.cookies-bar-style-box {
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        width: auto;
+        max-width: none;
+        z-index: 999;
+        padding: 0;
+        display: block;
+        position: fixed;
+        box-shadow: none;
+        border-radius: 0;
+        background-color: rgba(var(--bs-dark-rgb), 0.5);
+        
+        @include media-breakpoint-up(lg) {
+            top: auto;
+            background-color: transparent;
+        }
+
+        .cookies-bar-content {
+            left: $spacer * 0.5;
+            right: $spacer * 0.5;
+            bottom: $spacer * 0.5;
+            padding: $spacer;
+            max-height: 90%;
+            display: block;
+            position: fixed;
+            overflow-x: auto;
+            padding-top: $spacer;
+            padding-bottom: $spacer;
+            background-color: $gray-100;
+            border-radius: $border-radius;
+
+            @include media-breakpoint-up(md) {
+                left: auto;
+                max-width: 600px;
+            }
+            @include media-breakpoint-up(lg) {
+                right: $spacer;
+                bottom: $spacer;
+                padding: $spacer * 1.5;
+                box-shadow: $box-shadow-lg;
+            }
+        }
+
+        .cookies-bar-title {
+            margin: 0;
+        }
+
+        .cookies-bar-text {
+            margin: $spacer 0;
+
+            p:last-child {
+                margin-bottom: 0;
+            }
+        }
+
+        .cookies-bar-actions {
+            display: flex;
+            flex-direction: column;
+
+            @include media-breakpoint-up(md) {
+                gap: $spacer * 0.5;
+                flex-direction: row;
+                justify-content: stretch;
+            }
+            @include media-breakpoint-up(lg) {
+                margin-top: $spacer * 1.5;
+            }
+
+            button {
+                display: block;
+                margin-top: $spacer * 0.5;
+                border-radius: 0;
+
+                @include media-breakpoint-up(md) {
+                    flex: 1 1 auto;
+                    margin-top: 0;
+                }
+
+                &:first-child {
+                    margin-top: 0;
+                    border-top-left-radius: $border-radius;
+                    border-top-right-radius: $border-radius;
+                    
+                    @include media-breakpoint-up(md) {
+                        border-top-left-radius: $border-radius;
+                        border-top-right-radius: 0;
+                        border-bottom-left-radius: $border-radius;
+                    }
+                }
+
+                &:last-child {
+                    border-bottom-left-radius: $border-radius;
+                    border-bottom-right-radius: $border-radius;
+                    
+                    @include media-breakpoint-up(md) {
+                        border-top-right-radius: $border-radius;
+                        border-bottom-left-radius: 0;
+                        border-bottom-right-radius: $border-radius;
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+// ----------------------------------------
+//  JanVince/SmallGDPR Modal Stylings
+// ----------------------------------------
+
+.janvince-smallgdpr-modal {
+    .list-cookies {
+        margin-top: $spacer;
+
+        .description  {
+            padding-left: $spacer * 1.5;
+            @include font-size(0.8rem);
+        }
+    }
+}

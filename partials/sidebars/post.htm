@@ -1,7 +1,9 @@
-{% for widget in this.theme.sidebar_post %}
-    {% if hasPartial('sidebars/widgets/' ~ widget._group) %}
-        {% partial ('sidebars/widgets/' ~ widget._group) config=widget widget=widget._group %}
-    {% else %}
-        Widget {{ widget._group }} not found.
-    {% endif %}
-{% endfor %}
+{% if this.theme.sidebar_post is defined and this.theme.sidebar_post|length > 0 %}
+    {% for widget in this.theme.sidebar_post %}
+        {% if hasPartial('sidebars/widgets/' ~ widget._group) %}
+            {% partial ('sidebars/widgets/' ~ widget._group) config=widget widget=widget._group %}
+        {% else %}
+            Widget {{ widget._group }} not found.
+        {% endif %}
+    {% endfor %}
+{% endif %}

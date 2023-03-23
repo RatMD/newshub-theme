@@ -2,6 +2,7 @@ static-pages:
     about:
         about-imprint: {  }
         about-privacy-policy: {  }
+        cookies: {  }
     page-builder:
         page-builder-accordion: {  }
         page-builder-alerts: {  }

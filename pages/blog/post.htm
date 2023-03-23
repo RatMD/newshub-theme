@@ -47,7 +47,7 @@ function onEnd()
 }
 ?>
 ==
-{% set layout = post.ratmd_bloghub_meta_data.layout | default('default') %}
+{% set layout = post.ratmd_bloghub_meta.layout | default('default') %}
 
 <div class="post-single post-layout-{{ layout }}">
     {% if layout != '' and layout != 'default' and hasPartial('blog/post-single-' ~ layout) %}

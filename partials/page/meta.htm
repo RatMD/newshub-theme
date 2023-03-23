@@ -19,8 +19,8 @@
 {# SEO Meta Tags #}
 <meta name="title" content="{{ this.page.meta_title|default(this.page.title) }}" />
 {% if this.page.meta_description %}<meta name="description" content="{{ this.page.meta_description }}" />{% endif %}
-{% if this.page['meta_keywords'] or newshub.meta_keywords %}<meta name="keywords" content="{{ this.page['meta_keywords']|default(newshub.meta_keywords) }}" />{% endif %}
-{% if this.page['meta_author'] or newshub.meta_author %}<meta name="author" content="{{ this.page['meta_author']|default(newshub.meta_author|default('OctoberCMS NewsHub')) }}" />{% endif %}
+{% if this.page['meta_keywords'] or (newshub.meta_keywords is defined and newshub.meta_keywords) %}<meta name="keywords" content="{{ this.page['meta_keywords']|default(newshub.meta_keywords) }}" />{% endif %}
+{% if this.page['meta_author'] or (newshub.meta_author is defined and newshub.meta_author) %}<meta name="author" content="{{ this.page['meta_author']|default(newshub.meta_author|default('OctoberCMS NewsHub')) }}" />{% endif %}
 {% if this.page['meta_robots'] or this.theme.robots_tag %}<meta name="robots" value="{{ this.page['meta_robots']|default(newshub.meta_robots|default('index,follow')) }}" />{% endif %}
 {% component 'alternateHrefLangElements' %}
 {% placeholder meta_tags %}

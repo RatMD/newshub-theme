@@ -3,31 +3,32 @@ NewsHub - Changelog
 
 Version 1.3.0 - In Progress
 ---------------------------
-- Add: Support of the new sitePicker core component, as of OctoberCMS v3.1.
+- Add: Support for the new sitePicker core component, as released on OctoberCMS v3.1.
 - Add: Support for [BlakeJones.MagicForms](https://octobercms.com/plugin/blakejones-magicforms) OC Plugin.
-- Add: New Locale / Site Picker Preference theme options.
-- Add: Use Locale / Site Picker as dropdown, modal or switch action toggler.
-- Add: Additional Meta-Tag theme options (base, robots, color-scheme and theme-color).
-- Add: "Provide Dark Color-Scheme" option (to toggle the dark color-scheme in general).
-- Add: "Overwrite CSS Color Palette" option (to overwrite the Theme Colors using css properties).
-- Add: "Gray Color Palette" option to change the gray colors / style. 
-- Add: "Header Position" option to change the header position behavior (Static, Sticky or Slide).
-- Add: New Notice theme options (and stylings), which is shown above the article list on the homepage.
-- Add: "Slider Controls" option to toggle the control buttons on the Hero-Slider.
-- Add: "Slider Indicators" option to toggle the slide-indicators on the Hero-Slider.
-- Add: "Post Category" option to toggle the Category Link on the post lists.
-- Add: "Post Featured Tags" option to toggle the Featured Tag Links on the post lists.
-- Add: "Share Links" option to toggle privacy-protected Share Links above the article content.
-- Add: "Similar / Random Posts" option to toggle the Similar / Random post section below the single post.
-- Add: New Title - Layout input group partial for NewsHubs page builder.
-- Add: New ID - class name input group partial for NewsHubs page builder.
-- Add: New Spacings input range partial for NewsHubs page builder.
-- Add: New Sidebar widget `Blog Comment`, to display a list of comments.
-- Add: New Sidebar widget `Related Posts`, to display a list of related posts (on single blog posts only).
-- Add: New Sidebar widget `Image`, to display custom image with text.
-- Add: New Navbar Toggler ([CodePen Source](https://codepen.io/ainalem/pen/LJYRxz)).
+- Add: Config - "Prefer SitePicker over LocalePicker" for OC v3.1 w/ RainLab.Translate v1.x installations.
+- Add: Config - "SitePicker Appearance" to show Language- or full Site- names, limited to the new SitePicker component.
+- Add: Config - "Site/LocalePicker Style" to change how the component should be rendered (Dropdown, Modal, Switch).
+- Add: Config - Meta switches to toggle base, robots, color-scheme and theme-color meta tags.
+- Add: Config - "Provide Dark Color-Scheme" to toggle the dark color-scheme in general.
+- Add: Config - "Overwrite CSS Color Palette" to overwrite the theme colors using css custom properties.
+- Add: Config - "Gray Color Palette" to overwrite the gray color scheme using css custom properties.
+- Add: Config - "Header Position" to change the header position / behavior (supporting Static, Sticky and Slide).
+- Add: Config - "Slider Controls" to toggle the slider controls on the homepage hero-slider.
+- Add: Config - "Slider Indicators" to toggle the slider indicators on the homepage hero-slider.
+- Add: Config - Notice options (with color, title, links and content), shown on the homepage between hero area and article list.
+- Add: Config - "Post Category" to reference the post category on the single posts (on the article lists).
+- Add: Config - "Post Featured Tags" to reference the featured tags on the single posts (on the article lists).
+- Add: Config - "Share Links" to toggle privacy-protected social share links above the article content.
+- Add: Config - "Similar / Random Posts" to toggle a similar / random posts section below the article content.
+- Add: Config - Sidebar configuration set using October's grouped repeater widgets.
+- Add: "Title & Layout" input-group page-builder configuration partial.
+- Add: "ID & Class Names" input-group page-builder configuration partial.
+- Add: "Spacings" range-input page-builder configuration partial.
+- Add: "Blog Comment" sidebar widget to display a list of comments.
+- Add: "Image" sidebar widget to display a custom image with text.
+- Add: "Related Posts" sidebar widget to display a list of related posts (in single blog posts only).
+- Add: Navbar toggler element ([CodePen Source](https://codepen.io/ainalem/pen/LJYRxz)).
 - Add: Default favicon + webmanifest set.
-
 - Update: Accordion content element (new structure).
 - Update: Alert / Callout content element (new structure).
 - Update: Card content element (new structure).
@@ -47,7 +48,6 @@ Version 1.3.0 - In Progress
 - Update: Tabs content element (new structure).
 - Update: Text with Teaser content element (new structure).
 - Update: Theme Options structure & layout.
-- Update: Use the grouped repeater widget for sidebar widgets.
 - Update: `Blog Posts` widget replaces `List Articles` (new builder structure).
 - Update: `Blog Authors` widget replaces `List Authors` (new builder structure).
 - Update: Show Avatars on Blog Authors list.
@@ -71,9 +71,8 @@ Version 1.3.0 - In Progress
 - Update: Bootstrap package to v5.3.0-alpha1.
 - Update: Change Bootstrap 5 Lightbox package with a custom Lightbox plugin.
 - Update: Keen Slider package to v6.8.5.
-
+- Update: Cleanup template localization strings (for both: English and German).
 - Remove: "sticky_header" option, has been replaced with "Header Position" > "Sticky".
-
 - Fix: Set HTML lang to current locale instead of fixed 'en'.
 - Fix: Bootstrap URL on placeholder / demo copyright text.
 - Fix: No-JS & JS-Loading styles for keen hero slider.
@@ -81,13 +80,15 @@ Version 1.3.0 - In Progress
 - Fix: Class Names has not been passed to the quote content element.
 - Fix: Use the theme's author name in theme-links (`ratmd-newshub` instead of `newshub`).
 - Fix: Issues with translations (and YAML import links), as mentioned in [#4](https://github.com/RatMD/newshub-theme/issues/4).
+- Fix: Some translation / localization issues in both english and german language.
+- Fix: `CMS_STRICT_VARIABLES=true` .env security option errors.
 
 ### ToDo
 - Add: Support for [JanVince.SmallContactForm](https://octobercms.com/plugin/janvince-smallcontactform) OC Plugin.
 - Add: Support for [JanVince.SmallGDPR](https://octobercms.com/plugin/janvince-smallgdpr) OC Plugin.
 - Add: Support for [RainLab.BlogVideoExtension](https://octobercms.com/plugin/rainlab-blogvideoextension) OC Plugin.
-- Add: Support for [RainLab.User](https://octobercms.com/plugin/rainlab-user) OC Plugin.
 - Add: Support for [RainLab.Forum](https://octobercms.com/plugin/rainlab-forum) OC Plugin.
+- Add: Support for [RainLab.User](https://octobercms.com/plugin/rainlab-user) OC Plugin.
 - Add: New Blog Posts Content Element (show posts by author, category, date or tag).
 - Add: New Blog Lists Content Element (show list of authors, categories or tags).
 - Add: New File List Content Element (show download file list with icon and stuff).

@@ -16,7 +16,7 @@ code = "social-menu"
 <div class="container py-5">
     <section class="section section-footer d-flex align-items-center flex-column">
         <a href="{{ 'home' | page }}" class="font-special fw-extrabold fs-2 text-uppercase link-dark dark:link-light text-decoration-none" title="{{ this.theme.site_name }}">
-            {% if this.theme.site_logo %}
+            {% if this.theme.site_logo is defined and this.theme.site_logo %}
                 <img src="{{ this.theme.site_logo.getPath() }}" alt="{{ this.theme.site_name }}" class="hide-on-dark" />
 
                 {% if this.theme.site_logo_inverted %}
@@ -40,15 +40,15 @@ code = "social-menu"
         <nav class="navbar navbar-footer">
             {% if footerMenu and footerMenu.menuItems != null and footerMenu.menuItems|length > 0 %}
                 {% for menu in footerMenu.menuItems %}
-                    {% if not menu.viewBag.isHidden %}
+                    {% if not menu.viewBag.isHidden|default(0) %}
                         <ul class="navbar-nav">
                             {% if menu.type == 'header' %}
                                 <li class="nav-title">{{ menu.title }}</li>
 
                                 {% for item in menu.items %}
-                                    {% if not item.viewBag.isHidden %}
-                                        <li class="nav-item item-type-{{ item.type }} item-social-{{ item.code }}{% if item.viewBag.cssClass %} {{ item.viewBag.cssClass }}{% endif %}">
-                                            <a href="{{ item.url }}" title="{{ item.title }}" class="nav-link"{% if item.viewBag.isExternal %} target="_blank"{% endif %}>
+                                    {% if not item.viewBag.isHidden|default(0) %}
+                                        <li class="nav-item item-type-{{ item.type }} item-social-{{ item.code }}{{ item.viewBag.cssClass is defined and item.viewBag.cssClass ? ' ' ~ item.viewBag.cssClass : '' }}">
+                                            <a href="{{ item.url }}" title="{{ item.title }}" class="nav-link"{% if item.viewBag.isExternal|default(0) %} target="_blank"{% endif %}>
                                                 {{ item.title }}
                                             </a>
                                         </li>
@@ -119,9 +119,9 @@ code = "social-menu"
         </div>
     </section>
 
-    {% if this.theme.color_switch_bottom or this.theme.languages_menu_bottom %}
+    {% if this.theme.color_switch_bottom or this.theme.site_picker_bottom %}
         <section class="section section-footer-settings d-flex justify-content-center mt-4 gap-4">
-            {% if this.theme.languages_menu_bottom %}
+            {% if this.theme.site_picker_bottom %}
                 {% component 'localePicker' %}
             {% endif %}
             

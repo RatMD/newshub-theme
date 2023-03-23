@@ -47,7 +47,7 @@ code = "meta-menu"
 
         {# Brand (Condensed & Extended) #}
         <a href="{{ 'home' | page }}" class="navbar-brand" title="{{ this.theme.site_name }}">
-            {% if this.theme.site_logo %}
+            {% if this.theme.site_logo is defined and this.theme.site_logo %}
                 <img src="{{ this.theme.site_logo.getPath() }}" alt="{{ this.theme.site_name }}" class="hide-on-dark" />
 
                 {% if this.theme.site_logo_inverted %}
@@ -134,7 +134,7 @@ code = "meta-menu"
         {% endif %}
 
         {# Navbar Toggler (Condensed & Extended) #}
-        <button class="navbar-toggler collapsed" type="button" aria-expanded="false" aria-label="{{ 'site.navbar.toggle' | _ }}">
+        <button class="navbar-toggler collapsed" type="button" aria-expanded="false" aria-label="{{ 'alt.navbar-toggle' | _ }}">
             <svg class="close-button" viewBox="0 0 100 100" width="40" onclick="this.classList.toggle('active')">
                 <path d="m 70,33 h -40 c 0,0 -8.5,-0.149796 -8.5,8.5 0,8.649796 8.5,8.5 8.5,8.5 h 20 v -20" />
                 <path d="m 70,50 h -40" />

@@ -10,7 +10,7 @@ meta_description = "NewsHub is a responsive Premium Blog / Magazine OctoberCMS t
 localeUrl[de] = "/"
 localeTitle[de] = "Startseite"
 localeMeta_title[de] = "Startseite"
-localeMeta_description[de] = "NewsHub ist ein respnsives Premium Blog / Magazin OctoberCMS Template."
+localeMeta_description[de] = "NewsHub ist ein responsives Premium Blog / Magazin OctoberCMS Template."
 
 [blogPosts latest]
 pageNumber = "{{ :page }}"
@@ -51,7 +51,7 @@ postPage = "blog/post"
             {% endif %}
         {% endif %}
         
-        <h1 class="mb-5">{{ 'posts.widget.latest' | _ }}</h1>
+        <h1 class="mb-5">{{ 'posts.latest' | _ }}</h1>
         {% if latest.posts|length > 0 %}
             {% partial 'blog/sections/posts-columns' 
                 posts=latest.posts|slice(0, 3)

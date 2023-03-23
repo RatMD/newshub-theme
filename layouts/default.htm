@@ -29,6 +29,8 @@ authorUseSlugOnly = 0
 date404OnInvalid = 0
 date404OnEmpty = 0
 tagAllowMultiple = 1
+
+[cookiesBar]
 ==
 <?php
 function onInit()
@@ -47,15 +49,22 @@ function onInit()
         [$r, $g, $b] = sscanf($hex, "#%02x%02x%02x");
         return "$r, $g, $b";
     };
+
+    $this['newshub'] = [];
+    if (!empty($this['localePicker'])) {
+        $this['currentLocale'] = $this['localePicker']->activeLocale();
+    } else {
+        $this['currentLocale'] = app()->getLocale();
+    }
 }
 ?>
 ==
 <!DOCTYPE html>
-<html lang="{{ localePicker.activeLocale }}" class="no-js">
+<html lang="{{ currentLocale }}" class="no-js">
 <head>
     {% partial 'page/meta' %}
 </head>
-<body class="theme-{{ this.theme.id }} {{ 'page-' ~ this.page.id }} layout-{{ this.layout.id }} {{ this.theme.enable_dark_scheme and this.theme.dark_scheme ? 'dark' : 'light' }}{{ bodyClasses ? ' ' ~ bodyClasses: '' }}">
+<body class="theme-{{ this.theme.id }} {{ 'page-' ~ this.page.id }} layout-{{ this.layout.id }} {{ this.theme.enable_dark_scheme and this.theme.dark_scheme ? 'dark' : 'light' }}{{ bodyClasses is defined ? ' ' ~ bodyClasses: '' }}">
     <script>
         {% if this.theme.enable_dark_scheme %}
             var scheme = localStorage.getItem('newshub-color-scheme');
@@ -91,6 +100,7 @@ function onInit()
     {% set offscreen = placeholder('offscreen') %}
     {{ offscreen | raw }}
 
+    {% component 'cookiesBar' %}
     {% partial 'page/scripts' %}
 </body>
 </html>

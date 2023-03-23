@@ -16,7 +16,7 @@
         <button type="button" class="navbar-action-button" aria-expanded="false" data-newshub-toggle="dropdown" data-bs-display="dynamic" data-bs-auto-close="true">
             {% if this.theme.oc_picker_usage == 'locale' %}
                 {% set localeImage = activeSite.locale|split('-')|last %}
-                <img src="{{ ('assets/images/flags/' ~ localeImage ~ '.svg') | theme }}" alt="{{ name }}" class="rounded-circle" />
+                <img src="{{ ('assets/images/flags/' ~ localeImage ~ '.svg') | theme }}" alt="{{ site.name }}" class="rounded-circle" />
             {% else %}
                 {% partial 'icons/bootstrap/globe2' %}
             {% endif %}
@@ -28,7 +28,7 @@
                     <li><a href="{{ site.url }}" class="dropdown-item{% if activeSite.code == site.code %} active{% endif %}">
                         {% if this.theme.oc_picker_usage == 'locale' %}
                             {% set localeImage = site.locale|split('-')|last %}
-                            <img src="{{ ('assets/images/flags/' ~ localeImage ~ '.svg') | theme }}" alt="{{ name }}" class="rounded-circle" />
+                            <img src="{{ ('assets/images/flags/' ~ localeImage ~ '.svg') | theme }}" alt="{{ site.name }}" class="rounded-circle" />
                         {% endif %}
                         <span>{{ site.name }}</span>
                     </a></li>
@@ -41,7 +41,7 @@
         <button type="button" class="navbar-action-button" data-bs-toggle="modal" data-bs-target="#sitePickerModal">
             {% if this.theme.oc_picker_usage == 'locale' %}
                 {% set localeImage = activeSite.locale|split('-')|last %}
-                <img src="{{ ('assets/images/flags/' ~ localeImage ~ '.svg') | theme }}" alt="{{ name }}" class="rounded-circle" />
+                <img src="{{ ('assets/images/flags/' ~ localeImage ~ '.svg') | theme }}" alt="{{ site.name }}" class="rounded-circle" />
             {% else %}
                 {% partial 'icons/bootstrap/globe2' %}
             {% endif %}
@@ -84,13 +84,13 @@
         <a href="{{ oppositeSite.url }}" type="button" class="navbar-action-toggle">
             <span>
                 {% set localeImage = activeSite.locale|split('-')|last %}
-                <img src="{{ ('assets/images/flags/' ~ localeImage ~ '.svg') | theme }}" alt="{{ name }}" class="rounded-circle" />
+                <img src="{{ ('assets/images/flags/' ~ localeImage ~ '.svg') | theme }}" alt="{{ activeSite.name }}" class="rounded-circle" />
                 <span class="text-uppercase fw-semibold">{{ activeSite.locale|split('-')|first }}</span>
             </span>
 
             <span>
                 {% set localeImage = oppositeSite.locale|split('-')|last %}
-                <img src="{{ ('assets/images/flags/' ~ localeImage ~ '.svg') | theme }}" alt="{{ name }}" class="rounded-circle" />
+                <img src="{{ ('assets/images/flags/' ~ localeImage ~ '.svg') | theme }}" alt="{{ oppositeSite.name }}" class="rounded-circle" />
                 <span class="text-uppercase fw-semibold">{{ oppositeSite.locale|split('-')|first }}</span>
             </span>
         </a>

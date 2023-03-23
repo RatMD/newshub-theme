@@ -28,7 +28,7 @@ function onEnd()
                     <li class="list-group-item">
                         <a href="{{ comment.post.url }}#comments">
                             {% if config.avatars and comment.avatar %}
-                                <img src="{{ comment.avatar }}" class="list-group-image rounded-circle" />
+                                <img src="{{ comment.avatar }}" alt="{{ 'alt.avatar' | _ }}" class="list-group-image rounded-circle" />
                             {% endif %}
                             <div>
                                 <span>

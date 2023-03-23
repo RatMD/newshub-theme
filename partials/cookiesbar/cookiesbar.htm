@@ -1,0 +1,102 @@
+{% set showModal = null %}
+
+{% set cssClasses = 'cookies-bar' %}
+
+{% if cookiesSettingsGet('cookies_bar_add_styles', null) == 1 %}
+    {% set cssClasses = cssClasses ~ ' cookies-bar-style-box' %}
+{% elseif cookiesSettingsGet('cookies_bar_add_styles', null) == 2 %}
+    {% set cssClasses = cssClasses ~ ' cookies-bar-style-strip' %}
+{% elseif cookiesSettingsGet('cookies_bar_add_styles', null) == 3 %}
+    {% set cssClasses = cssClasses ~ ' cookies-bar-style-strip-container' %}
+{% endif %}
+
+{% if cookiesSettingsGet('cookies_bar_css_class', '')|length > 0 %}
+    {% set cssClasses = cssClasses ~ ' ' ~ cookiesSettingsGet('cookies_bar_css_class', '') %}
+{% endif %}
+
+<div id="cookies-bar" class="{{ cssClasses }}" data-cookies-bar data-reload="{{ cookiesSettingsGet('cookies_bar_disable_page_reload', 0) ? '0' : '1' }}">
+    <div class="cookies-bar-content">
+        {% if cookiesSettingsGet('cookies_bar_add_styles', null) == 3 %}
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+        {% endif %}
+
+        {% if cookiesSettingsGet('cookies_bar_title', null) %}
+            <h2 class="cookies-bar-title">{{ cookiesSettingsGet('cookies_bar_title') }}</h2>
+        {% endif %}
+
+        {% if cookiesSettingsGet('cookies_bar_content', null) %}
+            <div class="cookies-bar-text">{{ cookiesSettingsGet('cookies_bar_content')|raw }}</div>
+        {% endif %}
+
+        {% if cookiesSettingsGet('cookies_bar_buttons', null)|length %}
+            <div class="cookies-bar-actions">
+                {% for button in cookiesSettingsGet('cookies_bar_buttons') %}
+                    {% if button.show_modal %}
+                        {% set showModal = button.show_modal %}
+                    {% endif %}
+
+                    <button type="button" 
+                        class="{{ button.css_class ? button.css_class : ('btn ' ~ (button.accept_all_cookies_btn ? 'btn-dark' : 'btn-outline-dark')) }}" 
+                        data-action="{{ button.accept_all_cookies_btn ? 'accept' : (button.disable_all_cookies_btn ? 'disable' : 'details') }}"
+                        {% if button.url %}data-redirect="{{ button.url_external ? button.url : button.url|app }}"{% endif %}
+                        {% if button.show_modal %}data-bs-toggle="modal"{% endif %}
+                        {% if button.show_modal %}data-bs-target="#sg-settings-modal-{{ __SELF__ }}"{% endif %}
+                        {{ button.html_attributes|raw }}>
+                        {{ button.title }}
+                    </button>
+                {% endfor %}
+            </div>
+        {% endif %}
+
+        {% if cookiesSettingsGet('cookies_bar_add_styles', null) == 3 %}
+                    </div>
+                </div>
+            </div>
+        {% endif %}
+    </div>
+</div>
+
+{% if showModal %}
+    {% partial __SELF__ ~ '::cookiesbar-modal' %}
+{% endif %}
+
+{% put scripts %}
+    <script type="text/javascript">
+        ;(function () {
+            let cookiesBar = document.querySelector('[data-cookies-bar]');
+            if (!cookiesBar) {
+                return;
+            }
+
+            {% if cookiesSettingsGet('cookies_bar_add_styles', null) >= 2 %}
+            document.body.style.overflow = 'hidden';
+            {% endif %}
+            Array.from(cookiesBar.querySelectorAll('[data-action]')).map(action => {
+                action.addEventListener('click', (event) => {
+                    event.preventDefault();
+
+                    if (action.dataset.action === 'accept') {
+                        {% partial '@set-cookies' %}
+                    } else if (action.dataset.action === 'disable') {
+                        {% partial '@set-cookies' setOnlyRequiredCookies = true %}
+                    } else {
+                        return;
+                    }
+
+                    document.body.style.removeProperty('overflow');
+                    if (cookiesBar && cookiesBar.parentElement) {
+                        cookiesBar.remove();
+                    }
+
+                    if (action.dataset.redirect && action.dataset.redirect !== '#') {
+                        location.href = action.dataset.redirect;
+                    } else if(cookiesBar.dataset.reload && cookiesBar.dataset.reload !== '0') {
+                        location.reload(true);
+                    }
+                });
+            });
+        })();
+    </script>
+{% endput %}
