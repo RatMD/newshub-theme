@@ -11,35 +11,66 @@
 {% put offscreen %}
 <div class="offcanvas offcanvas-end" tabindex="-1" id="accountOffcanvas">
     <div class="offcanvas-header">
-        <h5 class="offcanvas-title">Sign in or Create an Account</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        <h5 class="offcanvas-title">{{ 'site.user.offcanvas_title' | _ }}</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="{{ 'alt.close' | _ }}"></button>
     </div>
+    
     <div class="offcanvas-body">
-        {{ form_ajax('onRegister') }}
-            <div class="form-group">
-                <label for="offcanvasRegisterUsername">Your Username</label>
-                <input id="offcanvasRegisterUsername" type="text" name="username" class="form-control" 
-                    placeholder="Your Username" autocomplete="username" required />
-            </div>
+        <div class="bg-light p-4">
+            <b>{{ 'site.user.create_account' | _ }}</b>
 
-            <div class="form-group">
-                <label for="offcanvasRegisterEmail">Your E-Mail</label>
-                <input id="offcanvasRegisterEmail" type="email" name="email" class="form-control" 
-                    placeholder="Your E-Mail address" autocomplete="email" required />
-            </div>
+            {{ form_ajax('onRegister') }}
+                <div class="form-group">
+                    <label for="offcanvasRegisterUsername">{{ 'site.user.username_label' | _ }}</label>
+                    <input id="offcanvasRegisterUsername" type="text" name="username" class="form-control" 
+                        placeholder="{{ 'site.user.username_placeholder' | _ }}" autocomplete="username" required />
+                </div>
 
-            <div class="form-group">
-                <label for="offcanvasRegisterName">Your Name</label>
-                <input id="offcanvasRegisterName" type="text" name="name" class="form-control" 
-                    placeholder="Your full name" autocomplete="name" />
-            </div>
+                <div class="form-group">
+                    <label for="offcanvasRegisterEmail">{{ 'site.user.email_label' | _ }}</label>
+                    <input id="offcanvasRegisterEmail" type="email" name="email" class="form-control" 
+                        placeholder="{{ 'site.user.email_placeholder' | _ }}" autocomplete="email" required />
+                </div>
 
-            <div class="form-group">
-                <label for="offcanvasRegisterPassword">Your Password</label>
-                <input id="offcanvasRegisterPassword" type="password" name="password" class="form-control" 
-                    placeholder="Your Password" autocomplete="new-password" required />
-            </div>
-        {{ form_close() }}
+                <div class="form-group">
+                    <label for="offcanvasRegisterName">{{ 'site.user.name_label' | _ }}</label>
+                    <input id="offcanvasRegisterName" type="text" name="name" class="form-control" 
+                        placeholder="{{ 'site.user.name_placeholder' | _ }}" autocomplete="name" />
+                </div>
+
+                <div class="form-group">
+                    <label for="offcanvasRegisterPassword">{{ 'site.user.password_label' | _ }}</label>
+                    <input id="offcanvasRegisterPassword" type="password" name="password" class="form-control" 
+                        placeholder="{{ 'site.user.password_placeholder' | _ }}" autocomplete="new-password" required />
+                </div>
+
+                <div class="form-group">
+                    <button type="submit" name="action" value="register" class="btn btn-dark">{{ 'site.user.create_account_submit' | _ }}</button>
+                </div>
+            {{ form_close() }}
+        </div>
+
+        <div class="bg-light p-4">
+            <b>{{ 'site.user.sign_in' | _ }}</b>
+
+            {{ form_ajax('onLogin') }}
+                <div class="form-group">
+                    <label for="offcanvasSignInUsername">{{ 'site.user.username_label' | _ }}</label>
+                    <input id="offcanvasSignInUsername" type="text" name="username" class="form-control" 
+                        placeholder="{{ 'site.user.username_placeholder' | _ }}" autocomplete="username" required />
+                </div>
+
+                <div class="form-group">
+                    <label for="offcanvasSignInPassword">{{ 'site.user.password_label' | _ }}</label>
+                    <input id="offcanvasSignInPassword" type="password" name="password" class="form-control" 
+                        placeholder="{{ 'site.user.password_placeholder' | _ }}" autocomplete="current-password" required />
+                </div>
+
+                <div class="form-group">
+                    <button type="submit" name="action" value="register" class="btn btn-dark">{{ 'site.user.sign_in_submit' | _ }}</button>
+                </div>
+            {{ form_close() }}
+        </div>
     </div>
 </div>
 {% endput %}
