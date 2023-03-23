@@ -2,7 +2,7 @@ NewsHub - Free Magazine Template
 ================================
 
 **NewsHub** is a free, minimalist and responsive Blog and Magazine template, designed for OctoberCMS 
-v2 and v3. It provides a clean and configurable structure using **Bootstrap v5.2** as powerful CSS 
+v2 and v3. It provides a clean and configurable structure using **Bootstrap v5.3** as powerful CSS 
 and JS Framework, includes the beautiful **Bootstrap Icons** and implements the responsive and 
 feature-rich **Keen Slider** package.
 
@@ -50,7 +50,7 @@ create new static pages with over **18 different** Bootstrap and custom **conten
 
 All Features
 ------------
-- **Bootstrap** v5.2 with **Bootstrap Icons** v1.9 (usable as partials)
+- **Bootstrap** v5.3 with **Bootstrap Icons** v1.10 (usable as partials)
 - Fully **Responsive** and mobile-first
 - **Multi-Language Support** (using RainLab.Translate)
 - Native **Site-Picker Support** (requires OctoberCMS v3.1+)
