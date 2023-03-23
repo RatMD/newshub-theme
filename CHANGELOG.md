@@ -5,6 +5,8 @@ Version 1.3.0 - In Progress
 ---------------------------
 - Add: Support for the new sitePicker core component, as released on OctoberCMS v3.1.
 - Add: Support for [BlakeJones.MagicForms](https://octobercms.com/plugin/blakejones-magicforms) OC Plugin.
+- Add: Support for [JanVince.SmallContactForm](https://octobercms.com/plugin/janvince-smallcontactform) OC Plugin.
+- Add: Support for [JanVince.SmallGDPR](https://octobercms.com/plugin/janvince-smallgdpr) OC Plugin.
 - Add: Config - "Prefer SitePicker over LocalePicker" for OC v3.1 w/ RainLab.Translate v1.x installations.
 - Add: Config - "SitePicker Appearance" to show Language- or full Site- names, limited to the new SitePicker component.
 - Add: Config - "Site/LocalePicker Style" to change how the component should be rendered (Dropdown, Modal, Switch).
@@ -84,8 +86,6 @@ Version 1.3.0 - In Progress
 - Fix: `CMS_STRICT_VARIABLES=true` .env security option errors.
 
 ### ToDo
-- Add: Support for [JanVince.SmallContactForm](https://octobercms.com/plugin/janvince-smallcontactform) OC Plugin.
-- Add: Support for [JanVince.SmallGDPR](https://octobercms.com/plugin/janvince-smallgdpr) OC Plugin.
 - Add: Support for [RainLab.BlogVideoExtension](https://octobercms.com/plugin/rainlab-blogvideoextension) OC Plugin.
 - Add: Support for [RainLab.Forum](https://octobercms.com/plugin/rainlab-forum) OC Plugin.
 - Add: Support for [RainLab.User](https://octobercms.com/plugin/rainlab-user) OC Plugin.

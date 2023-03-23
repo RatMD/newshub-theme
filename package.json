@@ -29,8 +29,8 @@
         "keen-slider": "^6.8.5"
     },
     "devDependencies": {
-        "esbuild": "^0.17.10",
-        "esbuild-sass-plugin": "^2.6.0",
-        "sass": "^1.58.3"
+        "esbuild": "^0.17.12",
+        "esbuild-sass-plugin": "^2.8.0",
+        "sass": "^1.59.3"
     }
 }

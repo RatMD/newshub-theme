@@ -252,13 +252,12 @@
 //  JanVince/SmallGDPR Modal Stylings
 // ----------------------------------------
 
-.janvince-smallgdpr-modal {
-    .list-cookies {
-        margin-top: $spacer;
+#cookies-manage.panel .list-cookies,
+.janvince-smallgdpr-modal .list-cookies {
+    margin-top: $spacer;
 
-        .description  {
-            padding-left: $spacer * 1.5;
-            @include font-size(0.8rem);
-        }
+    .description  {
+        padding-left: $spacer * 1.5;
+        @include font-size(0.8rem);
     }
 }

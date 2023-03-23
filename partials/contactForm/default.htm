@@ -1,0 +1,33 @@
+<div id="scf-{{ __SELF__ }}">
+	<div id="scf-message-{{ __SELF__ }}">
+		{% partial __SELF__ ~ '::scf-message' %}
+	</div>
+	<div id="scf-form-{{ __SELF__ }}">
+		{% partial __SELF__ ~ '::scf-form' %}
+
+        <script>
+            ;(function () {
+                let contactForm = document.querySelector('form.was-validated');
+                if (!contactForm) {
+                    return;
+                }
+
+                let invalidFields = contactForm.querySelectorAll('.is-invalid');
+                Array.from(invalidFields).map(el => {
+                    let feedback = el.previousElementSibling;
+                    if (!feedback.classList.contains('invalid-feedback')) {
+                        return;
+                    }
+
+                    if (el.nextElementSibling) {
+                        el.parentElement.insertBefore(feedback, el.nextElementSibling);
+                    } else {
+                        el.parentElement.appendChild(feedback);
+                    }
+                });
+
+                contactForm.classList.remove('was-validated');
+            })();
+        </script>
+	</div>
+</div>

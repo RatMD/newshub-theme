@@ -183,3 +183,10 @@ Available Commands:
 Need Support?
 -------------
 Contact us via mail at [info@rat.md](mailto:info@rat.md) or visit our website at [rat.md](https://rat.md).
+
+
+Copyright
+---------
+Copyright © 2022 - 2023 rat.md.
+
+Published under the MIT-License.

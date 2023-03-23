@@ -116,6 +116,7 @@ function onInit()
     {% set offscreen = placeholder('offscreen') %}
     {{ offscreen | raw }}
 
+    {% component 'cookiesBar' %}
     {% partial 'page/scripts' %}
 </body>
 </html>

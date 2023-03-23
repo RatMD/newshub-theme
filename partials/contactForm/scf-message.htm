@@ -1,0 +1,17 @@
+{% if formSentAlias == __SELF__.alias %}
+	{% if formSuccess %}
+		{{ __SELF__.getGaSuccessEventHtmlCode(true)|raw }}
+
+		{% flash success %}
+			<div class="callout callout-{{ type == 'error' ? 'danger' : type }}" role="alert">
+				{{ html_entity_decode(message)|nl2br }}
+			</div>
+		{% endflash %}
+	{% elseif formError %}
+		{% flash error %}
+			<div class="callout callout-{{ type == 'error' ? 'danger' : type }}" role="alert">
+				{{ html_entity_decode(message)|nl2br }}
+			</div>
+		{% endflash %}
+	{% endif %}
+{% endif %}

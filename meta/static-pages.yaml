@@ -3,6 +3,7 @@ static-pages:
         about-imprint: {  }
         about-privacy-policy: {  }
         cookies: {  }
+        contact-janvince: {  }
     page-builder:
         page-builder-accordion: {  }
         page-builder-alerts: {  }

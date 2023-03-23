@@ -16,8 +16,8 @@
 //----------------------------------------
 //  Include Bootstrap Functions
 //----------------------------------------
-@import 'bootstrap/scss/functions';
 @import './core-functions';
+@import 'bootstrap/scss/functions';
 
 
 //----------------------------------------
@@ -27,8 +27,8 @@
 @import 'bootstrap/scss/variables';
 @import 'bootstrap/scss/variables-dark';
 @import 'bootstrap/scss/maps';
-@import 'bootstrap/scss/mixins';
 @import './core-mixins';
+@import 'bootstrap/scss/mixins';
 @import './core-utilities';
 @import 'bootstrap/scss/utilities';
 @import './core-overrides';
@@ -51,7 +51,8 @@
 @import 'bootstrap/scss/images';
 @import 'bootstrap/scss/containers';
 @import 'bootstrap/scss/grid';
-@import 'bootstrap/scss/helpers';
+
+
 @import 'bootstrap/scss/tables';
 @import 'bootstrap/scss/forms';
 @import 'bootstrap/scss/buttons';
@@ -84,6 +85,12 @@
 //----------------------------------------
 @import './custom-components';
 @import './custom-vendors';
+
+
+//----------------------------------------
+//  Include Bootstrap Helpers
+//----------------------------------------
+@import 'bootstrap/scss/helpers';
 
 
 //----------------------------------------
