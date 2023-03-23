@@ -74,6 +74,7 @@ Version 1.3.0 - In Progress
 - Update: Change Bootstrap 5 Lightbox package with a custom Lightbox plugin.
 - Update: Keen Slider package to v6.8.5.
 - Update: Cleanup template localization strings (for both: English and German).
+- Update: TypeScript / JavaScript environment, utilities and modules.
 - Remove: "sticky_header" option, has been replaced with "Header Position" > "Sticky".
 - Fix: Set HTML lang to current locale instead of fixed 'en'.
 - Fix: Bootstrap URL on placeholder / demo copyright text.
@@ -84,6 +85,7 @@ Version 1.3.0 - In Progress
 - Fix: Issues with translations (and YAML import links), as mentioned in [#4](https://github.com/RatMD/newshub-theme/issues/4).
 - Fix: Some translation / localization issues in both english and german language.
 - Fix: `CMS_STRICT_VARIABLES=true` .env security option errors.
+- Fix: Rename / Remove `.alert-*` stylings on callout component.
 
 ### ToDo
 - Add: Support for [RainLab.BlogVideoExtension](https://octobercms.com/plugin/rainlab-blogvideoextension) OC Plugin.
@@ -110,7 +112,7 @@ Version 1.2.1 - Stable
 - Update: Meta Tags.
 - Update: Bootstrap package to v5.2.1.
 - Update: Keen Slider package to v6.8.0.
-- Update: @rollup/plugin-bode-resolve dev-pacakge to v14.1.0.
+- Update: @rollup/plugin-bode-resolve dev-package to v14.1.0.
 - Update: sass dev-package to v1.54.9.
 
 
