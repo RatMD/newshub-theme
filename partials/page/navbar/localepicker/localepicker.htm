@@ -3,8 +3,8 @@
 
 {% if style == 'dropdown' %}
     {{ form_open() }}
-        <div class="navbar-action action-localepicker dropdown-center" data-newshub-action="localepicker">
-            <button type="button" class="navbar-action-button" data-newshub-toggle="dropdown" data-bs-display="dynamic" data-bs-auto-close="true" aria-expanded="false">
+        <div class="navbar-action action-localepicker dropdown-center">
+            <button type="button" class="navbar-action-button" data-handle="dropdown" data-bs-display="dynamic" data-bs-auto-close="true" aria-expanded="false">
                 {% if localePicker.activeLocale == 'en' %}
                     <img src="{{ ('assets/images/flags/gb.svg') | theme }}" alt="{{ localePicker.activeLocaleName }}" class="rounded-circle" />
                 {% else %}
@@ -73,7 +73,7 @@
         {% endif %}
     {% endfor %}
 
-    <div class="navbar-action action-sitepicker sitepicker-toggle" data-newshub-action="sitepicker">
+    <div class="navbar-action action-sitepicker sitepicker-toggle">
         <a href="#" type="button" class="navbar-action-toggle" data-request="onSwitchLocale" data-request-data="locale: '{{ oppositeLocale }}'">
             <span>
                 {% if localePicker.activeLocale == 'en' %}

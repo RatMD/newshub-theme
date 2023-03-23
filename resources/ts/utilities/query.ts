@@ -1,6 +1,6 @@
 
 type ContextType = Document | HTMLElement;
-type MapFunction = (element: HTMLElement, index: number) => boolean;
+type MapFunction = (element: HTMLElement, index: number) => any;
 
 /**
  * Query Selector

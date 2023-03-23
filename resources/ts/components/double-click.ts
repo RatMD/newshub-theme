@@ -22,8 +22,7 @@ function invokeDoubleClick(element)
 }
 
 // Export Ready Handler
-export default () => {
-    ready(() => {
-        query('[data-newshub-toggle="double-click"]').map(el => invokeDoubleClick(el));
-    });
+export default async function () {
+    await ready();
+    query('[data-handle="double-click"]', invokeDoubleClick);
 };

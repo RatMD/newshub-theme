@@ -60,10 +60,9 @@ function invokeBootstrapPopover(element)
 }
 
 // Export Ready Handler
-export default () => {
-    ready(() => {
-        query('[data-newshub-toggle="dropdown"]').map(el => invokeBootstrapDropdown(el));
-        query('[data-bs-toggle="tooltip"],[data-newshub-toggle="tooltip"]').map(el => invokeBootstrapTooltip(el));
-        query('[data-bs-toggle="popover"],[data-newshub-toggle="popover"]').map(el => invokeBootstrapPopover(el));
-    });
+export default async function () {
+    await ready();
+    query('[data-handle="dropdown"]', invokeBootstrapDropdown);
+    query('[data-bs-toggle="tooltip"],[data-handle="tooltip"]', invokeBootstrapTooltip);
+    query('[data-bs-toggle="popover"],[data-handle="popover"]', invokeBootstrapPopover);
 };

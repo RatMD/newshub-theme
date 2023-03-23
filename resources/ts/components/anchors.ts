@@ -40,6 +40,7 @@ function invokeAnchors(root: HTMLElement) {
 }
 
 // Export Module
-export default (() => {
-    ready(() => { query('[data-handle="js-anchors"][data-target]').map(c => invokeAnchors(c)) });
-});
+export default async function () {
+    await ready();
+    query('[data-handle="js-anchors"][data-target]', invokeAnchors);
+};

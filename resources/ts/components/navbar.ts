@@ -1,5 +1,6 @@
 import query from '../utilities/query';
 import ready from '../utilities/ready';
+import select from '../utilities/select';
 import wait from '../utilities/wait';
 
 class Navbar {
@@ -518,16 +519,20 @@ class Navbar {
 }
 
 // Invoke Functions
-function invokeNavbar() {
-    ready(function () {
-        query('[data-newshub-header]').map(el => {
-            if (!Navbar.hasInstance(el)) {
-                new Navbar(el);
-            }
-        });
-    });
-}
+async function invokeNavbar() {
+    await ready();
 
+    let header = select('[data-handle="header"]');
+    if (!header) {
+        return;
+    }
+
+    if (Navbar.hasInstance(header)) {
+        return;
+    }
+
+    new Navbar(header);
+}
 
 // Export Module
 export default invokeNavbar;

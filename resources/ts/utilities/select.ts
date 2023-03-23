@@ -5,7 +5,7 @@
  * @param context The context element.
  * @returns
  */
-function select(selector, context): HTMLElement | null {
+function select(selector: string, context?: Document | HTMLElement): HTMLElement | null {
     return (context || document).querySelector(selector);
 }
 

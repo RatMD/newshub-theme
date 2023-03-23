@@ -10,7 +10,7 @@ function invokeColorPicker(element)
     const defaultScheme = window['newshub'].defaultScheme;
 
     function onLoad() {
-        query('[data-newshub-toggle="color-picker"]').map((el: HTMLInputElement) => {
+        query('[data-handle="color-picker"]', (el: HTMLInputElement) => {
             let style = localStorage.getItem('newshub-color-scheme') || defaultScheme;
             if(style === 'light') {
                 el.checked = false;
@@ -45,10 +45,8 @@ function invokeColorPicker(element)
     });
 }
 
-
 // Export Ready Handler
-export default () => {
-    ready(() => {
-        query('[data-newshub-toggle="color-picker"]').map(el => invokeColorPicker(el));
-    })
+export default async function () {
+    await ready();
+    query('[data-handle="color-picker"]', invokeColorPicker);
 };

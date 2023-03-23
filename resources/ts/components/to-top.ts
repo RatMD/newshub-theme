@@ -28,10 +28,8 @@ function invokeScrollToTop(element)
     });
 }
 
-
 // Export Ready Handler
-export default () => {
-    ready(() => {
-        query('.scroll-to-top').map(el => invokeScrollToTop(el));
-    })
+export default async function () {
+    await ready();
+    query('[data-handle="scroll-to-top"]', invokeScrollToTop);
 };

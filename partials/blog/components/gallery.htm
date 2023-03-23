@@ -15,7 +15,7 @@
             {% set caption = caption ~ image.description %}
         {% endif %}
 
-        <a href="{{ image.getPath() }}" class="col-12 col-md-6 col-lg-4" data-newshub-toggle="lightbox" data-gallery="{{ uniqueId }}" 
+        <a href="{{ image.getPath() }}" class="col-12 col-md-6 col-lg-4" data-handle="lightbox" data-gallery="{{ uniqueId }}" 
             title="{{ image.title }}"{% if caption %} data-caption="{{ caption }}"{% endif %}>
             <img src="{{ image.getPath() }}" class="img-fluid" alt="{{ image.title }}" />
         </a>

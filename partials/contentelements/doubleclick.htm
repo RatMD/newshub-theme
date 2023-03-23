@@ -28,7 +28,7 @@
 {% endif %}
 
 {# Render Content Element #}
-<div{% if id|length > 0 %} id="{{ id }}"{% endif %} class="{{ classNames|trim }}" data-newshub-toggle="double-click">
+<div{% if id|length > 0 %} id="{{ id }}"{% endif %} class="{{ classNames|trim }}" data-handle="double-click">
     <div class="double-click-title">
         {{ config.title|default('Third-Party Service')|raw }}
     </div>

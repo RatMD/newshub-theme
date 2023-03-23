@@ -76,7 +76,7 @@ function onInit()
         }
     </script>
     
-    <header id="pageHeader" class="header header-{{ this.theme.header_style }} header-{{ this.theme.header_position }} {{ this.theme.dark_header ? 'bg-dark dark' : 'bg-light dark:bg-dark' }}" data-newshub-header>
+    <header id="pageHeader" class="header header-{{ this.theme.header_style }} header-{{ this.theme.header_position }} {{ this.theme.dark_header ? 'bg-dark dark' : 'bg-light dark:bg-dark' }}" data-handle="header">
         {% partial 'page/header' %}
     </header>
 
@@ -112,7 +112,7 @@ function onInit()
     </footer>
     
     {% if this.theme.to_top_button %}
-        <a href="#top" class="scroll-to-top">
+        <a href="#top" class="scroll-to-top" data-handle="scroll-to-top">
             {% partial 'icons/bootstrap/arrow-up-short' %}
         </a>
     {% endif %}

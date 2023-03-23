@@ -5,7 +5,6 @@ import parseJson from "../utilities/json";
 import query from "../utilities/query";
 import ready from "../utilities/ready";
 
-
 interface KeenSliderNewsHubConfig {
     
     /**
