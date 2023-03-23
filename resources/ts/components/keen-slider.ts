@@ -1,6 +1,6 @@
 import type { KeenSliderInstance, KeenSliderOptions, KeenSliderPlugin } from 'keen-slider';
 import KeenSlider from 'keen-slider';
-import { isBoolean, makeBoolean } from '../utilities/boolean';
+import { isBoolean, toBoolean } from '../utilities/boolean';
 import parseJson from "../utilities/json";
 import query from "../utilities/query";
 import ready from "../utilities/ready";
@@ -666,12 +666,12 @@ async function invokeKeenSlider() {
 
             // Convert Booleans
             if (key === 'autoplay' || key === 'loop' || key === 'touch') {
-                value = makeBoolean(value, defaultValue);
+                value = toBoolean(value, defaultValue);
             }
 
             // Convert Booleans / Selectors
             if (key === 'controls' || key === 'indicators') {
-                value = isBoolean(value) ? makeBoolean(value) : value;
+                value = isBoolean(value) ? toBoolean(value) : value;
             }
 
             // Parse Interval

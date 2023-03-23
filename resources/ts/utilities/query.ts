@@ -13,13 +13,12 @@ function query(selector: string): HTMLElement[]
 function query(selector: string, context?: ContextType): HTMLElement[]
 function query(selector: string, mapFn?: MapFunction): any[]
 function query(selector: string, context_or_map?: ContextType | MapFunction, mapFn?: MapFunction): HTMLElement[] | any[] {
-    let context: ContextType = document;
-    if (typeof context_or_map !== 'undefined') {
-        if (typeof context_or_map === 'function') {
-            mapFn = context_or_map;
-        } else {
-            context = context_or_map;
-        }
+    let context: ContextType;
+    if (typeof context_or_map === 'function') {
+        context = document;
+        mapFn = context_or_map;
+    } else {
+        context = context_or_map || document;
     }
 
     if (typeof mapFn === 'function') {

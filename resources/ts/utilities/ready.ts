@@ -9,7 +9,7 @@ function ready(factory: Function | void): Promise<true> | void {
         return new Promise(resolve => ready(resolve.bind(null, null)));
     } else {
         if (document.readyState === 'loading') {
-            document.addEventListener('DOMContentLoaded', () => factory());
+            document.addEventListener('DOMContentLoaded', factory as any);
         } else {
             factory();
         }
