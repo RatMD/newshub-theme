@@ -11,11 +11,11 @@
     "main": "resources/js/theme.js",
     "scripts": {
         "build": "node esbuild.js",
-        "watch": "node esbuild.js --watch",
-        "build:js": "node esbuild.js --no-css",
-        "watch:js": "node esbuild.js --no-css --watch",
         "build:css": "node esbuild.js --no-js",
+        "build:js": "node esbuild.js --no-css",
+        "watch": "node esbuild.js --watch",
         "watch:css": "node esbuild.js --no-js --watch",
+        "watch:js": "node esbuild.js --no-css --watch",
         "vendors": "node esbuild.js --vendors"
     },
     "author": "rat.md <info@rat.md> (https://rat.md)",

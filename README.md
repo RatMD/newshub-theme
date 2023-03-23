@@ -126,8 +126,9 @@ The following plugins are not required but supported by the **NewsHub** template
 NewsHub has been successfully tested with the following stacks:
 
 - OctoberCMS v2.2.34 (using PHP v7.4.33)
-- OctoberCMS v3.0.76 (using PHP v8.0.23)
+- OctoberCMS v3.0.76 (using PHP v8.0.27)
 - OctoberCMS v3.1.29 (using PHP v8.1.14)
+- OctoberCMS v3.2.23 (using PHP v8.1.14)
 
 Our Front-End testing is based on:
 
@@ -153,11 +154,11 @@ Dependencies
 ------------
 The following dependencies are already bundled with this template, of course.
 
-- [Bootstrap](https://getbootstrap.com) v5.2.2 - MIT licensed
-- [Bootstrap Icons](https://icons.getbootstrap.com) v1.9.1 - MIT licensed
+- [Bootstrap](https://getbootstrap.com) v5.3.0-alpha1 - MIT licensed
+- [Bootstrap Icons](https://icons.getbootstrap.com) v1.10.3 - MIT licensed
 - [Flag Icons](https://flagicons.lipis.dev/) - MIT licensed
-- [Keen Slider](https://keen-slider.io/) v6.8.3 - MIT licensed
-- [@rat.md/bs-lightbox](https://ratmd.github.io/bs-lightbox/) v1.0.3 - MIT licensed
+- [Keen Slider](https://keen-slider.io/) v6.8.5 - MIT licensed
+- [@rat.md/bs-lightbox](https://ratmd.github.io/bs-lightbox/) v1.1.0 - MIT licensed
 - jQuery*\** (only in OctoberCMS v2, see below) - MIT licensed
 
 **Attention**: By default, jQuery is only included on OctoberCMS v2 installations using October's 
