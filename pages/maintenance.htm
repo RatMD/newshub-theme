@@ -32,6 +32,12 @@ function onInit()
     } else {
         $this['currentLocale'] = app()->getLocale();
     }
+
+    Event::listen('cms.page.display', function ($controller, $url, $page, $res)
+    {
+        $statusCode = 503;
+        return Response::make($res, $statusCode);
+    });
 }
 ?>
 ==
