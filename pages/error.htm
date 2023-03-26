@@ -7,30 +7,26 @@ title = "An error occured"
 localeUrl[de] = "/error"
 localeTitle[de] = "Ein Fehler ist aufgetreten"
 ==
-<div id="errorContent">
-    <div class="post-single page-single">
-        <section class="section section-page">
-            <header class="py-6 bg-light dark:bg-dark">
-                <div class="container">
-                    <div class="post-header">
-                        <h1 class="post-title text-center">{{ 'page.error.title' | _ }}</h1>
-                    </div>
-                </div>
-            </header>
+<section class="section section-page">
+    <header class="py-6 bg-light dark:bg-dark">
+        <div class="container">
+            <div class="post-header">
+                <h1 class="post-title text-center">{{ 'page.error.title' | _ }}</h1>
+            </div>
+        </div>
+    </header>
 
-            <article class="bg-white py-8">
-                <div class="container">
-                    <div class="post-content text-center">
-                        <h2 class="fs-1">{{ 'page.error.subtitle' | _ }}</h2>
-                        <p class="fs-5">
-                            {{ 'page.error.comment' | _ }}
-                        </p>
-                        <a href="{{ 'home' | page }}" title="{{ 'page.error.button' | _ }}" class="btn btn-primary btn-lg">
-                            {{ 'page.error.button' | _ }}
-                        </a>
-                    </div>
-                </div>
-            </article>
-        </section>
-    </div>
-</div>
+    <article class="bg-white py-8">
+        <div class="container">
+            <div class="post-content text-center">
+                <h2 class="fs-1">{{ 'page.error.subtitle' | _ }}</h2>
+                <p class="fs-5">
+                    {{ 'page.error.comment' | _ }}
+                </p>
+                <a href="{{ 'home' | page }}" title="{{ 'page.error.button' | _ }}" class="btn btn-primary btn-lg">
+                    {{ 'page.error.button' | _ }}
+                </a>
+            </div>
+        </div>
+    </article>
+</section>

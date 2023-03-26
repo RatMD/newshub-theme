@@ -923,6 +923,10 @@
             background-color: var(--#{$prefix}gray-300);
         }
 
+        & + .dropdown-menu {
+            inset: 0px 0px auto auto;
+        }
+
         .dark & {
             color: var(--#{$prefix}gray-400);
         }

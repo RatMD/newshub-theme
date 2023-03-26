@@ -1,3 +1,4 @@
+##
 url = "/account-remember/:code?"
 layout = "default"
 title = "Recover your Account"
@@ -9,23 +10,20 @@ localeTitle[de] = "Stelle dein Benutzerkonto wieder her"
 [resetPassword]
 paramCode = "code"
 ==
-
-<div class="post-single page-single">
-    <section class="section section-page">
-        <header class="py-6 bg-light dark:bg-dark">
-            <div class="container">
-                <div class="post-header">
-                    <h1 class="post-title">{{ page.title | default(this.page.title) }}</h1>
-                </div>
+<section class="section section-page">
+    <header class="py-6 bg-light dark:bg-dark">
+        <div class="container">
+            <div class="post-header">
+                <h1 class="post-title">{{ page.title | default(this.page.title) }}</h1>
             </div>
-        </header>
+        </div>
+    </header>
 
-        <article class="section py-6">
-            <div class="container">
-                <div class="post-content main-area">
-    	            {% component "resetPassword" %}
-                </div>
+    <article class="section py-6">
+        <div class="container">
+            <div class="post-content main-area">
+                {% component "resetPassword" %}
             </div>
-        </article>
-    </section>
-</div>
+        </div>
+    </article>
+</section>

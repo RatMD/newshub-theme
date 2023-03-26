@@ -16,5 +16,5 @@ localeMeta_description[de] = "Forum"
 memberPage = "forum/member"
 channelPage = "forum/channel"
 ==
-<h1>{{ topic.subject }}</h1>
+<h1>{{ topic.subject|default('New Topic') }}</h1>
 {% component 'forumTopic' %}
