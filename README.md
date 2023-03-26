@@ -104,8 +104,8 @@ RainLab.Translate **v2+** (unless you're using a plugin which is not v2+ compati
 still support OctoberCMS v2+ installations using RainLab.Translate v1.9+.
 
 - Modern Browser _(IE and Edge Legacy are NOT supported)_
-- PHP 7.4+ / 8.0+ _(recommended: v8.1)_
-- OctoberCMS v2+ / v3+ _(recommended: v3.1)
+- PHP 7.4+ / 8.0+ _(recommended: 8.0+)_
+- OctoberCMS v2+ / v3+ _(recommended: v3.1+)
 - Plugin: [RainLab.Blog](https://octobercms.com/plugin/rainlab-blog)
 - Plugin: [RainLab.Pages](https://octobercms.com/plugin/rainlab-pages)
 - Plugin: [RainLab.Sitemap](https://octobercms.com/plugin/rainlab-sitemap)
