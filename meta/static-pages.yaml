@@ -4,6 +4,7 @@ static-pages:
         about-privacy-policy: {  }
         cookies: {  }
         contact-janvince: {  }
+    features: {  }
     page-builder:
         page-builder-accordion: {  }
         page-builder-alerts: {  }
@@ -21,4 +22,3 @@ static-pages:
         page-builder-slider: {  }
         page-builder-tabs: {  }
         page-builder-text-teaser: {  }
-    features: {  }

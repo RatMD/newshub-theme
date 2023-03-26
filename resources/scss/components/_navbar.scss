@@ -347,6 +347,21 @@
                     padding-right: 0;
                 }
             }
+
+            &.nav-btn {
+                & > .nav-link {
+                    @extend .btn;
+                    @extend .btn-sm;
+                    @extend .btn-outline-dark;
+
+                    display: inline-flex;
+                    padding-left: $spacer;
+                    padding-right: $spacer;
+                    font-weight: 600;
+                    align-items: center;
+                    justify-content: center;
+                }
+            }
         }
 
         // Nav Link / Nav Title

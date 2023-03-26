@@ -9,5 +9,5 @@ export default async function () {
         el.dataset.gallery = "post-gallery";
         el.dataset.caption = el.querySelector('img').alt;
     });
-    window['rat']['Lightbox'].invoke();
+    window['rat']['Lightbox'].invoke(`${window['rat']['Lightbox'].SELECTOR},[data-handle="lightbox"]`);
 };

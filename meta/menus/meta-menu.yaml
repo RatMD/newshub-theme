@@ -3,23 +3,10 @@ items:
         title: About
         nesting: 0
         type: static-page
+        url: null
         code: ''
         reference: about
-        replace: 0
-        viewBag:
-            locale:
-                de:
-                    title: ''
-                    url: ''
-            isHidden: '0'
-            cssClass: ''
-            isExternal: '0'
-    -
-        title: Contact
-        nesting: 0
-        type: static-page
-        code: ''
-        reference: contact
+        cmsPage: null
         replace: 0
         viewBag:
             locale:
@@ -33,14 +20,68 @@ items:
         title: Imprint
         nesting: 0
         type: static-page
+        url: null
         code: ''
         reference: about-imprint
+        cmsPage: null
         replace: 0
         viewBag:
+            isHidden: '0'
+            cssClass: ''
+            isExternal: '0'
             locale:
                 de:
                     title: ''
                     url: ''
+    -
+        title: Privacy
+        nesting: 0
+        type: static-page
+        url: null
+        code: ''
+        reference: about-privacy-policy
+        cmsPage: null
+        replace: 0
+        viewBag:
+            isHidden: '0'
+            cssClass: ''
+            isExternal: '0'
+            locale:
+                de:
+                    title: ''
+                    url: ''
+    -
+        title: Cookies
+        nesting: 0
+        type: static-page
+        url: null
+        code: ''
+        reference: cookies
+        cmsPage: null
+        replace: 0
+        viewBag:
+            isHidden: '0'
+            cssClass: ''
+            isExternal: '0'
+    -
+        title: 'Contact (JV)'
+        nesting: 0
+        type: static-page
+        url: null
+        code: ''
+        reference: contact-janvince
+        cmsPage: null
+        replace: 0
+        viewBag:
+            isHidden: '0'
+            cssClass: ''
+            isExternal: '0'
+    -
+        title: 'Contact (BJ)'
+        type: cms-page
+        code: ''
+        reference: contact
+        viewBag:
             isHidden: '0'
             cssClass: ''
             isExternal: '0'
