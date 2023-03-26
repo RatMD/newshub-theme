@@ -109,18 +109,18 @@ still support OctoberCMS v2+ installations using RainLab.Translate v1.9+.
 - Plugin: [RainLab.Blog](https://octobercms.com/plugin/rainlab-blog)
 - Plugin: [RainLab.Pages](https://octobercms.com/plugin/rainlab-pages)
 - Plugin: [RainLab.Sitemap](https://octobercms.com/plugin/rainlab-sitemap)
-- Plugin: [RainLab.Translate](https://octobercms.com/plugin/rainlab-translate) _(supported: v1.9+ and v2+)_
-- Plugin: [RatMD.BlogHub](https://octobercms.com/plugin/ratmd-bloghub) _(required: v1.2+)_
+- Plugin: [RainLab.Translate](https://octobercms.com/plugin/rainlab-translate) _(supported: v1.9.0+ and v2.0.0+)_
+- Plugin: [RatMD.BlogHub](https://octobercms.com/plugin/ratmd-bloghub) _(required: v1.2.0+)_
 
 ### Supports
 The following plugins are not required but supported by the **NewsHub** template:
 
-- Plugin: [BlakeJones.MagicForms](https://octobercms.com/plugin/blakejones-magicforms)
-- Plugin: [JanVince.SmallContactForm](https://octobercms.com/plugin/janvince-smallcontactform) _(incompatible with OC v3.1 + RainLab.Translate v2)_
-- Plugin: [JanVince.SmallGDPR](https://octobercms.com/plugin/janvince-smallgdpr)
-- Plugin: [RainLab.BlogVideoExtension](https://octobercms.com/plugin/rainlab-blogvideoextension)
-- Plugin: [RainLab.Forum](https://octobercms.com/plugin/rainlab-forum) 
-- Plugin: [RainLab.User](https://octobercms.com/plugin/rainlab-user) 
+- Plugin: [BlakeJones.MagicForms](https://octobercms.com/plugin/blakejones-magicforms) _(v1.6.0+)_
+- Plugin: [JanVince.SmallContactForm](https://octobercms.com/plugin/janvince-smallcontactform) _(v1.62.0+)_
+- Plugin: [JanVince.SmallGDPR](https://octobercms.com/plugin/janvince-smallgdpr) _(v1.21.0+)_
+- Plugin: [RainLab.BlogVideoExtension](https://octobercms.com/plugin/rainlab-blogvideo) _(v1.1.2+)_
+- Plugin: [RainLab.Forum](https://octobercms.com/plugin/rainlab-forum) _(in progress)_
+- Plugin: [RainLab.User](https://octobercms.com/plugin/rainlab-user) _(v1.6.0+ and v2.0.0+)_
 
 ### Tested with
 NewsHub has been successfully tested with the following stacks:
