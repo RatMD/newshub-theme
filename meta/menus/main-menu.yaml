@@ -203,6 +203,40 @@ items:
                             cssClass: ''
                             isExternal: '0'
                     -
+                        title: 'Default Article w/ Gallery'
+                        nesting: null
+                        type: blog-post
+                        url: null
+                        code: ''
+                        reference: '7'
+                        cmsPage: blog/post
+                        replace: null
+                        viewBag:
+                            locale:
+                                de:
+                                    title: ''
+                                    url: ''
+                            isHidden: '0'
+                            cssClass: ''
+                            isExternal: '0'
+                    -
+                        title: 'Default Article w/ Carousel'
+                        nesting: null
+                        type: blog-post
+                        url: null
+                        code: ''
+                        reference: '10'
+                        cmsPage: blog/post
+                        replace: null
+                        viewBag:
+                            locale:
+                                de:
+                                    title: ''
+                                    url: ''
+                            isHidden: '0'
+                            cssClass: ''
+                            isExternal: '0'
+                    -
                         title: 'Fullwidth Article'
                         nesting: null
                         type: blog-post
@@ -220,41 +254,7 @@ items:
                             cssClass: ''
                             isExternal: '0'
                     -
-                        title: 'Carousel Article'
-                        nesting: null
-                        type: blog-post
-                        url: null
-                        code: ''
-                        reference: '10'
-                        cmsPage: blog/post
-                        replace: null
-                        viewBag:
-                            locale:
-                                de:
-                                    title: ''
-                                    url: ''
-                            isHidden: '0'
-                            cssClass: ''
-                            isExternal: '0'
-                    -
-                        title: 'Gallery Article'
-                        nesting: null
-                        type: blog-post
-                        url: null
-                        code: ''
-                        reference: '7'
-                        cmsPage: blog/post
-                        replace: null
-                        viewBag:
-                            locale:
-                                de:
-                                    title: ''
-                                    url: ''
-                            isHidden: '0'
-                            cssClass: ''
-                            isExternal: '0'
-                    -
-                        title: 'Hero Article'
+                        title: 'HeroImage Article'
                         nesting: null
                         type: blog-post
                         url: null
@@ -273,11 +273,11 @@ items:
                     -
                         title: 'Featured Article'
                         nesting: null
-                        type: url
-                        url: /
+                        type: blog-post
+                        url: null
                         code: ''
-                        reference: null
-                        cmsPage: null
+                        reference: '18'
+                        cmsPage: blog/post
                         replace: null
                         viewBag:
                             locale:

@@ -46,6 +46,7 @@ ratmd.bloghub:
                 default: theme.ratmd-newshub::lang.custom_meta.post_layout.default
                 fullwidth: theme.ratmd-newshub::lang.custom_meta.post_layout.fullwidth
                 heroimage: theme.ratmd-newshub::lang.custom_meta.post_layout.heroimage
+                featured: theme.ratmd-newshub::lang.custom_meta.post_layout.featured
         images:
             type: dropdown
             tab: theme.ratmd-newshub::lang.custom_meta.tab

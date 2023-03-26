@@ -13,6 +13,7 @@ return [
     "custom_meta.post_layout.default" => "Default Layout",
     "custom_meta.post_layout.fullwidth" => "Fullwidth Layout",
     "custom_meta.post_layout.heroimage" => "Hero-Image Layout",
+    "custom_meta.post_layout.featured" => "Featured Layout",
     "custom_meta.images.label" => "Featured Images View",
     "custom_meta.images.comment" => "Change the way how the featured images (except the first one) are shown.",
     "custom_meta.images.carousel" => "Show as Bootstrap Carousel",

@@ -8,16 +8,16 @@
 {% endif %}
 
 {# Set Spacings #}
-{% if config.spacings.outerBefore and config.spacings.outerBefore >= 0 %}
+{% if config.spacings.outerBefore is defined and config.spacings.outerBefore >= 0 %}
     {% set classNames = classNames ~ ' mt-' ~ config.spacings.outerBefore %}
 {% endif %}
-{% if config.spacings.innerBefore and config.spacings.innerBefore >= 0 %}
+{% if config.spacings.innerBefore is defined and config.spacings.innerBefore >= 0 %}
     {% set classNames = classNames ~ ' pt-' ~ config.spacings.innerBefore %}
 {% endif %}
-{% if config.spacings.innerAfter and config.spacings.innerAfter >= 0 %}
+{% if config.spacings.innerAfter is defined and config.spacings.innerAfter >= 0 %}
     {% set classNames = classNames ~ ' pb-' ~ config.spacings.innerAfter %}
 {% endif %}
-{% if config.spacings.outerAfter and config.spacings.outerAfter >= 0 %}
+{% if config.spacings.outerAfter is defined and config.spacings.outerAfter >= 0 %}
     {% set classNames = classNames ~ ' mb-' ~ config.spacings.outerAfter %}
 {% endif %}
 
@@ -29,12 +29,12 @@
 {% endif %}
 
 {# Set Card Size #}
-{% if config.size and config.size != 'none' %}
+{% if config.size is defined and config.size != 'none' %}
     {% set classNames = classNames ~ ' card-' ~ config.size %}
 {% endif %}
 
 {# Set Card Style #}
-{% if config.simple_style %}
+{% if config.simple_style is defined %}
     {% set classNames = classNames ~ ' card-simple' %}
 {% else %}
     {% if config.color != 'default' %}
@@ -46,8 +46,8 @@
 {# Set Data #}
 {% set title = config.title.label is defined ? config.title.label : config.title %}
 {% set layout = config.title.layout is defined ? config.title.layout : config.layout %}
-{% set title = config.subtitle.label is defined ? config.subtitle.label : config.subtitle %}
-{% set layout = config.subtitle.layout is defined ? config.subtitle.layout : config.sublayout %}
+{% set subtitle = config.subtitle.label is defined ? config.subtitle.label : config.subtitle %}
+{% set sublayout = config.subtitle.layout is defined ? config.subtitle.layout : config.sublayout %}
 
 {# Render content Element #}
 <div{% if id|length > 0 %} id="{{ id }}"{% endif %} class="{{ classNames|trim }}">
@@ -58,13 +58,13 @@
     <div class="card-body">
         {% if title|length > 0 %}
             {% if layout == 'default' %}
-                <div class="card-title mt-0 font-sans-serif h5 {{ subtitle|length > 0 ? 'mb-1' : 'mb-3' }}">{{ title }}</div>
+                <div class="card-title mt-0 font-sans-serif h5 {{ subtitle is defined and subtitle|length > 0 ? 'mb-1' : 'mb-3' }}">{{ title }}</div>
             {% elseif layout != 'hidden' %}
                 <{{ layout }} class="card-title">{{ title }}</{{ layout }}>
             {% endif %}
         {% endif %}
         
-        {% if subtitle|length > 0 %}
+        {% if subtitle is defined and subtitle|length > 0 %}
             {% if sublayout == 'default' %}
                 <div class="card-subtitle mt-0 font-sans-serif h6 mb-3{{ muteSubtitle ? ' text-muted': '' }}">{{ subtitle }}</div>
             {% elseif sublayout != 'hidden' %}

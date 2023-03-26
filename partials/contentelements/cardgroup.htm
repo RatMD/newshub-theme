@@ -7,16 +7,16 @@
 {% endif %}
 
 {# Set Spacings #}
-{% if config.spacings.outerBefore and config.spacings.outerBefore >= 0 %}
+{% if config.spacings.outerBefore is defined and config.spacings.outerBefore >= 0 %}
     {% set classNames = classNames ~ ' mt-' ~ config.spacings.outerBefore %}
 {% endif %}
-{% if config.spacings.innerBefore and config.spacings.innerBefore >= 0 %}
+{% if config.spacings.innerBefore is defined and config.spacings.innerBefore >= 0 %}
     {% set classNames = classNames ~ ' pt-' ~ config.spacings.innerBefore %}
 {% endif %}
-{% if config.spacings.innerAfter and config.spacings.innerAfter >= 0 %}
+{% if config.spacings.innerAfter is defined and config.spacings.innerAfter >= 0 %}
     {% set classNames = classNames ~ ' pb-' ~ config.spacings.innerAfter %}
 {% endif %}
-{% if config.spacings.outerAfter and config.spacings.outerAfter >= 0 %}
+{% if config.spacings.outerAfter is defined and config.spacings.outerAfter >= 0 %}
     {% set classNames = classNames ~ ' mb-' ~ config.spacings.outerAfter %}
 {% endif %}
 

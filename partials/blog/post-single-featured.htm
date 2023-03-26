@@ -1,0 +1,122 @@
+<section class="section section-posts">
+    <header class="py-1 py-lg-6 bg-light dark:bg-dark">
+        <div class="container">
+            <div class="post-header{% if post.featured_images %} post-has-thumbnail{% endif %}">
+                <h1 class="post-title">{{ post.title }}</h1>
+
+                <time class="post-published" datetime="{{ post.published_at }}">
+                    {{ post.published_at | date(this.theme.datetime_format) }}
+                </time>
+            </div>
+
+            {% if post.featured_images %}
+                <div class="post-thumbnail">
+                    <img src="{{ post.featured_images.0.getPath() }}" alt="{{ post.title }}" />
+                </div>
+            {% endif %}
+        </div>
+    </header>
+
+    <article class="py-2 py-lg-6 section section-with-sidebar">
+        <div class="container">
+            <div class="main-area post-content py-4 py-lg-0">
+                {% if this.theme.share_post %}
+                    <div class="share-links">
+                        <div class="share-title">Share this Article</div>
+                        
+                        <a href="https://twitter.com/intent/tweet?text={{ post.title|url_encode }}&url={{ post.url|url_encode }}" target="_blank" class="share-twitter">
+                            {% if hasPartial('icons/socials/twitter') %}
+                                {% partial 'icons/socials/twitter' %}
+                            {% else %}
+                                {% if hasPartial('icons/bootstrap/twitter') %}
+                                    {% partial 'icons/bootstrap/twitter' %}
+                                {% else %}
+                                    Twitter
+                                {% endif %}
+                            {% endif %}
+                        </a>
+
+                        <a href="https://www.facebook.com/sharer/sharer.php?u={{ post.url|url_encode }}" target="_blank" class="share-facebook">
+                            {% if hasPartial('icons/socials/facebook') %}
+                                {% partial 'icons/socials/facebook' %}
+                            {% else %}
+                                {% if hasPartial('icons/bootstrap/facebook') %}
+                                    {% partial 'icons/bootstrap/facebook' %}
+                                {% else %}
+                                    Facebook
+                                {% endif %}
+                            {% endif %}
+                        </a>
+
+                        <a href="http://www.tumblr.com/share/link?url={{ post.url|url_encode }}" target="_blank" class="share-tumblr">
+                            {% if hasPartial('icons/socials/tumblr') %}
+                                {% partial 'icons/socials/tumblr' %}
+                            {% else %}
+                                {% if hasPartial('icons/bootstrap/tumblr') %}
+                                    {% partial 'icons/bootstrap/tumblr' %}
+                                {% else %}
+                                    Tumblr
+                                {% endif %}
+                            {% endif %}
+                        </a>
+
+                        <a href="https://www.linkedin.com/sharing/share-offsite/?url={{ post.url|url_encode }}" target="_blank" class="share-linkedin">
+                            {% if hasPartial('icons/socials/linkedin') %}
+                                {% partial 'icons/socials/linkedin' %}
+                            {% else %}
+                                {% if hasPartial('icons/bootstrap/linkedin') %}
+                                    {% partial 'icons/bootstrap/linkedin' %}
+                                {% else %}
+                                    LinkedIn
+                                {% endif %}
+                            {% endif %}
+                        </a>
+                    </div>
+                {% endif %}
+
+                {{ post.content_html | raw }}
+
+                {% if post.ratmd_bloghub_meta_data.images and post.featured_images|length > 1 %}
+                    {% if post.ratmd_bloghub_meta_data.images == 'carousel' %}
+                        {% partial "blog/components/carousel" images=post.featured_images|slice(1) %}
+                    {% elseif post.ratmd_bloghub_meta_data.images == 'gallery' %}
+                        {% partial "blog/components/gallery" images=post.featured_images|slice(1) %}
+                    {% endif %}
+                {% endif %}
+
+                {% component 'bloghubCommentSection' %}
+            </div>
+            <aside class="sidebar-area post-aside{% if post.featured_images %} post-has-thumbnail{% endif %}">
+                {% partial 'sidebars/post' %}
+            </aside>
+        </div>
+    </article>
+
+    {% if this.theme.similar_articles %}
+        <footer class="pb-6">
+            <div class="container">
+                {% set similarPosts = post.bloghub_similar_posts() %}
+                {% if similarPosts|length > 0 %}
+                    <h2 class="mb-5">{{ 'posts.similar' | _ }}</h2>
+                    <div class="latest-posts">
+                        {% partial 'blog/sections/posts-columns' 
+                            posts=similarPosts
+                            prefix='similar'
+                            datetime='short'
+                        %}
+                    </div>
+                {% else %}
+                    {% set randomPosts = post.bloghub_random_posts() %}
+                    {% if randomPosts|length > 0 %}
+                        <h2 class="mb-5">{{ 'posts.random' | _ }}</h2>
+                        {% partial 'blog/sections/posts-columns' 
+                            posts=randomPosts
+                            prefix='random'
+                            datetime='short'
+                        %}
+                    {% endif %}
+                {% endif %}
+            </div>
+        </footer>
+    {% endif %}
+</section>

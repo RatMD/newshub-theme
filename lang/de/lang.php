@@ -13,6 +13,7 @@ return [
     "custom_meta.post_layout.default" => "Standard-Layout",
     "custom_meta.post_layout.fullwidth" => "Vollbreites Layout",
     "custom_meta.post_layout.heroimage" => "Hero-Bild Layout",
+    "custom_meta.post_layout.featured" => "Hervorgehobenes Layout",
     "custom_meta.images.label" => "Zugehörige Bilderansicht",
     "custom_meta.images.comment" => "Verändere die Darstellung der zugehörigen Bilder (ausgenommen das erste).",
     "custom_meta.images.carousel" => "Als Bootstrap Karussell anzeigen",

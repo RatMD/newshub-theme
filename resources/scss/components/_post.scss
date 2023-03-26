@@ -77,6 +77,10 @@
                 font-size: 1.0rem;
                 max-width: 100%;
 
+                @include media-breakpoint-up(xl) {
+                    max-width: calc(100% - 400px);
+                }
+
                 h1,
                 h2,
                 h3,
