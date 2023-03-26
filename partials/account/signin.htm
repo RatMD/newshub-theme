@@ -1,0 +1,42 @@
+{{ form_ajax('onSignin') }}
+    {% if loginAttribute == 'email' %}
+        <div class="form-group">
+            <label for="accountSignInEmail">{{ 'site.user.email_label' | _ }}</label>
+            <input id="accountSignInEmail" type="email" name="login" class="form-control" 
+                placeholder="{{ 'site.user.email_placeholder' | _ }}" autocomplete="email" required />
+        </div>
+    {% elseif loginAttribute == 'username' %}
+        <div class="form-group">
+            <label for="accountSignInUsername">{{ 'site.user.username_label' | _ }}</label>
+            <input id="accountSignInUsername" type="text" name="login" class="form-control" 
+                placeholder="{{ 'site.user.username_placeholder' | _ }}" autocomplete="username" required />
+        </div>
+    {% else %}
+        <div class="form-group">
+            <label for="accountSignInUser">{{ 'site.user.user_label' | _ }}</label>
+            <input id="accountSignInUser" type="text" name="login" class="form-control" 
+                placeholder="{{ 'site.user.user_placeholder' | _ }}" autocomplete="username" required />
+        </div>
+    {% endif %}
+
+    <div class="form-group">
+        <label for="accountSignInPassword">{{ 'site.user.password_label' | _ }}</label>
+        <input id="accountSignInPassword" type="password" name="password" class="form-control" 
+            placeholder="{{ 'site.user.password_placeholder' | _ }}" autocomplete="current-password" required />
+    </div>
+
+    {% if rememberLoginMode == 'ask' %}
+        <div class="form-group">
+            <div class="form-check">
+                <input id="accountSignInRemember" class="form-check-input" type="checkbox" name="remember" value="1" />
+                <label for="accountSignInRemember" class="form-check-label">
+                    {{ 'site.user.logged_in_label' | _ }}
+                </label>
+            </div>
+        </div>
+    {% endif %}
+
+    <div class="form-group text-end">
+        <button type="submit" name="action" value="register" class="btn btn-dark">{{ 'site.user.sign_in_submit' | _ }}</button>
+    </div>
+{{ form_close() }}

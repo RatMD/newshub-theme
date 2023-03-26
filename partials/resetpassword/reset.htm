@@ -1,0 +1,22 @@
+<div id="account-reset-tab-pane" class="tab-pane fade show active" role="tabpanel" tabindex="0">
+    <form
+        data-request="{{ __SELF__ }}::onResetPassword"
+        data-request-update="'{{ __SELF__ }}::complete': '#partialUserResetForm'"
+    >
+        <div class="form-group">
+            <label for="accountResetCode">{{ 'site.user.code_label' | _ }}</label>
+            <input id="accountResetCode" type="text" name="code" value="{{ __SELF__.code }}" class="form-control" 
+                placeholder="{{ 'site.user.code_placeholder' | _ }}" autocomplete="one-time-code" required />
+        </div>
+
+        <div class="form-group">
+            <label for="accountResetPassword">{{ 'site.user.new_password_label' | _ }}</label>
+            <input id="accountResetPassword" type="password" name="password" class="form-control" 
+                placeholder="{{ 'site.user.new_password_placeholder' | _ }}" autocomplete="new-password" required />
+        </div>
+        
+        <div class="form-group text-end">
+            <button type="submit" name="action" value="reset" class="btn btn-dark">{{ 'site.user.reset_submit' | _ }}</button>
+        </div>
+    </form>
+</div>

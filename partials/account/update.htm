@@ -1,0 +1,39 @@
+{{ form_ajax('onUpdate') }}
+    <div class="form-group">
+        <label for="accountUpdateName">{{ 'site.user.name_label' | _ }}</label>
+        <input id="accountUpdateName" type="text" name="name" value="{{ user.name }}" class="form-control" 
+            placeholder="{{ 'site.user.name_placeholder' | _ }}" autocomplete="name" required />
+    </div>
+
+    <div class="form-group">
+        <label for="accountUpdateEmail">{{ 'site.user.email_label' | _ }}</label>
+        <input id="accountUpdateEmail" type="email" name="email" value="{{ user.email }}" class="form-control" 
+            placeholder="{{ 'site.user.email_placeholder' | _ }}" autocomplete="email" required />
+    </div>
+
+    <div class="form-group">
+        <label for="accountUpdatePassword">{{ 'site.user.new_password_label' | _ }}</label>
+        <input id="accountUpdatePassword" type="password" name="password" class="form-control" 
+            placeholder="{{ 'site.user.new_password_placeholder' | _ }}" autocomplete="new-password" />
+    </div>
+
+    <div class="form-group">
+        <label for="accountUpdateConfirmPassword">{{ 'site.user.confirm_new_password_label' | _ }}</label>
+        <input id="accountUpdateConfirmPassword" type="password" name="password_confirmation" class="form-control" 
+            placeholder="{{ 'site.user.confirm_new_password_placeholder' | _ }}" autocomplete="new-password" />
+    </div>
+
+    <hr class="separator" />
+
+    <div class="form-group">
+        <label for="accountUpdateCurrentPassword">{{ 'site.user.current_password_label' | _ }}</label>
+        <input id="accountUpdateCurrentPassword" type="password" name="password_current" class="form-control" 
+            placeholder="{{ 'site.user.current_password_placeholder' | _ }}" autocomplete="current-password" required />
+    </div>
+
+    <hr class="separator" />
+
+    <div class="form-group text-end">
+        <button type="submit" name="action" value="update" class="btn btn-dark">{{ 'site.user.update_account_submit' | _ }}</button>
+    </div>
+{{ form_close() }}

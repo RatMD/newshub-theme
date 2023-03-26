@@ -1,0 +1,35 @@
+
+// ----------------------------------------
+//  RainLab/BlogVideo Stylings
+// ----------------------------------------
+
+.video-wrapper {
+    position: relative;
+    padding-top: 25px;
+    margin-bottom: 15px;
+    height: 0;
+}
+
+.video-wrapper.ratio-5-4 {
+    padding-bottom: 80%;
+}
+
+.video-wrapper.ratio-4-3 {
+    padding-bottom: 70%;
+}
+
+.video-wrapper.ratio-16-10 {
+    padding-bottom: 62.5%;
+}
+
+.video-wrapper.ratio-16-9 {
+    padding-bottom: 56.25%;
+}
+
+.video-wrapper iframe {
+    width: 100% !important;
+    height: 100% !important;
+    top: 0;
+    left: 0;
+    position: absolute;
+}

@@ -1,0 +1,16 @@
+<div id="account-restore-tab-pane" class="tab-pane fade show active" role="tabpanel" tabindex="0">
+    <form
+        data-request="{{ __SELF__ }}::onRestorePassword"
+        data-request-update="'{{ __SELF__ }}::reset': '#partialUserResetForm'"
+    >
+        <div class="form-group">
+            <label for="accountRememberEmail">{{ 'site.user.email_label' | _ }}</label>
+            <input id="accountRememberEmail" type="email" name="email" class="form-control" 
+                placeholder="{{ 'site.user.email_placeholder' | _ }}" autocomplete="email" required />
+        </div>
+        
+        <div class="form-group text-end">
+            <button type="submit" name="action" value="forgot" class="btn btn-dark">{{ 'site.user.forgot_submit' | _ }}</button>
+        </div>
+    </form>
+</div>

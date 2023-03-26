@@ -1,0 +1,85 @@
+{% set activeTab = canRegister ? 'register' : 'signin' %}
+{% if canRegister and this.request.query.has('tab') %}
+    {% if this.request.tab == 'signin' or this.request.tab == 'sign-in' or this.request.tab == 'login' %}
+        {% set activeTab = 'signin' %}
+    {% endif %}
+{% endif %}
+
+{% flash %}
+    <div class="row justify-content-center">
+        <div class="col-12 col-md-10 col-lg-8 col-xl-6">
+            <div class="callout callout-{{ type == 'error' ? 'danger' : type }}">
+                {{ message }}
+            </div>
+        </div>
+    </div>
+{% endflash %}
+
+{% if not user %}
+    <div class="row justify-content-center">
+        <div class="col-12 col-md-10 col-lg-8 col-xl-6">
+            <ul id="accountUserFormTabs" class="nav nav-tabs nav-tabs-account" role="tablist">
+                {% if canRegister %}
+                    <li class="nav-item" role="presentation">
+                        <button id="account-register-tab" class="nav-link{{ activeTab == 'register' ? ' active' : '' }}" data-bs-toggle="tab" data-bs-target="#account-register-tab-pane" type="button" role="tab" aria-controls="account-register-tab-pane" aria-selected="{{ activeTab == 'register' ? 'true' : 'false' }}">
+                            {{ 'site.user.create_account' | _ }}
+                        </button>
+                    </li>
+                {% endif %}
+
+                <li class="nav-item" role="presentation">
+                    <button id="account-login-tab" class="nav-link{{ activeTab == 'signin' ? ' active' : '' }}" data-bs-toggle="tab" data-bs-target="#account-login-tab-pane" type="button" role="tab" aria-controls="account-login-tab-pane" aria-selected="{{ activeTab == 'signin' ? 'true' : 'false' }}">
+                        {{ 'site.user.sign_in' | _ }}
+                    </button>
+                </li>
+
+                <li class="nav-item ms-auto" role="presentation">
+                    <a href="{{ 'account-remember'|page({ code: null }) }}" class="nav-link">
+                        {{ 'site.user.forgot_account' | _ }}
+                    </a>
+                </li>
+            </ul>
+
+            <div id="accountUserFormTabContent" class="tab-content">
+                <div id="account-register-tab-pane" class="tab-pane fade{{ activeTab == 'register' ? ' show active' : '' }}" role="tabpanel" aria-labelledby="account-register-tab" tabindex="0">
+                    {% partial __SELF__ ~ '::register' %}
+                </div>
+
+                <div class="tab-pane fade{{ activeTab == 'signin' ? ' show active' : '' }}" id="account-login-tab-pane" role="tabpanel" aria-labelledby="account-login-tab" tabindex="0">
+                    {% partial __SELF__ ~ '::signin' %}
+                </div>
+            </div>
+        </div>
+    </div>
+{% else %}
+    {% partial __SELF__ ~ '::activation_check' %}
+
+    <div class="row justify-content-center">
+        <div class="col-12 col-md-10 col-lg-8 col-xl-6">
+            <ul id="accountUpdateFormTabs" class="nav nav-tabs nav-tabs-account" role="tablist">
+                <li class="nav-item" role="presentation">
+                    <button id="account-update-tab" class="nav-link active" data-bs-toggle="tab" data-bs-target="#account-update-tab-pane" type="button" role="tab" aria-controls="account-update-tab-pane" aria-selected="true">
+                        {{ 'site.user.update' | _ }}
+                    </button>
+                </li>
+
+                <li class="nav-item ms-auto" role="presentation">
+                    <button id="account-delete-tab" class="nav-link" data-bs-toggle="tab" data-bs-target="#account-delete-tab-pane" type="button" role="tab" aria-controls="account-delete-tab-pane" aria-selected="false">
+                        {{ 'site.user.delete' | _ }}
+                    </button>
+                </li>
+            </ul>
+
+            <div id="accountUserFormTabContent" class="tab-content">
+                <div id="account-update-tab-pane" class="tab-pane fade show active" role="tabpanel" aria-labelledby="account-update-tab" tabindex="0">
+                    {% partial __SELF__ ~ '::update' %}
+                </div>
+                
+                <div id="account-delete-tab-pane" class="tab-pane fade" role="tabpanel" aria-labelledby="account-delete-tab" tabindex="0">
+                    {% partial __SELF__ ~ '::delete' %}
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% endif %}

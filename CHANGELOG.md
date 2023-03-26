@@ -7,6 +7,8 @@ Version 1.3.0 - In Progress
 - Add: Support for [BlakeJones.MagicForms](https://octobercms.com/plugin/blakejones-magicforms) OC Plugin.
 - Add: Support for [JanVince.SmallContactForm](https://octobercms.com/plugin/janvince-smallcontactform) OC Plugin.
 - Add: Support for [JanVince.SmallGDPR](https://octobercms.com/plugin/janvince-smallgdpr) OC Plugin.
+- Add: Support for [RainLab.BlogVideoExtension](https://octobercms.com/plugin/rainlab-blogvideoextension) OC Plugin.
+- Add: Support for [RainLab.User](https://octobercms.com/plugin/rainlab-user) (v1 and v2) OC Plugin.
 - Add: Config - "Prefer SitePicker over LocalePicker" for OC v3.1 w/ RainLab.Translate v1.x installations.
 - Add: Config - "SitePicker Appearance" to show Language- or full Site- names, limited to the new SitePicker component.
 - Add: Config - "Site/LocalePicker Style" to change how the component should be rendered (Dropdown, Modal, Switch).
@@ -30,6 +32,7 @@ Version 1.3.0 - In Progress
 - Add: "Image" sidebar widget to display a custom image with text.
 - Add: "Related Posts" sidebar widget to display a list of related posts (in single blog posts only).
 - Add: Navbar toggler element ([CodePen Source](https://codepen.io/ainalem/pen/LJYRxz)).
+- Add: "User Action" header integration (requires RainLab.User), available on Extended navbar style only.
 - Add: Default favicon + webmanifest set.
 - Update: Accordion content element (new structure).
 - Update: Alert / Callout content element (new structure).
@@ -88,13 +91,10 @@ Version 1.3.0 - In Progress
 - Fix: Rename / Remove `.alert-*` stylings on callout component.
 
 ### ToDo
-- Add: Support for [RainLab.BlogVideoExtension](https://octobercms.com/plugin/rainlab-blogvideoextension) OC Plugin.
 - Add: Support for [RainLab.Forum](https://octobercms.com/plugin/rainlab-forum) OC Plugin.
-- Add: Support for [RainLab.User](https://octobercms.com/plugin/rainlab-user) OC Plugin.
 - Add: New Blog Posts Content Element (show posts by author, category, date or tag).
 - Add: New Blog Lists Content Element (show list of authors, categories or tags).
 - Add: New File List Content Element (show download file list with icon and stuff).
-- Add: "User Action" header integration (requires RainLab.User), available on Extended navbar style only.
 - Add: New Sidebar Widget Builder theme option.
 - Update: Sidebar to Widget environment for Homepage, Archive, Static Page and Blog Post pages.
 - Update: Offcanvas and Modal design (+ dark design variant).

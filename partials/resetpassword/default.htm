@@ -1,0 +1,47 @@
+{% flash %}
+    <div class="row justify-content-center">
+        <div class="col-12 col-md-10 col-lg-8 col-xl-6">
+            <div class="callout callout-{{ type == 'error' ? 'danger' : type }}">
+                {{ message }}
+            </div>
+        </div>
+    </div>
+{% endflash %}
+
+<div class="row justify-content-center">
+    <div class="col-12 col-md-10 col-lg-8 col-xl-6">
+        <ul id="accountRememberFormTabs" class="nav nav-tabs nav-tabs-account" role="tablist">
+            <li class="nav-item me-auto" role="presentation">
+                <a href="{{ 'account-remember' | page }}" class="nav-link active">
+                    {% if __SELF__.code == null %}
+                        {{ 'site.user.forgot_account' | _ }}
+                    {% else %}
+                        {{ 'site.user.reset_account' | _ }}
+                    {% endif %}
+                </a>
+            </li>
+
+            {% if canRegister %}
+                <li class="nav-item" role="presentation">
+                    <a href="{{ 'account'|page({ code: null }) }}?tab=register" class="nav-link">
+                        {{ 'site.user.create_account' | _ }}
+                    </a>
+                </li>
+            {% endif %}
+
+            <li class="nav-item" role="presentation">
+                <a href="{{ 'account'|page({ code: null }) }}?tab=login" class="nav-link">
+                    {{ 'site.user.sign_in' | _ }}
+                </a>
+            </li>
+        </ul>
+
+        <div id="accountRememberFormContent" class="tab-content">
+            {% if __SELF__.code == null %}
+                {% partial __SELF__ ~ '::restore' %}
+            {% else %}
+                {% partial __SELF__ ~ '::reset' %}
+            {% endif %}
+        </div>
+    </div>
+</div>

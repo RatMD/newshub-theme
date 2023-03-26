@@ -29,6 +29,16 @@
                 display: flex;
                 align-items: center;
                 transition: background-color .15s ease-in-out;
+
+                &.hover,
+                &.hover.focus,
+                &.hover.active {
+                    color: var(--bs-dropdown-link-hover-color);
+                    background-color: var(--bs-dropdown-link-hover-bg);
+                }
+                &.underline {
+                    border-bottom: 1px solid $gray-300;
+                }
             }
 
             &:first-child {
@@ -46,8 +56,9 @@
                     transition: border-color .15s ease-in-out;
                 }
 
-                &:hover .dropdown-item::before {
-                    border-bottom-color: $gray-200;
+                .dropdown-item.hover::before,
+                &:hover a.dropdown-item::before {
+                    border-bottom-color: var(--bs-dropdown-link-hover-bg);
                 }
 
                 .dropdown-item.active::before {

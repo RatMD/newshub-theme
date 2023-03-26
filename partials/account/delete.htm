@@ -1,0 +1,20 @@
+
+{{ form_ajax('onDeactivate') }}
+    <div class="form-group border">
+        <p class="m-0 p-4 fw-semibold">{{ 'site.user.delete_notice' | _ }}</p>
+    </div>
+
+    <hr class="separator" />
+
+    <div class="form-group">
+        <label for="accountDeletePassword">{{ 'site.user.current_password_label' | _ }}</label>
+        <input id="accountDeletePassword" type="text" name="name" class="form-control" 
+            placeholder="{{ 'site.user.current_password_placeholder' | _ }}" autocomplete="current-password" required />
+    </div>
+
+    <div class="form-group text-end">
+        <button type="submit" name="action" value="delete" class="btn btn-danger">
+            <b>{{ 'site.user.delete_account_submit' | _ }}</b>
+        </button>
+    </div>
+{{ form_close() }}

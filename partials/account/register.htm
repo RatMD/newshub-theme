@@ -1,0 +1,32 @@
+
+{% if canRegister %}
+    {{ form_ajax('onRegister') }}
+        <div class="form-group">
+            <label for="accountRegisterUsername">{{ 'site.user.username_label' | _ }}</label>
+            <input id="accountRegisterUsername" type="text" name="username" class="form-control" 
+                placeholder="{{ 'site.user.username_placeholder' | _ }}" autocomplete="username" required />
+        </div>
+
+        <div class="form-group">
+            <label for="accountRegisterEmail">{{ 'site.user.email_label' | _ }}</label>
+            <input id="accountRegisterEmail" type="email" name="email" class="form-control" 
+                placeholder="{{ 'site.user.email_placeholder' | _ }}" autocomplete="email" required />
+        </div>
+
+        <div class="form-group">
+            <label for="accountRegisterName">{{ 'site.user.name_label' | _ }}</label>
+            <input id="accountRegisterName" type="text" name="name" class="form-control" 
+                placeholder="{{ 'site.user.name_placeholder' | _ }}" autocomplete="name" />
+        </div>
+
+        <div class="form-group">
+            <label for="accountRegisterPassword">{{ 'site.user.password_label' | _ }}</label>
+            <input id="accountRegisterPassword" type="password" name="password" class="form-control" 
+                placeholder="{{ 'site.user.password_placeholder' | _ }}" autocomplete="new-password" required />
+        </div>
+
+        <div class="form-group text-end">
+            <button type="submit" name="action" value="register" class="btn btn-dark">{{ 'site.user.create_account_submit' | _ }}</button>
+        </div>
+    {{ form_close() }}
+{% endif %}

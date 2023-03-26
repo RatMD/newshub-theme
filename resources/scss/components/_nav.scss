@@ -1,0 +1,44 @@
+
+// ----------------------------------------
+//  Navs/Tabs Stylings
+// ----------------------------------------
+
+.nav-tabs.nav-tabs-account,
+.nav-tabs.nav-tabs-offcanvas {
+    --bs-nav-link-color: #{var(--bs-secondary, $secondary)};
+    --bs-nav-tabs-border-color: transparent;
+    --bs-nav-tabs-link-active-border-color: transparent;
+    --bs-nav-tabs-link-active-bg: #{var(--bs-gray-100, $gray-100)};
+
+    & + .tab-content {
+        background-color: #{var(--bs-gray-100, $gray-100)};
+
+        .tab-pane > * {
+            padding: $spacer;
+
+            .separator {
+                margin-top: $spacer;
+                margin-bottom: $spacer;
+                margin-left: -$spacer;
+                margin-right: -$spacer;
+                border-color: $gray-500;
+            }
+        }
+    }
+}
+.nav-tabs.nav-tabs-account {
+    & + .tab-content {
+        .tab-pane > * {
+            @include media-breakpoint-up(md) {
+                padding: $spacer * 2;
+
+                .separator {
+                    margin-top: $spacer * 2;
+                    margin-bottom: $spacer * 2;
+                    margin-left: -($spacer * 2);
+                    margin-right: -($spacer * 2);
+                }
+            }
+        }
+    }
+}
