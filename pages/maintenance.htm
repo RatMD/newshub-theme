@@ -8,30 +8,53 @@ is_hidden = 1
 localeUrl[de] = "/maintenance"
 localeTitle[de] = "Wartungsarbeiten"
 ==
-<!DOCTYPE html>
-<html lang="en" class="no-js">
-<head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    
-    <title>{{ this.page.meta_title|default(this.page.title) }}</title>
+<?php
+function onInit()
+{
+    $this['octoberVersion'] = \System::VERSION;
+    if (version_compare($this['octoberVersion'], '3.0.0', '<')) {
+        $this['rainlabTranslateVersion'] = \System\Models\PluginVersion::where('code', 'RainLab.Translate')->first()->version;
+    } else {
+        $this['rainlabTranslateVersion'] = \System\Classes\VersionManager::instance()->getLatestVersion('RainLab.Translate');
+    }
 
-    <link rel="stylesheet" href="{{ 'assets/css/newshub.min.css' | theme }}" />
-    <style type="text/css">
-        :root {
-            --bs-primary: {{ this.theme.color_primary }};
-            --bs-secondary: {{ this.theme.color_secondary }};
-            --bs-success: {{ this.theme.color_success }};
-            --bs-info: {{ this.theme.color_info }};
-            --bs-warning: {{ this.theme.color_warning }};
-            --bs-danger: {{ this.theme.color_danger }};
-            --bs-light: {{ this.theme.color_light }};
-            --bs-dark: {{ this.theme.color_dark }};
-        }
-    </style>
+    $this['legacy'] = version_compare($this['octoberVersion'], '3.0.0', '<');
+    $this['legacyTranslate'] = version_compare($this['rainlabTranslateVersion'], '2.0.0', '<');
+
+    $this['hexToRgb'] = function ($hex) {
+        [$r, $g, $b] = sscanf($hex, "#%02x%02x%02x");
+        return "$r, $g, $b";
+    };
+
+    $this['newshub'] = [];
+    if (!empty($this['localePicker'])) {
+        $this['currentLocale'] = $this['localePicker']->activeLocale();
+    } else {
+        $this['currentLocale'] = app()->getLocale();
+    }
+}
+?>
+==
+<!DOCTYPE html>
+<html lang="{{ currentLocale }}" class="no-js">
+<head>
+    {% partial 'page/meta' %}
 </head>
-<body class="vh-100">
+<body class="vh-100 theme-{{ this.theme.id }} {{ 'page-' ~ this.page.id }} layout-{{ this.layout.id }} {{ this.theme.enable_dark_scheme and this.theme.dark_scheme ? 'dark' : 'light' }}{{ bodyClasses is defined ? ' ' ~ bodyClasses: '' }}">
+    <script>
+        {% if this.theme.enable_dark_scheme %}
+            var scheme = localStorage.getItem('newshub-color-scheme');
+            if (scheme) {
+                document.body.classList.remove(scheme === 'light'? 'dark': 'light');
+                document.body.classList.add(scheme);
+            }
+        {% endif %}
+
+        if (document.currentScript) {
+            document.currentScript.remove();
+        }
+    </script>
+
     <div class="vh-100 d-flex flex-column">
         <div class="flex-auto">
             <div class="container-fluid">

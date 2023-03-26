@@ -154,7 +154,7 @@ items:
                         title: 'Search Archive'
                         nesting: null
                         type: url
-                        url: /magazine/search?search=article
+                        url: '/magazine/search?search=article'
                         code: ''
                         reference: null
                         cmsPage: null
@@ -306,73 +306,31 @@ items:
                     isExternal: '0'
                 items:
                     -
-                        title: 'User Account'
-                        nesting: null
-                        type: url
-                        url: /
+                        title: 'Account Page'
+                        type: cms-page
                         code: ''
-                        reference: null
-                        cmsPage: null
-                        replace: null
+                        reference: account
                         viewBag:
+                            isHidden: '0'
+                            cssClass: ''
+                            isExternal: '0'
                             locale:
                                 de:
                                     title: ''
                                     url: ''
-                            isHidden: '0'
-                            cssClass: ''
-                            isExternal: '0'
-                    -
-                        title: 'User Profile'
-                        nesting: null
-                        type: url
-                        url: /
-                        code: ''
-                        reference: null
-                        cmsPage: null
-                        replace: null
-                        viewBag:
-                            locale:
-                                de:
-                                    title: ''
-                                    url: ''
-                            isHidden: '0'
-                            cssClass: ''
-                            isExternal: '0'
-                    -
-                        title: 'Profile Settings'
-                        nesting: null
-                        type: url
-                        url: /
-                        code: ''
-                        reference: null
-                        cmsPage: null
-                        replace: null
-                        viewBag:
-                            locale:
-                                de:
-                                    title: ''
-                                    url: ''
-                            isHidden: '0'
-                            cssClass: ''
-                            isExternal: '0'
                     -
                         title: 'Community Forum'
-                        nesting: null
-                        type: url
-                        url: /
+                        type: cms-page
                         code: ''
-                        reference: null
-                        cmsPage: null
-                        replace: null
+                        reference: forum/channel
                         viewBag:
+                            isHidden: '0'
+                            cssClass: ''
+                            isExternal: '0'
                             locale:
                                 de:
                                     title: ''
                                     url: ''
-                            isHidden: '0'
-                            cssClass: ''
-                            isExternal: '0'
             -
                 title: Specials
                 nesting: null
@@ -392,56 +350,44 @@ items:
                     isExternal: '0'
                 items:
                     -
-                        title: '404 Page not Found'
-                        nesting: null
-                        type: url
-                        url: /
+                        title: '404 - Page not found'
+                        type: cms-page
                         code: ''
-                        reference: null
-                        cmsPage: null
-                        replace: null
+                        reference: '404'
                         viewBag:
+                            isHidden: '0'
+                            cssClass: ''
+                            isExternal: '0'
                             locale:
                                 de:
                                     title: ''
                                     url: ''
-                            isHidden: '0'
-                            cssClass: ''
-                            isExternal: '0'
                     -
-                        title: 'An error occured'
-                        nesting: null
-                        type: url
-                        url: /
+                        title: '500 - An error occurred'
+                        type: cms-page
                         code: ''
-                        reference: null
-                        cmsPage: null
-                        replace: null
+                        reference: error
                         viewBag:
+                            isHidden: '0'
+                            cssClass: ''
+                            isExternal: '0'
                             locale:
                                 de:
                                     title: ''
                                     url: ''
-                            isHidden: '0'
-                            cssClass: ''
-                            isExternal: '0'
                     -
-                        title: 'Maintenance Page'
-                        nesting: null
-                        type: url
-                        url: /
+                        title: '503 - Maintenance Page'
+                        type: cms-page
                         code: ''
-                        reference: null
-                        cmsPage: null
-                        replace: null
+                        reference: maintenance
                         viewBag:
+                            isHidden: '0'
+                            cssClass: ''
+                            isExternal: '0'
                             locale:
                                 de:
                                     title: ''
                                     url: ''
-                            isHidden: '0'
-                            cssClass: ''
-                            isExternal: '0'
                     -
                         title: 'Under Constructions'
                         nesting: null
