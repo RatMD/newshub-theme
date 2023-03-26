@@ -1,5 +1,5 @@
-{% if this.theme.sidebar_archives is defined and this.theme.sidebar_archives|length > 0 %}
-    {% for widget in this.theme.sidebar_archives %}
+{% if this.theme.sidebar_archive is defined and this.theme.sidebar_archive|length > 0 %}
+    {% for widget in this.theme.sidebar_archive %}
         {% if hasPartial('sidebars/widgets/' ~ widget._group) %}
             {% partial ('sidebars/widgets/' ~ widget._group) config=widget widget=widget._group %}
         {% else %}

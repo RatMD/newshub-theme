@@ -38,8 +38,8 @@
             flex: 0 0 100%;
         
             @include media-breakpoint-up(xl) {
-                flex: 1 1 calc(100% - 400px) !important;
-                max-width: calc(100% - 400px) !important;
+                flex: 1 1 auto;
+                max-width: auto;
             }
         }
 

@@ -1,5 +1,5 @@
 {% if post.categories %}
-    {% if wrap %}<div class="{{ wrap }}">{% endif %}
+    {% if wrap is defined %}<div class="{{ wrap }}">{% endif %}
     <div class="card card-simple">
         {% partial 'sidebars/widgets/_header' config=config %}
 
@@ -22,5 +22,5 @@
             </ul>
         </div>
     </div>
-    {% if wrap %}</div>{% endif %}
+    {% if wrap is defined %}</div>{% endif %}
 {% endif %}

@@ -1,3 +1,4 @@
+##
 url = "/magazine/date/:date|^\d{4}(\-\d{2}(\-\d{2})|(\_\d{1,2}))?/:page?"
 layout = "default"
 title = "Date Archive"
@@ -24,26 +25,34 @@ dateFilter = "{{ :date }}"
 function onEnd()
 {
     if (!empty($this->dateType)) {
-        $this->page->title = trans('archive.' . $this->dateType . '_archive');
+        $this->page->title = \RainLab\Translate\Models\Message::trans('archive.' . $this->dateType . '_archive');
         $this->page->title .= ': ' . $this->dateFormat;
         
         if ($this->page->meta_title) {
-            $this->page->meta_title = trans('archive.' . $this->dateType . '_archive');
+            $this->page->meta_title = \RainLab\Translate\Models\Message::trans('archive.' . $this->dateType . '_archive');
             $this->page->meta_title .= ': ' . $this->dateFormat;
         }
     }
 }
 ?>
 ==
-<section class="section section-posts py-6">
+<section class="section section-with-sidebar section-posts py-6">
     <div class="container">
-        <h1 class="mb-5">{{ ('archive.' ~ dateType ~ '_archive') | _ }}: {{ dateFormat }}</h1>
+        <div class="main-area">
+            <h1 class="mb-5">{{ ('archive.' ~ dateType ~ '_archive') | _ }}: {{ dateFormat }}</h1>
 
-        {% partial 'blog/sections/posts-list' 
-            posts=posts
-            prefix='date-archiv'
-            datetime='short'
-        %}
-        {% partial 'blog/components/pagination' posts=posts %}
+            {% partial 'blog/sections/posts-list' 
+                posts=posts
+                prefix='date-archiv'
+                datetime='short'
+            %}
+            {% partial 'blog/components/pagination' posts=posts %}
+        </div>
+        
+        {% if this.theme.sidebar_archive is defined and this.theme.sidebar_archive|length > 0 %}
+            <div class="sidebar-area">
+                {% partial 'sidebars/archive' %}
+            </div>
+        {% endif %}
     </div>
 </section>

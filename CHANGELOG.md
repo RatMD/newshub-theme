@@ -53,6 +53,7 @@ Version 1.3.0 - In Progress
 - Update: Tabs content element (new structure).
 - Update: Text with Teaser content element (new structure).
 - Update: Theme Options structure & layout.
+- Update: Sidebar to Widget environment for Homepage, Archive, Static Page and Blog Post pages.
 - Update: `Blog Posts` widget replaces `List Articles` (new builder structure).
 - Update: `Blog Authors` widget replaces `List Authors` (new builder structure).
 - Update: Show Avatars on Blog Authors list.
@@ -89,14 +90,13 @@ Version 1.3.0 - In Progress
 - Fix: Some translation / localization issues in both english and german language.
 - Fix: `CMS_STRICT_VARIABLES=true` .env security option errors.
 - Fix: Rename / Remove `.alert-*` stylings on callout component.
+- Fix: Table of Contents widget on static pages.
 
 ### ToDo
 - Add: Support for [RainLab.Forum](https://octobercms.com/plugin/rainlab-forum) OC Plugin.
 - Add: New Blog Posts Content Element (show posts by author, category, date or tag).
 - Add: New Blog Lists Content Element (show list of authors, categories or tags).
 - Add: New File List Content Element (show download file list with icon and stuff).
-- Add: New Sidebar Widget Builder theme option.
-- Update: Sidebar to Widget environment for Homepage, Archive, Static Page and Blog Post pages.
 - Update: Offcanvas and Modal design (+ dark design variant).
 - Update: Dark (and Light) Bootstrap stylings and improvements.
 - Update: Add "Number of Cards / Row" option on Card Group.

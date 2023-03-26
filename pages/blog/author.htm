@@ -1,3 +1,4 @@
+##
 url = "/magazine/author/:slug/:page?"
 layout = "default"
 title = "Author Archive"
@@ -33,19 +34,27 @@ function onEnd()
 }
 ?>
 ==
-<section class="section section-posts py-6">
+<section class="section section-with-sidebar section-posts py-6">
     <div class="container">
-        <h1 class="mb-5">{{ 'archive.author_archive' | _ }}: {{ author.bloghub_display() }}</h1>
+        <div class="main-area">
+            <h1 class="mb-5">{{ 'archive.author_archive' | _ }}: {{ author.bloghub_display() }}</h1>
 
-        {% if posts|length > 0 %}
-            {% partial 'blog/sections/posts-list' 
-                posts=posts
-                prefix='archiv'
-                datetime='short'
-            %}
-            {% partial 'blog/components/pagination' posts=posts %}
-        {% else %}
-            {% partial 'blog/components/empty' %}
+            {% if posts|length > 0 %}
+                {% partial 'blog/sections/posts-list' 
+                    posts=posts
+                    prefix='archiv'
+                    datetime='short'
+                %}
+                {% partial 'blog/components/pagination' posts=posts %}
+            {% else %}
+                {% partial 'blog/components/empty' %}
+            {% endif %}
+        </div>
+        
+        {% if this.theme.sidebar_archive is defined and this.theme.sidebar_archive|length > 0 %}
+            <div class="sidebar-area">
+                {% partial 'sidebars/archive' %}
+            </div>
         {% endif %}
     </div>
 </section>

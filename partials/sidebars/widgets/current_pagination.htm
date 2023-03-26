@@ -2,7 +2,7 @@
 {% set nextPost = post.bloghub.next(1, config.same_category == '1') %}
 
 {% if prevPost or nextPost %}
-    {% if wrap %}<div class="{{ wrap }}">{% endif %}
+    {% if wrap is defined %}<div class="{{ wrap }}">{% endif %}
     <div class="card card-simple">
         {% partial 'sidebars/widgets/_header' config=config %}
 
@@ -16,5 +16,5 @@
             {% endif %}
         </div>   
     </div>
-    {% if wrap %}</div>{% endif %}
+    {% if wrap is defined %}</div>{% endif %}
 {% endif %}

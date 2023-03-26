@@ -32,7 +32,7 @@ function onEnd()
 ?>
 ==
 {% if post.ratmd_bloghub_tags|length > 0 %}
-    {% if wrap %}<div class="{{ wrap }}">{% endif %}
+    {% if wrap is defined %}<div class="{{ wrap }}">{% endif %}
     <div class="card card-simple">
         {% partial 'sidebars/widgets/_header' config=config %}
 
@@ -68,5 +68,5 @@ function onEnd()
             </div>
         </div>
     </div>
-    {% if wrap %}</div>{% endif %}
+    {% if wrap is defined %}</div>{% endif %}
 {% endif %}

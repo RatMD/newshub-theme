@@ -8,8 +8,11 @@ function onEnd()
     $useJavaScript = $config['javascript_anchors'] === '1';
 
     // Fetch Header
-    if (!isset($this->content_elements)) {
+    if (empty($this->content_elements ?? null)) {
         $content = $this->page->content;
+        if (empty($content) && !empty($this->staticPage)) {
+            $content = $this->staticPage->content();
+        }
         preg_match_all('/<h([1-6])(?:[^\>]+)?>(.*?)<\/h\1>/', $content, $matches);
         $count = count($matches[0]);
     } else {
