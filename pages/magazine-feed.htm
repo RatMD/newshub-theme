@@ -1,0 +1,13 @@
+##
+url = "/feed"
+layout = "default"
+title = "RSS Feed"
+
+[viewBag]
+localeUrl[de] = "/feed"
+localeTitle[de] = "RSS Feed"
+
+[blogRssFeed]
+postsPerPage = 10
+==
+{% component "blogRssFeed" %}

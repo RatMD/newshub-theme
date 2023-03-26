@@ -34,6 +34,7 @@ Version 1.3.0 - In Progress
 - Add: Navbar toggler element ([CodePen Source](https://codepen.io/ainalem/pen/LJYRxz)).
 - Add: "User Action" header integration (requires RainLab.User), available on Extended navbar style only.
 - Add: Default favicon + webmanifest set.
+- Add: RSS Feed CMS page.
 - Update: Accordion content element (new structure).
 - Update: Alert / Callout content element (new structure).
 - Update: Card content element (new structure).
