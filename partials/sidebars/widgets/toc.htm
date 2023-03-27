@@ -29,7 +29,7 @@ function onEnd()
 
             $title = $ce['title']['label'] ?? $ce['title'];
             $layout = $ce['title']['layout'] ?? $ce['layout'];
-            if (empty($title) || empty($layout) || !is_string($layout) || $layout === 'hidden') {
+            if (empty($title) || empty($layout) || !is_string($layout) || $layout === 'hidden' || $layout === 'default') {
                 continue;
             }
 

@@ -63,26 +63,4 @@ items:
             isHidden: '0'
             cssClass: ''
             isExternal: '0'
-    -
-        title: 'Contact (JV)'
-        nesting: 0
-        type: static-page
-        url: null
-        code: ''
-        reference: contact-janvince
-        cmsPage: null
-        replace: 0
-        viewBag:
-            isHidden: '0'
-            cssClass: ''
-            isExternal: '0'
-    -
-        title: 'Contact (BJ)'
-        type: cms-page
-        code: ''
-        reference: contact
-        viewBag:
-            isHidden: '0'
-            cssClass: ''
-            isExternal: '0'
 name: 'Meta Menu'

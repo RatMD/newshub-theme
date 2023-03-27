@@ -10,28 +10,67 @@ localeUrl[de] = "/featured"
 localeTitle[de] = "NewsHub Features"
 ==
 {% put stylesheets %}
-{% default %}
 <style>
     @media (min-width: 1024px) {
         #page-features .card-header {
             height: 128px;
         }
     }
+    @keyframes pointy {
+        0% {
+            margin-top: 0px;
+        }
+        50% {
+            margin-top: 25px;
+        }
+        100% {
+            margin-top: 0px;
+        }
+    }
+    .post-header-readmore {
+        margin: 5rem auto 0 auto;
+        display: flex;
+        position: relative;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    .post-header-readmore svg {
+        top: 100%;
+        left: 50%;
+        width: 32px;
+        height: 32px;
+        position: absolute;
+        margin-left: -16px;
+        animation: 1.75s ease-in-out 0s infinite running pointy;
+    }
 </style>
 {% endput %}
+
 <section class="section section-page">
     <header class="py-6 bg-light dark:bg-dark">
         <div class="container">
             <div class="post-header">
-                <h1>NEWSHUB</h1>
-                <p class="lead py-3">
-                    <b>NewsHub</b> is a minimalistic Premium OctoberCMS (v2 & v3) template, especially designed to 
-                    build up a rich and responsive Blog or Magazine website in no time. The whole package 
-                    is pre-configured out of the box, thus you don't need to set-up many things before start 
-                    writing and publishing your articles! However, when you're looking for some extra flavour, 
-                    to make your website even more unique, <b>NewsHub</b> provides you with a ready-to-use 
-                    node.js environment using famous and familiar tools, such as Rollup and Bootstrap.
-                </p>
+                <h1 class="d-flex align-items-center">
+                    <span>NEWSHUB</span>
+                    <span class="badge ms-3 fs-6 text-white bg-october rounded">v1.3.0</span>
+                </h1>
+
+                <div class="row align-items-center">
+                    <div class="col-12 col-lg-10 col-xl-9">
+                        {% content "features-intro" %}
+                    </div>
+                    <div class="col-12 text-end">
+                        <a href="https://octobercms.com/theme/ratmd-newshub" target="_blank" class="btn btn-lg btn-outline-october btn-icon">
+                            {% partial "icons/october-icon" %}
+                            <span>Visit NewsHub on the October CMS Marketplace</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="post-header-readmore">
+                <span class="fw-light fs-5">Read more about NewsHub</span>
+                {% partial "icons/bootstrap/chevron-down" %}
             </div>
         </div>
     </header>

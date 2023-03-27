@@ -307,9 +307,13 @@ items:
                 items:
                     -
                         title: 'Account Page'
+                        nesting: null
                         type: cms-page
+                        url: null
                         code: ''
                         reference: account
+                        cmsPage: null
+                        replace: null
                         viewBag:
                             isHidden: '0'
                             cssClass: ''
@@ -320,9 +324,13 @@ items:
                                     url: ''
                     -
                         title: 'Community Forum'
+                        nesting: null
                         type: cms-page
+                        url: null
                         code: ''
                         reference: forum/channel
+                        cmsPage: null
+                        replace: null
                         viewBag:
                             isHidden: '0'
                             cssClass: ''
@@ -331,6 +339,32 @@ items:
                                 de:
                                     title: ''
                                     url: ''
+                    -
+                        title: 'Contact (BJ)'
+                        nesting: null
+                        type: cms-page
+                        url: null
+                        code: ''
+                        reference: contact
+                        cmsPage: null
+                        replace: null
+                        viewBag:
+                            isHidden: '0'
+                            cssClass: ''
+                            isExternal: '0'
+                    -
+                        title: 'Contact (JV)'
+                        nesting: 0
+                        type: static-page
+                        url: null
+                        code: ''
+                        reference: contact-janvince
+                        cmsPage: null
+                        replace: 0
+                        viewBag:
+                            isHidden: '0'
+                            cssClass: ''
+                            isExternal: '0'
             -
                 title: Specials
                 nesting: null
@@ -351,9 +385,13 @@ items:
                 items:
                     -
                         title: '404 - Page not found'
+                        nesting: null
                         type: cms-page
+                        url: null
                         code: ''
                         reference: '404'
+                        cmsPage: null
+                        replace: null
                         viewBag:
                             isHidden: '0'
                             cssClass: ''
@@ -364,9 +402,13 @@ items:
                                     url: ''
                     -
                         title: '500 - An error occurred'
+                        nesting: null
                         type: cms-page
+                        url: null
                         code: ''
                         reference: error
+                        cmsPage: null
+                        replace: null
                         viewBag:
                             isHidden: '0'
                             cssClass: ''
@@ -376,10 +418,14 @@ items:
                                     title: ''
                                     url: ''
                     -
-                        title: '503 - Maintenance Page'
+                        title: '503 - Maintenance Mode'
+                        nesting: null
                         type: cms-page
+                        url: null
                         code: ''
                         reference: maintenance
+                        cmsPage: null
+                        replace: null
                         viewBag:
                             isHidden: '0'
                             cssClass: ''
@@ -405,19 +451,6 @@ items:
                             isHidden: '0'
                             cssClass: ''
                             isExternal: '0'
-                    -
-                        title: Contact
-                        nesting: null
-                        type: cms-page
-                        url: null
-                        code: ''
-                        reference: contact
-                        cmsPage: null
-                        replace: null
-                        viewBag:
-                            isHidden: '0'
-                            cssClass: ''
-                            isExternal: '0'
     -
         title: Components
         nesting: 1
@@ -431,6 +464,19 @@ items:
             isHidden: '0'
             cssClass: columns-2
             isExternal: '0'
+    -
+        title: Documentation
+        type: url
+        url: /
+        code: ''
+        viewBag:
+            isHidden: '0'
+            cssClass: ''
+            isExternal: '0'
+            locale:
+                de:
+                    title: ''
+                    url: ''
     -
         title: About
         nesting: 0
@@ -502,15 +548,11 @@ items:
                     isExternal: '0'
     -
         title: 'Get this Theme'
-        nesting: null
         type: url
         url: 'https://octobercms.com/theme/ratmd-newshub'
         code: ''
-        reference: null
-        cmsPage: null
-        replace: null
         viewBag:
             isHidden: '0'
-            cssClass: 'nav-btn nav-marketplace'
+            cssClass: 'nav-btn nav-marketplace ms-xl-3'
             isExternal: '1'
 name: 'Main Menu'

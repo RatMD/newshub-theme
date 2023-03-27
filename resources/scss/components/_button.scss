@@ -1,0 +1,36 @@
+
+// ----------------------------------------
+//  Button Stylings
+// ----------------------------------------
+
+.btn-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    .icon,
+    svg,
+    img {
+        width: auto;
+        height: 16px;
+
+        & + span {
+            margin-left: $spacer * 0.25;
+        }
+    }
+    svg {
+        &,
+        path {
+            fill: currentColor !important;
+        }
+    }
+
+    &.btn-lg {
+        .icon,
+        svg,
+        img {
+            width: auto;
+            height: 24px;
+        }
+    }
+}

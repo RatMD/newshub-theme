@@ -4,7 +4,6 @@ static-pages:
         about-privacy-policy: {  }
         cookies: {  }
         contact-janvince: {  }
-    features: {  }
     page-builder:
         page-builder-accordion: {  }
         page-builder-alerts: {  }

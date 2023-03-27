@@ -1,5 +1,7 @@
+{% from "page/macros.htm" import config_classes %}
+
 {% set id = config.details.id is defined and config.details.id|length > 0 ? config.details.id : '' %}
-{% set classNames = 'tabs newshub-ce newshub-ce-tabs' %}
+{% set classNames = 'tabs' %}
 
 {# Backward Compatibility for NewsHub prior v1.3.0 #}
 {% if config.id is defined and config.id|length > 0 and id|length == 0 %}
@@ -7,20 +9,6 @@
 {% endif %}
 {% if id|length == 0 %}
     {% set id = this.page.id ~ '_' ~ random() %}
-{% endif %}
-
-{# Set Spacings #}
-{% if config.spacings.outerBefore is defined and config.spacings.outerBefore >= 0 %}
-    {% set classNames = classNames ~ ' mt-' ~ config.spacings.outerBefore %}
-{% endif %}
-{% if config.spacings.innerBefore is defined and config.spacings.innerBefore >= 0 %}
-    {% set classNames = classNames ~ ' pt-' ~ config.spacings.innerBefore %}
-{% endif %}
-{% if config.spacings.innerAfter is defined and config.spacings.innerAfter >= 0 %}
-    {% set classNames = classNames ~ ' pb-' ~ config.spacings.innerAfter %}
-{% endif %}
-{% if config.spacings.outerAfter is defined and config.spacings.outerAfter >= 0 %}
-    {% set classNames = classNames ~ ' mb-' ~ config.spacings.outerAfter %}
 {% endif %}
 
 {# Set Custom Classes (with backward compatibility to NewsHub prior v1.3.0) #}
@@ -38,13 +26,61 @@
 {# Render content Element #}
 {% set isActive = false %}
 {% if config.children | length > 0 %}
-    <div id="{{ id }}" class="{{ classNames|trim }}">
-        <nav>
-            <div class="nav nav-tabs {{ config.position == 'vertical' ? 'flex-md-column' : 'justify-content-' ~ config.alignment }}" role="tablist">
+    <div class="{{ config_classes(group, config)|trim }}">
+        <div id="{{ id }}" class="{{ classNames|trim }}">
+            <nav>
+                <div class="nav nav-tabs {{ config.position == 'vertical' ? 'flex-md-column' : 'justify-content-' ~ config.alignment }}" role="tablist">
+                    {% for tab in config.children %}
+                        {% set tabId = tab.details.id is defined and tab.details.id|length > 0 ? tab.details.id : '' %}
+                        {% set paneId = tabId %}
+
+                        {% if tag.id is defined and tag.id|length > 0 and tabId|length == 0 %}
+                            {% set tabId = tab.id %}
+                            {% set paneId = tab.id %}
+                        {% endif %}
+
+                        {% if tabId|length == 0 %}
+                            {% set tabId = id ~ '_tab_' ~ loop.index0 %}
+                            {% set paneId = id ~ '_pane_' ~ loop.index0 %}
+                        {% else %}
+                            {% set tabId = tabId ~ '_tab' %}
+                            {% set paneId = paneId ~ '_pane' %}
+                        {% endif %}
+
+                        {% if tab.disabled == '1' %}
+                            <button 
+                                id="{{ tabId }}"
+                                type="button" 
+                                class="nav-link disabled" 
+                                data-bs-toggle="tab" 
+                                data-bs-target="#{{ paneId }}" 
+                                role="tab" 
+                                aria-controls="{{ paneId }}" 
+                                aria-selected="false"
+                                disabled>{{ tab.title }}</button>
+                        {% else %}
+                            <button 
+                                id="{{ tabId }}"
+                                type="button" 
+                                class="nav-link{{ isActive == false ? ' active' : '' }}" 
+                                data-bs-toggle="tab" 
+                                data-bs-target="#{{ paneId }}" 
+                                role="tab" 
+                                aria-controls="{{ paneId }}" 
+                                aria-selected="{{ isActive ? 'false' : 'true' }}">{{ tab.title }}</button>
+                            {% if isActive == false %}
+                                {% set isActive = loop.index %}
+                            {% endif %}
+                        {% endif %}
+                    {% endfor %}
+                </div>
+            </nav>
+
+            <div class="tab-content">
                 {% for tab in config.children %}
                     {% set tabId = tab.details.id is defined and tab.details.id|length > 0 ? tab.details.id : '' %}
                     {% set paneId = tabId %}
-
+                
                     {% if tag.id is defined and tag.id|length > 0 and tabId|length == 0 %}
                         {% set tabId = tab.id %}
                         {% set paneId = tab.id %}
@@ -58,91 +94,45 @@
                         {% set paneId = paneId ~ '_pane' %}
                     {% endif %}
 
-                    {% if tab.disabled == '1' %}
-                        <button 
-                            id="{{ tabId }}"
-                            type="button" 
-                            class="nav-link disabled" 
-                            data-bs-toggle="tab" 
-                            data-bs-target="#{{ paneId }}" 
-                            role="tab" 
-                            aria-controls="{{ paneId }}" 
-                            aria-selected="false"
-                            disabled>{{ tab.title }}</button>
+                    {% set tabClassNames = 'tab-pane content fade' %}
+                    {% if tab.details.classes is defined and tab.details.classes|length > 0 %}
+                        {% set tabClassNames = tabClassNames ~ ' ' ~ tab.details.classes %}
+                    {% elseif tab.class_names is defined and tab.class_names|length > 0 %}
+                        {% set tabClassNames = tabClassNames ~ ' ' ~ tab.class_names %}
+                    {% endif %}
+
+                    {# Tab Pane Position #}
+                    {% if config.position == 'vertical' %}
+                        {% set tabClassNames = tabClassNames ~ ' py-3 px-md-3 py-md-0' %}
                     {% else %}
-                        <button 
-                            id="{{ tabId }}"
-                            type="button" 
-                            class="nav-link{{ isActive == false ? ' active' : '' }}" 
-                            data-bs-toggle="tab" 
-                            data-bs-target="#{{ paneId }}" 
-                            role="tab" 
-                            aria-controls="{{ paneId }}" 
-                            aria-selected="{{ isActive ? 'false' : 'true' }}">{{ tab.title }}</button>
-                        {% if isActive == false %}
-                            {% set isActive = loop.index %}
-                        {% endif %}
+                        {% set tabClassNames = tabClassNames ~ ' py-3' %}
+                    {% endif %}
+
+                    {# Tab Active State #}
+                    {% if loop.index == isActive %}
+                        {% set tabClassNames = tabClassNames ~ ' show active' %}
+                    {% endif %}
+
+                    {% if tab.disabled == '0' %}
+                        <div 
+                            id="{{ paneId }}" 
+                            class="{{ tabClassNames }}" 
+                            role="tabpanel" 
+                            aria-labelledby="{{ tabId }}" 
+                            tabindex="0">
+                                {% if tab.type == 'markdown' %}
+                                    {{ tab.content_markdown | md }}
+                                {% elseif tab.type == 'richtext' %}
+                                    {{ tab.content_richtext | raw }}
+                                {% elseif tab.type == 'html' %}
+                                    {{ tab.content_html | raw }}
+                                {% else %}
+                                    <p>{{ tab.content_plaintext }}</p>
+                                {% endif %}
+                        </div>
                     {% endif %}
                 {% endfor %}
             </div>
-        </nav>
-
-        <div class="tab-content">
-            {% for tab in config.children %}
-                {% set tabId = tab.details.id is defined and tab.details.id|length > 0 ? tab.details.id : '' %}
-                {% set paneId = tabId %}
-            
-                {% if tag.id is defined and tag.id|length > 0 and tabId|length == 0 %}
-                    {% set tabId = tab.id %}
-                    {% set paneId = tab.id %}
-                {% endif %}
-
-                {% if tabId|length == 0 %}
-                    {% set tabId = id ~ '_tab_' ~ loop.index0 %}
-                    {% set paneId = id ~ '_pane_' ~ loop.index0 %}
-                {% else %}
-                    {% set tabId = tabId ~ '_tab' %}
-                    {% set paneId = paneId ~ '_pane' %}
-                {% endif %}
-
-                {% set tabClassNames = 'tab-pane content fade' %}
-                {% if tab.details.classes is defined and tab.details.classes|length > 0 %}
-                    {% set tabClassNames = tabClassNames ~ ' ' ~ tab.details.classes %}
-                {% elseif tab.class_names is defined and tab.class_names|length > 0 %}
-                    {% set tabClassNames = tabClassNames ~ ' ' ~ tab.class_names %}
-                {% endif %}
-
-                {# Tab Pane Position #}
-                {% if config.position == 'vertical' %}
-                    {% set tabClassNames = tabClassNames ~ ' py-3 px-md-3 py-md-0' %}
-                {% else %}
-                    {% set tabClassNames = tabClassNames ~ ' py-3' %}
-                {% endif %}
-
-                {# Tab Active State #}
-                {% if loop.index == isActive %}
-                    {% set tabClassNames = tabClassNames ~ ' show active' %}
-                {% endif %}
-
-                {% if tab.disabled == '0' %}
-                    <div 
-                        id="{{ paneId }}" 
-                        class="{{ tabClassNames }}" 
-                        role="tabpanel" 
-                        aria-labelledby="{{ tabId }}" 
-                        tabindex="0">
-                            {% if tab.type == 'markdown' %}
-                                {{ tab.content_markdown | md }}
-                            {% elseif tab.type == 'richtext' %}
-                                {{ tab.content_richtext | raw }}
-                            {% elseif tab.type == 'html' %}
-                                {{ tab.content_html | raw }}
-                            {% else %}
-                                <p>{{ tab.content_plaintext }}</p>
-                            {% endif %}
-                    </div>
-                {% endif %}
-            {% endfor %}
         </div>
     </div>
 {% endif %}

@@ -1,5 +1,5 @@
 {% set id = config.details.id is defined and config.details.id|length > 0 ? config.details.id : '' %}
-{% set classNames = 'text-with-teaser content newshub-ce newshub-ce-text-with-teaser' %}
+{% set classNames = 'text-with-teaser content content-element content-element-text-with-teaser' %}
 
 {# Backward Compatibility for NewsHub prior v1.3.0 #}
 {% if config.id is defined and config.id|length > 0 and id|length == 0 %}

@@ -1,5 +1,5 @@
 {% set id = config.details.id is defined and config.details.id|length > 0 ? config.details.id : '' %}
-{% set classNames = 'section newshub-ce newshub-ce-section' %}
+{% set classNames = 'section content-element content-element-section' %}
 
 {# Backward Compatibility for NewsHub prior v1.3.0 #}
 {% if config.id is defined and config.id|length > 0 and id|length == 0 %}
@@ -21,20 +21,20 @@
 {% endif %}
 
 {# Set Spacings prior NewsHub v1.3.0 #}
-{% if config.margin_top != 'default' %} 
+{% if config.margin_top is defined and config.margin_top != 'default' %} 
     {% set classNames = classNames ~ ' ' ~ config.margin_top %}
 {% endif %}
-{% if config.margin_bottom != 'default' %} 
+{% if config.margin_bottom is defined and config.margin_bottom != 'default' %} 
     {% set classNames = classNames ~ ' ' ~ config.margin_bottom %}
 {% endif %}
-{% if config.padding_top != 'default' %} 
+{% if config.padding_top is defined and config.padding_top != 'default' %} 
     {% set classNames = classNames ~ ' ' ~ config.padding_top %}
 {% endif %}
-{% if config.padding_bottom != 'default' %} 
+{% if config.padding_bottom is defined and config.padding_bottom != 'default' %} 
     {% set classNames = classNames ~ ' ' ~ config.margin_top %}
 {% endif %}
 
-{# Set BAckground Color #}
+{# Set Background Color #}
 {% if config.background|default('default') != 'default' %} 
     {% set classNames = classNames ~ ' text-bg-' ~ config.background %}
 {% endif %}

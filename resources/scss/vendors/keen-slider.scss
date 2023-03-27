@@ -150,8 +150,11 @@
 // ----------------------------------------
 
 .keen-slider-controls {
-    position: absolute;
+    top: calc(50% - 25px);
+    left: 0;
+    right: 0;
     z-index: 200;
+    position: absolute;
 
     .no-js & {
         display: none;
@@ -159,23 +162,70 @@
 
     button {
         color: rgba(255, 255, 255, 0.5);
-        width: 48px;
-        height: 48px;
+        width: 50px;
+        height: 50px;
         display: flex;
+        position: absolute;
         align-items: center;
         justify-content: center;
-        border: 2px solid rgba(255, 255, 255, 0.5);
-        border-radius: 50%;
+
+        &:first-child {
+            left: $spacer;
+        }
+
+        &:last-child {
+            right: $spacer;
+        }
 
         &:hover {
             color: white;
-            border-color: white;
+        }
+        
+        svg.bi {
+            color: fade-out($white, 0.5);
+            width: 32px !important;
+            height: 32px !important;
+            position: absolute;
+            transition: color .5s ease-in-out, fill .5s ease-in-out;
         }
 
-        svg {
-            flex: 0 0 24px;
-            width: 24px;
-            height: 24px;
+        svg.arrow-circle {
+            position: absolute;
+            transition: all .5s ease-in-out;
+
+            .background {
+                stroke: fade-out($white, 0.5);
+            }
+            .circle {
+                stroke: fade-out($white, 0.25);
+                stroke-dasharray: 140;
+                stroke-dashoffset: 140;
+                transform: rotate(270deg);
+                transform-origin: 50% 50%;	
+                transition: all .5s ease-in-out;
+            }  
+        }
+
+        &:hover {
+            svg.bi {
+                color: $white;
+            }
+            svg.arrow-circle,
+            svg.arrow-circle .circle {
+                color: $white;
+                stroke-dashoffset: 0;
+            }
+        }
+
+        &:disabled,
+        &.disabled {
+            svg.bi {
+                color: fade-out($white, 0.75);
+            }
+            svg.arrow-circle .background,
+            svg.arrow-circle .circle {
+                stroke: fade-out($white, 0.75);
+            }
         }
     }
 }
@@ -186,12 +236,33 @@
 // ----------------------------------------
 
 .keen-slider-indicators {
+    left: 0;
+    right: 0;
+    bottom: $spacer;
+    display: flex;
+    justify-content: center;
+    position: absolute;
+
     .no-js & {
         display: none;
     }
 
     button {
+        width: 16px;
+        height: 16px;
+        margin: 0 $spacer * 0.25;
+        padding: 0;
+        display: inline-block;
+        background-color: fade-out($white, 0.75);
+        border-radius: 50%;
+        transition: background-color .25s ease-in-out, border-color .25s ease-in-out;
 
+        &:hover {
+            background-color: fade-out($white, 0.5);
+        }
+        &.current {
+            background-color: $white;
+        }
     }
 }
 

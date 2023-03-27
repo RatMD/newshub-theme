@@ -1,5 +1,7 @@
+{% from "page/macros.htm" import config_classes %}
+
 {% set id = config.details.id is defined and config.details.id|length > 0 ? config.details.id : '' %}
-{% set classNames = 'slider newshub-ce newshub-ce-slider keen-slider' %}
+{% set classNames = 'slider keen-slider' %}
 
 {# Backward Compatibility for NewsHub prior v1.3.0 #}
 {% if config.id is defined and config.id|length > 0 and id|length == 0 %}
@@ -7,20 +9,6 @@
 {% endif %}
 {% if id|length == 0 %}
     {% set id = this.page.id ~ '_' ~ random() %}
-{% endif %}
-
-{# Set Spacings #}
-{% if config.spacings.outerBefore is defined and config.spacings.outerBefore >= 0 %}
-    {% set classNames = classNames ~ ' mt-' ~ config.spacings.outerBefore %}
-{% endif %}
-{% if config.spacings.innerBefore is defined and config.spacings.innerBefore >= 0 %}
-    {% set classNames = classNames ~ ' pt-' ~ config.spacings.innerBefore %}
-{% endif %}
-{% if config.spacings.innerAfter is defined and config.spacings.innerAfter >= 0 %}
-    {% set classNames = classNames ~ ' pb-' ~ config.spacings.innerAfter %}
-{% endif %}
-{% if config.spacings.outerAfter is defined and config.spacings.outerAfter >= 0 %}
-    {% set classNames = classNames ~ ' mb-' ~ config.spacings.outerAfter %}
 {% endif %}
 
 {# Set Custom Classes (with backward compatibility to NewsHub prior v1.3.0) #}
@@ -41,57 +29,67 @@
 {% endif %}
 
 {# Render Content Element #}
-<div id="{{ id }}" class="{{ classNames|trim }}" 
-    data-keen-slider
-    data-keen-slider-amount="{{ config.slides }}"
-    data-keen-slider-animation="{{ config.animation }}"
-    data-keen-slider-autoplay="{{ config.animation ? 'true' : 'false' }}"
-    data-keen-slider-controls="{{ config.controls ? '[data-keen-slider-control]' : 'false' }}"
-    data-keen-slider-interval="{{ config.interval }}"
-    data-keen-slider-indicators="{{ config.indicators ? '[data-keen-slider-indicator]' : 'false' }}"
-    data-keen-slider-loop="{{ config.loop ? 'true' : 'false' }}"
-    data-keen-slider-spacing="{{ config.spacing }}"
-    data-keen-slider-touch="{{ config.touch ? 'true' : 'false' }}"
-    >
-    {% for slide in config.children %}
-        <div class="keen-slider-slide">
-            {% if slide.link|length > 0 %}<a href="{{ slide.link }}"{% if slide.title|length > 0 %} alt="{{ slide.title }}"{% endif %}>{% endif %}
-                <div class="slide-image">
-                    <img src="{{ slide.image | media }}" alt="{{ slide.title }}" />
-                </div>
-                
-                {% if slide.title|length > 0 or slide.content|length > 0 %}
-                    <div class="slide-content font-semibold fs-6">
-                        {% if slide.title|length > 0 %}
-                            <div class="slide-title h5">{{ slide.title }}</div>
-                        {% endif %}
-                        {% if slide.content|length > 0 %}
-                            <div class="slide-text">
-                                {{ slide.content | md }}
-                            </div>
-                        {% endif %}
+<div class="{{ config_classes(group, config)|trim }}">
+    <div id="{{ id }}" class="{{ classNames|trim }}" 
+        data-keen-slider
+        data-keen-slider-amount="{{ config.slides }}"
+        data-keen-slider-animation="{{ config.animation }}"
+        data-keen-slider-autoplay="{{ config.animation ? 'true' : 'false' }}"
+        data-keen-slider-controls="{{ config.controls ? '[data-keen-slider-control]' : 'false' }}"
+        data-keen-slider-interval="{{ config.interval }}"
+        data-keen-slider-indicators="{{ config.indicators ? '[data-keen-slider-indicator]' : 'false' }}"
+        data-keen-slider-loop="{{ config.loop ? 'true' : 'false' }}"
+        data-keen-slider-spacing="{{ config.spacing }}"
+        data-keen-slider-touch="{{ config.touch ? 'true' : 'false' }}"
+        >
+        {% for slide in config.children %}
+            <div class="keen-slider-slide">
+                {% if slide.link|length > 0 %}<a href="{{ slide.link }}"{% if slide.title|length > 0 %} alt="{{ slide.title }}"{% endif %}>{% endif %}
+                    <div class="slide-image">
+                        <img src="{{ slide.image | media }}" alt="{{ slide.title }}" />
                     </div>
-                {% endif %}
-            {% if slide.link|length > 0 %}</a>{% endif %}
-        </div>
-    {% endfor %}
+                    
+                    {% if slide.title|length > 0 or slide.content|length > 0 %}
+                        <div class="slide-content font-semibold fs-6">
+                            {% if slide.title|length > 0 %}
+                                <div class="slide-title h5">{{ slide.title }}</div>
+                            {% endif %}
+                            {% if slide.content|length > 0 %}
+                                <div class="slide-text">
+                                    {{ slide.content | md }}
+                                </div>
+                            {% endif %}
+                        </div>
+                    {% endif %}
+                {% if slide.link|length > 0 %}</a>{% endif %}
+            </div>
+        {% endfor %}
 
-    {% if config.controls == '1' and config.children|length > 0 %}
-        <div class="keen-slider-controls">
-            <button type="button" class="btn btn-link" data-keen-slider-control="prev">
-                {% partial "icons/bootstrap/arrow-left" %}
-            </button>
-            <button type="button" class="btn btn-link" data-keen-slider-control="next">
-                {% partial "icons/bootstrap/arrow-right" %}
-            </button>
-        </div>
-    {% endif %}
+        {% if config.controls == '1' and config.children|length > 0 %}
+            <div class="keen-slider-controls">
+                <button type="button" class="btn btn-link" data-keen-slider-control="prev">
+                    <svg width="50" height="50" class="arrow-circle">
+                        <circle class="background" cx="25" cy="25" r="20" stroke-width="2" fill-opacity="0"></circle>
+                        <circle class="circle" cx="25" cy="25" r="20" stroke-width="2" fill-opacity="0"></circle>
+                    </svg>
+                    {% partial "icons/bootstrap/arrow-left-short" %}
+                </button>
+                <button type="button" class="btn btn-link" data-keen-slider-control="next">
+                    <svg width="50" height="50" class="arrow-circle">
+                        <circle class="background" cx="25" cy="25" r="20" stroke-width="2" fill-opacity="0"></circle>
+                        <circle class="circle" cx="25" cy="25" r="20" stroke-width="2" fill-opacity="0"></circle>
+                    </svg>
+                    {% partial "icons/bootstrap/arrow-right-short" %}
+                </button>
+            </div>
+        {% endif %}
 
-    {% if config.indicators == '1' and config.children|length > 0 %}
-        <div class="keen-slider-indicators">
-            {% for slide in config.children %}
-                <button type="button" class="btn btn-link" data-keen-slider-indicator="{{ loop.index0 }}"></button>
-            {% endfor %}
-        </div>
-    {% endif %}
+        {% if config.indicators == '1' and config.children|length > 0 %}
+            <div class="keen-slider-indicators">
+                {% for slide in config.children %}
+                    <button type="button" class="btn btn-link" data-keen-slider-indicator="{{ loop.index0 }}"></button>
+                {% endfor %}
+            </div>
+        {% endif %}
+    </div>
 </div>

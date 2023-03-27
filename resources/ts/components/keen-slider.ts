@@ -423,8 +423,8 @@ class KeenSliderNewsHub {
      * @param slider Current KeenSlider instance.
      */
     public pluginIndicators(slider: KeenSliderInstance) {
-        let custom = typeof this.config.controls === 'string';
-        let indicators: HTMLElement[] = custom ? query(this.config.controls as string, this.root.parentElement) : [];
+        let custom = typeof this.config.indicators === 'string';
+        let indicators: HTMLElement[] = custom ? query(this.config.indicators as string, this.root.parentElement) : [];
 
         // Create Indicators
         const createIndicators = ((slider: KeenSliderInstance) => {

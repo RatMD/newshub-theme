@@ -100,7 +100,6 @@ Version 1.3.0 - In Progress
 - Add: New File List Content Element (show download file list with icon and stuff).
 - Update: Offcanvas and Modal design (+ dark design variant).
 - Update: Dark (and Light) Bootstrap stylings and improvements.
-- Update: Add "Number of Cards / Row" option on Card Group.
 
 
 Version 1.2.2 - Stable

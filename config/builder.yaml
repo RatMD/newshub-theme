@@ -344,11 +344,6 @@ cardgroup:
                         label: theme.ratmd-newshub::lang.builder.globals.id.label
                         comment: theme.ratmd-newshub::lang.builder.globals.id.comment
                         span: right
-                    spacings:
-                        type: partial
-                        path: '#/ratmd-newshub/config/partials/field_spacings.htm'
-                        label: theme.ratmd-newshub::lang.builder.globals.spacing.label
-                        comment: theme.ratmd-newshub::lang.builder.globals.spacing.comment
                     _separate_general_settings:
                         type: ruler
                         cssClass: mt-3 mb-3

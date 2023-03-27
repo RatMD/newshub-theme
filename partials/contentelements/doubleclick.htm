@@ -1,23 +1,11 @@
+{% from "page/macros.htm" import config_classes %}
+
 {% set id = config.details.id is defined and config.details.id|length > 0 ? config.details.id : '' %}
-{% set classNames = 'double-click newshub-ce newshub-ce-double-click' %}
+{% set classNames = 'double-click' %}
 
 {# Backward Compatibility for NewsHub prior v1.3.0 #}
 {% if config.id is defined and config.id|length > 0 and id|length == 0 %}
     {% set id = config.id %}
-{% endif %}
-
-{# Set Spacings #}
-{% if config.spacings.outerBefore is defined and config.spacings.outerBefore >= 0 %}
-    {% set classNames = classNames ~ ' mt-' ~ config.spacings.outerBefore %}
-{% endif %}
-{% if config.spacings.innerBefore is defined and config.spacings.innerBefore >= 0 %}
-    {% set classNames = classNames ~ ' pt-' ~ config.spacings.innerBefore %}
-{% endif %}
-{% if config.spacings.innerAfter is defined and config.spacings.innerAfter >= 0 %}
-    {% set classNames = classNames ~ ' pb-' ~ config.spacings.innerAfter %}
-{% endif %}
-{% if config.spacings.outerAfter is defined and config.spacings.outerAfter >= 0 %}
-    {% set classNames = classNames ~ ' mb-' ~ config.spacings.outerAfter %}
 {% endif %}
 
 {# Set Custom Classes (with backward compatibility to NewsHub prior v1.3.0) #}
@@ -28,18 +16,20 @@
 {% endif %}
 
 {# Render Content Element #}
-<div{% if id|length > 0 %} id="{{ id }}"{% endif %} class="{{ classNames|trim }}" data-handle="double-click">
-    <div class="double-click-title">
-        {{ config.title|default('Third-Party Service')|raw }}
-    </div>
-    <div class="double-click-description">
-        {{ config.description|default("This content is hosted on a different website, which may sets cookies. Click on the button below, when you're cool with that.")|raw }}
-    </div>
-    <button type="button" class="double-click-button">
-        {{ config.button_text|default('Accept Cookies & Load Content')|raw }}
-    </button>
+<div class="{{ config_classes(group, config)|trim }}">
+    <div{% if id|length > 0 %} id="{{ id }}"{% endif %} class="{{ classNames|trim }}" data-handle="double-click">
+        <div class="double-click-title">
+            {{ config.title|default('Third-Party Service')|raw }}
+        </div>
+        <div class="double-click-description">
+            {{ config.description|default("This content is hosted on a different website, which may sets cookies. Click on the button below, when you're cool with that.")|raw }}
+        </div>
+        <button type="button" class="double-click-button">
+            {{ config.button_text|default('Accept Cookies & Load Content')|raw }}
+        </button>
 
-    <template class="double-click-content">
-        {{ config.content|raw }}
-    </template>
+        <template class="double-click-content">
+            {{ config.content|raw }}
+        </template>
+    </div>
 </div>

@@ -1,24 +1,12 @@
+{% from "page/macros.htm" import config_classes %}
+
 {% set muteSubtitle = true %}
 {% set id = config.details.id is defined and config.details.id|length > 0 ? config.details.id : '' %}
-{% set classNames = 'card newshub-ce newshub-ce-card' %}
+{% set classNames = 'card' %}
 
 {# Backward Compatibility for NewsHub prior v1.3.0 #}
 {% if config.id is defined and config.id|length > 0 and id|length == 0 %}
     {% set id = config.id %}
-{% endif %}
-
-{# Set Spacings #}
-{% if config.spacings.outerBefore is defined and config.spacings.outerBefore >= 0 %}
-    {% set classNames = classNames ~ ' mt-' ~ config.spacings.outerBefore %}
-{% endif %}
-{% if config.spacings.innerBefore is defined and config.spacings.innerBefore >= 0 %}
-    {% set classNames = classNames ~ ' pt-' ~ config.spacings.innerBefore %}
-{% endif %}
-{% if config.spacings.innerAfter is defined and config.spacings.innerAfter >= 0 %}
-    {% set classNames = classNames ~ ' pb-' ~ config.spacings.innerAfter %}
-{% endif %}
-{% if config.spacings.outerAfter is defined and config.spacings.outerAfter >= 0 %}
-    {% set classNames = classNames ~ ' mb-' ~ config.spacings.outerAfter %}
 {% endif %}
 
 {# Set Custom Classes (with backward compatibility to NewsHub prior v1.3.0) #}
@@ -34,7 +22,7 @@
 {% endif %}
 
 {# Set Card Style #}
-{% if config.simple_style is defined %}
+{% if config.simple_style is defined and config.simple_style == '1' %}
     {% set classNames = classNames ~ ' card-simple' %}
 {% else %}
     {% if config.color != 'default' %}
@@ -50,30 +38,36 @@
 {% set sublayout = config.subtitle.layout is defined ? config.subtitle.layout : config.sublayout %}
 
 {# Render content Element #}
-<div{% if id|length > 0 %} id="{{ id }}"{% endif %} class="{{ classNames|trim }}">
-    {% if config.image and config.image|length > 0 %}
-        <img src="{{ config.image|media }}" class="card-img-top" alt="{{ title }}" />
-    {% endif %}
-
-    <div class="card-body">
-        {% if title|length > 0 %}
-            {% if layout == 'default' %}
-                <div class="card-title mt-0 font-sans-serif h5 {{ subtitle is defined and subtitle|length > 0 ? 'mb-1' : 'mb-3' }}">{{ title }}</div>
-            {% elseif layout != 'hidden' %}
-                <{{ layout }} class="card-title">{{ title }}</{{ layout }}>
-            {% endif %}
-        {% endif %}
-        
-        {% if subtitle is defined and subtitle|length > 0 %}
-            {% if sublayout == 'default' %}
-                <div class="card-subtitle mt-0 font-sans-serif h6 mb-3{{ muteSubtitle ? ' text-muted': '' }}">{{ subtitle }}</div>
-            {% elseif sublayout != 'hidden' %}
-                <{{ sublayout }} class="card-subtitle">{{ subtitle }}</{{ sublayout }}>
-            {% endif %}
+{% if hide_container is defined and hide_container %}{% else %}
+    <div class="{{ config_classes(group, config)|trim }}">
+{% endif %}
+    <div{% if id|length > 0 %} id="{{ id }}"{% endif %} class="{{ classNames|trim }}">
+        {% if config.image and config.image|length > 0 %}
+            <img src="{{ config.image|media }}" class="card-img-top" alt="{{ title }}" />
         {% endif %}
 
-        <div class="card-text">
-            {{ config.content|md }}
+        <div class="card-body">
+            {% if title|length > 0 %}
+                {% if layout == 'default' %}
+                    <div class="card-title mt-0 font-sans-serif h5 {{ subtitle is defined and subtitle|length > 0 ? 'mb-1' : 'mb-3' }}">{{ title }}</div>
+                {% elseif layout != 'hidden' %}
+                    <{{ layout }} class="card-title">{{ title }}</{{ layout }}>
+                {% endif %}
+            {% endif %}
+            
+            {% if subtitle is defined and subtitle|length > 0 %}
+                {% if sublayout == 'default' %}
+                    <div class="card-subtitle mt-0 font-sans-serif h6 mb-3{{ muteSubtitle ? ' text-muted': '' }}">{{ subtitle }}</div>
+                {% elseif sublayout != 'hidden' %}
+                    <{{ sublayout }} class="card-subtitle">{{ subtitle }}</{{ sublayout }}>
+                {% endif %}
+            {% endif %}
+
+            <div class="card-text">
+                {{ config.content|md }}
+            </div>
         </div>
     </div>
-</div>
+{% if hide_container is defined and hide_container %}{% else %}
+    </div>
+{% endif %}
