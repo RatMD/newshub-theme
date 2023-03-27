@@ -77,7 +77,7 @@ Version 1.3.0 - In Progress
 - Update: Change rollup bundle to esbuild bundle (using TypeScript instead of JavaScript).
 - Update: Bootstrap package to v5.3.0-alpha1.
 - Update: Change Bootstrap 5 Lightbox package with a custom Lightbox plugin.
-- Update: Keen Slider package to v6.8.5.
+- Update: Keen Slider package to v6.8.5 + Keen Slider Stylings.
 - Update: Cleanup template localization strings (for both: English and German).
 - Update: TypeScript / JavaScript environment, utilities and modules.
 - Remove: "sticky_header" option, has been replaced with "Header Position" > "Sticky".
