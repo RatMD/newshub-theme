@@ -80,6 +80,8 @@ Version 1.3.0 - In Progress
 - Update: Keen Slider package to v6.8.5 + Keen Slider Stylings.
 - Update: Cleanup template localization strings (for both: English and German).
 - Update: TypeScript / JavaScript environment, utilities and modules.
+- Update: Offcanvas and Modal design (+ dark design variant).
+- Update: Dark (and Light) Bootstrap stylings and improvements.
 - Remove: "sticky_header" option, has been replaced with "Header Position" > "Sticky".
 - Fix: Set HTML lang to current locale instead of fixed 'en'.
 - Fix: Bootstrap URL on placeholder / demo copyright text.
@@ -95,8 +97,7 @@ Version 1.3.0 - In Progress
 
 ### ToDo
 - Add: Support for [RainLab.Forum](https://octobercms.com/plugin/rainlab-forum) OC Plugin.
-- Update: Offcanvas and Modal design (+ dark design variant).
-- Update: Dark (and Light) Bootstrap stylings and improvements.
+- Update: Use Bootstraps new color-mode for dark / light color scheme.
 
 
 Version 1.2.2 - Stable
