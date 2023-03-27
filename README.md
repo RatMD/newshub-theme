@@ -154,7 +154,7 @@ Dependencies
 ------------
 The following dependencies are already bundled with this template, of course.
 
-- [Bootstrap](https://getbootstrap.com) v5.3.0-alpha1 - MIT licensed
+- [Bootstrap](https://getbootstrap.com) v5.3.0-alpha2 - MIT licensed
 - [Bootstrap Icons](https://icons.getbootstrap.com) v1.10.3 - MIT licensed
 - [Flag Icons](https://flagicons.lipis.dev/) - MIT licensed
 - [Keen Slider](https://keen-slider.io/) v6.8.5 - MIT licensed

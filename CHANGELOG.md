@@ -75,7 +75,7 @@ Version 1.3.0 - In Progress
 - Update: Change search modal / overlay design.
 - Update: Re-written header / navbar JavaScript (within the new Navbar class).
 - Update: Change rollup bundle to esbuild bundle (using TypeScript instead of JavaScript).
-- Update: Bootstrap package to v5.3.0-alpha1.
+- Update: Bootstrap package to v5.3.0-alpha2.
 - Update: Change Bootstrap 5 Lightbox package with a custom Lightbox plugin.
 - Update: Keen Slider package to v6.8.5 + Keen Slider Stylings.
 - Update: Cleanup template localization strings (for both: English and German).
@@ -95,9 +95,6 @@ Version 1.3.0 - In Progress
 
 ### ToDo
 - Add: Support for [RainLab.Forum](https://octobercms.com/plugin/rainlab-forum) OC Plugin.
-- Add: New Blog Posts Content Element (show posts by author, category, date or tag).
-- Add: New Blog Lists Content Element (show list of authors, categories or tags).
-- Add: New File List Content Element (show download file list with icon and stuff).
 - Update: Offcanvas and Modal design (+ dark design variant).
 - Update: Dark (and Light) Bootstrap stylings and improvements.
 
