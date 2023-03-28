@@ -1,14 +1,14 @@
 ##
 url = "/forum"
 layout = "default"
-title = "Forum"
+title = "Community Forum"
 description = "Forum"
 meta_title = "Forum"
 meta_description = "Forum"
 
 [viewBag]
 localeUrl[de] = "/forum"
-localeTitle[de] = "Forum"
+localeTitle[de] = "Community Forum"
 localeMeta_title[de] = "Forum"
 localeMeta_description[de] = "Forum"
 
@@ -17,5 +17,20 @@ memberPage = "forum/member"
 channelPage = "forum/channel"
 topicPage = "forum/topic"
 ==
-<h1>Forum</h1>
-{% component 'forumChannels' %}
+<section class="section section-page">
+    <header class="py-6 bg-light dark:bg-dark">
+        <div class="container">
+            <div class="page-header">
+                <h1 class="page-title">{{ page.title | default(this.page.title) }}</h1>
+            </div>
+        </div>
+    </header>
+
+    <article class="section py-6">
+        <div class="container">
+            <div class="page-content main-area">
+                {% component 'forumChannels' %}
+            </div>
+        </div>
+    </article>
+</section>

@@ -16,5 +16,10 @@ localeMeta_description[de] = "Forum"
 memberPage = "forum/member"
 topicPage = "forum/topic"
 ==
-<h1>{{ channel.title }}</h1>
+
+{% if channel is defined and channel is not empty %}
+    <h1>{{ channel.title }}</h1>
+{% else %}
+    <h1>{{ this.page.title }}</h1>
+{% endif %}
 {% component 'forumChannel' %}

@@ -88,5 +88,11 @@
     "site.user.manage": "Profil verwalten",
     "site.user.logout": "Abmelden",
     "site.user.logged_out": "Du hast dich erfolgreich abgemeldet.",
-    "site.footer.socials": "Folge uns auf"
+    "site.footer.socials": "Folge uns auf",
+
+    "forum.table.topics": "Themen",
+    "forum.table.posts": "Beiträge",
+    "forum.table.recent": "Letzter Beitrag",
+    "forum.table.subforum": "Unterforen",
+    "forum.table.empty": "Es wurden noch keine Foren erstellt."
 }

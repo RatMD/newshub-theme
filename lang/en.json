@@ -88,5 +88,11 @@
     "site.user.manage": "Manage Profile",
     "site.user.logout": "Logout",
     "site.user.logged_out": "You have successfully logged out.",
-    "site.footer.socials": "Follow us on"
+    "site.footer.socials": "Follow us on",
+
+    "forum.table.topics": "Topics",
+    "forum.table.posts": "Posts",
+    "forum.table.recent": "Recent Topic",
+    "forum.table.subforum": "Subforum",
+    "forum.table.empty": "There are no channels to show."
 }

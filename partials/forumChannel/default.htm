@@ -1,0 +1,9 @@
+<div class="rainlab-forum">
+    {% partial __SELF__ ~ "::title" %}
+
+    {% partial __SELF__ ~ "::topics" %}
+
+    {% if topics is defined and topics|length > 0 %}
+        {% partial __SELF__ ~ "::pagination" %}
+    {% endif %}
+</div>

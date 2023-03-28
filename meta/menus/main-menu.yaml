@@ -324,13 +324,9 @@ items:
                                     url: ''
                     -
                         title: 'Community Forum'
-                        nesting: null
                         type: cms-page
-                        url: null
                         code: ''
-                        reference: forum/channel
-                        cmsPage: null
-                        replace: null
+                        reference: forum
                         viewBag:
                             isHidden: '0'
                             cssClass: ''
@@ -466,9 +462,13 @@ items:
             isExternal: '0'
     -
         title: Documentation
+        nesting: null
         type: url
         url: /
         code: ''
+        reference: null
+        cmsPage: null
+        replace: null
         viewBag:
             isHidden: '0'
             cssClass: ''
@@ -548,9 +548,13 @@ items:
                     isExternal: '0'
     -
         title: 'Get this Theme'
+        nesting: null
         type: url
         url: 'https://octobercms.com/theme/ratmd-newshub'
         code: ''
+        reference: null
+        cmsPage: null
+        replace: null
         viewBag:
             isHidden: '0'
             cssClass: 'nav-btn nav-marketplace ms-xl-3'
