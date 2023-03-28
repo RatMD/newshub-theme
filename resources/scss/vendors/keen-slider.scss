@@ -405,6 +405,8 @@
 
     // Controls
     .keen-slider-controls {
+        top: auto;
+        left: auto;
         right: 0;
         bottom: 0;
         width: auto;
@@ -421,6 +423,7 @@
         button {
             margin: 0 $spacer;
             padding: $spacer $spacer * 0.75;
+            position: static;
             box-shadow: none !important;
             border: 0;
             border-radius: 0;
@@ -428,6 +431,13 @@
             background-color: transparent;
             background-repeat: no-repeat;
             background-position: center center;
+
+            &:first-child {
+                left: auto;
+            }
+            &:last-child {
+                right: auto;
+            }
             
             &.control-prev {
                 background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='%23232323' class='bi bi-chevron-left' viewBox='0 0 16 16'%3E%3Cpath fill-rule='evenodd' d='M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z'/%3E%3C/svg%3E");
@@ -443,6 +453,8 @@
 
     // Indicators
     .keen-slider-indicators {
+        left: auto;
+        right: auto;
         bottom: 0;
         width: auto;
         padding-top: $spacer * 1.25;
