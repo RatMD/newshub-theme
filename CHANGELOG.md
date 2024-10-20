@@ -94,6 +94,7 @@ Version 1.3.0 - In Progress
 - Fix: `CMS_STRICT_VARIABLES=true` .env security option errors.
 - Fix: Rename / Remove `.alert-*` stylings on callout component.
 - Fix: Table of Contents widget on static pages.
+- Fix: Error on if condition on `post.featured_images`.
 
 ### ToDo
 - Add: Support for [RainLab.Forum](https://octobercms.com/plugin/rainlab-forum) OC Plugin.
