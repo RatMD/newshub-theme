@@ -1,7 +1,7 @@
 <section class="section section-posts">
     <header class="py-1 py-lg-6 bg-light dark:bg-dark">
         <div class="container">
-            <div class="post-header{% if post.featured_images %} post-has-thumbnail{% endif %}">
+            <div class="post-header{% if post.featured_images and post.featured_images|length > 0 %} post-has-thumbnail{% endif %}">
                 <h1 class="post-title">{{ post.title }}</h1>
 
                 <time class="post-published" datetime="{{ post.published_at }}">
@@ -9,7 +9,7 @@
                 </time>
             </div>
 
-            {% if post.featured_images %}
+            {% if post.featured_images and post.featured_images|length > 0 %}
                 <div class="post-thumbnail">
                     <img src="{{ post.featured_images.0.getPath() }}" alt="{{ post.title }}" />
                 </div>
@@ -86,7 +86,7 @@
 
                 {% component 'bloghubCommentSection' %}
             </div>
-            <aside class="sidebar-area post-aside{% if post.featured_images %} post-has-thumbnail{% endif %}">
+            <aside class="sidebar-area post-aside{% if post.featured_images and post.featured_images|length > 0 %} post-has-thumbnail{% endif %}">
                 {% partial 'sidebars/post' %}
             </aside>
         </div>

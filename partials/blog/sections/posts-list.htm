@@ -17,8 +17,8 @@
                 {% endif %}
             {% endif %}
             
-            <a href="{{ post.url }}" title="{{ post.title }}" class="post-thumbnail{% if post.featured_images %} post-has-thumbnail{% endif %}{{ this.theme.view_counter? ' with-view-counter': '' }}">
-                {% if post.featured_images %}
+            <a href="{{ post.url }}" title="{{ post.title }}" class="post-thumbnail{% if post.featured_images and post.featured_images|length > 0 %} post-has-thumbnail{% endif %}{{ this.theme.view_counter? ' with-view-counter': '' }}">
+                {% if post.featured_images and post.featured_images|length > 0 %}
                     <img src="{{ post.featured_images.0.getPath() }}" alt="{{ post.title }}" />
                 {% else %}
                     <span class="post-no-thumbnail bg-light dark:bg-dark">{{ 'posts.no_thumbnail' | _ }}</span>

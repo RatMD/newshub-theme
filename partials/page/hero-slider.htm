@@ -44,7 +44,7 @@ function onStart() {
             <div class="keen-slider-slide">
                 <a href="{{ post.url }}" title="{{ post.title }}" class="hero-slide-item">
                     <div class="slide-image">
-                        {% if post.featured_images|length > 0 %}
+                        {% if post.featured_images and post.featured_images|length > 0 %}
                             <img src="{{ post.featured_images.0.getPath() }}" alt="{{ post.title }}" />
                         {% endif %}
                     </div>

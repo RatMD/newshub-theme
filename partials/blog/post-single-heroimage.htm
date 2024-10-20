@@ -24,7 +24,7 @@
                     {% endif %}
                 {% endif %}
             </div>
-            <aside class="sidebar-area post-aside{% if post.featured_images %} post-has-thumbnail{% endif %}">
+            <aside class="sidebar-area post-aside{% if post.featured_images and post.featured_images|length > 0 %} post-has-thumbnail{% endif %}">
                 {% partial 'sidebars/post' %}
             </aside>
         </div>
