@@ -1,3 +1,4 @@
+import '../scss/theme.scss';
 
 import invokeAnchors from './components/anchors';
 import invokeBootstrap from './components/bootstrap';

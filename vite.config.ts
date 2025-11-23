@@ -26,10 +26,7 @@ export default defineConfig(({ command }) => ({
     },
     css: {
         preprocessorOptions: {
-            scss: {
-                // wenn du globale Imports brauchst:
-                // additionalData: `@use "..." as *;`
-            },
+            scss: { },
         },
     },
 }));
