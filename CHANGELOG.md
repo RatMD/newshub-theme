@@ -2,8 +2,10 @@ NewsHub / Changelog
 ===================
 
 ## Version 2.0.0 (Stable)
+- Add: New vite bundler and watcher script setup.
 - Update: `package.json` dependencies.
 - Update: SCSS file structure and bootstrap changes.
+- Remove: esbuild bundler script and dependencies.
 
 ### ToDo
 - Info: OctoberCMS v2 support has been dropped; v3 or v4 is required to use the new NewsHub theme.

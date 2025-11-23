@@ -1,3 +1,2 @@
-
-import * as Bootstrap from 'bootstrap/dist/js/bootstrap.esm';
-window['bootstrap'] = window['Bootstrap'] = Bootstrap;
+import * as bootstrap from 'bootstrap';
+window['bootstrap'] = window['Bootstrap'] = bootstrap;

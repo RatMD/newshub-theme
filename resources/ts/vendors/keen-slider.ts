@@ -1,3 +1,2 @@
-
-import * as KeenSlider from 'keen-slider/keen-slider.es';
+import * as KeenSlider from 'keen-slider';
 window['KeenSlider'] = KeenSlider.default;

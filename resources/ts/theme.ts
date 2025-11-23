@@ -1,5 +1,9 @@
 import '../scss/theme.scss';
 
+import './vendors/bootstrap-lightbox';
+import './vendors/bootstrap';
+import './vendors/keen-slider';
+
 import invokeAnchors from './components/anchors';
 import invokeBootstrap from './components/bootstrap';
 import invokeColorPicker from './components/color-picker';
