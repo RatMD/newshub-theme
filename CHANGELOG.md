@@ -1,39 +1,49 @@
-NewsHub - Changelog
+NewsHub / Changelog
 ===================
 
-Version 1.3.0 - In Progress
----------------------------
-- Add: Support for the new sitePicker core component, as released on OctoberCMS v3.1.
-- Add: Support for [BlakeJones.MagicForms](https://octobercms.com/plugin/blakejones-magicforms) OC Plugin.
-- Add: Support for [JanVince.SmallContactForm](https://octobercms.com/plugin/janvince-smallcontactform) OC Plugin.
-- Add: Support for [JanVince.SmallGDPR](https://octobercms.com/plugin/janvince-smallgdpr) OC Plugin.
-- Add: Support for [RainLab.BlogVideoExtension](https://octobercms.com/plugin/rainlab-blogvideoextension) OC Plugin.
-- Add: Support for [RainLab.User](https://octobercms.com/plugin/rainlab-user) (v1 and v2) OC Plugin.
-- Add: Config - "Prefer SitePicker over LocalePicker" for OC v3.1 w/ RainLab.Translate v1.x installations.
-- Add: Config - "SitePicker Appearance" to show Language- or full Site- names, limited to the new SitePicker component.
-- Add: Config - "Site/LocalePicker Style" to change how the component should be rendered (Dropdown, Modal, Switch).
-- Add: Config - Meta switches to toggle base, robots, color-scheme and theme-color meta tags.
-- Add: Config - "Provide Dark Color-Scheme" to toggle the dark color-scheme in general.
-- Add: Config - "Overwrite CSS Color Palette" to overwrite the theme colors using css custom properties.
-- Add: Config - "Gray Color Palette" to overwrite the gray color scheme using css custom properties.
-- Add: Config - "Header Position" to change the header position / behavior (supporting Static, Sticky and Slide).
-- Add: Config - "Slider Controls" to toggle the slider controls on the homepage hero-slider.
-- Add: Config - "Slider Indicators" to toggle the slider indicators on the homepage hero-slider.
-- Add: Config - Notice options (with color, title, links and content), shown on the homepage between hero area and article list.
-- Add: Config - "Post Category" to reference the post category on the single posts (on the article lists).
-- Add: Config - "Post Featured Tags" to reference the featured tags on the single posts (on the article lists).
-- Add: Config - "Share Links" to toggle privacy-protected social share links above the article content.
-- Add: Config - "Similar / Random Posts" to toggle a similar / random posts section below the article content.
-- Add: Config - Sidebar configuration set using October's grouped repeater widgets.
-- Add: "Title & Layout" input-group page-builder configuration partial.
-- Add: "ID & Class Names" input-group page-builder configuration partial.
-- Add: "Spacings" range-input page-builder configuration partial.
-- Add: "Blog Comment" sidebar widget to display a list of comments.
-- Add: "Image" sidebar widget to display a custom image with text.
-- Add: "Related Posts" sidebar widget to display a list of related posts (in single blog posts only).
+## Version 2.0.0 (Stable)
+- Update: `package.json` dependencies.
+- Update: SCSS file structure and bootstrap changes.
+
+### ToDo
+- Info: OctoberCMS v2 support has been dropped; v3 or v4 is required to use the new NewsHub theme.
+- Add: Switched to Vite with HMR instead of using esbuild.
+- Add: Support for the [RainLab.Forum](https://octobercms.com/plugin/rainlab-forum) plugin.
+- Update: Using Bootstrap’s new color-mode for dark and light color schemes.
+
+## Version 1.3.0 (Skipped)
+- Info: This release was skipped. All features listed below were completed but were shipped in v2.
+- Add: Support for the new sitePicker core component, as introduced in OctoberCMS v3.1.
+- Add: Support for the [BlakeJones.MagicForms](https://octobercms.com/plugin/blakejones-magicforms) plugin.
+- Add: Support for the [JanVince.SmallContactForm](https://octobercms.com/plugin/janvince-smallcontactform) plugin.
+- Add: Support for the [JanVince.SmallGDPR](https://octobercms.com/plugin/janvince-smallgdpr) plugin.
+- Add: Support for the [RainLab.BlogVideoExtension](https://octobercms.com/plugin/rainlab-blogvideoextension) plugin.
+- Add: Support for the [RainLab.User](https://octobercms.com/plugin/rainlab-user) plugin (v1 and v2).
+- Add: Config option "Prefer SitePicker over LocalePicker" for OctoberCMS v3.1 with RainLab.Translate v1.x installations.
+- Add: Config option "SitePicker Appearance" to show language names or full site names, limited to the new SitePicker component.
+- Add: Config option "Site/LocalePicker Style" to define how the component should be rendered (Dropdown, Modal, Switch).
+- Add: Config meta switches to toggle base, robots, color-scheme and theme-color meta tags.
+- Add: Config option "Provide Dark Color-Scheme" to enable the dark color-scheme globally.
+- Add: Config option "Overwrite CSS Color Palette" to override theme colors using CSS custom properties.
+- Add: Config option "Gray Color Palette" to override the gray color set using CSS custom properties.
+- Add: Config option "Header Position" to control the header behavior (Static, Sticky, Slide).
+- Add: Config option "Slider Controls" to toggle slider controls on the homepage hero slider.
+- Add: Config option "Slider Indicators" to toggle slider indicators on the homepage hero slider.
+- Add: Config notice options (color, title, links, content), displayed on the homepage between the hero area and the article list.
+- Add: Config option "Post Category" to reference post categories on single posts (and article lists).
+- Add: Config option "Post Featured Tags" to reference featured tags on single posts (and article lists).
+- Add: Config option "Share Links" to toggle privacy-friendly social share links above article content.
+- Add: Config option "Similar / Random Posts" to toggle the similar or random posts section below article content.
+- Add: Sidebar configuration using October's grouped repeater widgets.
+- Add: "Title & Layout" input-group page builder configuration partial.
+- Add: "ID & Class Names" input-group page builder configuration partial.
+- Add: "Spacings" range-input page builder configuration partial.
+- Add: "Blog Comment" sidebar widget for displaying a list of comments.
+- Add: "Image" sidebar widget for showing a custom image with text.
+- Add: "Related Posts" sidebar widget for displaying related posts (single post pages only).
 - Add: Navbar toggler element ([CodePen Source](https://codepen.io/ainalem/pen/LJYRxz)).
-- Add: "User Action" header integration (requires RainLab.User), available on Extended navbar style only.
-- Add: Default favicon + webmanifest set.
+- Add: "User Action" header integration (requires RainLab.User), available on the Extended navbar style only.
+- Add: Default favicon and webmanifest set.
 - Add: RSS Feed CMS page.
 - Update: Accordion content element (new structure).
 - Update: Alert / Callout content element (new structure).
@@ -53,11 +63,11 @@ Version 1.3.0 - In Progress
 - Update: Slider content element (new structure).
 - Update: Tabs content element (new structure).
 - Update: Text with Teaser content element (new structure).
-- Update: Theme Options structure & layout.
-- Update: Sidebar to Widget environment for Homepage, Archive, Static Page and Blog Post pages.
+- Update: Theme Options structure and layout.
+- Update: Migrated Sidebar to widget environment for Homepage, Archive, Static Page and Blog Post pages.
 - Update: `Blog Posts` widget replaces `List Articles` (new builder structure).
 - Update: `Blog Authors` widget replaces `List Authors` (new builder structure).
-- Update: Show Avatars on Blog Authors list.
+- Update: Added avatar display to Blog Authors list.
 - Update: `Blog Categories` widget replaces `List Categories` (new builder structure).
 - Update: `Blog Tags` widget replaces `List Tags` (new builder structure).
 - Update: `Table of Contents` widget replaces `Table of Contents` (new builder structure).
@@ -68,133 +78,113 @@ Version 1.3.0 - In Progress
 - Update: `Current Categories` widget replaces `Current Categories`.
 - Update: `Current Tags` widget replaces `Current Tags`.
 - Update: `Next | Previous Posts` widget replaces `Next / Previous Buttons`.
-- Update: Missing JavaScript Anchors for Table of Contents Widget.
+- Update: Added missing JavaScript anchors for the Table of Contents widget.
 - Update: Main SCSS file structure.
-- Update: Set full color palette into style tag (including rgb variants).
-- Update: Change dropdown design / stylings on all header actions (same styling as main-menu).
-- Update: Change search modal / overlay design.
-- Update: Re-written header / navbar JavaScript (within the new Navbar class).
-- Update: Change rollup bundle to esbuild bundle (using TypeScript instead of JavaScript).
-- Update: Bootstrap package to v5.3.0-alpha2.
-- Update: Change Bootstrap 5 Lightbox package with a custom Lightbox plugin.
-- Update: Keen Slider package to v6.8.5 + Keen Slider Stylings.
-- Update: Cleanup template localization strings (for both: English and German).
-- Update: TypeScript / JavaScript environment, utilities and modules.
-- Update: Offcanvas and Modal design (+ dark design variant).
-- Update: Dark (and Light) Bootstrap stylings and improvements.
-- Remove: "sticky_header" option, has been replaced with "Header Position" > "Sticky".
-- Fix: Set HTML lang to current locale instead of fixed 'en'.
-- Fix: Bootstrap URL on placeholder / demo copyright text.
-- Fix: No-JS & JS-Loading styles for keen hero slider.
-- Fix: Remove additional div container tag on the Double-Click content element.
-- Fix: Class Names has not been passed to the quote content element.
-- Fix: Use the theme's author name in theme-links (`ratmd-newshub` instead of `newshub`).
-- Fix: Issues with translations (and YAML import links), as mentioned in [#4](https://github.com/RatMD/newshub-theme/issues/4).
-- Fix: Some translation / localization issues in both english and german language.
+- Update: Added full color palette to style tag (including RGB variants).
+- Update: Unified dropdown design and styling across all header actions (matching main menu styling).
+- Update: Search modal and overlay design.
+- Update: Rewritten header and navbar JavaScript in the new Navbar class.
+- Update: Switched from rollup to esbuild bundling (TypeScript instead of JavaScript).
+- Update: Bootstrap upgraded to v5.3.0-alpha2.
+- Update: Replaced Bootstrap 5 Lightbox package with a custom Lightbox plugin.
+- Update: Keen Slider upgraded to v6.8.5 plus updated stylings.
+- Update: Cleaned up template localization strings (English and German).
+- Update: TypeScript and JavaScript environment, utilities and modules.
+- Update: Offcanvas and modal design including dark variant.
+- Update: Dark and light Bootstrap styling improvements.
+- Remove: Removed "sticky_header" option, replaced by "Header Position" > "Sticky".
+- Fix: Set HTML lang attribute to the current locale instead of fixed "en".
+- Fix: Bootstrap URL in placeholder and demo copyright text.
+- Fix: No-JS and JS-loading styles for the Keen hero slider.
+- Fix: Removed extra div wrapper in the Double Click content element.
+- Fix: Class names not passed to the quote content element.
+- Fix: Use theme author name in theme links (`ratmd-newshub` instead of `newshub`).
+- Fix: Translation issues and YAML import links, as mentioned in issue #4.
+- Fix: Additional translation and localization issues in English and German.
 - Fix: `CMS_STRICT_VARIABLES=true` .env security option errors.
-- Fix: Rename / Remove `.alert-*` stylings on callout component.
+- Fix: Renamed or removed `.alert-*` styles on the callout component.
 - Fix: Table of Contents widget on static pages.
-- Fix: Error on if condition on `post.featured_images`.
+- Fix: Error in `post.featured_images` conditional.
 
-### ToDo
-- Add: Support for [RainLab.Forum](https://octobercms.com/plugin/rainlab-forum) OC Plugin.
-- Update: Use Bootstraps new color-mode for dark / light color scheme.
+## Version 1.2.2 (Stable)
+- Fix: Errors in production context related to the Page object.
 
-
-Version 1.2.2 - Stable
-----------------------
-- Bugfix: Fix errors on production context (Page object).
-
-
-Version 1.2.1 - Stable
-----------------------
-- Update: Meta Tags.
+## Version 1.2.1 (Stable)
+- Update: Meta tags.
 - Update: Bootstrap package to v5.2.1.
 - Update: Keen Slider package to v6.8.0.
-- Update: @rollup/plugin-bode-resolve dev-package to v14.1.0.
-- Update: sass dev-package to v1.54.9.
+- Update: `@rollup/plugin-bode-resolve` dev package to v14.1.0.
+- Update: `sass` dev package to v1.54.9.
 
-
-Version 1.2.0 - Stable
-----------------------
+## Version 1.2.0 (Stable)
 - Add: Alegreya Sans Medium font (weight 500).
-- Add: Support for RainLab.BlogVideoExtension plugin.
-- Add: Additional navigation header style (with additional action buttons).
-- Add: Search and User button on the extended header style.
-- Add: New search archive / blog page - based on `[blogPosts]`.
-- Add: New theme option to embed the jQuery framework for OctoberCMS v3+.
-- Add: New theme option to embed the OctoberCMS "Framework Extras" dependencies.
-- Add: New theme option to configure the number of posts shown in the hero slider.
-- Add: New theme option to show a comment counter badge above the thumbnail.
-- Add: New theme option to add a site slogan, shown in the footer.
-- Add: New theme options for favicon, vector icon, apple touch icon and webmanifest meta tags.
-- Add: New theme options for the meta generator tag.
-- Add: New accordion stylings, with alternative and no icon, left-aligned icon and an additional clean design.
-- Add: New `columns-2` styling for main nav items on main menu (See Page Builder menu on demo website).
-- Add: New `footer-menu` menu position with up to 3 header - menu-link items.
-- Add: New `meta-menu` menu position for the advanced header style.
-- Add: New Sidebar widget `Text`, to display custom text.
-- Add: New Sidebar widget `HTML`, to display custom HTML code.
+- Add: Support for the RainLab.BlogVideoExtension plugin.
+- Add: Additional navigation header style with extra action buttons.
+- Add: Search and User buttons on the extended header style.
+- Add: New search archive and blog page based on `[blogPosts]`.
+- Add: Theme option to embed the jQuery framework for OctoberCMS v3+.
+- Add: Theme option to embed OctoberCMS “Framework Extras” dependencies.
+- Add: Theme option to configure the number of posts shown in the hero slider.
+- Add: Theme option to show a comment counter badge above thumbnails.
+- Add: Theme option to add a site slogan displayed in the footer.
+- Add: Theme options for favicon, vector icon, apple touch icon and webmanifest meta tags.
+- Add: Theme options for the meta generator tag.
+- Add: New accordion stylings including alternative, no-icon, left-aligned icon and a clean design.
+- Add: New `columns-2` styling for main nav items on the main menu (see Page Builder menu on demo site).
+- Add: New `footer-menu` position supporting up to 3 header + menu-link items.
+- Add: New `meta-menu` position for the advanced header style.
+- Add: New Sidebar widget `Text` for displaying custom text.
+- Add: New Sidebar widget `HTML` for displaying custom HTML.
 - Update: Development dependencies.
-- Update: Change Stylesheet and JavaScript loading order.
-- Update: Fix alert stylings, re-add border radius.
-- Update: Move both macros to the new `page/macro.htm` partial.
-- Update: Keen Slider invoke script and stylings.
-- Update: Use ocJSON (OctoberCMS v2) or oc.parseJSON (OctoberCMS v3) when available.
-- Update: `footer-menu-1` and `footer-menu-2` are deprecated and used as fallback when `footer-menu` does not exist or is empty.
-- Update: Move Color & Language menu to the actions section on the extended header style.
+- Update: Stylesheet and JavaScript loading order.
+- Update: Alert stylings, re-added border radius.
+- Update: Moved macros to the new `page/macro.htm` partial.
+- Update: Keen Slider initialization script and stylings.
+- Update: Use `ocJSON` (OctoberCMS v2) or `oc.parseJSON` (OctoberCMS v3) when available.
+- Update: `footer-menu-1` and `footer-menu-2` are deprecated and used as fallback when `footer-menu` is missing or empty.
+- Update: Moved Color and Language menu to the actions section of the extended header style.
 - Update: Header stylings and template.
-- Update: Too many minor changes on the whole source code and stylings to list it here.
+- Update: Numerous minor changes across the codebase and stylings.
 - Remove: Demonstration content.
-- Fix: The theme option to configure the hero slider category works now.
-- Fix: Last menu item was not shown / in viewport on mobile devices.
-- Fix: Responsive design of double-click solution on mobile / small devices.
-- Fix: Responsive design of navbars on mobile / small devices.
+- Fix: Theme option for configuring the hero slider category now works.
+- Fix: Last menu item not fully visible on mobile devices.
+- Fix: Responsive layout of the double-click solution on small screens.
+- Fix: Responsive layout of navbars on small screens.
 - Fix: Framework Extras and Bootstrap JS functionalities.
 
-
-Version 1.1.2 - Stable
-----------------------
+## Version 1.1.2 (Stable)
 - Add: Weekly Archive page (provided by RatMD.BlogHub v1.3.0).
 - Update: RatMD.BlogHub v1.3.0 compatibility.
-- Fix: Prevent Meta details when no user is available on the post.
-- Fix: Add jQuery dependency for October CMS v2.
+- Fix: Prevent meta details when no user is assigned to a post.
+- Fix: Add jQuery dependency for OctoberCMS v2.
 
+## Version 1.1.1 (Stable)
+- Update: Use OctoberCMS VS Code syntax.
+- Fix: Prefer Socials folder icons before Bootstrap Icons.
+- Fix: Wrong condition on the author archive page.
 
-Version 1.1.1 - Stable
-----------------------
-- Update: Use OctoberCMS VScode Syntax.
-- Fix: Use Socials folder before Bootstrap icons.
-- Fix: Wrong condition on author archive page.
-
-
-Version 1.1.0 - Stable
-----------------------
+## Version 1.1.0 (Stable)
 - Add: Configurable sidebar widgets for home, page and post CMS pages.
 - Add: Article List widget for all sidebars.
 - Add: Category List widget for all sidebars.
 - Add: Tag List widget for all sidebars.
 - Add: Author List widget for all sidebars.
 - Add: Static Menu widget for all sidebars.
-- Add: Current Author widget for post sidebar.
-- Add: Current Categories widget for post sidebar.
-- Add: Current Tags widget for post sidebar.
-- Add: Next | Previous posts widget for post sidebar.
-- Add: Table of Contents widget for page sidebar.
+- Add: Current Author widget for post sidebars.
+- Add: Current Categories widget for post sidebars.
+- Add: Current Tags widget for post sidebars.
+- Add: Next | Previous Posts widget for post sidebars.
+- Add: Table of Contents widget for page sidebars.
 - Fix: Table of Contents generator skipped the last header element.
 - Fix: Missing dark header settings on static page layouts.
 
+## Version 1.0.1 (Stable)
+- Update: Added dark highlight.js stylings for `pre` and `code` elements.
+- Fix: Form stylings under the dark color scheme.
+- Fix: Background color on the full-width page layout.
+- Fix: Callout color variables in dark mode.
+- Fix: Example component styling and dark border color.
+- Fix: Navbar positioning below the hero slider when header is not set to "sticky".
 
-Version 1.0.1 - Stable
-----------------------
-- Update: Add dark highlight.js stylings for pre, code elements.
-- Fix: Form stylings on dark color scheme.
-- Fix: background color on the full-width page layout.
-- Fix: Callout Color variables on dark scheme.
-- Fix: Example component styling + dark border color.
-- Fix: Navbar below Hero-Slider (when Header is not set to 'sticky').
-
-
-Version 1.0.0 - Stable
-----------------------
-- Initial Release
+## Version 1.0.0 (Stable)
+- Initial release.

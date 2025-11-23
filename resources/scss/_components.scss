@@ -1,8 +1,6 @@
-
 // ----------------------------------------
 //  Bootstrap Components
 // ----------------------------------------
-
 @import './components/accordion';
 @import './components/alert';
 @import './components/breadcrumb';
@@ -23,7 +21,6 @@
 // ----------------------------------------
 //  Custom Components
 // ----------------------------------------
-
 @import './components/callout';
 @import './components/double-click';
 @import './components/notices';
@@ -32,3 +29,11 @@
 @import './components/scroll-to-top';
 @import './components/section';
 @import './components/toc';
+
+
+// ----------------------------------------
+//  Vendor Components
+// ----------------------------------------
+@import './vendors/janvince-smallgdpr.scss';
+@import './vendors/rainlab-blogvideo.scss';
+@import './vendors/keen-slider.scss';

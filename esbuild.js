@@ -46,7 +46,9 @@ async function assets(options = {}) {
     // EntryPoint CSS
     if (options.bundleCss) {
         entryPoints['css/newshub.min'] = 'resources/scss/theme.scss';
-        plugins.push(require('esbuild-sass-plugin').sassPlugin({ }));
+        plugins.push(require('esbuild-sass-plugin').sassPlugin({
+            silenceDeprecations: ['abs-percent', 'color-4-api', 'color-functions', 'import', 'global-builtin']
+        }));
     }
 
     // EntryPoint JavaScript
@@ -62,10 +64,10 @@ async function assets(options = {}) {
             '*.gif',
             '*.jpg',
             '*.jpeg',
-            '*.png', 
-            '*.svg', 
-            '*.woff', 
-            '*.woff2', 
+            '*.png',
+            '*.svg',
+            '*.woff',
+            '*.woff2',
             '/resources/ts/vendors/*'
         ],
         format: 'iife',
@@ -149,7 +151,7 @@ function parse(args) {
             options.watch = true;
         } else if (arg.indexOf('--folder') === 0) {
             let folder = null;
-            
+
             if (arg === '--folder' && args[0].indexOf('--') < 0) {
                 folder = args.shift();
             } else if (arg.length > 8 && arg[8] === '=') {

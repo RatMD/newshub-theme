@@ -1,32 +1,19 @@
 NewsHub - Free Magazine Template
 ================================
 
-**NewsHub** is a free, minimalist and responsive Blog and Magazine template, designed for OctoberCMS 
-v2 and v3. It provides a clean and configurable structure using **Bootstrap v5.3** as powerful CSS 
-and JS Framework, includes the beautiful **Bootstrap Icons** and implements the responsive and 
+**NewsHub** is a free, minimalist and responsive Blog and Magazine template, designed for OctoberCMS
+v2 and v3. It provides a clean and configurable structure using **Bootstrap v5.3** as powerful CSS
+and JS Framework, includes the beautiful **Bootstrap Icons** and implements the responsive and
 feature-rich **Keen Slider** package.
 
-[View the Demo-Website](https://themes.rat.md/newshub)
-
-[Please rate our Template on the Marketplace](https://octobercms.com/theme/ratmd-newshub#reviews)
-
-[Contact us on any Question](mailto:info@rat.md)
+- [View the Demo-Website](https://themes.rat.md/newshub)
+- [Please rate our Template on the Marketplace](https://octobercms.com/theme/ratmd-newshub#reviews)
+- [Contact us on any Question](mailto:info@rat.md)
 
 
-Support NewsHub
----------------
-Please support us and our free NewsHub template by writing a [review](https://octobercms.com/theme/ratmd-newshub#reviews) 
-on our official [OctoberCMS marketplace page](https://octobercms.com/theme/ratmd-newshub). You can 
-also report bugs, request features and more on the [support forum](https://octobercms.com/theme/support/ratmd-newshub) 
-or directly on our [GitHub repository](https://github.com/RatMD/newshub-theme/issues).
-
-**We appreciate your support.**
-
-
-What's new in v1.3.0
---------------------
-Version 1.3.0 of the **NewsHub** template focus on the new **Sidebar Widget Builder**, a better 
-header and navbar structure, integrating the new **Site-Picker** component (as introduced in the new 
+## What's new in v2
+Version 2 of the **NewsHub** template focus on the new **Sidebar Widget Builder**, a better header
+and navbar structure, integrating the new **Site-Picker** component (as introduced in the new
 OctoberCMS v3.1 release) and providing more customization and improvements in general.
 
 - Support for the new **Site Picker** component, introduced in [OctoberCMS v3.1.0](https://octobercms.com/blog/post/october-cms-stable-version-31-live).
@@ -38,8 +25,8 @@ OctoberCMS v3.1 release) and providing more customization and improvements in ge
 
 What's new in v1.2.0
 --------------------
-The primary focus of version 1.2.0 is the new **Page Builder**, which allows to easily 
-create new static pages with over **18 different** Bootstrap and custom **content elements**. 
+The primary focus of version 1.2.0 is the new **Page Builder**, which allows to easily
+create new static pages with over **18 different** Bootstrap and custom **content elements**.
 
 - A new **Page Builder** for static pages with over **18 Components**.
 - A **comment section** and widget and a **week-based** date **archive**.
@@ -99,8 +86,8 @@ All Features
 
 Requirements
 ------------
-We highly recommend using this template with the latest OctoberCMS **v3.1** release, with 
-RainLab.Translate **v2+** (unless you're using a plugin which is not v2+ compatible). However, we 
+We highly recommend using this template with the latest OctoberCMS **v3.1** release, with
+RainLab.Translate **v2+** (unless you're using a plugin which is not v2+ compatible). However, we
 still support OctoberCMS v2+ installations using RainLab.Translate v1.9+.
 
 - Modern Browser _(IE and Edge Legacy are NOT supported)_
@@ -137,7 +124,7 @@ Our Front-End testing is based on:
 	- Mozilla Firefox (Latest) on Windows 10
 	- Microsoft Edge (Latest) on Windows 10
 - Apple MacOS (Via [BrowserStack](https://browserstack.com))
-	- Apple Safari (v15.6) on macOS 12 (Monterey) 
+	- Apple Safari (v15.6) on macOS 12 (Monterey)
 	- Apple Safari (v14.1) on macOS 11 (Big Sur)
 	- Apple Safari (v13.1) on macOS 10.15 (Catalina)
 - Apple iOS (Via [BrowserStack](https://browserstack.com))
@@ -145,8 +132,8 @@ Our Front-End testing is based on:
 	- Apple Safari on iPhone 13 / iOS 15
 	- Apple Safari on iPhone 12 / iOS 14
 
-Due to the testing via BrowserStack we cannot guarantee, that NewsHub works seamless on Apple 
-devices / on the Safari browser. If you notice any bug or strange behavior please contact us per 
+Due to the testing via BrowserStack we cannot guarantee, that NewsHub works seamless on Apple
+devices / on the Safari browser. If you notice any bug or strange behavior please contact us per
 mail or via GitHub issue, Thanks!
 
 
@@ -161,13 +148,13 @@ The following dependencies are already bundled with this template, of course.
 - [@rat.md/bs-lightbox](https://ratmd.github.io/bs-lightbox/) v1.1.0 - MIT licensed
 - jQuery*\** (only in OctoberCMS v2, see below) - MIT licensed
 
-**Attention**: By default, jQuery is only included on OctoberCMS v2 installations using October's 
-provided jQuery version, using jQuery for OctoberCMS v3 and above requires to set the "Embed jQuery" 
+**Attention**: By default, jQuery is only included on OctoberCMS v2 installations using October's
+provided jQuery version, using jQuery for OctoberCMS v3 and above requires to set the "Embed jQuery"
 option on the theme configuration page.
 
 ### Development Dependencies
-The development of the **NewsHub** OctoberCMS template is done in TypeScript using node.js (v16+) 
-with an included and configured esBuild stack. View the package.json in the root template directory 
+The development of the **NewsHub** OctoberCMS template is done in TypeScript using node.js (v16+)
+with an included and configured esBuild stack. View the package.json in the root template directory
 for more details.
 
 Available Commands:

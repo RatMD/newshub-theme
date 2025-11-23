@@ -1,0 +1,23 @@
+// ----------------------------------------
+//  Custom Utility Classes
+// ----------------------------------------
+
+html.no-js .show-on-js {
+    display: none !important;
+}
+
+html:not(.no-js) .hide-on-js {
+    display: none !important;
+}
+
+.show-on-dark {
+    display: none;
+
+    .dark & {
+        display: inherit;
+    }
+}
+
+.dark .hide-on-dark {
+    display: none;
+}

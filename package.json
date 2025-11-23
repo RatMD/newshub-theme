@@ -1,6 +1,6 @@
 {
     "name": "@rat.md/newshub-theme",
-    "version": "1.3.0",
+    "version": "2.0.0",
     "description": "A minimalist and responsive blog & magazine template with page builder and dark mode, designed with Bootstrap 5.3.",
     "keywords": [
         "template",
@@ -8,29 +8,45 @@
         "october",
         "octobercms"
     ],
+    "private": true,
+    "homepage": "https://github.com/ratMD/newshub-theme",
+    "license": "MIT",
+    "author": "rat.md <info@rat.md> (https://rat.md)",
+    "bugs": {
+        "url": "https://www.github.com/ratMD/newshub-theme/issues",
+        "email": "sam@rat.md"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/ratMD/newshub-theme"
+    },
     "main": "resources/js/theme.js",
     "scripts": {
-        "build": "node esbuild.js",
-        "build:css": "node esbuild.js --no-js",
-        "build:js": "node esbuild.js --no-css",
-        "watch": "node esbuild.js --watch",
-        "watch:css": "node esbuild.js --no-js --watch",
-        "watch:js": "node esbuild.js --no-css --watch",
-        "vendors": "node esbuild.js --vendors"
+        "dev": "vite dev --host --cors",
+        "build": "vite build",
+        "watch": "vite build --watch",
+        "legacy:build": "node esbuild.js",
+        "legacy:build:css": "node esbuild.js --no-js",
+        "legacy:build:js": "node esbuild.js --no-css",
+        "legacy:watch": "node esbuild.js --watch",
+        "legacy:watch:css": "node esbuild.js --no-js --watch",
+        "legacy:watch:js": "node esbuild.js --no-css --watch",
+        "legacy:vendors": "node esbuild.js --vendors"
     },
-    "author": "rat.md <info@rat.md> (https://rat.md)",
-    "license": "MIT",
-    "private": true,
     "dependencies": {
-        "@popperjs/core": "^2.11.7",
-        "@rat.md/bs-lightbox": "^1.1.0",
-        "bootstrap": "^5.3.0-alpha2",
-        "bootstrap-icons": "^1.10.3",
-        "keen-slider": "^6.8.5"
+        "@popperjs/core": "^2.11.8",
+        "@rat.md/bs-lightbox": "^1.1.1",
+        "bootstrap": "^5.3.8",
+        "bootstrap-icons": "^1.13.1",
+        "keen-slider": "^6.8.6"
     },
     "devDependencies": {
-        "esbuild": "^0.17.14",
-        "esbuild-sass-plugin": "^2.8.0",
-        "sass": "^1.60.0"
+        "@types/node": "^24.10.1",
+        "esbuild": "^0.27.0",
+        "esbuild-sass-plugin": "^3.3.1",
+        "sass": "^1.94.2",
+        "tslib": "^2.8.1",
+        "typescript": "^5.9.3",
+        "vite": "^7.2.4"
     }
 }

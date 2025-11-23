@@ -1,12 +1,12 @@
-@use "sass:map";
-@use "sass:math";
+@use 'sass:map';
+@use 'sass:math';
 
 // ----------------------------------------
 //  Core Navbar Stylings
 // ----------------------------------------
 .header {
     width: 100%;
-    
+
     &.header-sticky {
         top: 0;
         z-index: 200;
@@ -31,7 +31,7 @@
 
 // ----------------------------------------
 //  Core Navbar Toggler Stylings
-//  @source https://codepen.io/ainalem/pen/LJYRxz
+//  @see https://codepen.io/ainalem/pen/LJYRxz
 // ----------------------------------------
 .navbar-toggler {
     margin-left: auto;
@@ -115,7 +115,7 @@
     // Mobile Icon
     svg:first-child {
         transition: transform .15s ease;
-        
+
         @include media-breakpoint-up(lg) {
             display: none;
         }
@@ -130,7 +130,7 @@
             display: none;
         }
     }
-    
+
     // Subnav-Toggler on Sub-Navigations
     @include media-breakpoint-up(lg) {
         .navbar-subnav & {
@@ -270,7 +270,7 @@
 // ----------------------------------------
 .navbar.navbar-main {
     position: static;
-    
+
     @include media-breakpoint-up(lg) {
         padding: $spacer;
     }
@@ -371,7 +371,7 @@
             flex: 1 1 auto;
             display: inline-flex;
             font-weight: 600;
-            
+
             @include media-breakpoint-up(lg) {
                 transition: color .15s ease, border-color .15s ease, background-color .15s ease;
                 white-space: nowrap;
@@ -380,7 +380,7 @@
         .nav-title {
             color: var(--#{$prefix}gray-600);
             padding: var(--#{$prefix}nav-link-padding-y) var(--#{$prefix}nav-link-padding-x);
-            
+
             @include media-breakpoint-up(lg) {
                 color: var(--#{$prefix}gray-700);
                 padding-right: var(--#{$prefix}navbar-nav-link-padding-x);
@@ -389,7 +389,7 @@
         }
         .nav-link {
             color: var(--#{$prefix}body-color);
-            
+
             @include media-breakpoint-up(lg) {
                 color: var(--#{$prefix}gray-700);
             }
@@ -488,7 +488,7 @@
                 opacity: 1;
                 pointer-events: fill;
             }
-            
+
             // Normal Sub-Sub Navigation
             .navbar-subnav .navbar-subnav {
                 top: 0;
@@ -496,7 +496,7 @@
                 margin-top: 0;
                 margin-left: 15px;
                 transform: translateX(0);
-                
+
                 .nav-item:first-child::before {
                     display: none;
                     content: none;
@@ -511,7 +511,7 @@
             .nav-item.columns-2 > .navbar-subnav {
                 display: grid;
                 grid-template-columns: 50% 50%;
-    
+
                 .nav-item:nth-child(odd) {
                     border-right: 1px solid $gray-300;
                     margin-right: -1px;
@@ -595,7 +595,7 @@
                 color: var(--#{$prefix}gray-100);
             }
         }
-    
+
         @include media-breakpoint-up(lg) {
             .navbar-subnav {
                 > .nav-item > .nav-title,
@@ -624,7 +624,7 @@
 
 // Condensed Header
 .header-condensed .navbar.navbar-main {
-    
+
     // Navbar Main Inner
     .navbar-main-inner {
         display: grid;
@@ -648,7 +648,7 @@
         .navbar-toggler {
             order: 4;
         }
-        
+
         @include media-breakpoint-up(xl) {
             display: flex;
 
@@ -673,7 +673,7 @@
                 min-width: auto;
                 justify-content: flex-end;
             }
-            
+
             &.has-actions {
                 .navbar-actions {
                     order: 4;
@@ -724,7 +724,7 @@
             }
         }
     }
-    
+
     // Navbar Main Inner
     .navbar-main-inner {
         display: flex;
@@ -831,7 +831,7 @@
     }
     &:not(.header-unpinned).small {
         height: 56px;
-        
+
         & + * {
             margin-top: 56px;
         }
@@ -875,7 +875,7 @@
             margin-right: $spacer * 0.5;
             overflow: hidden;
             transition: width 0s ease 0s;
-            
+
             @include media-breakpoint-up(lg) {
                 width: auto;
                 overflow: visible;
@@ -915,7 +915,7 @@
             object-fit: cover;
             object-position: center;
         }
-        
+
         &:hover,
         &:focus,
         &:focus-within {
@@ -970,7 +970,7 @@
 
         &:hover span:first-child {
             margin-top: -34px;
-        } 
+        }
 
         &:hover {
             input[type="checkbox"] {
@@ -985,7 +985,7 @@
     }
     .navbar-action.action-sitepicker.sitepicker-toggle {
         width: 64px;
-        
+
         .navbar-action-toggle {
             width: 64px;
 
@@ -1009,7 +1009,7 @@
         background-color: transparent;
         background-color: var(--#{$prefix}gray-100);
         transition: margin .5s ease;
-        
+
         @include media-breakpoint-up(lg) {
             display: none;
         }
@@ -1050,20 +1050,20 @@
     display: flex;
     padding: 0;
     align-items: flex-start;
-    
+
     @include media-breakpoint-up(lg) {
         display: grid;
         grid-auto-flow: column;
         grid-auto-columns: 1fr;
     }
-    
+
     .navbar-nav {
         flex: 0 0 100%;
         margin-bottom: $spacer * 1.5;
         padding-left: $spacer;
         padding-right: $spacer;
         text-align: center;
-        
+
         @include media-breakpoint-up(md) {
             flex-basis: 50%;
         }

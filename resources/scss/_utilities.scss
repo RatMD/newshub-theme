@@ -1,4 +1,3 @@
-
 // ----------------------------------------
 //  Bootstrap Utilities API
 // ----------------------------------------
@@ -7,9 +6,9 @@ $utilities: (
         property: font-family,
         class: font,
         values: (
-            serif: var(--#{$prefix}font-serif), 
-            sans-serif: var(--#{$prefix}font-sans-serif), 
-            monospace: var(--#{$prefix}font-monospace), 
+            serif: var(--#{$prefix}font-serif),
+            sans-serif: var(--#{$prefix}font-sans-serif),
+            monospace: var(--#{$prefix}font-monospace),
             special: var(--#{$prefix}font-special)
         )
     ),
@@ -21,7 +20,7 @@ $utilities: (
             'extralight':   200,
             'light':        $font-weight-light,     // 300
             'normal':       $font-weight-normal,    // 400
-            'medium':       500,                    
+            'medium':       500,
             'semibold':     $font-weight-semibold,  // 600
             'bold':         $font-weight-bold,      // 700
             'extrabold':    800,

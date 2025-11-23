@@ -1,9 +1,8 @@
 /**!
  * NewsHub OctoberCMS Blog & Magazine Template
- * 
- * @uses Bootstrap v5.3.1-alpha2 (https://getbootstrap.com/)
- *       Copyright 2011-2022 The Bootstrap Authors
- *       Copyright 2011-2022 Twitter, Inc.
+ *
+ * @uses Bootstrap v5.3.8 (https://getbootstrap.com/)
+ *       Copyright 2011-2026 The Bootstrap Authors
  *       Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
  */
 
@@ -14,28 +13,33 @@
 
 
 //----------------------------------------
-//  Include Bootstrap Functions
+//  Import Bootstrap Functions
 //----------------------------------------
-@import './core-functions';
 @import 'bootstrap/scss/functions';
+@import './functions';
 
 
 //----------------------------------------
-//  Include Bootstrap Basics
+//  Import Bootstrap Basics
 //----------------------------------------
-@import './core-variables';
+@import './variables';
+@import './variables-dark';
+
 @import 'bootstrap/scss/variables';
 @import 'bootstrap/scss/variables-dark';
+
 @import 'bootstrap/scss/maps';
-@import './core-mixins';
 @import 'bootstrap/scss/mixins';
-@import './core-utilities';
+@import './mixins';
+
 @import 'bootstrap/scss/utilities';
-@import './core-overrides';
+@import './utilities';
+
+@import './overrides';
 
 
 //----------------------------------------
-//  Include Bootstrap Core
+//  Import Bootstrap Core
 //----------------------------------------
 @import './base/fonts';
 @import 'bootstrap/scss/root';
@@ -45,14 +49,12 @@
 
 
 //----------------------------------------
-//  Include Bootstrap Components
+//  Import Bootstrap Components
 //----------------------------------------
 @import 'bootstrap/scss/type';
 @import 'bootstrap/scss/images';
 @import 'bootstrap/scss/containers';
 @import 'bootstrap/scss/grid';
-
-
 @import 'bootstrap/scss/tables';
 @import 'bootstrap/scss/forms';
 @import 'bootstrap/scss/buttons';
@@ -81,20 +83,19 @@
 
 
 //----------------------------------------
-//  Include Custom Components
+//  Include Theme Components
 //----------------------------------------
-@import './custom-components';
-@import './custom-vendors';
+@import './components';
 
 
 //----------------------------------------
-//  Include Bootstrap Helpers
+//  Include Bootstrap / Theme Helpers
 //----------------------------------------
 @import 'bootstrap/scss/helpers';
+@import './helpers';
 
 
 //----------------------------------------
 //  Include Bootstrap Utility API
 //----------------------------------------
 @import 'bootstrap/scss/utilities/api';
-@import './custom-utilities';

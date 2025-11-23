@@ -1,4 +1,4 @@
-@use "sass:map";
+@use 'sass:map';
 
 // ----------------------------------------
 //  Notice Component
@@ -64,7 +64,7 @@
         --#{$prefix}notice-bg: #{$notice-bg};
         --#{$prefix}notice-label-bg: #{$notice-color};
         --#{$prefix}notice-label-color: #{$notice-bg};
-        
+
         a {
             color: $value;
         }
@@ -76,7 +76,7 @@
     @if (contrast-ratio($notice-bg, $notice-color) < $min-contrast-ratio) {
         $notice-color: mix($value, color-contrast($notice-bg), abs($weight));
     }
-    
+
     $notice-label: $white;
     @if (contrast-ratio($notice-color, $notice-label) < 3.5) {
         $notice-label: $black;
@@ -87,7 +87,7 @@
         --#{$prefix}notice-bg: #{transparentize($value, 0.9)};
         --#{$prefix}notice-label-bg: #{$notice-color};
         --#{$prefix}notice-label-color: #{$notice-label};
-        
+
         a {
             color: $value;
         }

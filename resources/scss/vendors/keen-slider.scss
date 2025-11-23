@@ -71,7 +71,7 @@
             flex: 0 0 100%;
         }
     }
-    
+
     // Fade Animation
     &.keen-slider-fade {
         width: 100%;
@@ -111,18 +111,18 @@
         max-height: 50vh;
         overflow: hidden;
         perspective: 1000px;
-    
+
         .keen-slider-slide {
             width: 100%;
             height: 100%;
             position: relative;
-    
+
             .slide-image {
                 width: 100%;
                 height: 100%;
                 overflow: hidden;
                 position: absolute;
-    
+
                 img {
                     top: 50%;
                     left: 50%;
@@ -140,7 +140,7 @@
 
     // Marquee Animation
     &.keen-slider-marquee {
-        
+
     }
 }
 
@@ -180,7 +180,7 @@
         &:hover {
             color: white;
         }
-        
+
         svg.bi {
             color: fade-out($white, 0.5);
             width: 32px !important;
@@ -201,9 +201,9 @@
                 stroke-dasharray: 140;
                 stroke-dashoffset: 140;
                 transform: rotate(270deg);
-                transform-origin: 50% 50%;	
+                transform-origin: 50% 50%;
                 transition: all .5s ease-in-out;
-            }  
+            }
         }
 
         &:hover {
@@ -306,7 +306,7 @@
             z-index: 15;
             position: relative;
             overflow: hidden;
-            
+
             @include media-breakpoint-up(md) {
                 border-radius: 10px;
             }
@@ -333,7 +333,7 @@
                 box-shadow: inset 0 0 100px 75px rgba(0, 0, 0, 0.5);
             }
         }
-        &:hover .slide-image { 
+        &:hover .slide-image {
             img {
                 filter: grayscale(0%);
             }
@@ -371,7 +371,7 @@
                 opacity: 0.7;
                 font-size: 0.9rem;
                 font-family: $font-family-special;
-                
+
                 @include media-breakpoint-up(lg) {
                     font-size: 1.0rem;
                 }
@@ -384,7 +384,7 @@
                 color: $white;
                 font-size: 1.6rem;
                 font-family: $font-family-special;
-                
+
                 @include media-breakpoint-up(lg) {
                     font-size: 2.0rem;
                 }
@@ -438,7 +438,7 @@
             &:last-child {
                 right: auto;
             }
-            
+
             &.control-prev {
                 background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='%23232323' class='bi bi-chevron-left' viewBox='0 0 16 16'%3E%3Cpath fill-rule='evenodd' d='M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z'/%3E%3C/svg%3E");
             }
