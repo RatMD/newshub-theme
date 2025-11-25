@@ -57,7 +57,7 @@ tabs:
             label: theme.ratmd-newshub::lang.option.embed_extras.label
             comment: theme.ratmd-newshub::lang.option.embed_extras.comment
             default: false
-        
+
         __october_preferences:
             tab: theme.ratmd-newshub::lang.option.tabs.preferences
             type: section
@@ -210,7 +210,7 @@ tabs:
             label: theme.ratmd-newshub::lang.option.tip.favicon.label
             comment: theme.ratmd-newshub::lang.option.tip.favicon.comment
             commentHtml: true
-        
+
         __section_generator_tag:
             tab: theme.ratmd-newshub::lang.option.tabs.meta
             type: section
@@ -233,7 +233,7 @@ tabs:
                 field: generator_tag
                 action: enable
                 condition: checked
-        
+
         __color_scheme_section:
             tab: theme.ratmd-newshub::lang.option.tabs.appearance
             type: section
@@ -439,7 +439,7 @@ tabs:
                 action: show
                 field: enable_color_palette
                 condition: checked
-        
+
         __main_header_section:
             tab: theme.ratmd-newshub::lang.option.tabs.header
             type: section
@@ -511,7 +511,7 @@ tabs:
                 condition: value[extended]
                 field: header_style
             span: right
-        
+
         __hero_area_section:
             tab: theme.ratmd-newshub::lang.option.tabs.homepage
             type: section
@@ -553,7 +553,7 @@ tabs:
             modelClass: RainLab\Blog\Models\Category
             useRelation: false
             span: right
-        
+
         __notice_section:
             tab: theme.ratmd-newshub::lang.option.tabs.homepage
             type: section
@@ -598,7 +598,7 @@ tabs:
             label: theme.ratmd-newshub::lang.option.notice_content.label
             comment: theme.ratmd-newshub::lang.option.notice_content.comment
             placeholder: A info message.
-        
+
         __posts_section:
             tab: theme.ratmd-newshub::lang.option.tabs.content
             type: section
@@ -631,7 +631,7 @@ tabs:
             comment: theme.ratmd-newshub::lang.option.featured_tag_list.comment
             default: false
             span: right
-        
+
         __post_section:
             tab: theme.ratmd-newshub::lang.option.tabs.content
             type: section
@@ -671,7 +671,7 @@ tabs:
             comment: theme.ratmd-newshub::lang.option.datetime_format.comment
             commentHtml: true
             span: right
-        
+
         __section_sidebar:
             tab: theme.ratmd-newshub::lang.option.tabs.sidebars
             type: section
@@ -697,7 +697,7 @@ tabs:
             prompt: theme.ratmd-newshub::lang.option._sidebar.prompt
             displayMode: builder
             groups: '#/ratmd-newshub/config/sidebars/homepage.yaml'
-            trigger: 
+            trigger:
                 action: show
                 field: _sidebar
                 condition: value[home]
@@ -709,7 +709,7 @@ tabs:
             prompt: theme.ratmd-newshub::lang.option._sidebar.prompt
             displayMode: builder
             groups: '#/ratmd-newshub/config/sidebars/archive.yaml'
-            trigger: 
+            trigger:
                 action: show
                 field: _sidebar
                 condition: value[archive]
@@ -721,7 +721,7 @@ tabs:
             prompt: theme.ratmd-newshub::lang.option._sidebar.prompt
             displayMode: builder
             groups: '#/ratmd-newshub/config/sidebars/page.yaml'
-            trigger: 
+            trigger:
                 action: show
                 field: _sidebar
                 condition: value[page]
@@ -733,11 +733,11 @@ tabs:
             prompt: theme.ratmd-newshub::lang.option._sidebar.prompt
             displayMode: builder
             groups: '#/ratmd-newshub/config/sidebars/post.yaml'
-            trigger: 
+            trigger:
                 action: show
                 field: _sidebar
                 condition: value[post]
-            
+
         __footer_section:
             tab: theme.ratmd-newshub::lang.option.tabs.footer
             type: section
@@ -784,5 +784,5 @@ tabs:
             default: >
                 NewsHub Template by [rat.md](https://rat.md)
 
-                Designed with [Bootstrap 5.2](https://getbootstrap.com)
+                Designed with [Bootstrap 5.3](https://getbootstrap.com)
             span: right
