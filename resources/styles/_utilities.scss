@@ -1,7 +1,7 @@
 // ----------------------------------------
 //  Bootstrap Utilities API
 // ----------------------------------------
-$utilities: (
+$utilities: map-merge($utilities, (
     "font-family": (
         property: font-family,
         class: font,
@@ -93,15 +93,12 @@ $utilities: (
             gray: $gray-700
         ))
     ),
-);
+));
 
 
 // ----------------------------------------
 //  Border Utility
 // ----------------------------------------
-$utilities-border-colors: map-merge(
-    $utilities-border-colors,
-    (
-        'transparent': transparent
-    )
-);
+$utilities-border-colors: map-merge($utilities-border-colors, (
+    'transparent': transparent
+));
