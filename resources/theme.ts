@@ -1,4 +1,4 @@
-import '../scss/theme.scss';
+import './styles/theme.scss';
 
 import './vendors/bootstrap-lightbox';
 import './vendors/bootstrap';

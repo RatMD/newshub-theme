@@ -1,13 +1,13 @@
 {% if legacy or this.theme.embed_jquery %}
-    <script src="{{ ['@jquery', '@framework'] | theme }}"></script>
+    <script src="{{ ['@jquery', '@framework']|theme }}"></script>
 {% else %}
     {% framework %}
 {% endif %}
 {% if this.theme.embed_extras %}
-    <script src="{{ ['@framework.extras'] | theme }}"></script>
+    <script src="{{ ['@framework.extras']|theme }}"></script>
 {% endif %}
-<script src="{{ 'assets/js/vendors/bootstrap.min.js?ver=5.2.2' | theme }}"></script>
-<script src="{{ 'assets/js/vendors/bootstrap-lightbox.min.js?ver=1.0.3' | theme }}"></script>
-<script src="{{ 'assets/js/vendors/keen-slider.min.js?ver=6.8.3' | theme }}"></script>
-<script src="{{ 'assets/js/newshub.min.js?ver=1.3.0' | theme }}"></script>
+{% if this.viteScripts is not defined %}
+    <script src="{{ 'assets/js/vendors.min.js'|theme }}?ver={{ this.themeVersion }}"></script>
+    <script src="{{ 'assets/js/newshub.min.js'|theme }}?ver={{ this.themeVersion }}"></script>
+{% endif %}
 {% scripts %}

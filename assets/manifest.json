@@ -1,0 +1,19 @@
+{
+  "_vendors.min.js": {
+    "file": "js/vendors.min.js",
+    "name": "vendors"
+  },
+  "resources/theme.ts": {
+    "file": "js/newshub.min.js",
+    "name": "theme",
+    "src": "resources/theme.ts",
+    "isEntry": true,
+    "imports": [
+      "_vendors.min.js"
+    ]
+  },
+  "style.css": {
+    "file": "css/newshub.min.css",
+    "src": "style.css"
+  }
+}

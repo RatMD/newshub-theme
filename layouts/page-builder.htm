@@ -44,7 +44,7 @@ function onInit()
 
     $this['legacy'] = version_compare($this['octoberVersion'], '3.0.0', '<');
     $this['legacyTranslate'] = version_compare($this['rainlabTranslateVersion'], '2.0.0', '<');
-    
+
     $this['hexToRgb'] = function ($hex) {
         [$r, $g, $b] = sscanf($hex, "#%02x%02x%02x");
         return "$r, $g, $b";
@@ -55,6 +55,27 @@ function onInit()
         $this['currentLocale'] = $this['localePicker']->activeLocale();
     } else {
         $this['currentLocale'] = app()->getLocale();
+    }
+}
+
+function onStart() {
+    $theme = \Cms\Classes\Theme::getActiveTheme()->getDirName();
+
+    // Get version (ThemeManager::latestVersion() had a bug prior 2025/11/23)
+    // @see https://github.com/octobercms/october/issues/5983
+    $versions = \Cms\Classes\ThemeManager::instance()->getVersionHistory($theme);
+    $version = array_key_first($versions);
+    if ($version === null) {
+        $version = '0.0.0';
+    }
+    $this['themeVersion'] = (string) $version;
+
+    // Vite Bundle (dev only)
+    if (!app()->isProduction() && class_exists(\Illuminate\Foundation\Vite::class)) {
+        $vite = new \Illuminate\Foundation\Vite;
+        $vite->useBuildDirectory("themes/{$theme}/assets/build");
+        $vite->useHotFile(public_path("themes/{$theme}/assets/.hot"));
+        $this['viteScripts'] = $vite(['resources/theme.ts'])->toHtml();
     }
 }
 ?>
@@ -78,45 +99,45 @@ function onInit()
             document.currentScript.remove();
         }
     </script>
-    
+
     <header id="pageHeader" class="header header-{{ this.theme.header_style }} header-{{ this.theme.header_position }} {{ this.theme.dark_header ? 'bg-dark dark' : 'bg-light dark:bg-dark' }}" data-handle="header">
         {% partial 'page/header' %}
     </header>
 
-    {variable 
-        name="custom_newshub_css" 
-        type="partial" 
-        path="~/themes/ratmd-newshub/config/partials/custom_css.htm" 
+    {variable
+        name="custom_newshub_css"
+        type="partial"
+        path="~/themes/ratmd-newshub/config/partials/custom_css.htm"
         tab="theme.ratmd-newshub::lang.builder.tab.content_elements" }{/variable}
-    {variable 
-        name="custom_newshub_js" 
-        type="partial" 
-        path="~/themes/ratmd-newshub/config/partials/custom_js.htm" 
+    {variable
+        name="custom_newshub_js"
+        type="partial"
+        path="~/themes/ratmd-newshub/config/partials/custom_js.htm"
         tab="theme.ratmd-newshub::lang.builder.tab.content_elements" }{/variable}
-    {variable 
-        name="content_elements" 
-        type="repeater" 
-        displayMode="builder" 
-        label="theme.ratmd-newshub::lang.builder.content_elements.label" 
-        prompt="theme.ratmd-newshub::lang.builder.content_elements.prompt" 
+    {variable
+        name="content_elements"
+        type="repeater"
+        displayMode="builder"
+        label="theme.ratmd-newshub::lang.builder.content_elements.label"
+        prompt="theme.ratmd-newshub::lang.builder.content_elements.prompt"
         tab="theme.ratmd-newshub::lang.builder.tab.content_elements"
-        groups="#/ratmd-newshub/config/builder.yaml" 
+        groups="#/ratmd-newshub/config/builder.yaml"
         titleFrom="title"}{/variable}
-    {variable 
-        name="use_container" 
-        type="switch" 
-        label="theme.ratmd-newshub::lang.builder.use_container.label" 
-        comment="theme.ratmd-newshub::lang.builder.use_container.comment" 
-        tab="theme.ratmd-newshub::lang.builder.tab.page_configuration" 
+    {variable
+        name="use_container"
+        type="switch"
+        label="theme.ratmd-newshub::lang.builder.use_container.label"
+        comment="theme.ratmd-newshub::lang.builder.use_container.comment"
+        tab="theme.ratmd-newshub::lang.builder.tab.page_configuration"
         span="left"}1{/variable}
-    {variable 
-        name="show_sidebar" 
-        type="switch" 
-        label="theme.ratmd-newshub::lang.builder.show_sidebar.label" 
-        comment="theme.ratmd-newshub::lang.builder.show_sidebar.comment" 
-        tab="theme.ratmd-newshub::lang.builder.tab.page_configuration" 
+    {variable
+        name="show_sidebar"
+        type="switch"
+        label="theme.ratmd-newshub::lang.builder.show_sidebar.label"
+        comment="theme.ratmd-newshub::lang.builder.show_sidebar.comment"
+        tab="theme.ratmd-newshub::lang.builder.tab.page_configuration"
         span="right"}1{/variable}
-    
+
     <main id="pageContent" class="main">
         <div class="post-single page-single">
             <section class="section section-page">
@@ -140,7 +161,7 @@ function onInit()
                                 {% endif %}
                             {% endfor %}
                         </div>
-                        
+
                         {% if use_container == '1' and show_sidebar == '1' %}
                             <aside class="post-aside sidebar-area">
                                 {% partial 'sidebars/page' %}
@@ -151,17 +172,17 @@ function onInit()
             </section>
         </div>
     </main>
-    
+
     <footer id="pageFooter" class="footer {{ this.theme.dark_footer ? 'bg-dark dark' : 'bg-light dark:bg-dark' }}">
         {% partial 'page/footer' %}
     </footer>
-    
+
     {% if this.theme.to_top_button %}
         <a href="#top" class="scroll-to-top" data-handle="scroll-to-top">
             {% partial 'icons/bootstrap/arrow-up-short' %}
         </a>
     {% endif %}
-    
+
     {% set offscreen = placeholder('offscreen') %}
     {{ offscreen | raw }}
 

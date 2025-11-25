@@ -25,9 +25,12 @@
 {% component 'alternateHrefLangElements' %}
 {% placeholder meta_tags %}
 
+{# Development #}
+{% if this.viteScripts is defined %}{{ viteScripts|raw }}{% endif %}
+
 {# Stylesheets #}
-{% if this.theme.embed_extras %}<link rel="stylesheet" href="{{ ['@framework.extras'] | theme }}" />{% endif %}
-<link rel="stylesheet" href="{{ 'assets/css/newshub.min.css?ver=1.3.0' | theme }}" />
+{% if this.theme.embed_extras %}<link rel="stylesheet" href="{{ ['@framework.extras']|theme }}" />{% endif %}
+{% if this.viteScripts is not defined %}<link rel="stylesheet" href="{{ 'assets/css/newshub.min.css'|theme }}?ver={{ this.themeVersion }}" />{% endif %}
 {% if this.theme.enable_color_palette %}
     <style type="text/css">
         :root {

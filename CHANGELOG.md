@@ -2,6 +2,7 @@ NewsHub / Changelog
 ===================
 
 ## Version 2.0.0 (Stable)
+- Add: Switched to Vite with HMR development support, instead of using esbuild.
 - Add: New vite bundler and watcher script setup.
 - Update: `package.json` dependencies.
 - Update: SCSS file structure and bootstrap changes.
@@ -9,7 +10,6 @@ NewsHub / Changelog
 
 ### ToDo
 - Info: OctoberCMS v2 support has been dropped; v3 or v4 is required to use the new NewsHub theme.
-- Add: Switched to Vite with HMR instead of using esbuild.
 - Add: Support for the [RainLab.Forum](https://octobercms.com/plugin/rainlab-forum) plugin.
 - Update: Using Bootstrap’s new color-mode for dark and light color schemes.
 
