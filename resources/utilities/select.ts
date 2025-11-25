@@ -1,13 +1,13 @@
-
 /**
  * Select Handler
- * @param selector The desired element selector string.
- * @param context The context element.
- * @returns
+ * @param {string} selector The desired element selector string.
+ * @param {mixed} context The context element.
+ * @returns {HTMLElement|null}
  */
-function select(selector: string, context?: Document | HTMLElement): HTMLElement | null {
-    return (context || document).querySelector(selector);
+function select<T = HTMLElement>(selector: string, context?: HTMLElement | Document): T | null {
+    return (context || document).querySelector(selector) as T | null;
 }
 
 // Export Module
 export default select;
+export { select };

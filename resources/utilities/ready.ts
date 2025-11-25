@@ -1,20 +1,24 @@
+type Callback = (this: Document, ev?: Event) => any;
 
 /**
- * Ready Factory State
- * @param factory 
- * @returns
+ * Factory Handler on Ready
+ * @param {Function} factory
+ * @returns {Promise|void}
  */
-function ready(factory: Function | void): Promise<true> | void {
+function ready(): Promise<null>;
+function ready(factory: Callback): void;
+function ready(factory?: Callback): void | Promise<null> {
     if (typeof factory === 'undefined') {
         return new Promise(resolve => ready(resolve.bind(null, null)));
     } else {
         if (document.readyState === 'loading') {
-            document.addEventListener('DOMContentLoaded', factory as any);
+            document.addEventListener('DOMContentLoaded', factory);
         } else {
-            factory();
+            factory.call(document);
         }
     }
 }
 
 // Export Module
 export default ready;
+export { ready };

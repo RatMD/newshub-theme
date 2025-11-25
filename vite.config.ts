@@ -2,9 +2,9 @@ import { join, resolve } from 'node:path';
 import { defineConfig } from 'vite';
 import laravel from 'laravel-vite-plugin';
 
-
 export default defineConfig(({ command }) => ({
     root: process.cwd(),
+    publicDir: join(__dirname, 'public'),
     plugins: [
         laravel({
             input: [
@@ -15,6 +15,7 @@ export default defineConfig(({ command }) => ({
         }),
     ],
     build: {
+        copyPublicDir: true,
         sourcemap: true,
         target: 'es2022',
         lib: {
@@ -61,4 +62,9 @@ export default defineConfig(({ command }) => ({
             },
         },
     },
+    server: {
+        origin: 'http://localhost:5144',
+        host: 'localhost',
+        port: 5144
+    }
 }));

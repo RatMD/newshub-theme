@@ -74,11 +74,16 @@ function onStart() {
     $this['themeVersion'] = (string) $version;
 
     // Vite Bundle (dev only)
-    if (!app()->isProduction() && class_exists(\Illuminate\Foundation\Vite::class)) {
+    $isProduction = app()->isProduction();
+    $viteClass = class_exists(\Illuminate\Foundation\Vite::class);
+    $hotFile = public_path("themes/{$theme}/assets/.hot");
+    if (!$isProduction && $viteClass && file_exists($hotFile)) {
         $vite = new \Illuminate\Foundation\Vite;
-        $vite->useBuildDirectory("themes/{$theme}/assets/build");
-        $vite->useHotFile(public_path("themes/{$theme}/assets/.hot"));
+        $vite->useBuildDirectory("themes/{$theme}/assets");
+        $vite->useHotFile($hotFile);
         $this['viteScripts'] = $vite(['resources/theme.ts'])->toHtml();
+    } else {
+        $this['viteScripts'] = false;
     }
 }
 ?>

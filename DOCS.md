@@ -6,7 +6,7 @@ Contact us via mail at [info@rat.md](mailto:info@rat.md) or visit our website at
 
 ## New in Version 1.2.0
 The primary focus of version 1.2.0 is the new **Page Builder**, which allows to easily create new static pages with over **18 different** Bootstrap and custom **content elements**. The Page Builder is currently only available when selecting the  `Page Builder Layout`  on the respective static page, a detailed description for each component can be found below. Both existing page layouts (Default and Fullwidth) are still available as prior this update.
-  
+
 - A new **Page Builder** for static pages with over **18 Components**.
 - A **comment section** and widget and a **week-based** date **archive**.
 - A new header style with a **search** / **user** action and **meta-menu**.
@@ -36,7 +36,7 @@ The primary focus of version 1.2.0 is the new **Page Builder**, which allows to 
 	- Separator
 	- Slider
 	- Tabs
-	- Text with Teaser 
+	- Text with Teaser
 6. Template Resources
 
 ## Requirements
@@ -66,7 +66,7 @@ The template provides the following settings:
 - **Site Name** - Enter your website name, shown on the header and footer of your front-end website as well used within links and meta tags.
 - **Site Slogan** (_NEW_) -Enter your website slogan, shown on the footer below the site name / site logo.
 - **Site Logo** - Upload or Select your website logo, shown instead of the site name option in the header and footer.
-- **Inverted Site Logo** - Upload or select a color-inverted version of your site logo, which is used similar the normal site logo, just for the dark color scheme. 
+- **Inverted Site Logo** - Upload or select a color-inverted version of your site logo, which is used similar the normal site logo, just for the dark color scheme.
 - **Embed jQuery Library** (_NEW_) - Embed the jQuery Framework for OctoberCMS v3+ (OctoberCMS v2+ already adds jQuery as dependency).
 - **Embed OctoberCMS Extras** (_NEW_) - Embed the Extra OctoberCMS framework with both, CSS and JS libraries (may required by an external plugin).
 
@@ -258,7 +258,7 @@ This input field allows you to add additional class names to the main HTML eleme
 The simple styled card design is especially designed for the **NewsHub** template. Using this option will hide the available "Card Colors", as described below.
 
 ##### Card size
-This option allows to set a default width of the respective card, you can either use `none`, `sm`, `md`, `lg` and `100%`. The first option will set no width at all, sm, md, lg provide the sizes `16rem`, `24rem` and `32rem` respectively. The last option just sets the width to `100%`. 
+This option allows to set a default width of the respective card, you can either use `none`, `sm`, `md`, `lg` and `100%`. The first option will set no width at all, sm, md, lg provide the sizes `16rem`, `24rem` and `32rem` respectively. The last option just sets the width to `100%`.
 
 ##### Card Colors
 This option allows to set the background color of the respective card, using Bootstrap v5.2 `text-bg-` classes. You can use all available colors from Bootstraps color palette. However, this option is NOT available on the simple styled card system at the moment.
@@ -378,7 +378,7 @@ Define the used privacy description shown on the Double-Click placeholder box. T
 Embed the external content, which should be injected / shown when the user clicks the button. Keep in mind, that just the FIRST HTML container is injected into the DOM. Thus, you've to use a parent container, when your external content consists of more then one element.
 
 ### Flexbox Container
-Create a new FlexBox container with up to 4 configurable columns. This component provides two different configuration modes, implemented as custom partial. The first mode allows to set one of the available columns as primary column, which increase its size using a default set of the Bootstrap `col-*` classes (including responsive versions). The second mode allows to set the class names per column yourself. 
+Create a new FlexBox container with up to 4 configurable columns. This component provides two different configuration modes, implemented as custom partial. The first mode allows to set one of the available columns as primary column, which increase its size using a default set of the Bootstrap `col-*` classes (including responsive versions). The second mode allows to set the class names per column yourself.
 
 #### Available Options
 The following options are available on this content element:
@@ -735,4 +735,3 @@ Available Commands:
 - `npm run build:css` - Build the SCSS source files
 - `npm run watch:css` - Watch and build the SCSS source files
 - `npm run build:vendors` - Build the required dependencies (as listed above)
-  

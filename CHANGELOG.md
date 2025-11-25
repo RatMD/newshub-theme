@@ -6,6 +6,7 @@ NewsHub / Changelog
 - Add: New vite bundler and watcher script setup.
 - Update: `package.json` dependencies.
 - Update: SCSS file structure and bootstrap changes.
+- Update: TypeScript utility functions.
 - Remove: esbuild bundler script and dependencies.
 
 ### ToDo

@@ -6,8 +6,7 @@
 {% if this.theme.embed_extras %}
     <script src="{{ ['@framework.extras']|theme }}"></script>
 {% endif %}
-{% if this.viteScripts is not defined %}
-    <script src="{{ 'assets/js/vendors.min.js'|theme }}?ver={{ this.themeVersion }}"></script>
-    <script src="{{ 'assets/js/newshub.min.js'|theme }}?ver={{ this.themeVersion }}"></script>
+{% if viteScripts == false %}
+    <script type="module" src="{{ 'assets/js/newshub.min.js'|theme }}?ver={{ themeVersion }}"></script>
 {% endif %}
 {% scripts %}

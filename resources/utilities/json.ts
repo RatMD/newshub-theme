@@ -1,7 +1,6 @@
-
 /**
  * Try to parse JSON
- * @param data 
+ * @param data
  * @returns
  */
 function parseJson(data: string): Object | null {
