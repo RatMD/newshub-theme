@@ -5,9 +5,15 @@ built exclusively for **OctoberCMS**. It offers a clean, configurable structure 
 **Bootstrap 5.3**, includes elegant **Bootstrap Icons**, and integrates the versatile, responsive,
 and feature-rich **Keen Slider** package.
 
-- [View the Demo-Website](https://themes.rat.md/newshub)
-- [Please rate our Template on the Marketplace](https://octobercms.com/theme/ratmd-newshub#reviews)
-- [Contact us on any Question](mailto:info@rat.md)
+- [View the Demo-Website](https://newshub.rat.md)
+- [View the Documentation](https://docs.rat.md/newshub)
+
+**Read More**
+- [Requirements](#requirements)
+- [Getting Started](#getting-started)
+- [Features](#features)
+- [Development](#development)
+- [Need Support](#need-support)
 
 
 ## Requirements
