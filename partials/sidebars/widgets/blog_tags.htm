@@ -35,7 +35,7 @@ function onEnd()
             <ul class="list-group list-group-flush">
                 {% for tag in widget_tags %}
                     <li class="list-group-item">
-                        <a href="{{ tag.url }}" title="{{ 'archive.tag_archive' | _ }}: {{ tag.title | default(tag.slug | title) }}">
+                        <a href="{{ tag.url }}" title="{{ 'archive.tag_archive'|trans }}: {{ tag.title | default(tag.slug | title) }}">
                             {{ tag.title | default(tag.slug | title) }}
 
                             {% if config.counter %}

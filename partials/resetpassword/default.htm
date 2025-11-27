@@ -14,9 +14,9 @@
             <li class="nav-item me-auto" role="presentation">
                 <a href="{{ 'account-remember' | page }}" class="nav-link active">
                     {% if __SELF__.code == null %}
-                        {{ 'site.user.forgot_account' | _ }}
+                        {{ 'site.user.forgot_account'|trans }}
                     {% else %}
-                        {{ 'site.user.reset_account' | _ }}
+                        {{ 'site.user.reset_account'|trans }}
                     {% endif %}
                 </a>
             </li>
@@ -24,14 +24,14 @@
             {% if canRegister %}
                 <li class="nav-item" role="presentation">
                     <a href="{{ 'account'|page({ code: null }) }}?tab=register" class="nav-link">
-                        {{ 'site.user.create_account' | _ }}
+                        {{ 'site.user.create_account'|trans }}
                     </a>
                 </li>
             {% endif %}
 
             <li class="nav-item" role="presentation">
                 <a href="{{ 'account'|page({ code: null }) }}?tab=login" class="nav-link">
-                    {{ 'site.user.sign_in' | _ }}
+                    {{ 'site.user.sign_in'|trans }}
                 </a>
             </li>
         </ul>

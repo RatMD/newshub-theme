@@ -44,9 +44,9 @@
             <div class="container">
                 {% set similarPosts = post.bloghub_similar_posts() %}
                 {% if similarPosts|length > 0 %}
-                    <h2 class="mb-5">{{ 'posts.similar' | _ }}</h2>
+                    <h2 class="mb-5">{{ 'posts.similar'|trans }}</h2>
                     <div class="latest-posts">
-                        {% partial 'blog/sections/posts-columns' 
+                        {% partial 'blog/sections/posts-columns'
                             posts=similarPosts
                             prefix='similar'
                             datetime='short'
@@ -55,8 +55,8 @@
                 {% else %}
                     {% set randomPosts = post.bloghub_random_posts() %}
                     {% if randomPosts|length > 0 %}
-                        <h2 class="mb-5">{{ 'posts.random' | _ }}</h2>
-                        {% partial 'blog/sections/posts-columns' 
+                        <h2 class="mb-5">{{ 'posts.random'|trans }}</h2>
+                        {% partial 'blog/sections/posts-columns'
                             posts=randomPosts
                             prefix='random'
                             datetime='short'

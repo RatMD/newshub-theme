@@ -17,18 +17,18 @@ code = "meta-menu"
     <nav class="navbar navbar-topbar">
         <div class="container-fluid">
             {% if withMetaMenu %}
-                {{ menu_builder(metaMenu.menuItems, 1, { 
-                    ul_class: 'navbar-nav-meta' 
+                {{ menu_builder(metaMenu.menuItems, 1, {
+                    ul_class: 'navbar-nav-meta'
                 }) }}
             {% endif %}
-            
+
             {% if withMetaMenu and withSocialMenu %}
                 <span class="navbar-separator">&nbsp;&bullet;&nbsp;</span>
             {% endif %}
 
             {% if withSocialMenu %}
-                {{ social_builder(socialMenu.menuItems, { 
-                    ul_class: 'navbar-nav-socials' 
+                {{ social_builder(socialMenu.menuItems, {
+                    ul_class: 'navbar-nav-socials'
                 }) }}
             {% endif %}
         </div>
@@ -75,7 +75,7 @@ code = "meta-menu"
                     {% if this.theme.site_picker_top %}
                         {% partial 'page/navbar/localepicker/default' %}
                     {% endif %}
-                    
+
                     {% if this.theme.color_switch_top and this.theme.enable_dark_scheme %}
                         {% partial 'page/navbar/colorpicker/default' %}
                     {% endif %}
@@ -86,8 +86,8 @@ code = "meta-menu"
         {# Social Navigation (Condensed) #}
         {% if this.theme.header_style == 'condensed' %}
             {% if socialMenu and socialMenu.menuItems and socialMenu.menuItems | length > 0 %}
-                {{ social_builder(socialMenu.menuItems, { 
-                    ul_class: 'navbar-nav-socials' 
+                {{ social_builder(socialMenu.menuItems, {
+                    ul_class: 'navbar-nav-socials'
                 }) }}
             {% endif %}
         {% endif %}
@@ -134,7 +134,7 @@ code = "meta-menu"
         {% endif %}
 
         {# Navbar Toggler (Condensed & Extended) #}
-        <button class="navbar-toggler collapsed" type="button" aria-expanded="false" aria-label="{{ 'alt.navbar_toggle' | _ }}">
+        <button class="navbar-toggler collapsed" type="button" aria-expanded="false" aria-label="{{ 'alt.navbar_toggle'|trans }}">
             <svg class="close-button" viewBox="0 0 100 100" width="40" onclick="this.classList.toggle('active')">
                 <path d="m 70,33 h -40 c 0,0 -8.5,-0.149796 -8.5,8.5 0,8.649796 8.5,8.5 8.5,8.5 h 20 v -20" />
                 <path d="m 70,50 h -40" />

@@ -8,6 +8,7 @@ NewsHub / Changelog
 - Update: SCSS file structure and bootstrap changes.
 - Update: TypeScript utility functions.
 - Remove: esbuild bundler script and dependencies.
+- Fix: Replace all `|_` translation markups with `|trans`.
 
 ### ToDo
 - Info: OctoberCMS v2 support has been dropped; v3 or v4 is required to use the new NewsHub theme.

@@ -92,9 +92,9 @@ code = "social-menu"
                 {% endif %}
             {% endif %}
         </nav>
-            
+
         <div class="socials">
-            <div class="socials-title">{{ 'site.footer.socials' | _ }}</div>
+            <div class="socials-title">{{ 'site.footer.socials'|trans }}</div>
             {% if socialMenu and socialMenu.menuItems != null %}
                 <ul class="navbar-nav navbar-socials">
                     {% for item in socialMenu.menuItems %}
@@ -124,7 +124,7 @@ code = "social-menu"
             {% if this.theme.site_picker_bottom %}
                 {% component 'localePicker' %}
             {% endif %}
-            
+
             {% if this.theme.color_switch_bottom %}
                 {% partial 'colorpicker/default' %}
             {% endif %}

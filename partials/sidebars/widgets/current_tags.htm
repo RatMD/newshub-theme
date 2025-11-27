@@ -7,7 +7,7 @@
             <ul class="list-group list-group-flush">
                 {% for tag in post.ratmd_bloghub_tags %}
                     <li class="list-group-item">
-                        <a href="{{ tag.url }}" title="{{ 'archive.tag_archive' | _ }}: {{ tag.title }}">
+                        <a href="{{ tag.url }}" title="{{ 'archive.tag_archive'|trans }}: {{ tag.title }}">
                             {{ tag.title | default(tag.slug | title) }}
 
                             {% if config.counter == '1' %}

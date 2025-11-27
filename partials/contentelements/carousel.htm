@@ -25,7 +25,7 @@
 
 {# Render Element #}
 <div class="{{ config_classes(group, config)|trim }}">
-    <div id="{{ id }}" class="{{ classNames|trim }}" 
+    <div id="{{ id }}" class="{{ classNames|trim }}"
         {% if config.keyboard == '0' %}data-bs-keyboard="false"{% endif %}
         {% if config.touch == '0' %}data-bs-touch="false"{% endif %}
         {% if config.autoplay == '0' %}data-bs-ride="false"{% endif %}
@@ -33,12 +33,12 @@
         {% if config.indicators == '1' %}
             <div class="carousel-indicators">
                 {% for slide in config.children %}
-                    <button 
-                        type="button" 
-                        data-bs-target="#{{ id }}" 
-                        data-bs-slide-to="{{ loop.index0 }}" 
+                    <button
+                        type="button"
+                        data-bs-target="#{{ id }}"
+                        data-bs-slide-to="{{ loop.index0 }}"
                         class="{{ loop.index0 == 0 ? 'active' : '' }}"
-                        aria-current="{{ loop.index0 == 0 ? 'true' : 'false' }}" 
+                        aria-current="{{ loop.index0 == 0 ? 'true' : 'false' }}"
                         aria-label="{{ slide.title }}"></button>
                 {% endfor %}
             </div>
@@ -62,7 +62,7 @@
 
                         {% if slide.content and slide.content|length > 0 %}
                             <p>{{ slide.content }}</p>
-                        {% endif %} 
+                        {% endif %}
                     </div>
 
                 {% if slide.link|length > 0 %}
@@ -76,11 +76,11 @@
         {% if config.controls == '1' %}
             <button class="carousel-control-prev" type="button" data-bs-target="#{{ id }}" data-bs-slide="prev">
                 <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">{{ 'alt.carousel_previous' | _ }}</span>
+                <span class="visually-hidden">{{ 'alt.carousel_previous'|trans }}</span>
             </button>
             <button class="carousel-control-next" type="button" data-bs-target="#{{ id }}" data-bs-slide="next">
                 <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">{{ 'alt.carousel_next' | _ }}</span>
+                <span class="visually-hidden">{{ 'alt.carousel_next'|trans }}</span>
             </button>
         {% endif %}
     </div>

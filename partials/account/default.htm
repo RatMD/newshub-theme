@@ -22,20 +22,20 @@
                 {% if canRegister %}
                     <li class="nav-item" role="presentation">
                         <button id="account-register-tab" class="nav-link{{ activeTab == 'register' ? ' active' : '' }}" data-bs-toggle="tab" data-bs-target="#account-register-tab-pane" type="button" role="tab" aria-controls="account-register-tab-pane" aria-selected="{{ activeTab == 'register' ? 'true' : 'false' }}">
-                            {{ 'site.user.create_account' | _ }}
+                            {{ 'site.user.create_account'|trans }}
                         </button>
                     </li>
                 {% endif %}
 
                 <li class="nav-item" role="presentation">
                     <button id="account-login-tab" class="nav-link{{ activeTab == 'signin' ? ' active' : '' }}" data-bs-toggle="tab" data-bs-target="#account-login-tab-pane" type="button" role="tab" aria-controls="account-login-tab-pane" aria-selected="{{ activeTab == 'signin' ? 'true' : 'false' }}">
-                        {{ 'site.user.sign_in' | _ }}
+                        {{ 'site.user.sign_in'|trans }}
                     </button>
                 </li>
 
                 <li class="nav-item ms-auto" role="presentation">
                     <a href="{{ 'account-remember'|page({ code: null }) }}" class="nav-link">
-                        {{ 'site.user.forgot_account' | _ }}
+                        {{ 'site.user.forgot_account'|trans }}
                     </a>
                 </li>
             </ul>
@@ -59,13 +59,13 @@
             <ul id="accountUpdateFormTabs" class="nav nav-tabs nav-tabs-account" role="tablist">
                 <li class="nav-item" role="presentation">
                     <button id="account-update-tab" class="nav-link active" data-bs-toggle="tab" data-bs-target="#account-update-tab-pane" type="button" role="tab" aria-controls="account-update-tab-pane" aria-selected="true">
-                        {{ 'site.user.update' | _ }}
+                        {{ 'site.user.update'|trans }}
                     </button>
                 </li>
 
                 <li class="nav-item ms-auto" role="presentation">
                     <button id="account-delete-tab" class="nav-link" data-bs-toggle="tab" data-bs-target="#account-delete-tab-pane" type="button" role="tab" aria-controls="account-delete-tab-pane" aria-selected="false">
-                        {{ 'site.user.delete' | _ }}
+                        {{ 'site.user.delete'|trans }}
                     </button>
                 </li>
             </ul>
@@ -74,7 +74,7 @@
                 <div id="account-update-tab-pane" class="tab-pane fade show active" role="tabpanel" aria-labelledby="account-update-tab" tabindex="0">
                     {% partial __SELF__ ~ '::update' %}
                 </div>
-                
+
                 <div id="account-delete-tab-pane" class="tab-pane fade" role="tabpanel" aria-labelledby="account-delete-tab" tabindex="0">
                     {% partial __SELF__ ~ '::delete' %}
                 </div>

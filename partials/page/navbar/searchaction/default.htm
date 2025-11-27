@@ -10,15 +10,15 @@
     <div class="modal-dialog modal-dialog-centered modal-lg">
         <div class="modal-content">
             <div class="modal-body">
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="{{ 'alt.close' | _ }}"></button>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="{{ 'alt.close'|trans }}"></button>
                 <form method="POST" action="https://themes.rat.md/newshub/magazine/search">
                     <div class="form-floating form-control-icon-group">
-                        <input id="searchModalInput" type="search" name="search" value="" class="form-control" 
-                            placeholder="{{ 'site.search.search_for_placeholder' | _ }}">
+                        <input id="searchModalInput" type="search" name="search" value="" class="form-control"
+                            placeholder="{{ 'site.search.search_for_placeholder'|trans }}">
                         <span class="form-control-icon">
                             {% partial 'icons/bootstrap/search' %}
                         </span>
-                        <label for="searchModalInput">{{ 'site.search.search_for_placeholder' | _ }}</label>
+                        <label for="searchModalInput">{{ 'site.search.search_for_placeholder'|trans }}</label>
                     </div>
                 </form>
             </div>

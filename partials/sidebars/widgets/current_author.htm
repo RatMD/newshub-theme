@@ -44,25 +44,25 @@ function onEnd()
                         <img src="{{ avatar }}" class="rounded" width="64" height="64" alt="{{ post.user.bloghub_display() }}" />
                     </div>
                 {% endif %}
-                
+
                 <div class="col-12 col-lg-9">
                     <b class="fs-5 font-special">{{ post.user.bloghub_display() }}</b>
                     {% if config.aboutme and post.user.ratmd_bloghub_about_me %}
                         <p class="fs-7">{{ post.user.ratmd_bloghub_about_me }}</p>
                     {% endif %}
                 </div>
-                
+
                 {% if config.counter %}
                     <div class="col-12 mt-3">
-                        <span class="fs-8 text-uppercase d-block">{{ 'posts.number_of_posts' | _ }} </span>
-                        <b>{{ widget_author_count }}</b> {{ 'posts.posts_in' | _ }} {{ post.user.created_at | date('F, Y') }}
+                        <span class="fs-8 text-uppercase d-block">{{ 'posts.number_of_posts'|trans }} </span>
+                        <b>{{ widget_author_count }}</b> {{ 'posts.posts_in'|trans }} {{ post.user.created_at | date('F, Y') }}
                     </div>
                 {% endif %}
-                
+
                 {% if config.favorite_category and widget_author_category %}
                     <div class="col-12 mt-3">
-                        <span class="fs-8 text-uppercase d-block">{{ 'posts.favorite_category' | _ }} y</span>
-                        <b>{{ widget_author_category.count }}</b> {{ 'posts.posts_since' | _ }} {{ widget_author_category.name }}
+                        <span class="fs-8 text-uppercase d-block">{{ 'posts.favorite_category'|trans }} y</span>
+                        <b>{{ widget_author_category.count }}</b> {{ 'posts.posts_since'|trans }} {{ widget_author_category.name }}
                     </div>
                 {% endif %}
             </div>

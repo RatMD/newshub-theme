@@ -105,7 +105,6 @@ The following plugins are not required but supported by the **NewsHub** template
 - Plugin: [BlakeJones.MagicForms](https://octobercms.com/plugin/blakejones-magicforms) _(v1.6.0+)_
 - Plugin: [JanVince.SmallContactForm](https://octobercms.com/plugin/janvince-smallcontactform) _(v1.62.0+)_
 - Plugin: [JanVince.SmallGDPR](https://octobercms.com/plugin/janvince-smallgdpr) _(v1.21.0+)_
-- Plugin: [RainLab.BlogVideoExtension](https://octobercms.com/plugin/rainlab-blogvideo) _(v1.1.2+)_
 - Plugin: [RainLab.Forum](https://octobercms.com/plugin/rainlab-forum) _(in progress)_
 - Plugin: [RainLab.User](https://octobercms.com/plugin/rainlab-user) _(v1.6.0+ and v2.0.0+)_
 

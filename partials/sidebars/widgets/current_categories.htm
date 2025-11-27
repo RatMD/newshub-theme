@@ -7,7 +7,7 @@
             <ul class="list-group list-group-flush">
                 {% for category in post.categories %}
                     <li class="list-group-item">
-                        <a href="{{ category.url }}" title="{{ 'archive.category_archive' | _ }}: {{ category.name }}">
+                        <a href="{{ category.url }}" title="{{ 'archive.category_archive'|trans }}: {{ category.name }}">
                             {{ category.name }}
 
                             {% if config.counter == '1' %}

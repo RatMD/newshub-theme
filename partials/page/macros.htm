@@ -30,7 +30,7 @@
                 {% if item.viewBag.cssClass is defined and item.viewBag.cssClass %}
                     {% set li_class = li_class ~ ' ' ~ item.viewBag.cssClass %}
                 {% endif %}
-                
+
                 {% set a_class = 'nav-link' %}
                 {% if item.isActive %}
                     {% set a_class = a_class ~ ' active' %}
@@ -52,7 +52,7 @@
                     {% endif %}
 
                     {% if item.items and max_depth > depth %}
-                        <button class="navbar-subnav-toggler collapsed" type="button" aria-expanded="false" aria-label="{{ 'alt.navbar_toggle' | _ }}">
+                        <button class="navbar-subnav-toggler collapsed" type="button" aria-expanded="false" aria-label="{{ 'alt.navbar_toggle'|trans }}">
                             {% partial 'icons/bootstrap/chevron-right' %}
                             <svg width='10px' height='8px' viewBox='0 0 4 3' version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' xml:space='preserve' fill='currentColor'><path d='M1.94,1.42l-1.28,-1.28l-0.66,0.66l1.94,1.94l0.658,-0.66l0,0.001l1.242,-1.242l-0.66,-0.659l-1.24,1.24Z'/></svg>
                         </button>
@@ -93,7 +93,7 @@
                             {% if child.viewBag.cssClass is defined and child.viewBag.cssClass %}
                                 {% set li_class = li_class ~ ' ' ~ child.viewBag.cssClass %}
                             {% endif %}
-                            
+
                             {% set a_class = 'nav-link' %}
                             {% if child.isActive %}
                                 {% set a_class = a_class ~ ' active' %}
@@ -136,12 +136,12 @@
             {% if item.viewBag.cssClass is defined and item.viewBag.cssClass %}
                 {% set li_class = li_class ~ ' ' ~ item.viewBag.cssClass %}
             {% endif %}
-            
+
             {% set a_class = 'nav-link' %}
             {% if options.a_class is defined %}
                 {% set a_class = a_class ~ ' ' ~ options.a_class %}
             {% endif %}
-            
+
             {% if not item.viewBag.isHidden|default(0) %}
                 <li class="{{ li_class }}">
                     <a href="{{ item.url }}" title="{{ item.title }}" class="{{ a_class }}"{% if item.viewBag.isExternal|default(0) %} target="_blank"{% endif %}>
@@ -172,7 +172,7 @@
     <ul class="toc toc-depth-{{depth}}">
         {% for item in items %}
             <li class="toc-item" data-toc-position="{{ depth }}">
-                <a href="{{ path }}#{{ item.id }}" title="{{ 'alt.goto' | _ }}: {{ item.label }}">{{ item.label }}</a>
+                <a href="{{ path }}#{{ item.id }}" title="{{ 'alt.goto'|trans }}: {{ item.label }}">{{ item.label }}</a>
             </li>
 
             {% if item.children %}

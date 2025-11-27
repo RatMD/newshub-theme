@@ -3,9 +3,9 @@
         {% for channel in channels %}
             <tr class="root-channel">
                 <th colspan="2">{{ channel.title }}</th>
-                <th class="counter-column">{{ 'forum.table.topics'|_ }}</th>
-                <th class="counter-column">{{ 'forum.table.posts'|_ }}</th>
-                <th class="activity-column">{{ 'forum.table.recent'|_ }}</th>
+                <th class="counter-column">{{ 'forum.table.topics'|trans }}</th>
+                <th class="counter-column">{{ 'forum.table.posts'|trans }}</th>
+                <th class="activity-column">{{ 'forum.table.recent'|trans }}</th>
             </tr>
 
             {% if channel.relations.children %}
@@ -21,7 +21,7 @@
                             {% if channel.children|length %}
                                 <div class="forum-subchannel">
                                     <ul>
-                                        <li><span>{{ 'forum.table.subforum'|_ }}</span></li>
+                                        <li><span>{{ 'forum.table.subforum'|trans }}</span></li>
                                         {% for channel in channel.children %}
                                             <li>
                                                 <a href="{{ channel.url }}" title="{{ channel.description }}">
@@ -56,7 +56,7 @@
 
             {% else %}
                 <tr>
-                    <td colspan="100"><p>{{ 'forum.table.empty'|_ }}</p></td>
+                    <td colspan="100"><p>{{ 'forum.table.empty'|trans }}</p></td>
                 </tr>
             {% endif %}
 
