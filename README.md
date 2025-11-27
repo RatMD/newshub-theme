@@ -27,17 +27,17 @@ still supported.
 - Plugin: [RainLab.Blog](https://octobercms.com/plugin/rainlab-blog)
 - Plugin: [RainLab.Pages](https://octobercms.com/plugin/rainlab-pages)
 - Plugin: [RainLab.Sitemap](https://octobercms.com/plugin/rainlab-sitemap)
-- Plugin: [RainLab.Translate](https://octobercms.com/plugin/rainlab-translate) _(supported: v1.9.0+ and v2.0.0+)_
-- Plugin: [RatMD.BlogHub](https://octobercms.com/plugin/ratmd-bloghub) _(required: v1.2.0+)_
+- Plugin: [RainLab.Translate](https://octobercms.com/plugin/rainlab-translate) _(supported: v1.9+ and v2.0+)_
+- Plugin: [RatMD.BlogHub](https://octobercms.com/plugin/ratmd-bloghub) _(required: v1.2+)_
 
 ### Supports
 The following plugins are not required but are fully supported by the **NewsHub** template:
 
-- Plugin: [BlakeJones.MagicForms](https://octobercms.com/plugin/blakejones-magicforms) _(v1.6.0+)_
-- Plugin: [JanVince.SmallContactForm](https://octobercms.com/plugin/janvince-smallcontactform) _(v1.62.0+)_
-- Plugin: [JanVince.SmallGDPR](https://octobercms.com/plugin/janvince-smallgdpr) _(v1.21.0+)_
-- Plugin: [RainLab.Forum](https://octobercms.com/plugin/rainlab-forum) _(v2.0.0+)_
-- Plugin: [RainLab.User](https://octobercms.com/plugin/rainlab-user) _(v1.6.0+ and v2.0.0+)_
+- Plugin: [BlakeJones.MagicForms](https://octobercms.com/plugin/blakejones-magicforms) _(v1.6+)_
+- Plugin: [JanVince.SmallContactForm](https://octobercms.com/plugin/janvince-smallcontactform) _(v1.62+)_
+- Plugin: [JanVince.SmallGDPR](https://octobercms.com/plugin/janvince-smallgdpr) _(v1.21+)_
+- Plugin: [RainLab.Forum](https://octobercms.com/plugin/rainlab-forum) _(v2.0+)_
+- Plugin: [RainLab.User](https://octobercms.com/plugin/rainlab-user) _(v1.6+ and v2.0+)_
 
 ### Dependencies
 The following dependencies are bundled with the template:
