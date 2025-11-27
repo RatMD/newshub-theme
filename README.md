@@ -63,6 +63,12 @@ Marketplace, or by using the artisan command:
 php artisan theme:install RatMD.NewsHub
 ```
 
+To use the latest development version (not recommended for production websites), run:
+
+```sh
+php artisan theme:install RatMD.NewsHub --from=git@github.com:ratmd/newshub-theme.git --want=develop
+```
+
 For a quick preview of what the template can actually do, we recommend seeding the demo content:
 
 ```sh
