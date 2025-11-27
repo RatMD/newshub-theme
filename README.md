@@ -49,8 +49,8 @@ The following dependencies are bundled with the template:
 - [@rat.md/bs-lightbox](https://ratmd.github.io/bs-lightbox/) **v1.1.1** – MIT licensed
 - jQuery* (only for OctoberCMS v2; see note below) – MIT licensed
 
-**Note:**
-For OctoberCMS **v2**, jQuery is included automatically using October’s provided version.
+**Note:** \
+For OctoberCMS **v2**, jQuery is included automatically using October’s provided version. \
 For OctoberCMS **v3+**, jQuery is *not* included unless you explicitly enable the **“Embed jQuery”**
 option in the theme configuration.
 
