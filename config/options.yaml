@@ -234,6 +234,55 @@ tabs:
                 action: enable
                 condition: checked
 
+        __section_verification_tags:
+            tab: theme.ratmd-newshub::lang.option.tabs.meta
+            type: section
+            label: theme.ratmd-newshub::lang.option.section.verification_tags
+        google_site_verification:
+            tab: theme.ratmd-newshub::lang.option.tabs.meta
+            type: text
+            label: theme.ratmd-newshub::lang.option.meta_tags.google_site_verification.label
+            span: left
+        bing_site_verification:
+            tab: theme.ratmd-newshub::lang.option.tabs.meta
+            type: text
+            label: theme.ratmd-newshub::lang.option.meta_tags.bing_site_verification.label
+            span: right
+        yandex_site_verification:
+            tab: theme.ratmd-newshub::lang.option.tabs.meta
+            type: text
+            label: theme.ratmd-newshub::lang.option.meta_tags.yandex_site_verification.label
+            span: left
+        facebook_domain_verification:
+            tab: theme.ratmd-newshub::lang.option.tabs.meta
+            type: text
+            label: theme.ratmd-newshub::lang.option.meta_tags.facebook_domain_verification.label
+            span: right
+
+        __section_custom:
+            tab: theme.ratmd-newshub::lang.option.tabs.custom
+            type: section
+            label: theme.ratmd-newshub::lang.option.section.custom
+            comment: theme.ratmd-newshub::lang.option.section.custom.comment
+        custom_header:
+            tab: theme.ratmd-newshub::lang.option.tabs.custom
+            type: codeeditor
+            label: theme.ratmd-newshub::lang.option.custom.custom_header.label
+            size: large
+            language: html
+        custom_body_start:
+            tab: theme.ratmd-newshub::lang.option.tabs.custom
+            type: codeeditor
+            label: theme.ratmd-newshub::lang.option.custom.custom_body_start.label
+            size: large
+            language: html
+        custom_body_end:
+            tab: theme.ratmd-newshub::lang.option.tabs.custom
+            type: codeeditor
+            label: theme.ratmd-newshub::lang.option.custom.custom_body_end.label
+            size: large
+            language: html
+
         __color_scheme_section:
             tab: theme.ratmd-newshub::lang.option.tabs.appearance
             type: section

@@ -25,6 +25,12 @@
 {% component 'alternateHrefLangElements' %}
 {% placeholder meta_tags %}
 
+{# Verification Tags #}
+{% if this.theme.google_site_verification %}<meta name="google-site-verification" content="{{ this.theme.google_site_verification }}" />{% endif %}
+{% if this.theme.bing_site_verification %}<meta name="msvalidate.01" content="{{ this.theme.bing_site_verification }}" />{% endif %}
+{% if this.theme.yandex_site_verification %}<meta name="yandex-verification" content="{{ this.theme.yandex_site_verification }}" />{% endif %}
+{% if this.theme.facebook_domain_verification %}<meta name="facebook-domain-verification" content="{{ this.theme.facebook_domain_verification }}" />{% endif %}
+
 {# Development #}
 {% if viteScripts != false %}{{ viteScripts|raw }}{% endif %}
 
@@ -162,3 +168,4 @@
     {% endif %}
 </script>
 {% placeholder javascripts %}
+{{ this.theme.custom_header|raw }}

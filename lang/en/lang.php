@@ -1,4 +1,4 @@
-<?php 
+<?php
 
 return [
 
@@ -24,6 +24,7 @@ return [
     "option.tabs.general" => "General",
     "option.tabs.preferences" => "Preferences",
     "option.tabs.meta" => "Meta",
+    "option.tabs.custom" => "Custom Code",
     "option.tabs.appearance" => "Appearance",
     "option.tabs.header" => "Header",
     "option.tabs.homepage" => "Homepage",
@@ -54,7 +55,7 @@ return [
     "option.tip.preferences.label" => "OctoberCMS v3.1 + RainLab.Translate v1 | v2 Preferences",
     "option.tip.preferences.comment" => "OctoberCMS v3.1 <a href=\"https://docs.octobercms.com/3.x/cms/resources/multisite.html#site-picker-component\" target=\"_blank\">introduced a new SitePicker component</a>, which can be used instead of the LocalePicker component of the RainLab.Translate v1 plugin. The settings above are aimed to configure the desired component and styling of either the SitePicker or the RainLab.Translate v1 LocalePicker component. Keep in mind, that RainLab.Translate v2 removes the LocalePicker in favor to the new core SitePicker component.",
     "option.prefer_sitepicker.label" => "Prefer SitePicker over LocalePicker",
-    "option.prefer_sitepicker.comment" => "Use the new sitePicker instead of the localePicker component. (This option takes only effect on OctoberCMS v3.1 installations with RainLab.Translate v1+ installed.)", 
+    "option.prefer_sitepicker.comment" => "Use the new sitePicker instead of the localePicker component. (This option takes only effect on OctoberCMS v3.1 installations with RainLab.Translate v1+ installed.)",
     "option.oc_picker_usage.label" => "SitePicker Appearance",
     "option.oc_picker_usage.comment" => "Using the language appearance will show the flags and language names instead of the full site name. (This option takes only effect on the new sitePicker component.)",
     "option.oc_picker_usage.locale" => "Languages",
@@ -95,6 +96,20 @@ return [
     "option.meta_tags.generator_tag.comment" => "Render a generator meta tag with 'October CMS' as value.",
     "option.meta_tags.generator_tag_version.label" => "Show OctoberCMS version",
     "option.meta_tags.generator_tag_version.comment" => "Show the exact OctoberCMS version on the generator meta tag.",
+
+    // Template Options - Meta / Generator Tags Settings
+    "option.section.verification_tags" => "Site-Verification Tags",
+    "option.meta_tags.google_site_verification.label" => "Google Search Console",
+    "option.meta_tags.bing_site_verification.label" => "Bing Webmaster Tools",
+    "option.meta_tags.yandex_site_verification.label" => "Yandex Site Verification",
+    "option.meta_tags.facebook_domain_verification.label" => "Facebook / Meta Domain Verification",
+
+    // Template Options - Custom
+    "option.section.custom" => "Custom Code",
+    "option.section.custom.comment" => "Add your custom JavaScript, CSS or HTML snippets to the corresponding area of the template.",
+    "option.custom.custom_header.label" => "Header Code",
+    "option.custom.custom_body_start.label" => "Body Code (Start of <body> tag)",
+    "option.custom.custom_body_end.label" => "Body Code (End of <body> tag)",
 
     // Template Options - Appearance / General Color Scheme Settings
     "option.sections.color_scheme" => "Color-Scheme",
@@ -162,7 +177,7 @@ return [
     "option.hero_slider_number.comment" => "Change the number of posts, shown in the Hero-Slider.",
     "option.hero_slider_category.label" => "Posts Category",
     "option.hero_slider_category.comment" => "Change the category from which the posts should be selected.",
-    
+
     // Template Options - Homepage / Notice Settings
     "option.sections.notice" => "Notice",
     "option.notice_enable.label" => "Notice",
@@ -186,7 +201,7 @@ return [
     "option.category_list.comment" => "Shows a 'Post in [Category]' link / text above the post title.",
     "option.featured_tag_list.label" => "Post Featured Tags",
     "option.featured_tag_list.comment" => "Shows the featured tags (as links) below the post excerpt.",
-    
+
     // Template Options - Content / Single Post Settings
     "option.sections.post" => "Single Post Page",
     "option.share_post.label" => "Share Links",
@@ -258,7 +273,7 @@ return [
     "widget.image.comment" => "Show an image with text.",
     "widget.toc.label" => "Table of Contents",
     "widget.toc.comment" => "Show a table of content of the current page.",
-    
+
     // Template Options - Sidebar Widget Options
     "widget.general.title.label" => "Widget Title",
     "widget.general.title.comment" => "Change the main title used on this widget.",
@@ -332,14 +347,14 @@ return [
     "builder.globals.center" => "Center",
     "builder.globals.end" => "End",
     "builder.globals.textalignment" => "Text Alignment",
-    "builder.globals.name.label" => "Name", 
-    "builder.globals.name.comment" => "A name for this content element (not visible on the front-end).", 
-    "builder.globals.title.label" => "Title & Layout", 
-    "builder.globals.title.comment" => "A header title & layout used for this content element.", 
-    "builder.globals.subtitle.label" => "Subtitle & Layout", 
-    "builder.globals.subtitle.comment" => "A header subtitle & layout used for this content element.", 
-    "builder.globals.id.label" => "ID & Custom Classes", 
-    "builder.globals.id.comment" => "A unique ID and custom class names used for this content element.", 
+    "builder.globals.name.label" => "Name",
+    "builder.globals.name.comment" => "A name for this content element (not visible on the front-end).",
+    "builder.globals.title.label" => "Title & Layout",
+    "builder.globals.title.comment" => "A header title & layout used for this content element.",
+    "builder.globals.subtitle.label" => "Subtitle & Layout",
+    "builder.globals.subtitle.comment" => "A header subtitle & layout used for this content element.",
+    "builder.globals.id.label" => "ID & Custom Classes",
+    "builder.globals.id.comment" => "A unique ID and custom class names used for this content element.",
     "builder.globals.spacing.label" => "Outer & Inner Spacings",
     "builder.globals.spacing.comment" => "Set the spacings around and within this content element.",
     "builder.globals.spacing.label_margin_top" => "Outer Before",
@@ -513,28 +528,28 @@ return [
 
     "builder.header.label" => "Header",
     "builder.header.comment" => "A simple header content element.",
-    "builder.header.link.label" => "Link", 
-    "builder.header.link.comment" => "A URL to link the header title.", 
-    "builder.header.layout.label" => "Layout", 
-    "builder.header.layout.comment" => "The header layout.", 
-    "builder.header.layout.h1" => "H1", 
-    "builder.header.layout.h2" => "H2", 
-    "builder.header.layout.h3" => "H3", 
-    "builder.header.layout.h4" => "H4", 
-    "builder.header.layout.h5" => "H5", 
-    "builder.header.layout.h6" => "H6", 
-    "builder.header.style.label" => "Style", 
-    "builder.header.style.comment" => "The Bootstrap header style.", 
-    "builder.header.style.default" => "Default", 
-    "builder.header.style.separator" => "Default with Separator", 
-    "builder.header.style.display1" => "Display 1", 
-    "builder.header.style.display2" => "Display 2", 
-    "builder.header.style.display3" => "Display 3", 
-    "builder.header.style.display4" => "Display 4", 
-    "builder.header.style.display5" => "Display 5", 
-    "builder.header.style.display6" => "Display 6", 
-    "builder.header.p_tag.label" => "Use a <p>-tag", 
-    "builder.header.p_tag.comment" => "Use a <p> tag instead of the <h*> one.", 
+    "builder.header.link.label" => "Link",
+    "builder.header.link.comment" => "A URL to link the header title.",
+    "builder.header.layout.label" => "Layout",
+    "builder.header.layout.comment" => "The header layout.",
+    "builder.header.layout.h1" => "H1",
+    "builder.header.layout.h2" => "H2",
+    "builder.header.layout.h3" => "H3",
+    "builder.header.layout.h4" => "H4",
+    "builder.header.layout.h5" => "H5",
+    "builder.header.layout.h6" => "H6",
+    "builder.header.style.label" => "Style",
+    "builder.header.style.comment" => "The Bootstrap header style.",
+    "builder.header.style.default" => "Default",
+    "builder.header.style.separator" => "Default with Separator",
+    "builder.header.style.display1" => "Display 1",
+    "builder.header.style.display2" => "Display 2",
+    "builder.header.style.display3" => "Display 3",
+    "builder.header.style.display4" => "Display 4",
+    "builder.header.style.display5" => "Display 5",
+    "builder.header.style.display6" => "Display 6",
+    "builder.header.p_tag.label" => "Use a <p>-tag",
+    "builder.header.p_tag.comment" => "Use a <p> tag instead of the <h*> one.",
 
     "builder.image.label" => "Image",
     "builder.image.comment" => "A simple image content element.",

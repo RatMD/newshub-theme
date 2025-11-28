@@ -1,0 +1,14 @@
+<script>
+    {% if this.theme.enable_dark_scheme %}
+        var scheme = localStorage.getItem('newshub-color-scheme');
+        if (scheme) {
+            document.body.classList.remove(scheme === 'light'? 'dark': 'light');
+            document.body.classList.add(scheme);
+        }
+    {% endif %}
+
+    if (document.currentScript) {
+        document.currentScript.remove();
+    }
+</script>
+{{ this.theme.custom_body_start|raw }}

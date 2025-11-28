@@ -64,22 +64,10 @@ function onStart() {
 <!DOCTYPE html>
 <html lang="{{ currentLocale }}" class="no-js">
 <head>
-    {% partial 'page/meta' %}
+    {% partial 'page/_meta' %}
 </head>
 <body class="vh-100 theme-{{ this.theme.id }} {{ 'page-' ~ this.page.id }} layout-{{ this.layout.id }} {{ this.theme.enable_dark_scheme and this.theme.dark_scheme ? 'dark' : 'light' }}{{ bodyClasses is defined ? ' ' ~ bodyClasses: '' }}">
-    <script>
-        {% if this.theme.enable_dark_scheme %}
-            var scheme = localStorage.getItem('newshub-color-scheme');
-            if (scheme) {
-                document.body.classList.remove(scheme === 'light'? 'dark': 'light');
-                document.body.classList.add(scheme);
-            }
-        {% endif %}
-
-        if (document.currentScript) {
-            document.currentScript.remove();
-        }
-    </script>
+    {% partial 'page/_start' %}
 
     <div class="vh-100 d-flex flex-column">
         <div class="flex-auto">
@@ -96,5 +84,7 @@ function onStart() {
             </p>
         </div>
     </div>
+
+    {% partial 'page/_end' %}
 </body>
 </html>

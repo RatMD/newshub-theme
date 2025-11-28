@@ -88,22 +88,10 @@ function onStart() {
 <!DOCTYPE html>
 <html lang="{{ currentLocale }}" class="no-js">
 <head>
-    {% partial 'page/meta' %}
+    {% partial 'page/_meta' %}
 </head>
 <body class="theme-{{ this.theme.id }} {{ 'page-' ~ this.page.id }} layout-{{ this.layout.id }} {{ this.theme.enable_dark_scheme and this.theme.dark_scheme ? 'dark' : 'light' }}{{ bodyClasses is defined ? ' ' ~ bodyClasses: '' }}">
-    <script>
-        {% if this.theme.enable_dark_scheme %}
-            var scheme = localStorage.getItem('newshub-color-scheme');
-            if (scheme) {
-                document.body.classList.remove(scheme === 'light'? 'dark': 'light');
-                document.body.classList.add(scheme);
-            }
-        {% endif %}
-
-        if (document.currentScript) {
-            document.currentScript.remove();
-        }
-    </script>
+    {% partial 'page/_start' %}
 
     <header id="pageHeader" class="header header-{{ this.theme.header_style }} header-{{ this.theme.header_position }} {{ this.theme.dark_header ? 'bg-dark dark' : 'bg-light dark:bg-dark' }}" data-handle="header">
         {% partial 'page/header' %}
@@ -146,6 +134,6 @@ function onStart() {
     {{ offscreen | raw }}
 
     {% component 'cookiesBar' %}
-    {% partial 'page/scripts' %}
+    {% partial 'page/_end' %}
 </body>
 </html>

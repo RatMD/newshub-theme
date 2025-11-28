@@ -1,0 +1,6 @@
+-
+    name: RainLab.Blog Posts
+    class: RainLab\Blog\Models\PostImport
+    file: seeds/data/rainlab-blog.json
+    attributes:
+        file_format: json

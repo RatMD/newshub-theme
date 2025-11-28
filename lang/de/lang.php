@@ -1,7 +1,7 @@
 <?php declare(strict_types=1);
 
 return [
-    
+
     // Custom Meta Options
     "custom_meta.tab" => "Darstellung",
     "custom_meta.simple_title.label" => "Einfacher Titel",
@@ -23,6 +23,7 @@ return [
     // Template Options - Tabs
     "option.tabs.general" => "Allgemein",
     "option.tabs.meta" => "Meta",
+    "option.tabs.custom" => "Eigener Code",
     "option.tabs.appearance" => "Darstellung",
     "option.tabs.header" => "Kopfbereich",
     "option.tabs.homepage" => "Startseite",
@@ -147,7 +148,7 @@ return [
     "option.hero_slider_number.comment" => "Ändere die Anzahl der Beiträge die im Hero-Slider angezeigt werden.",
     "option.hero_slider_category.label" => "Beitrags-Kategorie",
     "option.hero_slider_category.comment" => "Ändere die Kategorie dessen Beiträge im Hero-Slider angezeigt werden.",
-    
+
     // Template Options - Homepage / Notice Settings
     "option.sections.notice" => "Notiz",
     "option.notice_enable.label" => "Notiz",
@@ -171,7 +172,7 @@ return [
     "option.category_list.comment" => "Zeige einen 'Gepostet in [Kategorie]' Link / Text überhalb des Beitragstitels.",
     "option.featured_tag_list.label" => "Hervorgehobene Schlagwörter",
     "option.featured_tag_list.comment" => "Zeige die hervorgehobenen Schlagwörter (als Links) unter dem Beitragsauszug.",
-    
+
     // Template Options - Content / Single Post Settings
     "option.sections.post" => "Beitragsseite",
     "option.share_post.label" => "Teilen-Links",
@@ -243,7 +244,7 @@ return [
     "widget.image.comment" => "Zeige eine Bild mit Text an.",
     "widget.toc.label" => "Inhaltsverzeichnis",
     "widget.toc.comment" => "Zeige ein Inhaltsverzeichnis zur aktuellen Seite.",
-    
+
     // Widget Options
     "widget.general.title.label" => "Widget Titel",
     "widget.general.title.comment" => "Ändere den Titel der bei diesem Widget verwendet wird.",
@@ -293,7 +294,7 @@ return [
     "widget.toc.title_first.comment" => "Nutze den Seitentitel als erstes Element in dieser Liste.",
     "widget.toc.javascript_anchors.label" => "JavaScript Anker",
     "widget.toc.javascript_anchors.comment" => "Füge eine Anker-Verlinkung mithilfe eines JavaScript Snippets hinzu.",
-    
+
 
 
 
@@ -316,14 +317,14 @@ return [
     "builder.globals.center" => "Zentriert",
     "builder.globals.end" => "Ende",
     "builder.globals.textalignment" => "Textausrichtung",
-    "builder.globals.name.label" => "Name", 
-    "builder.globals.name.comment" => "Ein Name für dieses Inhaltselement (wird nicht im Front-End angezeigt).", 
-    
-    "builder.globals.title.label" => "Überschrift & Layout", 
+    "builder.globals.name.label" => "Name",
+    "builder.globals.name.comment" => "Ein Name für dieses Inhaltselement (wird nicht im Front-End angezeigt).",
+
+    "builder.globals.title.label" => "Überschrift & Layout",
     "builder.globals.title.comment" => "Eine Überschrift und Layout für dieses Inhaltselement.",
-    "builder.globals.subtitle.label" => "Untertitel", 
-    "builder.globals.subtitle.comment" => "Ein Überschrift-Untertitel für dieses Inhaltselement.", 
-    "builder.globals.id.label" => "ID & Benutzerdefinierte Klassen", 
+    "builder.globals.subtitle.label" => "Untertitel",
+    "builder.globals.subtitle.comment" => "Ein Überschrift-Untertitel für dieses Inhaltselement.",
+    "builder.globals.id.label" => "ID & Benutzerdefinierte Klassen",
     "builder.globals.id.comment" => "Eine einzigartige ID und benutzdefinierte Klassen für dieses Inhaltselement.",
     "builder.globals.spacing.label" => "Äußerer und Innerer Abstand",
     "builder.globals.spacing.comment" => "Setze die Abstände um sowie innerhalb dieses Inhaltselements.",
@@ -502,28 +503,28 @@ return [
 
     "builder.header.label" => "Überschrift",
     "builder.header.comment" => "Eine simple Überschrift.",
-    "builder.header.link.label" => "Link", 
-    "builder.header.link.comment" => "Eine optionale Verlinkung.", 
-    "builder.header.layout.label" => "Layout", 
-    "builder.header.layout.comment" => "Das gewünschte Überschriftslayout.", 
-    "builder.header.layout.h1" => "H1", 
-    "builder.header.layout.h2" => "H2", 
-    "builder.header.layout.h3" => "H3", 
-    "builder.header.layout.h4" => "H4", 
-    "builder.header.layout.h5" => "H5", 
-    "builder.header.layout.h6" => "H6", 
-    "builder.header.style.label" => "Stil", 
-    "builder.header.style.comment" => "Der Bootstrap-Überschriften Stil.", 
-    "builder.header.style.default" => "Standard", 
-    "builder.header.style.separator" => "Standard mit Trennlinie", 
-    "builder.header.style.display1" => "Display 1", 
-    "builder.header.style.display2" => "Display 2", 
-    "builder.header.style.display3" => "Display 3", 
-    "builder.header.style.display4" => "Display 4", 
-    "builder.header.style.display5" => "Display 5", 
-    "builder.header.style.display6" => "Display 6", 
-    "builder.header.p_tag.label" => "<p> HTML Tag verwenden", 
-    "builder.header.p_tag.comment" => "Verwende den <p> HTML Tag anstelle eines der <h*>.", 
+    "builder.header.link.label" => "Link",
+    "builder.header.link.comment" => "Eine optionale Verlinkung.",
+    "builder.header.layout.label" => "Layout",
+    "builder.header.layout.comment" => "Das gewünschte Überschriftslayout.",
+    "builder.header.layout.h1" => "H1",
+    "builder.header.layout.h2" => "H2",
+    "builder.header.layout.h3" => "H3",
+    "builder.header.layout.h4" => "H4",
+    "builder.header.layout.h5" => "H5",
+    "builder.header.layout.h6" => "H6",
+    "builder.header.style.label" => "Stil",
+    "builder.header.style.comment" => "Der Bootstrap-Überschriften Stil.",
+    "builder.header.style.default" => "Standard",
+    "builder.header.style.separator" => "Standard mit Trennlinie",
+    "builder.header.style.display1" => "Display 1",
+    "builder.header.style.display2" => "Display 2",
+    "builder.header.style.display3" => "Display 3",
+    "builder.header.style.display4" => "Display 4",
+    "builder.header.style.display5" => "Display 5",
+    "builder.header.style.display6" => "Display 6",
+    "builder.header.p_tag.label" => "<p> HTML Tag verwenden",
+    "builder.header.p_tag.comment" => "Verwende den <p> HTML Tag anstelle eines der <h*>.",
 
     "builder.image.label" => "Bild",
     "builder.image.comment" => "Ein einfaches Bild.",

@@ -30,7 +30,7 @@
 
 {# Render Content Element #}
 <div class="{{ config_classes(group, config)|trim }}">
-    <div id="{{ id }}" class="{{ classNames|trim }}" 
+    <div id="{{ id }}" class="{{ classNames|trim }}"
         data-keen-slider
         data-keen-slider-amount="{{ config.slides }}"
         data-keen-slider-animation="{{ config.animation }}"
@@ -48,7 +48,7 @@
                     <div class="slide-image">
                         <img src="{{ slide.image | media }}" alt="{{ slide.title }}" />
                     </div>
-                    
+
                     {% if slide.title|length > 0 or slide.content|length > 0 %}
                         <div class="slide-content font-semibold fs-6">
                             {% if slide.title|length > 0 %}

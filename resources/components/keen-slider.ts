@@ -6,17 +6,17 @@ import query from "../utilities/query";
 import ready from "../utilities/ready";
 
 interface KeenSliderNewsHubConfig {
-    
+
     /**
      * Number of Slides per View
      */
     amount: number;
-    
+
     /**
      * Animation Style
      */
     animation: 'slide' | 'fade' | 'zoom' | 'marquee';
-    
+
     /**
      * Toggle Autoplay Behavior
      */
@@ -31,27 +31,27 @@ interface KeenSliderNewsHubConfig {
      * Create or Use Indicators
      */
     indicators: boolean | string;
-    
+
     /**
      * Set Slide Animation Interval
      */
     interval: number;
-    
+
     /**
      * Loop after last slide
      */
     loop: boolean;
-    
+
     /**
      * Set spacing between multiple slides (when amount is larger then 1)
      */
     spacing: number;
-    
+
     /**
      * Touch / Drag Support
      */
     touch: boolean;
-    
+
     /**
      * Core KeenSlider options
      */
@@ -67,7 +67,7 @@ class KeenSliderNewsHub {
 
     /**
      * Available default options for KeenSliderNewsHub
-     * 
+     *
      * amount           Number of slides per view for the lg breakpoint (downsizes automatically)
      * animation        Desired animation style: 'slide', 'fade', 'zoom' or 'marquee'
      * autoplay         Turn autoplay on or off
@@ -86,7 +86,7 @@ class KeenSliderNewsHub {
         loop: true,
         spacing: 30,
         touch: true,
-        keenSlider: {} 
+        keenSlider: {}
     }
 
     /**
@@ -96,7 +96,7 @@ class KeenSliderNewsHub {
 
     /**
      * Get instance by HTMLElement
-     * @param element 
+     * @param element
      */
     public static getInstance(element: HTMLElement) {
         if (this.instances.has(element)) {
@@ -108,14 +108,14 @@ class KeenSliderNewsHub {
 
     /**
      * Get or Create an instance
-     * @param element 
-     * @param options 
+     * @param element
+     * @param options
      */
     static getOrCreateInstance(element: HTMLElement, options: Partial<KeenSliderNewsHubConfig> = {}) {
         if (this.instances.has(element)) {
             return this.instances.get(element);
         } else {
-            return new this(element, options);            
+            return new this(element, options);
         }
     }
 
@@ -136,8 +136,8 @@ class KeenSliderNewsHub {
 
     /**
      * Create a new KeenSliderNewsHub instance
-     * @param element 
-     * @param options 
+     * @param element
+     * @param options
      */
     constructor(element: HTMLElement, options: Partial<KeenSliderNewsHubConfig> = {}) {
         if (KeenSliderNewsHub.instances.has(element)) {
@@ -180,7 +180,7 @@ class KeenSliderNewsHub {
                 keenSliderOptions.drag = false;
                 keenSliderOptions.loop = true;
                 keenSliderOptions.renderMode = "performance";
-                
+
                 if (typeof keenSliderOptions.breakpoints !== 'undefined') {
                     for (let key in keenSliderOptions.breakpoints) {
                         keenSliderOptions.breakpoints[key].loop = true;
@@ -235,8 +235,8 @@ class KeenSliderNewsHub {
     }
 
     /**
-     * Slide To 
-     * @param direction 
+     * Slide To
+     * @param direction
      */
     public slideTo(direction: 'next' | 'prev' | 'previous' | number | string) {
         if (direction === 'next') {
@@ -262,7 +262,7 @@ class KeenSliderNewsHub {
 
     /**
      * Force Responsive Breakpoints on KeenSliderOptions
-     * @param keenSliderOptions 
+     * @param keenSliderOptions
      */
     protected forceResponsiveBreakpoints(keenSliderOptions: KeenSliderOptions) {
         if (typeof keenSliderOptions.slides !== 'object') {
@@ -305,7 +305,7 @@ class KeenSliderNewsHub {
     /**
      * Autoplay Extension
      * @source https://codesandbox.io/s/github/rcbyr/keen-slider-sandboxes/tree/v6/autoplay/autoswitch/javascript?file=/index.html
-     * 
+     *
      * @param slider Current KeenSlider instance.
      */
     public pluginAutoplay(slider: KeenSliderInstance) {
@@ -324,7 +324,7 @@ class KeenSliderNewsHub {
             }
             timeout = setTimeout(slider.next, this.config.interval);
         };
-    
+
         slider.on("created", (slider) => {
             slider.container.addEventListener("mouseover", () => {
                 mouseOver = true;
@@ -344,7 +344,7 @@ class KeenSliderNewsHub {
     /**
      * Fade Animation Extension
     // @source https://codesandbox.io/s/github/rcbyr/keen-slider-sandboxes/tree/v6/media/fader/javascript?file=/index.html
-     * 
+     *
      * @param slider Current KeenSlider instance.
      */
     public pluginFade(slider: KeenSliderInstance) {
@@ -358,7 +358,7 @@ class KeenSliderNewsHub {
     /**
      * Zoom Animation Extension
     // @source https://codesandbox.io/s/github/rcbyr/keen-slider-sandboxes/tree/v6/media/zoom-out/javascript?file=/index.html
-     * 
+     *
      * @param slider Current KeenSlider instance.
      */
     public pluginZoom(slider: KeenSliderInstance) {
@@ -370,7 +370,7 @@ class KeenSliderNewsHub {
             element.style.transform = `${style}`;
             element.style["-webkit-transform"] = `${style}`;
         };
-        
+
         slider.on('detailsChanged', (slider) => {
             const slides = slider.track.details.slides
             slider.slides.forEach((element, idx) => {
@@ -383,33 +383,33 @@ class KeenSliderNewsHub {
     /**
      * Marquee Animation Extension
      * @source https://codesandbox.io/s/github/rcbyr/keen-slider-sandboxes/tree/v6/autoplay/automove/javascript?file=/index.html:885-1358
-     * 
+     *
      * @param slider Current KeenSlider instance.
      */
     public pluginMarquee(slider: KeenSliderInstance) {
-        let animation = { 
-            duration: this.config.interval, 
-            easing: (t) => t 
+        let animation = {
+            duration: this.config.interval,
+            easing: (t) => t
         };
         let amount = slider.slides.length - 1;
-    
+
         slider.on("created", (s) => {
             s.moveToIdx(amount, true, animation);
-            
+
             slider.container.addEventListener("mouseover", () => {
                 slider.animator.stop();
             });
-    
+
             slider.container.addEventListener("mouseout", () => {
                 slider.moveToIdx(slider.track.details.abs + amount, true, animation);
             });
         });
-    
+
         slider.on("animationEnded", (s) => {
             slider.animator.stop();
             slider.moveToIdx(slider.track.details.abs + amount, true, animation);
         });
-    
+
         slider.on("updated", (s) => {
             slider.animator.stop();
             slider.moveToIdx(slider.track.details.abs + amount, true, animation);
@@ -419,7 +419,7 @@ class KeenSliderNewsHub {
     /**
      * Slider Indicators
      * @source https://codesandbox.io/s/github/rcbyr/keen-slider-sandboxes/tree/v6/navigation-controls/arrows-and-dots/javascript?file=/index.html
-     * 
+     *
      * @param slider Current KeenSlider instance.
      */
     public pluginIndicators(slider: KeenSliderInstance) {
@@ -524,7 +524,7 @@ class KeenSliderNewsHub {
     /**
      * Slider Controls
      * @source https://codesandbox.io/s/github/rcbyr/keen-slider-sandboxes/tree/v6/navigation-controls/arrows-and-dots/javascript?file=/index.html
-     * 
+     *
      * @param slider Current KeenSlider instance.
      */
     public pluginControls(slider: KeenSliderInstance) {
@@ -618,7 +618,7 @@ class KeenSliderNewsHub {
                     el.addEventListener('click', nextSlide);
                 }
             });
-            
+
             updateControls(slider);
         });
 
@@ -636,7 +636,7 @@ class KeenSliderNewsHub {
             } else {
                 controls.map(el => {
                     let pos = el.dataset.slideTo || el.dataset.keenSliderControl;
-    
+
                     if (pos === 'prev' || pos === 'previous') {
                         el.removeEventListener('click', prevSlide);
                     } else if (pos === 'next') {

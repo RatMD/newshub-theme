@@ -2,19 +2,37 @@ NewsHub / Changelog
 ===================
 
 ## Version 2.0.0 (Stable)
+- Info: OctoberCMS v2 support has been dropped; v3 or v4 is required to use the new NewsHub theme.
 - Add: Switched to Vite with HMR development support, instead of using esbuild.
 - Add: New vite bundler and watcher script setup.
+- Add: New "Custom Code" options to append html content to three layout positions.
+- Add: New "Site-Verification Tags" options for Google Search Console, Bing Webmaster Tools, Yandex & Meta.
 - Update: `package.json` dependencies.
 - Update: SCSS file structure and bootstrap changes.
 - Update: TypeScript utility functions.
+- Update: Use new `page/_meta` / `page/_start` / `page/_end` partials.
 - Remove: esbuild bundler script and dependencies.
 - Remove: Drop support for `RainLab.BlogVideoExtension` (since it has been removed by the authors).
 - Fix: Replace all `|_` TWIG translation filters with `|trans`.
+- Fix: Include `_start` / `_end` partials on maintenance page too.
 
 ### ToDo
-- Info: OctoberCMS v2 support has been dropped; v3 or v4 is required to use the new NewsHub theme.
+- Add: Move demonstration content to seeder, support `php artisan theme:seed` command.
 - Add: Support for the [RainLab.Forum](https://octobercms.com/plugin/rainlab-forum) plugin.
+- Add: Embla Carousel to replace the deprecated (may discontinued) Keen Slider.
 - Update: Using Bootstrap’s new color-mode for dark and light color schemes.
+- Internal Test: SitePicker
+- Internal Test Plugin: BlakeJones.MagicForms
+- Internal Test Plugin: JanVince.SmallContactForm
+- Internal Test Plugin: JanVince.SmallGDPR
+- Internal Test Plugin: RainLab.Blog
+- Internal Test Plugin: RainLab.Pages
+- Internal Test Plugin: RainLab.Sitemap
+- Internal Test Plugin: RainLab.Translate v1.9 (OCv3)
+- Internal Test Plugin: RainLab.Translate v2.0 (OCv4)
+- Internal Test Plugin: RainLab.Forum
+- Internal Test Plugin: RainLab.User v1.6 (OCv3)
+- Internal Test Plugin: RainLab.User v2.0 (OCv4)
 
 ## Version 1.3.0 (Skipped)
 - Info: This release was skipped. All features listed below were completed but were shipped in v2.
