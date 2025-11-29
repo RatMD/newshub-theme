@@ -22,8 +22,9 @@ return [
 
     // Template Options - Tabs
     "option.tabs.general" => "Allgemein",
+    "option.tabs.preferences" => "Präferenzen",
     "option.tabs.meta" => "Meta",
-    "option.tabs.custom" => "Eigener Code",
+    "option.tabs.snippets" => "Snippets",
     "option.tabs.appearance" => "Darstellung",
     "option.tabs.header" => "Kopfbereich",
     "option.tabs.homepage" => "Startseite",
@@ -48,6 +49,22 @@ return [
     "option.embed_jquery.comment" => "Binde das jQuery Framework für OctoberCMS v3+ ein (vorherige Versionen binden jQuery automatisch ein).",
     "option.embed_extras.label" => "OctoberCMS Extras einbinden",
     "option.embed_extras.comment" => "Binde die Extra OctoberCMS CSS und JS Bibliotheken ein (werden eventuell von Drittanbieter-Plugins benötigt).",
+
+    // Template Options - Preferences / SitePicker | LocalePicker Preferences
+    "option.sections.preferences" => "SitePicker / LocalePicker Einstellungen",
+    "option.tip.preferences.label" => "OctoberCMS v3.1 + RainLab.Translate v1 | v2 Einstellungen",
+    "option.tip.preferences.comment" => "OctoberCMS v3.1 hat einen neuen SitePicker-Komponenten eingeführt, der anstelle der LocalePicker-Komponente aus dem RainLab.Translate v1 Plugin genutzt werden kann. Die obenstehenden Optionen dienen dazu, die gewünschte Komponente sowie deren Darstellung zu konfigurieren. Beachte, dass RainLab.Translate v2 den LocalePicker zugunsten des neuen SitePicker entfernt.",
+    "option.prefer_sitepicker.label" => "SitePicker statt LocalePicker bevorzugen",
+    "option.prefer_sitepicker.comment" => "Verwendet den neuen SitePicker anstelle des LocalePickers. (Wirkt nur auf OctoberCMS v3.1-Installationen mit RainLab.Translate v1+.)",
+    "option.oc_picker_usage.label" => "SitePicker Darstellung",
+    "option.oc_picker_usage.comment" => "Die Sprachdarstellung zeigt Flaggen und Sprachnamen statt des vollständigen Seitennamens. (Wirkt nur auf den neuen SitePicker.)",
+    "option.oc_picker_usage.locale" => "Sprachen",
+    "option.oc_picker_usage.sites" => "Seiten",
+    "option.oc_picker_style.label" => "Site/LocalePicker Stil",
+    "option.oc_picker_style.comment" => "Legt fest, wie der SitePicker / LocalePicker im Header oder Footer angezeigt werden soll (falls aktiviert). Der 'Switch'-Stil ist nur für den LocalePicker oder für den SitePicker mit der Darstellung 'Sprachen' verfügbar und unterstützt nur zwei Sprachen.",
+    "option.oc_picker_style.dropdown" => "Dropdown",
+    "option.oc_picker_style.modal" => "Modal",
+    "option.oc_picker_style.switch" => "Schalter",
 
     // Template Options - Meta / Meta Tags Settings
     "option.section.general_tags" => "Allgemeine Meta Tags",
@@ -80,6 +97,20 @@ return [
     "option.meta_tags.generator_tag_version.label" => "Zeige OctoberCMS Version",
     "option.meta_tags.generator_tag_version.comment" => "Nutze die exakte October CMS Version im Generator Meta Tag.",
 
+    // Template Options - Meta / Site-Verification Tags Settings
+    "option.section.verification_tags" => "Site-Verifizierungs-Tags",
+    "option.meta_tags.google_site_verification.label" => "Google Search Console",
+    "option.meta_tags.bing_site_verification.label" => "Bing Webmaster Tools",
+    "option.meta_tags.yandex_site_verification.label" => "Yandex Site-Verifizierung",
+    "option.meta_tags.facebook_domain_verification.label" => "Facebook / Meta Domain-Verifizierung",
+
+    // Template Options - Snippets
+    "option.section.snippets" => "Snippets",
+    "option.section.snippets.comment" => "Füge eigene JavaScript-, CSS- oder HTML-Snippets in den jeweiligen Bereich des Templates ein.",
+    "option.snippets.snippet_header.label" => "Header-Code",
+    "option.snippets.snippet_body_start.label" => "Body-Code (Beginn des <body>-Tags)",
+    "option.snippets.snippet_body_end.label" => "Body-Code (Ende des <body>-Tags)",
+
     // Template Options - Appearance / General Color Scheme Settings
     "option.sections.color_scheme" => "Farbschema",
     "option.enable_dark_scheme.label" => "Dunkles Farbschema anbieten",
@@ -94,7 +125,7 @@ return [
     // Template Options - Appearance / Color Palette Settings
     "option.sections.color_palette" => "Farbpalette",
     "option.tip.color_palette.label" => "Farbpalette überschreiben",
-    "option.tip.color_palette.comment" => "Obwohl es mit benutzerdefinierten CSS Properties möglich ist viele (nicht alle) Farbschema-spezifischen Stylings zu überschreiben empfehlen wir ausdrücklich diese Änderungen an der <code>/resources/scss/_core-variables.scss</code> Datei (im Root Ordner dieses Templates) anzupassen und die gesamte CSS Datei neu zu bauen (mithilfe von node und <code>npm run build:css</code>) um sämtliche Farbspezifischen Stylings anzupassen. <b>Achtung</b> Die NewsHub SCSS Dateien können nicht mit den SCSS Fähigkeiten von OctoberCMS gebaut werden, da die verwendete SCSS PHP-Bibiliothek nicht spezifikationskonform ist und daher die (aktuellsten) SASS und CSS Funktionalitäten von NewsHub nicht unterstützt.",
+    "option.tip.color_palette.comment" => "Obwohl es mit benutzerdefinierten CSS Properties möglich ist viele (nicht alle) Farbschema-spezifischen Stylings zu überschreiben empfehlen wir ausdrücklich diese Änderungen an der <code>/resources/styles/_variables.scss</code> Datei (im Root Ordner dieses Templates) anzupassen und die gesamte CSS Datei neu zu bauen (mithilfe von node und <code>npm run build</code>) um sämtliche Farbspezifischen Stylings anzupassen. <b>Achtung</b> Die NewsHub SCSS Dateien können nicht mit den SCSS Fähigkeiten von OctoberCMS gebaut werden, da die verwendete SCSS PHP-Bibiliothek nicht spezifikationskonform ist und daher die (aktuellsten) SASS und CSS Funktionalitäten von NewsHub nicht unterstützt.",
     "option.enable_color_palette.label" => "SASS Farbpalette überschreiben",
     "option.enable_color_palette.comment" => "Die CSS-Farbpalette mithile von CSS Custom Properties überschreiben.",
     "option.color_primary.label" => "Primäfarbe",
@@ -127,8 +158,6 @@ return [
     "option.header_position.slide" => "Slide",
     "option.color_switch.label" => "Farbschema Switch",
     "option.color_switch.comment" => "Zeige einen Farbschema Switch Button im Header an.",
-    "option.languages_menu.label" => "Sprach Switch",
-    "option.languages_menu.comment" => "Zeige einen Sprach Switch Button im Header an.",
     "option.site_picker.label" => "Seiten Switch",
     "option.site_picker.comment" => "Zeige einen Seiten Switch Button im Header an <b class=\"text-dark\">(erfordert OctoberCMS v3.1+).</b>",
     "option.search_button.label" => "Suchfuntion",
@@ -295,9 +324,6 @@ return [
     "widget.toc.javascript_anchors.label" => "JavaScript Anker",
     "widget.toc.javascript_anchors.comment" => "Füge eine Anker-Verlinkung mithilfe eines JavaScript Snippets hinzu.",
 
-
-
-
     "builder.tab.content_elements" => "Inhaltselemente",
     "builder.tab.page_configuration" => "Seiteneinstellungen",
     "builder.use_container.label" => "Haupt-Container nutzen",
@@ -319,7 +345,6 @@ return [
     "builder.globals.textalignment" => "Textausrichtung",
     "builder.globals.name.label" => "Name",
     "builder.globals.name.comment" => "Ein Name für dieses Inhaltselement (wird nicht im Front-End angezeigt).",
-
     "builder.globals.title.label" => "Überschrift & Layout",
     "builder.globals.title.comment" => "Eine Überschrift und Layout für dieses Inhaltselement.",
     "builder.globals.subtitle.label" => "Untertitel",
@@ -392,10 +417,6 @@ return [
 
     "builder.card.label" => "Karte",
     "builder.card.comment" => "Ein flexibler und erweiterbarer Inhaltscontainer.",
-    "builder.card.layout.label" => "Titellayout",
-    "builder.card.layout.comment" => "Ändere die Ausgabe für den Titel der Karte.",
-    "builder.card.sublayout.label" => "Untertitel-Layout",
-    "builder.card.sublayout.comment" => "Ändere die Ausgabe des Untertitels der Karte.",
     "builder.card.image.label" => "Kartenbild",
     "builder.card.image.comment" => "Ein optionales Bild für die Karte.",
     "builder.card.content.label" => "Karteninhalt",
@@ -613,5 +634,4 @@ return [
     "builder.teaser.position.comment" => "Ändere die Position des Textausschnitts.",
     "builder.teaser.teaser.label" => "Ausschnitt",
     "builder.teaser.teaser.comment" => "Der Textausschnit der gesondert angezeigt werden soll.",
-
 ];

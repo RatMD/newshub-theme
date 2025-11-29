@@ -97,7 +97,7 @@ return [
     "option.meta_tags.generator_tag_version.label" => "Show OctoberCMS version",
     "option.meta_tags.generator_tag_version.comment" => "Show the exact OctoberCMS version on the generator meta tag.",
 
-    // Template Options - Meta / Generator Tags Settings
+    // Template Options - Meta / Site-Verification Tags Settings
     "option.section.verification_tags" => "Site-Verification Tags",
     "option.meta_tags.google_site_verification.label" => "Google Search Console",
     "option.meta_tags.bing_site_verification.label" => "Bing Webmaster Tools",
@@ -125,7 +125,7 @@ return [
     // Template Options - Appearance / Color Palette Settings
     "option.sections.color_palette" => "Color-Palette",
     "option.tip.color_palette.label" => "Overwrite Color Palette",
-    "option.tip.color_palette.comment" => "While it is possible to overwrite many (not all) theme-color related stylings using custom CSS properties, we highly recommend changing these in the <code>/resources/scss/_core-variables.scss</code> file (within the root directory of this template) and bundle the whole CSS files again (using node and <code>npm run build:css</code>) to apply your color-scheme on ALL Bootstrap & NewsHub stylings. <b>Keep in mind:</b> The NewsHub SCSS files CANNOT be bundled using the SCSS abilities of OctoberCMS, since the used SCSS PHP-library is not spec-compliant and thus does not support the (latest) SASS and CSS features used by NewsHub.",
+    "option.tip.color_palette.comment" => "While it is possible to overwrite many (not all) theme-color related stylings using custom CSS properties, we highly recommend changing these in the <code>/resources/styles/_variables.scss</code> file (within the root directory of this template) and bundle the whole CSS files again (using node and <code>npm run build</code>) to apply your color-scheme on ALL Bootstrap & NewsHub stylings. <b>Keep in mind:</b> The NewsHub SCSS files CANNOT be bundled using the SCSS abilities of OctoberCMS, since the used SCSS PHP-library is not spec-compliant and thus does not support the (latest) SASS and CSS features used by NewsHub.",
     "option.enable_color_palette.label" => "Overwrite SASS Color Palette",
     "option.enable_color_palette.comment" => "Overwrite the CSS-bundled theme-color palette using custom CSS properties.",
     "option.color_primary.label" => "Primary Color",
@@ -323,10 +323,6 @@ return [
     "widget.toc.title_first.comment" => "Use the page title as first item on the list.",
     "widget.toc.javascript_anchors.label" => "JavaScript Anchors",
     "widget.toc.javascript_anchors.comment" => "Add Anchor-Linking using a small JavaScript solution.",
-
-
-
-
 
     "builder.tab.content_elements" => "Content Elements",
     "builder.tab.page_configuration" => "Page Configuration",
@@ -638,5 +634,4 @@ return [
     "builder.teaser.position.comment" => "Change the position where the teaser should be shown.",
     "builder.teaser.teaser.label" => "Teaser Text",
     "builder.teaser.teaser.comment" => "The main Teaser Text",
-
 ];
