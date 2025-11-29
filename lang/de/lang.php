@@ -56,7 +56,7 @@ return [
     "option.short_datetime_format.label" => "Datum- und Uhrzeitformat (Kurzform)",
 
     // Template Options - Preferences / SitePicker | LocalePicker Preferences
-    "option.sections.preferences" => "SitePicker / LocalePicker Einstellungen",
+    "option.sections.preferences" => "SitePicker / LocalePicker",
     "option.tip.preferences.label" => "OctoberCMS v3.1 + RainLab.Translate v1 | v2 Einstellungen",
     "option.tip.preferences.comment" => "OctoberCMS v3.1 hat einen neuen SitePicker-Komponenten eingeführt, der anstelle der LocalePicker-Komponente aus dem RainLab.Translate v1 Plugin genutzt werden kann. Die obenstehenden Optionen dienen dazu, die gewünschte Komponente sowie deren Darstellung zu konfigurieren. Beachte, dass RainLab.Translate v2 den LocalePicker zugunsten des neuen SitePicker entfernt.",
     "option.prefer_sitepicker.label" => "SitePicker statt LocalePicker bevorzugen",
