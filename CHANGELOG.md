@@ -12,6 +12,7 @@ NewsHub / Changelog
 - Update: SCSS file structure and bootstrap changes.
 - Update: TypeScript utility functions.
 - Update: Use new `page/_meta` / `page/_start` / `page/_end` partials.
+- Update: Merge `header` & `footer` options to a single `layout` page.
 - Remove: esbuild bundler script and dependencies.
 - Remove: Drop support for `RainLab.BlogVideoExtension` (since it has been removed by the authors).
 - Fix: Replace all `|_` TWIG translation filters with `|trans`.

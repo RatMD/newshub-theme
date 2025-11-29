@@ -26,11 +26,10 @@ return [
     "option.tabs.meta" => "Meta",
     "option.tabs.snippets" => "Snippets",
     "option.tabs.appearance" => "Appearance",
-    "option.tabs.header" => "Header",
+    "option.tabs.layout" => "Layout",
     "option.tabs.homepage" => "Homepage",
     "option.tabs.content" => "Content",
     "option.tabs.sidebars" => "Sidebars",
-    "option.tabs.footer" => "Footer",
 
     // Template Options - General / Brand Settings
     "option.sections.brand" => "Brand Details",
@@ -143,7 +142,7 @@ return [
     "option.gray_scheme.stone" => "Stone (Tailwind)",
     "option.gray_scheme.zinc" => "Zinc (Tailwind)",
 
-    // Template Options - Header / General Settings
+    // Template Options - Layout / Header
     "option.sections.main_header" => "Header",
     "option.header_style.label" => "Header Style",
     "option.header_style.comment" => "\"Extended\" adds a topbar / meta menu as well as additional action buttons.",
@@ -164,6 +163,18 @@ return [
     "option.search_button.comment" => "Shows a search action button on the header <b class=\"text-dark\">(requires RatMD.BlogHub v1.3+)</b>.",
     "option.user_button.label" => "User / Profile Action",
     "option.user_button.comment" => "Shows a user / profile action button on the header <b class=\"text-dark\">(requires RainLab.User)</b>.",
+
+    // Template Options - Layout / Footer
+    "option.sections.main_footer" => "Footer",
+    "option.to_top_button.label" => "Scroll-To-Top Button",
+    "option.to_top_button.comment" => "Shows a scroll-to-top button after the user scrolls down.",
+    "option.color_switch_bottom.comment" => "Shows a color-scheme switch button on the footer.",
+    "option.languages_menu_bottom.comment" => "Shows a language switch button on the footer.",
+    "option.site_picker_bottom.comment" => "Shows a locale / site picker on the footer.",
+    "option.copyright_text_left.label" => "Left Copyright Text",
+    "option.copyright_text_left.comment" => "Change the text of the left-aligned Copyright Footer. (Supports Markdown)",
+    "option.copyright_text_right.label" => "Right Copyright Text",
+    "option.copyright_text_right.comment" => "Change the text of the right-aligned Copyright Footer. (Supports Markdown)",
 
     // Template Options - Homepage / Hero-Area Settings
     "option.sections.hero_area" => "Hero-Area",
@@ -214,18 +225,6 @@ return [
     "option.datetime_format.label" => "Date/Time Format",
     "option.datetime_format.comment" => "Valid Date/Time Format as described <a href=\"https://www.php.net/manual/en/datetime.format.php#refsect1-datetime.format-parameters\" target=\"_blank\">on php.net</a>",
     "option.short_datetime_format.label" => "Short Date/Time Format",
-
-    // Template Options - Footer / General Settings
-    "option.sections.main_footer" => "Footer",
-    "option.to_top_button.label" => "Scroll-To-Top Button",
-    "option.to_top_button.comment" => "Shows a scroll-to-top button after the user scrolls down.",
-    "option.color_switch_bottom.comment" => "Shows a color-scheme switch button on the footer.",
-    "option.languages_menu_bottom.comment" => "Shows a language switch button on the footer.",
-    "option.site_picker_bottom.comment" => "Shows a locale / site picker on the footer.",
-    "option.copyright_text_left.label" => "Left Copyright Text",
-    "option.copyright_text_left.comment" => "Change the text of the left-aligned Copyright Footer. (Supports Markdown)",
-    "option.copyright_text_right.label" => "Right Copyright Text",
-    "option.copyright_text_right.comment" => "Change the text of the right-aligned Copyright Footer. (Supports Markdown)",
 
     // Template Options - Sidebar Builder Settings
     "option.sections.sidebar" => "Sidebar Configuration",

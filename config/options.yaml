@@ -489,12 +489,12 @@ tabs:
                 field: enable_color_palette
                 condition: checked
 
-        __main_header_section:
-            tab: theme.ratmd-newshub::lang.option.tabs.header
+        __layout_section_header:
+            tab: theme.ratmd-newshub::lang.option.tabs.layout
             type: section
             label: theme.ratmd-newshub::lang.option.sections.main_header
         header_style:
-            tab: theme.ratmd-newshub::lang.option.tabs.header
+            tab: theme.ratmd-newshub::lang.option.tabs.layout
             type: balloon-selector
             label: theme.ratmd-newshub::lang.option.header_style.label
             comment: theme.ratmd-newshub::lang.option.header_style.comment
@@ -506,7 +506,7 @@ tabs:
                 extended: theme.ratmd-newshub::lang.option.header_style.extended
             span: left
         header_position:
-            tab: theme.ratmd-newshub::lang.option.tabs.header
+            tab: theme.ratmd-newshub::lang.option.tabs.layout
             type: balloon-selector
             label: theme.ratmd-newshub::lang.option.header_position.label
             commentAbove: theme.ratmd-newshub::lang.option.header_position.commentAbove
@@ -519,7 +519,7 @@ tabs:
                 slide: theme.ratmd-newshub::lang.option.header_position.slide
             span: right
         color_switch_top:
-            tab: theme.ratmd-newshub::lang.option.tabs.header
+            tab: theme.ratmd-newshub::lang.option.tabs.layout
             type: switch
             label: theme.ratmd-newshub::lang.option.color_switch.label
             comment: theme.ratmd-newshub::lang.option.color_switch.comment
@@ -530,14 +530,14 @@ tabs:
                 condition: checked
             span: left
         site_picker_top:
-            tab: theme.ratmd-newshub::lang.option.tabs.header
+            tab: theme.ratmd-newshub::lang.option.tabs.layout
             type: switch
             label: theme.ratmd-newshub::lang.option.site_picker.label
             comment: theme.ratmd-newshub::lang.option.site_picker.comment
             default: false
             span: right
         search_button:
-            tab: theme.ratmd-newshub::lang.option.tabs.header
+            tab: theme.ratmd-newshub::lang.option.tabs.layout
             type: switch
             label: theme.ratmd-newshub::lang.option.search_button.label
             comment: theme.ratmd-newshub::lang.option.search_button.comment
@@ -549,7 +549,7 @@ tabs:
                 field: header_style
             span: left
         user_button:
-            tab: theme.ratmd-newshub::lang.option.tabs.header
+            tab: theme.ratmd-newshub::lang.option.tabs.layout
             type: switch
             label: theme.ratmd-newshub::lang.option.user_button.label
             comment: theme.ratmd-newshub::lang.option.user_button.comment
@@ -559,6 +559,54 @@ tabs:
                 action: show
                 condition: value[extended]
                 field: header_style
+            span: right
+        __layout_section_footer:
+            tab: theme.ratmd-newshub::lang.option.tabs.layout
+            type: section
+            label: theme.ratmd-newshub::lang.option.sections.main_footer
+        to_top_button:
+            tab: theme.ratmd-newshub::lang.option.tabs.layout
+            type: switch
+            label: theme.ratmd-newshub::lang.option.to_top_button.label
+            comment: theme.ratmd-newshub::lang.option.to_top_button.comment
+            default: true
+        color_switch_bottom:
+            tab: theme.ratmd-newshub::lang.option.tabs.layout
+            type: switch
+            label: theme.ratmd-newshub::lang.option.color_switch.label
+            comment: theme.ratmd-newshub::lang.option.color_switch_bottom.comment
+            default: false
+            trigger:
+                action: enable
+                field: enable_dark_scheme
+                condition: checked
+            span: left
+        site_picker_bottom:
+            tab: theme.ratmd-newshub::lang.option.tabs.layout
+            type: switch
+            label: theme.ratmd-newshub::lang.option.site_picker.label
+            comment: theme.ratmd-newshub::lang.option.site_picker_bottom.comment
+            default: false
+            span: right
+        copyright_text_left:
+            tab: theme.ratmd-newshub::lang.option.tabs.layout
+            type: textarea
+            label: theme.ratmd-newshub::lang.option.copyright_text_left.label
+            comment: theme.ratmd-newshub::lang.option.copyright_text_left.comment
+            default: >
+                Copyright {year} &copy; {site_name}
+
+                All rights reserved
+            span: left
+        copyright_text_right:
+            tab: theme.ratmd-newshub::lang.option.tabs.layout
+            type: textarea
+            label: theme.ratmd-newshub::lang.option.copyright_text_right.label
+            comment: theme.ratmd-newshub::lang.option.copyright_text_right.comment
+            default: >
+                NewsHub Template by [rat.md](https://rat.md)
+
+                Designed with [Bootstrap 5.3](https://getbootstrap.com)
             span: right
 
         __hero_area_section:
@@ -786,52 +834,3 @@ tabs:
                 action: show
                 field: _sidebar
                 condition: value[post]
-
-        __footer_section:
-            tab: theme.ratmd-newshub::lang.option.tabs.footer
-            type: section
-            label: theme.ratmd-newshub::lang.option.sections.main_footer
-        to_top_button:
-            tab: theme.ratmd-newshub::lang.option.tabs.footer
-            type: switch
-            label: theme.ratmd-newshub::lang.option.to_top_button.label
-            comment: theme.ratmd-newshub::lang.option.to_top_button.comment
-            default: true
-        color_switch_bottom:
-            tab: theme.ratmd-newshub::lang.option.tabs.footer
-            type: switch
-            label: theme.ratmd-newshub::lang.option.color_switch.label
-            comment: theme.ratmd-newshub::lang.option.color_switch_bottom.comment
-            default: false
-            trigger:
-                action: enable
-                field: enable_dark_scheme
-                condition: checked
-            span: left
-        site_picker_bottom:
-            tab: theme.ratmd-newshub::lang.option.tabs.footer
-            type: switch
-            label: theme.ratmd-newshub::lang.option.site_picker.label
-            comment: theme.ratmd-newshub::lang.option.site_picker_bottom.comment
-            default: false
-            span: right
-        copyright_text_left:
-            tab: theme.ratmd-newshub::lang.option.tabs.footer
-            type: textarea
-            label: theme.ratmd-newshub::lang.option.copyright_text_left.label
-            comment: theme.ratmd-newshub::lang.option.copyright_text_left.comment
-            default: >
-                Copyright {year} &copy; {site_name}
-
-                All rights reserved
-            span: left
-        copyright_text_right:
-            tab: theme.ratmd-newshub::lang.option.tabs.footer
-            type: textarea
-            label: theme.ratmd-newshub::lang.option.copyright_text_right.label
-            comment: theme.ratmd-newshub::lang.option.copyright_text_right.comment
-            default: >
-                NewsHub Template by [rat.md](https://rat.md)
-
-                Designed with [Bootstrap 5.3](https://getbootstrap.com)
-            span: right

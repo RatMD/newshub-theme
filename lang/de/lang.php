@@ -26,11 +26,10 @@ return [
     "option.tabs.meta" => "Meta",
     "option.tabs.snippets" => "Snippets",
     "option.tabs.appearance" => "Darstellung",
-    "option.tabs.header" => "Kopfbereich",
+    "option.tabs.layout" => "Layout",
     "option.tabs.homepage" => "Startseite",
     "option.tabs.content" => "Inhaltsbereich",
     "option.tabs.sidebars" => "Seitenleisten",
-    "option.tabs.footer" => "Fußzeile",
 
     // Template Options - General / Brand Settings
     "option.sections.brand" => "Seitendetails",
@@ -143,7 +142,7 @@ return [
     "option.gray_scheme.stone" => "Stein / Stone (Tailwind v3)",
     "option.gray_scheme.zinc" => "Zink / Zinc (Tailwind v3)",
 
-    // Template Options - Header / General Settings
+    // Template Options - Layout / Header
     "option.sections.main_header" => "Kopfbereich / Header",
     "option.header_style.label" => "Stil des Headers",
     "option.header_style.comment" => "\"Erweitert\" fügt ein Topbar / Meta Menu sowie weitere Action-Buttons hinzu.",
@@ -164,6 +163,18 @@ return [
     "option.search_button.comment" => "Zeige eine Suchfunktion im Header an <b class=\"text-dark\">(erfordert RatMD.BlogHub v1.3+).</b>",
     "option.user_button.label" => "Nutzer / Profil Funktion",
     "option.user_button.comment" => "Zeige eine Nutzer / Profil Funktion im Header an <b class=\"text-dark\">(erfordert RainLab.User).</b>",
+
+    // Template Options - Layout / Footer
+    "option.sections.main_footer" => "Fußzeile / Footer",
+    "option.to_top_button.label" => "Scroll-To-Top Button",
+    "option.to_top_button.comment" => "Zeige einen Scroll-To-Top Button an, nachdem der Nutzer die Seite runter-gescrollt hat.",
+    "option.color_switch.comment" => "Zeige einen Farbschema Switch Button in der Fußzeile an.",
+    "option.languages_menu.comment" => "Zeige einen Sprach Switch Button in der Fußzeile an.",
+    "option.site_picker.comment" => "Zeige einen Seiten Switch Button in der Fußzeile an <b class=\"text-dark\">(erfordert OctoberCMS v3.1+).</b>",
+    "option.copyright_text_left.label" => "Linker Copyright Text",
+    "option.copyright_text_left.comment" => "Ändere den linken Copyright Text in der Fußzeile. (Unterstützt Markdown)",
+    "option.copyright_text_right.label" => "Rechter Copyright Text",
+    "option.copyright_text_right.comment" => "Ändere den rechten Copyright Text in der Fußzeile. (Unterstützt Markdown)",
 
     // Template Options - Homepage / Hero-Area Settings
     "option.sections.hero_area" => "Hero-Area",
@@ -214,18 +225,6 @@ return [
     "option.datetime_format.label" => "Datum- und Uhrzeitformat",
     "option.datetime_format.comment" => "Ein gültiges Datums- und Uhrzeitsformat wie <a href=\"https://www.php.net/manual/en/datetime.format.php#refsect1-datetime.format-parameters\" target=\"_blank\">auf php.net</a> beschrieben.",
     "option.short_datetime_format.label" => "Datum- und Uhrzeitformat (Kurzform)",
-
-    // Template Options - Footer / General Settings
-    "option.sections.main_footer" => "Fußzeile / Footer",
-    "option.to_top_button.label" => "Scroll-To-Top Button",
-    "option.to_top_button.comment" => "Zeige einen Scroll-To-Top Button an, nachdem der Nutzer die Seite runter-gescrollt hat.",
-    "option.color_switch.comment" => "Zeige einen Farbschema Switch Button in der Fußzeile an.",
-    "option.languages_menu.comment" => "Zeige einen Sprach Switch Button in der Fußzeile an.",
-    "option.site_picker.comment" => "Zeige einen Seiten Switch Button in der Fußzeile an <b class=\"text-dark\">(erfordert OctoberCMS v3.1+).</b>",
-    "option.copyright_text_left.label" => "Linker Copyright Text",
-    "option.copyright_text_left.comment" => "Ändere den linken Copyright Text in der Fußzeile. (Unterstützt Markdown)",
-    "option.copyright_text_right.label" => "Rechter Copyright Text",
-    "option.copyright_text_right.comment" => "Ändere den rechten Copyright Text in der Fußzeile. (Unterstützt Markdown)",
 
     // Template Options - Sidebar Builder Settings
     "option.sections.sidebar" => "Sidebar Konfiguration",
