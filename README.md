@@ -72,7 +72,7 @@ php artisan theme:install RatMD.NewsHub --from=git@github.com:ratmd/newshub-them
 For a quick preview of what the template can actually do, we recommend seeding the demo content:
 
 ```sh
-php artisan theme:seed RatMD.NewsHub
+php artisan theme:seed ratmd-newsHub
 ```
 
 

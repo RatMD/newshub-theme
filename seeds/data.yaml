@@ -1,6 +1,13 @@
 -
-    name: RainLab.Blog Posts
-    class: RainLab\Blog\Models\PostImport
+    name: Demo Media Files
+    class: Media\Models\MediaLibraryItemImport
+    file: seeds/data/media-files.json
+    attributes:
+        file_format: json
+-
+    name: Demo RainLab.Blog Posts
+    class: RatMD\BlogHub\Classes\PostImport
     file: seeds/data/rainlab-blog.json
     attributes:
         file_format: json
+        auto_create_categories: true
