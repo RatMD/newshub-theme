@@ -259,27 +259,27 @@ tabs:
             label: theme.ratmd-newshub::lang.option.meta_tags.facebook_domain_verification.label
             span: right
 
-        __section_custom:
-            tab: theme.ratmd-newshub::lang.option.tabs.custom
+        __section_snippets:
+            tab: theme.ratmd-newshub::lang.option.tabs.snippets
             type: section
-            label: theme.ratmd-newshub::lang.option.section.custom
-            comment: theme.ratmd-newshub::lang.option.section.custom.comment
-        custom_header:
-            tab: theme.ratmd-newshub::lang.option.tabs.custom
+            label: theme.ratmd-newshub::lang.option.section.snippets
+            comment: theme.ratmd-newshub::lang.option.section.snippets.comment
+        snippet_header:
+            tab: theme.ratmd-newshub::lang.option.tabs.snippets
             type: codeeditor
-            label: theme.ratmd-newshub::lang.option.custom.custom_header.label
+            label: theme.ratmd-newshub::lang.option.snippets.snippet_header.label
             size: large
             language: html
-        custom_body_start:
-            tab: theme.ratmd-newshub::lang.option.tabs.custom
+        snippet_body_start:
+            tab: theme.ratmd-newshub::lang.option.tabs.snippets
             type: codeeditor
-            label: theme.ratmd-newshub::lang.option.custom.custom_body_start.label
+            label: theme.ratmd-newshub::lang.option.snippets.snippet_body_start.label
             size: large
             language: html
-        custom_body_end:
-            tab: theme.ratmd-newshub::lang.option.tabs.custom
+        snippet_body_end:
+            tab: theme.ratmd-newshub::lang.option.tabs.snippets
             type: codeeditor
-            label: theme.ratmd-newshub::lang.option.custom.custom_body_end.label
+            label: theme.ratmd-newshub::lang.option.snippets.snippet_body_end.label
             size: large
             language: html
 

@@ -3,9 +3,10 @@ NewsHub / Changelog
 
 ## Version 2.0.0 (Stable)
 - Info: OctoberCMS v2 support has been dropped; v3 or v4 is required to use the new NewsHub theme.
+- Add: Support to seed some demo content using `php artisan theme:seed` command.
 - Add: Switched to Vite with HMR development support, instead of using esbuild.
 - Add: New vite bundler and watcher script setup.
-- Add: New "Custom Code" options to append html content to three layout positions.
+- Add: New "Snippets" options to append html content to three layout positions.
 - Add: New "Site-Verification Tags" options for Google Search Console, Bing Webmaster Tools, Yandex & Meta.
 - Update: `package.json` dependencies.
 - Update: SCSS file structure and bootstrap changes.
@@ -17,7 +18,6 @@ NewsHub / Changelog
 - Fix: Include `_start` / `_end` partials on maintenance page too.
 
 ### ToDo
-- Add: Move demonstration content to seeder, support `php artisan theme:seed` command.
 - Add: Support for the [RainLab.Forum](https://octobercms.com/plugin/rainlab-forum) plugin.
 - Add: Embla Carousel to replace the deprecated (may discontinued) Keen Slider.
 - Update: Using Bootstrap’s new color-mode for dark and light color schemes.

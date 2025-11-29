@@ -24,7 +24,7 @@ return [
     "option.tabs.general" => "General",
     "option.tabs.preferences" => "Preferences",
     "option.tabs.meta" => "Meta",
-    "option.tabs.custom" => "Custom Code",
+    "option.tabs.snippets" => "Snippets",
     "option.tabs.appearance" => "Appearance",
     "option.tabs.header" => "Header",
     "option.tabs.homepage" => "Homepage",
@@ -104,12 +104,12 @@ return [
     "option.meta_tags.yandex_site_verification.label" => "Yandex Site Verification",
     "option.meta_tags.facebook_domain_verification.label" => "Facebook / Meta Domain Verification",
 
-    // Template Options - Custom
-    "option.section.custom" => "Custom Code",
-    "option.section.custom.comment" => "Add your custom JavaScript, CSS or HTML snippets to the corresponding area of the template.",
-    "option.custom.custom_header.label" => "Header Code",
-    "option.custom.custom_body_start.label" => "Body Code (Start of <body> tag)",
-    "option.custom.custom_body_end.label" => "Body Code (End of <body> tag)",
+    // Template Options - Snippets
+    "option.section.snippets" => "Snippets",
+    "option.section.snippets.comment" => "Add your custom JavaScript, CSS or HTML snippets to the corresponding area of the template.",
+    "option.snippets.snippet_header.label" => "Header Code",
+    "option.snippets.snippet_body_start.label" => "Body Code (Start of <body> tag)",
+    "option.snippets.snippet_body_end.label" => "Body Code (End of <body> tag)",
 
     // Template Options - Appearance / General Color Scheme Settings
     "option.sections.color_scheme" => "Color-Scheme",
