@@ -49,6 +49,12 @@ return [
     "option.embed_extras.label" => "Embed OctoberCMS Extras",
     "option.embed_extras.comment" => "Embed the Extra OctoberCMS CSS and JS libraries (may required by an external plugin).",
 
+    // Template Options - Preferences / Localization Settings
+    "option.sections.localization" => "Localization",
+    "option.datetime_format.label" => "Date/Time Format",
+    "option.datetime_format.comment" => "Valid Date/Time Format as described <a href=\"https://www.php.net/manual/en/datetime.format.php#refsect1-datetime.format-parameters\" target=\"_blank\">on php.net</a>",
+    "option.short_datetime_format.label" => "Short Date/Time Format",
+
     // Template Options - Preferences / SitePicker | LocalePicker Preferences
     "option.sections.preferences" => "SitePicker / LocalePicker Preferences",
     "option.tip.preferences.label" => "OctoberCMS v3.1 + RainLab.Translate v1 | v2 Preferences",
@@ -219,12 +225,6 @@ return [
     "option.share_post.comment" => "Shows privacy-protected 'Share this Post' links above the article.",
     "option.similar_articles.label" => "Similar / Random Posts",
     "option.similar_articles.comment" => "Shows a list of similar or random posts below the article.",
-
-    // Template Options - Content / Localization Settings
-    "option.sections.localization" => "Localization",
-    "option.datetime_format.label" => "Date/Time Format",
-    "option.datetime_format.comment" => "Valid Date/Time Format as described <a href=\"https://www.php.net/manual/en/datetime.format.php#refsect1-datetime.format-parameters\" target=\"_blank\">on php.net</a>",
-    "option.short_datetime_format.label" => "Short Date/Time Format",
 
     // Template Options - Sidebar Builder Settings
     "option.sections.sidebar" => "Sidebar Configuration",

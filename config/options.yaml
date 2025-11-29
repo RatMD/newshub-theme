@@ -1,6 +1,6 @@
 tabs:
     fields:
-        __brand_section:
+        __general_section_brand:
             tab: theme.ratmd-newshub::lang.option.tabs.general
             type: section
             label: theme.ratmd-newshub::lang.option.sections.brand
@@ -41,7 +41,7 @@ tabs:
             thumbOptions: false
             span: right
 
-        __library_section:
+        __general_section_library:
             tab: theme.ratmd-newshub::lang.option.tabs.general
             type: section
             label: theme.ratmd-newshub::lang.option.sections.libraries
@@ -58,7 +58,27 @@ tabs:
             comment: theme.ratmd-newshub::lang.option.embed_extras.comment
             default: false
 
-        __october_preferences:
+        __preferences_section_localization:
+            tab: theme.ratmd-newshub::lang.option.tabs.preferences
+            type: section
+            label: theme.ratmd-newshub::lang.option.sections.localization
+        datetime_format:
+            tab: theme.ratmd-newshub::lang.option.tabs.preferences
+            type: text
+            label: theme.ratmd-newshub::lang.option.datetime_format.label
+            default: D., j. F Y - H:i
+            comment: theme.ratmd-newshub::lang.option.datetime_format.comment
+            commentHtml: true
+            span: left
+        short_datetime_format:
+            tab: theme.ratmd-newshub::lang.option.tabs.preferences
+            type: text
+            label: theme.ratmd-newshub::lang.option.short_datetime_format.label
+            default: M. j, Y - H:i
+            comment: theme.ratmd-newshub::lang.option.datetime_format.comment
+            commentHtml: true
+            span: right
+        __preferences_section_picker:
             tab: theme.ratmd-newshub::lang.option.tabs.preferences
             type: section
             label: theme.ratmd-newshub::lang.option.sections.preferences
@@ -98,7 +118,7 @@ tabs:
             comment: theme.ratmd-newshub::lang.option.tip.preferences.comment
             commentHtml: true
 
-        __section_general_tags:
+        __meta_section_globals:
             tab: theme.ratmd-newshub::lang.option.tabs.meta
             type: section
             label: theme.ratmd-newshub::lang.option.section.general_tags
@@ -131,7 +151,7 @@ tabs:
             default: true
             span: right
 
-        __section_favicon_tags:
+        __meta_section_favicon:
             tab: theme.ratmd-newshub::lang.option.tabs.meta
             type: section
             label: theme.ratmd-newshub::lang.option.section.favicon_tags
@@ -211,7 +231,7 @@ tabs:
             comment: theme.ratmd-newshub::lang.option.tip.favicon.comment
             commentHtml: true
 
-        __section_generator_tag:
+        __meta_section_generator:
             tab: theme.ratmd-newshub::lang.option.tabs.meta
             type: section
             label: theme.ratmd-newshub::lang.option.section.generator_tag
@@ -234,7 +254,7 @@ tabs:
                 action: enable
                 condition: checked
 
-        __section_verification_tags:
+        __meta_section_verifications:
             tab: theme.ratmd-newshub::lang.option.tabs.meta
             type: section
             label: theme.ratmd-newshub::lang.option.section.verification_tags
@@ -259,7 +279,7 @@ tabs:
             label: theme.ratmd-newshub::lang.option.meta_tags.facebook_domain_verification.label
             span: right
 
-        __section_snippets:
+        __snippets_section:
             tab: theme.ratmd-newshub::lang.option.tabs.snippets
             type: section
             label: theme.ratmd-newshub::lang.option.section.snippets
@@ -283,7 +303,7 @@ tabs:
             size: large
             language: html
 
-        __color_scheme_section:
+        __appearance_section_scheme:
             tab: theme.ratmd-newshub::lang.option.tabs.appearance
             type: section
             label: theme.ratmd-newshub::lang.option.sections.color_scheme
@@ -320,7 +340,7 @@ tabs:
             default: false
             span: right
 
-        __color_palette_section:
+        __appearance_section_palette:
             tab: theme.ratmd-newshub::lang.option.tabs.appearance
             type: section
             label: theme.ratmd-newshub::lang.option.sections.color_palette
@@ -560,6 +580,7 @@ tabs:
                 condition: value[extended]
                 field: header_style
             span: right
+
         __layout_section_footer:
             tab: theme.ratmd-newshub::lang.option.tabs.layout
             type: section
@@ -609,7 +630,7 @@ tabs:
                 Designed with [Bootstrap 5.3](https://getbootstrap.com)
             span: right
 
-        __hero_area_section:
+        __homepage_section_hero:
             tab: theme.ratmd-newshub::lang.option.tabs.homepage
             type: section
             label: theme.ratmd-newshub::lang.option.sections.hero_area
@@ -651,7 +672,7 @@ tabs:
             useRelation: false
             span: right
 
-        __notice_section:
+        __homepage_section_notice:
             tab: theme.ratmd-newshub::lang.option.tabs.homepage
             type: section
             label: theme.ratmd-newshub::lang.option.sections.notice
@@ -696,7 +717,7 @@ tabs:
             comment: theme.ratmd-newshub::lang.option.notice_content.comment
             placeholder: A info message.
 
-        __posts_section:
+        __content_section_posts:
             tab: theme.ratmd-newshub::lang.option.tabs.content
             type: section
             label: theme.ratmd-newshub::lang.option.sections.posts
@@ -729,7 +750,7 @@ tabs:
             default: false
             span: right
 
-        __post_section:
+        __content_section_post:
             tab: theme.ratmd-newshub::lang.option.tabs.content
             type: section
             label: theme.ratmd-newshub::lang.option.sections.post
@@ -748,28 +769,7 @@ tabs:
             default: true
             span: left
 
-        __localization_section:
-            tab: theme.ratmd-newshub::lang.option.tabs.content
-            type: section
-            label: theme.ratmd-newshub::lang.option.sections.localization
-        datetime_format:
-            tab: theme.ratmd-newshub::lang.option.tabs.content
-            type: text
-            label: theme.ratmd-newshub::lang.option.datetime_format.label
-            default: D., j. F Y - H:i
-            comment: theme.ratmd-newshub::lang.option.datetime_format.comment
-            commentHtml: true
-            span: left
-        short_datetime_format:
-            tab: theme.ratmd-newshub::lang.option.tabs.content
-            type: text
-            label: theme.ratmd-newshub::lang.option.short_datetime_format.label
-            default: M. j, Y - H:i
-            comment: theme.ratmd-newshub::lang.option.datetime_format.comment
-            commentHtml: true
-            span: right
-
-        __section_sidebar:
+        __sidebars_section:
             tab: theme.ratmd-newshub::lang.option.tabs.sidebars
             type: section
             label: theme.ratmd-newshub::lang.option.sections.sidebar
