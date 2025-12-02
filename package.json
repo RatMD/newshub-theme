@@ -25,13 +25,7 @@
         "dev": "vite dev --host --cors",
         "build": "vite build",
         "watch": "vite build --watch",
-        "legacy:build": "node legacy_esbuild.js",
-        "legacy:build:css": "node legacy_esbuild.js --no-js",
-        "legacy:build:js": "node legacy_esbuild.js --no-css",
-        "legacy:watch": "node legacy_esbuild.js --watch",
-        "legacy:watch:css": "node legacy_esbuild.js --no-js --watch",
-        "legacy:watch:js": "node legacy_esbuild.js --no-css --watch",
-        "legacy:vendors": "node legacy_esbuild.js --vendors"
+        "icons": "node package-icons.mjs"
     },
     "dependencies": {
         "@popperjs/core": "^2.11.8",

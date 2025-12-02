@@ -9,6 +9,7 @@ NewsHub / Changelog
 - Add: New vite bundler and watcher script setup.
 - Add: New "Snippets" options to append html content to three layout positions.
 - Add: New "Site-Verification Tags" options for Google Search Console, Bing Webmaster Tools, Yandex & Meta.
+- Add: Support for `size` and `color` on each bootstrap icon partial.
 - Update: `package.json` dependencies.
 - Update: TypeScript utility functions.
 - Update: Using Bootstrap’s new color-mode (`data-bs-theme`) for dark and light color schemes.
