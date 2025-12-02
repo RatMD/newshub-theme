@@ -13,7 +13,7 @@
         &:last-child {
             margin-bottom: 0;
         }
-        
+
         @include media-breakpoint-up(lg) {
             flex-direction: row;
         }
@@ -76,7 +76,7 @@
                 object-position: top;
                 border-radius: $border-radius;
                 transition: filter 200ms ease;
-                
+
                 @include media-breakpoint-up(md) {
                     height: 400px;
                 }
@@ -118,7 +118,7 @@
             .post-badge {
                 color: $gray-800;
                 margin: 0 $spacer * 0.2;
-                padding: $spacer * 0.1 $spacer * 0.5; 
+                padding: $spacer * 0.1 $spacer * 0.5;
                 display: flex;
                 align-items: center;
                 flex-direction: row;
@@ -164,7 +164,7 @@
         .post-content {
             flex: 1 1 auto;
             padding: $spacer;
-            
+
             @include media-breakpoint-up(lg) {
                 padding: $spacer $spacer * 1.5 $spacer $spacer * 3.0;
             }
@@ -177,7 +177,7 @@
                 font-weight: 700;
                 letter-spacing: 3px;
                 text-transform: uppercase;
-                
+
                 @include media-breakpoint-up(lg) {
                     margin-bottom: 0;
                 }
@@ -186,7 +186,7 @@
                     color: var(--#{$prefix}gray-800);
                     text-decoration: none;
                     transition: color .15s ease;
-                    
+
                     &:hover {
                         color: var(--#{$prefix}primary);
                     }
@@ -207,7 +207,7 @@
 
             .post-meta {
                 font-size: 0.8rem;
-                
+
                 @include media-breakpoint-up(lg) {
                     font-size: 1.0rem;
                     text-align: right;
@@ -223,7 +223,7 @@
                     color: var(--#{$prefix}body-color);
                     display: inline-block;
                     font-weight: 600;
-                    
+
                     span {
                         opacity: 0.25;
                     }
@@ -334,7 +334,7 @@
             flex-basis: auto;
             padding-left: 0;
             padding-right: 0;
-            
+
             .post-meta {
                 font-size: 0.9rem;
                 text-align: left;
@@ -355,7 +355,6 @@
 // ----------------------------------------
 //  Posts-List Condensed Styling
 // ----------------------------------------
-
 .posts-condensed {
     margin-left: -($spacer * 1.5);
     margin-right: -($spacer * 1.5);
@@ -386,10 +385,6 @@
         .post-no-thumbnail {
             background-color: $gray-300;
             border-radius: 0.375rem;
-
-            .dark & {
-                background-color: $gray-800;
-            }
         }
 
         .post-content {
@@ -412,5 +407,11 @@
         &:hover .post-title {
             background-size: 100% 2px;
         }
+    }
+}
+
+@include color-mode(dark) {
+    .posts-condensed .post .post-no-thumbnail {
+        background-color: $gray-800;
     }
 }

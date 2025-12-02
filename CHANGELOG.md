@@ -3,16 +3,20 @@ NewsHub / Changelog
 
 ## Version 2.0.0 (Stable)
 - Info: OctoberCMS v2 support has been dropped; v3 or v4 is required to use the new NewsHub theme.
+- Add: Support for OctoberCMS v4.
 - Add: Support to seed some demo content using `php artisan theme:seed` command.
 - Add: Switched to Vite with HMR development support, instead of using esbuild.
 - Add: New vite bundler and watcher script setup.
 - Add: New "Snippets" options to append html content to three layout positions.
 - Add: New "Site-Verification Tags" options for Google Search Console, Bing Webmaster Tools, Yandex & Meta.
 - Update: `package.json` dependencies.
-- Update: SCSS file structure and bootstrap changes.
 - Update: TypeScript utility functions.
+- Update: Using Bootstrap’s new color-mode (`data-bs-theme`) for dark and light color schemes.
+- Update: SCSS file structure and bootstrap order changes.
+- Update: Many minor styling and bootstrap changes.
 - Update: Use new `page/_meta` / `page/_start` / `page/_end` partials.
 - Update: Merge `header` & `footer` options to a single `layout` page.
+- Update: Separate "dark-utilities" classes from "$utilities" / move to theme.scss.
 - Remove: esbuild bundler script and dependencies.
 - Remove: Drop support for `RainLab.BlogVideoExtension` (since it has been removed by the authors).
 - Fix: Replace all `|_` TWIG translation filters with `|trans`.
@@ -21,7 +25,6 @@ NewsHub / Changelog
 ### ToDo
 - Add: Support for the [RainLab.Forum](https://octobercms.com/plugin/rainlab-forum) plugin.
 - Add: Embla Carousel to replace the deprecated (may discontinued) Keen Slider.
-- Update: Using Bootstrap’s new color-mode for dark and light color schemes.
 - Internal Test: SitePicker
 - Internal Test Plugin: BlakeJones.MagicForms
 - Internal Test Plugin: JanVince.SmallContactForm

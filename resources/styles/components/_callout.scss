@@ -63,7 +63,7 @@
 
 .callout-dismissible {
     padding-right: $callout-dismissible-padding-r;
-  
+
     .btn-close {
         position: absolute;
         top: 0;
@@ -82,7 +82,7 @@
     $callout-background: shift-color($value, $callout-bg-scale);
     $callout-border: shift-color($value, $callout-border-scale);
     $callout-color: shift-color($value, $callout-color-scale);
-  
+
     @if (contrast-ratio($callout-background, $callout-color) < $min-contrast-ratio) {
         $callout-color: mix($value, color-contrast($callout-background), abs($callout-color-scale));
     }
@@ -91,7 +91,7 @@
         --#{$prefix}callout-color: #{$callout-color};
         --#{$prefix}callout-bg: #{$callout-background};
         --#{$prefix}callout-border-color: #{$callout-border};
-        
+
         .callout-link {
             color: shade-color($callout-color, 20%);
         }
@@ -104,16 +104,20 @@
     @if (contrast-ratio($callout-dark-background, $callout-dark-color) < $min-contrast-ratio) {
         $callout-dark-color: mix($value, color-contrast($callout-dark-background), abs($callout-color-scale));
     }
-    .dark .callout-#{$state} {
-        --#{$prefix}callout-color: #{$callout-dark-color};
-        --#{$prefix}callout-bg: #{$callout-dark-background};
-        --#{$prefix}callout-border-color: #{$callout-dark-border};
-        
-        .callout-link {
-            color: shade-color($callout-dark-color, 10%);
+    @include color-mode(dark) {
+        .callout-#{$state} {
+            --#{$prefix}callout-color: #{$callout-dark-color};
+            --#{$prefix}callout-bg: #{$callout-dark-background};
+            --#{$prefix}callout-border-color: #{$callout-dark-border};
+
+            .callout-link {
+                color: shade-color($callout-dark-color, 10%);
+            }
         }
     }
 }
-.dark .callout-dark {
-    border-color: $gray-900;
+@include color-mode(dark) {
+    .callout-dark {
+        border-color: $gray-900;
+    }
 }

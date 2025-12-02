@@ -2,8 +2,7 @@
     {% if this.theme.enable_dark_scheme %}
         var scheme = localStorage.getItem('newshub-color-scheme');
         if (scheme) {
-            document.body.classList.remove(scheme === 'light'? 'dark': 'light');
-            document.body.classList.add(scheme);
+            document.body.dataset.bsTheme = scheme === 'light' ? 'light': 'dark';
         }
     {% endif %}
 

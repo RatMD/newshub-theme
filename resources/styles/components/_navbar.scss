@@ -59,9 +59,6 @@
             stroke-linecap: round;
             transition: stroke-dasharray 400ms, stroke-dashoffset 400ms, stroke 400ms;
 
-            .dark & {
-                stroke: var(--#{$prefix}gray-400);
-            }
             &:nth-child(1) {
                 stroke-dasharray: 40 121;
             }
@@ -83,6 +80,11 @@
         &:nth-child(3) {
             stroke-dashoffset: -68px;
         }
+    }
+}
+@include color-mode(dark) {
+    .navbar-toggler svg path {
+        stroke: var(--#{$prefix}gray-400);
     }
 }
 
@@ -107,9 +109,6 @@
     // Icons
     svg {
         color: var(--#{$prefix}gray-700);
-    }
-    .dark & svg {
-        color: var(--#{$prefix}gray-300);
     }
 
     // Mobile Icon
@@ -145,6 +144,11 @@
         }
     }
 }
+@include color-mode(dark) {
+    .navbar-subnav-toggler svg {
+        color: var(--#{$prefix}gray-300);
+    }
+}
 
 
 // ----------------------------------------
@@ -152,10 +156,6 @@
 // ----------------------------------------
 .navbar-nav {
     display: flex;
-
-    .dark & {
-        --#{$prefix}nav-link-color: var(--#{$prefix}gray-400);
-    }
 
     // Social Colors
     @each $name, $hex in $social-networks {
@@ -194,6 +194,11 @@
             display: inline-flex;
             align-items: center;
         }
+    }
+}
+@include color-mode(dark) {
+    .navbar-nav {
+        --#{$prefix}nav-link-color: var(--#{$prefix}gray-400);
     }
 }
 
@@ -273,10 +278,6 @@
 
     @include media-breakpoint-up(lg) {
         padding: $spacer;
-    }
-
-    .dark & {
-        @extend .navbar-dark;
     }
 
     .navbar-main-inner {
@@ -576,8 +577,14 @@
             }
         }
     }
+}
 
-    .dark & .navbar-nav-main {
+@include color-mode(dark) {
+    .navbar.navbar-main {
+        @extend .navbar-dark;
+    }
+
+    .navbar.navbar-main .navbar-nav-main {
         background-color: var(--#{$prefix}dark);
 
         .nav-title,
@@ -612,6 +619,14 @@
 
         .navbar-subnav-master {
             background-color: var(--#{$prefix}dark);
+        }
+    }
+
+    .navbar.navbar-main .navbar-nav-main > .nav-item.nav-btn > .nav-link {
+        @extend .btn-outline-light;
+
+        &:hover {
+            color: var(--#{$prefix}gray-900);
         }
     }
 }
@@ -926,17 +941,6 @@
         & + .dropdown-menu {
             inset: 0px 0px auto auto;
         }
-
-        .dark & {
-            color: var(--#{$prefix}gray-400);
-        }
-
-        .dark &:hover,
-        .dark &:focus,
-        .dark &:focus-within {
-            color: var(--#{$prefix}gray-100);
-            background-color: var(--#{$prefix}gray-800);
-        }
     }
     .navbar-action-toggle {
         padding: 0;
@@ -1036,6 +1040,25 @@
 
             svg {
                 transform: rotate(180deg);
+            }
+        }
+    }
+}
+@include color-mode(dark) {
+    .navbar .navbar-actions {
+        .navbar-action-toggle,
+        .navbar-action-button {
+
+
+            & {
+                color: var(--#{$prefix}gray-400);
+            }
+
+            &:hover,
+            &:focus,
+            &:focus-within {
+                color: var(--#{$prefix}gray-100);
+                background-color: var(--#{$prefix}gray-800);
             }
         }
     }

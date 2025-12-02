@@ -5,7 +5,7 @@
 
 .alert {
     border-radius: var(--#{$prefix}alert-border-radius);
-    
+
     & > *:last-child {
         margin-bottom: 0;
     }
@@ -24,16 +24,20 @@
     @if (contrast-ratio($alert-dark-background, $alert-dark-color) < $min-contrast-ratio) {
         $alert-dark-color: mix($value, color-contrast($alert-dark-background), abs($alert-color-scale));
     }
-    .dark .alert-#{$state} {
-        --#{$prefix}alert-color: #{$alert-dark-color};
-        --#{$prefix}alert-bg: #{$alert-dark-background};
-        --#{$prefix}alert-border-color: #{$alert-dark-border};
-        
-        .alert-link {
-            color: shade-color($alert-dark-color, 10%);
+    @include color-mode(dark) {
+        .alert-#{$state} {
+            --#{$prefix}alert-color: #{$alert-dark-color};
+            --#{$prefix}alert-bg: #{$alert-dark-background};
+            --#{$prefix}alert-border-color: #{$alert-dark-border};
+
+            .alert-link {
+                color: shade-color($alert-dark-color, 10%);
+            }
         }
     }
 }
-.dark .alert-dark {
-    border-color: $gray-900;
+@include color-mode(dark) {
+    .alert-dark {
+        border-color: $gray-900;
+    }
 }

@@ -3,7 +3,7 @@ import ready from '../utilities/ready';
 
 /**
  * Invoke Scroll-To-Top Button
- * @param {*} element 
+ * @param {*} element
  */
 function invokeColorPicker(element)
 {
@@ -32,8 +32,7 @@ function invokeColorPicker(element)
         document.head.appendChild(styling);
 
         // Change Class Names
-        document.body.classList.remove(style);
-        document.body.classList.add(newStyle);
+        document.body.dataset.bsTheme = newStyle;
 
         // Remove Styling
         setTimeout(() => styling.remove(), 500);

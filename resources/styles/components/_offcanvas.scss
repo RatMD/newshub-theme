@@ -3,6 +3,8 @@
 //  Offcanvas Component
 // ----------------------------------------
 
-.dark .offcanvas {
-    @extend .text-bg-dark;
+@include color-mode(dark) {
+    .offcanvas {
+        @extend .text-bg-dark;
+    }
 }

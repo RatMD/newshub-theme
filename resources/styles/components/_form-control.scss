@@ -14,12 +14,13 @@
         border-color: var(--#{$prefix}primary);
         background-color: $gray-200;
     }
-
-    .dark & {
+}
+@include color-mode(dark) {
+    .form-control {
         color: $gray-300;
         border-color: $gray-600;
         background-color: $gray-900;
-        
+
         &:focus {
             border-color: var(--#{$prefix}primary);
             background-color: $gray-900;
@@ -45,7 +46,7 @@
 // ----------------------------------------
 .form-control-icon-group {
     position: relative;
-    
+
     .form-control-icon {
         display: none;
     }
@@ -109,8 +110,12 @@
             width: 58px;
             height: 58px;
         }
+    }
+}
 
-        .dark & {
+@include color-mode(dark) {
+    @include media-breakpoint-up(md) {
+        .form-control-icon-group {
             .form-control-icon {
                 color: var(--#{$prefix}gray-700);
             }

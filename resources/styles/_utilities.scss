@@ -61,9 +61,17 @@ $utilities: (
             auto: auto
         )
     ),
+);
+
+
+// ----------------------------------------
+//  Bootstrap Dark Utilities API
+// ----------------------------------------
+$dark-utilities: () !default;
+$dark-utilities: map-merge((
     "dark-color": (
         property: color,
-        class: "dark .dark\\:text",
+        class: "dark\\:text",
         local-vars: (
             "text-opacity": 1
         ),
@@ -79,7 +87,7 @@ $utilities: (
     ),
     "dark-background-color": (
         property: background-color,
-        class: "dark .dark\\:bg",
+        class: "dark\\:bg",
         local-vars: (
             "bg-opacity": 1
         ),
@@ -92,7 +100,7 @@ $utilities: (
     ),
     "dark-border-color": (
         property: border-color,
-        class: "dark .dark\\:border",
+        class: "dark\\:border",
         local-vars: (
             "border-opacity": 1
         ),
@@ -100,4 +108,4 @@ $utilities: (
             gray: $gray-700
         ))
     ),
-);
+), $dark-utilities);

@@ -5,7 +5,7 @@
 
 .card {
     width: 100%;
-    
+
     .card-body,
     .card-text {
         & > *:last-child {
@@ -28,27 +28,24 @@
         }
     }
 }
-
-.dark .card:not(.card-simple) {
-    --#{$prefix}card-border-color: #{$gray-700};
-    --#{$prefix}card-color: #{$card-color};
-    --#{$prefix}card-bg: #{$gray-900};
+@include color-mode(dark) {
+    .card:not(.card-simple) {
+        --#{$prefix}card-border-color: #{$gray-700};
+        --#{$prefix}card-color: #{$card-color};
+        --#{$prefix}card-bg: #{$gray-900};
+    }
 }
 
 
 // ----------------------------------------
 //  Simple Card Stylings
 // ----------------------------------------
-
 .card.card-simple {
     border: 0;
     padding: $spacer * 2;
     margin-bottom: $spacer * 1.5;
     background-color: $gray-100;
-    
-    .dark & {
-        background-color: $gray-900;
-    }
+
     &:last-child {
         margin-bottom: 0;
     }
@@ -82,11 +79,8 @@
     .card-title {
         color: $gray-700;
         font-size: 1.4rem;
-        
-        .dark & {
-            color: $gray-400;
-        }
     }
+
     .card-subtitle {
         color: $gray-600;
         font-size: 0.9rem;
@@ -97,7 +91,7 @@
     }
 
     .card-body .list-group-flush {
-        .list-group-item { 
+        .list-group-item {
             padding: 0;
             background-color: transparent;
         }
@@ -109,11 +103,6 @@
             text-decoration: none;
             transition: color 0.20s ease, background-color 0.20s ease;
             background-color: $gray-300;
-
-            .dark & {
-                color: var(--#{$prefix}light);
-                background-color: $gray-800;
-            }
 
             &:hover {
                 color: var(--#{$prefix}light);
@@ -130,4 +119,20 @@
 }
 .card-group > .card.card-simple {
     margin-bottom: 0;
+}
+
+@include color-mode(dark) {
+    .card.card-simple {
+        background-color: $gray-900;
+
+        .card-title {
+            color: $gray-400;
+        }
+        .card-body .list-group-flush {
+            a {
+                color: var(--#{$prefix}light);
+                background-color: $gray-800;
+            }
+        }
+    }
 }

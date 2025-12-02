@@ -82,14 +82,16 @@
         $notice-label: $black;
     }
 
-    .dark .notice-#{$state} {
-        --#{$prefix}notice-color: #{$notice-color};
-        --#{$prefix}notice-bg: #{transparentize($value, 0.9)};
-        --#{$prefix}notice-label-bg: #{$notice-color};
-        --#{$prefix}notice-label-color: #{$notice-label};
+    @include color-mode(dark) {
+        .notice-#{$state} {
+            --#{$prefix}notice-color: #{$notice-color};
+            --#{$prefix}notice-bg: #{transparentize($value, 0.9)};
+            --#{$prefix}notice-label-bg: #{$notice-color};
+            --#{$prefix}notice-label-color: #{$notice-label};
 
-        a {
-            color: $value;
+            a {
+                color: $value;
+            }
         }
     }
 }

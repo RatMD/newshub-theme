@@ -8,11 +8,11 @@
         @include media-breakpoint-up(xl) {
             max-height: 240px;
         }
-    
+
         .container {
             display: flex;
             flex-direction: column;
-            
+
             @include media-breakpoint-up(xl) {
                 flex-direction: row;
             }
@@ -59,7 +59,7 @@
                     @include media-breakpoint-up(md) {
                         max-height: 600px;
                     }
-                    
+
                     @include media-breakpoint-up(xl) {
                         max-height: 400px;
                     }
@@ -116,10 +116,10 @@
                     font-weight: 400;
                 }
             }
-            
+
             aside {
                 margin-bottom: $spacer * 3;
-                
+
                 @include media-breakpoint-up(xl) {
                     margin-bottom: 0;
 
@@ -195,7 +195,6 @@
 // ----------------------------------------
 //  Post Button Stylings
 // ----------------------------------------
-
 .post-button {
     display: flex;
     text-decoration: none;
@@ -211,10 +210,6 @@
     }
     .post-no-thumbnail {
         background-color: $gray-300;
-
-        .dark & {
-            background-color: $gray-800;
-        }
     }
 
     .post-content {
@@ -239,6 +234,11 @@
     }
 }
 
+@include color-mode(dark) {
+    .post-button .post-no-thumbnail {
+        background-color: $gray-800;
+    }
+}
 
 .share-links {
     padding: 0 $spacer;

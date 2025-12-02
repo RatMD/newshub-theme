@@ -3,8 +3,10 @@
 //  List Group Stylings
 // ----------------------------------------
 
-.dark .list-group {
-    --#{$prefix}list-group-color: var(--#{$prefix}body-color);
+@include color-mode(dark) {
+    .list-group {
+        --#{$prefix}list-group-color: var(--#{$prefix}body-color);
+    }
 }
 
 .list-group {
@@ -25,7 +27,7 @@
             margin-left: $spacer * 2;
         }
     }
-    
+
     .site-flag,
     .site-without-flag {
         width: 32px;
@@ -65,7 +67,7 @@
 
         &.active .list-group-button {
             color: var(--#{$prefix}list-group-active-color);
-            border-color: var(--#{$prefix}list-group-active-border-color); 
+            border-color: var(--#{$prefix}list-group-active-border-color);
             background-color: var(--#{$prefix}list-group-active-bg);
         }
     }

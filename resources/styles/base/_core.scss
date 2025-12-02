@@ -1,7 +1,7 @@
 // ----------------------------------------
 //  Additional Global Custom Properties
 // ----------------------------------------
-body.dark {
+body[data-bs-theme="dark"] {
     --#{$prefix}body-bg: #{$body-dark-bg};
     --#{$prefix}body-bg-rgb: #{to-rgb($body-dark-bg)};
     --#{$prefix}body-color: #{$body-dark-color};

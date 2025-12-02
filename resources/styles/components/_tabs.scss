@@ -8,21 +8,22 @@
     cursor: not-allowed;
 }
 
-.dark .nav-tabs {
-    --#{$prefix}nav-tabs-border-color: #{$gray-700};
-    --#{$prefix}nav-tabs-link-hover-border-color: #{$gray-700};
-    --#{$prefix}nav-tabs-link-active-color: var(--#{$prefix}body-color);
-    --#{$prefix}nav-tabs-link-active-bg: var(--#{$prefix}body-bg);
-    --#{$prefix}nav-tabs-link-active-border-color: #{$gray-700} #{$gray-700} var(--#{$prefix}body-bg) #{$gray-700};
+@include color-mode(dark) {
+    .nav-tabs {
+        --#{$prefix}nav-tabs-border-color: #{$gray-700};
+        --#{$prefix}nav-tabs-link-hover-border-color: #{$gray-700};
+        --#{$prefix}nav-tabs-link-active-color: var(--#{$prefix}body-color);
+        --#{$prefix}nav-tabs-link-active-bg: var(--#{$prefix}body-bg);
+        --#{$prefix}nav-tabs-link-active-border-color: #{$gray-700} #{$gray-700} var(--#{$prefix}body-bg) #{$gray-700};
+    }
 }
 
 
 // ----------------------------------------
 //  Vertical Tabs Stylings
 // ----------------------------------------
-
-.tabs.tabs-vertical {
-    @include media-breakpoint-up(md) {
+@include media-breakpoint-up(md) {
+    .tabs.tabs-vertical {
         display: flex;
 
         nav {
@@ -44,15 +45,19 @@
                 }
             }
         }
-        .dark & .nav-tabs {
-            --#{$prefix}nav-tabs-link-hover-border-color: #{$gray-700} var(--#{$prefix}body-bg) #{$gray-700} #{$gray-700};
-            --#{$prefix}nav-tabs-link-active-border-color: #{$gray-700} var(--#{$prefix}body-bg) #{$gray-700} #{$gray-700};
-            border-right: var(--#{$prefix}nav-tabs-border-width) solid var(--#{$prefix}nav-tabs-border-color);
-            border-bottom: 0;
-        }
         .tabs-content {
             flex: 1 1 auto;
         }
     }
 }
 
+@include media-breakpoint-up(md) {
+    @include color-mode(dark) {
+        .tabs.tabs-vertical .nav-tabs {
+            --#{$prefix}nav-tabs-link-hover-border-color: #{$gray-700} var(--#{$prefix}body-bg) #{$gray-700} #{$gray-700};
+            --#{$prefix}nav-tabs-link-active-border-color: #{$gray-700} var(--#{$prefix}body-bg) #{$gray-700} #{$gray-700};
+            border-right: var(--#{$prefix}nav-tabs-border-width) solid var(--#{$prefix}nav-tabs-border-color);
+            border-bottom: 0;
+        }
+    }
+}

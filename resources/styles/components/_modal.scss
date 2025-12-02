@@ -11,7 +11,7 @@
         border-bottom: 0;
         background-color: var(--#{$prefix}gray-100);
     }
-    
+
     .modal-body {
         padding-top: 0;
         padding-bottom: 0;
@@ -24,16 +24,18 @@
     .modal-footer {
         border-top: 0;
     }
+}
 
-    .dark & {
+@include color-mode(dark) {
+    .modal {
         .modal-header {
             background-color: var(--#{$prefix}gray-900);
         }
-        
+
         .modal-body {
             background-color: var(--#{$prefix}gray-800);
         }
-    
+
         .modal-footer {
             background-color: var(--#{$prefix}gray-800);
         }
@@ -72,8 +74,10 @@
             }
         }
     }
+}
 
-    .dark & .modal-content .modal-body {
+@include color-mode(dark) {
+    .modal-search .modal-content .modal-body {
         .btn-close {
             background-color: var(--#{$prefix}gray-900);
 

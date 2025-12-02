@@ -2,14 +2,16 @@
 //  Custom Colored Link Classes
 // ----------------------------------------
 
-@each $color, $value in $theme-colors {
-    .dark .dark\:link-#{$color} {
-        color: $value !important;
+@include color-mode(dark) {
+    @each $color, $value in $theme-colors {
+        .dark\:link-#{$color} {
+            color: $value !important;
 
-        @if $link-shade-percentage != 0 {
-            &:hover,
-            &:focus {
-                color: if(color-contrast($value) == $color-contrast-light, shade-color($value, $link-shade-percentage), tint-color($value, $link-shade-percentage)) !important;
+            @if $link-shade-percentage != 0 {
+                &:hover,
+                &:focus {
+                    color: if(color-contrast($value) == $color-contrast-light, shade-color($value, $link-shade-percentage), tint-color($value, $link-shade-percentage)) !important;
+                }
             }
         }
     }

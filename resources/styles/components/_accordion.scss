@@ -3,27 +3,29 @@
 //  Accordion Stylings
 // ----------------------------------------
 
-.dark .accordion {
-    --#{$prefix}accordion-bg: var(--#{$prefix}gray-900);
-    --#{$prefix}accordion-color: var(--#{$prefix}gray-400);
-    --#{$prefix}accordion-border-color: var(--#{$prefix}gray-900);
-    --#{$prefix}accordion-btn-color: var(--#{$prefix}gray-400);
-    --#{$prefix}accordion-btn-bg: #{$accordion-button-bg};
-    --#{$prefix}accordion-btn-icon: #{escape-svg($accordion-dark-button-icon)};
-    --#{$prefix}accordion-btn-active-icon: #{escape-svg($accordion-dark-button-icon)};
-    --#{$prefix}accordion-btn-focus-border-color: #{$accordion-button-focus-border-color};
-    --#{$prefix}accordion-btn-focus-box-shadow: #{$accordion-button-focus-box-shadow};
-    --#{$prefix}accordion-active-color: var(--#{$prefix}white);
-    --#{$prefix}accordion-active-bg: var(--#{$prefix}gray-800);
+@include color-mode(dark) {
+    .accordion {
+        --#{$prefix}accordion-bg: var(--#{$prefix}gray-900);
+        --#{$prefix}accordion-color: var(--#{$prefix}gray-400);
+        --#{$prefix}accordion-border-color: var(--#{$prefix}gray-900);
+        --#{$prefix}accordion-btn-color: var(--#{$prefix}gray-400);
+        --#{$prefix}accordion-btn-bg: #{$accordion-button-bg};
+        --#{$prefix}accordion-btn-icon: #{escape-svg($accordion-dark-button-icon)};
+        --#{$prefix}accordion-btn-active-icon: #{escape-svg($accordion-dark-button-icon)};
+        --#{$prefix}accordion-btn-focus-border-color: #{$accordion-button-focus-border-color};
+        --#{$prefix}accordion-btn-focus-box-shadow: #{$accordion-button-focus-box-shadow};
+        --#{$prefix}accordion-active-color: var(--#{$prefix}white);
+        --#{$prefix}accordion-active-bg: var(--#{$prefix}gray-800);
 
-    .accordion-button {
-        &::after {
-            opacity: 0.5;
-        }
-
-        &:not(.collapsed) {
+        .accordion-button {
             &::after {
-                opacity: 0.75;
+                opacity: 0.5;
+            }
+
+            &:not(.collapsed) {
+                &::after {
+                    opacity: 0.75;
+                }
             }
         }
     }
@@ -46,9 +48,11 @@
     --#{$prefix}accordion-btn-icon: #{escape-svg($accordion-button-icon-alt)};
     --#{$prefix}accordion-btn-active-icon: #{escape-svg($accordion-button-active-icon-alt)};
 }
-.dark .accordion-icons-alt {
-    --#{$prefix}accordion-btn-icon: #{escape-svg($accordion-dark-button-icon-alt)};
-    --#{$prefix}accordion-btn-active-icon: #{escape-svg($accordion-dark-button-active-icon-alt)};
+@include color-mode(dark) {
+    .accordion-icons-alt {
+        --#{$prefix}accordion-btn-icon: #{escape-svg($accordion-dark-button-icon-alt)};
+        --#{$prefix}accordion-btn-active-icon: #{escape-svg($accordion-dark-button-active-icon-alt)};
+    }
 }
 
 .accordion-icons-left {
@@ -74,7 +78,7 @@
     .accordion-button {
         padding: $spacer * 0.25 0;
         background-color: transparent;
-        
+
         &::after {
             margin-right: $spacer;
         }
@@ -88,7 +92,7 @@
             box-shadow: none;
         }
     }
-    
+
     .accordion-body {
         padding-top: $spacer * 0.75;
         padding-left: $spacer * 1.75;

@@ -1,20 +1,11 @@
-
 // ----------------------------------------
 //  General Section Stylings
 // ----------------------------------------
-
 .section {
     --#{$prefix}footer-text-color: #{$gray-600};
     --#{$prefix}footer-link-color: #{$gray-800};
     --#{$prefix}footer-link-hover-color: var(--#{$prefix}primary);
     --#{$prefix}section-separator-color: #{$gray-400};
-
-    .dark & {
-        --#{$prefix}footer-text-color: #{$gray-600};
-        --#{$prefix}footer-link-color: #{$gray-500};
-        --#{$prefix}footer-link-hover-color: var(--#{$prefix}primary);
-        --#{$prefix}section-separator-color: #{$gray-700};
-    }
 
     // Section Separator
     &.section-separator {
@@ -28,7 +19,7 @@
         > .container {
             display: flex;
             flex-direction: column;
-        
+
             @include media-breakpoint-up(xl) {
                 flex-direction: row;
             }
@@ -36,7 +27,7 @@
 
         .main-area {
             flex: 0 0 100%;
-        
+
             @include media-breakpoint-up(xl) {
                 flex: 1 1 auto;
                 max-width: auto;
@@ -46,7 +37,7 @@
         .sidebar-area {
             flex: 0 0 100%;
             margin-top: $spacer;
-        
+
             @include media-breakpoint-up(md) {
                 display: flex;
                 flex-wrap: wrap;
@@ -79,6 +70,15 @@
     }
 }
 
+@include color-mode(dark) {
+    .section {
+        --#{$prefix}footer-text-color: #{$gray-600};
+        --#{$prefix}footer-link-color: #{$gray-500};
+        --#{$prefix}footer-link-hover-color: var(--#{$prefix}primary);
+        --#{$prefix}section-separator-color: #{$gray-700};
+    }
+}
+
 
 // ----------------------------------------
 //  Footer Section Stylings
@@ -108,7 +108,7 @@
             }
             .nav-item .nav-link {
                 color: var(--#{$prefix}footer-link-color);
-                
+
                 &:hover {
                     color: var(--#{$prefix}footer-link-hover-color);
                 }

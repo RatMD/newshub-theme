@@ -30,6 +30,17 @@ $callout-dismissible-padding-r:             $callout-padding-x * 3;
 
 
 // ----------------------------------------
+//  Carousel Variables
+// ----------------------------------------
+$carousel-indicator-active-bg-dark:         $carousel-indicator-active-bg;
+$carousel-caption-color-dark:               $carousel-caption-color;
+$carousel-control-icon-filter-dark:         $carousel-control-icon-filter;
+$carousel-dark-indicator-active-bg:         $white;
+$carousel-dark-caption-color:               $white;
+$carousel-dark-control-icon-filter:         invert(0) grayscale(100);
+
+
+// ----------------------------------------
 //  Close Button Variables
 // ----------------------------------------
 $btn-close-dark-bg:                         url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='#{$white}'><path d='M.293.293a1 1 0 0 1 1.414 0L8 6.586 14.293.293a1 1 0 1 1 1.414 1.414L9.414 8l6.293 6.293a1 1 0 0 1-1.414 1.414L8 9.414l-6.293 6.293a1 1 0 0 1-1.414-1.414L6.586 8 .293 1.707a1 1 0 0 1 0-1.414z'/></svg>") !default;

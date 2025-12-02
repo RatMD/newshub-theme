@@ -12,12 +12,13 @@ html:not(.no-js) .hide-on-js {
 
 .show-on-dark {
     display: none;
-
-    .dark & {
-        display: inherit;
-    }
 }
 
-.dark .hide-on-dark {
-    display: none;
+@include color-mode(dark) {
+    .show-on-dark {
+        display: inherit;
+    }
+    .hide-on-dark {
+        display: none;
+    }
 }
