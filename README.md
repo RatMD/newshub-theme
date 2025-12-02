@@ -3,10 +3,12 @@ NewsHub - Free Magazine Template
 **NewsHub** is a free, premium-quality, minimalist, and fully responsive Blog & Magazine template
 built exclusively for **OctoberCMS**. It offers a clean, configurable structure powered by
 **Bootstrap 5.3**, includes elegant **Bootstrap Icons**, and integrates the versatile, responsive,
-and feature-rich **Keen Slider** package.
+and feature-rich **Embla Carousel** package.
 
 - [View the Demo-Website](https://newshub.rat.md)
 - [View the Documentation](https://docs.rat.md/newshub)
+
+![Theme Preview](assets/images/theme-preview.png)
 
 **Read More**
 - [Requirements](#requirements)
@@ -45,7 +47,7 @@ The following dependencies are bundled with the template:
 - [Bootstrap](https://getbootstrap.com) **v5.3.8** – MIT licensed
 - [Bootstrap Icons](https://icons.getbootstrap.com) **v1.10.3** – MIT licensed
 - [Flag Icons](https://flagicons.lipis.dev/) – MIT licensed
-- [Keen Slider](https://keen-slider.io/) **v6.8.6** – MIT licensed
+- [Embla Carousel](https://www.embla-carousel.com/) **v8.6.0** – MIT licensed
 - [@rat.md/bs-lightbox](https://ratmd.github.io/bs-lightbox/) **v1.1.1** – MIT licensed
 - jQuery* (only for OctoberCMS v2; see note below) – MIT licensed
 
@@ -91,7 +93,7 @@ key highlights:
 - **3 sidebar positions**: Homepage, Post, Static Page (with widget support)
 - **2 color schemes**: Light and Dark mode
 - **Color** and **Language** switchers for header and/or footer
-- **Responsive slider** with touch support (Keen Slider)
+- **Responsive slider** with touch support (Embla Carousel)
 - Extensive theme configuration options
 - Available in **English** and **German**
 - Extra CMS page snippets: GDPR-friendly Double-Click solution & Table of Contents snippet
