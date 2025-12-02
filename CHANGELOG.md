@@ -21,6 +21,7 @@ NewsHub / Changelog
 - Remove: Drop support for `RainLab.BlogVideoExtension` (since it has been removed by the authors).
 - Fix: Replace all `|_` TWIG translation filters with `|trans`.
 - Fix: Include `_start` / `_end` partials on maintenance page too.
+- Fix: Sidebar space remains occupied in the page-builder layout even when `show_sidebar` is disabled.
 
 ### ToDo
 - Add: Support for the [RainLab.Forum](https://octobercms.com/plugin/rainlab-forum) plugin.

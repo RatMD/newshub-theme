@@ -77,10 +77,6 @@
                 font-size: 1.0rem;
                 max-width: 100%;
 
-                @include media-breakpoint-up(xl) {
-                    max-width: calc(100% - 400px);
-                }
-
                 h1,
                 h2,
                 h3,
@@ -127,6 +123,12 @@
                         padding-top: 160px;
                     }
                 }
+            }
+        }
+
+        @include media-breakpoint-up(xl) {
+            &.section-with-sidebar .container {
+                max-width: calc(100% - 400px);
             }
         }
 
