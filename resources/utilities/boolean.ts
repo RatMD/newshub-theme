@@ -28,9 +28,10 @@ function falsy(value: any): boolean {
 /**
  * Check if value is a boolean or something similar.
  * @param {mixed} value The desired value to check.
+ * @param {mixed} defaultValue
  * @returns {boolean|null}
  */
-function boolean(value: any): boolean | null {
+function boolean(value: any, defaultValue: any = null): boolean | null {
     if (typeof value === 'string') {
         value = value.toLowerCase();
     }
@@ -40,7 +41,7 @@ function boolean(value: any): boolean | null {
     } else if (FALSY_VALUES.indexOf(value) >= 0) {
         return false;
     } else {
-        return null;
+        return defaultValue;
     }
 }
 

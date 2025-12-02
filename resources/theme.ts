@@ -1,7 +1,8 @@
 import './styles/theme.scss';
 
-import './vendors/bootstrap-lightbox';
+import './vendors/embla';
 import './vendors/bootstrap';
+import './vendors/bootstrap-lightbox';
 import './vendors/keen-slider';
 
 import invokeAnchors from './components/anchors';

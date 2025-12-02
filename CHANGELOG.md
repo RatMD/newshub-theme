@@ -24,22 +24,6 @@ NewsHub / Changelog
 - Fix: Include `_start` / `_end` partials on maintenance page too.
 - Fix: Sidebar space remains occupied in the page-builder layout even when `show_sidebar` is disabled.
 
-### ToDo
-- Add: Support for the [RainLab.Forum](https://octobercms.com/plugin/rainlab-forum) plugin.
-- Add: Embla Carousel to replace the deprecated (may discontinued) Keen Slider.
-- Internal Test: SitePicker
-- Internal Test Plugin: BlakeJones.MagicForms
-- Internal Test Plugin: JanVince.SmallContactForm
-- Internal Test Plugin: JanVince.SmallGDPR
-- Internal Test Plugin: RainLab.Blog
-- Internal Test Plugin: RainLab.Pages
-- Internal Test Plugin: RainLab.Sitemap
-- Internal Test Plugin: RainLab.Translate v1.9 (OCv3)
-- Internal Test Plugin: RainLab.Translate v2.0 (OCv4)
-- Internal Test Plugin: RainLab.Forum
-- Internal Test Plugin: RainLab.User v1.6 (OCv3)
-- Internal Test Plugin: RainLab.User v2.0 (OCv4)
-
 ## Version 1.3.0 (Skipped)
 - Info: This release was skipped. All features listed below were completed but were shipped in v2.
 - Add: Support for the new sitePicker core component, as introduced in OctoberCMS v3.1.
