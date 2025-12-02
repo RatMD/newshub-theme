@@ -13,7 +13,7 @@ NewsHub / Changelog
 - Update: TypeScript utility functions.
 - Update: Using Bootstrap’s new color-mode (`data-bs-theme`) for dark and light color schemes.
 - Update: SCSS file structure and bootstrap order changes.
-- Update: Many minor styling and bootstrap changes.
+- Update: Many minor styling and Bootstrap 5.3 changes.
 - Update: Use new `page/_meta` / `page/_start` / `page/_end` partials.
 - Update: Merge `header` & `footer` options to a single `layout` page.
 - Update: Separate "dark-utilities" classes from "$utilities" / move to theme.scss.

@@ -21,18 +21,18 @@ localeTitle[de] = "Bootstrap components"
 
 <p>
     You can use all native Bootstrap Components, as described and documented on the
-    <a href="https://getbootstrap.com/docs/5.2/getting-started/introduction/" target="_blank">official Bootstrap documentation</a>,
-    make sure you've selected the right version: v5.2! However, this page does not describe all 
+    <a href="https://getbootstrap.com/docs/5.3/getting-started/introduction/" target="_blank">official Bootstrap documentation</a>,
+    make sure you've selected the right version: v5.3! However, this page does not describe all
     provided components, moreover it will show all <b>NewsHub</b> native and modified ones.
 </p>
 
 <div class="text-center my-5">
-    <a href="https://getbootstrap.com/docs/5.2" target="_blank" class="btn btn-dark">View all native Components</a>
+    <a href="https://getbootstrap.com/docs/5.3" target="_blank" class="btn btn-dark">View all native Components</a>
 </div>
 
 <h2>Callouts</h2>
 <p>
-    We highly dislike Bootstrap's native alert design, thus <b>NewsHub</b> provides an own one 
+    We highly dislike Bootstrap's native alert design, thus <b>NewsHub</b> provides an own one
     using an own class name - so you can still use the native stylings as well: <code>callout</code>.
 </p>
 
@@ -66,7 +66,7 @@ localeTitle[de] = "Bootstrap components"
 
 <h2>Simple Cards</h2>
 <p>
-    Instead of overriding the default Cards design, <b>NewsHub</b> provides an additional class name 
+    Instead of overriding the default Cards design, <b>NewsHub</b> provides an additional class name
     to apply our own stylings.
 </p>
 
@@ -81,7 +81,7 @@ localeTitle[de] = "Bootstrap components"
     <div class="card-header">
         <div class="card-title">Card Title</div>
     </div>
-    
+
     <div class="card-body">
         <p class="mb-0">Card Content</p>
     </div>
@@ -91,7 +91,7 @@ localeTitle[de] = "Bootstrap components"
     <div class="card-header">
         <div class="card-title">Card Title</div>
     </div>
-    
+
     <div class="card-body">
         <p>Card Content</p>
     </div>
@@ -106,8 +106,8 @@ localeTitle[de] = "Bootstrap components"
 
 <h2>Double Click Partial</h2>
 <p>
-    The double click partial can be used on any CMS Page and provides a GDPR friendly way to embed 
-    external content into your website. It relies only on a really small JavaScript snippet. You 
+    The double click partial can be used on any CMS Page and provides a GDPR friendly way to embed
+    external content into your website. It relies only on a really small JavaScript snippet. You
     can override the title, description and button text using the additional arguments as shown below.
 </p>
 
@@ -140,11 +140,11 @@ localeTitle[de] = "Bootstrap components"
 {% set media %}
 <!-- Your Iframe or other external content -->
 {% endset %}
-{% partial "double-click" 
-    external_content=media 
-    privacy_title="Custom Title" 
-    privacy_description="Custom Description" 
-    privacy_button_label="Custom Button" 
+{% partial "double-click"
+    external_content=media
+    privacy_title="Custom Title"
+    privacy_description="Custom Description"
+    privacy_button_label="Custom Button"
 %}
 {% endverbatim %}
 {% endset %}
